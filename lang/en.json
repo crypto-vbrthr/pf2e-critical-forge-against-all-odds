@@ -80,27 +80,27 @@
         "Attack": {
           "NotYet": {
             "Title": "Not Yet",
-            "Description": "Pain meets defiance and loses. For 1 round, you gain 5 temporary Hit Points."
+            "Description": "Pain turns into force before it can become weakness. For 1 round, you gain a +2 circumstance bonus to Strike damage."
           },
           "PainHonedEdge": {
             "Title": "Pain-Honed Edge",
             "Description": "Every wound redraws the line of your next attack. For 1 round, you gain a +1 circumstance bonus to attack rolls."
           },
           "BackAgainstTheWorld": {
-            "Title": "Back Against the World",
-            "Description": "You find a stance where none should remain. For 1 round, you gain a +1 circumstance bonus to AC."
+            "Title": "Against the Whole World",
+            "Description": "Your counterstroke tears open the defense that should have ended you. The target is off-guard for 1 round."
           },
           "BloodInTheStride": {
-            "Title": "Blood in the Stride",
-            "Description": "Your body chooses speed over collapse. For 1 round, you gain a +10-foot status bonus to your land Speed."
+            "Title": "Blood in the Grip",
+            "Description": "The pain steadies your hands and gives your threat a terrible certainty. For 1 round, you gain a +1 status bonus to Athletics and Intimidation checks."
           },
           "YouFlinchFirst": {
             "Title": "You Flinch First",
-            "Description": "The enemy realizes the wounded creature still has teeth. The target becomes frightened 1 for 1 round."
+            "Description": "The target recoils before the wounded creature that should have broken. The target becomes clumsy 1 for 1 round."
           },
           "CrimsonAfterimage": {
             "Title": "Crimson Afterimage",
-            "Description": "The spell tears a second, blood-red outline from your body. For 1 round, you are concealed."
+            "Description": "The spell leaves a second, blood-red impact inside every wound it opens. For 1 round, you gain a +2 status bonus to spell damage."
           },
           "WillThroughTheWound": {
             "Title": "Will Through the Wound",
@@ -138,7 +138,7 @@
           },
           "SecondPulse": {
             "Title": "Second Pulse",
-            "Description": "A second rhythm rises beneath the first and drags you back from the brink. For 1 round, you gain fast healing 2."
+            "Description": "A second rhythm rises beneath the first and drags you back from the brink. For 1 round, you gain fast healing 4."
           },
           "NoRoomForNausea": {
             "Title": "No Room for Nausea",
@@ -183,7 +183,7 @@
             "Description": "Every line of attack closes a fraction too late. For 1 round, you gain a +1 circumstance bonus to AC."
           },
           "NeverWhereNeeded": {
-            "Title": "Never Where They Need You",
+            "Title": "Never Where They Expect You",
             "Description": "The enemy's perfect opening keeps finding empty air. For 1 round, you are immune to the off-guard condition."
           },
           "FeetRefuseGround": {
@@ -218,11 +218,11 @@
           },
           "PainIsProof": {
             "Title": "Pain Is Proof",
-            "Description": "The wound is real, the blood is real, and the lie has nowhere left to hide. For 1 round, you are immune to illusion effects."
+            "Description": "The wound is real, the blood is real, and the lie has nowhere left to hide. For 1 round, you gain a +2 circumstance bonus to Perception checks and Will saves."
           },
           "HeartRemembers": {
             "Title": "The Heart Remembers",
-            "Description": "Someone else may command your feelings, but they cannot rewrite why you are still standing. For 1 round, you are immune to emotion effects."
+            "Description": "Someone else may command your feelings, but they cannot rewrite why you are still standing. The hostile source becomes stupefied 1 for 1 round."
           },
           "ThoughtBehindTheBlood": {
             "Title": "Thought Behind the Blood",
@@ -257,10 +257,10 @@
             "Name": "Pain-Honed Edge"
           },
           "BackAgainstTheWorld": {
-            "Name": "Back Against the World"
+            "Name": "Against the Whole World"
           },
           "BloodInTheStride": {
-            "Name": "Blood in the Stride"
+            "Name": "Blood in the Grip"
           },
           "YouFlinchFirst": {
             "Name": "You Flinch First"
@@ -324,7 +324,7 @@
             "Name": "No Angle Left"
           },
           "NeverWhereNeeded": {
-            "Name": "Never Where They Need You"
+            "Name": "Never Where They Expect You"
           },
           "FeetRefuseGround": {
             "Name": "The Feet Refuse the Ground"

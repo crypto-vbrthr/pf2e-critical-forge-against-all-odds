@@ -111,22 +111,24 @@ test("Reflex boons always target the saving actor", () => {
   assert.equal(BLOODIED_REFLEX_CARDS.filter((card) => card.effect).every((card) => card.effect.target === "source"), true);
 });
 
-test("Will boons target the saving actor while the countershock targets the hostile source", () => {
+test("Will boons target the saving actor while contextual countershocks target the hostile source", () => {
   const automated = BLOODIED_WILL_CARDS.filter((card) => card.effect);
   const hostile = automated.filter((card) => card.effect.target === "target");
   assert.deepEqual(hostile.map((card) => card.id), [
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-005-heart-remembers",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-009-defiance-looks-back"
   ]);
-  assert.equal(automated.filter((card) => card.effect.target === "source").length, 8);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 7);
 });
 
 test("beneficial and hostile Attack effects remain intentionally separated", () => {
   const targetCards = BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "target");
   assert.deepEqual(targetCards.map((card) => card.id), [
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-003-back-against-the-world",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-005-you-flinch-first",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-009-scarlet-opening"
   ]);
-  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "source").length, 7);
+  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "source").length, 6);
 });
 
 test("published batches use only Effect Engine component types supported by the Forge RC", () => {
@@ -162,7 +164,7 @@ test("Will effects cover resolve, perception, mental resistance, and hostile cou
   assert.equal(new Set(signatures).size, signatures.length);
   assert.equal(BLOODIED_WILL_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "resistance" && component.resistanceType === "mental")), true);
   assert.equal(BLOODIED_WILL_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("will-dc"))), true);
-  assert.equal(BLOODIED_WILL_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 5);
+  assert.equal(BLOODIED_WILL_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 3);
   assert.equal(BLOODIED_WILL_CARDS.find((card) => card.id.endsWith("bw-009-defiance-looks-back"))?.filters.excludedTargetTraits.includes("mindless"), true);
 });
 
@@ -175,4 +177,56 @@ test("all card and effect localization keys exist in German and English", () => 
       if (card.effect) assert.equal(typeof getPath(language, card.effect.nameKey), "string", card.effect.nameKey);
     }
   }
+});
+
+
+test("the review patch preserves all published card IDs while replacing overlapping mechanics", () => {
+  const expectedSuffixes = [
+    "ba-001-not-yet", "ba-002-pain-honed-edge", "ba-003-back-against-the-world", "ba-004-blood-in-the-stride", "ba-005-you-flinch-first",
+    "ba-006-crimson-afterimage", "ba-007-will-through-the-wound", "ba-008-wound-holds-the-weave", "ba-009-scarlet-opening", "ba-010-one-more-breath"
+  ];
+  assert.deepEqual(BLOODIED_ATTACK_CARDS.map((card) => card.id.split(".").at(-1)), expectedSuffixes);
+
+  const attackComponents = Object.fromEntries(BLOODIED_ATTACK_CARDS.filter((card) => card.effect).map((card) => [card.id.split(".").at(-1), card.effect.definition.components]));
+  assert.equal(attackComponents["ba-001-not-yet"][0].selector, "strike-damage");
+  assert.equal(attackComponents["ba-003-back-against-the-world"][0].slug, "off-guard");
+  assert.deepEqual(attackComponents["ba-004-blood-in-the-stride"][0].selector, ["athletics", "intimidation"]);
+  assert.equal(attackComponents["ba-005-you-flinch-first"][0].slug, "clumsy");
+  assert.equal(attackComponents["ba-006-crimson-afterimage"][0].selector, "spell-damage");
+});
+
+test("situational review filters bind specialized cards to matching effect traits", () => {
+  const bySuffix = Object.fromEntries(ALL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["bf-002-bitter-blood"].filters.attackTraits, ["poison"]);
+  assert.deepEqual(bySuffix["bf-006-no-room-for-nausea"].filters.attackTraits, ["disease"]);
+  assert.deepEqual(bySuffix["bw-003-no-master-here"].filters.attackTraits, ["mental"]);
+  assert.deepEqual(bySuffix["bw-004-pain-is-proof"].filters.attackTraits, ["illusion"]);
+  assert.deepEqual(bySuffix["bw-005-heart-remembers"].filters.attackTraits, ["emotion"]);
+  assert.deepEqual(bySuffix["bw-006-thought-behind-the-blood"].filters.attackTraits, ["mental"]);
+});
+
+test("Second Pulse now has a strong one-round healing value", () => {
+  const card = BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-005-second-pulse"));
+  assert.equal(card.impact, "strong");
+  assert.deepEqual(card.effect.definition.components, [{ type: "fastHealing", value: 4 }]);
+});
+
+test("the review patch reduces broad Will immunities and adds an emotion countershock", () => {
+  const immunities = BLOODIED_WILL_CARDS.flatMap((card) => card.effect?.definition.components.filter((component) => component.type === "immunity") ?? []);
+  assert.deepEqual(immunities.map((component) => component.immunityType).sort(), ["confused", "controlled", "frightened"]);
+  const heart = BLOODIED_WILL_CARDS.find((card) => card.id.endsWith("bw-005-heart-remembers"));
+  assert.equal(heart.effect.target, "target");
+  assert.deepEqual(heart.effect.definition.components, [{ type: "condition", slug: "stupefied", value: 1 }]);
+  assert.equal(heart.filters.excludedTargetTraits.includes("mindless"), true);
+});
+
+test("German Remaster terms and reviewed titles are present without obsolete wording", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const cards = de.PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs;
+  assert.match(cards.Will.NoMasterHere.Description, /Gesteuert/u);
+  assert.doesNotMatch(cards.Will.NoMasterHere.Description, /Kontrolliert/u);
+  assert.match(cards.Fortitude.StrengthDoesNotLeave.Description, /Kraftlos/u);
+  assert.doesNotMatch(cards.Fortitude.StrengthDoesNotLeave.Description, /Entkräftet/u);
+  assert.equal(cards.Attack.WoundHoldsTheWeave.Title, "Die Wunde hält das Geflecht");
+  assert.equal(cards.Reflex.NeverWhereNeeded.Title, "Nie dort, wo sie dich erwarten");
 });

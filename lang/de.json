@@ -80,34 +80,34 @@
         "Attack": {
           "NotYet": {
             "Title": "Noch nicht",
-            "Description": "Der Schmerz trifft auf Trotz und verliert. Für 1 Runde erhältst du 5 temporäre Trefferpunkte."
+            "Description": "Der Schmerz wird zu Kraft, bevor er zur Schwäche werden kann. Für 1 Runde erhältst du einen Umstandsbonus von +2 auf den Schaden deiner Angriffe."
           },
           "PainHonedEdge": {
             "Title": "Vom Schmerz geschärft",
             "Description": "Jede Wunde zeichnet die Linie deines nächsten Angriffs schärfer. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Angriffswürfe."
           },
           "BackAgainstTheWorld": {
-            "Title": "Rücken an der Welt",
-            "Description": "Du findest Halt, wo keiner mehr sein dürfte. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deine RK."
+            "Title": "Gegen die ganze Welt",
+            "Description": "Dein Gegenstoß reißt die Verteidigung auf, die dich hätte bezwingen sollen. Das Ziel ist für 1 Runde Auf dem falschen Fuß."
           },
           "BloodInTheStride": {
-            "Title": "Blut im Schritt",
-            "Description": "Dein Körper entscheidet sich gegen das Fallen und für Geschwindigkeit. Für 1 Runde erhältst du einen Statusbonus von 3 Metern auf deine Bewegungsrate am Boden."
+            "Title": "Blut im Griff",
+            "Description": "Der Schmerz beruhigt deine Hände und verleiht deiner Drohung furchtbare Gewissheit. Für 1 Runde erhältst du einen Statusbonus von +1 auf Athletik- und Einschüchternwürfe."
           },
           "YouFlinchFirst": {
             "Title": "Du zuckst zuerst",
-            "Description": "Der Gegner erkennt, dass der Verwundete noch Zähne hat. Das Ziel erhält für 1 Runde Verängstigt 1."
+            "Description": "Das Ziel weicht vor der verwundeten Kreatur zurück, die längst hätte brechen sollen. Das Ziel erhält für 1 Runde Unbeholfen 1."
           },
           "CrimsonAfterimage": {
-            "Title": "Blutrotes Nachbild",
-            "Description": "Der Zauber reißt ein zweites, blutrotes Abbild aus deinem Körper. Für 1 Runde bist du verborgen."
+            "Title": "Blutrotes Nachbeben",
+            "Description": "Der Zauber hinterlässt in jeder geöffneten Wunde einen zweiten, blutroten Einschlag. Für 1 Runde erhältst du einen Statusbonus von +2 auf Zauberschaden."
           },
           "WillThroughTheWound": {
             "Title": "Wille durch die Wunde",
             "Description": "Der gelungene Zauber beweist, dass dein Wille noch immer stärker ist als deine Verletzungen. Für 1 Runde erhältst du einen Statusbonus von +1 auf Rettungswürfe."
           },
           "WoundHoldsTheWeave": {
-            "Title": "Die Wunde hält das Gewebe",
+            "Title": "Die Wunde hält das Geflecht",
             "Description": "Für einen unmöglichen Augenblick verankern deine Verletzungen die Magie, statt sie zu schwächen. Für 1 Runde erhältst du Resistenz 2 gegen jeglichen Schaden."
           },
           "ScarletOpening": {
@@ -138,7 +138,7 @@
           },
           "SecondPulse": {
             "Title": "Zweiter Puls",
-            "Description": "Unter dem ersten Rhythmus erhebt sich ein zweiter und zieht dich vom Abgrund zurück. Für 1 Runde erhältst du Schnelle Heilung 2."
+            "Description": "Unter dem ersten Rhythmus erhebt sich ein zweiter und zieht dich vom Abgrund zurück. Für 1 Runde erhältst du Schnelle Heilung 4."
           },
           "NoRoomForNausea": {
             "Title": "Kein Platz für Übelkeit",
@@ -154,7 +154,7 @@
           },
           "StrengthDoesNotLeave": {
             "Title": "Die Kraft weicht nicht",
-            "Description": "Deine Kraft mag sich beugen, doch für einen weiteren Augenblick kann sie dir nicht genommen werden. Für 1 Runde bist du gegen den Zustand Entkräftet immun."
+            "Description": "Deine Kraft mag sich beugen, doch für einen weiteren Augenblick kann sie dir nicht genommen werden. Für 1 Runde bist du gegen den Zustand Kraftlos immun."
           },
           "CloseTheWound": {
             "Title": "Schließ die Wunde",
@@ -183,7 +183,7 @@
             "Description": "Jede Angriffslinie schließt sich einen Augenblick zu spät. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deine RK."
           },
           "NeverWhereNeeded": {
-            "Title": "Nie dort, wo sie dich brauchen",
+            "Title": "Nie dort, wo sie dich erwarten",
             "Description": "Die perfekte Öffnung des Gegners findet immer wieder nur leere Luft. Für 1 Runde bist du gegen den Zustand Auf dem falschen Fuß immun."
           },
           "FeetRefuseGround": {
@@ -214,15 +214,15 @@
           },
           "NoMasterHere": {
             "Title": "Hier herrscht kein Meister",
-            "Description": "Der fremde Wille greift nach einem Thron und findet nur geborstenen Stein und eine Klinge darunter. Für 1 Runde bist du gegen den Zustand Kontrolliert immun."
+            "Description": "Der fremde Wille greift nach einem Thron und findet nur geborstenen Stein und eine Klinge darunter. Für 1 Runde bist du gegen den Zustand Gesteuert immun."
           },
           "PainIsProof": {
             "Title": "Der Schmerz ist Beweis",
-            "Description": "Die Wunde ist echt, das Blut ist echt, und die Lüge hat keinen Ort mehr, an dem sie sich verbergen kann. Für 1 Runde bist du gegen Illusionseffekte immun."
+            "Description": "Die Wunde ist echt, das Blut ist echt, und die Lüge hat keinen Ort mehr, an dem sie sich verbergen kann. Für 1 Runde erhältst du einen Umstandsbonus von +2 auf Wahrnehmungs- und Willenswürfe."
           },
           "HeartRemembers": {
             "Title": "Das Herz erinnert sich",
-            "Description": "Ein anderer mag deinen Gefühlen Befehle erteilen, doch er kann nicht umschreiben, weshalb du noch stehst. Für 1 Runde bist du gegen Emotionseffekte immun."
+            "Description": "Ein anderer mag deinen Gefühlen Befehle erteilen, doch er kann nicht umschreiben, weshalb du noch stehst. Die feindliche Quelle erhält für 1 Runde Benommen 1."
           },
           "ThoughtBehindTheBlood": {
             "Title": "Der Gedanke hinter dem Blut",
@@ -257,22 +257,22 @@
             "Name": "Vom Schmerz geschärft"
           },
           "BackAgainstTheWorld": {
-            "Name": "Rücken an der Welt"
+            "Name": "Gegen die ganze Welt"
           },
           "BloodInTheStride": {
-            "Name": "Blut im Schritt"
+            "Name": "Blut im Griff"
           },
           "YouFlinchFirst": {
             "Name": "Du zuckst zuerst"
           },
           "CrimsonAfterimage": {
-            "Name": "Blutrotes Nachbild"
+            "Name": "Blutrotes Nachbeben"
           },
           "WillThroughTheWound": {
             "Name": "Wille durch die Wunde"
           },
           "WoundHoldsTheWeave": {
-            "Name": "Die Wunde hält das Gewebe"
+            "Name": "Die Wunde hält das Geflecht"
           },
           "ScarletOpening": {
             "Name": "Scharlachrote Öffnung"
@@ -324,7 +324,7 @@
             "Name": "Kein Winkel bleibt"
           },
           "NeverWhereNeeded": {
-            "Name": "Nie dort, wo sie dich brauchen"
+            "Name": "Nie dort, wo sie dich erwarten"
           },
           "FeetRefuseGround": {
             "Name": "Die Füße verweigern den Boden"

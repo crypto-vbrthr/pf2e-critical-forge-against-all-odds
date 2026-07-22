@@ -11,12 +11,12 @@ export const BLOODIED_ATTACK_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Not Yet",
-    fallbackDescription: "Pain meets defiance and loses. For 1 round, you gain 5 temporary Hit Points.",
-    tags: ["temporary-hit-points", "survival", "effect"],
+    fallbackDescription: "Pain turns into force before it can become weakness. For 1 round, you gain a +2 circumstance bonus to Strike damage.",
+    tags: ["strike-damage", "circumstance-bonus", "offense", "effect"],
     effect: {
       duration: SOURCE_ONE_ROUND,
       components: [
-        { type: "temporaryHitPoints", value: 5 }
+        { type: "modifier", selector: "strike-damage", value: 2, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),
@@ -42,13 +42,14 @@ export const BLOODIED_ATTACK_CARDS = Object.freeze([
     category: "criticalHit",
     tone: "dramatic",
     impact: "moderate",
-    fallbackTitle: "Back Against the World",
-    fallbackDescription: "You find a stance where none should remain. For 1 round, you gain a +1 circumstance bonus to AC.",
-    tags: ["armor-class", "circumstance-bonus", "defense", "effect"],
+    fallbackTitle: "Against the Whole World",
+    fallbackDescription: "Your counterstroke tears open the defense that should have ended you. The target is off-guard for 1 round.",
+    tags: ["target", "off-guard", "opening", "effect"],
     effect: {
-      duration: SOURCE_ONE_ROUND,
+      target: "target",
+      duration: TARGET_ONE_ROUND,
       components: [
-        { type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }
+        { type: "condition", slug: "off-guard" }
       ]
     }
   }),
@@ -58,13 +59,13 @@ export const BLOODIED_ATTACK_CARDS = Object.freeze([
     category: "criticalHit",
     tone: "dramatic",
     impact: "light",
-    fallbackTitle: "Blood in the Stride",
-    fallbackDescription: "Your body chooses speed over collapse. For 1 round, you gain a +10-foot status bonus to your land Speed.",
-    tags: ["movement", "land-speed", "status-bonus", "effect"],
+    fallbackTitle: "Blood in the Grip",
+    fallbackDescription: "The pain steadies your hands and gives your threat a terrible certainty. For 1 round, you gain a +1 status bonus to Athletics and Intimidation checks.",
+    tags: ["athletics", "intimidation", "status-bonus", "effect"],
     effect: {
       duration: SOURCE_ONE_ROUND,
       components: [
-        { type: "movement", movementType: "land", value: 10, modifierType: "status" }
+        { type: "modifier", selector: ["athletics", "intimidation"], value: 1, modifierType: "status", predicate: [] }
       ]
     }
   }),
@@ -75,14 +76,13 @@ export const BLOODIED_ATTACK_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "You Flinch First",
-    fallbackDescription: "The enemy realizes the wounded creature still has teeth. The target becomes frightened 1 for 1 round.",
-    tags: ["target", "frightened", "emotion", "effect"],
-    filters: { excludedTargetTraits: ["mindless"] },
+    fallbackDescription: "The target recoils before the wounded creature that should have broken. The target becomes clumsy 1 for 1 round.",
+    tags: ["target", "clumsy", "recoil", "effect"],
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
       components: [
-        { type: "condition", slug: "frightened", value: 1 }
+        { type: "condition", slug: "clumsy", value: 1 }
       ]
     }
   }),
@@ -93,12 +93,12 @@ export const BLOODIED_ATTACK_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Crimson Afterimage",
-    fallbackDescription: "The spell tears a second, blood-red outline from your body. For 1 round, you are concealed.",
-    tags: ["concealed", "afterimage", "defense", "effect"],
+    fallbackDescription: "The spell leaves a second, blood-red impact inside every wound it opens. For 1 round, you gain a +2 status bonus to spell damage.",
+    tags: ["spell-damage", "status-bonus", "offense", "effect"],
     effect: {
       duration: SOURCE_ONE_ROUND,
       components: [
-        { type: "condition", slug: "concealed" }
+        { type: "modifier", selector: "spell-damage", value: 2, modifierType: "status", predicate: [] }
       ]
     }
   }),

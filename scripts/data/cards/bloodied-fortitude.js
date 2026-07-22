@@ -24,6 +24,7 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
     fallbackTitle: "Bitter Blood",
     fallbackDescription: "Your wounded body turns hostile to every toxin that enters it. For 1 round, you gain resistance 3 to poison damage.",
     tags: ["poison", "resistance", "effect"],
+    filters: { attackTraits: ["poison"] },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "resistance", resistanceType: "poison", value: 3 }]
@@ -61,11 +62,11 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Second Pulse",
-    fallbackDescription: "A second rhythm rises beneath the first and drags you back from the brink. For 1 round, you gain fast healing 2.",
+    fallbackDescription: "A second rhythm rises beneath the first and drags you back from the brink. For 1 round, you gain fast healing 4.",
     tags: ["fast-healing", "recovery", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "fastHealing", value: 2 }]
+      components: [{ type: "fastHealing", value: 4 }]
     }
   }),
   defineBloodiedFortitudeCard({
@@ -75,7 +76,8 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "No Room for Nausea",
     fallbackDescription: "Your body has more urgent work than surrendering to sickness. For 1 round, you are immune to the sickened condition.",
-    tags: ["sickened", "immunity", "effect"],
+    tags: ["sickened", "disease", "immunity", "effect"],
+    filters: { attackTraits: ["disease"] },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "immunity", immunityType: "sickened" }]

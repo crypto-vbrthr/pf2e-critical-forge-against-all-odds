@@ -18,15 +18,15 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 3. Bloodied Triumphs Fortitude, first pass: 10 cards. **Complete in 0.1.0-dev.4.**
 4. Bloodied Triumphs Reflex, first pass: 10 cards. **Complete in 0.1.0-dev.5.**
 5. Bloodied Triumphs Will, first pass: 10 cards. **Complete in 0.1.0-dev.6.**
+6. Review the first 40 Bloodied Triumphs cards for balance, overlap, targeting, terminology, and automation. **Complete in 0.1.0-dev.6.1.**
 
 ## Next content milestones
 
-1. Review the first 40 Bloodied Triumphs cards for balance, overlap, targeting, and automation.
-2. Add the second ten-card pass to Attack, Fortitude, Reflex, and Will.
-3. Review the resulting 80-card Bloodied Triumphs pool.
-4. Add the third ten-card pass to reach 30 cards per deck and 120 cards for the theme.
-5. Repeat the three-pass process for Surrounded, Giant-Slayer, and Narrow Escapes.
-6. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+1. Add the second ten-card pass to Attack, Fortitude, Reflex, and Will.
+2. Review the resulting 80-card Bloodied Triumphs pool.
+3. Add the third ten-card pass to reach 30 cards per deck and 120 cards for the theme.
+4. Repeat the three-pass process for Surrounded, Giant-Slayer, and Narrow Escapes.
+5. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
 Every card will:
 

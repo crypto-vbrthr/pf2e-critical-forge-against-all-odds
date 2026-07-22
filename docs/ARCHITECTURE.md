@@ -34,4 +34,4 @@ World settings that enable or disable a theme rebuild all four pack definitions 
 
 Playable cards are immutable schema-1 definitions below `scripts/data/cards/`. The shared card factory supplies complete filter arrays, the dynamic Bloodied condition, localization paths, deck assignment, Effect Definition schema 2 wrappers, and stable metadata. Theme pack construction only places those definitions into the appropriate specialized deck.
 
-The first content batch lives in `scripts/data/cards/bloodied-attack.js` and contains five `criticalHit` and five `spellCriticalHit` cards. No card is duplicated into another deck, and all remaining deck arrays stay empty until their reviewed batch is added.
+The first reviewed content pass is split across `bloodied-attack.js`, `bloodied-fortitude.js`, `bloodied-reflex.js`, and `bloodied-will.js`. Each file contains ten stable-ID cards for its specialized deck. Card filters may additionally bind a specialized result to triggering item traits such as poison, disease, mental, illusion, or emotion. The remaining twelve specialized decks stay empty until their own controlled content passes begin.

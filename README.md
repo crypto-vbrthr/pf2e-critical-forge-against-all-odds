@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.6` completes the first ten-card pass across all four Bloodied Triumphs decks by adding ten Will cards. Bloodied Triumphs now contains 40 of its planned 120 cards; each deck will ultimately contain 30 reviewed cards.
+Version `0.1.0-dev.6.1` applies the first full review to the forty published Bloodied Triumphs cards. The patch preserves every card ID while reducing mechanical overlap, tightening contextual filters, correcting German Remaster terminology, and improving one underpowered healing result. Bloodied Triumphs remains at 40 of its planned 120 cards.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -67,6 +67,6 @@ Bloodied Triumphs now contains forty cards:
 - thirty-six automated Effect Engine cards;
 - four explicit manual cards.
 
-This is the first of three planned ten-card passes per deck. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total.
+This is the reviewed first of three planned ten-card passes per deck. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total. Several specialized cards now additionally require matching effect traits such as poison, disease, mental, illusion, or emotion.
 
 Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.

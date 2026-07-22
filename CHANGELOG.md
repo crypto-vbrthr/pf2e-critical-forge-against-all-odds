@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-dev.6.1
+
+### Changed
+
+- Applied the first forty-card Bloodied Triumphs review without changing any published card ID.
+- Reworked five overlapping Attack cards into Strike damage, off-guard, Athletics/Intimidation, clumsy, and spell-damage effects.
+- Increased **Second Pulse** from fast healing 2 to fast healing 4 while retaining its strong impact rating.
+- Replaced two broad Will immunities with a contextual illusion-defense bonus and an emotion countershock against the hostile source.
+- Added effect-trait filters to poison, disease, mental, illusion, and emotion cards so specialized results respond more closely to the triggering effect.
+- Corrected German Remaster terminology to **Gesteuert** and **Kraftlos**.
+- Polished the German titles **Die Wunde hält das Geflecht** and **Nie dort, wo sie dich erwarten**.
+
+### Tests
+
+- Added regression coverage for stable card IDs, reviewed mechanics, contextual filters, the stronger healing value, reduced Will immunity density, target roles, and German terminology.
+- Revalidated all forty cards and automated Effect Definitions against PF2E Critical Forge `1.0.0-rc`.
+
+### Compatibility
+
+- Card, pack, effect, diagnostic, and extension-contract schema versions remain unchanged.
+- Existing stored references remain valid because all forty card IDs are preserved.
+
 ## 0.1.0-dev.6
 
 ### Added

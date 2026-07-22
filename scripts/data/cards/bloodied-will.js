@@ -37,6 +37,7 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     fallbackTitle: "No Master Here",
     fallbackDescription: "The invading will reaches for a throne and finds only shattered stone and a blade waiting beneath it. For 1 round, you are immune to the controlled condition.",
     tags: ["controlled", "mental", "immunity", "effect"],
+    filters: { attackTraits: ["mental"] },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "immunity", immunityType: "controlled" }]
@@ -48,11 +49,12 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Pain Is Proof",
-    fallbackDescription: "The wound is real, the blood is real, and the lie has nowhere left to hide. For 1 round, you are immune to illusion effects.",
-    tags: ["illusion", "clarity", "immunity", "effect"],
+    fallbackDescription: "The wound is real, the blood is real, and the lie has nowhere left to hide. For 1 round, you gain a +2 circumstance bonus to Perception checks and Will saves.",
+    tags: ["illusion", "clarity", "perception", "will", "effect"],
+    filters: { attackTraits: ["illusion"] },
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "immunity", immunityType: "illusion" }]
+      components: [{ type: "modifier", selector: ["perception", "will"], value: 2, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineBloodiedWillCard({
@@ -61,11 +63,13 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "The Heart Remembers",
-    fallbackDescription: "Someone else may command your feelings, but they cannot rewrite why you are still standing. For 1 round, you are immune to emotion effects.",
-    tags: ["emotion", "resolve", "immunity", "effect"],
+    fallbackDescription: "Someone else may command your feelings, but they cannot rewrite why you are still standing. The hostile source becomes stupefied 1 for 1 round.",
+    tags: ["emotion", "target", "stupefied", "countershock", "effect"],
+    filters: { attackTraits: ["emotion"], excludedTargetTraits: ["mindless"] },
     effect: {
+      target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "immunity", immunityType: "emotion" }]
+      components: [{ type: "condition", slug: "stupefied", value: 1 }]
     }
   }),
   defineBloodiedWillCard({
@@ -76,6 +80,7 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     fallbackTitle: "Thought Behind the Blood",
     fallbackDescription: "Behind the pain, one untouched thought remains and shelters everything that follows. For 1 round, you gain resistance 3 to mental damage.",
     tags: ["mental", "resistance", "effect"],
+    filters: { attackTraits: ["mental"] },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "resistance", resistanceType: "mental", value: 3 }]
