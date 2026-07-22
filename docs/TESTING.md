@@ -29,10 +29,12 @@ The test suite covers:
 - version metadata and localization parity;
 - ten unique Bloodied Triumphs Attack cards;
 - ten unique Bloodied Triumphs Fortitude cards;
+- ten unique Bloodied Triumphs Reflex cards;
 - five ordinary and five spell critical-hit categories;
-- Fortitude deck/category/save-filter isolation;
-- saving-actor targeting for every automated Fortitude boon;
-- unique Fortitude mechanical definitions;
+- Fortitude and Reflex deck/category/save-filter isolation;
+- saving-actor targeting for every automated Fortitude and Reflex boon;
+- unique Fortitude and Reflex mechanical definitions;
+- Reflex movement, area-resistance, concealment, Acrobatics, AC, and short-immunity coverage;
 - immutable Bloodied context conditions;
 - complete filter sets and deck isolation;
 - positive versus hostile effect targeting;

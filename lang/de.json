@@ -160,6 +160,48 @@
             "Title": "Schließ die Wunde",
             "Description": "Dein Körper ergreift eine Verletzung und zwingt sie einem Ende entgegen. Du darfst sofort den Erholungswurf für einen Effekt mit anhaltendem Schaden ablegen, der dich betrifft, und verwendest dabei SG 10 statt des normalen SG."
           }
+        },
+        "Reflex": {
+          "BetweenTheBlades": {
+            "Title": "Zwischen den Schneiden",
+            "Description": "Es gibt keinen sicheren Weg, also schaffst du einen zwischen den Schneiden. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Reflexwürfe und deinen Reflex-SG."
+          },
+          "BloodRedBlur": {
+            "Title": "Blutrotes Flimmern",
+            "Description": "Für einen Herzschlag wird deine verwundete Silhouette unmöglich zu verfolgen. Für 1 Runde bist du verborgen."
+          },
+          "RunBeforeFalling": {
+            "Title": "Lauf, bevor du fällst",
+            "Description": "Dein Körper verbraucht die Kraft von morgen, um das Jetzt zu überleben. Für 1 Runde erhältst du einen Statusbonus von 3 Metern auf deine Bewegungsrate am Boden."
+          },
+          "TurnTheBlastAside": {
+            "Title": "Die Wucht umlenken",
+            "Description": "Du entkommst der Kraft nicht vollständig; du bringst ihr bei, an dem vorbeizugehen, was von dir übrig ist. Für 1 Runde erhältst du Resistenz 3 gegen Flächenschaden."
+          },
+          "NoAngleLeft": {
+            "Title": "Kein Winkel bleibt",
+            "Description": "Jede Angriffslinie schließt sich einen Augenblick zu spät. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deine RK."
+          },
+          "NeverWhereNeeded": {
+            "Title": "Nie dort, wo sie dich brauchen",
+            "Description": "Die perfekte Öffnung des Gegners findet immer wieder nur leere Luft. Für 1 Runde bist du gegen den Zustand Auf dem falschen Fuß immun."
+          },
+          "FeetRefuseGround": {
+            "Title": "Die Füße verweigern den Boden",
+            "Description": "Nicht einmal der Boden kann entscheiden, wo er dich zu fassen bekommt. Für 1 Runde bist du gegen den Zustand Liegend immun."
+          },
+          "WoundTaughtBalance": {
+            "Title": "Von Wunden gelehrtes Gleichgewicht",
+            "Description": "Der Schmerz ist zu einer Karte jeder gefährlichen Gewichtsverlagerung geworden. Für 1 Runde erhältst du einen Statusbonus von +1 auf Akrobatikwürfe."
+          },
+          "SlipTheSnare": {
+            "Title": "Der Schlinge entgleiten",
+            "Description": "Nichts darf dich festhalten, solange dein Überleben noch anderswohin muss. Für 1 Runde bist du gegen den Zustand Bewegungsunfähig immun."
+          },
+          "TwoHeartbeatsAhead": {
+            "Title": "Zwei Herzschläge voraus",
+            "Description": "Du verlässt bereits den Ort, an dem der Tod dich zu finden erwartete. Du darfst sofort als freie Aktion zweimal Schritt ausführen. Jeder Schritt muss dich weiter von der feindlichen Quelle entfernen; die normalen Einschränkungen von Schritt gelten weiterhin."
+          }
         }
       }
     },
@@ -221,6 +263,35 @@
           },
           "StrengthDoesNotLeave": {
             "Name": "Die Kraft weicht nicht"
+          }
+        },
+        "Reflex": {
+          "BetweenTheBlades": {
+            "Name": "Zwischen den Schneiden"
+          },
+          "BloodRedBlur": {
+            "Name": "Blutrotes Flimmern"
+          },
+          "RunBeforeFalling": {
+            "Name": "Lauf, bevor du fällst"
+          },
+          "TurnTheBlastAside": {
+            "Name": "Die Wucht umlenken"
+          },
+          "NoAngleLeft": {
+            "Name": "Kein Winkel bleibt"
+          },
+          "NeverWhereNeeded": {
+            "Name": "Nie dort, wo sie dich brauchen"
+          },
+          "FeetRefuseGround": {
+            "Name": "Die Füße verweigern den Boden"
+          },
+          "WoundTaughtBalance": {
+            "Name": "Von Wunden gelehrtes Gleichgewicht"
+          },
+          "SlipTheSnare": {
+            "Name": "Der Schlinge entgleiten"
           }
         }
       }

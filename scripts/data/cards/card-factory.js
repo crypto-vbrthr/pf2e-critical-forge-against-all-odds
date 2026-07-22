@@ -132,3 +132,19 @@ export function defineBloodiedFortitudeCard(options) {
     filters: { ...options.filters, saveTypes: ["fortitude"] }
   });
 }
+
+export function defineBloodiedReflexCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Bloodied Reflex cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+
+  return defineBloodiedCard({
+    ...options,
+    category: "savingThrowCriticalSuccess",
+    deckType: "reflex",
+    deckToken: "Reflex",
+    contentBatch: 3,
+    tags: ["save", "reflex", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["reflex"] }
+  });
+}

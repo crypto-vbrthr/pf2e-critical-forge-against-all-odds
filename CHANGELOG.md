@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-dev.5
+
+### Added
+
+- Added ten Bloodied Triumphs cards to the specialized Reflex deck.
+- Added nine automated evasion effects and one manual two-Step repositioning result.
+- Added Reflex and Reflex DC reinforcement, concealment, movement, area-damage resistance, AC reinforcement, Acrobatics reinforcement, and short immunities to off-guard, prone, and immobilized.
+- Added German and English card and effect localization.
+- Added Reflex deck isolation, saving-actor targeting, localization, component, uniqueness, and release-contract tests.
+
+### Compatibility
+
+- Continues to use Critical Card schema 1, Critical Card Pack schema 1, Effect Definition schema 2, and Extension Contract 1.
+- Attack, Fortitude, and Reflex are now complete for Bloodied Triumphs; the remaining thirteen specialized decks remain empty by design.
+
 ## 0.1.0-dev.4
 
 ### Added

@@ -160,6 +160,48 @@
             "Title": "Close the Wound",
             "Description": "Your body seizes one injury and forces it toward an ending. You may immediately attempt the recovery check for one persistent damage effect affecting you, using DC 10 instead of its normal DC."
           }
+        },
+        "Reflex": {
+          "BetweenTheBlades": {
+            "Title": "Between the Blades",
+            "Description": "There is no safe path, so you make one between the edges. For 1 round, you gain a +1 circumstance bonus to Reflex saves and Reflex DC."
+          },
+          "BloodRedBlur": {
+            "Title": "Blood-Red Blur",
+            "Description": "For one heartbeat, your wounded outline becomes impossible to follow. For 1 round, you are concealed."
+          },
+          "RunBeforeFalling": {
+            "Title": "Run Before Falling",
+            "Description": "Your body spends tomorrow's strength on surviving now. For 1 round, you gain a +10-foot status bonus to your land Speed."
+          },
+          "TurnTheBlastAside": {
+            "Title": "Turn the Blast Aside",
+            "Description": "You do not escape the force completely; you teach it to pass around what remains of you. For 1 round, you gain resistance 3 to area damage."
+          },
+          "NoAngleLeft": {
+            "Title": "No Angle Left",
+            "Description": "Every line of attack closes a fraction too late. For 1 round, you gain a +1 circumstance bonus to AC."
+          },
+          "NeverWhereNeeded": {
+            "Title": "Never Where They Need You",
+            "Description": "The enemy's perfect opening keeps finding empty air. For 1 round, you are immune to the off-guard condition."
+          },
+          "FeetRefuseGround": {
+            "Title": "The Feet Refuse the Ground",
+            "Description": "Even the floor cannot decide where to catch you. For 1 round, you are immune to the prone condition."
+          },
+          "WoundTaughtBalance": {
+            "Title": "Wound-Taught Balance",
+            "Description": "Pain has become a map of every dangerous shift in your weight. For 1 round, you gain a +1 status bonus to Acrobatics checks."
+          },
+          "SlipTheSnare": {
+            "Title": "Slip the Snare",
+            "Description": "Nothing gets to hold you while survival still has somewhere else to be. For 1 round, you are immune to the immobilized condition."
+          },
+          "TwoHeartbeatsAhead": {
+            "Title": "Two Heartbeats Ahead",
+            "Description": "You are already leaving the place where death expected to find you. You may immediately Step twice as a free action. Each Step must move you farther from the hostile source, and the normal restrictions of Step apply."
+          }
         }
       }
     },
@@ -221,6 +263,35 @@
           },
           "StrengthDoesNotLeave": {
             "Name": "Strength Does Not Leave"
+          }
+        },
+        "Reflex": {
+          "BetweenTheBlades": {
+            "Name": "Between the Blades"
+          },
+          "BloodRedBlur": {
+            "Name": "Blood-Red Blur"
+          },
+          "RunBeforeFalling": {
+            "Name": "Run Before Falling"
+          },
+          "TurnTheBlastAside": {
+            "Name": "Turn the Blast Aside"
+          },
+          "NoAngleLeft": {
+            "Name": "No Angle Left"
+          },
+          "NeverWhereNeeded": {
+            "Name": "Never Where They Need You"
+          },
+          "FeetRefuseGround": {
+            "Name": "The Feet Refuse the Ground"
+          },
+          "WoundTaughtBalance": {
+            "Name": "Wound-Taught Balance"
+          },
+          "SlipTheSnare": {
+            "Name": "Slip the Snare"
           }
         }
       }

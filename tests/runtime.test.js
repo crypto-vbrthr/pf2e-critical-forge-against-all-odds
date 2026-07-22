@@ -70,6 +70,7 @@ test("runtime registration binds all resources through the extension contract", 
   const bloodied = runtime.listPacks().find((pack) => pack.id.endsWith("bloodied-triumphs"));
   assert.equal(bloodied.decks.attack.cards.length, 10);
   assert.equal(bloodied.decks.fortitude.cards.length, 10);
+  assert.equal(bloodied.decks.reflex.cards.length, 10);
 });
 
 test("runtime rejects a Forge without battlefield threat evaluation", () => {

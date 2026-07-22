@@ -66,6 +66,7 @@ for (const file of files) {
 const packsSource = fs.readFileSync(path.join(root, "scripts/data/packs.js"), "utf8");
 const { BLOODIED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-attack.js")).href);
 const { BLOODIED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-fortitude.js")).href);
+const { BLOODIED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-reflex.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -80,6 +81,13 @@ check(BLOODIED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Fortitude cards require critical save success.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Bloodied Triumphs Fortitude cards must require Fortitude.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Fortitude cards must use the dynamic Bloodied condition.");
+
+check(BLOODIED_REFLEX_CARDS.length === 10, "Bloodied Triumphs Reflex deck must contain ten cards.");
+check(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs Reflex card IDs must be unique.");
+check(BLOODIED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Bloodied Triumphs Reflex cards must remain in the Reflex deck.");
+check(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Reflex cards require critical save success.");
+check(BLOODIED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Bloodied Triumphs Reflex cards must require Reflex.");
+check(BLOODIED_REFLEX_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Reflex cards must use the dynamic Bloodied condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

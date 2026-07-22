@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.4` adds the second playable content batch: ten Bloodied Triumphs cards in the Fortitude deck. Attack and Fortitude are now complete for this theme; the remaining fourteen specialized decks stay reserved for reviewed follow-up batches.
+Version `0.1.0-dev.5` adds the third playable content batch: ten Bloodied Triumphs cards in the Reflex deck. Attack, Fortitude, and Reflex are now complete for this theme; the remaining thirteen specialized decks stay reserved for reviewed follow-up batches.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -58,11 +58,12 @@ See:
 
 ## Current playable cards
 
-Bloodied Triumphs now contains twenty cards:
+Bloodied Triumphs now contains thirty cards:
 
 - ten Attack-deck cards, split evenly between ordinary and spell critical hits;
 - ten Fortitude-deck cards for critically successful Fortitude saves;
-- eighteen automated Effect Engine cards;
-- two explicit manual cards.
+- ten Reflex-deck cards for critically successful Reflex saves;
+- twenty-seven automated Effect Engine cards;
+- three explicit manual cards.
 
-Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; Fortitude cards remain isolated to `fortitude` and require the `fortitude` save filter.
+Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.
