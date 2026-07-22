@@ -1,0 +1,55 @@
+{
+  "id": "pf2e-critical-forge-against-all-odds",
+  "title": "PF2E Critical Forge: Against All Odds",
+  "description": "A context-sensitive expansion for PF2E Critical Forge, focused on bloodied triumphs, desperate stands, giant-slayer moments, and narrow escapes.",
+  "version": "0.1.0-dev.2",
+  "authors": [
+    {
+      "name": "crypto-vbrthr"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "pf2e-critical-forge",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.0.0-rc"
+        }
+      }
+    ],
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.1.2"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "license": "LICENSE",
+  "readme": "README.md",
+  "url": "https://github.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds",
+  "manifest": "https://raw.githubusercontent.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds/main/module.json",
+  "download": "https://github.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds/releases/download/0.1.0-dev.2/pf2e-critical-forge-against-all-odds.zip"
+}

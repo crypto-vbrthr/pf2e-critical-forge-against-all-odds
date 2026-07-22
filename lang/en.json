@@ -1,0 +1,79 @@
+{
+  "PF2E_AGAINST_ALL_ODDS": {
+    "Packs": {
+      "BloodiedTriumphs": {
+        "Title": "Bloodied Triumphs",
+        "Description": "Critical moments achieved by a hero who is already badly hurt."
+      },
+      "SurroundedStillStanding": {
+        "Title": "Surrounded, Still Standing",
+        "Description": "Critical moments achieved while several enemies immediately threaten the hero in melee."
+      },
+      "GiantSlayerMoments": {
+        "Title": "Giant-Slayer Moments",
+        "Description": "Critical moments against opponents far beyond the hero in power and level."
+      },
+      "NarrowEscapes": {
+        "Title": "Narrow Escapes",
+        "Description": "Critical moments achieved when several dangerous circumstances converge."
+      }
+    },
+    "Settings": {
+      "EnableBloodiedTriumphs": {
+        "Name": "Enable Bloodied Triumphs",
+        "Hint": "Registers Bloodied Triumphs as an active Critical Forge theme pack."
+      },
+      "EnableSurroundedStillStanding": {
+        "Name": "Enable Surrounded, Still Standing",
+        "Hint": "Registers the theme pack for heroes immediately threatened by several enemies."
+      },
+      "EnableGiantSlayerMoments": {
+        "Name": "Enable Giant-Slayer Moments",
+        "Hint": "Registers the theme pack for critical success against substantially higher-level opponents."
+      },
+      "EnableNarrowEscapes": {
+        "Name": "Enable Narrow Escapes",
+        "Hint": "Registers the theme pack for critical moments under an especially dangerous combination of circumstances."
+      },
+      "BloodiedThreshold": {
+        "Name": "Bloodied Triumphs threshold",
+        "Hint": "Maximum current hit point ratio at which an actor counts as bloodied. Default: 0.5 or 50%."
+      },
+      "SurroundedThreshold": {
+        "Name": "Required threatening enemies",
+        "Hint": "Minimum number of automatically evaluated melee threats for Surrounded, Still Standing."
+      },
+      "GiantSlayerThreshold": {
+        "Name": "Giant-Slayer level gap",
+        "Hint": "Minimum difference between the opponent's level and the rolling actor's level."
+      },
+      "NarrowEscapeThreshold": {
+        "Name": "Narrow Escape danger score",
+        "Hint": "Minimum score of the additive danger model. The current formula is documented by the module."
+      }
+    },
+    "Fields": {
+      "Group": "Against All Odds",
+      "RollKind": "Roll deck",
+      "BloodiedMatched": "Bloodied requirement met",
+      "HitPointRatio": "Hit point ratio",
+      "BloodiedThreshold": "Bloodied threshold",
+      "SurroundedMatched": "Surrounded requirement met",
+      "ThreatCount": "Threatening enemies",
+      "SurroundedThreshold": "Required threat count",
+      "GiantSlayerMatched": "Giant-Slayer requirement met",
+      "RollerLevel": "Rolling actor level",
+      "OpponentLevel": "Opponent level",
+      "LevelGap": "Level gap",
+      "GiantSlayerThreshold": "Required level gap",
+      "NarrowEscapeMatched": "Danger requirement met",
+      "DangerScore": "Danger score",
+      "DangerThreshold": "Required danger score",
+      "DangerComponents": "Danger components"
+    },
+    "Notifications": {
+      "Refreshed": "Against All Odds packs were refreshed.",
+      "RegistrationFailed": "PF2E Critical Forge: Against All Odds could not register with Critical Forge. See the console for details."
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "PF2E_AGAINST_ALL_ODDS": {
+    "Packs": {
+      "BloodiedTriumphs": {
+        "Title": "Blutige Triumphe",
+        "Description": "Kritische Momente, die ein bereits schwer angeschlagener Held erringt."
+      },
+      "SurroundedStillStanding": {
+        "Title": "Umzingelt und noch immer aufrecht",
+        "Description": "Kritische Momente, während mehrere Gegner den Helden unmittelbar im Nahkampf bedrohen."
+      },
+      "GiantSlayerMoments": {
+        "Title": "Riesentöter-Momente",
+        "Description": "Kritische Momente gegen Gegner, die dem Helden an Macht und Stufe deutlich überlegen sind."
+      },
+      "NarrowEscapes": {
+        "Title": "Haarscharf entkommen",
+        "Description": "Kritische Momente, in denen mehrere gefährliche Umstände gleichzeitig zusammenkommen."
+      }
+    },
+    "Settings": {
+      "EnableBloodiedTriumphs": {
+        "Name": "Blutige Triumphe aktivieren",
+        "Hint": "Registriert das Themenpaket „Blutige Triumphe“ als aktives Critical-Forge-Paket."
+      },
+      "EnableSurroundedStillStanding": {
+        "Name": "Umzingelt und noch immer aufrecht aktivieren",
+        "Hint": "Registriert das Themenpaket für Helden, die von mehreren Gegnern bedroht werden."
+      },
+      "EnableGiantSlayerMoments": {
+        "Name": "Riesentöter-Momente aktivieren",
+        "Hint": "Registriert das Themenpaket für kritische Erfolge gegen deutlich höherstufige Gegner."
+      },
+      "EnableNarrowEscapes": {
+        "Name": "Haarscharf entkommen aktivieren",
+        "Hint": "Registriert das Themenpaket für kritische Erfolge unter besonders gefährlichen Gesamtumständen."
+      },
+      "BloodiedThreshold": {
+        "Name": "Schwelle für Blutige Triumphe",
+        "Hint": "Maximaler Anteil der aktuellen Trefferpunkte, bei dem ein Actor als schwer angeschlagen gilt. Standard: 0,5 beziehungsweise 50 %."
+      },
+      "SurroundedThreshold": {
+        "Name": "Benötigte bedrohende Gegner",
+        "Hint": "Mindestanzahl automatisch ermittelter Nahkampfbedrohungen für das Paket „Umzingelt und noch immer aufrecht“."
+      },
+      "GiantSlayerThreshold": {
+        "Name": "Stufendifferenz für Riesentöter-Momente",
+        "Hint": "Mindestdifferenz zwischen Gegnerstufe und Stufe des würfelnden Actors."
+      },
+      "NarrowEscapeThreshold": {
+        "Name": "Gefahrenwert für Haarscharf entkommen",
+        "Hint": "Mindestwert des additiven Gefahrenmodells. Die derzeitige Formel ist in der Moduldokumentation beschrieben."
+      }
+    },
+    "Fields": {
+      "Group": "Against All Odds",
+      "RollKind": "Wurfdeck",
+      "BloodiedMatched": "Schwer angeschlagen erfüllt",
+      "HitPointRatio": "Trefferpunktanteil",
+      "BloodiedThreshold": "Schwelle für schwer angeschlagen",
+      "SurroundedMatched": "Umzingelt erfüllt",
+      "ThreatCount": "Bedrohende Gegner",
+      "SurroundedThreshold": "Benötigte Gegneranzahl",
+      "GiantSlayerMatched": "Riesentöter erfüllt",
+      "RollerLevel": "Stufe des würfelnden Actors",
+      "OpponentLevel": "Stufe des Gegners",
+      "LevelGap": "Stufendifferenz",
+      "GiantSlayerThreshold": "Benötigte Stufendifferenz",
+      "NarrowEscapeMatched": "Gefahrenwert erfüllt",
+      "DangerScore": "Gefahrenwert",
+      "DangerThreshold": "Benötigter Gefahrenwert",
+      "DangerComponents": "Gefahrenkomponenten"
+    },
+    "Notifications": {
+      "Refreshed": "Against-All-Odds-Pakete wurden aktualisiert.",
+      "RegistrationFailed": "PF2E Critical Forge: Against All Odds konnte nicht bei Critical Forge registriert werden. Details stehen in der Konsole."
+    }
+  }
+}

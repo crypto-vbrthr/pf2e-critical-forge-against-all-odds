@@ -1,0 +1,15 @@
+{
+  "name": "pf2e-critical-forge-against-all-odds",
+  "version": "0.1.0-dev.2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-concurrency=1",
+    "test:coverage": "node --experimental-test-coverage --test --test-concurrency=1",
+    "quality:check": "npm test && node tools/release-check.mjs --allow-dev",
+    "release:check": "npm test && node tools/release-check.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
