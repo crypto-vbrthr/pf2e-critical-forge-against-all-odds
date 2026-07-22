@@ -74,6 +74,85 @@
     "Notifications": {
       "Refreshed": "Against All Odds packs were refreshed.",
       "RegistrationFailed": "PF2E Critical Forge: Against All Odds could not register with Critical Forge. See the console for details."
+    },
+    "Cards": {
+      "BloodiedTriumphs": {
+        "Attack": {
+          "NotYet": {
+            "Title": "Not Yet",
+            "Description": "Pain meets defiance and loses. For 1 round, you gain 5 temporary Hit Points."
+          },
+          "PainHonedEdge": {
+            "Title": "Pain-Honed Edge",
+            "Description": "Every wound redraws the line of your next attack. For 1 round, you gain a +1 circumstance bonus to attack rolls."
+          },
+          "BackAgainstTheWorld": {
+            "Title": "Back Against the World",
+            "Description": "You find a stance where none should remain. For 1 round, you gain a +1 circumstance bonus to AC."
+          },
+          "BloodInTheStride": {
+            "Title": "Blood in the Stride",
+            "Description": "Your body chooses speed over collapse. For 1 round, you gain a +10-foot status bonus to your land Speed."
+          },
+          "YouFlinchFirst": {
+            "Title": "You Flinch First",
+            "Description": "The enemy realizes the wounded creature still has teeth. The target becomes frightened 1 for 1 round."
+          },
+          "CrimsonAfterimage": {
+            "Title": "Crimson Afterimage",
+            "Description": "The spell tears a second, blood-red outline from your body. For 1 round, you are concealed."
+          },
+          "WillThroughTheWound": {
+            "Title": "Will Through the Wound",
+            "Description": "The successful spell proves that your will is still stronger than your injuries. For 1 round, you gain a +1 status bonus to saving throws."
+          },
+          "WoundHoldsTheWeave": {
+            "Title": "The Wound Holds the Weave",
+            "Description": "For one impossible moment, your injuries anchor magic instead of weakening it. For 1 round, you gain resistance 2 to all damage."
+          },
+          "ScarletOpening": {
+            "Title": "Scarlet Opening",
+            "Description": "The critical spell leaves the target's defenses traced in red. For 1 round, the target takes a -1 circumstance penalty to saving throws."
+          },
+          "OneMoreBreath": {
+            "Title": "One More Breath",
+            "Description": "The spell buys a heartbeat from a future that had already spent it. You may immediately Step as a free action, following the normal restrictions of Step."
+          }
+        }
+      }
+    },
+    "Effects": {
+      "BloodiedTriumphs": {
+        "Attack": {
+          "NotYet": {
+            "Name": "Not Yet"
+          },
+          "PainHonedEdge": {
+            "Name": "Pain-Honed Edge"
+          },
+          "BackAgainstTheWorld": {
+            "Name": "Back Against the World"
+          },
+          "BloodInTheStride": {
+            "Name": "Blood in the Stride"
+          },
+          "YouFlinchFirst": {
+            "Name": "You Flinch First"
+          },
+          "CrimsonAfterimage": {
+            "Name": "Crimson Afterimage"
+          },
+          "WillThroughTheWound": {
+            "Name": "Will Through the Wound"
+          },
+          "WoundHoldsTheWeave": {
+            "Name": "The Wound Holds the Weave"
+          },
+          "ScarletOpening": {
+            "Name": "Scarlet Opening"
+          }
+        }
+      }
     }
   }
 }

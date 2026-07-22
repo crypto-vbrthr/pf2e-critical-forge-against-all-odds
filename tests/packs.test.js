@@ -21,9 +21,12 @@ test("the add-on defines four namespaced theme packs", () => {
 test("every theme reserves attack, Fortitude, Reflex, and Will decks", () => {
   for (const pack of buildAgainstAllOddsPacks(enabled)) {
     assert.deepEqual(Object.keys(pack.decks), [...SPECIALIZED_DECK_TYPES]);
-    for (const deckType of SPECIALIZED_DECK_TYPES) assert.deepEqual(pack.decks[deckType].cards, []);
+    for (const deckType of SPECIALIZED_DECK_TYPES) {
+      const expected = pack.id.endsWith("bloodied-triumphs") && deckType === "attack" ? 10 : 0;
+      assert.equal(pack.decks[deckType].cards.length, expected);
+    }
     assert.equal(pack.metadata.plannedCardsPerDeck, 10);
-    assert.equal(pack.metadata.contentStatus, "foundation");
+    assert.equal(pack.metadata.contentStatus, pack.id.endsWith("bloodied-triumphs") ? "attack-batch-1" : "foundation");
   }
 });
 

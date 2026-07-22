@@ -26,6 +26,13 @@ The test suite covers:
 - owned-resource rollback;
 - atomic pack refresh;
 - settings registration and clamping;
-- version metadata and localization parity.
+- version metadata and localization parity;
+- ten unique Bloodied Triumphs Attack cards;
+- five ordinary and five spell critical-hit categories;
+- immutable Bloodied context conditions;
+- complete filter sets and deck isolation;
+- positive versus hostile effect targeting;
+- supported Effect Engine component types;
+- German and English card/effect localization coverage.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.

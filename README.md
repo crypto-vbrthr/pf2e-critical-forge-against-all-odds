@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.2` is the add-on foundation. It registers the extension contract, runtime context provider, visual Card Editor fields, diagnostic evidence, world settings, and all sixteen planned deck slots. It intentionally contains no playable cards yet. Card content will be added in reviewed batches after the runtime triggers have been smoke-tested in Foundry.
+Version `0.1.0-dev.3` adds the first playable content batch: ten Bloodied Triumphs cards in the Attack deck. The remaining fifteen specialized decks stay reserved for reviewed follow-up batches.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -55,3 +55,14 @@ See:
 - [`docs/CONTEXT_FIELDS.md`](docs/CONTEXT_FIELDS.md)
 - [`docs/CARD_ROADMAP.md`](docs/CARD_ROADMAP.md)
 - [`docs/TESTING.md`](docs/TESTING.md)
+
+## Current playable cards
+
+Bloodied Triumphs now contains ten Attack-deck cards:
+
+- five cards for ordinary critical hits;
+- five cards for critical spell attacks;
+- nine automated Effect Engine cards;
+- one manual immediate-Step card.
+
+Every card requires `extensions.againstAllOdds.bloodied.matched == true` and is isolated to the specialized `attack` deck.

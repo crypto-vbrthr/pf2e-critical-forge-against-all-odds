@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-dev.3
+
+### Added
+
+- Added the first ten playable Bloodied Triumphs cards to the specialized Attack deck.
+- Added five ordinary critical-hit cards and five critical spell-hit cards.
+- Added nine automated Effect Engine definitions and one manual immediate-Step result.
+- Added German and English card and effect localization.
+- Added structural, localization, condition, targeting, and deck-isolation tests for the first card batch.
+
+### Compatibility
+
+- Continues to use Critical Card schema 1, Critical Card Pack schema 1, Effect Definition schema 2, and Extension Contract 1.
+- The other fifteen specialized decks remain empty by design.
+
 ## 0.1.0-dev.2
 
 ### Changed

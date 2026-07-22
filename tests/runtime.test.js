@@ -67,6 +67,7 @@ test("runtime registration binds all resources through the extension contract", 
   assert.equal(fx.options.requirements.capabilities.includes("cards.multiDeckPacks"), true);
   assert.equal(fx.moduleRecord.api, runtime);
   assert.equal(runtime.listPacks().length, 4);
+  assert.equal(runtime.listPacks().find((pack) => pack.id.endsWith("bloodied-triumphs")).decks.attack.cards.length, 10);
 });
 
 test("runtime rejects a Forge without battlefield threat evaluation", () => {

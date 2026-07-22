@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const allowDev = process.argv.includes("--allow-dev");
@@ -64,10 +64,15 @@ for (const file of files) {
 }
 
 const packsSource = fs.readFileSync(path.join(root, "scripts/data/packs.js"), "utf8");
+const { BLOODIED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-attack.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
 check(packsSource.includes("plannedCardsPerDeck: 10"), "Card roadmap metadata is missing.");
+check(BLOODIED_ATTACK_CARDS.length === 10, "Bloodied Triumphs Attack deck must contain ten cards.");
+check(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs card IDs must be unique.");
+check(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Bloodied Triumphs cards must remain in the Attack deck.");
+check(BLOODIED_ATTACK_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs cards must use the dynamic Bloodied condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

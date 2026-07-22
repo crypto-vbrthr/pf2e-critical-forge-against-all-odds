@@ -74,6 +74,85 @@
     "Notifications": {
       "Refreshed": "Against-All-Odds-Pakete wurden aktualisiert.",
       "RegistrationFailed": "PF2E Critical Forge: Against All Odds konnte nicht bei Critical Forge registriert werden. Details stehen in der Konsole."
+    },
+    "Cards": {
+      "BloodiedTriumphs": {
+        "Attack": {
+          "NotYet": {
+            "Title": "Noch nicht",
+            "Description": "Der Schmerz trifft auf Trotz und verliert. Für 1 Runde erhältst du 5 temporäre Trefferpunkte."
+          },
+          "PainHonedEdge": {
+            "Title": "Vom Schmerz geschärft",
+            "Description": "Jede Wunde zeichnet die Linie deines nächsten Angriffs schärfer. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Angriffswürfe."
+          },
+          "BackAgainstTheWorld": {
+            "Title": "Rücken an der Welt",
+            "Description": "Du findest Halt, wo keiner mehr sein dürfte. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deine RK."
+          },
+          "BloodInTheStride": {
+            "Title": "Blut im Schritt",
+            "Description": "Dein Körper entscheidet sich gegen das Fallen und für Geschwindigkeit. Für 1 Runde erhältst du einen Statusbonus von 3 Metern auf deine Bewegungsrate am Boden."
+          },
+          "YouFlinchFirst": {
+            "Title": "Du zuckst zuerst",
+            "Description": "Der Gegner erkennt, dass der Verwundete noch Zähne hat. Das Ziel erhält für 1 Runde Verängstigt 1."
+          },
+          "CrimsonAfterimage": {
+            "Title": "Blutrotes Nachbild",
+            "Description": "Der Zauber reißt ein zweites, blutrotes Abbild aus deinem Körper. Für 1 Runde bist du verborgen."
+          },
+          "WillThroughTheWound": {
+            "Title": "Wille durch die Wunde",
+            "Description": "Der gelungene Zauber beweist, dass dein Wille noch immer stärker ist als deine Verletzungen. Für 1 Runde erhältst du einen Statusbonus von +1 auf Rettungswürfe."
+          },
+          "WoundHoldsTheWeave": {
+            "Title": "Die Wunde hält das Gewebe",
+            "Description": "Für einen unmöglichen Augenblick verankern deine Verletzungen die Magie, statt sie zu schwächen. Für 1 Runde erhältst du Resistenz 2 gegen jeglichen Schaden."
+          },
+          "ScarletOpening": {
+            "Title": "Scharlachrote Öffnung",
+            "Description": "Der kritische Zauber zeichnet die Verteidigung des Ziels in Rot nach. Für 1 Runde erhält das Ziel einen Umstandsmalus von -1 auf Rettungswürfe."
+          },
+          "OneMoreBreath": {
+            "Title": "Noch ein Atemzug",
+            "Description": "Der Zauber kauft einen Herzschlag aus einer Zukunft, die ihn bereits ausgegeben hatte. Du darfst sofort als freie Aktion einen Schritt ausführen. Dabei gelten die normalen Einschränkungen für Schritt."
+          }
+        }
+      }
+    },
+    "Effects": {
+      "BloodiedTriumphs": {
+        "Attack": {
+          "NotYet": {
+            "Name": "Noch nicht"
+          },
+          "PainHonedEdge": {
+            "Name": "Vom Schmerz geschärft"
+          },
+          "BackAgainstTheWorld": {
+            "Name": "Rücken an der Welt"
+          },
+          "BloodInTheStride": {
+            "Name": "Blut im Schritt"
+          },
+          "YouFlinchFirst": {
+            "Name": "Du zuckst zuerst"
+          },
+          "CrimsonAfterimage": {
+            "Name": "Blutrotes Nachbild"
+          },
+          "WillThroughTheWound": {
+            "Name": "Wille durch die Wunde"
+          },
+          "WoundHoldsTheWeave": {
+            "Name": "Die Wunde hält das Gewebe"
+          },
+          "ScarletOpening": {
+            "Name": "Scharlachrote Öffnung"
+          }
+        }
+      }
     }
   }
 }

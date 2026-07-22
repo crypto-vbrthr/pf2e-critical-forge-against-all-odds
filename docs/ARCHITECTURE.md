@@ -28,3 +28,10 @@ All packs and providers are registered through the controller bound to `pf2e-cri
 ## Pack replacement
 
 World settings that enable or disable a theme rebuild all four pack definitions and atomically replace only the add-on's existing packs. Threshold changes are read live by the Context Provider; pack replacement is still safe and keeps the editor state synchronized.
+
+
+## Card content
+
+Playable cards are immutable schema-1 definitions below `scripts/data/cards/`. The shared card factory supplies complete filter arrays, the dynamic Bloodied condition, localization paths, deck assignment, Effect Definition schema 2 wrappers, and stable metadata. Theme pack construction only places those definitions into the appropriate specialized deck.
+
+The first content batch lives in `scripts/data/cards/bloodied-attack.js` and contains five `criticalHit` and five `spellCriticalHit` cards. No card is duplicated into another deck, and all remaining deck arrays stay empty until their reviewed batch is added.
