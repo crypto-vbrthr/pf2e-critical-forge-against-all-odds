@@ -5,6 +5,7 @@ import {
   THEME_IDS
 } from "../constants.js";
 import { BLOODIED_ATTACK_CARDS } from "./cards/bloodied-attack.js";
+import { BLOODIED_FORTITUDE_CARDS } from "./cards/bloodied-fortitude.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -56,13 +57,15 @@ export function buildAgainstAllOddsPacks(settings = {}) {
       addOn: MODULE_ID,
       theme: theme.id,
       conditionPath: theme.conditionPath,
-      contentStatus: theme.id === THEME_IDS.BLOODIED ? "attack-batch-1" : "foundation",
+      contentStatus: theme.id === THEME_IDS.BLOODIED ? "attack-and-fortitude-batches" : "foundation",
       plannedCardsPerDeck: 10
     },
     decks: Object.fromEntries(SPECIALIZED_DECK_TYPES.map((deckType) => [deckType, {
       cards: theme.id === THEME_IDS.BLOODIED && deckType === "attack"
         ? BLOODIED_ATTACK_CARDS
-        : []
+        : theme.id === THEME_IDS.BLOODIED && deckType === "fortitude"
+          ? BLOODIED_FORTITUDE_CARDS
+          : []
     }]))
   }));
 }

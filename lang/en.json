@@ -118,6 +118,48 @@
             "Title": "One More Breath",
             "Description": "The spell buys a heartbeat from a future that had already spent it. You may immediately Step as a free action, following the normal restrictions of Step."
           }
+        },
+        "Fortitude": {
+          "HeartRefuses": {
+            "Title": "The Heart Refuses",
+            "Description": "The body hears the order to fail and answers with another beat. For 1 round, you gain 6 temporary Hit Points."
+          },
+          "BitterBlood": {
+            "Title": "Bitter Blood",
+            "Description": "Your wounded body turns hostile to every toxin that enters it. For 1 round, you gain resistance 3 to poison damage."
+          },
+          "BodyAsBastion": {
+            "Title": "Body as Bastion",
+            "Description": "Muscle, bone, and stubbornness lock into one defensive shape. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and Fortitude DC."
+          },
+          "FleshBecomesArmor": {
+            "Title": "Flesh Becomes Armor",
+            "Description": "Pain hardens the body faster than steel can break it. For 1 round, you gain resistance 2 to physical damage."
+          },
+          "SecondPulse": {
+            "Title": "Second Pulse",
+            "Description": "A second rhythm rises beneath the first and drags you back from the brink. For 1 round, you gain fast healing 2."
+          },
+          "NoRoomForNausea": {
+            "Title": "No Room for Nausea",
+            "Description": "Your body has more urgent work than surrendering to sickness. For 1 round, you are immune to the sickened condition."
+          },
+          "BloodObeys": {
+            "Title": "Blood Obeys",
+            "Description": "The blood already spilled is enough; the rest stays where you command it. For 1 round, you gain resistance 3 to bleed damage."
+          },
+          "NervesRefuse": {
+            "Title": "The Nerves Refuse",
+            "Description": "Shock races through you and finds every nerve already occupied by defiance. For 1 round, you are immune to the stunned condition."
+          },
+          "StrengthDoesNotLeave": {
+            "Title": "Strength Does Not Leave",
+            "Description": "Your strength may bend, but for one more moment it cannot be taken from you. For 1 round, you are immune to the enfeebled condition."
+          },
+          "CloseTheWound": {
+            "Title": "Close the Wound",
+            "Description": "Your body seizes one injury and forces it toward an ending. You may immediately attempt the recovery check for one persistent damage effect affecting you, using DC 10 instead of its normal DC."
+          }
         }
       }
     },
@@ -150,6 +192,35 @@
           },
           "ScarletOpening": {
             "Name": "Scarlet Opening"
+          }
+        },
+        "Fortitude": {
+          "HeartRefuses": {
+            "Name": "The Heart Refuses"
+          },
+          "BitterBlood": {
+            "Name": "Bitter Blood"
+          },
+          "BodyAsBastion": {
+            "Name": "Body as Bastion"
+          },
+          "FleshBecomesArmor": {
+            "Name": "Flesh Becomes Armor"
+          },
+          "SecondPulse": {
+            "Name": "Second Pulse"
+          },
+          "NoRoomForNausea": {
+            "Name": "No Room for Nausea"
+          },
+          "BloodObeys": {
+            "Name": "Blood Obeys"
+          },
+          "NervesRefuse": {
+            "Name": "The Nerves Refuse"
+          },
+          "StrengthDoesNotLeave": {
+            "Name": "Strength Does Not Leave"
           }
         }
       }

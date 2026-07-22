@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-dev.4
+
+### Added
+
+- Added ten Bloodied Triumphs cards to the specialized Fortitude deck.
+- Added nine automated endurance effects and one manual persistent-damage recovery result.
+- Added temporary Hit Points, Fortitude and Fortitude DC reinforcement, physical, poison, and bleed resistance, fast healing, and short condition immunities.
+- Added German and English card and effect localization.
+- Added Fortitude deck isolation, saving-actor targeting, localization, component, and uniqueness tests.
+
+### Compatibility
+
+- Continues to use Critical Card schema 1, Critical Card Pack schema 1, Effect Definition schema 2, and Extension Contract 1.
+- Attack and Fortitude are now complete for Bloodied Triumphs; the remaining fourteen specialized decks remain empty by design.
+
 ## 0.1.0-dev.3
 
 ### Added

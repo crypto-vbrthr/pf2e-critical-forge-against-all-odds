@@ -38,24 +38,30 @@ function freezeFilters(filters = {}) {
   ));
 }
 
-function freezeEffect(effect, localizationKey, fallbackTitle) {
+function freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }) {
   if (!effect) return null;
   return Object.freeze({
     target: effect.target ?? "source",
-    nameKey: `PF2E_AGAINST_ALL_ODDS.Effects.BloodiedTriumphs.Attack.${localizationKey}.Name`,
+    nameKey: `PF2E_AGAINST_ALL_ODDS.Effects.BloodiedTriumphs.${deckToken}.${localizationKey}.Name`,
     fallbackName: effect.fallbackName ?? fallbackTitle,
     definition: Object.freeze({
       schemaVersion: 2,
       duration: Object.freeze({ ...effect.duration }),
-      components: Object.freeze((effect.components ?? []).map((component) => Object.freeze({ ...component })))
+      components: Object.freeze((effect.components ?? []).map((component) => Object.freeze({
+        ...component,
+        ...(Array.isArray(component.selector) ? { selector: Object.freeze([...component.selector]) } : {}),
+        ...(Array.isArray(component.predicate) ? { predicate: Object.freeze([...component.predicate]) } : {})
+      })))
     })
   });
 }
 
-export function defineBloodiedAttackCard({
+function defineBloodiedCard({
   id,
   localizationKey,
   category,
+  deckType,
+  deckToken,
   tone,
   impact,
   fallbackTitle,
@@ -63,40 +69,66 @@ export function defineBloodiedAttackCard({
   weight = 1,
   tags = [],
   filters = {},
-  effect = null
+  effect = null,
+  contentBatch
 }) {
-  if (!["criticalHit", "spellCriticalHit"].includes(category)) {
-    throw new TypeError(`Bloodied attack cards require an attack critical-success category: ${category}`);
-  }
-
   return Object.freeze({
     schemaVersion: 1,
-    id: `${MODULE_ID}.bloodied-triumphs.attack.${id}`,
+    id: `${MODULE_ID}.bloodied-triumphs.${deckType}.${id}`,
     packId: AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs,
     category,
-    deckType: "attack",
+    deckType,
     tone,
     impact,
-    titleKey: `PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.Attack.${localizationKey}.Title`,
-    descriptionKey: `PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.Attack.${localizationKey}.Description`,
+    titleKey: `PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.${deckToken}.${localizationKey}.Title`,
+    descriptionKey: `PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.${deckToken}.${localizationKey}.Description`,
     fallbackTitle,
     fallbackDescription,
     weight,
     tags: Object.freeze([
       "against-all-odds",
       "bloodied-triumphs",
-      "attack",
+      deckType,
       "critical-success",
-      category === "spellCriticalHit" ? "spell" : "strike",
       ...unique(tags)
     ]),
     filters: freezeFilters(filters),
     conditions: BLOODIED_CONDITION,
-    effect: freezeEffect(effect, localizationKey, fallbackTitle),
+    effect: freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }),
     metadata: Object.freeze({
       collection: "bloodied-triumphs",
-      deck: "attack",
-      contentBatch: 1
+      deck: deckType,
+      contentBatch
     })
+  });
+}
+
+export function defineBloodiedAttackCard(options) {
+  if (!["criticalHit", "spellCriticalHit"].includes(options.category)) {
+    throw new TypeError(`Bloodied attack cards require an attack critical-success category: ${options.category}`);
+  }
+
+  return defineBloodiedCard({
+    ...options,
+    deckType: "attack",
+    deckToken: "Attack",
+    contentBatch: 1,
+    tags: [options.category === "spellCriticalHit" ? "spell" : "strike", ...(options.tags ?? [])]
+  });
+}
+
+export function defineBloodiedFortitudeCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Bloodied Fortitude cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+
+  return defineBloodiedCard({
+    ...options,
+    category: "savingThrowCriticalSuccess",
+    deckType: "fortitude",
+    deckToken: "Fortitude",
+    contentBatch: 2,
+    tags: ["save", "fortitude", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["fortitude"] }
   });
 }

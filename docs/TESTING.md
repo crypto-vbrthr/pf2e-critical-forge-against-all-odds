@@ -28,7 +28,11 @@ The test suite covers:
 - settings registration and clamping;
 - version metadata and localization parity;
 - ten unique Bloodied Triumphs Attack cards;
+- ten unique Bloodied Triumphs Fortitude cards;
 - five ordinary and five spell critical-hit categories;
+- Fortitude deck/category/save-filter isolation;
+- saving-actor targeting for every automated Fortitude boon;
+- unique Fortitude mechanical definitions;
 - immutable Bloodied context conditions;
 - complete filter sets and deck isolation;
 - positive versus hostile effect targeting;

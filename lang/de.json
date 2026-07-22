@@ -118,6 +118,48 @@
             "Title": "Noch ein Atemzug",
             "Description": "Der Zauber kauft einen Herzschlag aus einer Zukunft, die ihn bereits ausgegeben hatte. Du darfst sofort als freie Aktion einen Schritt ausführen. Dabei gelten die normalen Einschränkungen für Schritt."
           }
+        },
+        "Fortitude": {
+          "HeartRefuses": {
+            "Title": "Das Herz weigert sich",
+            "Description": "Der Körper hört den Befehl zu versagen und antwortet mit einem weiteren Schlag. Für 1 Runde erhältst du 6 temporäre Trefferpunkte."
+          },
+          "BitterBlood": {
+            "Title": "Bitteres Blut",
+            "Description": "Dein verwundeter Körper wird jedem Gift feindlich, das in ihn eindringt. Für 1 Runde erhältst du Resistenz 3 gegen Giftschaden."
+          },
+          "BodyAsBastion": {
+            "Title": "Der Körper als Bastion",
+            "Description": "Muskeln, Knochen und Sturheit verriegeln sich zu einer einzigen Verteidigung. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Zähigkeitswürfe und deinen Zähigkeits-SG."
+          },
+          "FleshBecomesArmor": {
+            "Title": "Fleisch wird zu Rüstung",
+            "Description": "Der Schmerz härtet deinen Körper schneller, als Stahl ihn brechen kann. Für 1 Runde erhältst du Resistenz 2 gegen körperlichen Schaden."
+          },
+          "SecondPulse": {
+            "Title": "Zweiter Puls",
+            "Description": "Unter dem ersten Rhythmus erhebt sich ein zweiter und zieht dich vom Abgrund zurück. Für 1 Runde erhältst du Schnelle Heilung 2."
+          },
+          "NoRoomForNausea": {
+            "Title": "Kein Platz für Übelkeit",
+            "Description": "Dein Körper hat Dringenderes zu tun, als sich der Übelkeit zu ergeben. Für 1 Runde bist du gegen den Zustand Kränkelnd immun."
+          },
+          "BloodObeys": {
+            "Title": "Das Blut gehorcht",
+            "Description": "Das bereits vergossene Blut reicht; der Rest bleibt, wo du ihn befiehlst. Für 1 Runde erhältst du Resistenz 3 gegen Blutungsschaden."
+          },
+          "NervesRefuse": {
+            "Title": "Die Nerven weigern sich",
+            "Description": "Der Schock rast durch dich und findet jeden Nerv bereits vom Trotz besetzt. Für 1 Runde bist du gegen den Zustand Betäubt immun."
+          },
+          "StrengthDoesNotLeave": {
+            "Title": "Die Kraft weicht nicht",
+            "Description": "Deine Kraft mag sich beugen, doch für einen weiteren Augenblick kann sie dir nicht genommen werden. Für 1 Runde bist du gegen den Zustand Entkräftet immun."
+          },
+          "CloseTheWound": {
+            "Title": "Schließ die Wunde",
+            "Description": "Dein Körper ergreift eine Verletzung und zwingt sie einem Ende entgegen. Du darfst sofort den Erholungswurf für einen Effekt mit anhaltendem Schaden ablegen, der dich betrifft, und verwendest dabei SG 10 statt des normalen SG."
+          }
         }
       }
     },
@@ -150,6 +192,35 @@
           },
           "ScarletOpening": {
             "Name": "Scharlachrote Öffnung"
+          }
+        },
+        "Fortitude": {
+          "HeartRefuses": {
+            "Name": "Das Herz weigert sich"
+          },
+          "BitterBlood": {
+            "Name": "Bitteres Blut"
+          },
+          "BodyAsBastion": {
+            "Name": "Der Körper als Bastion"
+          },
+          "FleshBecomesArmor": {
+            "Name": "Fleisch wird zu Rüstung"
+          },
+          "SecondPulse": {
+            "Name": "Zweiter Puls"
+          },
+          "NoRoomForNausea": {
+            "Name": "Kein Platz für Übelkeit"
+          },
+          "BloodObeys": {
+            "Name": "Das Blut gehorcht"
+          },
+          "NervesRefuse": {
+            "Name": "Die Nerven weigern sich"
+          },
+          "StrengthDoesNotLeave": {
+            "Name": "Die Kraft weicht nicht"
           }
         }
       }

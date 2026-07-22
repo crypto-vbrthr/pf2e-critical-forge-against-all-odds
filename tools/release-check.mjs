@@ -65,6 +65,7 @@ for (const file of files) {
 
 const packsSource = fs.readFileSync(path.join(root, "scripts/data/packs.js"), "utf8");
 const { BLOODIED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-attack.js")).href);
+const { BLOODIED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-fortitude.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -72,7 +73,13 @@ check(packsSource.includes("plannedCardsPerDeck: 10"), "Card roadmap metadata is
 check(BLOODIED_ATTACK_CARDS.length === 10, "Bloodied Triumphs Attack deck must contain ten cards.");
 check(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs card IDs must be unique.");
 check(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Bloodied Triumphs cards must remain in the Attack deck.");
-check(BLOODIED_ATTACK_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs cards must use the dynamic Bloodied condition.");
+check(BLOODIED_ATTACK_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Attack cards must use the dynamic Bloodied condition.");
+check(BLOODIED_FORTITUDE_CARDS.length === 10, "Bloodied Triumphs Fortitude deck must contain ten cards.");
+check(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs Fortitude card IDs must be unique.");
+check(BLOODIED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Bloodied Triumphs Fortitude cards must remain in the Fortitude deck.");
+check(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Fortitude cards require critical save success.");
+check(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Bloodied Triumphs Fortitude cards must require Fortitude.");
+check(BLOODIED_FORTITUDE_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Fortitude cards must use the dynamic Bloodied condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {
