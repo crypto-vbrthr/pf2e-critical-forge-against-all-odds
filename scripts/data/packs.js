@@ -7,6 +7,7 @@ import {
 import { BLOODIED_ATTACK_CARDS } from "./cards/bloodied-attack.js";
 import { BLOODIED_FORTITUDE_CARDS } from "./cards/bloodied-fortitude.js";
 import { BLOODIED_REFLEX_CARDS } from "./cards/bloodied-reflex.js";
+import { BLOODIED_WILL_CARDS } from "./cards/bloodied-will.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -58,8 +59,8 @@ export function buildAgainstAllOddsPacks(settings = {}) {
       addOn: MODULE_ID,
       theme: theme.id,
       conditionPath: theme.conditionPath,
-      contentStatus: theme.id === THEME_IDS.BLOODIED ? "attack-fortitude-and-reflex-batches" : "foundation",
-      plannedCardsPerDeck: 10
+      contentStatus: theme.id === THEME_IDS.BLOODIED ? "first-batches-complete" : "foundation",
+      plannedCardsPerDeck: 30
     },
     decks: Object.fromEntries(SPECIALIZED_DECK_TYPES.map((deckType) => [deckType, {
       cards: theme.id === THEME_IDS.BLOODIED && deckType === "attack"
@@ -68,7 +69,9 @@ export function buildAgainstAllOddsPacks(settings = {}) {
           ? BLOODIED_FORTITUDE_CARDS
           : theme.id === THEME_IDS.BLOODIED && deckType === "reflex"
             ? BLOODIED_REFLEX_CARDS
-            : []
+            : theme.id === THEME_IDS.BLOODIED && deckType === "will"
+              ? BLOODIED_WILL_CARDS
+              : []
     }]))
   }));
 }

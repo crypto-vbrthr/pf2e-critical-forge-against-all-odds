@@ -202,6 +202,48 @@
             "Title": "Two Heartbeats Ahead",
             "Description": "You are already leaving the place where death expected to find you. You may immediately Step twice as a free action. Each Step must move you farther from the hostile source, and the normal restrictions of Step apply."
           }
+        },
+        "Will": {
+          "MindRefuses": {
+            "Title": "The Mind Refuses",
+            "Description": "Your thoughts close ranks around the one command that still matters: endure. For 1 round, you gain a +1 circumstance bonus to Will saves and Will DC."
+          },
+          "NothingLeftToFear": {
+            "Title": "Nothing Left to Fear",
+            "Description": "Fear searches your wounds for purchase and finds every place already occupied by resolve. For 1 round, you are immune to the frightened condition."
+          },
+          "NoMasterHere": {
+            "Title": "No Master Here",
+            "Description": "The invading will reaches for a throne and finds only shattered stone and a blade waiting beneath it. For 1 round, you are immune to the controlled condition."
+          },
+          "PainIsProof": {
+            "Title": "Pain Is Proof",
+            "Description": "The wound is real, the blood is real, and the lie has nowhere left to hide. For 1 round, you are immune to illusion effects."
+          },
+          "HeartRemembers": {
+            "Title": "The Heart Remembers",
+            "Description": "Someone else may command your feelings, but they cannot rewrite why you are still standing. For 1 round, you are immune to emotion effects."
+          },
+          "ThoughtBehindTheBlood": {
+            "Title": "Thought Behind the Blood",
+            "Description": "Behind the pain, one untouched thought remains and shelters everything that follows. For 1 round, you gain resistance 3 to mental damage."
+          },
+          "ClearAsTheWound": {
+            "Title": "Clear as the Wound",
+            "Description": "Agony burns every false direction away until only the next necessary choice remains. For 1 round, you are immune to the confused condition."
+          },
+          "EyesBehindTheEyes": {
+            "Title": "Eyes Behind the Eyes",
+            "Description": "The assault opens a colder awareness behind your ordinary senses. For 1 round, you gain a +1 status bonus to Perception checks and Perception DC."
+          },
+          "DefianceLooksBack": {
+            "Title": "Defiance Looks Back",
+            "Description": "The intruder meets your gaze from inside your own mind and realizes it has entered the wrong place. The hostile source becomes frightened 1 for 1 round."
+          },
+          "CutTheHook": {
+            "Title": "Cut the Hook",
+            "Description": "The failed intrusion leaves its barb exposed. You may immediately reduce your frightened or stupefied condition by 1. Choose one condition if both apply."
+          }
         }
       }
     },
@@ -292,6 +334,35 @@
           },
           "SlipTheSnare": {
             "Name": "Slip the Snare"
+          }
+        },
+        "Will": {
+          "MindRefuses": {
+            "Name": "The Mind Refuses"
+          },
+          "NothingLeftToFear": {
+            "Name": "Nothing Left to Fear"
+          },
+          "NoMasterHere": {
+            "Name": "No Master Here"
+          },
+          "PainIsProof": {
+            "Name": "Pain Is Proof"
+          },
+          "HeartRemembers": {
+            "Name": "The Heart Remembers"
+          },
+          "ThoughtBehindTheBlood": {
+            "Name": "Thought Behind the Blood"
+          },
+          "ClearAsTheWound": {
+            "Name": "Clear as the Wound"
+          },
+          "EyesBehindTheEyes": {
+            "Name": "Eyes Behind the Eyes"
+          },
+          "DefianceLooksBack": {
+            "Name": "Defiance Looks Back"
           }
         }
       }

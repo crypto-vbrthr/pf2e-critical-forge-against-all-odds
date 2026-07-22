@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.6
+
+### Added
+
+- Added the first ten Bloodied Triumphs cards to the specialized Will deck.
+- Added nine automated resolve effects and one manual condition-reduction result.
+- Added Will and Will DC reinforcement, mental resistance, Perception reinforcement, short immunities to frightened, controlled, illusion, emotion, and confused, plus one hostile-source countershock.
+- Added German and English card and effect localization.
+- Added Will deck isolation, saving-actor targeting, hostile-source targeting, localization, uniqueness, and release-contract tests.
+
+### Roadmap
+
+- Completed the first ten-card pass across all four Bloodied Triumphs categories.
+- Raised the documented final target to 30 cards per deck: 120 cards per theme and 480 cards across the full add-on.
+
+### Compatibility
+
+- Continues to use Critical Card schema 1, Critical Card Pack schema 1, Effect Definition schema 2, and Extension Contract 1.
+- The remaining twelve specialized decks stay empty by design, while Bloodied Triumphs begins its second ten-card pass after review.
+
 ## 0.1.0-dev.5
 
 ### Added

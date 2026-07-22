@@ -67,10 +67,11 @@ const packsSource = fs.readFileSync(path.join(root, "scripts/data/packs.js"), "u
 const { BLOODIED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-attack.js")).href);
 const { BLOODIED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-fortitude.js")).href);
 const { BLOODIED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-reflex.js")).href);
+const { BLOODIED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-will.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
-check(packsSource.includes("plannedCardsPerDeck: 10"), "Card roadmap metadata is missing.");
+check(packsSource.includes("plannedCardsPerDeck: 30"), "Card roadmap metadata is missing.");
 check(BLOODIED_ATTACK_CARDS.length === 10, "Bloodied Triumphs Attack deck must contain ten cards.");
 check(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs card IDs must be unique.");
 check(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Bloodied Triumphs cards must remain in the Attack deck.");
@@ -88,6 +89,13 @@ check(BLOODIED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Bloodi
 check(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Reflex cards require critical save success.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Bloodied Triumphs Reflex cards must require Reflex.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Reflex cards must use the dynamic Bloodied condition.");
+
+check(BLOODIED_WILL_CARDS.length === 10, "Bloodied Triumphs Will deck must contain ten cards.");
+check(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs Will card IDs must be unique.");
+check(BLOODIED_WILL_CARDS.every((card) => card.deckType === "will"), "Bloodied Triumphs Will cards must remain in the Will deck.");
+check(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Will cards require critical save success.");
+check(BLOODIED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Bloodied Triumphs Will cards must require Will.");
+check(BLOODIED_WILL_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Will cards must use the dynamic Bloodied condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

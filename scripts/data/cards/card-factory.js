@@ -148,3 +148,19 @@ export function defineBloodiedReflexCard(options) {
     filters: { ...options.filters, saveTypes: ["reflex"] }
   });
 }
+
+export function defineBloodiedWillCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Bloodied Will cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+
+  return defineBloodiedCard({
+    ...options,
+    category: "savingThrowCriticalSuccess",
+    deckType: "will",
+    deckToken: "Will",
+    contentBatch: 4,
+    tags: ["save", "will", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["will"] }
+  });
+}

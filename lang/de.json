@@ -202,6 +202,48 @@
             "Title": "Zwei Herzschläge voraus",
             "Description": "Du verlässt bereits den Ort, an dem der Tod dich zu finden erwartete. Du darfst sofort als freie Aktion zweimal Schritt ausführen. Jeder Schritt muss dich weiter von der feindlichen Quelle entfernen; die normalen Einschränkungen von Schritt gelten weiterhin."
           }
+        },
+        "Will": {
+          "MindRefuses": {
+            "Title": "Der Geist weigert sich",
+            "Description": "Deine Gedanken schließen sich um den einen Befehl, der noch zählt: durchhalten. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Willenswürfe und deinen Willens-SG."
+          },
+          "NothingLeftToFear": {
+            "Title": "Nichts mehr zu fürchten",
+            "Description": "Die Furcht sucht in deinen Wunden nach Halt und findet jeden Platz bereits vom Entschluss besetzt. Für 1 Runde bist du gegen den Zustand Verängstigt immun."
+          },
+          "NoMasterHere": {
+            "Title": "Hier herrscht kein Meister",
+            "Description": "Der fremde Wille greift nach einem Thron und findet nur geborstenen Stein und eine Klinge darunter. Für 1 Runde bist du gegen den Zustand Kontrolliert immun."
+          },
+          "PainIsProof": {
+            "Title": "Der Schmerz ist Beweis",
+            "Description": "Die Wunde ist echt, das Blut ist echt, und die Lüge hat keinen Ort mehr, an dem sie sich verbergen kann. Für 1 Runde bist du gegen Illusionseffekte immun."
+          },
+          "HeartRemembers": {
+            "Title": "Das Herz erinnert sich",
+            "Description": "Ein anderer mag deinen Gefühlen Befehle erteilen, doch er kann nicht umschreiben, weshalb du noch stehst. Für 1 Runde bist du gegen Emotionseffekte immun."
+          },
+          "ThoughtBehindTheBlood": {
+            "Title": "Der Gedanke hinter dem Blut",
+            "Description": "Hinter dem Schmerz bleibt ein unberührter Gedanke bestehen und schützt alles, was ihm folgt. Für 1 Runde erhältst du Resistenz 3 gegen mentalen Schaden."
+          },
+          "ClearAsTheWound": {
+            "Title": "Klar wie die Wunde",
+            "Description": "Der Schmerz brennt jede falsche Richtung fort, bis nur noch die nächste notwendige Entscheidung bleibt. Für 1 Runde bist du gegen den Zustand Verwirrt immun."
+          },
+          "EyesBehindTheEyes": {
+            "Title": "Augen hinter den Augen",
+            "Description": "Der Angriff öffnet hinter deinen gewöhnlichen Sinnen eine kältere Wachsamkeit. Für 1 Runde erhältst du einen Statusbonus von +1 auf Wahrnehmungswürfe und deinen Wahrnehmungs-SG."
+          },
+          "DefianceLooksBack": {
+            "Title": "Der Trotz blickt zurück",
+            "Description": "Der Eindringling begegnet deinem Blick in deinem eigenen Geist und erkennt, dass er den falschen Ort betreten hat. Die feindliche Quelle erhält für 1 Runde Verängstigt 1."
+          },
+          "CutTheHook": {
+            "Title": "Schneide den Haken ab",
+            "Description": "Der gescheiterte Angriff lässt seinen Widerhaken offen zurück. Du darfst sofort deinen Zustand Verängstigt oder Benommen um 1 verringern. Wähle einen Zustand, falls beide auf dich wirken."
+          }
         }
       }
     },
@@ -292,6 +334,35 @@
           },
           "SlipTheSnare": {
             "Name": "Der Schlinge entgleiten"
+          }
+        },
+        "Will": {
+          "MindRefuses": {
+            "Name": "Der Geist weigert sich"
+          },
+          "NothingLeftToFear": {
+            "Name": "Nichts mehr zu fürchten"
+          },
+          "NoMasterHere": {
+            "Name": "Hier herrscht kein Meister"
+          },
+          "PainIsProof": {
+            "Name": "Der Schmerz ist Beweis"
+          },
+          "HeartRemembers": {
+            "Name": "Das Herz erinnert sich"
+          },
+          "ThoughtBehindTheBlood": {
+            "Name": "Der Gedanke hinter dem Blut"
+          },
+          "ClearAsTheWound": {
+            "Name": "Klar wie die Wunde"
+          },
+          "EyesBehindTheEyes": {
+            "Name": "Augen hinter den Augen"
+          },
+          "DefianceLooksBack": {
+            "Name": "Der Trotz blickt zurück"
           }
         }
       }

@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.5` adds the third playable content batch: ten Bloodied Triumphs cards in the Reflex deck. Attack, Fortitude, and Reflex are now complete for this theme; the remaining thirteen specialized decks stay reserved for reviewed follow-up batches.
+Version `0.1.0-dev.6` completes the first ten-card pass across all four Bloodied Triumphs decks by adding ten Will cards. Bloodied Triumphs now contains 40 of its planned 120 cards; each deck will ultimately contain 30 reviewed cards.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -58,12 +58,15 @@ See:
 
 ## Current playable cards
 
-Bloodied Triumphs now contains thirty cards:
+Bloodied Triumphs now contains forty cards:
 
 - ten Attack-deck cards, split evenly between ordinary and spell critical hits;
 - ten Fortitude-deck cards for critically successful Fortitude saves;
 - ten Reflex-deck cards for critically successful Reflex saves;
-- twenty-seven automated Effect Engine cards;
-- three explicit manual cards.
+- ten Will-deck cards for critically successful Will saves;
+- thirty-six automated Effect Engine cards;
+- four explicit manual cards.
+
+This is the first of three planned ten-card passes per deck. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total.
 
 Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.

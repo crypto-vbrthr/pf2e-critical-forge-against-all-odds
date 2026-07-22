@@ -7,7 +7,8 @@
 - [x] Bloodied Triumphs Attack deck contains ten reviewed cards.
 - [x] Bloodied Triumphs Fortitude deck contains ten reviewed cards.
 - [x] Bloodied Triumphs Reflex deck contains ten reviewed cards.
-- [x] All thirty published cards use the dynamic Bloodied condition.
+- [x] Bloodied Triumphs Will deck contains ten reviewed cards.
+- [x] All forty published cards use the dynamic Bloodied condition.
 - [x] All automated effects use Effect Definition schema 2.
 - [x] Card and effect localization is complete in German and English.
 - [x] Context Provider delegates explicitly to `core-pf2e`.
@@ -24,6 +25,7 @@
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
 - [x] Foundry smoke test: ten localized Bloodied Triumphs Attack cards visible.
 - [x] Foundry smoke test: ten localized Bloodied Triumphs Fortitude cards visible.
-- [ ] Foundry smoke test: ten localized Bloodied Triumphs Reflex cards visible.
+- [x] Foundry smoke test: ten localized Bloodied Triumphs Reflex cards visible.
+- [ ] Foundry smoke test: ten localized Bloodied Triumphs Will cards visible.
 - [ ] Foundry smoke test: automated effects apply to the intended source or target.
 - [ ] Foundry smoke test: cards are unavailable above the Bloodied threshold.

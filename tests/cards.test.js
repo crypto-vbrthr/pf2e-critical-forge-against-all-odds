@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { BLOODIED_ATTACK_CARDS } from "../scripts/data/cards/bloodied-attack.js";
 import { BLOODIED_FORTITUDE_CARDS } from "../scripts/data/cards/bloodied-fortitude.js";
 import { BLOODIED_REFLEX_CARDS } from "../scripts/data/cards/bloodied-reflex.js";
+import { BLOODIED_WILL_CARDS } from "../scripts/data/cards/bloodied-will.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -14,7 +15,7 @@ const FILTER_KEYS = [
   "saveTypes", "spellTraditions", "spellTraits", "sourceTraits", "targetTraits",
   "excludedSourceTraits", "excludedTargetTraits"
 ];
-const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS];
+const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS, ...BLOODIED_WILL_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -60,8 +61,17 @@ test("the Bloodied Triumphs Reflex batch contains ten unique critical-save cards
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
 });
 
+test("the Bloodied Triumphs Will batch contains ten unique critical-save cards", () => {
+  assert.equal(BLOODIED_WILL_CARDS.length, 10);
+  assert.equal(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(BLOODIED_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
+  assert.equal(BLOODIED_WILL_CARDS.every((card) => card.deckType === "will"), true);
+  assert.equal(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(BLOODIED_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
+});
+
 test("all Bloodied Triumphs cards use unique IDs and the dynamic Bloodied context gate", () => {
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 30);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 40);
   assertBloodiedGate(ALL_CARDS);
 });
 
@@ -77,7 +87,8 @@ test("each published batch contains nine automated effects and one explicit manu
   for (const [cards, manualId] of [
     [BLOODIED_ATTACK_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-010-one-more-breath"],
     [BLOODIED_FORTITUDE_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound"],
-    [BLOODIED_REFLEX_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead"]
+    [BLOODIED_REFLEX_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead"],
+    [BLOODIED_WILL_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook"]
   ]) {
     const automated = cards.filter((card) => card.effect);
     const manual = cards.filter((card) => !card.effect);
@@ -98,6 +109,15 @@ test("Fortitude boons always target the saving actor", () => {
 
 test("Reflex boons always target the saving actor", () => {
   assert.equal(BLOODIED_REFLEX_CARDS.filter((card) => card.effect).every((card) => card.effect.target === "source"), true);
+});
+
+test("Will boons target the saving actor while the countershock targets the hostile source", () => {
+  const automated = BLOODIED_WILL_CARDS.filter((card) => card.effect);
+  const hostile = automated.filter((card) => card.effect.target === "target");
+  assert.deepEqual(hostile.map((card) => card.id), [
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-009-defiance-looks-back"
+  ]);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 8);
 });
 
 test("beneficial and hostile Attack effects remain intentionally separated", () => {
@@ -135,6 +155,15 @@ test("Reflex effects cover movement and evasion without duplicate mechanical def
   assert.equal(BLOODIED_REFLEX_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "movement")), true);
   assert.equal(BLOODIED_REFLEX_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "resistance" && component.resistanceType === "area-damage")), true);
   assert.equal(BLOODIED_REFLEX_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 3);
+});
+
+test("Will effects cover resolve, perception, mental resistance, and hostile countershock without duplicate definitions", () => {
+  const signatures = BLOODIED_WILL_CARDS.filter((card) => card.effect).map((card) => JSON.stringify({ target: card.effect.target, components: card.effect.definition.components }));
+  assert.equal(new Set(signatures).size, signatures.length);
+  assert.equal(BLOODIED_WILL_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "resistance" && component.resistanceType === "mental")), true);
+  assert.equal(BLOODIED_WILL_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("will-dc"))), true);
+  assert.equal(BLOODIED_WILL_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 5);
+  assert.equal(BLOODIED_WILL_CARDS.find((card) => card.id.endsWith("bw-009-defiance-looks-back"))?.filters.excludedTargetTraits.includes("mindless"), true);
 });
 
 test("all card and effect localization keys exist in German and English", () => {
