@@ -281,6 +281,46 @@
           "TwoHeartbeatsAhead": {
             "Title": "Two Heartbeats Ahead",
             "Description": "You are already leaving the place where death expected to find you. You may immediately Step twice as a free action. Each Step must move you farther from the hostile source, and the normal restrictions of Step apply."
+          },
+          "MotionRefusesToDie": {
+            "Title": "Motion Refuses to Die",
+            "Description": "Pain strips away hesitation until every direction becomes escape. For 1 round, you gain a +5-foot circumstance bonus to all your Speeds."
+          },
+          "WoundReadsTheAngle": {
+            "Title": "The Wound Reads the Angle",
+            "Description": "Every near miss teaches your body exactly where force wants to put you. For 1 round, your Reflex DC gains a +2 circumstance bonus."
+          },
+          "NoGripHoldsTheWind": {
+            "Title": "No Grip Holds the Wind",
+            "Description": "Anything that closes around you discovers it has caught motion rather than flesh. For 1 round, you are immune to the grabbed and restrained conditions."
+          },
+          "HitArrivesTooLate": {
+            "Title": "The Hit Arrives Too Late",
+            "Description": "Your body remembers the fraction of a second that separates a wound from a killing blow. For 1 round, you gain resistance 3 to damage from critical hits."
+          },
+          "BloodKnowsTheExit": {
+            "Title": "Blood Knows the Exit",
+            "Description": "You stop looking for safety and start moving toward it. For 1 round, you gain a +1 status bonus to Acrobatics and Stealth checks."
+          },
+          "DodgeBecomesCounterstroke": {
+            "Title": "Dodge Becomes Counterstroke",
+            "Description": "The motion that saves your life is already winding the next attack. For 1 round, you gain a +1 circumstance bonus to attack rolls."
+          },
+          "ReflexWithoutThought": {
+            "Title": "Reflex Without Thought",
+            "Description": "Conscious thought becomes too slow for survival. For 1 round, you gain a +1 status bonus to checks based on Dexterity."
+          },
+          "MotionCannotBeStolen": {
+            "Title": "Motion Cannot Be Stolen",
+            "Description": "You have too little life left to surrender even a heartbeat of movement. For 1 round, you are immune to the slowed condition."
+          },
+          "NothingClings": {
+            "Title": "Nothing Clings",
+            "Description": "Flame, acid, blood, and venom find no stable place on a body that will not stop moving. For 1 round, you gain resistance 3 to persistent damage."
+          },
+          "ThroughTheImpossibleOpening": {
+            "Title": "Through the Impossible Opening",
+            "Description": "For one impossible instant, every threat points toward the same escape route. You may immediately Stride as a free action, moving no more than half your Speed. This movement does not trigger reactions; apply this result manually."
           }
         },
         "Will": {
@@ -468,6 +508,33 @@
           },
           "SlipTheSnare": {
             "Name": "Slip the Snare"
+          },
+          "MotionRefusesToDie": {
+            "Name": "Motion Refuses to Die"
+          },
+          "WoundReadsTheAngle": {
+            "Name": "The Wound Reads the Angle"
+          },
+          "NoGripHoldsTheWind": {
+            "Name": "No Grip Holds the Wind"
+          },
+          "HitArrivesTooLate": {
+            "Name": "The Hit Arrives Too Late"
+          },
+          "BloodKnowsTheExit": {
+            "Name": "Blood Knows the Exit"
+          },
+          "DodgeBecomesCounterstroke": {
+            "Name": "Dodge Becomes Counterstroke"
+          },
+          "ReflexWithoutThought": {
+            "Name": "Reflex Without Thought"
+          },
+          "MotionCannotBeStolen": {
+            "Name": "Motion Cannot Be Stolen"
+          },
+          "NothingClings": {
+            "Name": "Nothing Clings"
           }
         },
         "Will": {

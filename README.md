@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.8.1` contains the second Attack and Fortitude content passes for Bloodied Triumphs. Attack and Fortitude each contain 20 of their planned 30 cards, while Reflex and Will remain at 10 each. Bloodied Triumphs now contains 60 of its planned 120 cards. This patch also fixes a registration-blocking unsupported card tone introduced in `0.1.0-dev.8`.
+Version `0.1.0-dev.9` completes the second Reflex content pass for Bloodied Triumphs. Attack, Fortitude, and Reflex now each contain 20 of their planned 30 cards, while Will remains at 10. Bloodied Triumphs now contains 70 of its planned 120 cards. The registration-contract regression coverage introduced in `0.1.0-dev.8.1` remains active.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -58,15 +58,15 @@ See:
 
 ## Current playable cards
 
-Bloodied Triumphs now contains fifty cards:
+Bloodied Triumphs now contains seventy cards:
 
 - twenty Attack-deck cards, split evenly between ordinary and spell critical hits;
-- ten Fortitude-deck cards for critically successful Fortitude saves;
-- ten Reflex-deck cards for critically successful Reflex saves;
+- twenty Fortitude-deck cards for critically successful Fortitude saves;
+- twenty Reflex-deck cards for critically successful Reflex saves;
 - ten Will-deck cards for critically successful Will saves;
-- forty-five automated Effect Engine cards;
-- five explicit manual cards.
+- sixty-three automated Effect Engine cards;
+- seven explicit manual cards.
 
-The first ten-card pass has been reviewed across all four decks, and the Attack deck has completed its second ten-card pass. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total. Several specialized cards now additionally require matching effect traits such as poison, disease, mental, illusion, or emotion.
+The first ten-card pass has been reviewed across all four decks, and the Attack, Fortitude, and Reflex decks have completed their second ten-card passes. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total. Several specialized cards now additionally require matching effect traits such as poison, disease, mental, illusion, or emotion.
 
 Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.

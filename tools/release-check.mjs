@@ -85,8 +85,8 @@ check(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCri
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Bloodied Triumphs Fortitude cards must require Fortitude.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Fortitude cards must use the dynamic Bloodied condition.");
 
-check(BLOODIED_REFLEX_CARDS.length === 10, "Bloodied Triumphs Reflex deck must contain ten cards.");
-check(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs Reflex card IDs must be unique.");
+check(BLOODIED_REFLEX_CARDS.length === 20, "Bloodied Triumphs Reflex deck must contain twenty cards.");
+check(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Reflex card IDs must be unique.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Bloodied Triumphs Reflex cards must remain in the Reflex deck.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Reflex cards require critical save success.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Bloodied Triumphs Reflex cards must require Reflex.");

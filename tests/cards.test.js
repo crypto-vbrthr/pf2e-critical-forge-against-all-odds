@@ -52,9 +52,9 @@ test("the Bloodied Triumphs Fortitude deck contains twenty unique critical-save 
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
 });
 
-test("the Bloodied Triumphs Reflex batch contains ten unique critical-save cards", () => {
-  assert.equal(BLOODIED_REFLEX_CARDS.length, 10);
-  assert.equal(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size, 10);
+test("the Bloodied Triumphs Reflex deck contains twenty unique critical-save cards after the second pass", () => {
+  assert.equal(BLOODIED_REFLEX_CARDS.length, 20);
+  assert.equal(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size, 20);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
@@ -71,7 +71,7 @@ test("the Bloodied Triumphs Will batch contains ten unique critical-save cards",
 });
 
 test("all Bloodied Triumphs cards use unique IDs and the dynamic Bloodied context gate", () => {
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 60);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 70);
   assertBloodiedGate(ALL_CARDS);
 });
 
@@ -93,7 +93,10 @@ test("published decks keep their explicit automated/manual split", () => {
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound",
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-020-body-casts-it-out"
     ]],
-    [BLOODIED_REFLEX_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead"]],
+    [BLOODIED_REFLEX_CARDS, 18, [
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-020-through-the-impossible-opening"
+    ]],
     [BLOODIED_WILL_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook"]]
   ]) {
     const automated = cards.filter((card) => card.effect);
@@ -173,7 +176,7 @@ test("Reflex effects cover movement and evasion without duplicate mechanical def
   assert.equal(new Set(signatures).size, signatures.length);
   assert.equal(BLOODIED_REFLEX_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "movement")), true);
   assert.equal(BLOODIED_REFLEX_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "resistance" && component.resistanceType === "area-damage")), true);
-  assert.equal(BLOODIED_REFLEX_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 3);
+  assert.equal(BLOODIED_REFLEX_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 5);
 });
 
 test("Will effects cover resolve, perception, mental resistance, and hostile countershock without duplicate definitions", () => {
@@ -335,3 +338,49 @@ test("Pain Leaves Room for Healing uses a Forge-supported dramatic tone", () => 
   const card = BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-015-pain-leaves-room-for-healing"));
   assert.equal(card.tone, "dramatic");
 });
+
+test("the second Reflex pass adds ten cards with a distinct content batch", () => {
+  const secondPass = BLOODIED_REFLEX_CARDS.slice(10);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 7), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["br-020-through-the-impossible-opening"]);
+});
+
+test("second-pass Reflex cards broaden mobility, restraint escape, and defensive momentum", () => {
+  const secondPass = BLOODIED_REFLEX_CARDS.slice(10);
+  const automated = secondPass.filter((card) => card.effect);
+  const signatures = automated.map((card) => JSON.stringify(card.effect.definition.components));
+  assert.equal(new Set(signatures).size, signatures.length);
+
+  const bySuffix = Object.fromEntries(BLOODIED_REFLEX_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["br-011-motion-refuses-to-die"].effect.definition.components, [
+    { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+  ]);
+  assert.deepEqual(bySuffix["br-012-wound-reads-the-angle"].effect.definition.components, [
+    { type: "modifier", selector: "reflex-dc", value: 2, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.deepEqual(bySuffix["br-013-no-grip-holds-the-wind"].effect.definition.components, [
+    { type: "immunity", immunityType: "grabbed" },
+    { type: "immunity", immunityType: "restrained" }
+  ]);
+  assert.deepEqual(bySuffix["br-014-hit-arrives-too-late"].effect.definition.components, [
+    { type: "resistance", resistanceType: "critical-hits", value: 3 }
+  ]);
+  assert.deepEqual(bySuffix["br-019-nothing-clings"].effect.definition.components, [
+    { type: "resistance", resistanceType: "persistent-damage", value: 3 }
+  ]);
+});
+
+test("second-pass Reflex automated effects stay on the saving actor", () => {
+  const automated = BLOODIED_REFLEX_CARDS.slice(10).filter((card) => card.effect);
+  assert.equal(automated.every((card) => card.effect.target === "source"), true);
+});
+
+test("German second-pass Reflex text uses Remaster condition terminology", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const reflex = de.PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.Reflex;
+  assert.match(reflex.NoGripHoldsTheWind.Description, /Gegriffen/u);
+  assert.match(reflex.NoGripHoldsTheWind.Description, /Gebunden/u);
+  assert.match(reflex.MotionCannotBeStolen.Description, /Verlangsamt/u);
+});
+

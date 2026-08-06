@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-dev.9
+
+### Added
+- Added the second ten-card Bloodied Triumphs Reflex pass, bringing the Reflex deck to 20/30 cards.
+- Added all-Speed momentum, Reflex-DC reinforcement, protection from grabbed/restrained, critical-hit resistance, Acrobatics/Stealth reinforcement, counterattack momentum, Dexterity-based reinforcement, slowed immunity, persistent-damage resistance, and one manual reaction-safe Stride.
+- Added German and English localization for all ten cards and nine automated effects.
+
+### Tests
+- Raised the automated suite to 59 tests with second-pass Reflex count, content-batch, mechanical-diversity, saving-actor targeting, localization, and German Remaster-terminology coverage.
+- Extended the release contract to require twenty Reflex cards.
+
+### Compatibility
+- Card, pack, effect, diagnostic, and extension-contract schema versions remain unchanged.
+- Existing sixty card IDs are unchanged; this build only adds ten new Reflex IDs.
+
 ## 0.1.0-dev.8.1
 
 ### Fixed

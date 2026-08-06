@@ -281,6 +281,46 @@
           "TwoHeartbeatsAhead": {
             "Title": "Zwei Herzschläge voraus",
             "Description": "Du verlässt bereits den Ort, an dem der Tod dich zu finden erwartete. Du darfst sofort als freie Aktion zweimal Schritt ausführen. Jeder Schritt muss dich weiter von der feindlichen Quelle entfernen; die normalen Einschränkungen von Schritt gelten weiterhin."
+          },
+          "MotionRefusesToDie": {
+            "Title": "Bewegung stirbt zuletzt",
+            "Description": "Der Schmerz reißt jedes Zögern fort, bis jede Richtung ein Fluchtweg wird. Für 1 Runde erhältst du einen Umstandsbonus von 1,5 m auf alle deine Bewegungsraten."
+          },
+          "WoundReadsTheAngle": {
+            "Title": "Die Wunde liest den Winkel",
+            "Description": "Jedes knappe Entkommen lehrt deinen Körper, wohin die Wucht dich zwingen will. Für 1 Runde erhält dein Reflex-SG einen Umstandsbonus von +2."
+          },
+          "NoGripHoldsTheWind": {
+            "Title": "Kein Griff hält den Wind",
+            "Description": "Was sich um dich schließt, stellt fest, dass es Bewegung statt Fleisch gepackt hat. Für 1 Runde bist du gegen die Zustände Gegriffen und Gebunden immun."
+          },
+          "HitArrivesTooLate": {
+            "Title": "Der Treffer kommt zu spät",
+            "Description": "Dein Körper erinnert sich an den Sekundenbruchteil zwischen einer Wunde und einem tödlichen Treffer. Für 1 Runde erhältst du Resistenz 3 gegen Schaden durch kritische Treffer."
+          },
+          "BloodKnowsTheExit": {
+            "Title": "Blut kennt den Ausgang",
+            "Description": "Du hörst auf, nach Sicherheit zu suchen, und bewegst dich direkt auf sie zu. Für 1 Runde erhältst du einen Statusbonus von +1 auf Akrobatik- und Heimlichkeitswürfe."
+          },
+          "DodgeBecomesCounterstroke": {
+            "Title": "Ausweichen wird Gegenstoß",
+            "Description": "Die Bewegung, die dein Leben rettet, holt bereits zum nächsten Angriff aus. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Angriffswürfe."
+          },
+          "ReflexWithoutThought": {
+            "Title": "Reflex ohne Gedanken",
+            "Description": "Bewusstes Denken ist zum Überleben zu langsam geworden. Für 1 Runde erhältst du einen Statusbonus von +1 auf Würfe, die auf Geschicklichkeit basieren."
+          },
+          "MotionCannotBeStolen": {
+            "Title": "Bewegung lässt sich nicht stehlen",
+            "Description": "Dir bleibt zu wenig Leben, um auch nur einen Herzschlag an Bewegung herzugeben. Für 1 Runde bist du gegen den Zustand Verlangsamt immun."
+          },
+          "NothingClings": {
+            "Title": "Nichts bleibt hängen",
+            "Description": "Flammen, Säure, Blut und Gift finden keinen festen Halt an einem Körper, der sich nicht stillhalten lässt. Für 1 Runde erhältst du Resistenz 3 gegen anhaltenden Schaden."
+          },
+          "ThroughTheImpossibleOpening": {
+            "Title": "Durch die unmögliche Lücke",
+            "Description": "Für einen unmöglichen Augenblick weisen alle Gefahren auf denselben Fluchtweg. Du darfst sofort als freie Aktion Laufen, dich dabei aber höchstens bis zur Hälfte deiner Bewegungsrate bewegen. Diese Bewegung löst keine Reaktionen aus; wende das Ergebnis manuell an."
           }
         },
         "Will": {
@@ -468,6 +508,33 @@
           },
           "SlipTheSnare": {
             "Name": "Der Schlinge entgleiten"
+          },
+          "MotionRefusesToDie": {
+            "Name": "Bewegung stirbt zuletzt"
+          },
+          "WoundReadsTheAngle": {
+            "Name": "Die Wunde liest den Winkel"
+          },
+          "NoGripHoldsTheWind": {
+            "Name": "Kein Griff hält den Wind"
+          },
+          "HitArrivesTooLate": {
+            "Name": "Der Treffer kommt zu spät"
+          },
+          "BloodKnowsTheExit": {
+            "Name": "Blut kennt den Ausgang"
+          },
+          "DodgeBecomesCounterstroke": {
+            "Name": "Ausweichen wird Gegenstoß"
+          },
+          "ReflexWithoutThought": {
+            "Name": "Reflex ohne Gedanken"
+          },
+          "MotionCannotBeStolen": {
+            "Name": "Bewegung lässt sich nicht stehlen"
+          },
+          "NothingClings": {
+            "Name": "Nichts bleibt hängen"
           }
         },
         "Will": {

@@ -144,7 +144,7 @@ export function defineBloodiedReflexCard(options) {
     category: "savingThrowCriticalSuccess",
     deckType: "reflex",
     deckToken: "Reflex",
-    contentBatch: 3,
+    contentBatch: options.contentBatch ?? 3,
     tags: ["save", "reflex", ...(options.tags ?? [])],
     filters: { ...options.filters, saveTypes: ["reflex"] }
   });
@@ -160,7 +160,7 @@ export function defineBloodiedWillCard(options) {
     category: "savingThrowCriticalSuccess",
     deckType: "will",
     deckToken: "Will",
-    contentBatch: 4,
+    contentBatch: options.contentBatch ?? 4,
     tags: ["save", "will", ...(options.tags ?? [])],
     filters: { ...options.filters, saveTypes: ["will"] }
   });
