@@ -363,6 +363,46 @@
           "CutTheHook": {
             "Title": "Cut the Hook",
             "Description": "The failed intrusion leaves its barb exposed. You may immediately reduce your frightened or stupefied condition by 1. Choose one condition if both apply."
+          },
+          "WillShowsTeeth": {
+            "Title": "The Will Shows Teeth",
+            "Description": "The hostile thought recoils and leaves its owner a fraction too slow to press the attack. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls."
+          },
+          "NameRemains": {
+            "Title": "A Name Remains",
+            "Description": "Pain strips away every borrowed voice until only your own remains. For 1 round, you gain a +1 status bonus to checks based on Wisdom and Charisma."
+          },
+          "FearForgetsTheWay": {
+            "Title": "Fear Forgets the Way",
+            "Description": "Fear can still scream, but it can no longer tell your feet where to go. For 1 round, you are immune to the fleeing condition."
+          },
+          "ForeignThoughtGivesItselfAway": {
+            "Title": "The Foreign Thought Gives Itself Away",
+            "Description": "Once the intrusion fails, you can see the intention behind it. For 1 round, the hostile source takes a -1 circumstance penalty to Perception DC."
+          },
+          "ThoughtStrikesBack": {
+            "Title": "Thought Strikes Back",
+            "Description": "The mental blow rebounds through the open channel. The hostile source takes 1d4 persistent mental damage."
+          },
+          "IntruderLosesTheThread": {
+            "Title": "The Intruder Loses the Thread",
+            "Description": "The failed assault leaves the enemy's next command tangled in its own intent. For 1 round, the hostile source takes a -1 circumstance penalty to Spell DC and Class DC."
+          },
+          "PainBecomesAuthority": {
+            "Title": "Pain Becomes Authority",
+            "Description": "You have already paid the price of doubt. For 1 round, your Spell DC and Class DC gain a +1 status bonus."
+          },
+          "NoSecondVoice": {
+            "Title": "No Second Voice",
+            "Description": "There is no room left in your skull for another voice to dull your thoughts. For 1 round, you are immune to the stupefied condition."
+          },
+          "ClarityAfterTheStorm": {
+            "Title": "Clarity After the Storm",
+            "Description": "The failed intrusion leaves the rest of the world unnaturally simple. For 1 round, you gain a +1 status bonus to skill checks."
+          },
+          "SlamTheDoorShut": {
+            "Title": "Slam the Door Shut",
+            "Description": "You seize the instant of clarity and lock one intruder outside yourself. Choose one ongoing effect with the mental trait currently affecting you. Its effects are suppressed until the end of your next turn, though its duration continues; apply this result manually."
           }
         }
       }
@@ -564,6 +604,33 @@
           },
           "DefianceLooksBack": {
             "Name": "Defiance Looks Back"
+          },
+          "WillShowsTeeth": {
+            "Name": "The Will Shows Teeth"
+          },
+          "NameRemains": {
+            "Name": "A Name Remains"
+          },
+          "FearForgetsTheWay": {
+            "Name": "Fear Forgets the Way"
+          },
+          "ForeignThoughtGivesItselfAway": {
+            "Name": "The Foreign Thought Gives Itself Away"
+          },
+          "ThoughtStrikesBack": {
+            "Name": "Thought Strikes Back"
+          },
+          "IntruderLosesTheThread": {
+            "Name": "The Intruder Loses the Thread"
+          },
+          "PainBecomesAuthority": {
+            "Name": "Pain Becomes Authority"
+          },
+          "NoSecondVoice": {
+            "Name": "No Second Voice"
+          },
+          "ClarityAfterTheStorm": {
+            "Name": "Clarity After the Storm"
           }
         }
       }

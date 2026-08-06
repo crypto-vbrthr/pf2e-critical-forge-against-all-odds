@@ -363,6 +363,46 @@
           "CutTheHook": {
             "Title": "Schneide den Haken ab",
             "Description": "Der gescheiterte Angriff lässt seinen Widerhaken offen zurück. Du darfst sofort deinen Zustand Verängstigt oder Benommen um 1 verringern. Wähle einen Zustand, falls beide auf dich wirken."
+          },
+          "WillShowsTeeth": {
+            "Title": "Der Wille zeigt Zähne",
+            "Description": "Der feindliche Gedanke zuckt zurück und lässt seinen Urheber einen Herzschlag zu langsam nachsetzen. Für 1 Runde erhält die feindliche Quelle einen Umstandsmalus von -1 auf Angriffswürfe."
+          },
+          "NameRemains": {
+            "Title": "Ein Name bleibt",
+            "Description": "Der Schmerz schält jede fremde Stimme fort, bis nur deine eigene übrig bleibt. Für 1 Runde erhältst du einen Statusbonus von +1 auf weisheits- und charismabasierte Würfe."
+          },
+          "FearForgetsTheWay": {
+            "Title": "Die Furcht vergisst den Weg",
+            "Description": "Die Furcht kann noch schreien, aber sie kann deinen Füßen nicht mehr sagen, wohin sie laufen sollen. Für 1 Runde bist du gegen den Zustand Fliehend immun."
+          },
+          "ForeignThoughtGivesItselfAway": {
+            "Title": "Der fremde Gedanke verrät sich",
+            "Description": "Sobald der Angriff scheitert, erkennst du die Absicht dahinter. Für 1 Runde erhält die feindliche Quelle einen Umstandsmalus von -1 auf ihren Wahrnehmungs-SG."
+          },
+          "ThoughtStrikesBack": {
+            "Title": "Der Gedanke schlägt zurück",
+            "Description": "Der mentale Schlag prallt durch den geöffneten Kanal zurück. Die feindliche Quelle erleidet 1W4 anhaltenden mentalen Schaden."
+          },
+          "IntruderLosesTheThread": {
+            "Title": "Der Eindringling verliert den Faden",
+            "Description": "Der gescheiterte Angriff verheddert den nächsten Befehl des Gegners in seiner eigenen Absicht. Für 1 Runde erhält die feindliche Quelle einen Umstandsmalus von -1 auf Zauber-SG und Klassen-SG."
+          },
+          "PainBecomesAuthority": {
+            "Title": "Schmerz wird zu Autorität",
+            "Description": "Du hast den Preis des Zweifels bereits bezahlt. Für 1 Runde erhalten dein Zauber-SG und dein Klassen-SG einen Statusbonus von +1."
+          },
+          "NoSecondVoice": {
+            "Title": "Keine zweite Stimme",
+            "Description": "In deinem Kopf ist kein Platz mehr für eine zweite Stimme, die deine Gedanken dämpft. Für 1 Runde bist du gegen den Zustand Benommen immun."
+          },
+          "ClarityAfterTheStorm": {
+            "Title": "Klarheit nach dem Sturm",
+            "Description": "Der gescheiterte Angriff lässt den Rest der Welt unnatürlich einfach erscheinen. Für 1 Runde erhältst du einen Statusbonus von +1 auf Fertigkeitswürfe."
+          },
+          "SlamTheDoorShut": {
+            "Title": "Schlag die Tür zu",
+            "Description": "Du nutzt den Augenblick der Klarheit und sperrst einen Eindringling aus dir aus. Wähle einen anhaltenden Effekt mit der Eigenschaft Mental, der gerade auf dich wirkt. Seine Auswirkungen werden bis zum Ende deines nächsten Zuges unterdrückt, seine Dauer läuft jedoch weiter; wende dieses Ergebnis manuell an."
           }
         }
       }
@@ -564,6 +604,33 @@
           },
           "DefianceLooksBack": {
             "Name": "Der Trotz blickt zurück"
+          },
+          "WillShowsTeeth": {
+            "Name": "Der Wille zeigt Zähne"
+          },
+          "NameRemains": {
+            "Name": "Ein Name bleibt"
+          },
+          "FearForgetsTheWay": {
+            "Name": "Die Furcht vergisst den Weg"
+          },
+          "ForeignThoughtGivesItselfAway": {
+            "Name": "Der fremde Gedanke verrät sich"
+          },
+          "ThoughtStrikesBack": {
+            "Name": "Der Gedanke schlägt zurück"
+          },
+          "IntruderLosesTheThread": {
+            "Name": "Der Eindringling verliert den Faden"
+          },
+          "PainBecomesAuthority": {
+            "Name": "Schmerz wird zu Autorität"
+          },
+          "NoSecondVoice": {
+            "Name": "Keine zweite Stimme"
+          },
+          "ClarityAfterTheStorm": {
+            "Name": "Klarheit nach dem Sturm"
           }
         }
       }

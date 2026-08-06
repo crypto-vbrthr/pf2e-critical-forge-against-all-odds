@@ -7,10 +7,10 @@
 - [x] Bloodied Triumphs Attack deck contains twenty cards: ten regular critical hits and ten spell critical hits.
 - [x] Bloodied Triumphs Fortitude deck contains twenty reviewed cards.
 - [x] Bloodied Triumphs Reflex deck contains twenty reviewed cards.
-- [x] Bloodied Triumphs Will deck contains ten reviewed cards.
-- [x] All seventy published cards use the dynamic Bloodied condition.
+- [x] Bloodied Triumphs Will deck contains twenty reviewed cards.
+- [x] All eighty published cards use the dynamic Bloodied condition.
 - [x] The first forty-card review preserves every previously published card ID.
-- [x] The second Attack, Fortitude, and Reflex passes add ten new IDs each without changing their first-pass IDs.
+- [x] The second Attack, Fortitude, Reflex, and Will passes add ten new IDs each without changing their first-pass IDs.
 - [x] Contextual poison, disease, mental, illusion, and emotion filters are covered by tests.
 - [x] German Remaster terminology uses Gesteuert and Kraftlos.
 - [x] All automated effects use Effect Definition schema 2.
@@ -30,6 +30,6 @@
 - [ ] Foundry smoke test: twenty localized Bloodied Triumphs Attack cards visible.
 - [x] Foundry smoke test: twenty localized Bloodied Triumphs Fortitude cards visible.
 - [ ] Foundry smoke test: twenty localized Bloodied Triumphs Reflex cards visible.
-- [x] Foundry smoke test: ten localized Bloodied Triumphs Will cards visible.
+- [ ] Foundry smoke test: twenty localized Bloodied Triumphs Will cards visible.
 - [ ] Foundry smoke test: automated effects apply to the intended source or target.
 - [ ] Foundry smoke test: cards are unavailable above the Bloodied threshold.

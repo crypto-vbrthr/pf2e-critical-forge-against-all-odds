@@ -61,9 +61,9 @@ test("the Bloodied Triumphs Reflex deck contains twenty unique critical-save car
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
 });
 
-test("the Bloodied Triumphs Will batch contains ten unique critical-save cards", () => {
-  assert.equal(BLOODIED_WILL_CARDS.length, 10);
-  assert.equal(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size, 10);
+test("the Bloodied Triumphs Will deck contains twenty unique critical-save cards after the second pass", () => {
+  assert.equal(BLOODIED_WILL_CARDS.length, 20);
+  assert.equal(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size, 20);
   assert.equal(BLOODIED_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_WILL_CARDS.every((card) => card.deckType === "will"), true);
   assert.equal(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
@@ -71,7 +71,7 @@ test("the Bloodied Triumphs Will batch contains ten unique critical-save cards",
 });
 
 test("all Bloodied Triumphs cards use unique IDs and the dynamic Bloodied context gate", () => {
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 70);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 80);
   assertBloodiedGate(ALL_CARDS);
 });
 
@@ -97,7 +97,10 @@ test("published decks keep their explicit automated/manual split", () => {
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead",
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-020-through-the-impossible-opening"
     ]],
-    [BLOODIED_WILL_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook"]]
+    [BLOODIED_WILL_CARDS, 18, [
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-020-slam-the-door-shut"
+    ]]
   ]) {
     const automated = cards.filter((card) => card.effect);
     const manual = cards.filter((card) => !card.effect);
@@ -125,9 +128,13 @@ test("Will boons target the saving actor while contextual countershocks target t
   const hostile = automated.filter((card) => card.effect.target === "target");
   assert.deepEqual(hostile.map((card) => card.id), [
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-005-heart-remembers",
-    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-009-defiance-looks-back"
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-009-defiance-looks-back",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-011-will-shows-teeth",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-014-foreign-thought-gives-itself-away",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-015-thought-strikes-back",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-016-intruder-loses-the-thread"
   ]);
-  assert.equal(automated.filter((card) => card.effect.target === "source").length, 7);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 12);
 });
 
 test("beneficial and hostile Attack effects remain intentionally separated", () => {
@@ -184,7 +191,7 @@ test("Will effects cover resolve, perception, mental resistance, and hostile cou
   assert.equal(new Set(signatures).size, signatures.length);
   assert.equal(BLOODIED_WILL_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "resistance" && component.resistanceType === "mental")), true);
   assert.equal(BLOODIED_WILL_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("will-dc"))), true);
-  assert.equal(BLOODIED_WILL_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 3);
+  assert.equal(BLOODIED_WILL_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 5);
   assert.equal(BLOODIED_WILL_CARDS.find((card) => card.id.endsWith("bw-009-defiance-looks-back"))?.filters.excludedTargetTraits.includes("mindless"), true);
 });
 
@@ -232,7 +239,7 @@ test("Second Pulse now has a strong one-round healing value", () => {
 });
 
 test("the review patch reduces broad Will immunities and adds an emotion countershock", () => {
-  const immunities = BLOODIED_WILL_CARDS.flatMap((card) => card.effect?.definition.components.filter((component) => component.type === "immunity") ?? []);
+  const immunities = BLOODIED_WILL_CARDS.slice(0, 10).flatMap((card) => card.effect?.definition.components.filter((component) => component.type === "immunity") ?? []);
   assert.deepEqual(immunities.map((component) => component.immunityType).sort(), ["confused", "controlled", "frightened"]);
   const heart = BLOODIED_WILL_CARDS.find((card) => card.id.endsWith("bw-005-heart-remembers"));
   assert.equal(heart.effect.target, "target");
@@ -382,5 +389,62 @@ test("German second-pass Reflex text uses Remaster condition terminology", () =>
   assert.match(reflex.NoGripHoldsTheWind.Description, /Gegriffen/u);
   assert.match(reflex.NoGripHoldsTheWind.Description, /Gebunden/u);
   assert.match(reflex.MotionCannotBeStolen.Description, /Verlangsamt/u);
+});
+
+test("the second Will pass adds ten cards with a distinct content batch", () => {
+  const secondPass = BLOODIED_WILL_CARDS.slice(10);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 8), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["bw-020-slam-the-door-shut"]);
+});
+
+test("second-pass Will cards broaden mental counterplay without duplicate automated definitions", () => {
+  const secondPass = BLOODIED_WILL_CARDS.slice(10);
+  const automated = secondPass.filter((card) => card.effect);
+  const signatures = automated.map((card) => JSON.stringify({ target: card.effect.target, components: card.effect.definition.components }));
+  assert.equal(new Set(signatures).size, signatures.length);
+
+  const bySuffix = Object.fromEntries(BLOODIED_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["bw-011-will-shows-teeth"].effect.definition.components, [
+    { type: "modifier", selector: "attack", value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.deepEqual(bySuffix["bw-012-name-remains"].effect.definition.components, [
+    { type: "modifier", selector: ["wis-based", "cha-based"], value: 1, modifierType: "status", predicate: [] }
+  ]);
+  assert.deepEqual(bySuffix["bw-015-thought-strikes-back"].effect.definition.components, [
+    { type: "persistentDamage", formula: "1d4", damageType: "mental", dc: 15 }
+  ]);
+  assert.deepEqual(bySuffix["bw-018-no-second-voice"].effect.definition.components, [
+    { type: "immunity", immunityType: "stupefied" }
+  ]);
+});
+
+test("second-pass Will contextual countershocks require matching mental or fear effects", () => {
+  const bySuffix = Object.fromEntries(BLOODIED_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  for (const id of [
+    "bw-011-will-shows-teeth",
+    "bw-014-foreign-thought-gives-itself-away",
+    "bw-015-thought-strikes-back",
+    "bw-016-intruder-loses-the-thread"
+  ]) {
+    assert.deepEqual(bySuffix[id].filters.attackTraits, ["mental"]);
+    assert.deepEqual(bySuffix[id].filters.excludedTargetTraits, ["mindless"]);
+  }
+  assert.deepEqual(bySuffix["bw-013-fear-forgets-the-way"].filters.attackTraits, ["fear"]);
+});
+
+test("second-pass Will target roles keep boons on the saver and countershocks on the hostile source", () => {
+  const secondPass = BLOODIED_WILL_CARDS.slice(10).filter((card) => card.effect);
+  assert.equal(secondPass.filter((card) => card.effect.target === "source").length, 5);
+  assert.equal(secondPass.filter((card) => card.effect.target === "target").length, 4);
+});
+
+test("German second-pass Will text uses established condition and DC terminology", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const will = de.PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.Will;
+  assert.match(will.FearForgetsTheWay.Description, /Fliehend/u);
+  assert.match(will.NoSecondVoice.Description, /Benommen/u);
+  assert.match(will.IntruderLosesTheThread.Description, /Zauber-SG/u);
+  assert.match(will.IntruderLosesTheThread.Description, /Klassen-SG/u);
 });
 

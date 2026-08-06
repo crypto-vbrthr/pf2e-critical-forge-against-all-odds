@@ -4,7 +4,7 @@ Against All Odds plans four themes and four specialized decks per theme. The tar
 
 | Theme | Attack | Fortitude | Reflex | Will | Theme total |
 |---|---:|---:|---:|---:|---:|
-| Bloodied Triumphs | **20/30** | **20/30** | **20/30** | **10/30** | **70/120** |
+| Bloodied Triumphs | **20/30** | **20/30** | **20/30** | **20/30** | **80/120** |
 | Surrounded, Still Standing | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 | Giant-Slayer Moments | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 | Narrow Escapes | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
@@ -22,7 +22,7 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 
 ## Next content milestones
 
-1. Add the second ten-card pass to Will. **Attack second pass complete in 0.1.0-dev.7; Fortitude second pass complete in 0.1.0-dev.8; registration hotfix in 0.1.0-dev.8.1; Reflex second pass complete in 0.1.0-dev.9.**
+1. Complete the second ten-card pass across all four Bloodied Triumphs decks. **Attack complete in 0.1.0-dev.7; Fortitude complete in 0.1.0-dev.8; registration hotfix in 0.1.0-dev.8.1; Reflex complete in 0.1.0-dev.9; Will complete in 0.1.0-dev.10.**
 2. Review the resulting 80-card Bloodied Triumphs pool.
 3. Add the third ten-card pass to reach 30 cards per deck and 120 cards for the theme.
 4. Repeat the three-pass process for Surrounded, Giant-Slayer, and Narrow Escapes.

@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-dev.10
+
+### Added
+- Added the second ten-card Bloodied Triumphs Will pass, bringing the Will deck to 20/30 cards and Bloodied Triumphs to 80/120 cards.
+- Added hostile-source attack and DC countershocks, Wisdom/Charisma and skill-check reinforcement, fleeing and stupefied protection, persistent mental backlash, Spell/Class DC reinforcement, and one manual suppression result for an ongoing mental effect.
+- Added German and English localization for all ten cards and nine automated effects.
+
+### Tests
+- Raised the automated suite with second-pass Will count, content-batch, mechanical-diversity, target-role, contextual-filter, localization, and terminology coverage.
+- Extended the release contract to require twenty Will cards.
+- Revalidated the complete 80-card Bloodied Triumphs pool against the Critical Forge RC pack and effect contracts.
+
+### Compatibility
+- Card, pack, effect, diagnostic, and extension-contract schema versions remain unchanged.
+- Existing seventy card IDs are unchanged; this build only adds ten new Will IDs.
+
 ## 0.1.0-dev.9
 
 ### Added

@@ -92,8 +92,8 @@ check(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCritic
 check(BLOODIED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Bloodied Triumphs Reflex cards must require Reflex.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Reflex cards must use the dynamic Bloodied condition.");
 
-check(BLOODIED_WILL_CARDS.length === 10, "Bloodied Triumphs Will deck must contain ten cards.");
-check(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs Will card IDs must be unique.");
+check(BLOODIED_WILL_CARDS.length === 20, "Bloodied Triumphs Will deck must contain twenty cards.");
+check(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Will card IDs must be unique.");
 check(BLOODIED_WILL_CARDS.every((card) => card.deckType === "will"), "Bloodied Triumphs Will cards must remain in the Will deck.");
 check(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Will cards require critical save success.");
 check(BLOODIED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Bloodied Triumphs Will cards must require Will.");
