@@ -117,6 +117,46 @@
           "OneMoreBreath": {
             "Title": "Noch ein Atemzug",
             "Description": "Der Zauber kauft einen Herzschlag aus einer Zukunft, die ihn bereits ausgegeben hatte. Du darfst sofort als freie Aktion einen Schritt ausführen. Dabei gelten die normalen Einschränkungen für Schritt."
+          },
+          "BloodAnswersBlood": {
+            "Title": "Blut antwortet Blut",
+            "Description": "Deine eigenen Wunden machen den Schlag grausam präzise. Das Ziel erleidet 1W4 anhaltenden Blutungsschaden."
+          },
+          "BreachForEveryone": {
+            "Title": "Ein Riss für alle",
+            "Description": "Dein kritischer Schlag reißt eine Lücke auf, die jede Waffe finden kann. Für 1 Runde erhält das Ziel Schwäche 2 gegen Waffen."
+          },
+          "StealTheirBeat": {
+            "Title": "Raub ihnen den Takt",
+            "Description": "Der Treffer landet genau in dem Augenblick, in dem der Gegner seinen Rhythmus am dringendsten braucht. Das Ziel erhält für 1 Runde Verlangsamt 1."
+          },
+          "StrengthRunsRed": {
+            "Title": "Kraft rinnt rot",
+            "Description": "Die Wunde raubt jeder folgenden Bewegung die Hebelwirkung. Das Ziel erhält für 1 Runde Kraftlos 1."
+          },
+          "HuntTheOpening": {
+            "Title": "Jage die Öffnung",
+            "Description": "Der kritische Schlag öffnet einen Weg, und dein verwundeter Körper nutzt ihn, bevor die Vorsicht widersprechen kann. Du darfst sofort als freie Aktion einen Schritt ausführen und musst diesen, wenn möglich, näher am Ziel beenden."
+          },
+          "Spellscar": {
+            "Title": "Zaubernarbe",
+            "Description": "Die Magie trifft nicht nur, sie hinterlässt eine Stelle, an der weitere Magie eindringen will. Für 1 Runde erhält das Ziel Schwäche 2 gegen Schaden durch Zauber."
+          },
+          "PainHoldsTheFormula": {
+            "Title": "Schmerz hält die Formel",
+            "Description": "Deine Verletzungen streifen jeden überflüssigen Gedanken ab, bis nur noch der Zauber bleibt. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deinen Zauber-SG."
+          },
+          "ThoughtBleedsBack": {
+            "Title": "Der Gedanke blutet zurück",
+            "Description": "Der mentale Einschlag schlägt durch die Öffnung zurück, die er selbst geschaffen hat. Das Ziel erhält für 1 Runde Benommen 1."
+          },
+          "PowerRefusesToFade": {
+            "Title": "Macht weigert sich zu vergehen",
+            "Description": "Der Zauber sollte vorbei sein. Der Schmerz in deinem Körper weigert sich, ihn enden zu lassen. Das Ziel erleidet 1W4 anhaltenden Kraftschaden."
+          },
+          "MagicNailsTheShadow": {
+            "Title": "Magie nagelt den Schatten fest",
+            "Description": "Der Zauber heftet die Bewegung des Ziels an den Augenblick des Einschlags. Für 1 Runde erhält das Ziel einen Umstandsmalus von 1,5 m auf alle Bewegungsraten."
           }
         },
         "Fortitude": {
@@ -276,6 +316,33 @@
           },
           "ScarletOpening": {
             "Name": "Scharlachrote Öffnung"
+          },
+          "BloodAnswersBlood": {
+            "Name": "Blut antwortet Blut"
+          },
+          "BreachForEveryone": {
+            "Name": "Ein Riss für alle"
+          },
+          "StealTheirBeat": {
+            "Name": "Raub ihnen den Takt"
+          },
+          "StrengthRunsRed": {
+            "Name": "Kraft rinnt rot"
+          },
+          "Spellscar": {
+            "Name": "Zaubernarbe"
+          },
+          "PainHoldsTheFormula": {
+            "Name": "Schmerz hält die Formel"
+          },
+          "ThoughtBleedsBack": {
+            "Name": "Der Gedanke blutet zurück"
+          },
+          "PowerRefusesToFade": {
+            "Name": "Macht weigert sich zu vergehen"
+          },
+          "MagicNailsTheShadow": {
+            "Name": "Magie nagelt den Schatten fest"
           }
         },
         "Fortitude": {

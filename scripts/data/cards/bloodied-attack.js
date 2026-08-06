@@ -2,6 +2,7 @@ import { defineBloodiedAttackCard } from "./card-factory.js";
 
 const SOURCE_ONE_ROUND = Object.freeze({ value: 1, unit: "rounds", expiry: "turn-start" });
 const TARGET_ONE_ROUND = Object.freeze({ value: 1, unit: "rounds", expiry: "turn-end" });
+const UNLIMITED = Object.freeze({ value: -1, unit: "unlimited", expiry: null });
 
 export const BLOODIED_ATTACK_CARDS = Object.freeze([
   defineBloodiedAttackCard({
@@ -161,5 +162,180 @@ export const BLOODIED_ATTACK_CARDS = Object.freeze([
     fallbackDescription: "The spell buys a heartbeat from a future that had already spent it. You may immediately Step as a free action, following the normal restrictions of Step.",
     tags: ["step", "free-action", "movement", "manual"],
     effect: null
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-011-blood-answers-blood",
+    localizationKey: "BloodAnswersBlood",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Blood Answers Blood",
+    fallbackDescription: "Your own wounds make the strike cruelly exact. The target takes 1d4 persistent bleed damage.",
+    tags: ["target", "persistent-damage", "bleed", "effect"],
+    filters: { excludedTargetTraits: ["construct", "ooze"] },
+    effect: {
+      target: "target",
+      duration: UNLIMITED,
+      components: [
+        { type: "persistentDamage", formula: "1d4", damageType: "bleed" }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-012-breach-for-everyone",
+    localizationKey: "BreachForEveryone",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "A Breach for Everyone",
+    fallbackDescription: "Your critical blow opens a seam that every weapon can find. For 1 round, the target gains weakness 2 to weapons.",
+    tags: ["target", "weakness", "weapons", "teamwork", "effect"],
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "weakness", weaknessType: "weapons", value: 2 }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-013-steal-their-beat",
+    localizationKey: "StealTheirBeat",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Steal Their Beat",
+    fallbackDescription: "The hit lands exactly when the enemy needs their rhythm most. The target becomes slowed 1 for 1 round.",
+    tags: ["target", "slowed", "tempo", "effect"],
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "slowed", value: 1 }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-014-strength-runs-red",
+    localizationKey: "StrengthRunsRed",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Strength Runs Red",
+    fallbackDescription: "The wound steals leverage from every motion that follows. The target becomes enfeebled 1 for 1 round.",
+    tags: ["target", "enfeebled", "pressure", "effect"],
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "enfeebled", value: 1 }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-015-hunt-the-opening",
+    localizationKey: "HuntTheOpening",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Hunt the Opening",
+    fallbackDescription: "The critical blow creates a path and your wounded body takes it before caution can object. You may immediately Step as a free action, but you must end the Step closer to the target if possible.",
+    tags: ["step", "free-action", "pursuit", "manual"],
+    effect: null,
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-016-spellscar",
+    localizationKey: "Spellscar",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Spellscar",
+    fallbackDescription: "The magic does not merely strike; it leaves a place where more magic wants to enter. For 1 round, the target gains weakness 2 to damage from spells.",
+    tags: ["target", "weakness", "spell-damage", "effect"],
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "weakness", weaknessType: "damage-from-spells", value: 2 }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-017-pain-holds-the-formula",
+    localizationKey: "PainHoldsTheFormula",
+    category: "spellCriticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Pain Holds the Formula",
+    fallbackDescription: "Your injuries strip away every unnecessary thought until only the spell remains. For 1 round, you gain a +1 circumstance bonus to your spell DC.",
+    tags: ["spell-dc", "circumstance-bonus", "focus", "effect"],
+    effect: {
+      duration: SOURCE_ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "spell-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-018-thought-bleeds-back",
+    localizationKey: "ThoughtBleedsBack",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Thought Bleeds Back",
+    fallbackDescription: "The mental impact rebounds through the opening it created. The target becomes stupefied 1 for 1 round.",
+    tags: ["target", "mental", "stupefied", "effect"],
+    filters: { spellTraits: ["mental"], excludedTargetTraits: ["mindless"] },
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-019-power-refuses-to-fade",
+    localizationKey: "PowerRefusesToFade",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Power Refuses to Fade",
+    fallbackDescription: "The spell should be over. The pain in your body refuses to let it end. The target takes 1d4 persistent force damage.",
+    tags: ["target", "persistent-damage", "force", "effect"],
+    effect: {
+      target: "target",
+      duration: UNLIMITED,
+      components: [
+        { type: "persistentDamage", formula: "1d4", damageType: "force" }
+      ]
+    },
+    contentBatch: 5
+  }),
+  defineBloodiedAttackCard({
+    id: "ba-020-magic-nails-the-shadow",
+    localizationKey: "MagicNailsTheShadow",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Magic Nails the Shadow",
+    fallbackDescription: "The spell pins the target's motion to the instant of impact. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds.",
+    tags: ["target", "movement", "speed-penalty", "effect"],
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+      ]
+    },
+    contentBatch: 5
   })
 ]);

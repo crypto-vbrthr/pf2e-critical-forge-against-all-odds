@@ -117,6 +117,46 @@
           "OneMoreBreath": {
             "Title": "One More Breath",
             "Description": "The spell buys a heartbeat from a future that had already spent it. You may immediately Step as a free action, following the normal restrictions of Step."
+          },
+          "BloodAnswersBlood": {
+            "Title": "Blood Answers Blood",
+            "Description": "Your own wounds make the strike cruelly exact. The target takes 1d4 persistent bleed damage."
+          },
+          "BreachForEveryone": {
+            "Title": "A Breach for Everyone",
+            "Description": "Your critical blow opens a seam that every weapon can find. For 1 round, the target gains weakness 2 to weapons."
+          },
+          "StealTheirBeat": {
+            "Title": "Steal Their Beat",
+            "Description": "The hit lands exactly when the enemy needs their rhythm most. The target becomes slowed 1 for 1 round."
+          },
+          "StrengthRunsRed": {
+            "Title": "Strength Runs Red",
+            "Description": "The wound steals leverage from every motion that follows. The target becomes enfeebled 1 for 1 round."
+          },
+          "HuntTheOpening": {
+            "Title": "Hunt the Opening",
+            "Description": "The critical blow creates a path and your wounded body takes it before caution can object. You may immediately Step as a free action, but you must end the Step closer to the target if possible."
+          },
+          "Spellscar": {
+            "Title": "Spellscar",
+            "Description": "The magic does not merely strike; it leaves a place where more magic wants to enter. For 1 round, the target gains weakness 2 to damage from spells."
+          },
+          "PainHoldsTheFormula": {
+            "Title": "Pain Holds the Formula",
+            "Description": "Your injuries strip away every unnecessary thought until only the spell remains. For 1 round, you gain a +1 circumstance bonus to your spell DC."
+          },
+          "ThoughtBleedsBack": {
+            "Title": "Thought Bleeds Back",
+            "Description": "The mental impact rebounds through the opening it created. The target becomes stupefied 1 for 1 round."
+          },
+          "PowerRefusesToFade": {
+            "Title": "Power Refuses to Fade",
+            "Description": "The spell should be over. The pain in your body refuses to let it end. The target takes 1d4 persistent force damage."
+          },
+          "MagicNailsTheShadow": {
+            "Title": "Magic Nails the Shadow",
+            "Description": "The spell pins the target's motion to the instant of impact. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds."
           }
         },
         "Fortitude": {
@@ -276,6 +316,33 @@
           },
           "ScarletOpening": {
             "Name": "Scarlet Opening"
+          },
+          "BloodAnswersBlood": {
+            "Name": "Blood Answers Blood"
+          },
+          "BreachForEveryone": {
+            "Name": "A Breach for Everyone"
+          },
+          "StealTheirBeat": {
+            "Name": "Steal Their Beat"
+          },
+          "StrengthRunsRed": {
+            "Name": "Strength Runs Red"
+          },
+          "Spellscar": {
+            "Name": "Spellscar"
+          },
+          "PainHoldsTheFormula": {
+            "Name": "Pain Holds the Formula"
+          },
+          "ThoughtBleedsBack": {
+            "Name": "Thought Bleeds Back"
+          },
+          "PowerRefusesToFade": {
+            "Name": "Power Refuses to Fade"
+          },
+          "MagicNailsTheShadow": {
+            "Name": "Magic Nails the Shadow"
           }
         },
         "Fortitude": {

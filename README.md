@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.6.1` applies the first full review to the forty published Bloodied Triumphs cards. The patch preserves every card ID while reducing mechanical overlap, tightening contextual filters, correcting German Remaster terminology, and improving one underpowered healing result. Bloodied Triumphs remains at 40 of its planned 120 cards.
+Version `0.1.0-dev.7` begins the second content pass for Bloodied Triumphs. The Attack deck now contains 20 of its planned 30 cards, split evenly between ordinary critical hits and spell critical hits. Bloodied Triumphs now contains 50 of its planned 120 cards.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -58,15 +58,15 @@ See:
 
 ## Current playable cards
 
-Bloodied Triumphs now contains forty cards:
+Bloodied Triumphs now contains fifty cards:
 
-- ten Attack-deck cards, split evenly between ordinary and spell critical hits;
+- twenty Attack-deck cards, split evenly between ordinary and spell critical hits;
 - ten Fortitude-deck cards for critically successful Fortitude saves;
 - ten Reflex-deck cards for critically successful Reflex saves;
 - ten Will-deck cards for critically successful Will saves;
-- thirty-six automated Effect Engine cards;
-- four explicit manual cards.
+- forty-five automated Effect Engine cards;
+- five explicit manual cards.
 
-This is the reviewed first of three planned ten-card passes per deck. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total. Several specialized cards now additionally require matching effect traits such as poison, disease, mental, illusion, or emotion.
+The first ten-card pass has been reviewed across all four decks, and the Attack deck has completed its second ten-card pass. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total. Several specialized cards now additionally require matching effect traits such as poison, disease, mental, illusion, or emotion.
 
 Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.

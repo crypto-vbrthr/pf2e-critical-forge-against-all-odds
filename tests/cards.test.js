@@ -34,13 +34,13 @@ function assertBloodiedGate(cards) {
   }
 }
 
-test("the Bloodied Triumphs Attack batch contains ten unique attack-deck cards", () => {
-  assert.equal(BLOODIED_ATTACK_CARDS.length, 10);
-  assert.equal(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size, 10);
+test("the Bloodied Triumphs Attack deck contains twenty unique cards after the second pass", () => {
+  assert.equal(BLOODIED_ATTACK_CARDS.length, 20);
+  assert.equal(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size, 20);
   assert.equal(BLOODIED_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
-  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 5);
-  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 10);
+  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 10);
 });
 
 test("the Bloodied Triumphs Fortitude batch contains ten unique critical-save cards", () => {
@@ -71,7 +71,7 @@ test("the Bloodied Triumphs Will batch contains ten unique critical-save cards",
 });
 
 test("all Bloodied Triumphs cards use unique IDs and the dynamic Bloodied context gate", () => {
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 40);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 50);
   assertBloodiedGate(ALL_CARDS);
 });
 
@@ -83,18 +83,21 @@ test("all card filters are complete immutable schema-1 filter sets", () => {
   }
 });
 
-test("each published batch contains nine automated effects and one explicit manual result", () => {
-  for (const [cards, manualId] of [
-    [BLOODIED_ATTACK_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-010-one-more-breath"],
-    [BLOODIED_FORTITUDE_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound"],
-    [BLOODIED_REFLEX_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead"],
-    [BLOODIED_WILL_CARDS, "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook"]
+test("published decks keep their explicit automated/manual split", () => {
+  for (const [cards, automatedCount, manualIds] of [
+    [BLOODIED_ATTACK_CARDS, 18, [
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-010-one-more-breath",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-015-hunt-the-opening"
+    ]],
+    [BLOODIED_FORTITUDE_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound"]],
+    [BLOODIED_REFLEX_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead"]],
+    [BLOODIED_WILL_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook"]]
   ]) {
     const automated = cards.filter((card) => card.effect);
     const manual = cards.filter((card) => !card.effect);
-    assert.equal(automated.length, 9);
-    assert.deepEqual(manual.map((card) => card.id), [manualId]);
-    assert.equal(manual[0].tags.includes("manual"), true);
+    assert.equal(automated.length, automatedCount);
+    assert.deepEqual(manual.map((card) => card.id), manualIds);
+    assert.equal(manual.every((card) => card.tags.includes("manual")), true);
     for (const card of automated) {
       assert.equal(card.effect.definition.schemaVersion, 2);
       assert.equal(card.effect.definition.components.length > 0, true);
@@ -126,9 +129,17 @@ test("beneficial and hostile Attack effects remain intentionally separated", () 
   assert.deepEqual(targetCards.map((card) => card.id), [
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-003-back-against-the-world",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-005-you-flinch-first",
-    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-009-scarlet-opening"
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-009-scarlet-opening",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-011-blood-answers-blood",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-012-breach-for-everyone",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-013-steal-their-beat",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-014-strength-runs-red",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-016-spellscar",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-018-thought-bleeds-back",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-019-power-refuses-to-fade",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-020-magic-nails-the-shadow"
   ]);
-  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "source").length, 6);
+  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "source").length, 7);
 });
 
 test("published batches use only Effect Engine component types supported by the Forge RC", () => {
@@ -139,8 +150,10 @@ test("published batches use only Effect Engine component types supported by the 
     "immunity",
     "modifier",
     "movement",
+    "persistentDamage",
     "resistance",
-    "temporaryHitPoints"
+    "temporaryHitPoints",
+    "weakness"
   ]);
 });
 
@@ -185,7 +198,7 @@ test("the review patch preserves all published card IDs while replacing overlapp
     "ba-001-not-yet", "ba-002-pain-honed-edge", "ba-003-back-against-the-world", "ba-004-blood-in-the-stride", "ba-005-you-flinch-first",
     "ba-006-crimson-afterimage", "ba-007-will-through-the-wound", "ba-008-wound-holds-the-weave", "ba-009-scarlet-opening", "ba-010-one-more-breath"
   ];
-  assert.deepEqual(BLOODIED_ATTACK_CARDS.map((card) => card.id.split(".").at(-1)), expectedSuffixes);
+  assert.deepEqual(BLOODIED_ATTACK_CARDS.slice(0, 10).map((card) => card.id.split(".").at(-1)), expectedSuffixes);
 
   const attackComponents = Object.fromEntries(BLOODIED_ATTACK_CARDS.filter((card) => card.effect).map((card) => [card.id.split(".").at(-1), card.effect.definition.components]));
   assert.equal(attackComponents["ba-001-not-yet"][0].selector, "strike-damage");
@@ -229,4 +242,30 @@ test("German Remaster terms and reviewed titles are present without obsolete wor
   assert.doesNotMatch(cards.Fortitude.StrengthDoesNotLeave.Description, /Entkräftet/u);
   assert.equal(cards.Attack.WoundHoldsTheWeave.Title, "Die Wunde hält das Geflecht");
   assert.equal(cards.Reflex.NeverWhereNeeded.Title, "Nie dort, wo sie dich erwarten");
+});
+
+
+test("the second Attack pass adds five Strike and five spell-attack cards with distinct mechanics", () => {
+  const secondPass = BLOODIED_ATTACK_CARDS.slice(10);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(secondPass.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 5), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ba-015-hunt-the-opening"]);
+
+  const componentTypes = secondPass.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
+  assert.equal(componentTypes.includes("persistentDamage"), true);
+  assert.equal(componentTypes.includes("weakness"), true);
+  assert.equal(componentTypes.includes("movement"), true);
+  assert.equal(secondPass.some((card) => card.effect?.definition.components.some((component) => component.slug === "slowed")), true);
+  assert.equal(secondPass.some((card) => card.effect?.definition.components.some((component) => component.slug === "enfeebled")), true);
+  assert.equal(secondPass.some((card) => card.effect?.definition.components.some((component) => component.slug === "stupefied")), true);
+});
+
+test("second-pass contextual filters avoid nonsensical bleed and mental results", () => {
+  const bleed = BLOODIED_ATTACK_CARDS.find((card) => card.id.endsWith("ba-011-blood-answers-blood"));
+  const thought = BLOODIED_ATTACK_CARDS.find((card) => card.id.endsWith("ba-018-thought-bleeds-back"));
+  assert.deepEqual(bleed.filters.excludedTargetTraits, ["construct", "ooze"]);
+  assert.deepEqual(thought.filters.spellTraits, ["mental"]);
+  assert.deepEqual(thought.filters.excludedTargetTraits, ["mindless"]);
 });

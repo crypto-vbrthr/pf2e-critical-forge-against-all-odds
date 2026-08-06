@@ -112,7 +112,7 @@ export function defineBloodiedAttackCard(options) {
     ...options,
     deckType: "attack",
     deckToken: "Attack",
-    contentBatch: 1,
+    contentBatch: options.contentBatch ?? 1,
     tags: [options.category === "spellCriticalHit" ? "spell" : "strike", ...(options.tags ?? [])]
   });
 }

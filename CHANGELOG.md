@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-dev.7
+
+### Added
+
+- Added the second ten-card Bloodied Triumphs Attack pass, bringing the Attack deck to 20/30 cards.
+- Added five ordinary critical-hit cards and five critical spell-hit cards.
+- Added persistent bleed and force damage, weapon and spell-damage weaknesses, slowed, enfeebled, stupefied, spell-DC reinforcement, movement suppression, and one aggressive manual Step result.
+- Added contextual exclusions for bleed against constructs and oozes and for mental backlash against mindless targets.
+- Added German and English localization for all ten new cards and nine automated effects.
+
+### Tests
+
+- Added second-pass card-count, 10/10 category split, content-batch, filter, targeting, component-diversity, and localization coverage.
+- Revalidated all fifty published cards against PF2E Critical Forge `1.0.0-rc`.
+- Smoke-tested second-pass card selection with Bloodied matched and unmatched snapshots.
+
+### Compatibility
+
+- Card, pack, effect, diagnostic, and extension-contract schema versions remain unchanged.
+- The first forty reviewed card IDs are unchanged; this build only adds ten new Attack IDs.
+
 ## 0.1.0-dev.6.1
 
 ### Changed

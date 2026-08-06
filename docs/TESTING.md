@@ -27,17 +27,17 @@ The test suite covers:
 - atomic pack refresh;
 - settings registration and clamping;
 - version metadata and localization parity;
-- ten unique Bloodied Triumphs Attack cards;
+- twenty unique Bloodied Triumphs Attack cards, split 10/10 between ordinary and spell critical hits;
 - ten unique Bloodied Triumphs Fortitude cards;
 - ten unique Bloodied Triumphs Reflex cards;
 - ten unique Bloodied Triumphs Will cards;
-- five ordinary and five spell critical-hit categories;
+- ten ordinary and ten spell critical-hit categories in the Attack deck;
 - Fortitude, Reflex, and Will deck/category/save-filter isolation;
 - saving-actor targeting for every automated Fortitude, Reflex, and Will boon;
 - hostile-source targeting for both Will countershock cards;
 - unique Fortitude, Reflex, and Will mechanical definitions;
-- preservation of all forty published card IDs through the review patch;
-- reviewed Attack mechanics for Strike damage, off-guard, Athletics/Intimidation, clumsy, and spell damage;
+- preservation of the reviewed first forty card IDs plus ten additive second-pass Attack IDs;
+- reviewed first-pass Attack mechanics plus second-pass persistent damage, weakness, slowed, enfeebled, spell DC, stupefied, and movement-control coverage;
 - poison, disease, mental, illusion, and emotion trigger-trait filters;
 - the increased Second Pulse healing value and reduced Will immunity density;
 - German Remaster terminology and reviewed German titles;
@@ -51,4 +51,4 @@ The test suite covers:
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current development baseline: 46 passing tests with 98.85% measured line coverage.
+Current development baseline: 48 passing tests with 98.96% measured line coverage.

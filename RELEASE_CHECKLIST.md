@@ -4,12 +4,13 @@
 - [x] Critical Forge dependency is declared.
 - [x] Four theme packs register through the bound extension API.
 - [x] Every theme exposes Attack, Fortitude, Reflex, and Will deck slots.
-- [x] Bloodied Triumphs Attack deck contains ten reviewed cards.
+- [x] Bloodied Triumphs Attack deck contains twenty cards: ten regular critical hits and ten spell critical hits.
 - [x] Bloodied Triumphs Fortitude deck contains ten reviewed cards.
 - [x] Bloodied Triumphs Reflex deck contains ten reviewed cards.
 - [x] Bloodied Triumphs Will deck contains ten reviewed cards.
-- [x] All forty published cards use the dynamic Bloodied condition.
-- [x] The first forty-card review preserves every published card ID.
+- [x] All fifty published cards use the dynamic Bloodied condition.
+- [x] The first forty-card review preserves every previously published card ID.
+- [x] The second Attack pass adds ten new IDs without changing the first ten Attack IDs.
 - [x] Contextual poison, disease, mental, illusion, and emotion filters are covered by tests.
 - [x] German Remaster terminology uses Gesteuert and Kraftlos.
 - [x] All automated effects use Effect Definition schema 2.
@@ -26,7 +27,7 @@
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
-- [x] Foundry smoke test: ten localized Bloodied Triumphs Attack cards visible.
+- [ ] Foundry smoke test: twenty localized Bloodied Triumphs Attack cards visible.
 - [x] Foundry smoke test: ten localized Bloodied Triumphs Fortitude cards visible.
 - [x] Foundry smoke test: ten localized Bloodied Triumphs Reflex cards visible.
 - [x] Foundry smoke test: ten localized Bloodied Triumphs Will cards visible.
