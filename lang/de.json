@@ -80,11 +80,11 @@
         "Attack": {
           "NotYet": {
             "Title": "Noch nicht",
-            "Description": "Der Schmerz wird zu Kraft, bevor er zur Schwäche werden kann. Für 1 Runde erhältst du einen Umstandsbonus von +2 auf den Schaden deiner Angriffe."
+            "Description": "Der Schmerz wird zu Kraft, bevor er zur Schwäche werden kann. Für 1 Runde erhältst du einen Situationsbonus von +2 auf den Schaden deiner Angriffe."
           },
           "PainHonedEdge": {
             "Title": "Vom Schmerz geschärft",
-            "Description": "Jede Wunde zeichnet die Linie deines nächsten Angriffs schärfer. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Angriffswürfe."
+            "Description": "Jede Wunde zeichnet die Linie deines nächsten Angriffs schärfer. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe."
           },
           "BackAgainstTheWorld": {
             "Title": "Gegen die ganze Welt",
@@ -112,7 +112,7 @@
           },
           "ScarletOpening": {
             "Title": "Scharlachrote Öffnung",
-            "Description": "Der kritische Zauber zeichnet die Verteidigung des Ziels in Rot nach. Für 1 Runde erhält das Ziel einen Umstandsmalus von -1 auf Rettungswürfe."
+            "Description": "Der kritische Zauber zeichnet die Verteidigung des Ziels in Rot nach. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Rettungswürfe."
           },
           "OneMoreBreath": {
             "Title": "Noch ein Atemzug",
@@ -144,7 +144,7 @@
           },
           "PainHoldsTheFormula": {
             "Title": "Schmerz hält die Formel",
-            "Description": "Deine Verletzungen streifen jeden überflüssigen Gedanken ab, bis nur noch der Zauber bleibt. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deinen Zauber-SG."
+            "Description": "Deine Verletzungen streifen jeden überflüssigen Gedanken ab, bis nur noch der Zauber bleibt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Zauber-SG."
           },
           "ThoughtBleedsBack": {
             "Title": "Der Gedanke blutet zurück",
@@ -156,7 +156,7 @@
           },
           "MagicNailsTheShadow": {
             "Title": "Magie nagelt den Schatten fest",
-            "Description": "Der Zauber heftet die Bewegung des Ziels an den Augenblick des Einschlags. Für 1 Runde erhält das Ziel einen Umstandsmalus von 1,5 m auf alle Bewegungsraten."
+            "Description": "Der Zauber heftet die Bewegung des Ziels an den Augenblick des Einschlags. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
           }
         },
         "Fortitude": {
@@ -170,7 +170,7 @@
           },
           "BodyAsBastion": {
             "Title": "Der Körper als Bastion",
-            "Description": "Muskeln, Knochen und Sturheit verriegeln sich zu einer einzigen Verteidigung. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Zähigkeitswürfe und deinen Zähigkeits-SG."
+            "Description": "Muskeln, Knochen und Sturheit verriegeln sich zu einer einzigen Verteidigung. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeitswürfe und deinen Zähigkeits-SG."
           },
           "FleshBecomesArmor": {
             "Title": "Fleisch wird zu Rüstung",
@@ -222,7 +222,7 @@
           },
           "FleshRemembers": {
             "Title": "Fleisch erinnert sich",
-            "Description": "Für einen unmöglichen Herzschlag erinnert sich dein Körper an eine Gestalt ohne Wunden. Für 1 Runde erhältst du Regeneration 3; Säure- oder Feuerschaden deaktiviert sie."
+            "Description": "Für einen unmöglichen Herzschlag erinnert sich dein Körper an eine Gestalt ohne Wunden. Für 1 Runde erhältst du Regeneration 3; Säure- oder Feuerschaden deaktiviert sie. Solange die Regeneration aktiv ist, kann dein Zustandswert für Sterbend nicht über 3 steigen."
           },
           "CoreAgainstTheElements": {
             "Title": "Kern gegen die Elemente",
@@ -234,7 +234,7 @@
           },
           "LastReserve": {
             "Title": "Die letzte Reserve",
-            "Description": "Dein Körper öffnet eine Reserve, die er für das Grab aufgespart hatte. Für 1 Runde erhältst du 8 temporäre Trefferpunkte."
+            "Description": "Dein Körper öffnet eine letzte Reserve und verteilt sie über jede Wunde zugleich. Für 1 Runde erhältst du Resistenz 1 gegen jeglichen Schaden."
           },
           "BodyCastsItOut": {
             "Title": "Der Körper stößt es aus",
@@ -244,7 +244,7 @@
         "Reflex": {
           "BetweenTheBlades": {
             "Title": "Zwischen den Schneiden",
-            "Description": "Es gibt keinen sicheren Weg, also schaffst du einen zwischen den Schneiden. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Reflexwürfe und deinen Reflex-SG."
+            "Description": "Es gibt keinen sicheren Weg, also schaffst du einen zwischen den Schneiden. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Reflexwürfe und deinen Reflex-SG."
           },
           "BloodRedBlur": {
             "Title": "Blutrotes Flimmern",
@@ -260,7 +260,7 @@
           },
           "NoAngleLeft": {
             "Title": "Kein Winkel bleibt",
-            "Description": "Jede Angriffslinie schließt sich einen Augenblick zu spät. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf deine RK."
+            "Description": "Jede Angriffslinie schließt sich einen Augenblick zu spät. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK."
           },
           "NeverWhereNeeded": {
             "Title": "Nie dort, wo sie dich erwarten",
@@ -284,11 +284,11 @@
           },
           "MotionRefusesToDie": {
             "Title": "Bewegung stirbt zuletzt",
-            "Description": "Der Schmerz reißt jedes Zögern fort, bis jede Richtung ein Fluchtweg wird. Für 1 Runde erhältst du einen Umstandsbonus von 1,5 m auf alle deine Bewegungsraten."
+            "Description": "Der Schmerz reißt jedes Zögern fort, bis jede Richtung ein Fluchtweg wird. Für 1 Runde erhältst du einen Situationsbonus von 1,5 m auf alle deine Bewegungsraten."
           },
           "WoundReadsTheAngle": {
             "Title": "Die Wunde liest den Winkel",
-            "Description": "Jedes knappe Entkommen lehrt deinen Körper, wohin die Wucht dich zwingen will. Für 1 Runde erhält dein Reflex-SG einen Umstandsbonus von +2."
+            "Description": "Jedes knappe Entkommen lehrt deinen Körper, wohin die Wucht dich zwingen will. Für 1 Runde erhält dein Reflex-SG einen Situationsbonus von +2."
           },
           "NoGripHoldsTheWind": {
             "Title": "Kein Griff hält den Wind",
@@ -304,7 +304,7 @@
           },
           "DodgeBecomesCounterstroke": {
             "Title": "Ausweichen wird Gegenstoß",
-            "Description": "Die Bewegung, die dein Leben rettet, holt bereits zum nächsten Angriff aus. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Angriffswürfe."
+            "Description": "Die Bewegung, die dein Leben rettet, holt bereits zum nächsten Angriff aus. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe."
           },
           "ReflexWithoutThought": {
             "Title": "Reflex ohne Gedanken",
@@ -326,7 +326,7 @@
         "Will": {
           "MindRefuses": {
             "Title": "Der Geist weigert sich",
-            "Description": "Deine Gedanken schließen sich um den einen Befehl, der noch zählt: durchhalten. Für 1 Runde erhältst du einen Umstandsbonus von +1 auf Willenswürfe und deinen Willens-SG."
+            "Description": "Deine Gedanken schließen sich um den einen Befehl, der noch zählt: durchhalten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und deinen Willens-SG."
           },
           "NothingLeftToFear": {
             "Title": "Nichts mehr zu fürchten",
@@ -338,7 +338,7 @@
           },
           "PainIsProof": {
             "Title": "Der Schmerz ist Beweis",
-            "Description": "Die Wunde ist echt, das Blut ist echt, und die Lüge hat keinen Ort mehr, an dem sie sich verbergen kann. Für 1 Runde erhältst du einen Umstandsbonus von +2 auf Wahrnehmungs- und Willenswürfe."
+            "Description": "Die Wunde ist echt, das Blut ist echt, und die Lüge hat keinen Ort mehr, an dem sie sich verbergen kann. Für 1 Runde erhältst du einen Situationsbonus von +2 auf Wahrnehmungs- und Willenswürfe."
           },
           "HeartRemembers": {
             "Title": "Das Herz erinnert sich",
@@ -366,7 +366,7 @@
           },
           "WillShowsTeeth": {
             "Title": "Der Wille zeigt Zähne",
-            "Description": "Der feindliche Gedanke zuckt zurück und lässt seinen Urheber einen Herzschlag zu langsam nachsetzen. Für 1 Runde erhält die feindliche Quelle einen Umstandsmalus von -1 auf Angriffswürfe."
+            "Description": "Der feindliche Gedanke zuckt zurück und lässt seinen Urheber einen Herzschlag zu langsam nachsetzen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe."
           },
           "NameRemains": {
             "Title": "Ein Name bleibt",
@@ -378,7 +378,7 @@
           },
           "ForeignThoughtGivesItselfAway": {
             "Title": "Der fremde Gedanke verrät sich",
-            "Description": "Sobald der Angriff scheitert, erkennst du die Absicht dahinter. Für 1 Runde erhält die feindliche Quelle einen Umstandsmalus von -1 auf ihren Wahrnehmungs-SG."
+            "Description": "Sobald der Angriff scheitert, erkennst du die Absicht dahinter. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
           },
           "ThoughtStrikesBack": {
             "Title": "Der Gedanke schlägt zurück",
@@ -386,7 +386,7 @@
           },
           "IntruderLosesTheThread": {
             "Title": "Der Eindringling verliert den Faden",
-            "Description": "Der gescheiterte Angriff verheddert den nächsten Befehl des Gegners in seiner eigenen Absicht. Für 1 Runde erhält die feindliche Quelle einen Umstandsmalus von -1 auf Zauber-SG und Klassen-SG."
+            "Description": "Der gescheiterte Angriff verheddert den nächsten Befehl des Gegners in seiner eigenen Absicht. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Zauber-SG und Klassen-SG."
           },
           "PainBecomesAuthority": {
             "Title": "Schmerz wird zu Autorität",

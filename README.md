@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.10` completes the second Will content pass for Bloodied Triumphs. Attack, Fortitude, Reflex, and Will now each contain 20 of their planned 30 cards. Bloodied Triumphs now contains 80 of its planned 120 cards, completing the second ten-card pass across all four categories. The registration-contract regression coverage introduced in `0.1.0-dev.8.1` remains active.
+Version `0.1.0-dev.10.1` applies the eighty-card Bloodied Triumphs review after completion of the second Will content pass. Attack, Fortitude, Reflex, and Will now each contain 20 of their planned 30 cards. Bloodied Triumphs now contains 80 of its planned 120 cards, completing the second ten-card pass across all four categories. The registration-contract regression coverage introduced in `0.1.0-dev.8.1` remains active. The review also corrects persistent-damage duration, German circumstance terminology, regeneration disclosure, and one overlapping Fortitude mechanic.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.0-dev.10.1
+
+### Reviewed
+- Applied the eighty-card Bloodied Triumphs review without changing any published card ID.
+- Corrected German rules terminology from `Umstandsbonus` / `Umstandsmalus` to **Situationsbonus** / **Situationsmalus**.
+- Corrected **Thought Strikes Back** so persistent mental damage uses unlimited effect duration and therefore ends through normal persistent-damage recovery rather than an artificial one-round cap.
+- Expanded **Flesh Remembers** text to state the dying-value protection that accompanies regeneration.
+- Reworked **The Last Reserve** from a second temporary-Hit-Point card into resistance 1 to all damage for 1 round.
+- Reclassified **Pain Becomes Authority** from moderate to strong.
+
+### Tests
+- Added regression coverage for German circumstance terminology, persistent-damage duration, the reviewed Last Reserve mechanic, regeneration disclosure, and the revised impact rating.
+- Revalidated the complete eighty-card Bloodied Triumphs pool against the Critical Forge RC contracts.
+
+### Compatibility
+- Card IDs, pack IDs, schemas, extension contract, and public API requirements remain unchanged.
+
 ## 0.1.0-dev.10
 
 ### Added

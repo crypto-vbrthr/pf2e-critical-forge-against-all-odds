@@ -1,6 +1,7 @@
 import { defineBloodiedWillCard } from "./card-factory.js";
 
 const ONE_ROUND = Object.freeze({ value: 1, unit: "rounds", expiry: "turn-end" });
+const UNLIMITED = Object.freeze({ value: -1, unit: "unlimited", expiry: null });
 
 export const BLOODIED_WILL_CARDS = Object.freeze([
   defineBloodiedWillCard({
@@ -210,7 +211,7 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     contentBatch: 8,
     effect: {
       target: "target",
-      duration: ONE_ROUND,
+      duration: UNLIMITED,
       components: [{ type: "persistentDamage", formula: "1d4", damageType: "mental", dc: 15 }]
     }
   }),
@@ -234,7 +235,7 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     id: "bw-017-pain-becomes-authority",
     localizationKey: "PainBecomesAuthority",
     tone: "dramatic",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "Pain Becomes Authority",
     fallbackDescription: "You have already paid the price of doubt. For 1 round, your Spell DC and Class DC gain a +1 status bonus.",
     tags: ["spell-dc", "class-dc", "status-bonus", "effect"],

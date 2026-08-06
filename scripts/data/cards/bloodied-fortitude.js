@@ -212,7 +212,7 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Flesh Remembers",
-    fallbackDescription: "For one impossible heartbeat, your body remembers a shape without wounds. For 1 round, you gain regeneration 3, deactivated by acid or fire damage.",
+    fallbackDescription: "For one impossible heartbeat, your body remembers a shape without wounds. For 1 round, you gain regeneration 3, deactivated by acid or fire damage; while the regeneration is active, your dying value cannot increase above 3.",
     tags: ["regeneration", "survival", "effect"],
     contentBatch: 6,
     effect: {
@@ -254,12 +254,12 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "The Last Reserve",
-    fallbackDescription: "Your body opens a reserve it was saving for the grave. For 1 round, you gain 8 temporary Hit Points.",
-    tags: ["temporary-hit-points", "survival", "effect"],
+    fallbackDescription: "Your body opens one last reserve and spreads it across every wound at once. For 1 round, you gain resistance 1 to all damage.",
+    tags: ["all-damage", "resistance", "survival", "effect"],
     contentBatch: 6,
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "temporaryHitPoints", value: 8 }]
+      components: [{ type: "resistance", resistanceType: "all-damage", value: 1 }]
     }
   }),
   defineBloodiedFortitudeCard({

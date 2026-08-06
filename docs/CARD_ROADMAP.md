@@ -23,7 +23,7 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 ## Next content milestones
 
 1. Complete the second ten-card pass across all four Bloodied Triumphs decks. **Attack complete in 0.1.0-dev.7; Fortitude complete in 0.1.0-dev.8; registration hotfix in 0.1.0-dev.8.1; Reflex complete in 0.1.0-dev.9; Will complete in 0.1.0-dev.10.**
-2. Review the resulting 80-card Bloodied Triumphs pool.
+2. Review the resulting 80-card Bloodied Triumphs pool. **Complete in 0.1.0-dev.10.1.**
 3. Add the third ten-card pass to reach 30 cards per deck and 120 cards for the theme.
 4. Repeat the three-pass process for Surrounded, Giant-Slayer, and Narrow Escapes.
 5. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.

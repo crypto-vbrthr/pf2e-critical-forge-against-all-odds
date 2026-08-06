@@ -299,10 +299,10 @@ test("second-pass Fortitude cards broaden bodily endurance without duplicate eff
 
   const types = new Set(automated.flatMap((card) => card.effect.definition.components.map((component) => component.type)));
   assert.equal(types.has("regeneration"), true);
-  assert.equal(types.has("temporaryHitPoints"), true);
   assert.equal(types.has("resistance"), true);
   assert.equal(types.has("modifier"), true);
   assert.equal(types.has("immunity"), true);
+  assert.equal(secondPass.some((card) => card.effect?.definition.components.some((component) => component.type === "resistance" && component.resistanceType === "all-damage" && component.value === 1)), true);
 });
 
 test("second-pass Fortitude contextual filters bind death, inhaled, and void results to matching effects", () => {
@@ -448,3 +448,32 @@ test("German second-pass Will text uses established condition and DC terminology
   assert.match(will.IntruderLosesTheThread.Description, /Klassen-SG/u);
 });
 
+
+
+test("eighty-card review uses German Situationsbonus/Situationsmalus terminology", () => {
+  const deText = fs.readFileSync(path.join(root, "lang", "de.json"), "utf8");
+  assert.doesNotMatch(deText, /Umstandsbonus|Umstandsmalus/u);
+  assert.match(deText, /Situationsbonus/u);
+  assert.match(deText, /Situationsmalus/u);
+});
+
+test("all automated persistent-damage cards use unlimited effect duration", () => {
+  const persistentCards = ALL_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "persistentDamage"));
+  assert.equal(persistentCards.length >= 3, true);
+  for (const card of persistentCards) {
+    assert.deepEqual(card.effect.definition.duration, { value: -1, unit: "unlimited", expiry: null }, card.id);
+  }
+});
+
+test("eighty-card review removes the duplicate temporary-HP Last Reserve mechanic", () => {
+  const card = BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-019-last-reserve"));
+  assert.equal(card.impact, "moderate");
+  assert.deepEqual(card.effect.definition.components, [{ type: "resistance", resistanceType: "all-damage", value: 1 }]);
+});
+
+test("regeneration disclosure and Pain Becomes Authority impact match the eighty-card review", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  assert.match(de.PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.Fortitude.FleshRemembers.Description, /Sterbend nicht über 3/u);
+  const authority = BLOODIED_WILL_CARDS.find((entry) => entry.id.endsWith("bw-017-pain-becomes-authority"));
+  assert.equal(authority.impact, "strong");
+});
