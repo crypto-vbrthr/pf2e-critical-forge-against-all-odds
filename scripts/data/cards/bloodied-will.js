@@ -283,6 +283,65 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     tags: ["mental", "suppression", "manual"],
     contentBatch: 8,
     effect: null
+  }),
+  defineBloodiedWillCard({
+    id: "bw-021-mind-leaves-a-scar", localizationKey: "MindLeavesAScar", tone: "serious", impact: "moderate",
+    fallbackTitle: "The Mind Leaves a Scar", fallbackDescription: "The failed intrusion leaves a path back to its owner. After a mental effect, the hostile source takes a -1 circumstance penalty to Will DC for 1 round.",
+    tags: ["mental", "target", "will-dc", "countershock", "effect"], filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] }, contentBatch: 12,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: "will-dc", value: -1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-022-fear-becomes-a-compass", localizationKey: "FearBecomesACompass", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Fear Becomes a Compass", fallbackDescription: "Fear points at what matters and you choose to move toward it. After a fear effect, you gain a +1 status bonus to attack rolls for 1 round.",
+    tags: ["fear", "attack-roll", "status-bonus", "effect"], filters: { attackTraits: ["fear"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-023-illusion-breaks-on-the-wound", localizationKey: "IllusionBreaksOnTheWound", tone: "serious", impact: "moderate",
+    fallbackTitle: "Illusion Breaks on the Wound", fallbackDescription: "Pain gives the false world a hard edge it cannot imitate. After an illusion effect, you gain a +1 circumstance bonus to AC for 1 round.",
+    tags: ["illusion", "ac", "circumstance-bonus", "effect"], filters: { attackTraits: ["illusion"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-024-heart-chooses-its-rhythm", localizationKey: "HeartChoosesItsRhythm", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "The Heart Chooses Its Rhythm", fallbackDescription: "Someone tried to tell you what to feel; the refusal becomes conviction. After an emotion effect, you gain a +1 status bonus to Diplomacy and Intimidation checks for 1 round.",
+    tags: ["emotion", "diplomacy", "intimidation", "status-bonus", "effect"], filters: { attackTraits: ["emotion"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["diplomacy", "intimidation"], value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-025-your-voice-comes-back-wrong", localizationKey: "YourVoiceComesBackWrong", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Your Voice Comes Back Wrong", fallbackDescription: "The hostile sound rebounds through the space it tried to occupy. After an auditory effect, the hostile source is deafened for 1 round.",
+    tags: ["auditory", "target", "deafened", "countershock", "effect"], filters: { attackTraits: ["auditory"] }, contentBatch: 12,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "condition", slug: "deafened" }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-026-words-lose-their-teeth", localizationKey: "WordsLoseTheirTeeth", tone: "serious", impact: "light",
+    fallbackTitle: "Words Lose Their Teeth", fallbackDescription: "The sentence still reaches you, but its authority does not. After a linguistic effect, you gain a +1 status bonus to Will saves for 1 round.",
+    tags: ["linguistic", "will", "status-bonus", "effect"], filters: { attackTraits: ["linguistic"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-027-curse-finds-a-witness", localizationKey: "CurseFindsAWitness", tone: "serious", impact: "moderate",
+    fallbackTitle: "The Curse Finds a Witness", fallbackDescription: "You see the curse clearly enough to refuse its next lie. After a curse effect, you gain a +1 status bonus to saving throws for 1 round.",
+    tags: ["curse", "saving-throws", "status-bonus", "effect"], filters: { attackTraits: ["curse"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "saving-throw", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-028-too-hurt-to-be-small", localizationKey: "TooHurtToBeSmall", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Too Hurt to Be Small", fallbackDescription: "At one-quarter Hit Points or less, pain burns embarrassment and hesitation out of you. You gain a +1 status bonus to Intimidation and Will saves for 1 round.",
+    tags: ["critical-health", "intimidation", "will", "status-bonus", "effect"], extraConditions: { field: "extensions.againstAllOdds.bloodied.hpRatio", operator: "lte", value: 0.25 }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["intimidation", "will"], value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-029-impossible-is-not-enough", localizationKey: "ImpossibleIsNotEnough", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Impossible Is Not Enough", fallbackDescription: "The effect was meant to end the argument entirely. Instead, you answer it. After an incapacitation effect, you gain a +1 circumstance bonus to saving throws for 1 round.",
+    tags: ["incapacitation", "saving-throws", "circumstance-bonus", "effect"], filters: { attackTraits: ["incapacitation"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "saving-throw", value: 1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedWillCard({
+    id: "bw-030-see-the-hand-behind-it", localizationKey: "SeeTheHandBehindIt", tone: "serious", impact: "moderate",
+    fallbackTitle: "See the Hand Behind It", fallbackDescription: "The failed assault reveals something about the creature behind it. You may immediately attempt an appropriate Recall Knowledge check about the hostile source as a free action, gaining a +2 circumstance bonus to that check; apply this result manually.",
+    tags: ["recall-knowledge", "free-action", "insight", "manual"], contentBatch: 12, effect: null
   })
 
 ]);

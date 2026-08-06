@@ -157,6 +157,46 @@
           "MagicNailsTheShadow": {
             "Title": "Magie nagelt den Schatten fest",
             "Description": "Der Zauber heftet die Bewegung des Ziels an den Augenblick des Einschlags. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          },
+          "DriveThemBack": {
+            "Title": "Dräng sie zurück",
+            "Description": "Der kritische Treffer gibt dir einen brutalen Augenblick Hebelwirkung. War der auslösende Angriff ein Nahkampfangriff, darfst du sofort als freie Aktion versuchen, das Ziel zu Schubsen; dabei gelten die normalen Regeln für Schubsen, und der Versuch zählt für deinen Malus für Mehrfachangriffe. Wende dieses Ergebnis manuell an."
+          },
+          "RuinTheirAim": {
+            "Title": "Verdirb ihnen die Zielbahn",
+            "Description": "Dein Schuss muss nicht töten, um die nächste Angriffslinie des Gegners zu verderben. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "BoneRingsLikeABell": {
+            "Title": "Knochen klingen wie eine Glocke",
+            "Description": "Der wuchtige Einschlag läuft schneller durch das Ziel, als sein Gleichgewicht antworten kann. Das Ziel geht zu Boden und ist Liegend."
+          },
+          "CutToTheCore": {
+            "Title": "Bis ins Mark",
+            "Description": "Die Schnittwunde macht jeden Versuch, sich abzustützen oder Widerstand zu leisten, sichtbar schwerer. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf seinen Zähigkeits-SG."
+          },
+          "FindTheNerve": {
+            "Title": "Triff den Nerv",
+            "Description": "Der Stich trifft einen Punkt, an den sich das Ziel bei jeder Bewegung erinnert. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf seinen Reflex-SG."
+          },
+          "LightInTheWound": {
+            "Title": "Licht in der Wunde",
+            "Description": "Der Zauber lässt Helligkeit dort brennen, wo das Ziel nur Schmerz erwartet hatte. Nach einem kritischen Zauberangriff mit der Eigenschaft Licht ist das Ziel für 1 Runde Geblendet."
+          },
+          "ThunderInTheBlood": {
+            "Title": "Donner im Blut",
+            "Description": "Der Schalltreffer lässt die Welt hinter sich nachklingen. Nach einem kritischen Zauberangriff mit der Eigenschaft Schall ist das Ziel für 1 Runde Taub."
+          },
+          "ColdStealsTheStep": {
+            "Title": "Kälte stiehlt den Schritt",
+            "Description": "Frost schließt sich um den Schritt des Ziels, bevor der Schmerz verblassen kann. Für 1 Runde nach einem kritischen Kälte-Zauberangriff erhält das Ziel einen Situationsmalus von 3 Metern auf seine Bewegungsrate am Boden."
+          },
+          "LightningStealsAHeartbeat": {
+            "Title": "Blitz stiehlt einen Herzschlag",
+            "Description": "Der Strom erreicht die Nerven des Ziels, bevor seine Gedanken folgen können. Nach einem kritischen Elektrizitäts-Zauberangriff erhält das Ziel Betäubt 1."
+          },
+          "AcidFindsTheSeam": {
+            "Title": "Säure findet die Naht",
+            "Description": "Die Säure muss nicht alles zerfressen; sie muss nur zeigen, wo der Schutz endet. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf seine RK."
           }
         },
         "Fortitude": {
@@ -239,6 +279,46 @@
           "BodyCastsItOut": {
             "Title": "Der Körper stößt es aus",
             "Description": "Dein Körper erklärt eine Last zum Fremdkörper und stößt sie mit Gewalt aus. Reduziere sofort Kränkelnd, Ausgelaugt oder Kraftlos um 1 (wähle einen Zustand); wende dieses Ergebnis manuell an."
+          },
+          "LastQuarter": {
+            "Title": "Das letzte Viertel",
+            "Description": "Wenn fast nichts mehr übrig ist, verschwendet dein Körper keine Kraft mehr auf etwas anderes als Überleben. Bei höchstens einem Viertel deiner Trefferpunkte erhältst du nach diesem kritischen Erfolg für 1 Runde einen Statusbonus von +1 auf Rettungswürfe."
+          },
+          "WoundedStandsTaller": {
+            "Title": "Verwundet steht aufrechter",
+            "Description": "Die Wunde ist nicht länger nur Schaden; sie wird zum Hebel. Bist du Verwundet, erhältst du für 1 Runde einen Statusbonus von +1 auf Athletik- und Zähigkeitswürfe."
+          },
+          "RingOfEnemiesBecomesArmor": {
+            "Title": "Der Ring der Feinde wird zur Rüstung",
+            "Description": "Wenn Feinde von allen Seiten herandrängen, gibt dein Körper keinem von ihnen mehr eine saubere Linie. Bedrohen dich mindestens zwei Gegner, erhältst du für 1 Runde einen Situationsbonus von +1 auf deine RK."
+          },
+          "EveryBreathIsChosen": {
+            "Title": "Jeder Atemzug ist gewählt",
+            "Description": "Du verschwendest keine Bewegung mehr an den Schmerz. Für 1 Runde erhält deine Bewegungsrate am Boden einen Statusbonus von 1,5 Metern."
+          },
+          "HandsStillObey": {
+            "Title": "Die Hände gehorchen noch",
+            "Description": "Dein Körper mag Stück für Stück versagen, doch deine Hände wissen noch genau, was als Nächstes kommt. Für 1 Runde erhältst du einen Statusbonus von +1 auf Angriffswürfe."
+          },
+          "BodySetsItsWeight": {
+            "Title": "Der Körper setzt sein Gewicht",
+            "Description": "Dein Stand wird zu einem Argument aus Knochen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Athletikwürfe und deinen Zähigkeits-SG."
+          },
+          "PainNarrowsTheWorld": {
+            "Title": "Schmerz verengt die Welt",
+            "Description": "Alles Unwichtige fällt fort, bis Gefahr die einzige klare Form bleibt. Für 1 Runde erhältst du einen Statusbonus von +1 auf Wahrnehmungswürfe."
+          },
+          "HoldTheLineInside": {
+            "Title": "Halte die Linie in dir",
+            "Description": "Dein Körper gewinnt einen Streit mit sich selbst, und dein Geist borgt sich den Schwung. Für 1 Runde erhältst du einen Statusbonus von +1 auf Willenswürfe."
+          },
+          "WoundCannotSurpriseYou": {
+            "Title": "Die Wunde kann dich nicht überraschen",
+            "Description": "In deiner Vorstellung hast du die schlimmste Version des nächsten Einschlags bereits gespürt. Für 1 Runde erhältst du Resistenz 2 gegen Schaden durch kritische Treffer."
+          },
+          "StandBecauseYouMust": {
+            "Title": "Steh auf, weil du musst",
+            "Description": "Bist du Liegend, darfst du sofort als freie Aktion Aufstehen. Dieses Aufstehen löst keine Reaktionen aus; wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -321,6 +401,46 @@
           "ThroughTheImpossibleOpening": {
             "Title": "Durch die unmögliche Lücke",
             "Description": "Für einen unmöglichen Augenblick weisen alle Gefahren auf denselben Fluchtweg. Du darfst sofort als freie Aktion Laufen, dich dabei aber höchstens bis zur Hälfte deiner Bewegungsrate bewegen. Diese Bewegung löst keine Reaktionen aus; wende das Ergebnis manuell an."
+          },
+          "TheirLinesCrossBehindYou": {
+            "Title": "Ihre Linien kreuzen sich hinter dir",
+            "Description": "Bedrohen dich mindestens zwei Gegner, lässt dein Ausweichen ihre Angriffswinkel ineinanderlaufen. Die feindliche Quelle ist für 1 Runde Auf dem falschen Fuß."
+          },
+          "FourBladesOneRhythm": {
+            "Title": "Vier Klingen, ein Rhythmus",
+            "Description": "Bedrohen dich vier oder mehr Gegner, wird das Chaos zu einem einzigen lesbaren Muster. Für 1 Runde erhältst du einen Statusbonus von +1 auf Angriffswürfe."
+          },
+          "QuarterBreathDefense": {
+            "Title": "Verteidigung im letzten Viertel",
+            "Description": "Bei höchstens einem Viertel deiner Trefferpunkte verdichtet sich Überleben zu reiner Geometrie. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und deinen Reflex-SG."
+          },
+          "OverreachBecomesOpening": {
+            "Title": "Überdehnung wird zur Öffnung",
+            "Description": "Die feindliche Quelle legt zu viel in den Angriff, dem du entkommen bist. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "FireShowsTheGap": {
+            "Title": "Feuer zeigt die Lücke",
+            "Description": "Die Flammen zeichnen den sicheren Raum nach, den du in ihnen gefunden hast. Nach einem kritischen Erfolg gegen Feuerschaden erhältst du für 1 Runde Resistenz 4 gegen Feuer."
+          },
+          "AcidSlidesAway": {
+            "Title": "Säure gleitet ab",
+            "Description": "Dieselbe Bewegung, die dich gerettet hat, lässt die ätzende Wirkung keinen Halt finden. Nach einem kritischen Erfolg gegen Säureschaden erhältst du für 1 Runde Resistenz 4 gegen Säure."
+          },
+          "ColdCannotSettle": {
+            "Title": "Kälte findet keinen Halt",
+            "Description": "Du gönnst dem Frost nie genug Stillstand, um dich zu packen. Nach einem kritischen Erfolg gegen Kälteschaden erhält deine Bewegungsrate am Boden für 1 Runde einen Statusbonus von 1,5 Metern."
+          },
+          "LightningTeachesTheLine": {
+            "Title": "Blitz lehrt die Linie",
+            "Description": "Der Strom zeigt dir den kürzesten Weg durch die Gefahr. Nach einem kritischen Erfolg gegen Elektrizitätsschaden erhältst du für 1 Runde einen Statusbonus von +1 auf Reflexwürfe."
+          },
+          "SourceLosesSightOfYou": {
+            "Title": "Die Quelle verliert dich aus den Augen",
+            "Description": "Deine Ausweichlinie lässt die feindliche Quelle dorthin schauen, wo du eben noch warst. Für 1 Runde erhält sie einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
+          },
+          "BehindThemBeforeTheyTurn": {
+            "Title": "Hinter ihnen, bevor sie sich drehen",
+            "Description": "Du darfst sofort als freie Aktion einen Schritt ausführen. Gibt es einen legalen Weg, darfst du diesen Schritt auf der gegenüberliegenden Seite der feindlichen Quelle beenden. Diese Bewegung löst keine Reaktionen aus; wende dieses Ergebnis manuell an."
           }
         },
         "Will": {
@@ -403,6 +523,46 @@
           "SlamTheDoorShut": {
             "Title": "Schlag die Tür zu",
             "Description": "Du nutzt den Augenblick der Klarheit und sperrst einen Eindringling aus dir aus. Wähle einen anhaltenden Effekt mit der Eigenschaft Mental, der gerade auf dich wirkt. Seine Auswirkungen werden bis zum Ende deines nächsten Zuges unterdrückt, seine Dauer läuft jedoch weiter; wende dieses Ergebnis manuell an."
+          },
+          "MindLeavesAScar": {
+            "Title": "Der Geist hinterlässt eine Narbe",
+            "Description": "Der gescheiterte Eindringversuch hinterlässt einen Weg zurück zu seinem Urheber. Nach einem mentalen Effekt erhält die feindliche Quelle für 1 Runde einen Situationsmalus von -1 auf ihren Willens-SG."
+          },
+          "FearBecomesACompass": {
+            "Title": "Furcht wird zum Kompass",
+            "Description": "Furcht zeigt auf das, was zählt, und du entscheidest dich, darauf zuzugehen. Nach einem Furchteffekt erhältst du für 1 Runde einen Statusbonus von +1 auf Angriffswürfe."
+          },
+          "IllusionBreaksOnTheWound": {
+            "Title": "Illusion bricht an der Wunde",
+            "Description": "Der Schmerz gibt der falschen Welt eine harte Kante, die sie nicht nachahmen kann. Nach einem Illusionseffekt erhältst du für 1 Runde einen Situationsbonus von +1 auf deine RK."
+          },
+          "HeartChoosesItsRhythm": {
+            "Title": "Das Herz wählt seinen Rhythmus",
+            "Description": "Jemand wollte dir vorschreiben, was du fühlen sollst; die Weigerung wird zur Überzeugung. Nach einem Gefühlseffekt erhältst du für 1 Runde einen Statusbonus von +1 auf Diplomatie- und Einschüchternwürfe."
+          },
+          "YourVoiceComesBackWrong": {
+            "Title": "Deine Stimme kehrt falsch zurück",
+            "Description": "Der feindliche Klang schlägt durch den Raum zurück, den er besetzen wollte. Nach einem akustischen Effekt ist die feindliche Quelle für 1 Runde Taub."
+          },
+          "WordsLoseTheirTeeth": {
+            "Title": "Worte verlieren ihre Zähne",
+            "Description": "Der Satz erreicht dich noch, seine Autorität jedoch nicht. Nach einem sprachabhängigen Effekt erhältst du für 1 Runde einen Statusbonus von +1 auf Willenswürfe."
+          },
+          "CurseFindsAWitness": {
+            "Title": "Der Fluch findet einen Zeugen",
+            "Description": "Du siehst den Fluch klar genug, um seine nächste Lüge zurückzuweisen. Nach einem Flucheffekt erhältst du für 1 Runde einen Statusbonus von +1 auf Rettungswürfe."
+          },
+          "TooHurtToBeSmall": {
+            "Title": "Zu verletzt, um klein zu sein",
+            "Description": "Bei höchstens einem Viertel deiner Trefferpunkte brennt der Schmerz Scham und Zögern aus dir heraus. Für 1 Runde erhältst du einen Statusbonus von +1 auf Einschüchtern- und Willenswürfe."
+          },
+          "ImpossibleIsNotEnough": {
+            "Title": "Unmöglich reicht nicht",
+            "Description": "Der Effekt sollte jede Diskussion beenden. Stattdessen antwortest du ihm. Nach einem Kampfunfähigkeits-Effekt erhältst du für 1 Runde einen Situationsbonus von +1 auf Rettungswürfe."
+          },
+          "SeeTheHandBehindIt": {
+            "Title": "Sieh die Hand dahinter",
+            "Description": "Der gescheiterte Angriff verrät etwas über die Kreatur dahinter. Du darfst sofort als freie Aktion einen passenden Wissen-abrufen-Wurf über die feindliche Quelle ablegen und erhältst dabei einen Situationsbonus von +2; wende dieses Ergebnis manuell an."
           }
         }
       }
@@ -463,6 +623,33 @@
           },
           "MagicNailsTheShadow": {
             "Name": "Magie nagelt den Schatten fest"
+          },
+          "RuinTheirAim": {
+            "Name": "Verdirb ihnen die Zielbahn"
+          },
+          "BoneRingsLikeABell": {
+            "Name": "Knochen klingen wie eine Glocke"
+          },
+          "CutToTheCore": {
+            "Name": "Bis ins Mark"
+          },
+          "FindTheNerve": {
+            "Name": "Triff den Nerv"
+          },
+          "LightInTheWound": {
+            "Name": "Licht in der Wunde"
+          },
+          "ThunderInTheBlood": {
+            "Name": "Donner im Blut"
+          },
+          "ColdStealsTheStep": {
+            "Name": "Kälte stiehlt den Schritt"
+          },
+          "LightningStealsAHeartbeat": {
+            "Name": "Blitz stiehlt einen Herzschlag"
+          },
+          "AcidFindsTheSeam": {
+            "Name": "Säure findet die Naht"
           }
         },
         "Fortitude": {
@@ -519,6 +706,33 @@
           },
           "LastReserve": {
             "Name": "Die letzte Reserve"
+          },
+          "LastQuarter": {
+            "Name": "Das letzte Viertel"
+          },
+          "WoundedStandsTaller": {
+            "Name": "Verwundet steht aufrechter"
+          },
+          "RingOfEnemiesBecomesArmor": {
+            "Name": "Der Ring der Feinde wird zur Rüstung"
+          },
+          "EveryBreathIsChosen": {
+            "Name": "Jeder Atemzug ist gewählt"
+          },
+          "HandsStillObey": {
+            "Name": "Die Hände gehorchen noch"
+          },
+          "BodySetsItsWeight": {
+            "Name": "Der Körper setzt sein Gewicht"
+          },
+          "PainNarrowsTheWorld": {
+            "Name": "Schmerz verengt die Welt"
+          },
+          "HoldTheLineInside": {
+            "Name": "Halte die Linie in dir"
+          },
+          "WoundCannotSurpriseYou": {
+            "Name": "Die Wunde kann dich nicht überraschen"
           }
         },
         "Reflex": {
@@ -575,6 +789,33 @@
           },
           "NothingClings": {
             "Name": "Nichts bleibt hängen"
+          },
+          "TheirLinesCrossBehindYou": {
+            "Name": "Ihre Linien kreuzen sich hinter dir"
+          },
+          "FourBladesOneRhythm": {
+            "Name": "Vier Klingen, ein Rhythmus"
+          },
+          "QuarterBreathDefense": {
+            "Name": "Verteidigung im letzten Viertel"
+          },
+          "OverreachBecomesOpening": {
+            "Name": "Überdehnung wird zur Öffnung"
+          },
+          "FireShowsTheGap": {
+            "Name": "Feuer zeigt die Lücke"
+          },
+          "AcidSlidesAway": {
+            "Name": "Säure gleitet ab"
+          },
+          "ColdCannotSettle": {
+            "Name": "Kälte findet keinen Halt"
+          },
+          "LightningTeachesTheLine": {
+            "Name": "Blitz lehrt die Linie"
+          },
+          "SourceLosesSightOfYou": {
+            "Name": "Die Quelle verliert dich aus den Augen"
           }
         },
         "Will": {
@@ -631,6 +872,33 @@
           },
           "ClarityAfterTheStorm": {
             "Name": "Klarheit nach dem Sturm"
+          },
+          "MindLeavesAScar": {
+            "Name": "Der Geist hinterlässt eine Narbe"
+          },
+          "FearBecomesACompass": {
+            "Name": "Furcht wird zum Kompass"
+          },
+          "IllusionBreaksOnTheWound": {
+            "Name": "Illusion bricht an der Wunde"
+          },
+          "HeartChoosesItsRhythm": {
+            "Name": "Das Herz wählt seinen Rhythmus"
+          },
+          "YourVoiceComesBackWrong": {
+            "Name": "Deine Stimme kehrt falsch zurück"
+          },
+          "WordsLoseTheirTeeth": {
+            "Name": "Worte verlieren ihre Zähne"
+          },
+          "CurseFindsAWitness": {
+            "Name": "Der Fluch findet einen Zeugen"
+          },
+          "TooHurtToBeSmall": {
+            "Name": "Zu verletzt, um klein zu sein"
+          },
+          "ImpossibleIsNotEnough": {
+            "Name": "Unmöglich reicht nicht"
           }
         }
       }

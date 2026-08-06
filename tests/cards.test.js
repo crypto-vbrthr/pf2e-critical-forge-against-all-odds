@@ -21,49 +21,53 @@ function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
 }
 
+function conditionLeaves(tree) {
+  if (!tree || typeof tree !== "object") return [];
+  if (tree.type === "condition" || tree.field) return [tree];
+  return (tree.conditions ?? []).flatMap((child) => conditionLeaves(child));
+}
+
 function assertBloodiedGate(cards) {
   for (const card of cards) {
-    assert.deepEqual(card.conditions, {
-      type: "condition",
-      field: "extensions.againstAllOdds.bloodied.matched",
-      operator: "eq",
-      value: true
-    });
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.bloodied.matched" && leaf.operator === "eq" && leaf.value === true
+    ), true, card.id);
     assert.equal(Object.isFrozen(card), true);
     assert.equal(Object.isFrozen(card.conditions), true);
   }
 }
 
-test("the Bloodied Triumphs Attack deck contains twenty unique cards after the second pass", () => {
-  assert.equal(BLOODIED_ATTACK_CARDS.length, 20);
-  assert.equal(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size, 20);
+test("the Bloodied Triumphs Attack deck contains thirty unique cards after the final pass", () => {
+  assert.equal(BLOODIED_ATTACK_CARDS.length, 30);
+  assert.equal(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size, 30);
   assert.equal(BLOODIED_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
-  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 10);
-  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 10);
+  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 15);
+  assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 15);
 });
 
-test("the Bloodied Triumphs Fortitude deck contains twenty unique critical-save cards after the second pass", () => {
-  assert.equal(BLOODIED_FORTITUDE_CARDS.length, 20);
-  assert.equal(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size, 20);
+test("the Bloodied Triumphs Fortitude deck contains thirty unique critical-save cards after the final pass", () => {
+  assert.equal(BLOODIED_FORTITUDE_CARDS.length, 30);
+  assert.equal(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size, 30);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
 });
 
-test("the Bloodied Triumphs Reflex deck contains twenty unique critical-save cards after the second pass", () => {
-  assert.equal(BLOODIED_REFLEX_CARDS.length, 20);
-  assert.equal(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size, 20);
+test("the Bloodied Triumphs Reflex deck contains thirty unique critical-save cards after the final pass", () => {
+  assert.equal(BLOODIED_REFLEX_CARDS.length, 30);
+  assert.equal(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size, 30);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(BLOODIED_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
 });
 
-test("the Bloodied Triumphs Will deck contains twenty unique critical-save cards after the second pass", () => {
-  assert.equal(BLOODIED_WILL_CARDS.length, 20);
-  assert.equal(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size, 20);
+test("the Bloodied Triumphs Will deck contains thirty unique critical-save cards after the final pass", () => {
+  assert.equal(BLOODIED_WILL_CARDS.length, 30);
+  assert.equal(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size, 30);
   assert.equal(BLOODIED_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_WILL_CARDS.every((card) => card.deckType === "will"), true);
   assert.equal(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
@@ -71,7 +75,7 @@ test("the Bloodied Triumphs Will deck contains twenty unique critical-save cards
 });
 
 test("all Bloodied Triumphs cards use unique IDs and the dynamic Bloodied context gate", () => {
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 80);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 120);
   assertBloodiedGate(ALL_CARDS);
 });
 
@@ -85,21 +89,25 @@ test("all card filters are complete immutable schema-1 filter sets", () => {
 
 test("published decks keep their explicit automated/manual split", () => {
   for (const [cards, automatedCount, manualIds] of [
-    [BLOODIED_ATTACK_CARDS, 18, [
+    [BLOODIED_ATTACK_CARDS, 27, [
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-010-one-more-breath",
-      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-015-hunt-the-opening"
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-015-hunt-the-opening",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-021-drive-them-back"
     ]],
-    [BLOODIED_FORTITUDE_CARDS, 18, [
+    [BLOODIED_FORTITUDE_CARDS, 27, [
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound",
-      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-020-body-casts-it-out"
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-020-body-casts-it-out",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-030-stand-because-you-must"
     ]],
-    [BLOODIED_REFLEX_CARDS, 18, [
+    [BLOODIED_REFLEX_CARDS, 27, [
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead",
-      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-020-through-the-impossible-opening"
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-020-through-the-impossible-opening",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-030-behind-them-before-they-turn"
     ]],
-    [BLOODIED_WILL_CARDS, 18, [
+    [BLOODIED_WILL_CARDS, 27, [
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook",
-      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-020-slam-the-door-shut"
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-020-slam-the-door-shut",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-030-see-the-hand-behind-it"
     ]]
   ]) {
     const automated = cards.filter((card) => card.effect);
@@ -119,8 +127,14 @@ test("Fortitude boons always target the saving actor", () => {
   assert.equal(BLOODIED_FORTITUDE_CARDS.filter((card) => card.effect).every((card) => card.effect.target === "source"), true);
 });
 
-test("Reflex boons always target the saving actor", () => {
-  assert.equal(BLOODIED_REFLEX_CARDS.filter((card) => card.effect).every((card) => card.effect.target === "source"), true);
+test("Reflex boons stay on the saver while final-pass countermoves target the hostile source", () => {
+  const automated = BLOODIED_REFLEX_CARDS.filter((card) => card.effect);
+  assert.deepEqual(automated.filter((card) => card.effect.target === "target").map((card) => card.id.split(".").at(-1)), [
+    "br-021-their-lines-cross-behind-you",
+    "br-024-overreach-becomes-opening",
+    "br-029-source-loses-sight-of-you"
+  ]);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 24);
 });
 
 test("Will boons target the saving actor while contextual countershocks target the hostile source", () => {
@@ -132,9 +146,11 @@ test("Will boons target the saving actor while contextual countershocks target t
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-011-will-shows-teeth",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-014-foreign-thought-gives-itself-away",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-015-thought-strikes-back",
-    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-016-intruder-loses-the-thread"
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-016-intruder-loses-the-thread",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-021-mind-leaves-a-scar",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-025-your-voice-comes-back-wrong"
   ]);
-  assert.equal(automated.filter((card) => card.effect.target === "source").length, 12);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 19);
 });
 
 test("beneficial and hostile Attack effects remain intentionally separated", () => {
@@ -150,7 +166,16 @@ test("beneficial and hostile Attack effects remain intentionally separated", () 
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-016-spellscar",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-018-thought-bleeds-back",
     "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-019-power-refuses-to-fade",
-    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-020-magic-nails-the-shadow"
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-020-magic-nails-the-shadow",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-022-ruin-their-aim",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-023-bone-rings-like-a-bell",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-024-cut-to-the-core",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-025-find-the-nerve",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-026-light-in-the-wound",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-027-thunder-in-the-blood",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-028-cold-steals-the-step",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-029-lightning-steals-a-heartbeat",
+    "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-030-acid-finds-the-seam"
   ]);
   assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "source").length, 7);
 });
@@ -260,7 +285,7 @@ test("German Remaster terms and reviewed titles are present without obsolete wor
 
 
 test("the second Attack pass adds five Strike and five spell-attack cards with distinct mechanics", () => {
-  const secondPass = BLOODIED_ATTACK_CARDS.slice(10);
+  const secondPass = BLOODIED_ATTACK_CARDS.slice(10, 20);
   assert.equal(secondPass.length, 10);
   assert.equal(secondPass.filter((card) => card.category === "criticalHit").length, 5);
   assert.equal(secondPass.filter((card) => card.category === "spellCriticalHit").length, 5);
@@ -285,14 +310,14 @@ test("second-pass contextual filters avoid nonsensical bleed and mental results"
 });
 
 test("the second Fortitude pass adds ten cards with a distinct content batch", () => {
-  const secondPass = BLOODIED_FORTITUDE_CARDS.slice(10);
+  const secondPass = BLOODIED_FORTITUDE_CARDS.slice(10, 20);
   assert.equal(secondPass.length, 10);
   assert.equal(secondPass.every((card) => card.metadata.contentBatch === 6), true);
   assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["bf-020-body-casts-it-out"]);
 });
 
 test("second-pass Fortitude cards broaden bodily endurance without duplicate effect definitions", () => {
-  const secondPass = BLOODIED_FORTITUDE_CARDS.slice(10);
+  const secondPass = BLOODIED_FORTITUDE_CARDS.slice(10, 20);
   const automated = secondPass.filter((card) => card.effect);
   const signatures = automated.map((card) => JSON.stringify(card.effect.definition.components));
   assert.equal(new Set(signatures).size, signatures.length);
@@ -313,7 +338,7 @@ test("second-pass Fortitude contextual filters bind death, inhaled, and void res
 });
 
 test("second-pass Fortitude automated effects always target the saving actor", () => {
-  const automated = BLOODIED_FORTITUDE_CARDS.slice(10).filter((card) => card.effect);
+  const automated = BLOODIED_FORTITUDE_CARDS.slice(10, 20).filter((card) => card.effect);
   assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });
 
@@ -347,14 +372,14 @@ test("Pain Leaves Room for Healing uses a Forge-supported dramatic tone", () => 
 });
 
 test("the second Reflex pass adds ten cards with a distinct content batch", () => {
-  const secondPass = BLOODIED_REFLEX_CARDS.slice(10);
+  const secondPass = BLOODIED_REFLEX_CARDS.slice(10, 20);
   assert.equal(secondPass.length, 10);
   assert.equal(secondPass.every((card) => card.metadata.contentBatch === 7), true);
   assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["br-020-through-the-impossible-opening"]);
 });
 
 test("second-pass Reflex cards broaden mobility, restraint escape, and defensive momentum", () => {
-  const secondPass = BLOODIED_REFLEX_CARDS.slice(10);
+  const secondPass = BLOODIED_REFLEX_CARDS.slice(10, 20);
   const automated = secondPass.filter((card) => card.effect);
   const signatures = automated.map((card) => JSON.stringify(card.effect.definition.components));
   assert.equal(new Set(signatures).size, signatures.length);
@@ -379,7 +404,7 @@ test("second-pass Reflex cards broaden mobility, restraint escape, and defensive
 });
 
 test("second-pass Reflex automated effects stay on the saving actor", () => {
-  const automated = BLOODIED_REFLEX_CARDS.slice(10).filter((card) => card.effect);
+  const automated = BLOODIED_REFLEX_CARDS.slice(10, 20).filter((card) => card.effect);
   assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });
 
@@ -392,14 +417,14 @@ test("German second-pass Reflex text uses Remaster condition terminology", () =>
 });
 
 test("the second Will pass adds ten cards with a distinct content batch", () => {
-  const secondPass = BLOODIED_WILL_CARDS.slice(10);
+  const secondPass = BLOODIED_WILL_CARDS.slice(10, 20);
   assert.equal(secondPass.length, 10);
   assert.equal(secondPass.every((card) => card.metadata.contentBatch === 8), true);
   assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["bw-020-slam-the-door-shut"]);
 });
 
 test("second-pass Will cards broaden mental counterplay without duplicate automated definitions", () => {
-  const secondPass = BLOODIED_WILL_CARDS.slice(10);
+  const secondPass = BLOODIED_WILL_CARDS.slice(10, 20);
   const automated = secondPass.filter((card) => card.effect);
   const signatures = automated.map((card) => JSON.stringify({ target: card.effect.target, components: card.effect.definition.components }));
   assert.equal(new Set(signatures).size, signatures.length);
@@ -434,7 +459,7 @@ test("second-pass Will contextual countershocks require matching mental or fear 
 });
 
 test("second-pass Will target roles keep boons on the saver and countershocks on the hostile source", () => {
-  const secondPass = BLOODIED_WILL_CARDS.slice(10).filter((card) => card.effect);
+  const secondPass = BLOODIED_WILL_CARDS.slice(10, 20).filter((card) => card.effect);
   assert.equal(secondPass.filter((card) => card.effect.target === "source").length, 5);
   assert.equal(secondPass.filter((card) => card.effect.target === "target").length, 4);
 });
@@ -476,4 +501,60 @@ test("regeneration disclosure and Pain Becomes Authority impact match the eighty
   assert.match(de.PF2E_AGAINST_ALL_ODDS.Cards.BloodiedTriumphs.Fortitude.FleshRemembers.Description, /Sterbend nicht über 3/u);
   const authority = BLOODIED_WILL_CARDS.find((entry) => entry.id.endsWith("bw-017-pain-becomes-authority"));
   assert.equal(authority.impact, "strong");
+});
+
+
+test("the final Attack pass completes a 15/15 split with contextual weapon and spell filters", () => {
+  const finalPass = BLOODIED_ATTACK_CARDS.slice(20);
+  assert.equal(finalPass.length, 10);
+  assert.equal(finalPass.every((card) => card.metadata.contentBatch === 9), true);
+  assert.equal(finalPass.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(finalPass.filter((card) => card.category === "spellCriticalHit").length, 5);
+  const bySuffix = Object.fromEntries(finalPass.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["ba-021-drive-them-back"].filters.attackTraits, ["melee"]);
+  assert.deepEqual(bySuffix["ba-022-ruin-their-aim"].filters.attackTraits, ["ranged"]);
+  assert.deepEqual(bySuffix["ba-023-bone-rings-like-a-bell"].filters.damageTypes, ["bludgeoning"]);
+  assert.deepEqual(bySuffix["ba-024-cut-to-the-core"].filters.damageTypes, ["slashing"]);
+  assert.deepEqual(bySuffix["ba-025-find-the-nerve"].filters.damageTypes, ["piercing"]);
+  assert.deepEqual(bySuffix["ba-026-light-in-the-wound"].filters.spellTraits, ["light"]);
+  assert.deepEqual(bySuffix["ba-030-acid-finds-the-seam"].filters.spellTraits, ["acid"]);
+});
+
+test("final save passes add context-aware quarter-health, wounded, and battlefield gates without rewriting legacy conditions", () => {
+  assert.equal(BLOODIED_FORTITUDE_CARDS.slice(0, 20).every((card) => card.conditions.type === "condition"), true);
+  assert.equal(BLOODIED_REFLEX_CARDS.slice(0, 20).every((card) => card.conditions.type === "condition"), true);
+  assert.equal(BLOODIED_WILL_CARDS.slice(0, 20).every((card) => card.conditions.type === "condition"), true);
+  for (const card of [
+    BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-021-last-quarter")),
+    BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-022-wounded-stands-taller")),
+    BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-023-ring-of-enemies-becomes-armor")),
+    BLOODIED_REFLEX_CARDS.find((entry) => entry.id.endsWith("br-021-their-lines-cross-behind-you")),
+    BLOODIED_REFLEX_CARDS.find((entry) => entry.id.endsWith("br-022-four-blades-one-rhythm")),
+    BLOODIED_REFLEX_CARDS.find((entry) => entry.id.endsWith("br-023-quarter-breath-defense")),
+    BLOODIED_WILL_CARDS.find((entry) => entry.id.endsWith("bw-028-too-hurt-to-be-small"))
+  ]) {
+    assert.equal(card.conditions.type, "group", card.id);
+    assert.equal(card.conditions.mode, "all", card.id);
+    assert.equal(conditionLeaves(card.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.bloodied.matched"), true, card.id);
+  }
+});
+
+test("the final Fortitude, Reflex, and Will passes each use one manual result and no new immunity components", () => {
+  for (const [cards, batch, manualSuffix] of [
+    [BLOODIED_FORTITUDE_CARDS, 10, "bf-030-stand-because-you-must"],
+    [BLOODIED_REFLEX_CARDS, 11, "br-030-behind-them-before-they-turn"],
+    [BLOODIED_WILL_CARDS, 12, "bw-030-see-the-hand-behind-it"]
+  ]) {
+    const finalPass = cards.slice(20);
+    assert.equal(finalPass.every((card) => card.metadata.contentBatch === batch), true);
+    assert.deepEqual(finalPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [manualSuffix]);
+    assert.equal(finalPass.flatMap((card) => card.effect?.definition.components ?? []).some((component) => component.type === "immunity"), false);
+  }
+});
+
+test("Bloodied Triumphs completes 120 unique cards with a stable 108 automated / 12 manual split", () => {
+  assert.equal(ALL_CARDS.length, 120);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 120);
+  assert.equal(ALL_CARDS.filter((card) => card.effect).length, 108);
+  assert.equal(ALL_CARDS.filter((card) => !card.effect).length, 12);
 });

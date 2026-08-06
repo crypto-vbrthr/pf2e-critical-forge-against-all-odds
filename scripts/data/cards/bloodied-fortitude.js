@@ -272,6 +272,71 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
     tags: ["condition-reduction", "recovery", "manual"],
     contentBatch: 6,
     effect: null
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-021-last-quarter", localizationKey: "LastQuarter", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "The Last Quarter",
+    fallbackDescription: "When almost nothing remains, the body stops spending strength on anything but survival. While at one-quarter Hit Points or less, this critical save grants you a +1 status bonus to saving throws for 1 round.",
+    tags: ["critical-health", "saving-throws", "status-bonus", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.bloodied.hpRatio", operator: "lte", value: 0.25 }, contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "saving-throw", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-022-wounded-stands-taller", localizationKey: "WoundedStandsTaller", tone: "serious", impact: "moderate",
+    fallbackTitle: "Wounded Stands Taller",
+    fallbackDescription: "The wound is no longer only damage; it is leverage. If you are wounded, you gain a +1 status bonus to Athletics and Fortitude saves for 1 round.",
+    tags: ["wounded", "athletics", "fortitude", "status-bonus", "effect"],
+    extraConditions: { field: "participants.source.conditions.wounded", operator: "gte", value: 1 }, contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["athletics", "fortitude"], value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-023-ring-of-enemies-becomes-armor", localizationKey: "RingOfEnemiesBecomesArmor", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "The Ring of Enemies Becomes Armor",
+    fallbackDescription: "When enemies close from every side, your body stops giving any one of them a clean line. If at least two enemies threaten you, you gain a +1 circumstance bonus to AC for 1 round.",
+    tags: ["surrounded", "ac", "circumstance-bonus", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 2 }, contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-024-every-breath-is-chosen", localizationKey: "EveryBreathIsChosen", tone: "serious", impact: "light",
+    fallbackTitle: "Every Breath Is Chosen", fallbackDescription: "You stop wasting motion on pain. For 1 round, your land Speed gains a +5-foot status bonus.",
+    tags: ["movement", "land-speed", "status-bonus", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "movement", movementType: "land", value: 5, modifierType: "status" }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-025-hands-still-obey", localizationKey: "HandsStillObey", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "The Hands Still Obey", fallbackDescription: "The body may be failing in pieces, but the hands still know exactly what comes next. For 1 round, you gain a +1 status bonus to attack rolls.",
+    tags: ["attack-roll", "status-bonus", "adrenaline", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-026-body-sets-its-weight", localizationKey: "BodySetsItsWeight", tone: "serious", impact: "moderate",
+    fallbackTitle: "The Body Sets Its Weight", fallbackDescription: "Your stance becomes an argument made of bone. For 1 round, you gain a +1 circumstance bonus to Athletics checks and Fortitude DC.",
+    tags: ["athletics", "fortitude-dc", "circumstance-bonus", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["athletics", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-027-pain-narrows-the-world", localizationKey: "PainNarrowsTheWorld", tone: "serious", impact: "light",
+    fallbackTitle: "Pain Narrows the World", fallbackDescription: "Everything irrelevant falls away until danger is the only clear shape left. For 1 round, you gain a +1 status bonus to Perception checks.",
+    tags: ["perception", "status-bonus", "focus", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-028-hold-the-line-inside", localizationKey: "HoldTheLineInside", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Hold the Line Inside", fallbackDescription: "The body wins one argument with itself and the mind borrows the momentum. For 1 round, you gain a +1 status bonus to Will saves.",
+    tags: ["will", "status-bonus", "resolve", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-029-the-wound-cannot-surprise-you", localizationKey: "WoundCannotSurpriseYou", tone: "serious", impact: "moderate",
+    fallbackTitle: "The Wound Cannot Surprise You", fallbackDescription: "You have already felt the worst version of the next impact in your imagination. For 1 round, you gain resistance 2 to damage from critical hits.",
+    tags: ["critical-hits", "resistance", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "resistance", resistanceType: "critical-hits", value: 2 }] }
+  }),
+  defineBloodiedFortitudeCard({
+    id: "bf-030-stand-because-you-must", localizationKey: "StandBecauseYouMust", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Stand Because You Must", fallbackDescription: "If you are prone, you may immediately Stand as a free action. This Stand does not trigger reactions; apply this result manually.",
+    tags: ["stand", "free-action", "no-reactions", "manual"], contentBatch: 10, effect: null
   })
 
 ]);

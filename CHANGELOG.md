@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-dev.11
+
+### Added
+- Completed the third and final ten-card pass for all four Bloodied Triumphs decks, bringing the theme to 120/120 cards.
+- Completed the Attack deck at 15 ordinary critical-hit cards and 15 spell critical-hit cards.
+- Added contextual melee/ranged, bludgeoning/slashing/piercing, light/sonic/cold/electricity/acid, quarter-health, wounded, battlefield-threat, fear, illusion, emotion, auditory, linguistic, curse, and incapacitation results.
+- Added additive condition-group authoring in the add-on card factory so new cards can combine the permanent Bloodied gate with extra runtime evidence without rewriting existing cards.
+- Added four new manual tactical results, preserving the overall 90% automated / 10% manual distribution.
+
+### Tests
+- Raised the automated suite to 72 tests with final-pass count, 15/15 Attack split, context-group, targeting, manual/automated ratio, no-new-immunity, and contextual-filter coverage.
+- Preserved the first 80 cards on their original simple Bloodied condition while validating grouped conditions only on cards that need additional evidence.
+- Revalidated German/English localization parity and all supported tone/impact values.
+
+### Compatibility
+- Existing 80 card IDs are unchanged; this build adds forty final-pass IDs.
+- Critical Card schema 1, Card Pack schema 1, Effect Definition schema 2, and Extension Contract 1 remain unchanged.
+
 ## 0.1.0-dev.10.1
 
 ### Reviewed

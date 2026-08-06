@@ -23,12 +23,12 @@ test("every theme reserves attack, Fortitude, Reflex, and Will decks", () => {
     assert.deepEqual(Object.keys(pack.decks), [...SPECIALIZED_DECK_TYPES]);
     for (const deckType of SPECIALIZED_DECK_TYPES) {
       const expected = pack.id.endsWith("bloodied-triumphs")
-        ? 20
+        ? 30
         : 0;
       assert.equal(pack.decks[deckType].cards.length, expected);
     }
     assert.equal(pack.metadata.plannedCardsPerDeck, 30);
-    assert.equal(pack.metadata.contentStatus, pack.id.endsWith("bloodied-triumphs") ? "second-pass-in-progress" : "foundation");
+    assert.equal(pack.metadata.contentStatus, pack.id.endsWith("bloodied-triumphs") ? "complete" : "foundation");
   }
 });
 

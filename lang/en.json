@@ -157,6 +157,46 @@
           "MagicNailsTheShadow": {
             "Title": "Magic Nails the Shadow",
             "Description": "The spell pins the target's motion to the instant of impact. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds."
+          },
+          "DriveThemBack": {
+            "Title": "Drive Them Back",
+            "Description": "The critical blow gives you one brutal instant of leverage. If the triggering attack was melee, you may immediately attempt to Shove the target as a free action; the Shove uses its normal rules and contributes to your multiple attack penalty. Apply this result manually."
+          },
+          "RuinTheirAim": {
+            "Title": "Ruin Their Aim",
+            "Description": "Your shot does not need to kill to spoil the enemy's next line. For 1 round, the target takes a -1 circumstance penalty to attack rolls."
+          },
+          "BoneRingsLikeABell": {
+            "Title": "Bone Rings Like a Bell",
+            "Description": "The bludgeoning impact travels through the target faster than balance can answer. The target falls prone."
+          },
+          "CutToTheCore": {
+            "Title": "Cut to the Core",
+            "Description": "The slashing wound makes every attempt to brace or resist visibly harder. For 1 round, the target takes a -1 circumstance penalty to Fortitude DC."
+          },
+          "FindTheNerve": {
+            "Title": "Find the Nerve",
+            "Description": "The piercing strike finds a point the target cannot move without remembering. For 1 round, the target takes a -1 circumstance penalty to Reflex DC."
+          },
+          "LightInTheWound": {
+            "Title": "Light in the Wound",
+            "Description": "The spell leaves brightness burning where the target expected pain. After a critical light spell attack, the target is dazzled for 1 round."
+          },
+          "ThunderInTheBlood": {
+            "Title": "Thunder in the Blood",
+            "Description": "The sonic impact leaves the world ringing behind it. After a critical sonic spell attack, the target is deafened for 1 round."
+          },
+          "ColdStealsTheStep": {
+            "Title": "Cold Steals the Step",
+            "Description": "Frost locks around the target's stride before the pain can fade. For 1 round after a critical cold spell attack, the target takes a 10-foot circumstance penalty to its land Speed."
+          },
+          "LightningStealsAHeartbeat": {
+            "Title": "Lightning Steals a Heartbeat",
+            "Description": "The current arrives in the target's nerves before its thoughts can follow. After a critical electricity spell attack, the target becomes stunned 1."
+          },
+          "AcidFindsTheSeam": {
+            "Title": "Acid Finds the Seam",
+            "Description": "The acid does not need to eat through everything; it only needs to show where the protection ends. For 1 round, the target takes a -1 circumstance penalty to AC."
           }
         },
         "Fortitude": {
@@ -239,6 +279,46 @@
           "BodyCastsItOut": {
             "Title": "The Body Casts It Out",
             "Description": "Your body names one burden foreign and expels it by force. Immediately reduce your sickened, drained, or enfeebled condition by 1 (choose one); apply this result manually."
+          },
+          "LastQuarter": {
+            "Title": "The Last Quarter",
+            "Description": "When almost nothing remains, the body stops spending strength on anything but survival. While at one-quarter Hit Points or less, this critical save grants you a +1 status bonus to saving throws for 1 round."
+          },
+          "WoundedStandsTaller": {
+            "Title": "Wounded Stands Taller",
+            "Description": "The wound is no longer only damage; it is leverage. If you are wounded, you gain a +1 status bonus to Athletics and Fortitude saves for 1 round."
+          },
+          "RingOfEnemiesBecomesArmor": {
+            "Title": "The Ring of Enemies Becomes Armor",
+            "Description": "When enemies close from every side, your body stops giving any one of them a clean line. If at least two enemies threaten you, you gain a +1 circumstance bonus to AC for 1 round."
+          },
+          "EveryBreathIsChosen": {
+            "Title": "Every Breath Is Chosen",
+            "Description": "You stop wasting motion on pain. For 1 round, your land Speed gains a +5-foot status bonus."
+          },
+          "HandsStillObey": {
+            "Title": "The Hands Still Obey",
+            "Description": "The body may be failing in pieces, but the hands still know exactly what comes next. For 1 round, you gain a +1 status bonus to attack rolls."
+          },
+          "BodySetsItsWeight": {
+            "Title": "The Body Sets Its Weight",
+            "Description": "Your stance becomes an argument made of bone. For 1 round, you gain a +1 circumstance bonus to Athletics checks and Fortitude DC."
+          },
+          "PainNarrowsTheWorld": {
+            "Title": "Pain Narrows the World",
+            "Description": "Everything irrelevant falls away until danger is the only clear shape left. For 1 round, you gain a +1 status bonus to Perception checks."
+          },
+          "HoldTheLineInside": {
+            "Title": "Hold the Line Inside",
+            "Description": "The body wins one argument with itself and the mind borrows the momentum. For 1 round, you gain a +1 status bonus to Will saves."
+          },
+          "WoundCannotSurpriseYou": {
+            "Title": "The Wound Cannot Surprise You",
+            "Description": "You have already felt the worst version of the next impact in your imagination. For 1 round, you gain resistance 2 to damage from critical hits."
+          },
+          "StandBecauseYouMust": {
+            "Title": "Stand Because You Must",
+            "Description": "If you are prone, you may immediately Stand as a free action. This Stand does not trigger reactions; apply this result manually."
           }
         },
         "Reflex": {
@@ -321,6 +401,46 @@
           "ThroughTheImpossibleOpening": {
             "Title": "Through the Impossible Opening",
             "Description": "For one impossible instant, every threat points toward the same escape route. You may immediately Stride as a free action, moving no more than half your Speed. This movement does not trigger reactions; apply this result manually."
+          },
+          "TheirLinesCrossBehindYou": {
+            "Title": "Their Lines Cross Behind You",
+            "Description": "When at least two enemies threaten you, your escape makes their angles interfere with one another. The hostile source becomes off-guard for 1 round."
+          },
+          "FourBladesOneRhythm": {
+            "Title": "Four Blades, One Rhythm",
+            "Description": "With four or more enemies threatening you, the chaos becomes a single readable pattern. For 1 round, you gain a +1 status bonus to attack rolls."
+          },
+          "QuarterBreathDefense": {
+            "Title": "Defense on a Quarter Breath",
+            "Description": "At one-quarter Hit Points or less, survival compresses into pure geometry. For 1 round, you gain a +1 circumstance bonus to AC and Reflex DC."
+          },
+          "OverreachBecomesOpening": {
+            "Title": "Overreach Becomes Opening",
+            "Description": "The hostile source commits too much to the attack you escaped. For 1 round, it takes a -1 circumstance penalty to attack rolls."
+          },
+          "FireShowsTheGap": {
+            "Title": "Fire Shows the Gap",
+            "Description": "The flame outlines the safe space you found inside it. After critically succeeding against fire damage, you gain resistance 4 to fire for 1 round."
+          },
+          "AcidSlidesAway": {
+            "Title": "Acid Slides Away",
+            "Description": "The same motion that saved you keeps the corrosive edge from settling. After critically succeeding against acid damage, you gain resistance 4 to acid for 1 round."
+          },
+          "ColdCannotSettle": {
+            "Title": "Cold Cannot Settle",
+            "Description": "You never give the frost enough stillness to take hold. After critically succeeding against cold damage, your land Speed gains a +5-foot status bonus for 1 round."
+          },
+          "LightningTeachesTheLine": {
+            "Title": "Lightning Teaches the Line",
+            "Description": "The current shows you the shortest path through danger. After critically succeeding against electricity damage, you gain a +1 status bonus to Reflex saves for 1 round."
+          },
+          "SourceLosesSightOfYou": {
+            "Title": "The Source Loses Sight of You",
+            "Description": "Your evasive line leaves the hostile source looking where you were. For 1 round, it takes a -1 circumstance penalty to Perception DC."
+          },
+          "BehindThemBeforeTheyTurn": {
+            "Title": "Behind Them Before They Turn",
+            "Description": "You may immediately Step as a free action. If a legal path exists, you may end this Step on the opposite side of the hostile source from where you began. This movement does not trigger reactions; apply this result manually."
           }
         },
         "Will": {
@@ -403,6 +523,46 @@
           "SlamTheDoorShut": {
             "Title": "Slam the Door Shut",
             "Description": "You seize the instant of clarity and lock one intruder outside yourself. Choose one ongoing effect with the mental trait currently affecting you. Its effects are suppressed until the end of your next turn, though its duration continues; apply this result manually."
+          },
+          "MindLeavesAScar": {
+            "Title": "The Mind Leaves a Scar",
+            "Description": "The failed intrusion leaves a path back to its owner. After a mental effect, the hostile source takes a -1 circumstance penalty to Will DC for 1 round."
+          },
+          "FearBecomesACompass": {
+            "Title": "Fear Becomes a Compass",
+            "Description": "Fear points at what matters and you choose to move toward it. After a fear effect, you gain a +1 status bonus to attack rolls for 1 round."
+          },
+          "IllusionBreaksOnTheWound": {
+            "Title": "Illusion Breaks on the Wound",
+            "Description": "Pain gives the false world a hard edge it cannot imitate. After an illusion effect, you gain a +1 circumstance bonus to AC for 1 round."
+          },
+          "HeartChoosesItsRhythm": {
+            "Title": "The Heart Chooses Its Rhythm",
+            "Description": "Someone tried to tell you what to feel; the refusal becomes conviction. After an emotion effect, you gain a +1 status bonus to Diplomacy and Intimidation checks for 1 round."
+          },
+          "YourVoiceComesBackWrong": {
+            "Title": "Your Voice Comes Back Wrong",
+            "Description": "The hostile sound rebounds through the space it tried to occupy. After an auditory effect, the hostile source is deafened for 1 round."
+          },
+          "WordsLoseTheirTeeth": {
+            "Title": "Words Lose Their Teeth",
+            "Description": "The sentence still reaches you, but its authority does not. After a linguistic effect, you gain a +1 status bonus to Will saves for 1 round."
+          },
+          "CurseFindsAWitness": {
+            "Title": "The Curse Finds a Witness",
+            "Description": "You see the curse clearly enough to refuse its next lie. After a curse effect, you gain a +1 status bonus to saving throws for 1 round."
+          },
+          "TooHurtToBeSmall": {
+            "Title": "Too Hurt to Be Small",
+            "Description": "At one-quarter Hit Points or less, pain burns embarrassment and hesitation out of you. You gain a +1 status bonus to Intimidation and Will saves for 1 round."
+          },
+          "ImpossibleIsNotEnough": {
+            "Title": "Impossible Is Not Enough",
+            "Description": "The effect was meant to end the argument entirely. Instead, you answer it. After an incapacitation effect, you gain a +1 circumstance bonus to saving throws for 1 round."
+          },
+          "SeeTheHandBehindIt": {
+            "Title": "See the Hand Behind It",
+            "Description": "The failed assault reveals something about the creature behind it. You may immediately attempt an appropriate Recall Knowledge check about the hostile source as a free action, gaining a +2 circumstance bonus to that check; apply this result manually."
           }
         }
       }
@@ -463,6 +623,33 @@
           },
           "MagicNailsTheShadow": {
             "Name": "Magic Nails the Shadow"
+          },
+          "RuinTheirAim": {
+            "Name": "Ruin Their Aim"
+          },
+          "BoneRingsLikeABell": {
+            "Name": "Bone Rings Like a Bell"
+          },
+          "CutToTheCore": {
+            "Name": "Cut to the Core"
+          },
+          "FindTheNerve": {
+            "Name": "Find the Nerve"
+          },
+          "LightInTheWound": {
+            "Name": "Light in the Wound"
+          },
+          "ThunderInTheBlood": {
+            "Name": "Thunder in the Blood"
+          },
+          "ColdStealsTheStep": {
+            "Name": "Cold Steals the Step"
+          },
+          "LightningStealsAHeartbeat": {
+            "Name": "Lightning Steals a Heartbeat"
+          },
+          "AcidFindsTheSeam": {
+            "Name": "Acid Finds the Seam"
           }
         },
         "Fortitude": {
@@ -519,6 +706,33 @@
           },
           "LastReserve": {
             "Name": "The Last Reserve"
+          },
+          "LastQuarter": {
+            "Name": "The Last Quarter"
+          },
+          "WoundedStandsTaller": {
+            "Name": "Wounded Stands Taller"
+          },
+          "RingOfEnemiesBecomesArmor": {
+            "Name": "The Ring of Enemies Becomes Armor"
+          },
+          "EveryBreathIsChosen": {
+            "Name": "Every Breath Is Chosen"
+          },
+          "HandsStillObey": {
+            "Name": "The Hands Still Obey"
+          },
+          "BodySetsItsWeight": {
+            "Name": "The Body Sets Its Weight"
+          },
+          "PainNarrowsTheWorld": {
+            "Name": "Pain Narrows the World"
+          },
+          "HoldTheLineInside": {
+            "Name": "Hold the Line Inside"
+          },
+          "WoundCannotSurpriseYou": {
+            "Name": "The Wound Cannot Surprise You"
           }
         },
         "Reflex": {
@@ -575,6 +789,33 @@
           },
           "NothingClings": {
             "Name": "Nothing Clings"
+          },
+          "TheirLinesCrossBehindYou": {
+            "Name": "Their Lines Cross Behind You"
+          },
+          "FourBladesOneRhythm": {
+            "Name": "Four Blades, One Rhythm"
+          },
+          "QuarterBreathDefense": {
+            "Name": "Defense on a Quarter Breath"
+          },
+          "OverreachBecomesOpening": {
+            "Name": "Overreach Becomes Opening"
+          },
+          "FireShowsTheGap": {
+            "Name": "Fire Shows the Gap"
+          },
+          "AcidSlidesAway": {
+            "Name": "Acid Slides Away"
+          },
+          "ColdCannotSettle": {
+            "Name": "Cold Cannot Settle"
+          },
+          "LightningTeachesTheLine": {
+            "Name": "Lightning Teaches the Line"
+          },
+          "SourceLosesSightOfYou": {
+            "Name": "The Source Loses Sight of You"
           }
         },
         "Will": {
@@ -631,6 +872,33 @@
           },
           "ClarityAfterTheStorm": {
             "Name": "Clarity After the Storm"
+          },
+          "MindLeavesAScar": {
+            "Name": "The Mind Leaves a Scar"
+          },
+          "FearBecomesACompass": {
+            "Name": "Fear Becomes a Compass"
+          },
+          "IllusionBreaksOnTheWound": {
+            "Name": "Illusion Breaks on the Wound"
+          },
+          "HeartChoosesItsRhythm": {
+            "Name": "The Heart Chooses Its Rhythm"
+          },
+          "YourVoiceComesBackWrong": {
+            "Name": "Your Voice Comes Back Wrong"
+          },
+          "WordsLoseTheirTeeth": {
+            "Name": "Words Lose Their Teeth"
+          },
+          "CurseFindsAWitness": {
+            "Name": "The Curse Finds a Witness"
+          },
+          "TooHurtToBeSmall": {
+            "Name": "Too Hurt to Be Small"
+          },
+          "ImpossibleIsNotEnough": {
+            "Name": "Impossible Is Not Enough"
           }
         }
       }

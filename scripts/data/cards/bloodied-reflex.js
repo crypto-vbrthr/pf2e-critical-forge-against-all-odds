@@ -269,6 +269,65 @@ export const BLOODIED_REFLEX_CARDS = Object.freeze([
     tags: ["stride", "free-action", "movement", "no-reactions", "manual"],
     contentBatch: 7,
     effect: null
+  }),
+  defineBloodiedReflexCard({
+    id: "br-021-their-lines-cross-behind-you", localizationKey: "TheirLinesCrossBehindYou", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Their Lines Cross Behind You", fallbackDescription: "When at least two enemies threaten you, your escape makes their angles interfere with one another. The hostile source becomes off-guard for 1 round.",
+    tags: ["surrounded", "target", "off-guard", "effect"], extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 2 }, contentBatch: 11,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "condition", slug: "off-guard" }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-022-four-blades-one-rhythm", localizationKey: "FourBladesOneRhythm", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Four Blades, One Rhythm", fallbackDescription: "With four or more enemies threatening you, the chaos becomes a single readable pattern. For 1 round, you gain a +1 status bonus to attack rolls.",
+    tags: ["heavily-surrounded", "attack-roll", "status-bonus", "effect"], extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-023-quarter-breath-defense", localizationKey: "QuarterBreathDefense", tone: "dramatic", impact: "strong",
+    fallbackTitle: "Defense on a Quarter Breath", fallbackDescription: "At one-quarter Hit Points or less, survival compresses into pure geometry. For 1 round, you gain a +1 circumstance bonus to AC and Reflex DC.",
+    tags: ["critical-health", "ac", "reflex-dc", "circumstance-bonus", "effect"], extraConditions: { field: "extensions.againstAllOdds.bloodied.hpRatio", operator: "lte", value: 0.25 }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["ac", "reflex-dc"], value: 1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-024-overreach-becomes-opening", localizationKey: "OverreachBecomesOpening", tone: "serious", impact: "moderate",
+    fallbackTitle: "Overreach Becomes Opening", fallbackDescription: "The hostile source commits too much to the attack you escaped. For 1 round, it takes a -1 circumstance penalty to attack rolls.",
+    tags: ["target", "attack-roll", "countermove", "circumstance-penalty", "effect"], contentBatch: 11,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-025-fire-shows-the-gap", localizationKey: "FireShowsTheGap", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Fire Shows the Gap", fallbackDescription: "The flame outlines the safe space you found inside it. After critically succeeding against fire damage, you gain resistance 4 to fire for 1 round.",
+    tags: ["fire", "resistance", "effect"], filters: { damageTypes: ["fire"] }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "resistance", resistanceType: "fire", value: 4 }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-026-acid-slides-away", localizationKey: "AcidSlidesAway", tone: "serious", impact: "moderate",
+    fallbackTitle: "Acid Slides Away", fallbackDescription: "The same motion that saved you keeps the corrosive edge from settling. After critically succeeding against acid damage, you gain resistance 4 to acid for 1 round.",
+    tags: ["acid", "resistance", "effect"], filters: { damageTypes: ["acid"] }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "resistance", resistanceType: "acid", value: 4 }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-027-cold-cannot-settle", localizationKey: "ColdCannotSettle", tone: "serious", impact: "light",
+    fallbackTitle: "Cold Cannot Settle", fallbackDescription: "You never give the frost enough stillness to take hold. After critically succeeding against cold damage, your land Speed gains a +5-foot status bonus for 1 round.",
+    tags: ["cold", "movement", "status-bonus", "effect"], filters: { damageTypes: ["cold"] }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "movement", movementType: "land", value: 5, modifierType: "status" }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-028-lightning-teaches-the-line", localizationKey: "LightningTeachesTheLine", tone: "dramatic", impact: "moderate",
+    fallbackTitle: "Lightning Teaches the Line", fallbackDescription: "The current shows you the shortest path through danger. After critically succeeding against electricity damage, you gain a +1 status bonus to Reflex saves for 1 round.",
+    tags: ["electricity", "reflex", "status-bonus", "effect"], filters: { damageTypes: ["electricity"] }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-029-source-loses-sight-of-you", localizationKey: "SourceLosesSightOfYou", tone: "serious", impact: "moderate",
+    fallbackTitle: "The Source Loses Sight of You", fallbackDescription: "Your evasive line leaves the hostile source looking where you were. For 1 round, it takes a -1 circumstance penalty to Perception DC.",
+    tags: ["target", "perception-dc", "circumstance-penalty", "effect"], contentBatch: 11,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }] }
+  }),
+  defineBloodiedReflexCard({
+    id: "br-030-behind-them-before-they-turn", localizationKey: "BehindThemBeforeTheyTurn", tone: "dramatic", impact: "strong",
+    fallbackTitle: "Behind Them Before They Turn", fallbackDescription: "You may immediately Step as a free action. If a legal path exists, you may end this Step on the opposite side of the hostile source from where you began. This movement does not trigger reactions; apply this result manually.",
+    tags: ["step", "positioning", "no-reactions", "manual"], contentBatch: 11, effect: null
   })
 
 ]);

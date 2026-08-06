@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.10.1` applies the eighty-card Bloodied Triumphs review after completion of the second Will content pass. Attack, Fortitude, Reflex, and Will now each contain 20 of their planned 30 cards. Bloodied Triumphs now contains 80 of its planned 120 cards, completing the second ten-card pass across all four categories. The registration-contract regression coverage introduced in `0.1.0-dev.8.1` remains active. The review also corrects persistent-damage duration, German circumstance terminology, regeneration disclosure, and one overlapping Fortitude mechanic.
+Version `0.1.0-dev.11` completes **Bloodied Triumphs** at 120 cards. Attack, Fortitude, Reflex, and Will now each contain their planned 30 cards; the Attack deck is split evenly between 15 ordinary critical hits and 15 spell critical hits. The final pass adds more contextual weapon, spell-trait, quarter-health, wounded, elemental, and battlefield-threat results while preserving all previously published card IDs. Bloodied Triumphs now contains 108 automated Effect Engine cards and 12 explicit manual results.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -58,15 +58,15 @@ See:
 
 ## Current playable cards
 
-Bloodied Triumphs now contains eighty cards:
+Bloodied Triumphs is complete at 120 cards:
 
-- twenty Attack-deck cards, split evenly between ordinary and spell critical hits;
-- twenty Fortitude-deck cards for critically successful Fortitude saves;
-- twenty Reflex-deck cards for critically successful Reflex saves;
-- twenty Will-deck cards for critically successful Will saves;
-- seventy-two automated Effect Engine cards;
-- eight explicit manual cards.
+- thirty Attack-deck cards, split evenly between 15 ordinary and 15 spell critical hits;
+- thirty Fortitude-deck cards for critically successful Fortitude saves;
+- thirty Reflex-deck cards for critically successful Reflex saves;
+- thirty Will-deck cards for critically successful Will saves;
+- 108 automated Effect Engine cards;
+- 12 explicit manual cards.
 
-The first ten-card pass has been reviewed across all four decks, and all four decks have completed their second ten-card passes. The final Bloodied Triumphs target is 30 cards in each category, or 120 cards in total. Several specialized cards now additionally require matching effect traits such as poison, disease, mental, illusion, or emotion.
+All three reviewed ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 
 Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.

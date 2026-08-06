@@ -38,6 +38,28 @@ function freezeFilters(filters = {}) {
   ));
 }
 
+function freezeConditionTree(value) {
+  if (Array.isArray(value)) return Object.freeze(value.map((entry) => freezeConditionTree(entry)));
+  if (!value || typeof value !== "object") return value;
+  return Object.freeze(Object.fromEntries(
+    Object.entries(value).map(([key, nested]) => [key, freezeConditionTree(nested)])
+  ));
+}
+
+function combineBloodiedConditions(extraConditions) {
+  const extras = extraConditions == null
+    ? []
+    : Array.isArray(extraConditions)
+      ? extraConditions
+      : [extraConditions];
+  if (!extras.length) return BLOODIED_CONDITION;
+  return freezeConditionTree({
+    type: "group",
+    mode: "all",
+    conditions: [BLOODIED_CONDITION, ...extras]
+  });
+}
+
 function freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }) {
   if (!effect) return null;
   return Object.freeze({
@@ -71,6 +93,7 @@ function defineBloodiedCard({
   tags = [],
   filters = {},
   effect = null,
+  extraConditions = null,
   contentBatch
 }) {
   return Object.freeze({
@@ -94,7 +117,7 @@ function defineBloodiedCard({
       ...unique(tags)
     ]),
     filters: freezeFilters(filters),
-    conditions: BLOODIED_CONDITION,
+    conditions: combineBloodiedConditions(extraConditions),
     effect: freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }),
     metadata: Object.freeze({
       collection: "bloodied-triumphs",

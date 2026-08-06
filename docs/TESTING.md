@@ -27,23 +27,23 @@ The test suite covers:
 - atomic pack refresh;
 - settings registration and clamping;
 - version metadata and localization parity;
-- twenty unique Bloodied Triumphs Attack cards, split 10/10 between ordinary and spell critical hits;
-- twenty unique Bloodied Triumphs Fortitude cards;
-- twenty unique Bloodied Triumphs Reflex cards;
-- twenty unique Bloodied Triumphs Will cards;
-- ten ordinary and ten spell critical-hit categories in the Attack deck;
+- thirty unique Bloodied Triumphs Attack cards, split 15/15 between ordinary and spell critical hits;
+- thirty unique Bloodied Triumphs Fortitude cards;
+- thirty unique Bloodied Triumphs Reflex cards;
+- thirty unique Bloodied Triumphs Will cards;
+- fifteen ordinary and fifteen spell critical-hit categories in the Attack deck;
 - Fortitude, Reflex, and Will deck/category/save-filter isolation;
-- saving-actor targeting for every automated Fortitude, Reflex, and Will boon;
-- hostile-source targeting for all six Will countershock cards;
+- saving-actor targeting for every automated Fortitude boon and explicit hostile-source targeting for Reflex/Will countermoves;
+- hostile-source targeting for all eight Will countershock cards;
 - unique Fortitude, Reflex, and Will mechanical definitions, including second-pass regeneration and healing-received reinforcement;
-- preservation of the reviewed first forty card IDs plus ten additive second-pass Attack IDs, ten additive second-pass Fortitude IDs, and ten additive second-pass Reflex IDs, and ten additive second-pass Will IDs;
-- reviewed first-pass Attack mechanics plus second-pass persistent damage, weakness, slowed, enfeebled, spell DC, stupefied, and movement-control coverage;
+- preservation of all first- and second-pass IDs plus forty additive final-pass IDs;
+- final-pass weapon damage-type and spell-trait filtering for melee/ranged, bludgeoning, slashing, piercing, light, sonic, cold, electricity, and acid results;
 - poison, disease, mental, illusion, emotion, death, inhaled, and void trigger filters;
 - the increased Second Pulse healing value and reduced Will immunity density;
 - German Remaster terminology and reviewed German titles;
 - Reflex movement, area-resistance, concealment, Acrobatics, AC, restraint protection, critical-hit resistance, persistent-damage resistance, Dexterity-based checks, attack momentum, and short-immunity coverage;
 - Will defense, mental resistance, Perception, reduced immunity, contextual filtering, and hostile-countershock coverage;
-- immutable Bloodied context conditions;
+- immutable Bloodied context conditions plus additive quarter-health, wounded, and battlefield-threat condition groups;
 - complete filter sets and deck isolation;
 - positive versus hostile effect targeting;
 - supported Effect Engine component types;
@@ -51,4 +51,4 @@ The test suite covers:
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current development baseline: 68 passing tests. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.
+Current development baseline: 72 passing tests. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.

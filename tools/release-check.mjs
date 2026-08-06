@@ -72,32 +72,32 @@ for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
 check(packsSource.includes("plannedCardsPerDeck: 30"), "Card roadmap metadata is missing.");
-check(BLOODIED_ATTACK_CARDS.length === 20, "Bloodied Triumphs Attack deck must contain twenty cards.");
-check(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Attack card IDs must be unique.");
+check(BLOODIED_ATTACK_CARDS.length === 30, "Bloodied Triumphs Attack deck must contain thirty cards.");
+check(new Set(BLOODIED_ATTACK_CARDS.map((card) => card.id)).size === 30, "Bloodied Triumphs Attack card IDs must be unique.");
 check(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Bloodied Triumphs cards must remain in the Attack deck.");
-check(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 10, "Bloodied Triumphs Attack deck must contain ten ordinary critical-hit cards.");
-check(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Bloodied Triumphs Attack deck must contain ten spell critical-hit cards.");
-check(BLOODIED_ATTACK_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Attack cards must use the dynamic Bloodied condition.");
-check(BLOODIED_FORTITUDE_CARDS.length === 20, "Bloodied Triumphs Fortitude deck must contain twenty cards.");
-check(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Fortitude card IDs must be unique.");
+check(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 15, "Bloodied Triumphs Attack deck must contain fifteen ordinary critical-hit cards.");
+check(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 15, "Bloodied Triumphs Attack deck must contain fifteen spell critical-hit cards.");
+check(BLOODIED_ATTACK_CARDS.every((card) => hasBloodiedGate(card.conditions)), "Bloodied Triumphs Attack cards must use the dynamic Bloodied condition.");
+check(BLOODIED_FORTITUDE_CARDS.length === 30, "Bloodied Triumphs Fortitude deck must contain thirty cards.");
+check(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size === 30, "Bloodied Triumphs Fortitude card IDs must be unique.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Bloodied Triumphs Fortitude cards must remain in the Fortitude deck.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Fortitude cards require critical save success.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Bloodied Triumphs Fortitude cards must require Fortitude.");
-check(BLOODIED_FORTITUDE_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Fortitude cards must use the dynamic Bloodied condition.");
+check(BLOODIED_FORTITUDE_CARDS.every((card) => hasBloodiedGate(card.conditions)), "Bloodied Triumphs Fortitude cards must use the dynamic Bloodied condition.");
 
-check(BLOODIED_REFLEX_CARDS.length === 20, "Bloodied Triumphs Reflex deck must contain twenty cards.");
-check(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Reflex card IDs must be unique.");
+check(BLOODIED_REFLEX_CARDS.length === 30, "Bloodied Triumphs Reflex deck must contain thirty cards.");
+check(new Set(BLOODIED_REFLEX_CARDS.map((card) => card.id)).size === 30, "Bloodied Triumphs Reflex card IDs must be unique.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Bloodied Triumphs Reflex cards must remain in the Reflex deck.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Reflex cards require critical save success.");
 check(BLOODIED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Bloodied Triumphs Reflex cards must require Reflex.");
-check(BLOODIED_REFLEX_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Reflex cards must use the dynamic Bloodied condition.");
+check(BLOODIED_REFLEX_CARDS.every((card) => hasBloodiedGate(card.conditions)), "Bloodied Triumphs Reflex cards must use the dynamic Bloodied condition.");
 
-check(BLOODIED_WILL_CARDS.length === 20, "Bloodied Triumphs Will deck must contain twenty cards.");
-check(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Will card IDs must be unique.");
+check(BLOODIED_WILL_CARDS.length === 30, "Bloodied Triumphs Will deck must contain thirty cards.");
+check(new Set(BLOODIED_WILL_CARDS.map((card) => card.id)).size === 30, "Bloodied Triumphs Will card IDs must be unique.");
 check(BLOODIED_WILL_CARDS.every((card) => card.deckType === "will"), "Bloodied Triumphs Will cards must remain in the Will deck.");
 check(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Will cards require critical save success.");
 check(BLOODIED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Bloodied Triumphs Will cards must require Will.");
-check(BLOODIED_WILL_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Will cards must use the dynamic Bloodied condition.");
+check(BLOODIED_WILL_CARDS.every((card) => hasBloodiedGate(card.conditions)), "Bloodied Triumphs Will cards must use the dynamic Bloodied condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {
@@ -112,6 +112,14 @@ console.log(JSON.stringify({
   javascriptFiles: files.filter((entry) => entry.endsWith(".js") || entry.endsWith(".mjs")).length,
   status: "ok"
 }));
+
+function hasBloodiedGate(tree) {
+  if (!tree || typeof tree !== "object") return false;
+  if ((tree.type === "condition" || tree.field) && tree.field === "extensions.againstAllOdds.bloodied.matched") {
+    return tree.operator === "eq" && tree.value === true;
+  }
+  return (tree.conditions ?? []).some((child) => hasBloodiedGate(child));
+}
 
 function readJson(relative) {
   try {
