@@ -23,7 +23,7 @@ test("every theme reserves attack, Fortitude, Reflex, and Will decks", () => {
     assert.deepEqual(Object.keys(pack.decks), [...SPECIALIZED_DECK_TYPES]);
     for (const deckType of SPECIALIZED_DECK_TYPES) {
       const expected = pack.id.endsWith("bloodied-triumphs")
-        ? (deckType === "attack" ? 20 : 10)
+        ? (["attack", "fortitude"].includes(deckType) ? 20 : 10)
         : 0;
       assert.equal(pack.decks[deckType].cards.length, expected);
     }

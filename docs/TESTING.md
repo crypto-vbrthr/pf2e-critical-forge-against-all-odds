@@ -28,17 +28,17 @@ The test suite covers:
 - settings registration and clamping;
 - version metadata and localization parity;
 - twenty unique Bloodied Triumphs Attack cards, split 10/10 between ordinary and spell critical hits;
-- ten unique Bloodied Triumphs Fortitude cards;
+- twenty unique Bloodied Triumphs Fortitude cards;
 - ten unique Bloodied Triumphs Reflex cards;
 - ten unique Bloodied Triumphs Will cards;
 - ten ordinary and ten spell critical-hit categories in the Attack deck;
 - Fortitude, Reflex, and Will deck/category/save-filter isolation;
 - saving-actor targeting for every automated Fortitude, Reflex, and Will boon;
 - hostile-source targeting for both Will countershock cards;
-- unique Fortitude, Reflex, and Will mechanical definitions;
-- preservation of the reviewed first forty card IDs plus ten additive second-pass Attack IDs;
+- unique Fortitude, Reflex, and Will mechanical definitions, including second-pass regeneration and healing-received reinforcement;
+- preservation of the reviewed first forty card IDs plus ten additive second-pass Attack IDs and ten additive second-pass Fortitude IDs;
 - reviewed first-pass Attack mechanics plus second-pass persistent damage, weakness, slowed, enfeebled, spell DC, stupefied, and movement-control coverage;
-- poison, disease, mental, illusion, and emotion trigger-trait filters;
+- poison, disease, mental, illusion, emotion, death, inhaled, and void trigger filters;
 - the increased Second Pulse healing value and reduced Will immunity density;
 - German Remaster terminology and reviewed German titles;
 - Reflex movement, area-resistance, concealment, Acrobatics, AC, and short-immunity coverage;
@@ -51,4 +51,4 @@ The test suite covers:
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current development baseline: 48 passing tests with 98.96% measured line coverage.
+Current development baseline: 55 passing tests. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.

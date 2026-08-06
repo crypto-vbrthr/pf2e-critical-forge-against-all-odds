@@ -78,8 +78,8 @@ check(BLOODIED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Bloodi
 check(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 10, "Bloodied Triumphs Attack deck must contain ten ordinary critical-hit cards.");
 check(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Bloodied Triumphs Attack deck must contain ten spell critical-hit cards.");
 check(BLOODIED_ATTACK_CARDS.every((card) => card.conditions?.field === "extensions.againstAllOdds.bloodied.matched"), "Bloodied Triumphs Attack cards must use the dynamic Bloodied condition.");
-check(BLOODIED_FORTITUDE_CARDS.length === 10, "Bloodied Triumphs Fortitude deck must contain ten cards.");
-check(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Bloodied Triumphs Fortitude card IDs must be unique.");
+check(BLOODIED_FORTITUDE_CARDS.length === 20, "Bloodied Triumphs Fortitude deck must contain twenty cards.");
+check(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size === 20, "Bloodied Triumphs Fortitude card IDs must be unique.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Bloodied Triumphs Fortitude cards must remain in the Fortitude deck.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Bloodied Triumphs Fortitude cards require critical save success.");
 check(BLOODIED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Bloodied Triumphs Fortitude cards must require Fortitude.");

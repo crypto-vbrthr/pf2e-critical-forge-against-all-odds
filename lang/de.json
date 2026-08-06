@@ -199,6 +199,46 @@
           "CloseTheWound": {
             "Title": "Schließ die Wunde",
             "Description": "Dein Körper ergreift eine Verletzung und zwingt sie einem Ende entgegen. Du darfst sofort den Erholungswurf für einen Effekt mit anhaltendem Schaden ablegen, der dich betrifft, und verwendest dabei SG 10 statt des normalen SG."
+          },
+          "DeathHasNoPurchase": {
+            "Title": "Der Tod findet keinen Halt",
+            "Description": "Der Tod greift nach einem Körper, der längst beschlossen hat zu bleiben. Für 1 Runde bist du gegen Todeseffekte immun."
+          },
+          "IronLungs": {
+            "Title": "Lungen aus Eisen",
+            "Description": "Du entreißt der Welt einen sauberen Atemzug und weigerst dich, ihn wieder herzugeben. Für 1 Runde bist du gegen Effekte der Kategorie Eingeatmet immun."
+          },
+          "NoBloodForTheVoid": {
+            "Title": "Kein Blut für die Leere",
+            "Description": "Die Leere zerrt an dem Wenigen, das dir bleibt, und findet dein Leben fest umklammert. Für 1 Runde erhältst du Resistenz 4 gegen Leerenschaden."
+          },
+          "ScarsGuardTheHeart": {
+            "Title": "Narben wachen über das Herz",
+            "Description": "Alte Wunden lehren die neue, wo sie nicht treffen darf. Für 1 Runde erhältst du Resistenz 4 gegen Präzisionsschaden."
+          },
+          "PainLeavesRoomForHealing": {
+            "Title": "Schmerz lässt Raum für Heilung",
+            "Description": "Jeder zerrissene Rand deines Körpers streckt sich der Heilung entgegen. Für 1 Runde erhältst du einen Zustandsbonus von +2 auf Heilung, die du erhältst."
+          },
+          "FleshRemembers": {
+            "Title": "Fleisch erinnert sich",
+            "Description": "Für einen unmöglichen Herzschlag erinnert sich dein Körper an eine Gestalt ohne Wunden. Für 1 Runde erhältst du Regeneration 3; Säure- oder Feuerschaden deaktiviert sie."
+          },
+          "CoreAgainstTheElements": {
+            "Title": "Kern gegen die Elemente",
+            "Description": "Hitze, Frost, Blitze und Schlimmeres treffen auf einen Körper, der zu stur ist nachzugeben. Für 1 Runde erhältst du Resistenz 2 gegen Energieschaden."
+          },
+          "PressureMeetsStone": {
+            "Title": "Druck trifft auf Stein",
+            "Description": "Alles, was dich zerren, zerquetschen oder beiseiteschieben will, findet Stein dort, wo Fleisch sein sollte. Für 1 Runde erhält dein Zähigkeits-SG einen Situationsbonus von +2."
+          },
+          "LastReserve": {
+            "Title": "Die letzte Reserve",
+            "Description": "Dein Körper öffnet eine Reserve, die er für das Grab aufgespart hatte. Für 1 Runde erhältst du 8 temporäre Trefferpunkte."
+          },
+          "BodyCastsItOut": {
+            "Title": "Der Körper stößt es aus",
+            "Description": "Dein Körper erklärt eine Last zum Fremdkörper und stößt sie mit Gewalt aus. Reduziere sofort Kränkelnd, Ausgelaugt oder Kraftlos um 1 (wähle einen Zustand); wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -372,6 +412,33 @@
           },
           "StrengthDoesNotLeave": {
             "Name": "Die Kraft weicht nicht"
+          },
+          "DeathHasNoPurchase": {
+            "Name": "Der Tod findet keinen Halt"
+          },
+          "IronLungs": {
+            "Name": "Lungen aus Eisen"
+          },
+          "NoBloodForTheVoid": {
+            "Name": "Kein Blut für die Leere"
+          },
+          "ScarsGuardTheHeart": {
+            "Name": "Narben wachen über das Herz"
+          },
+          "PainLeavesRoomForHealing": {
+            "Name": "Schmerz lässt Raum für Heilung"
+          },
+          "FleshRemembers": {
+            "Name": "Fleisch erinnert sich"
+          },
+          "CoreAgainstTheElements": {
+            "Name": "Kern gegen die Elemente"
+          },
+          "PressureMeetsStone": {
+            "Name": "Druck trifft auf Stein"
+          },
+          "LastReserve": {
+            "Name": "Die letzte Reserve"
           }
         },
         "Reflex": {

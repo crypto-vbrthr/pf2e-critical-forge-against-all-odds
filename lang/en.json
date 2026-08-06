@@ -199,6 +199,46 @@
           "CloseTheWound": {
             "Title": "Close the Wound",
             "Description": "Your body seizes one injury and forces it toward an ending. You may immediately attempt the recovery check for one persistent damage effect affecting you, using DC 10 instead of its normal DC."
+          },
+          "DeathHasNoPurchase": {
+            "Title": "Death Has No Purchase",
+            "Description": "Death reaches for a body that has already decided to remain. For 1 round, you are immune to death effects."
+          },
+          "IronLungs": {
+            "Title": "Iron Lungs",
+            "Description": "You seize one clean breath and refuse to surrender it. For 1 round, you are immune to inhaled effects."
+          },
+          "NoBloodForTheVoid": {
+            "Title": "No Blood for the Void",
+            "Description": "The emptiness claws at what little remains and finds your life clenched tight. For 1 round, you gain resistance 4 to void damage."
+          },
+          "ScarsGuardTheHeart": {
+            "Title": "Scars Guard the Heart",
+            "Description": "Old wounds teach the new one where not to land. For 1 round, you gain resistance 4 to precision damage."
+          },
+          "PainLeavesRoomForHealing": {
+            "Title": "Pain Leaves Room for Healing",
+            "Description": "Every torn edge of you reaches toward repair. For 1 round, you gain a +2 status bonus to healing you receive."
+          },
+          "FleshRemembers": {
+            "Title": "Flesh Remembers",
+            "Description": "For one impossible heartbeat, your body remembers a shape without wounds. For 1 round, you gain regeneration 3, deactivated by acid or fire damage."
+          },
+          "CoreAgainstTheElements": {
+            "Title": "Core Against the Elements",
+            "Description": "Heat, frost, lightning, and worse meet a body too stubborn to yield. For 1 round, you gain resistance 2 to energy damage."
+          },
+          "PressureMeetsStone": {
+            "Title": "Pressure Meets Stone",
+            "Description": "Anything trying to drag, crush, or force you aside finds stone where flesh should be. For 1 round, your Fortitude DC gains a +2 circumstance bonus."
+          },
+          "LastReserve": {
+            "Title": "The Last Reserve",
+            "Description": "Your body opens a reserve it was saving for the grave. For 1 round, you gain 8 temporary Hit Points."
+          },
+          "BodyCastsItOut": {
+            "Title": "The Body Casts It Out",
+            "Description": "Your body names one burden foreign and expels it by force. Immediately reduce your sickened, drained, or enfeebled condition by 1 (choose one); apply this result manually."
           }
         },
         "Reflex": {
@@ -372,6 +412,33 @@
           },
           "StrengthDoesNotLeave": {
             "Name": "Strength Does Not Leave"
+          },
+          "DeathHasNoPurchase": {
+            "Name": "Death Has No Purchase"
+          },
+          "IronLungs": {
+            "Name": "Iron Lungs"
+          },
+          "NoBloodForTheVoid": {
+            "Name": "No Blood for the Void"
+          },
+          "ScarsGuardTheHeart": {
+            "Name": "Scars Guard the Heart"
+          },
+          "PainLeavesRoomForHealing": {
+            "Name": "Pain Leaves Room for Healing"
+          },
+          "FleshRemembers": {
+            "Name": "Flesh Remembers"
+          },
+          "CoreAgainstTheElements": {
+            "Name": "Core Against the Elements"
+          },
+          "PressureMeetsStone": {
+            "Name": "Pressure Meets Stone"
+          },
+          "LastReserve": {
+            "Name": "The Last Reserve"
           }
         },
         "Reflex": {

@@ -50,7 +50,8 @@ function freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }) {
       components: Object.freeze((effect.components ?? []).map((component) => Object.freeze({
         ...component,
         ...(Array.isArray(component.selector) ? { selector: Object.freeze([...component.selector]) } : {}),
-        ...(Array.isArray(component.predicate) ? { predicate: Object.freeze([...component.predicate]) } : {})
+        ...(Array.isArray(component.predicate) ? { predicate: Object.freeze([...component.predicate]) } : {}),
+        ...(Array.isArray(component.deactivatedBy) ? { deactivatedBy: Object.freeze([...component.deactivatedBy]) } : {})
       })))
     })
   });
@@ -127,7 +128,7 @@ export function defineBloodiedFortitudeCard(options) {
     category: "savingThrowCriticalSuccess",
     deckType: "fortitude",
     deckToken: "Fortitude",
-    contentBatch: 2,
+    contentBatch: options.contentBatch ?? 2,
     tags: ["save", "fortitude", ...(options.tags ?? [])],
     filters: { ...options.filters, saveTypes: ["fortitude"] }
   });

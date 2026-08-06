@@ -43,9 +43,9 @@ test("the Bloodied Triumphs Attack deck contains twenty unique cards after the s
   assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 10);
 });
 
-test("the Bloodied Triumphs Fortitude batch contains ten unique critical-save cards", () => {
-  assert.equal(BLOODIED_FORTITUDE_CARDS.length, 10);
-  assert.equal(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size, 10);
+test("the Bloodied Triumphs Fortitude deck contains twenty unique critical-save cards after the second pass", () => {
+  assert.equal(BLOODIED_FORTITUDE_CARDS.length, 20);
+  assert.equal(new Set(BLOODIED_FORTITUDE_CARDS.map((card) => card.id)).size, 20);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.bloodiedTriumphs), true);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
   assert.equal(BLOODIED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
@@ -71,7 +71,7 @@ test("the Bloodied Triumphs Will batch contains ten unique critical-save cards",
 });
 
 test("all Bloodied Triumphs cards use unique IDs and the dynamic Bloodied context gate", () => {
-  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 50);
+  assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 60);
   assertBloodiedGate(ALL_CARDS);
 });
 
@@ -89,7 +89,10 @@ test("published decks keep their explicit automated/manual split", () => {
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-010-one-more-breath",
       "pf2e-critical-forge-against-all-odds.bloodied-triumphs.attack.ba-015-hunt-the-opening"
     ]],
-    [BLOODIED_FORTITUDE_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound"]],
+    [BLOODIED_FORTITUDE_CARDS, 18, [
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-010-close-the-wound",
+      "pf2e-critical-forge-against-all-odds.bloodied-triumphs.fortitude.bf-020-body-casts-it-out"
+    ]],
     [BLOODIED_REFLEX_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.reflex.br-010-two-heartbeats-ahead"]],
     [BLOODIED_WILL_CARDS, 9, ["pf2e-critical-forge-against-all-odds.bloodied-triumphs.will.bw-010-cut-the-hook"]]
   ]) {
@@ -151,6 +154,7 @@ test("published batches use only Effect Engine component types supported by the 
     "modifier",
     "movement",
     "persistentDamage",
+    "regeneration",
     "resistance",
     "temporaryHitPoints",
     "weakness"
@@ -161,7 +165,7 @@ test("Fortitude effects cover endurance without duplicate mechanical definitions
   const signatures = BLOODIED_FORTITUDE_CARDS.filter((card) => card.effect).map((card) => JSON.stringify(card.effect.definition.components));
   assert.equal(new Set(signatures).size, signatures.length);
   assert.equal(BLOODIED_FORTITUDE_CARDS.some((card) => card.effect?.definition.components.some((component) => component.type === "fastHealing")), true);
-  assert.equal(BLOODIED_FORTITUDE_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 3);
+  assert.equal(BLOODIED_FORTITUDE_CARDS.filter((card) => card.effect?.definition.components.some((component) => component.type === "immunity")).length, 5);
 });
 
 test("Reflex effects cover movement and evasion without duplicate mechanical definitions", () => {
@@ -268,4 +272,66 @@ test("second-pass contextual filters avoid nonsensical bleed and mental results"
   assert.deepEqual(bleed.filters.excludedTargetTraits, ["construct", "ooze"]);
   assert.deepEqual(thought.filters.spellTraits, ["mental"]);
   assert.deepEqual(thought.filters.excludedTargetTraits, ["mindless"]);
+});
+
+test("the second Fortitude pass adds ten cards with a distinct content batch", () => {
+  const secondPass = BLOODIED_FORTITUDE_CARDS.slice(10);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 6), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["bf-020-body-casts-it-out"]);
+});
+
+test("second-pass Fortitude cards broaden bodily endurance without duplicate effect definitions", () => {
+  const secondPass = BLOODIED_FORTITUDE_CARDS.slice(10);
+  const automated = secondPass.filter((card) => card.effect);
+  const signatures = automated.map((card) => JSON.stringify(card.effect.definition.components));
+  assert.equal(new Set(signatures).size, signatures.length);
+
+  const types = new Set(automated.flatMap((card) => card.effect.definition.components.map((component) => component.type)));
+  assert.equal(types.has("regeneration"), true);
+  assert.equal(types.has("temporaryHitPoints"), true);
+  assert.equal(types.has("resistance"), true);
+  assert.equal(types.has("modifier"), true);
+  assert.equal(types.has("immunity"), true);
+});
+
+test("second-pass Fortitude contextual filters bind death, inhaled, and void results to matching effects", () => {
+  const bySuffix = Object.fromEntries(BLOODIED_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["bf-011-death-has-no-purchase"].filters.attackTraits, ["death"]);
+  assert.deepEqual(bySuffix["bf-012-iron-lungs"].filters.attackTraits, ["inhaled"]);
+  assert.deepEqual(bySuffix["bf-013-no-blood-for-the-void"].filters.damageTypes, ["void"]);
+});
+
+test("second-pass Fortitude automated effects always target the saving actor", () => {
+  const automated = BLOODIED_FORTITUDE_CARDS.slice(10).filter((card) => card.effect);
+  assert.equal(automated.every((card) => card.effect.target === "source"), true);
+});
+
+test("second-pass Fortitude includes healing reinforcement, regeneration, and Fortitude-DC pressure resistance", () => {
+  const bySuffix = Object.fromEntries(BLOODIED_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["bf-015-pain-leaves-room-for-healing"].effect.definition.components, [
+    { type: "modifier", selector: "healing-received", value: 2, modifierType: "status", predicate: [] }
+  ]);
+  assert.deepEqual(bySuffix["bf-016-flesh-remembers"].effect.definition.components, [
+    { type: "regeneration", value: 3, deactivatedBy: ["acid", "fire"] }
+  ]);
+  assert.deepEqual(bySuffix["bf-018-pressure-meets-stone"].effect.definition.components, [
+    { type: "modifier", selector: "fortitude-dc", value: 2, modifierType: "circumstance", predicate: [] }
+  ]);
+});
+
+
+
+test("all published cards use Critical Forge supported tone and impact values", () => {
+  const supportedTones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const supportedImpacts = new Set(["narrative", "light", "moderate", "strong"]);
+  for (const card of ALL_CARDS) {
+    assert.equal(supportedTones.has(card.tone), true, `${card.id} has unsupported tone ${card.tone}`);
+    assert.equal(supportedImpacts.has(card.impact), true, `${card.id} has unsupported impact ${card.impact}`);
+  }
+});
+
+test("Pain Leaves Room for Healing uses a Forge-supported dramatic tone", () => {
+  const card = BLOODIED_FORTITUDE_CARDS.find((entry) => entry.id.endsWith("bf-015-pain-leaves-room-for-healing"));
+  assert.equal(card.tone, "dramatic");
 });

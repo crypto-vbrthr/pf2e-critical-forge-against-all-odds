@@ -1,6 +1,12 @@
 # Changelog
 
-## 0.1.0-dev.7
+## 0.1.0-dev.8.1
+
+### Fixed
+- Corrected the `Pain Leaves Room for Healing` card tone from unsupported `hopeful` to supported `dramatic`, which prevented the entire Bloodied Triumphs pack from registering in Foundry.
+- Added regression coverage for Critical Forge card tone and impact contract values.
+
+## 0.1.0-dev.8
 
 ### Added
 

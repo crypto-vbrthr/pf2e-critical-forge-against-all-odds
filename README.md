@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.7` begins the second content pass for Bloodied Triumphs. The Attack deck now contains 20 of its planned 30 cards, split evenly between ordinary critical hits and spell critical hits. Bloodied Triumphs now contains 50 of its planned 120 cards.
+Version `0.1.0-dev.8.1` contains the second Attack and Fortitude content passes for Bloodied Triumphs. Attack and Fortitude each contain 20 of their planned 30 cards, while Reflex and Will remain at 10 each. Bloodied Triumphs now contains 60 of its planned 120 cards. This patch also fixes a registration-blocking unsupported card tone introduced in `0.1.0-dev.8`.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
