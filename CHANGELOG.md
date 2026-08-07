@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-dev.17
+
+### Added
+- Added the second ten-card **Surrounded, Still Standing** Fortitude pass, bringing the Fortitude deck to 20/30 cards and the theme to 60/120 cards.
+- Added eight automated and two manual results focused on bracing, formation leverage, current-opponent counterpressure, Escape/Step recovery, and using threatening enemies as obstacles.
+- Added one three-threat and one four-threat escalation card; the four-threat result additionally requires the current hostile source to be a counted melee threat.
+- Added German and English localization for all ten cards and eight automated effects.
+
+### Tests
+- Added second-pass Fortitude count/content-batch, automation split, threat escalation, target-role, no-new-resistance/immunity-series, localization, and current-opponent gating coverage.
+- Revalidated the complete add-on against the actual Critical Forge `1.0.0-rc` pack, matcher, and Effect Engine contracts before packaging.
+
+### Compatibility
+- Existing 170 published card IDs remain unchanged; this build adds ten Surrounded Fortitude IDs.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.16
 
 ### Added

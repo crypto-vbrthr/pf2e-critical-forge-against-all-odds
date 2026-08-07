@@ -1,6 +1,6 @@
 export const MODULE_ID = "pf2e-critical-forge-against-all-odds";
 export const MODULE_TITLE = "PF2E Critical Forge: Against All Odds";
-export const MODULE_VERSION = "0.1.0-dev.16";
+export const MODULE_VERSION = "0.1.0-dev.17";
 export const API_VERSION = "0.1.0";
 
 export const REQUIRED_CRITICAL_FORGE_VERSION = ">=1.0.0-rc";

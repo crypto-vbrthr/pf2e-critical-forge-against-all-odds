@@ -691,6 +691,46 @@
           "SetYourFeet": {
             "Title": "Set Your Feet",
             "Description": "You root yourself against the whole ring at once. Until the start of your next turn, reduce any forced movement caused by a hostile effect by 10 feet, to a minimum of 0 feet. Apply this result manually."
+          },
+          "TurnTheirWeightAgainstThem": {
+            "Title": "Turn Their Weight Against Them",
+            "Description": "A threatening foe leans into the crush and gives you the leverage to break their stance. For 1 round, the hostile source takes a -1 circumstance penalty to Athletics checks and Fortitude DC."
+          },
+          "BraceOnTheirAdvance": {
+            "Title": "Brace on Their Advance",
+            "Description": "A foe's pressure becomes a brace instead of a burden. For 1 round, you gain a +1 circumstance bonus to AC and Constitution-based checks."
+          },
+          "ThreeBodiesOneBastion": {
+            "Title": "Three Bodies, One Bastion",
+            "Description": "With three or more threats closing in, the pressure locks your frame into a single defensive structure. For 1 round, you gain a +1 status bonus to Fortitude saves and Fortitude DC."
+          },
+          "FourHandsOneMistake": {
+            "Title": "Four Hands, One Mistake",
+            "Description": "With four or more threats around you, one attacker overcommits and the whole ring stutters. A threatening hostile source becomes slowed 1 and takes a -1 circumstance penalty to Fortitude DC for 1 round."
+          },
+          "BreakTheClinch": {
+            "Title": "Break the Clinch",
+            "Description": "The crush gives you one violent instant to wrench free. If you are grabbed, restrained, or immobilized, you may immediately attempt to Escape as a free action with a +2 circumstance bonus. Otherwise, you may Step. Apply this result manually."
+          },
+          "BreatheThroughTheCrush": {
+            "Title": "Breathe Through the Crush",
+            "Description": "You force one measured breath through the chaos and your body remembers its discipline. For 1 round, you gain a +1 status bonus to Fortitude saves and Constitution-based checks."
+          },
+          "UseTheRingAsLeverage": {
+            "Title": "Use the Ring as Leverage",
+            "Description": "Every body pressing inward becomes leverage for the next blow. For 1 round, you gain a +1 circumstance bonus to Athletics checks and Strike damage."
+          },
+          "OneBodyTakesTheWeight": {
+            "Title": "One Body Takes the Weight",
+            "Description": "You shift the pressure onto one threatening foe and leave them fighting the rest of the ring. For 1 round, the hostile source is off-guard and takes a -1 circumstance penalty to Athletics checks."
+          },
+          "ForceMeetsFormation": {
+            "Title": "Force Meets Formation",
+            "Description": "A threatening foe drives into you and discovers the ring has nowhere left to give. For 1 round, the hostile source takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Fortitude DC."
+          },
+          "MakeAShieldOfThem": {
+            "Title": "Make a Shield of Them",
+            "Description": "Turn one threatening enemy into an obstacle for the rest. Choose a currently threatening foe; until the start of your next turn, treat that creature as cover against attacks from other threatening enemies whenever it physically blocks the line of attack. Apply this result manually."
           }
         },
         "Reflex": {
@@ -1195,6 +1235,30 @@
           },
           "CrowdGivesYouLeverage": {
             "Name": "The Crowd Gives You Leverage"
+          },
+          "ForceMeetsFormation": {
+            "Name": "Force Meets Formation"
+          },
+          "BraceOnTheirAdvance": {
+            "Name": "Brace on Their Advance"
+          },
+          "OneBodyTakesTheWeight": {
+            "Name": "One Body Takes the Weight"
+          },
+          "FourHandsOneMistake": {
+            "Name": "Four Hands, One Mistake"
+          },
+          "BreatheThroughTheCrush": {
+            "Name": "Breathe Through the Crush"
+          },
+          "ThreeBodiesOneBastion": {
+            "Name": "Three Bodies, One Bastion"
+          },
+          "UseTheRingAsLeverage": {
+            "Name": "Use the Ring as Leverage"
+          },
+          "TurnTheirWeightAgainstThem": {
+            "Name": "Turn Their Weight Against Them"
           }
         },
         "Reflex": {

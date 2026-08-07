@@ -679,14 +679,15 @@ test("Surrounded Attack second pass uses current-opponent threat gating for form
   }
 });
 
-test("Surrounded, Still Standing first Fortitude pass contains ten unique critical-save cards", () => {
-  assert.equal(SURROUNDED_FORTITUDE_CARDS.length, 10);
-  assert.equal(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size, 10);
+test("Surrounded, Still Standing Fortitude deck contains twenty unique critical-save cards after two passes", () => {
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.length, 20);
+  assert.equal(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size, 20);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
-  assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.metadata.contentBatch === 14), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 14), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.slice(10).every((card) => card.metadata.contentBatch === 18), true);
 });
 
 test("all Surrounded Fortitude cards use the dynamic surrounded gate", () => {
@@ -706,16 +707,17 @@ test("heavier Surrounded Fortitude results require three or four threatening ene
 });
 
 test("Surrounded Fortitude first pass keeps boons on the saver and one counterpressure effect on the hostile source", () => {
-  const automated = SURROUNDED_FORTITUDE_CARDS.filter((card) => card.effect);
+  const firstPass = SURROUNDED_FORTITUDE_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
   assert.equal(automated.length, 9);
-  assert.deepEqual(SURROUNDED_FORTITUDE_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssf-010-set-your-feet"]);
+  assert.deepEqual(firstPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssf-010-set-your-feet"]);
   assert.equal(automated.filter((card) => card.effect.target === "source").length, 8);
   assert.equal(automated.filter((card) => card.effect.target === "target").length, 1);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-006-make-them-spend-themselves")).effect.target, "target");
 });
 
 test("Surrounded Fortitude first pass covers anchoring, bracing, recovery, and counterpressure", () => {
-  const components = SURROUNDED_FORTITUDE_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
+  const components = SURROUNDED_FORTITUDE_CARDS.slice(0, 10).flatMap((card) => card.effect?.definition.components ?? []);
   assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("fortitude-dc") && component.selector.includes("ac")), true);
   assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "physical"), true);
   assert.equal(components.some((component) => component.type === "fastHealing" && component.value === 3), true);
@@ -747,6 +749,38 @@ test("Surrounded Fortitude first pass uses Forge-supported tones, impacts, filte
       assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Fortitude."), true, card.id);
     }
   }
+});
+
+
+test("Surrounded Fortitude second pass adds ten formation-specific critical-save cards", () => {
+  const secondPass = SURROUNDED_FORTITUDE_CARDS.slice(10, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 18), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "ssf-015-break-the-clinch",
+    "ssf-020-make-a-shield-of-them"
+  ]);
+  assert.equal(secondPass.filter((card) => card.effect?.target === "source").length, 4);
+  assert.equal(secondPass.filter((card) => card.effect?.target === "target").length, 4);
+});
+
+test("Surrounded Fortitude second pass escalates at three and four threats", () => {
+  const three = SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-013-three-bodies-one-bastion"));
+  const four = SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-014-four-hands-one-mistake"));
+  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
+  const leaves = conditionLeaves(four.conditions);
+  assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+  assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true), true);
+});
+
+test("Surrounded Fortitude second pass favors leverage and counterpressure over new resistance or immunity series", () => {
+  const secondPass = SURROUNDED_FORTITUDE_CARDS.slice(10, 20);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "resistance"), false);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "slowed"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("strike-damage") && component.selector.includes("athletics")), true);
 });
 
 
@@ -908,6 +942,11 @@ test("target-centric Surrounded cards require the current opponent to be a count
     "ssa-018-pressure-finds-the-weak-link",
     "ssa-019-four-shadows-one-flash",
     "ssf-006-make-them-spend-themselves",
+    "ssf-011-turn-their-weight-against-them",
+    "ssf-012-brace-on-their-advance",
+    "ssf-014-four-hands-one-mistake",
+    "ssf-018-one-body-takes-the-weight",
+    "ssf-019-force-meets-formation",
     "ssr-005-overreach-opens-the-source",
     "ssr-006-balance-turns-against-them"
   ]);

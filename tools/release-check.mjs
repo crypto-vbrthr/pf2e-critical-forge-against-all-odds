@@ -110,8 +110,8 @@ check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").
 check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Surrounded Attack deck must contain ten spell critical-hit cards after two passes.");
 check(SURROUNDED_ATTACK_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Attack cards must use the dynamic Surrounded condition.");
 
-check(SURROUNDED_FORTITUDE_CARDS.length === 10, "Surrounded, Still Standing Fortitude deck must contain ten first-pass cards.");
-check(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Surrounded Fortitude card IDs must be unique.");
+check(SURROUNDED_FORTITUDE_CARDS.length === 20, "Surrounded, Still Standing Fortitude deck must contain twenty cards after two passes.");
+check(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size === 20, "Surrounded Fortitude card IDs must be unique.");
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Surrounded Fortitude cards must remain in the Fortitude deck.");
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Fortitude cards require critical save success.");
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Surrounded Fortitude cards must require Fortitude.");

@@ -13,7 +13,7 @@
 - [x] Surrounded Attack second-pass target effects use current-opponent threat membership where formation membership matters.
 - [x] Surrounded Attack second-pass escalation cards test three/four threat counts.
 - [x] All Surrounded Attack cards include the dynamic Surrounded condition; stronger cards test three/four threat counts.
-- [x] Surrounded, Still Standing Fortitude first pass contains ten critical-success save cards.
+- [x] Surrounded, Still Standing Fortitude contains twenty critical-success save cards after two passes.
 - [x] Surrounded, Still Standing Reflex first pass contains ten critical-success save cards.
 - [x] Surrounded, Still Standing Will first pass contains ten critical-success save cards.
 - [x] All published Surrounded save cards use the matching save deck/filter and preserve saver/source target roles.
@@ -43,7 +43,7 @@
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Reflex cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Will cards visible.
 - [ ] Foundry smoke test: twenty localized Surrounded Attack cards visible.
-- [ ] Foundry smoke test: ten localized Surrounded Fortitude cards visible.
+- [ ] Foundry smoke test: twenty localized Surrounded Fortitude cards visible.
 - [ ] Foundry smoke test: ten localized Surrounded Reflex cards visible.
 - [ ] Foundry smoke test: ten localized Surrounded Will cards visible.
 - [ ] Foundry smoke test: Surrounded cards are unavailable below the configured threat threshold.

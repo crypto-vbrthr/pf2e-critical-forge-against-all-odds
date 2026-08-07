@@ -74,7 +74,7 @@ test("runtime registration binds all resources through the extension contract", 
   assert.equal(bloodied.decks.will.cards.length, 30);
   const surrounded = runtime.listPacks().find((pack) => pack.id.endsWith("surrounded-still-standing"));
   assert.equal(surrounded.decks.attack.cards.length, 20);
-  assert.equal(surrounded.decks.fortitude.cards.length, 10);
+  assert.equal(surrounded.decks.fortitude.cards.length, 20);
   assert.equal(surrounded.decks.reflex.cards.length, 10);
   assert.equal(surrounded.decks.will.cards.length, 10);
 });

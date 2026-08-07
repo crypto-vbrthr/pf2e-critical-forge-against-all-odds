@@ -691,6 +691,46 @@
           "SetYourFeet": {
             "Title": "Setz die Füße",
             "Description": "Du stemmst dich gegen den gesamten Ring zugleich. Bis zum Beginn deines nächsten Zuges reduzierst du jede durch einen feindlichen Effekt verursachte erzwungene Bewegung um 3 m, auf ein Minimum von 0 m. Wende dieses Ergebnis manuell an."
+          },
+          "TurnTheirWeightAgainstThem": {
+            "Title": "Wende ihr Gewicht gegen sie",
+            "Description": "Ein dich bedrohender Gegner lehnt sich in das Gedränge und gibt dir damit den Hebel, seine Haltung zu brechen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Athletikwürfe und Zähigkeits-SG."
+          },
+          "BraceOnTheirAdvance": {
+            "Title": "Stütz dich auf ihren Ansturm",
+            "Description": "Der Druck eines Gegners wird zur Stütze statt zur Last. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und konstitutionsbasierte Würfe."
+          },
+          "ThreeBodiesOneBastion": {
+            "Title": "Drei Körper, eine Bastion",
+            "Description": "Wenn drei oder mehr Bedrohungen auf dich eindringen, verriegelt der Druck deinen Körper zu einer einzigen Verteidigungsstruktur. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeitswürfe und Zähigkeits-SG."
+          },
+          "FourHandsOneMistake": {
+            "Title": "Vier Hände, ein Fehler",
+            "Description": "Wenn vier oder mehr Bedrohungen dich umringen, übernimmt sich ein Angreifer und der ganze Ring gerät ins Stocken. Eine dich bedrohende feindliche Quelle erhält für 1 Runde Verlangsamt 1 und einen Situationsmalus von -1 auf ihren Zähigkeits-SG."
+          },
+          "BreakTheClinch": {
+            "Title": "Brich die Umklammerung",
+            "Description": "Das Gedränge gibt dir einen gewaltsamen Augenblick, um dich loszureißen. Falls du Gegriffen, Gebunden oder Bewegungsunfähig bist, kannst du sofort als Freie Aktion mit einem Situationsbonus von +2 Entkommen versuchen. Andernfalls darfst du einen Schritt ausführen. Wende dieses Ergebnis manuell an."
+          },
+          "BreatheThroughTheCrush": {
+            "Title": "Atme durch den Druck",
+            "Description": "Du zwingst einen einzigen kontrollierten Atemzug durch das Chaos, und dein Körper erinnert sich an seine Disziplin. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeitswürfe und konstitutionsbasierte Würfe."
+          },
+          "UseTheRingAsLeverage": {
+            "Title": "Nutze den Ring als Hebel",
+            "Description": "Jeder Körper, der nach innen drückt, wird zum Hebel für deinen nächsten Schlag. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Athletikwürfe und den Schaden deiner Angriffe."
+          },
+          "OneBodyTakesTheWeight": {
+            "Title": "Ein Körper trägt den Druck",
+            "Description": "Du verlagerst den Druck auf einen dich bedrohenden Gegner und lässt ihn gegen den Rest des Rings arbeiten. Für 1 Runde ist die feindliche Quelle Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+          },
+          "ForceMeetsFormation": {
+            "Title": "Kraft trifft auf Formation",
+            "Description": "Ein dich bedrohender Gegner treibt in dich hinein und stellt fest, dass der Ring keinen Raum mehr zum Nachgeben hat. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1,5 m auf alle Bewegungsraten und -1 auf ihren Zähigkeits-SG."
+          },
+          "MakeAShieldOfThem": {
+            "Title": "Mach aus ihnen einen Schild",
+            "Description": "Mach einen dich bedrohenden Gegner zum Hindernis für den Rest. Wähle einen Gegner, der dich aktuell bedroht; bis zum Beginn deines nächsten Zuges gilt diese Kreatur für Angriffe anderer bedrohender Gegner als Deckung, wenn sie die Angriffslinie tatsächlich blockiert. Wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -1195,6 +1235,30 @@
           },
           "CrowdGivesYouLeverage": {
             "Name": "Das Gedränge gibt dir Hebel"
+          },
+          "ForceMeetsFormation": {
+            "Name": "Kraft trifft auf Formation"
+          },
+          "BraceOnTheirAdvance": {
+            "Name": "Stütz dich auf ihren Ansturm"
+          },
+          "OneBodyTakesTheWeight": {
+            "Name": "Ein Körper trägt den Druck"
+          },
+          "FourHandsOneMistake": {
+            "Name": "Vier Hände, ein Fehler"
+          },
+          "BreatheThroughTheCrush": {
+            "Name": "Atme durch den Druck"
+          },
+          "ThreeBodiesOneBastion": {
+            "Name": "Drei Körper, eine Bastion"
+          },
+          "UseTheRingAsLeverage": {
+            "Name": "Nutze den Ring als Hebel"
+          },
+          "TurnTheirWeightAgainstThem": {
+            "Name": "Wende ihr Gewicht gegen sie"
           }
         },
         "Reflex": {

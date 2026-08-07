@@ -139,5 +139,162 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     fallbackDescription: "You root yourself against the whole ring at once. Until the start of your next turn, reduce any forced movement caused by a hostile effect by 10 feet, to a minimum of 0 feet. Apply this result manually.",
     tags: ["forced-movement", "brace", "manual"],
     effect: null
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-011-turn-their-weight-against-them",
+    localizationKey: "TurnTheirWeightAgainstThem",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Turn Their Weight Against Them",
+    fallbackDescription: "A threatening foe leans into the crush and gives you the leverage to break their stance. For 1 round, the hostile source takes a -1 circumstance penalty to Athletics checks and Fortitude DC.",
+    tags: ["hostile-source", "athletics", "fortitude-dc", "counterpressure", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 18,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["athletics", "fortitude-dc"], value: -1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-012-brace-on-their-advance",
+    localizationKey: "BraceOnTheirAdvance",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Brace on Their Advance",
+    fallbackDescription: "A foe's pressure becomes a brace instead of a burden. For 1 round, you gain a +1 circumstance bonus to AC and Constitution-based checks.",
+    tags: ["brace", "ac", "constitution", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 18,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["ac", "con-based"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-013-three-bodies-one-bastion",
+    localizationKey: "ThreeBodiesOneBastion",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Three Bodies, One Bastion",
+    fallbackDescription: "With three or more threats closing in, the pressure locks your frame into a single defensive structure. For 1 round, you gain a +1 status bonus to Fortitude saves and Fortitude DC.",
+    tags: ["heavily-surrounded", "fortitude", "fortitude-dc", "status-bonus", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
+    contentBatch: 18,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["fortitude", "fortitude-dc"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-014-four-hands-one-mistake",
+    localizationKey: "FourHandsOneMistake",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Hands, One Mistake",
+    fallbackDescription: "With four or more threats around you, one attacker overcommits and the whole ring stutters. A threatening hostile source becomes slowed 1 and takes a -1 circumstance penalty to Fortitude DC for 1 round.",
+    tags: ["heavily-surrounded", "hostile-source", "slowed", "fortitude-dc", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 18,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "slowed", value: 1 },
+        { type: "modifier", selector: "fortitude-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-015-break-the-clinch",
+    localizationKey: "BreakTheClinch",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Break the Clinch",
+    fallbackDescription: "The crush gives you one violent instant to wrench free. If you are grabbed, restrained, or immobilized, you may immediately attempt to Escape as a free action with a +2 circumstance bonus. Otherwise, you may Step. Apply this result manually.",
+    tags: ["escape", "step", "free-action", "manual"],
+    contentBatch: 18,
+    effect: null
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-016-breathe-through-the-crush",
+    localizationKey: "BreatheThroughTheCrush",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Breathe Through the Crush",
+    fallbackDescription: "You force one measured breath through the chaos and your body remembers its discipline. For 1 round, you gain a +1 status bonus to Fortitude saves and Constitution-based checks.",
+    tags: ["fortitude", "constitution", "status-bonus", "effect"],
+    contentBatch: 18,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["fortitude", "con-based"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-017-use-the-ring-as-leverage",
+    localizationKey: "UseTheRingAsLeverage",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Use the Ring as Leverage",
+    fallbackDescription: "Every body pressing inward becomes leverage for the next blow. For 1 round, you gain a +1 circumstance bonus to Athletics checks and Strike damage.",
+    tags: ["athletics", "strike-damage", "counteroffense", "effect"],
+    contentBatch: 18,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["athletics", "strike-damage"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-018-one-body-takes-the-weight",
+    localizationKey: "OneBodyTakesTheWeight",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "One Body Takes the Weight",
+    fallbackDescription: "You shift the pressure onto one threatening foe and leave them fighting the rest of the ring. For 1 round, the hostile source is off-guard and takes a -1 circumstance penalty to Athletics checks.",
+    tags: ["hostile-source", "off-guard", "athletics", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 18,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "off-guard", value: 1 },
+        { type: "modifier", selector: "athletics", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-019-force-meets-formation",
+    localizationKey: "ForceMeetsFormation",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Force Meets Formation",
+    fallbackDescription: "A threatening foe drives into you and discovers the ring has nowhere left to give. For 1 round, the hostile source takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Fortitude DC.",
+    tags: ["hostile-source", "movement", "fortitude-dc", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 18,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" },
+        { type: "modifier", selector: "fortitude-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-020-make-a-shield-of-them",
+    localizationKey: "MakeAShieldOfThem",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Make a Shield of Them",
+    fallbackDescription: "Turn one threatening enemy into an obstacle for the rest. Choose a currently threatening foe; until the start of your next turn, treat that creature as cover against attacks from other threatening enemies whenever it physically blocks the line of attack. Apply this result manually.",
+    tags: ["cover", "positioning", "formation", "manual"],
+    contentBatch: 18,
+    effect: null
   })
+
 ]);
