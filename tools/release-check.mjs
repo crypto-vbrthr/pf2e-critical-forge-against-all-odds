@@ -147,14 +147,14 @@ check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Fortitude cards require critical save success.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Giant-Slayer Fortitude cards must require Fortitude.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Fortitude cards must use the dynamic Giant-Slayer condition.");
-check(GIANT_SLAYER_REFLEX_CARDS.length === 10, "Giant-Slayer Moments Reflex first pass must contain ten cards.");
-check(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Reflex card IDs must be unique.");
+check(GIANT_SLAYER_REFLEX_CARDS.length === 20, "Giant-Slayer Moments Reflex must contain twenty cards after the second pass.");
+check(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Reflex card IDs must be unique.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Giant-Slayer Reflex cards must remain in the Reflex deck.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Reflex cards require critical save success.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Giant-Slayer Reflex cards must require Reflex.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Reflex cards must use the dynamic Giant-Slayer condition.");
-check(GIANT_SLAYER_WILL_CARDS.length === 10, "Giant-Slayer Moments Will first pass must contain ten cards.");
-check(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Will card IDs must be unique.");
+check(GIANT_SLAYER_WILL_CARDS.length === 20, "Giant-Slayer Moments Will must contain twenty cards after the second pass.");
+check(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Will card IDs must be unique.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => card.deckType === "will"), "Giant-Slayer Will cards must remain in the Will deck.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Will cards require critical save success.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Giant-Slayer Will cards must require Will.");

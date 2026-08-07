@@ -1266,6 +1266,46 @@
           "CrossTheDeadAngle": {
             "Title": "Durchquere den toten Winkel",
             "Description": "Der verfehlte Angriff des stärkeren Gegners öffnet kurz einen Weg durch den Raum, den er nicht sofort abdecken kann. Du darfst sofort als freie Aktion einen Schritt ausführen oder Deckung suchen. Führst du einen Schritt aus, löst diese Bewegung keine Reaktionen der feindlichen Quelle aus. Wende dieses Ergebnis manuell an."
+          },
+          "TurnInsideTheSwing": {
+            "Title": "Dreh dich in den Schwung hinein",
+            "Description": "Eine größere feindliche Quelle legt sich auf eine Angriffslinie fest, die für etwas Langsameres gedacht ist. Du tauchst in den Bogen hinein, bevor er sich schließen kann. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK, Reflexwürfe und Akrobatikwürfe."
+          },
+          "TheirReachBecomesYourRoute": {
+            "Title": "Ihre Reichweite wird zu deinem Weg",
+            "Description": "Mindestens zwei Größenstufen Unterschied schaffen einen Korridor, sobald du aufhörst, in die offensichtliche Richtung zu fliehen. Für 1 Runde erhältst du einen Zustandsbonus von +1,5 m auf deine Bewegungsrate an Land und einen Zustandsbonus von +1 auf Akrobatikwürfe."
+          },
+          "FourLevelsCannotStopShort": {
+            "Title": "Vier Stufen, kein rechtzeitiges Abbremsen",
+            "Description": "Gegen einen bedrohenden Gegner mindestens vier Stufen über dir wird der verfehlte Zugriff zu einer Überdehnung, die er nicht mehr rechtzeitig auffangen kann. Für 1 Runde ist die feindliche Quelle Auf dem falschen Fuß, erhält einen Situationsmalus von -1 auf ihren Reflex-SG und -1,5 m auf alle Bewegungsraten."
+          },
+          "ReadTheImpactBeforeItLands": {
+            "Title": "Lies den Einschlag, bevor er kommt",
+            "Description": "Du reagierst nicht länger auf den eigentlichen Schlag, sondern liest den Druck, der ihm vorausgeht. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Reflexwürfe, Wahrnehmungswürfe und RK."
+          },
+          "SlipBetweenTheirSteps": {
+            "Title": "Schlüpf zwischen ihre Schritte",
+            "Description": "Ein Gegner, der mindestens zwei Größenstufen größer ist, lässt eine wandernde Lücke dort entstehen, wo Reichweite und Stand nicht zusammenpassen. Du darfst dich sofort als Freie Aktion bis zu 3 m bewegen. Diese Bewegung löst keine Reaktionen der feindlichen Quelle aus und muss in derselben oder geringerer Entfernung zu ihr enden als zu Beginn. Wende dieses Ergebnis manuell an."
+          },
+          "TooMuchBodyToTurn": {
+            "Title": "Zu viel Körper zum Drehen",
+            "Description": "Die größere feindliche Quelle versucht nach deinem Ausweichen ihre Linie zu korrigieren, doch es ist schlicht zu viel Masse, um alles zugleich herumzureißen. Für 1 Runde ist sie Unbeholfen 1 und erhält einen Situationsmalus von -1 auf RK."
+          },
+          "MomentumBecomesYourTempo": {
+            "Title": "Schwung wird zu deinem Takt",
+            "Description": "Du überstehst die Geschwindigkeit des stärkeren Gegners und stiehlst seinen Rhythmus für dich. Für 1 Runde erhältst du einen Zustandsbonus von +1,5 m auf deine Bewegungsrate an Land sowie einen Situationsbonus von +1 auf Angriffswürfe und Reflexwürfe."
+          },
+          "FiveLevelsStillAheadOfIt": {
+            "Title": "Fünf Stufen, immer noch voraus",
+            "Description": "Ein Gegner mindestens fünf Stufen über dir setzt genug Geschwindigkeit ein, um Entkommen unmöglich wirken zu lassen. Du bist der Antwort bereits voraus. Für 1 Runde erhältst du einen Zustandsbonus von +1,5 m auf alle Bewegungsraten und einen Zustandsbonus von +1 auf RK und Reflexwürfe."
+          },
+          "DragTheColossusOffLine": {
+            "Title": "Zieh den Koloss aus der Linie",
+            "Description": "Eine größere feindliche Quelle folgt deinem Ausweichen einen Augenblick zu weit und muss ihre gesamte Angriffslinie neu aufbauen. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Angriffswürfe, Reflex-SG und Wahrnehmungs-SG."
+          },
+          "OutsideTheKillingLine": {
+            "Title": "Außerhalb der tödlichen Linie",
+            "Description": "Der verfehlte Angriff des stärkeren Gegners schenkt dir mehr als ein leeres Feld; er öffnet einen Weg aus dem nächsten. Du darfst sofort als Freie Aktion bis zur Hälfte deiner Bewegungsrate Laufen. Diese Bewegung muss weiter von der feindlichen Quelle entfernt enden und löst keine Reaktionen von ihr aus. Wende dieses Ergebnis manuell an."
           }
         },
         "Will": {
@@ -1308,6 +1348,46 @@
           "AnswerTheGiant": {
             "Title": "Antworte dem Riesen",
             "Description": "Der stärkere Gegner wollte dir seinen Willen aufzwingen und gab dir damit den perfekten Augenblick für eine Antwort. Du darfst sofort als freie Aktion versuchen, die feindliche Quelle mit einem Situationsbonus von +2 zu Demoralisieren. Wende dieses Ergebnis manuell an; die normalen Einschränkungen von Demoralisieren gelten weiterhin."
+          },
+          "StandTallerThanTheCommand": {
+            "Title": "Steh über dem Befehl",
+            "Description": "Der Wille des stärkeren Gegners trifft dich wie ein Erlass. Du antwortest, indem du geistig unbeweglicher und in deinem Urteil schärfer wirst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und Wahrnehmungswürfe."
+          },
+          "TheVoiceFalters": {
+            "Title": "Die Stimme stockt",
+            "Description": "Ein mentaler Angriff des stärkeren Gegners trifft auf Widerstand, der scharf genug ist, seinen Rhythmus zu brechen. Für 1 Runde ist die feindliche Quelle Benommen 1 und erhält einen Situationsmalus von -1 auf ihren Zauber-SG."
+          },
+          "FourLevelsAuthorityFractures": {
+            "Title": "Vier Stufen, Autorität zerbricht",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir verwandelt eine vollkommene Weigerung seine Gewissheit in sichtbare Anspannung. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Willens-SG und Klassen-SG."
+          },
+          "MeasureTheThreatNotYourself": {
+            "Title": "Miss die Bedrohung, nicht dich selbst",
+            "Description": "Sobald du aufhörst, Macht zu vergleichen, und stattdessen Absichten liest, wird der stärkere Gegner zu einem Problem statt zu einem Urteil. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und deinen Klassen-SG."
+          },
+          "ShareTheDefiance": {
+            "Title": "Teile den Trotz",
+            "Description": "Deine Weigerung ist laut genug, um jemand anderem Schutz zu geben. Wähle einen Verbündeten innerhalb von 9 m, der dich sehen oder hören kann. Dieser Verbündete erhält einen Situationsbonus von +1 auf den nächsten Willenswurf, den er vor Beginn deines nächsten Zuges ablegt. Wende dieses Ergebnis manuell an."
+          },
+          "MakeTheThreatSoundSmall": {
+            "Title": "Lass die Drohung klein klingen",
+            "Description": "Die Präsenz des stärkeren Gegners verliert in dem Augenblick an Gewicht, in dem du ihr die Autorität verweigerst. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Einschüchtern-, Täuschungs- und Diplomatiewürfe."
+          },
+          "YourMindSetsTheTerms": {
+            "Title": "Dein Geist bestimmt die Bedingungen",
+            "Description": "Du widerstehst dem überwältigenden Willen so vollständig, dass deine eigene Magie und Autorität schlagartig in den Fokus rücken. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf deinen Willens-SG und Zauber-SG."
+          },
+          "FiveLevelsNoKneeling": {
+            "Title": "Fünf Stufen, kein Kniefall",
+            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir wird das Überstehen dieses Drucks zum Beweis, dass ein Machtunterschied keine Erlaubnis ist, über dich zu herrschen. Du erhältst 5 temporäre Trefferpunkte und für 1 Runde einen Zustandsbonus von +1 auf Willenswürfe."
+          },
+          "PressureRebounds": {
+            "Title": "Der Druck schlägt zurück",
+            "Description": "Der stärkere Gegner presst seinen Geist gegen deinen und findet keinen Ort für die Kraft außer zurück zu sich selbst. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und Benommen 1 und erhält einen Situationsmalus von -1 auf ihren Willens-SG."
+          },
+          "AnswerWithACuttingWord": {
+            "Title": "Antworte mit einem schneidenden Wort",
+            "Description": "Der stärkere Gegner wollte dich klein erscheinen lassen. Du findest den Satz, der dieses Machtgefälle lächerlich klingen lässt. Falls du Bonmot einsetzen kannst, darfst du sofort als freie Aktion Bonmot gegen die feindliche Quelle versuchen und erhältst dabei einen Situationsbonus von +2 auf den Diplomatiewurf. Wende dieses Ergebnis manuell an; die normalen Einschränkungen von Bonmot gelten weiterhin."
           }
         }
       }
@@ -2091,6 +2171,30 @@
           },
           "ReadTheShadowNotTheWeapon": {
             "Name": "Lies den Schatten, nicht die Waffe"
+          },
+          "TurnInsideTheSwing": {
+            "Name": "Dreh dich in den Schwung hinein"
+          },
+          "TheirReachBecomesYourRoute": {
+            "Name": "Ihre Reichweite wird zu deinem Weg"
+          },
+          "FourLevelsCannotStopShort": {
+            "Name": "Vier Stufen, kein rechtzeitiges Abbremsen"
+          },
+          "ReadTheImpactBeforeItLands": {
+            "Name": "Lies den Einschlag, bevor er kommt"
+          },
+          "TooMuchBodyToTurn": {
+            "Name": "Zu viel Körper zum Drehen"
+          },
+          "MomentumBecomesYourTempo": {
+            "Name": "Schwung wird zu deinem Takt"
+          },
+          "FiveLevelsStillAheadOfIt": {
+            "Name": "Fünf Stufen, immer noch voraus"
+          },
+          "DragTheColossusOffLine": {
+            "Name": "Zieh den Koloss aus der Linie"
           }
         },
         "Will": {
@@ -2120,6 +2224,30 @@
           },
           "LookBackWithoutFlinching": {
             "Name": "Blick zurück, ohne zu zucken"
+          },
+          "StandTallerThanTheCommand": {
+            "Name": "Steh über dem Befehl"
+          },
+          "TheVoiceFalters": {
+            "Name": "Die Stimme stockt"
+          },
+          "FourLevelsAuthorityFractures": {
+            "Name": "Vier Stufen, Autorität zerbricht"
+          },
+          "MeasureTheThreatNotYourself": {
+            "Name": "Miss die Bedrohung, nicht dich selbst"
+          },
+          "MakeTheThreatSoundSmall": {
+            "Name": "Lass die Drohung klein klingen"
+          },
+          "YourMindSetsTheTerms": {
+            "Name": "Dein Geist bestimmt die Bedingungen"
+          },
+          "FiveLevelsNoKneeling": {
+            "Name": "Fünf Stufen, kein Kniefall"
+          },
+          "PressureRebounds": {
+            "Name": "Der Druck schlägt zurück"
           }
         }
       }

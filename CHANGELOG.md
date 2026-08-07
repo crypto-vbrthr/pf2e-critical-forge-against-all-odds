@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.1.0-dev.28
+
+### Added
+- Added the second ten-card **Giant-Slayer Moments** Will pass, bringing Will to 20/30 and the theme to 80/120 cards.
+- Added eight automated and two manual results centered on defying overwhelming authority, turning mental pressure back on the hostile source, strengthening an ally's resolve, and answering with Bon Mot.
+- Added one new +4 and one new +5 level-gap escalation while keeping the base +3 Giant-Slayer pool broad.
+- Added reviewed `mental` trigger gates and mindless-target exclusions for backlash, doubt, and social-pressure results.
+- Added temporary Hit Points and new Will/spell/class-DC counterplay without adding resistance or immunity filler.
+- Added German and English localization for all ten cards and eight automated effects.
+
+### Tests
+- Added second-pass Will count/content-batch, 8/2 automation split, +4/+5 escalation, mental/mindless gating, saver/hostile target-role, manual ally/verbal counterplay, no-resistance/immunity, localization, and exact-signature uniqueness coverage.
+- Updated runtime and release contracts for the 20/20/20/20 Giant-Slayer deck layout.
+- Current automated test and coverage totals are recorded in `RELEASE_CHECKLIST.md` and `docs/TESTING.md`.
+
+### Compatibility
+- All 310 previously published card IDs remain unchanged; this build adds ten new Giant-Slayer Will IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
+## 0.1.0-dev.27
+
+### Added
+- Added the second ten-card **Giant-Slayer Moments** Reflex pass, bringing Reflex to 20/30 and the theme to 70/120 cards.
+- Added eight automated and two manual results centered on slipping inside oversized attack arcs, exploiting size-gap routes, stealing momentum, and forcing a stronger foe to overcommit.
+- Added one new +4 and one new +5 level-gap escalation while keeping the base +3 Giant-Slayer pool broad.
+- Added reviewed current-melee-threat, larger-opponent, and `sizeGap >= 2` gates for physical dead-angle and scale-specific movement results.
+- Added two explicit manual movement moments: a 10-foot route through a two-size-step gap and a half-Speed escape line that ignores reactions from the hostile source.
+- Added German and English localization for all ten cards and eight automated effects.
+
+### Tests
+- Added second-pass Reflex count/content-batch, 8/2 automation split, +4/+5 escalation, threat/size/size-gap gating, saver/hostile target-role, manual movement, no-resistance/immunity, localization, and exact-signature uniqueness coverage.
+- Updated runtime and release contracts for the 20/20/20/10 Giant-Slayer deck layout.
+- Verified 179/179 tests with 99.49% line coverage, 94.64% branch coverage, and 98.55% function coverage; package-local release checks report 936 localization keys per language.
+
+### Compatibility
+- All 300 previously published card IDs remain unchanged; this build adds ten new Giant-Slayer Reflex IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.26
 
 ### Added

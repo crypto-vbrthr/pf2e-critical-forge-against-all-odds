@@ -1493,17 +1493,18 @@ test("Giant-Slayer Fortitude second-pass manual results are explicit physical co
 });
 
 
-test("Giant-Slayer Moments first Reflex pass adds ten critical-success save cards", () => {
-  assert.equal(GIANT_SLAYER_REFLEX_CARDS.length, 10);
-  assert.equal(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size, 10);
-  assert.equal(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
-  assert.equal(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
-  assert.equal(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
-  assert.equal(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
-  assert.equal(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.metadata.contentBatch === 23), true);
+test("Giant-Slayer Moments preserves its first ten Reflex critical-success save cards", () => {
+  const firstPass = GIANT_SLAYER_REFLEX_CARDS.slice(0, 10);
+  assert.equal(firstPass.length, 10);
+  assert.equal(new Set(firstPass.map((card) => card.id)).size, 10);
+  assert.equal(firstPass.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
+  assert.equal(firstPass.every((card) => card.deckType === "reflex"), true);
+  assert.equal(firstPass.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(firstPass.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
+  assert.equal(firstPass.every((card) => card.metadata.contentBatch === 23), true);
 });
 
-test("all first-pass Giant-Slayer Reflex cards use the dynamic level-gap gate", () => {
+test("all published Giant-Slayer Reflex cards use the dynamic level-gap gate", () => {
   for (const card of GIANT_SLAYER_REFLEX_CARDS) {
     const leaves = conditionLeaves(card.conditions);
     assert.equal(leaves.some((leaf) =>
@@ -1524,9 +1525,10 @@ test("Giant-Slayer Reflex escalation cards require four or five levels of disadv
   assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
 });
 
-test("Giant-Slayer Reflex keeps eight automated results and two manual observer-aware dead-angle results", () => {
-  const automated = GIANT_SLAYER_REFLEX_CARDS.filter((card) => card.effect);
-  const manual = GIANT_SLAYER_REFLEX_CARDS.filter((card) => !card.effect);
+test("Giant-Slayer Reflex first pass keeps eight automated results and two manual observer-aware dead-angle results", () => {
+  const firstPass = GIANT_SLAYER_REFLEX_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
+  const manual = firstPass.filter((card) => !card.effect);
   assert.equal(automated.length, 8);
   assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), [
     "gsr-004-five-levels-one-empty-square",
@@ -1541,8 +1543,9 @@ test("Giant-Slayer Reflex keeps eight automated results and two manual observer-
   }
 });
 
-test("Giant-Slayer Reflex preserves save-target roles for boons and momentum countereffects", () => {
-  const bySuffix = Object.fromEntries(GIANT_SLAYER_REFLEX_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+test("Giant-Slayer Reflex first pass preserves save-target roles for boons and momentum countereffects", () => {
+  const firstPass = GIANT_SLAYER_REFLEX_CARDS.slice(0, 10);
+  const bySuffix = Object.fromEntries(firstPass.map((card) => [card.id.split(".").at(-1), card]));
   const hostile = [
     "gsr-002-momentum-exposes-the-flank",
     "gsr-003-let-the-giant-overshoot",
@@ -1550,13 +1553,13 @@ test("Giant-Slayer Reflex preserves save-target roles for boons and momentum cou
     "gsr-008-four-levels-too-much-momentum"
   ];
   for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
-  for (const card of GIANT_SLAYER_REFLEX_CARDS.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+  for (const card of firstPass.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
     assert.equal(card.effect.target, "source", card.id);
   }
 });
 
 test("Giant-Slayer Reflex first pass avoids resistance and immunity filler", () => {
-  const types = GIANT_SLAYER_REFLEX_CARDS.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
+  const types = GIANT_SLAYER_REFLEX_CARDS.slice(0, 10).flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
   assert.equal(types.includes("resistance"), false);
   assert.equal(types.includes("immunity"), false);
   assert.equal(types.includes("condition"), true);
@@ -1598,6 +1601,76 @@ test("Giant-Slayer Reflex automated mechanics add no exact published duplicate",
   const automated = GIANT_SLAYER_REFLEX_CARDS.filter((card) => card.effect);
   assert.equal(automated.filter((card) => prior.has(signature(card))).length, 0);
   assert.equal(new Set(automated.map(signature)).size, automated.length);
+});
+
+
+test("Giant-Slayer Reflex second pass adds ten cards in content batch 27 with an eight/two automation split", () => {
+  const secondPass = GIANT_SLAYER_REFLEX_CARDS.slice(10, 20);
+  assert.equal(GIANT_SLAYER_REFLEX_CARDS.length, 20);
+  assert.equal(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 27), true);
+  assert.equal(secondPass.filter((card) => card.effect).length, 8);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "gsr-015-slip-between-their-steps",
+    "gsr-020-outside-the-killing-line"
+  ]);
+});
+
+test("Giant-Slayer Reflex second pass adds one +4 and one +5 level-gap escalation", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_REFLEX_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["gsr-013-four-levels-cannot-stop-short"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  const five = conditionLeaves(bySuffix["gsr-018-five-levels-still-ahead-of-it"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  assert.deepEqual({ operator: four.operator, value: four.value }, { operator: "gte", value: 4 });
+  assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
+});
+
+test("Giant-Slayer Reflex second pass uses reviewed threat and size evidence for evasive geometry", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_REFLEX_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  for (const suffix of ["gsr-011-turn-inside-the-swing", "gsr-016-too-much-body-to-turn", "gsr-019-drag-the-colossus-off-line"]) {
+    const leaves = conditionLeaves(bySuffix[suffix].conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsLarger" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+  }
+  for (const suffix of ["gsr-012-their-reach-becomes-your-route", "gsr-015-slip-between-their-steps"]) {
+    const gap = conditionLeaves(bySuffix[suffix].conditions).find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.sizeGap");
+    assert.deepEqual({ operator: gap?.operator, value: gap?.value }, { operator: "gte", value: 2 }, suffix);
+  }
+  for (const suffix of ["gsr-013-four-levels-cannot-stop-short", "gsr-015-slip-between-their-steps", "gsr-020-outside-the-killing-line"]) {
+    const leaves = conditionLeaves(bySuffix[suffix].conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+  }
+});
+
+test("Giant-Slayer Reflex second pass preserves saver and hostile-source target roles", () => {
+  const secondPass = GIANT_SLAYER_REFLEX_CARDS.slice(10, 20);
+  const bySuffix = Object.fromEntries(secondPass.map((card) => [card.id.split(".").at(-1), card]));
+  const hostile = ["gsr-013-four-levels-cannot-stop-short", "gsr-016-too-much-body-to-turn", "gsr-019-drag-the-colossus-off-line"];
+  for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
+  for (const card of secondPass.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+    assert.equal(card.effect.target, "source", card.id);
+  }
+});
+
+test("Giant-Slayer Reflex second pass favors movement and overcommitment over resistance or immunity filler", () => {
+  const secondPass = GIANT_SLAYER_REFLEX_CARDS.slice(10, 20);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "resistance"), false);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
+  assert.equal(components.some((component) => component.type === "movement"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "clumsy"), true);
+  assert.equal(components.some((component) => component.type === "modifier" && component.selector === "ac" && component.value === -1), true);
+});
+
+test("Giant-Slayer Reflex second-pass manual results are explicit repositioning routes", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_REFLEX_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  assert.equal(bySuffix["gsr-015-slip-between-their-steps"].tags.includes("movement"), true);
+  assert.equal(bySuffix["gsr-015-slip-between-their-steps"].tags.includes("manual"), true);
+  assert.equal(bySuffix["gsr-020-outside-the-killing-line"].tags.includes("stride"), true);
+  assert.equal(bySuffix["gsr-020-outside-the-killing-line"].tags.includes("manual"), true);
 });
 
 
@@ -1655,14 +1728,15 @@ test("Five Levels, One Empty Square never automates observer-relative concealed"
   assert.match(de.PF2E_AGAINST_ALL_ODDS.Cards.GiantSlayerMoments.Reflex.FiveLevelsOneEmptySquare.Description, /gegenüber der feindlichen Quelle Verborgen/u);
 });
 
-test("Giant-Slayer Moments first Will pass adds ten critical-success save cards", () => {
-  assert.equal(GIANT_SLAYER_WILL_CARDS.length, 10);
-  assert.equal(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size, 10);
-  assert.equal(GIANT_SLAYER_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
-  assert.equal(GIANT_SLAYER_WILL_CARDS.every((card) => card.deckType === "will"), true);
-  assert.equal(GIANT_SLAYER_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
-  assert.equal(GIANT_SLAYER_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
-  assert.equal(GIANT_SLAYER_WILL_CARDS.every((card) => card.metadata.contentBatch === 24), true);
+test("Giant-Slayer Moments preserves its first ten Will critical-success save cards", () => {
+  const firstPass = GIANT_SLAYER_WILL_CARDS.slice(0, 10);
+  assert.equal(firstPass.length, 10);
+  assert.equal(new Set(firstPass.map((card) => card.id)).size, 10);
+  assert.equal(firstPass.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
+  assert.equal(firstPass.every((card) => card.deckType === "will"), true);
+  assert.equal(firstPass.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(firstPass.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
+  assert.equal(firstPass.every((card) => card.metadata.contentBatch === 24), true);
 });
 
 test("all first-pass Giant-Slayer Will cards use the dynamic level-gap gate", () => {
@@ -1686,9 +1760,10 @@ test("Giant-Slayer Will escalation cards require four or five levels of disadvan
   assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
 });
 
-test("Giant-Slayer Will keeps nine automated results and one manual defiant answer", () => {
-  const automated = GIANT_SLAYER_WILL_CARDS.filter((card) => card.effect);
-  const manual = GIANT_SLAYER_WILL_CARDS.filter((card) => !card.effect);
+test("Giant-Slayer Will first pass keeps nine automated results and one manual defiant answer", () => {
+  const firstPass = GIANT_SLAYER_WILL_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
+  const manual = firstPass.filter((card) => !card.effect);
   assert.equal(automated.length, 9);
   assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), ["gsw-010-answer-the-giant"]);
   assert.equal(manual[0].tags.includes("manual"), true);
@@ -1700,8 +1775,9 @@ test("Giant-Slayer Will keeps nine automated results and one manual defiant answ
   }
 });
 
-test("Giant-Slayer Will preserves save-target roles for resolve boons and hostile counterpressure", () => {
-  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+test("Giant-Slayer Will first pass preserves save-target roles for resolve boons and hostile counterpressure", () => {
+  const firstPass = GIANT_SLAYER_WILL_CARDS.slice(0, 10);
+  const bySuffix = Object.fromEntries(firstPass.map((card) => [card.id.split(".").at(-1), card]));
   const hostile = [
     "gsw-002-arrogance-cracks",
     "gsw-004-dominance-loses-its-grip",
@@ -1709,7 +1785,7 @@ test("Giant-Slayer Will preserves save-target roles for resolve boons and hostil
     "gsw-008-four-levels-one-doubt"
   ];
   for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
-  for (const card of GIANT_SLAYER_WILL_CARDS.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+  for (const card of firstPass.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
     assert.equal(card.effect.target, "source", card.id);
   }
 });
@@ -1722,7 +1798,7 @@ test("Giant-Slayer review binds mental dominance to mental effects and excludes 
 });
 
 test("Giant-Slayer Will first pass avoids resistance and immunity filler", () => {
-  const types = GIANT_SLAYER_WILL_CARDS.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
+  const types = GIANT_SLAYER_WILL_CARDS.slice(0, 10).flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
   assert.equal(types.includes("resistance"), false);
   assert.equal(types.includes("immunity"), false);
   assert.equal(types.includes("condition"), true);
@@ -1765,3 +1841,72 @@ test("Giant-Slayer Will automated mechanics add no exact published duplicate", (
   assert.equal(automated.filter((card) => prior.has(signature(card))).length, 0);
   assert.equal(new Set(automated.map(signature)).size, automated.length);
 });
+
+test("Giant-Slayer Will second pass adds ten cards in content batch 28 with an eight/two automation split", () => {
+  const secondPass = GIANT_SLAYER_WILL_CARDS.slice(10, 20);
+  assert.equal(GIANT_SLAYER_WILL_CARDS.length, 20);
+  assert.equal(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 28), true);
+  assert.equal(secondPass.filter((card) => card.effect).length, 8);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "gsw-015-share-the-defiance",
+    "gsw-020-answer-with-a-cutting-word"
+  ]);
+});
+
+test("Giant-Slayer Will second pass adds one +4 and one +5 level-gap escalation", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["gsw-013-four-levels-authority-fractures"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  const five = conditionLeaves(bySuffix["gsw-018-five-levels-no-kneeling"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  assert.deepEqual({ operator: four.operator, value: four.value }, { operator: "gte", value: 4 });
+  assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
+});
+
+test("Giant-Slayer Will second pass binds mental backlash to mental triggers and excludes mindless targets", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  for (const suffix of ["gsw-012-the-voice-falters", "gsw-019-pressure-rebounds"]) {
+    assert.deepEqual(bySuffix[suffix].filters.attackTraits, ["mental"], suffix);
+    assert.deepEqual(bySuffix[suffix].filters.excludedTargetTraits, ["mindless"], suffix);
+  }
+  for (const suffix of ["gsw-013-four-levels-authority-fractures", "gsw-016-make-the-threat-sound-small", "gsw-020-answer-with-a-cutting-word"]) {
+    assert.deepEqual(bySuffix[suffix].filters.excludedTargetTraits, ["mindless"], suffix);
+  }
+});
+
+test("Giant-Slayer Will second pass preserves saver and hostile-source target roles", () => {
+  const secondPass = GIANT_SLAYER_WILL_CARDS.slice(10, 20);
+  const bySuffix = Object.fromEntries(secondPass.map((card) => [card.id.split(".").at(-1), card]));
+  const hostile = [
+    "gsw-012-the-voice-falters",
+    "gsw-013-four-levels-authority-fractures",
+    "gsw-016-make-the-threat-sound-small",
+    "gsw-019-pressure-rebounds"
+  ];
+  for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
+  for (const card of secondPass.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+    assert.equal(card.effect.target, "source", card.id);
+  }
+});
+
+test("Giant-Slayer Will second pass favors resolve and counterpressure over resistance or immunity filler", () => {
+  const secondPass = GIANT_SLAYER_WILL_CARDS.slice(10, 20);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "resistance"), false);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
+  assert.equal(components.some((component) => component.type === "temporaryHitPoints"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "frightened"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "stupefied"), true);
+  assert.equal(components.some((component) => component.type === "modifier" && component.selector === "spell-dc"), true);
+});
+
+test("Giant-Slayer Will second-pass manual results provide ally resolve and verbal counterplay", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  assert.equal(bySuffix["gsw-015-share-the-defiance"].tags.includes("ally"), true);
+  assert.equal(bySuffix["gsw-015-share-the-defiance"].tags.includes("manual"), true);
+  assert.equal(bySuffix["gsw-020-answer-with-a-cutting-word"].tags.includes("bon-mot"), true);
+  assert.equal(bySuffix["gsw-020-answer-with-a-cutting-word"].tags.includes("manual"), true);
+});
+

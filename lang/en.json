@@ -1266,6 +1266,46 @@
           "CrossTheDeadAngle": {
             "Title": "Cross the Dead Angle",
             "Description": "The stronger foe's failed attack creates a brief route through the space it cannot immediately cover. You may immediately Step or Take Cover as a free action. If you Step, movement does not trigger reactions from the hostile source. Apply this result manually."
+          },
+          "TurnInsideTheSwing": {
+            "Title": "Turn Inside the Swing",
+            "Description": "A larger hostile source commits to a line built for something slower. You fold inside the arc before it can close. For 1 round, you gain a +1 circumstance bonus to AC, Reflex saves, and Acrobatics checks."
+          },
+          "TheirReachBecomesYourRoute": {
+            "Title": "Their Reach Becomes Your Route",
+            "Description": "Two or more size steps of reach create a corridor once you stop fleeing from the obvious direction. For 1 round, you gain a +5-foot status bonus to your land Speed and a +1 status bonus to Acrobatics checks."
+          },
+          "FourLevelsCannotStopShort": {
+            "Title": "Four Levels, Cannot Stop Short",
+            "Description": "Against a threatening foe four or more levels above you, the failed catch becomes an overcommitment it cannot erase. For 1 round, the hostile source is off-guard, takes a -1 circumstance penalty to Reflex DC, and takes a 5-foot circumstance penalty to all Speeds."
+          },
+          "ReadTheImpactBeforeItLands": {
+            "Title": "Read the Impact Before It Lands",
+            "Description": "You stop reacting to the strike and start reading the pressure that comes before it. For 1 round, you gain a +1 circumstance bonus to Reflex saves, Perception checks, and AC."
+          },
+          "SlipBetweenTheirSteps": {
+            "Title": "Slip Between Their Steps",
+            "Description": "A foe at least two size steps larger leaves a moving gap where its reach and footing do not agree. You may immediately move up to 10 feet as a free action. This movement does not trigger reactions from the hostile source and must end no farther from it than you began. Apply this result manually."
+          },
+          "TooMuchBodyToTurn": {
+            "Title": "Too Much Body to Turn",
+            "Description": "The larger hostile source tries to correct after you pass its line, but there is simply too much of it to turn at once. For 1 round, it is clumsy 1 and takes a -1 circumstance penalty to AC."
+          },
+          "MomentumBecomesYourTempo": {
+            "Title": "Momentum Becomes Your Tempo",
+            "Description": "You survive the stronger foe's speed and steal its rhythm for yourself. For 1 round, you gain a +5-foot status bonus to your land Speed and a +1 circumstance bonus to attack rolls and Reflex saves."
+          },
+          "FiveLevelsStillAheadOfIt": {
+            "Title": "Five Levels, Still Ahead of It",
+            "Description": "A foe five or more levels above you commits enough speed to make escape look impossible. You are already beyond the answer. For 1 round, you gain a +5-foot status bonus to all Speeds and a +1 status bonus to AC and Reflex saves."
+          },
+          "DragTheColossusOffLine": {
+            "Title": "Drag the Colossus Off Line",
+            "Description": "A larger hostile source follows your escape one fraction too far and has to rebuild its entire line of attack. For 1 round, it takes a -1 circumstance penalty to attack rolls, Reflex DC, and Perception DC."
+          },
+          "OutsideTheKillingLine": {
+            "Title": "Outside the Killing Line",
+            "Description": "The stronger foe's failed attack gives you more than an empty square; it gives you a route out of the next one. You may immediately Stride up to half your Speed as a free action. This movement must end farther from the hostile source and does not trigger reactions from it. Apply this result manually."
           }
         },
         "Will": {
@@ -1308,6 +1348,46 @@
           "AnswerTheGiant": {
             "Title": "Answer the Giant",
             "Description": "The stronger foe tried to impose its will and gave you the perfect moment to answer. You may immediately attempt to Demoralize the hostile source as a free action with a +2 circumstance bonus. Apply this result manually; normal Demoralize restrictions still apply."
+          },
+          "StandTallerThanTheCommand": {
+            "Title": "Stand Taller Than the Command",
+            "Description": "The stronger foe's will hits like a decree. You answer by becoming harder to move in mind and sharper in judgment. For 1 round, you gain a +1 circumstance bonus to Will saves and Perception checks."
+          },
+          "TheVoiceFalters": {
+            "Title": "The Voice Falters",
+            "Description": "A mental assault from the stronger foe meets resistance sharp enough to break its rhythm. For 1 round, the hostile source is stupefied 1 and takes a -1 circumstance penalty to spell DC."
+          },
+          "FourLevelsAuthorityFractures": {
+            "Title": "Four Levels, Authority Fractures",
+            "Description": "Against a foe four or more levels above you, a perfect refusal turns certainty into visible strain. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Will DC and class DC."
+          },
+          "MeasureTheThreatNotYourself": {
+            "Title": "Measure the Threat, Not Yourself",
+            "Description": "Once you stop comparing power and start reading intent, the stronger foe becomes a problem instead of a verdict. For 1 round, you gain a +1 circumstance bonus to Perception checks and class DC."
+          },
+          "ShareTheDefiance": {
+            "Title": "Share the Defiance",
+            "Description": "Your refusal is loud enough to become shelter for someone else. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to the next Will save they attempt before the start of your next turn. Apply this result manually."
+          },
+          "MakeTheThreatSoundSmall": {
+            "Title": "Make the Threat Sound Small",
+            "Description": "The stronger foe's presence loses weight the instant you refuse to grant it authority. For 1 round, the hostile source takes a -1 circumstance penalty to Intimidation, Deception, and Diplomacy checks."
+          },
+          "YourMindSetsTheTerms": {
+            "Title": "Your Mind Sets the Terms",
+            "Description": "You resist overwhelming will so completely that your own magic and authority snap into focus. For 1 round, you gain a +1 status bonus to Will DC and spell DC."
+          },
+          "FiveLevelsNoKneeling": {
+            "Title": "Five Levels, No Kneeling",
+            "Description": "Against a foe five or more levels above you, surviving the pressure becomes proof that the difference in power is not permission to rule you. You gain 5 temporary Hit Points and a +1 status bonus to Will saves for 1 round."
+          },
+          "PressureRebounds": {
+            "Title": "Pressure Rebounds",
+            "Description": "The stronger foe drives its mind against yours and finds nowhere for the force to go except back. For 1 round, the hostile source is frightened 1 and stupefied 1, and takes a -1 circumstance penalty to Will DC."
+          },
+          "AnswerWithACuttingWord": {
+            "Title": "Answer with a Cutting Word",
+            "Description": "The stronger foe tried to make you feel small. You find the sentence that makes the imbalance sound ridiculous. If you can use Bon Mot, you may immediately attempt Bon Mot against the hostile source as a free action with a +2 circumstance bonus to the Diplomacy check. Apply this result manually; normal Bon Mot restrictions still apply."
           }
         }
       }
@@ -2091,6 +2171,30 @@
           },
           "ReadTheShadowNotTheWeapon": {
             "Name": "Read the Shadow, Not the Weapon"
+          },
+          "TurnInsideTheSwing": {
+            "Name": "Turn Inside the Swing"
+          },
+          "TheirReachBecomesYourRoute": {
+            "Name": "Their Reach Becomes Your Route"
+          },
+          "FourLevelsCannotStopShort": {
+            "Name": "Four Levels, Cannot Stop Short"
+          },
+          "ReadTheImpactBeforeItLands": {
+            "Name": "Read the Impact Before It Lands"
+          },
+          "TooMuchBodyToTurn": {
+            "Name": "Too Much Body to Turn"
+          },
+          "MomentumBecomesYourTempo": {
+            "Name": "Momentum Becomes Your Tempo"
+          },
+          "FiveLevelsStillAheadOfIt": {
+            "Name": "Five Levels, Still Ahead of It"
+          },
+          "DragTheColossusOffLine": {
+            "Name": "Drag the Colossus Off Line"
           }
         },
         "Will": {
@@ -2120,6 +2224,30 @@
           },
           "LookBackWithoutFlinching": {
             "Name": "Look Back Without Flinching"
+          },
+          "StandTallerThanTheCommand": {
+            "Name": "Stand Taller Than the Command"
+          },
+          "TheVoiceFalters": {
+            "Name": "The Voice Falters"
+          },
+          "FourLevelsAuthorityFractures": {
+            "Name": "Four Levels, Authority Fractures"
+          },
+          "MeasureTheThreatNotYourself": {
+            "Name": "Measure the Threat, Not Yourself"
+          },
+          "MakeTheThreatSoundSmall": {
+            "Name": "Make the Threat Sound Small"
+          },
+          "YourMindSetsTheTerms": {
+            "Name": "Your Mind Sets the Terms"
+          },
+          "FiveLevelsNoKneeling": {
+            "Name": "Five Levels, No Kneeling"
+          },
+          "PressureRebounds": {
+            "Name": "Pressure Rebounds"
           }
         }
       }

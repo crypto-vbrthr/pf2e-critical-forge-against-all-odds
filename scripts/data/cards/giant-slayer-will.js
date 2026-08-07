@@ -148,5 +148,165 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     fallbackDescription: "The stronger foe tried to impose its will and gave you the perfect moment to answer. You may immediately attempt to Demoralize the hostile source as a free action with a +2 circumstance bonus. Apply this result manually; normal Demoralize restrictions still apply.",
     tags: ["demoralize", "free-action", "intimidation", "hostile-source", "manual"],
     effect: null
+  }),
+
+  defineGiantSlayerWillCard({
+    id: "gsw-011-stand-taller-than-the-command",
+    localizationKey: "StandTallerThanTheCommand",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Stand Taller Than the Command",
+    fallbackDescription: "The stronger foe's will hits like a decree. You answer by becoming harder to move in mind and sharper in judgment. For 1 round, you gain a +1 circumstance bonus to Will saves and Perception checks.",
+    tags: ["will", "perception", "resolve", "effect"],
+    contentBatch: 28,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["will", "perception"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-012-the-voice-falters",
+    localizationKey: "TheVoiceFalters",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "The Voice Falters",
+    fallbackDescription: "A mental assault from the stronger foe meets resistance sharp enough to break its rhythm. For 1 round, the hostile source is stupefied 1 and takes a -1 circumstance penalty to spell DC.",
+    tags: ["hostile-source", "mental", "stupefied", "spell-dc", "effect"],
+    filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] },
+    contentBatch: 28,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "spell-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-013-four-levels-authority-fractures",
+    localizationKey: "FourLevelsAuthorityFractures",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Levels, Authority Fractures",
+    fallbackDescription: "Against a foe four or more levels above you, a perfect refusal turns certainty into visible strain. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Will DC and class DC.",
+    tags: ["greater-gap", "hostile-source", "frightened", "will-dc", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+    contentBatch: 28,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "modifier", selector: ["will-dc", "class-dc"], value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-014-measure-the-threat-not-yourself",
+    localizationKey: "MeasureTheThreatNotYourself",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Measure the Threat, Not Yourself",
+    fallbackDescription: "Once you stop comparing power and start reading intent, the stronger foe becomes a problem instead of a verdict. For 1 round, you gain a +1 circumstance bonus to Perception checks and class DC.",
+    tags: ["perception", "class-dc", "composure", "effect"],
+    contentBatch: 28,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["perception", "class-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-015-share-the-defiance",
+    localizationKey: "ShareTheDefiance",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Share the Defiance",
+    fallbackDescription: "Your refusal is loud enough to become shelter for someone else. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to the next Will save they attempt before the start of your next turn. Apply this result manually.",
+    tags: ["ally", "will", "support", "manual"],
+    contentBatch: 28,
+    effect: null
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-016-make-the-threat-sound-small",
+    localizationKey: "MakeTheThreatSoundSmall",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Make the Threat Sound Small",
+    fallbackDescription: "The stronger foe's presence loses weight the instant you refuse to grant it authority. For 1 round, the hostile source takes a -1 circumstance penalty to Intimidation, Deception, and Diplomacy checks.",
+    tags: ["hostile-source", "intimidation", "deception", "diplomacy", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    contentBatch: 28,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["intimidation", "deception", "diplomacy"], value: -1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-017-your-mind-sets-the-terms",
+    localizationKey: "YourMindSetsTheTerms",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Your Mind Sets the Terms",
+    fallbackDescription: "You resist overwhelming will so completely that your own magic and authority snap into focus. For 1 round, you gain a +1 status bonus to Will DC and spell DC.",
+    tags: ["will-dc", "spell-dc", "focus", "effect"],
+    contentBatch: 28,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["will-dc", "spell-dc"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-018-five-levels-no-kneeling",
+    localizationKey: "FiveLevelsNoKneeling",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Levels, No Kneeling",
+    fallbackDescription: "Against a foe five or more levels above you, surviving the pressure becomes proof that the difference in power is not permission to rule you. You gain 5 temporary Hit Points and a +1 status bonus to Will saves for 1 round.",
+    tags: ["extreme-gap", "temporary-hit-points", "will", "defiance", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
+    contentBatch: 28,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 5 },
+        { type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-019-pressure-rebounds",
+    localizationKey: "PressureRebounds",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Pressure Rebounds",
+    fallbackDescription: "The stronger foe drives its mind against yours and finds nowhere for the force to go except back. For 1 round, the hostile source is frightened 1 and stupefied 1, and takes a -1 circumstance penalty to Will DC.",
+    tags: ["hostile-source", "mental", "frightened", "stupefied", "counterpressure", "effect"],
+    filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] },
+    contentBatch: 28,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "will-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-020-answer-with-a-cutting-word",
+    localizationKey: "AnswerWithACuttingWord",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Answer with a Cutting Word",
+    fallbackDescription: "The stronger foe tried to make you feel small. You find the sentence that makes the imbalance sound ridiculous. If you can use Bon Mot, you may immediately attempt Bon Mot against the hostile source as a free action with a +2 circumstance bonus to the Diplomacy check. Apply this result manually; normal Bon Mot restrictions still apply.",
+    tags: ["bon-mot", "diplomacy", "free-action", "hostile-source", "manual"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    contentBatch: 28,
+    effect: null
   })
+
 ]);

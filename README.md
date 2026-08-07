@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.26` continues the second reviewed **Giant-Slayer Moments** pass with ten new Fortitude cards. The new results turn impossible endurance into leverage: physical counterpressure can require the current opponent to be an actual melee threat, scale-specific bracing and countermoves require a larger opponent, and the broader Fortitude pool still keys primarily from level disparity. All 290 previously published card IDs remain unchanged.
+Version `0.1.0-dev.28` completes the second **Giant-Slayer Moments** pass with ten new Will cards. The new results turn overwhelming mental pressure into resolve, broken authority, ally support, and verbal counterplay: explicitly mental backlash requires a mental trigger, mindless foes are excluded where doubt or social pressure would make no sense, and the broader Will pool still keys primarily from level disparity. All 310 previously published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -78,19 +78,19 @@ Surrounded, Still Standing is complete at 120 cards:
 - formation-specific target effects can require the current opponent itself to be a counted melee threat;
 - exact automated effect overlap with Bloodied Triumphs remains limited to the nine reviewed legacy signatures, while internal exact duplicates remain limited to the two intentional reviewed pairs.
 
-Giant-Slayer Moments now contains 60/120 cards:
+Giant-Slayer Moments now contains 80/120 cards:
 
 - 20/30 Attack cards: ten ordinary critical-hit cards and ten spell critical-hit cards, with 17 automated effects and three manual tactical results; the second pass adds a free-action Tumble Through opening and an ally Step alongside level-gap, threat, and size-aware counterplay;
 - 20/30 Fortitude cards for critically successful Fortitude saves, with 17 automated effects and three manual tactical results; the second pass adds Shove/Escape counterplay, temporary Hit Points, fast healing, and size-aware leverage;
-- 10/30 Reflex cards for critically successful Reflex saves, with eight automated effects and two manual observer-aware dead-angle results;
-- 10/30 Will cards for critically successful Will saves, with nine automated effects and one manual Demoralize counter-moment;
+- 20/30 Reflex cards for critically successful Reflex saves, with 16 automated effects and four manual tactical results; the second pass adds size-gap routes, free-action repositioning, overcommitment penalties, and a half-Speed escape line;
+- 20/30 Will cards for critically successful Will saves, with 17 automated effects and three manual tactical results; the second pass adds ally resolve, Bon Mot counterplay, temporary Hit Points, and mental backlash;
 - every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`;
-- each first-pass deck has one result escalating at a level gap of +4 and one at +5; the second Attack and Fortitude passes each add one additional +4 and one additional +5 escalation;
-- the first Fortitude, Reflex, and Will passes and the second Fortitude pass deliberately add no resistance or immunity filler and keep positive effects on the saving actor while hostile countereffects target the stronger opponent;
-- the reviewed Reflex pass focuses on blind spots, overshoot, momentum, movement, and balance, while physical countermoves require the current opponent to be a counted melee threat and scale-specific cards require a larger opponent;
-- the reviewed Will pass focuses on defiance, broken arrogance, and mental counterpressure; explicitly mental dominance results now require a mental trigger and mindless foes are excluded where the fiction requires doubt or certainty.
+- each first-pass deck has one result escalating at a level gap of +4 and one at +5; the second Attack, Fortitude, and Reflex passes each add one additional +4 and one additional +5 escalation;
+- the first Fortitude, Reflex, and Will passes and the second Fortitude, Reflex, and Will passes deliberately add no resistance or immunity filler and keep positive effects on the saving actor while hostile countereffects target the stronger opponent;
+- the reviewed Reflex passes focus on blind spots, overshoot, momentum, movement, balance, and dead-angle routes; physical countermoves require the current opponent to be a counted melee threat, while scale-specific cards require a larger opponent or an explicit size gap;
+- the reviewed Will passes focus on defiance, broken arrogance, ally resolve, and mental counterpressure; explicitly mental backlash requires a mental trigger and mindless foes are excluded where the fiction requires doubt, social pressure, or certainty.
 
-Against All Odds therefore currently contains **300/480 planned cards** across two complete themes and one theme in progress.
+Against All Odds therefore currently contains **320/480 planned cards** across two complete themes and one theme in progress.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 
