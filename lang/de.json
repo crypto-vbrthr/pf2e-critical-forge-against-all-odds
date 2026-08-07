@@ -608,6 +608,48 @@
             "Title": "Kein freier Winkel",
             "Description": "Der Zauber raubt dem Ziel die Möglichkeit, den Ring sauber zu schließen. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
           }
+        },
+        "Fortitude": {
+          "BodyIsTheAnchor": {
+            "Title": "Der Körper ist der Anker",
+            "Description": "Der Ring drückt nach innen, und deine Haltung antwortet, indem sie absolut wird. Für 1 Runde erhält dein Zähigkeits-SG einen Situationsbonus von +2."
+          },
+          "PressureHardensTheFrame": {
+            "Title": "Druck härtet das Gerüst",
+            "Description": "Jeder Gegner, der in das Gedränge drückt, zeigt deinem Körper, wo er als Nächstes hart werden muss. Für 1 Runde erhältst du Resistenz 2 gegen körperlichen Schaden."
+          },
+          "NoHandFindsPurchase": {
+            "Title": "Keine Hand findet Halt",
+            "Description": "Zu viele Hände greifen nach dir, doch keine bekommt einen wirklichen Halt. Für 1 Runde bist du immun gegen Gegriffen und Gebunden."
+          },
+          "ThreeAgainstStone": {
+            "Title": "Drei gegen Stein",
+            "Description": "Wenn drei oder mehr Gegner auf dich eindringen, verriegelt jeder Druckwinkel den nächsten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK."
+          },
+          "FourCannotFoldYou": {
+            "Title": "Vier können dich nicht knicken",
+            "Description": "Vier oder mehr Bedrohungen schließen den Ring, und dein ganzer Körper wird zu einer einzigen Verweigerung. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Rettungswürfe."
+          },
+          "MakeThemSpendThemselves": {
+            "Title": "Lass sie sich verausgaben",
+            "Description": "Die Kraft, die dich brechen sollte, schlägt stattdessen durch den Angreifer zurück. Für 1 Runde erhält die feindliche Quelle Kraftlos 1."
+          },
+          "BreathBetweenBlows": {
+            "Title": "Atem zwischen Schlägen",
+            "Description": "Du findest einen sauberen Atemzug an einem Ort, an dem keiner sein dürfte. Für 1 Runde erhältst du Schnelle Heilung 3."
+          },
+          "EveryWoundSharesTheLoad": {
+            "Title": "Jede Wunde trägt mit",
+            "Description": "Keine einzelne Verletzung darf deine Aufmerksamkeit besitzen, solange der Ring sich weiter schließt. Für 1 Runde erhältst du Resistenz 3 gegen anhaltenden Schaden."
+          },
+          "CrowdGivesYouLeverage": {
+            "Title": "Das Gedränge gibt dir Hebel",
+            "Description": "Jeder Körper, der nach innen drückt, wird zu etwas, gegen das du dich abstützen kannst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Athletikwürfe und Angriffswürfe."
+          },
+          "SetYourFeet": {
+            "Title": "Setz die Füße",
+            "Description": "Du stemmst dich gegen den gesamten Ring zugleich. Bis zum Beginn deines nächsten Zuges reduzierst du jede durch einen feindlichen Effekt verursachte erzwungene Bewegung um 3 m, auf ein Minimum von 0 m. Wende dieses Ergebnis manuell an."
+          }
         }
       }
     },
@@ -974,6 +1016,35 @@
           },
           "NoFreeAngle": {
             "Name": "Kein freier Winkel"
+          }
+        },
+        "Fortitude": {
+          "BodyIsTheAnchor": {
+            "Name": "Der Körper ist der Anker"
+          },
+          "PressureHardensTheFrame": {
+            "Name": "Druck härtet das Gerüst"
+          },
+          "NoHandFindsPurchase": {
+            "Name": "Keine Hand findet Halt"
+          },
+          "ThreeAgainstStone": {
+            "Name": "Drei gegen Stein"
+          },
+          "FourCannotFoldYou": {
+            "Name": "Vier können dich nicht knicken"
+          },
+          "MakeThemSpendThemselves": {
+            "Name": "Lass sie sich verausgaben"
+          },
+          "BreathBetweenBlows": {
+            "Name": "Atem zwischen Schlägen"
+          },
+          "EveryWoundSharesTheLoad": {
+            "Name": "Jede Wunde trägt mit"
+          },
+          "CrowdGivesYouLeverage": {
+            "Name": "Das Gedränge gibt dir Hebel"
           }
         }
       }

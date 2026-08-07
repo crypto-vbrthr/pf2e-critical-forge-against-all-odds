@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-dev.13
+
+### Added
+- Added the first ten **Surrounded, Still Standing** Fortitude cards for critically successful Fortitude saves while threatened by multiple enemies.
+- Added eight saving-actor boons, one hostile-source counterpressure effect, and one manual forced-movement brace result.
+- Added anchoring Fortitude DC, physical and persistent-damage resistance, grabbed/restrained protection, fast healing, Athletics/attack leverage, and stronger three-/four-threat defensive results.
+- Added German and English localization for all ten cards and nine automated effects.
+
+### Tests
+- Added Fortitude deck count, save-filter isolation, dynamic Surrounded gate, three/four threat, target-role, effect-diversity, localization, tone/impact, filter, and schema-2 effect coverage.
+- Extended pack/runtime/release contracts so Surrounded now registers ten Attack and ten Fortitude cards.
+- Revalidated the complete 140-card add-on state against the Critical Forge `1.0.0-rc` pack and effect contracts.
+
+### Compatibility
+- Bloodied Triumphs remains unchanged at 120/120 cards.
+- Existing Surrounded Attack card IDs are unchanged; this build only adds ten Fortitude IDs.
+- Card, pack, effect, diagnostic, and extension-contract schemas remain unchanged.
+
 ## 0.1.0-dev.12
 
 ### Added

@@ -69,6 +69,7 @@ const { BLOODIED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, 
 const { BLOODIED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-reflex.js")).href);
 const { BLOODIED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-will.js")).href);
 const { SURROUNDED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-attack.js")).href);
+const { SURROUNDED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-fortitude.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -106,6 +107,13 @@ check(SURROUNDED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Surr
 check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Surrounded Attack first pass must contain five ordinary critical-hit cards.");
 check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Surrounded Attack first pass must contain five spell critical-hit cards.");
 check(SURROUNDED_ATTACK_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Attack cards must use the dynamic Surrounded condition.");
+
+check(SURROUNDED_FORTITUDE_CARDS.length === 10, "Surrounded, Still Standing Fortitude deck must contain ten first-pass cards.");
+check(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Surrounded Fortitude card IDs must be unique.");
+check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Surrounded Fortitude cards must remain in the Fortitude deck.");
+check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Fortitude cards require critical save success.");
+check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Surrounded Fortitude cards must require Fortitude.");
+check(SURROUNDED_FORTITUDE_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Fortitude cards must use the dynamic Surrounded condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

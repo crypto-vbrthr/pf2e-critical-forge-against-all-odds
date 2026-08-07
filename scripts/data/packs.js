@@ -9,6 +9,7 @@ import { BLOODIED_FORTITUDE_CARDS } from "./cards/bloodied-fortitude.js";
 import { BLOODIED_REFLEX_CARDS } from "./cards/bloodied-reflex.js";
 import { BLOODIED_WILL_CARDS } from "./cards/bloodied-will.js";
 import { SURROUNDED_ATTACK_CARDS } from "./cards/surrounded-attack.js";
+import { SURROUNDED_FORTITUDE_CARDS } from "./cards/surrounded-fortitude.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -74,7 +75,9 @@ export function buildAgainstAllOddsPacks(settings = {}) {
               ? BLOODIED_WILL_CARDS
               : theme.id === THEME_IDS.SURROUNDED && deckType === "attack"
                 ? SURROUNDED_ATTACK_CARDS
-                : []
+                : theme.id === THEME_IDS.SURROUNDED && deckType === "fortitude"
+                  ? SURROUNDED_FORTITUDE_CARDS
+                  : []
     }]))
   }));
 }

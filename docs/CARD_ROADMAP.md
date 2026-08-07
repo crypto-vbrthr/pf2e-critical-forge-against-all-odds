@@ -5,7 +5,7 @@ Against All Odds plans four themes and four specialized decks per theme. The tar
 | Theme | Attack | Fortitude | Reflex | Will | Theme total |
 |---|---:|---:|---:|---:|---:|
 | Bloodied Triumphs | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
-| Surrounded, Still Standing | **10/30** | 0/30 | 0/30 | 0/30 | **10/120** |
+| Surrounded, Still Standing | **10/30** | **10/30** | 0/30 | 0/30 | **20/120** |
 | Giant-Slayer Moments | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 | Narrow Escapes | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 
@@ -22,7 +22,7 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 
 ## Next content milestones
 
-1. Continue **Surrounded, Still Standing** with the first Fortitude, Reflex, and Will passes; Attack first pass is complete in `0.1.0-dev.12`.
+1. Continue **Surrounded, Still Standing** with the first Reflex and Will passes; Attack is complete in `0.1.0-dev.12` and Fortitude in `0.1.0-dev.13`.
 2. Repeat the process for **Giant-Slayer Moments** and **Narrow Escapes**.
 3. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 

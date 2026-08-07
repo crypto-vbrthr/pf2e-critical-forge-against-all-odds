@@ -8,6 +8,7 @@ import { BLOODIED_FORTITUDE_CARDS } from "../scripts/data/cards/bloodied-fortitu
 import { BLOODIED_REFLEX_CARDS } from "../scripts/data/cards/bloodied-reflex.js";
 import { BLOODIED_WILL_CARDS } from "../scripts/data/cards/bloodied-will.js";
 import { SURROUNDED_ATTACK_CARDS } from "../scripts/data/cards/surrounded-attack.js";
+import { SURROUNDED_FORTITUDE_CARDS } from "../scripts/data/cards/surrounded-fortitude.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -619,6 +620,77 @@ test("Surrounded first-pass cards use Forge-supported tones, impacts, filters, a
     if (card.effect) {
       assert.equal(card.effect.definition.schemaVersion, 2, card.id);
       assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Attack."), true, card.id);
+    }
+  }
+});
+
+
+test("Surrounded, Still Standing first Fortitude pass contains ten unique critical-save cards", () => {
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.length, 10);
+  assert.equal(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.metadata.contentBatch === 14), true);
+});
+
+test("all Surrounded Fortitude cards use the dynamic surrounded gate", () => {
+  for (const card of SURROUNDED_FORTITUDE_CARDS) {
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.matched" && leaf.operator === "eq" && leaf.value === true), true, card.id);
+    assert.equal(Object.isFrozen(card), true);
+    assert.equal(Object.isFrozen(card.conditions), true);
+  }
+});
+
+test("heavier Surrounded Fortitude results require three or four threatening enemies", () => {
+  const three = SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-004-three-against-stone"));
+  const four = SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-005-four-cannot-fold-you"));
+  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
+  assert.equal(conditionLeaves(four.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+});
+
+test("Surrounded Fortitude first pass keeps boons on the saver and one counterpressure effect on the hostile source", () => {
+  const automated = SURROUNDED_FORTITUDE_CARDS.filter((card) => card.effect);
+  assert.equal(automated.length, 9);
+  assert.deepEqual(SURROUNDED_FORTITUDE_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssf-010-set-your-feet"]);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 8);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 1);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-006-make-them-spend-themselves")).effect.target, "target");
+});
+
+test("Surrounded Fortitude first pass covers anchoring, restraint resistance, recovery, and counterpressure", () => {
+  const components = SURROUNDED_FORTITUDE_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "modifier" && component.selector === "fortitude-dc" && component.value === 2), true);
+  assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "physical"), true);
+  assert.equal(components.some((component) => component.type === "fastHealing" && component.value === 3), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "enfeebled"), true);
+  assert.deepEqual(components.filter((component) => component.type === "immunity").map((component) => component.immunityType).sort(), ["grabbed", "restrained"]);
+});
+
+test("Surrounded Fortitude card and effect localization keys exist in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const language of [de, en]) {
+    for (const card of SURROUNDED_FORTITUDE_CARDS) {
+      assert.equal(typeof getPath(language, card.titleKey), "string", card.titleKey);
+      assert.equal(typeof getPath(language, card.descriptionKey), "string", card.descriptionKey);
+      if (card.effect) assert.equal(typeof getPath(language, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Surrounded Fortitude first pass uses Forge-supported tones, impacts, filters, and schema-2 effects", () => {
+  const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const impacts = new Set(["light", "moderate", "strong"]);
+  for (const card of SURROUNDED_FORTITUDE_CARDS) {
+    assert.equal(tones.has(card.tone), true, card.id);
+    assert.equal(impacts.has(card.impact), true, card.id);
+    for (const key of FILTER_KEYS) assert.equal(Array.isArray(card.filters[key]), true, `${card.id}:${key}`);
+    if (card.effect) {
+      assert.equal(card.effect.definition.schemaVersion, 2, card.id);
+      assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Fortitude."), true, card.id);
     }
   }
 });

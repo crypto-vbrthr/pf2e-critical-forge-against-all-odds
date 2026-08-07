@@ -50,8 +50,9 @@ The test suite covers:
 - German and English card/effect localization coverage.
 
 - ten first-pass Surrounded, Still Standing Attack cards, split 5/5 between ordinary and spell critical hits;
-- dynamic Surrounded gating plus three- and four-threat nested conditions;
-- Surrounded localization, target roles, tone/impact, filter, and schema-2 effect contracts.
+- ten first-pass Surrounded, Still Standing Fortitude cards with Fortitude save isolation;
+- dynamic Surrounded gating plus three- and four-threat nested conditions in both published Surrounded decks;
+- Surrounded localization, saving-actor/hostile-source target roles, tone/impact, filter, and schema-2 effect contracts.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 

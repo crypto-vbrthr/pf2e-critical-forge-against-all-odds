@@ -608,6 +608,48 @@
             "Title": "No Free Angle",
             "Description": "The spell steals the target's ability to close the ring cleanly. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds."
           }
+        },
+        "Fortitude": {
+          "BodyIsTheAnchor": {
+            "Title": "The Body Is the Anchor",
+            "Description": "The ring presses inward and your stance answers by becoming absolute. For 1 round, your Fortitude DC gains a +2 circumstance bonus."
+          },
+          "PressureHardensTheFrame": {
+            "Title": "Pressure Hardens the Frame",
+            "Description": "Every enemy leaning into the crush teaches your body where to harden next. For 1 round, you gain resistance 2 to physical damage."
+          },
+          "NoHandFindsPurchase": {
+            "Title": "No Hand Finds Purchase",
+            "Description": "Too many hands reach for you and none can make the hold real. For 1 round, you are immune to the grabbed and restrained conditions."
+          },
+          "ThreeAgainstStone": {
+            "Title": "Three Against Stone",
+            "Description": "With three or more enemies bearing down on you, every angle of pressure locks the next one in place. For 1 round, you gain a +1 circumstance bonus to AC."
+          },
+          "FourCannotFoldYou": {
+            "Title": "Four Cannot Fold You",
+            "Description": "Four or more threats close in and your whole body becomes one refusal. For 1 round, you gain a +1 status bonus to saving throws."
+          },
+          "MakeThemSpendThemselves": {
+            "Title": "Make Them Spend Themselves",
+            "Description": "The force meant to break you rebounds through the attacker instead. For 1 round, the hostile source becomes enfeebled 1."
+          },
+          "BreathBetweenBlows": {
+            "Title": "Breath Between Blows",
+            "Description": "You find one clean breath in a space where there should be none. For 1 round, you gain fast healing 3."
+          },
+          "EveryWoundSharesTheLoad": {
+            "Title": "Every Wound Shares the Load",
+            "Description": "No single injury gets to own your attention while the ring is still closing. For 1 round, you gain resistance 3 to persistent damage."
+          },
+          "CrowdGivesYouLeverage": {
+            "Title": "The Crowd Gives You Leverage",
+            "Description": "Every body pressing inward becomes something to brace against. For 1 round, you gain a +1 circumstance bonus to Athletics checks and attack rolls."
+          },
+          "SetYourFeet": {
+            "Title": "Set Your Feet",
+            "Description": "You root yourself against the whole ring at once. Until the start of your next turn, reduce any forced movement caused by a hostile effect by 10 feet, to a minimum of 0 feet. Apply this result manually."
+          }
         }
       }
     },
@@ -974,6 +1016,35 @@
           },
           "NoFreeAngle": {
             "Name": "No Free Angle"
+          }
+        },
+        "Fortitude": {
+          "BodyIsTheAnchor": {
+            "Name": "The Body Is the Anchor"
+          },
+          "PressureHardensTheFrame": {
+            "Name": "Pressure Hardens the Frame"
+          },
+          "NoHandFindsPurchase": {
+            "Name": "No Hand Finds Purchase"
+          },
+          "ThreeAgainstStone": {
+            "Name": "Three Against Stone"
+          },
+          "FourCannotFoldYou": {
+            "Name": "Four Cannot Fold You"
+          },
+          "MakeThemSpendThemselves": {
+            "Name": "Make Them Spend Themselves"
+          },
+          "BreathBetweenBlows": {
+            "Name": "Breath Between Blows"
+          },
+          "EveryWoundSharesTheLoad": {
+            "Name": "Every Wound Shares the Load"
+          },
+          "CrowdGivesYouLeverage": {
+            "Name": "The Crowd Gives You Leverage"
           }
         }
       }
