@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-dev.20
+
+- Completed **Surrounded, Still Standing** with the final forty-card pass: ten Attack, ten Fortitude, ten Reflex, and ten Will cards.
+- Surrounded now contains 120/120 cards, with thirty cards in each specialized deck and a 15/15 ordinary/spell critical split in Attack.
+- Added formation-focused manual results for repositioning, reaction denial, Shove/Escape interactions, ally support, and exploiting the enemy ring.
+- Kept final-pass escalation sparse: each deck adds exactly one three-threat and one four-threat result.
+- Added no new resistance or immunity series to the final Fortitude, Reflex, or Will passes.
+- Preserved all previously published card IDs and the reviewed `opponentIsThreatening` behavior.
+- Kept exact Bloodied/Surrounded automated effect overlap at nine legacy signatures and internal Surrounded duplicates at the two intentional reviewed pairs.
+- Marked Surrounded pack metadata as complete and expanded regression coverage for the 120-card contract.
+- Verified 123/123 add-on tests, 99.45% line coverage, 94.13% branch coverage, and 97.98% function coverage.
+- Validated all 240 published cards and the 208 automated card effects through the actual Critical Forge `1.0.0-rc` pack validator path before packaging.
+
 ## 0.1.0-dev.19.1
 
 ### Reviewed

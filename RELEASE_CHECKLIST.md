@@ -9,13 +9,13 @@
 - [x] Bloodied Triumphs Reflex deck contains thirty reviewed cards.
 - [x] Bloodied Triumphs Will deck contains thirty reviewed cards.
 - [x] All 120 published cards include the dynamic Bloodied condition.
-- [x] Surrounded, Still Standing Attack contains twenty cards after two passes: ten regular critical hits and ten spell critical hits.
+- [x] Surrounded, Still Standing Attack contains thirty cards after three passes: fifteen regular critical hits and fifteen spell critical hits.
 - [x] Surrounded Attack second-pass target effects use current-opponent threat membership where formation membership matters.
 - [x] Surrounded Attack second-pass escalation cards test three/four threat counts.
 - [x] All Surrounded Attack cards include the dynamic Surrounded condition; stronger cards test three/four threat counts.
-- [x] Surrounded, Still Standing Fortitude contains twenty critical-success save cards after two passes.
-- [x] Surrounded, Still Standing Reflex contains twenty critical-success save cards after two passes.
-- [x] Surrounded, Still Standing Will contains twenty critical-success save cards after two passes.
+- [x] Surrounded, Still Standing Fortitude contains thirty critical-success save cards after three passes.
+- [x] Surrounded, Still Standing Reflex contains thirty critical-success save cards after three passes.
+- [x] Surrounded, Still Standing Will contains thirty critical-success save cards after three passes.
 - [x] All published Surrounded save cards use the matching save deck/filter and preserve saver/source target roles.
 - [x] Current-opponent threat membership is exposed to the Card Editor and Diagnostics 2.0.
 - [x] Target-centric Surrounded cards require the current opponent to be a counted melee threat.
@@ -35,6 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
+- [x] Current automated test run: 123/123 passing.
+- [x] Current coverage: 99.45% lines, 94.13% branches, 97.98% functions.
+- [x] Current localization parity: 733 keys in both German and English.
+- [x] Critical Forge `1.0.0-rc` validates 240 published cards and all 208 automated card effects through pack validation.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -42,13 +46,19 @@
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Fortitude cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Reflex cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Will cards visible.
-- [ ] Foundry smoke test: twenty localized Surrounded Attack cards visible.
-- [ ] Foundry smoke test: twenty localized Surrounded Fortitude cards visible.
-- [ ] Foundry smoke test: twenty localized Surrounded Reflex cards visible.
-- [ ] Foundry smoke test: twenty localized Surrounded Will cards visible.
+- [ ] Foundry smoke test: thirty localized Surrounded Attack cards visible.
+- [ ] Foundry smoke test: thirty localized Surrounded Fortitude cards visible.
+- [ ] Foundry smoke test: thirty localized Surrounded Reflex cards visible.
+- [ ] Foundry smoke test: thirty localized Surrounded Will cards visible.
 - [ ] Foundry smoke test: Surrounded cards are unavailable below the configured threat threshold.
 - [ ] Foundry smoke test: automated effects apply to the intended source or target.
 - [ ] Foundry smoke test: cards are unavailable above the Bloodied threshold.
 
 - [x] Internal Surrounded automated-effect duplicate signatures are regression-tested after the 80-card review.
 - [x] Arc Through the Crowd impact and Four Steps, One Misstep mechanics match the reviewed definitions.
+- [x] Surrounded final pass completes 120 unique cards with a stable 100 automated / 20 manual split.
+- [x] Every final Surrounded deck adds exactly one three-threat and one four-threat escalation.
+- [x] Final Surrounded save passes add no new resistance or immunity series.
+- [x] Surrounded Attack finishes at fifteen ordinary and fifteen spell critical hits.
+- [x] Surrounded package metadata is marked complete.
+

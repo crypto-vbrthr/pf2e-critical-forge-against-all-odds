@@ -341,4 +341,182 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     contentBatch: 17,
     effect: null
   })
+,
+  defineSurroundedAttackCard({
+    id: "ssa-021-make-them-watch-each-other",
+    localizationKey: "MakeThemWatchEachOther",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Make Them Watch Each Other",
+    fallbackDescription: "Your critical hit forces a threatening foe to keep one eye on its own allies. For 1 round, the target is dazzled and takes a -1 circumstance penalty to attack rolls.",
+    tags: ["target", "dazzled", "attack-roll", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "dazzled" },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-022-hook-the-outer-edge",
+    localizationKey: "HookTheOuterEdge",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Hook the Outer Edge",
+    fallbackDescription: "The hit gives you a heartbeat to orbit the ring instead of retreating from it. You may immediately Step twice as free actions; both Steps must keep you adjacent to at least one threatening enemy, and the target cannot react to this movement. Apply this result manually.",
+    tags: ["step", "positioning", "reaction-denial", "manual"],
+    contentBatch: 20,
+    effect: null
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-023-three-blades-hide-the-tell",
+    localizationKey: "ThreeBladesHideTheTell",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Three Blades Hide the Tell",
+    fallbackDescription: "With three or more enemies crowding your movements, their own weapons hide your next intention. For 1 round, you are concealed and gain a +1 circumstance bonus to Deception checks.",
+    tags: ["heavily-surrounded", "concealed", "deception", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
+    contentBatch: 20,
+    effect: {
+      duration: SOURCE_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "modifier", selector: "deception", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-024-four-bodies-one-domino",
+    localizationKey: "FourBodiesOneDomino",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Four Bodies, One Domino",
+    fallbackDescription: "With four or more enemies packed around you, the struck foe becomes the first piece in a chain reaction. You may immediately attempt to Shove the target as a free action; if it is moved into another threatening enemy's space or reach, the GM may shift that second enemy 5 feet to make room. Apply this result manually.",
+    tags: ["heavily-surrounded", "shove", "formation", "manual"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: null
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-025-break-their-approach",
+    localizationKey: "BreakTheirApproach",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Break Their Approach",
+    fallbackDescription: "You strike the instant a threatening foe tries to settle into the ring. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to AC.",
+    tags: ["target", "movement", "ac", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" },
+        { type: "modifier", selector: "ac", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-026-magic-makes-a-blind-side",
+    localizationKey: "MagicMakesABlindSide",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Magic Makes a Blind Side",
+    fallbackDescription: "Your spell turns the crowd itself into visual noise for a threatening foe. For 1 round, the target is dazzled and takes a -1 circumstance penalty to Perception DC.",
+    tags: ["spell", "target", "dazzled", "perception-dc", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "dazzled" },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-027-crowd-feeds-the-arc",
+    localizationKey: "CrowdFeedsTheArc",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "The Crowd Feeds the Arc",
+    fallbackDescription: "The ring gives your magic a line to run along. For 1 round, you gain a +5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to spell damage.",
+    tags: ["spell", "movement", "spell-damage", "momentum", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: SOURCE_ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" },
+        { type: "modifier", selector: "spell-damage", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-028-three-threats-one-afterimage",
+    localizationKey: "ThreeThreatsOneAfterimage",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Three Threats, One Afterimage",
+    fallbackDescription: "With three or more enemies tracking you at once, your spell leaves too many false lines to follow. For 1 round, you are concealed and gain a +1 circumstance bonus to spell attack rolls.",
+    tags: ["spell", "concealed", "spell-attack-roll", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: SOURCE_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "modifier", selector: "spell-attack-roll", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-029-four-threats-one-faultline",
+    localizationKey: "FourThreatsOneFaultline",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Threats, One Faultline",
+    fallbackDescription: "With four or more enemies pressing into the same formation, your spell breaks the threatening target at the seam between body and focus. For 1 round, it becomes clumsy 1 and stupefied 1.",
+    tags: ["spell", "heavily-surrounded", "target", "clumsy", "stupefied", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    extraConditions: [
+      { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: TARGET_ONE_ROUND,
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "condition", slug: "stupefied", value: 1 }
+      ]
+    }
+  }),
+  defineSurroundedAttackCard({
+    id: "ssa-030-blink-through-the-line",
+    localizationKey: "BlinkThroughTheLine",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Blink Through the Line",
+    fallbackDescription: "The critical spell leaves a momentary seam in the encirclement. You may immediately move up to 10 feet to an unoccupied space you can see; this movement does not trigger reactions from enemies that currently threaten you. Apply this result manually.",
+    tags: ["spell", "positioning", "reaction-denial", "manual"],
+    contentBatch: 20,
+    effect: null
+  })
+
 ]);

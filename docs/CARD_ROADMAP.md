@@ -5,7 +5,7 @@ Against All Odds plans four themes and four specialized decks per theme. The tar
 | Theme | Attack | Fortitude | Reflex | Will | Theme total |
 |---|---:|---:|---:|---:|---:|
 | Bloodied Triumphs | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
-| Surrounded, Still Standing | **20/30** | **20/30** | **20/30** | **20/30** | **80/120** |
+| Surrounded, Still Standing | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
 | Giant-Slayer Moments | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 | Narrow Escapes | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 
@@ -28,10 +28,11 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 4. Surrounded Reflex, second pass: 10 cards. **Complete in `0.1.0-dev.18`.**
 5. Surrounded Will, second pass: 10 cards. **Complete in `0.1.0-dev.19`.**
 6. Review the first 80 **Surrounded, Still Standing** cards before the final passes. **Complete in `0.1.0-dev.19.1`; internal exact-effect duplication is now monitored and the two review adjustments preserve all card IDs.**
-7. Repeat the process for **Giant-Slayer Moments** and **Narrow Escapes**.
-8. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+7. Surrounded final pass: 10 Attack, 10 Fortitude, 10 Reflex, and 10 Will cards. **Complete in `0.1.0-dev.20`; Surrounded is now 120/120.**
+8. Repeat the process for **Giant-Slayer Moments** and **Narrow Escapes**.
+9. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs is complete at 120/120 cards after three reviewed passes.
+Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes.
 
 Every card will:
 

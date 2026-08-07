@@ -649,6 +649,46 @@
           "CarveAMagicalCorridor": {
             "Title": "Carve a Magical Corridor",
             "Description": "The spell punches a momentary lane through the encirclement. You may immediately Stride up to half your Speed as a free action; the spell's target cannot use reactions triggered by this movement. Apply this result manually."
+          },
+          "MakeThemWatchEachOther": {
+            "Title": "Make Them Watch Each Other",
+            "Description": "Your critical hit forces a threatening foe to keep one eye on its own allies. For 1 round, the target is dazzled and takes a -1 circumstance penalty to attack rolls."
+          },
+          "HookTheOuterEdge": {
+            "Title": "Hook the Outer Edge",
+            "Description": "The hit gives you a heartbeat to orbit the ring instead of retreating from it. You may immediately Step twice as free actions; both Steps must keep you adjacent to at least one threatening enemy, and the target cannot react to this movement. Apply this result manually."
+          },
+          "ThreeBladesHideTheTell": {
+            "Title": "Three Blades Hide the Tell",
+            "Description": "With three or more enemies crowding your movements, their own weapons hide your next intention. For 1 round, you are concealed and gain a +1 circumstance bonus to Deception checks."
+          },
+          "FourBodiesOneDomino": {
+            "Title": "Four Bodies, One Domino",
+            "Description": "With four or more enemies packed around you, the struck foe becomes the first piece in a chain reaction. You may immediately attempt to Shove the target as a free action; if it is moved into another threatening enemy's space or reach, the GM may shift that second enemy 5 feet to make room. Apply this result manually."
+          },
+          "BreakTheirApproach": {
+            "Title": "Break Their Approach",
+            "Description": "You strike the instant a threatening foe tries to settle into the ring. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to AC."
+          },
+          "MagicMakesABlindSide": {
+            "Title": "Magic Makes a Blind Side",
+            "Description": "Your spell turns the crowd itself into visual noise for a threatening foe. For 1 round, the target is dazzled and takes a -1 circumstance penalty to Perception DC."
+          },
+          "CrowdFeedsTheArc": {
+            "Title": "The Crowd Feeds the Arc",
+            "Description": "The ring gives your magic a line to run along. For 1 round, you gain a +5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to spell damage."
+          },
+          "ThreeThreatsOneAfterimage": {
+            "Title": "Three Threats, One Afterimage",
+            "Description": "With three or more enemies tracking you at once, your spell leaves too many false lines to follow. For 1 round, you are concealed and gain a +1 circumstance bonus to spell attack rolls."
+          },
+          "FourThreatsOneFaultline": {
+            "Title": "Four Threats, One Faultline",
+            "Description": "With four or more enemies pressing into the same formation, your spell breaks the threatening target at the seam between body and focus. For 1 round, it becomes clumsy 1 and stupefied 1."
+          },
+          "BlinkThroughTheLine": {
+            "Title": "Blink Through the Line",
+            "Description": "The critical spell leaves a momentary seam in the encirclement. You may immediately move up to 10 feet to an unoccupied space you can see; this movement does not trigger reactions from enemies that currently threaten you. Apply this result manually."
           }
         },
         "Fortitude": {
@@ -731,6 +771,46 @@
           "MakeAShieldOfThem": {
             "Title": "Make a Shield of Them",
             "Description": "Turn one threatening enemy into an obstacle for the rest. Choose a currently threatening foe; until the start of your next turn, treat that creature as cover against attacks from other threatening enemies whenever it physically blocks the line of attack. Apply this result manually."
+          },
+          "OvercommitmentCostsThem": {
+            "Title": "Overcommitment Costs Them",
+            "Description": "A threatening enemy leans too much of its strength into the ring and pays for it. For 1 round, the hostile source becomes enfeebled 1 and takes a -1 circumstance penalty to attack rolls."
+          },
+          "ShoulderThroughTheCrush": {
+            "Title": "Shoulder Through the Crush",
+            "Description": "The press of bodies becomes something you can drive against. For 1 round, you gain a +5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to Fortitude DC."
+          },
+          "ThreeBodiesOneBearing": {
+            "Title": "Three Bodies, One Bearing",
+            "Description": "With three or more enemies pushing inward, you find a single line through all their weight. For 1 round, you gain a +1 circumstance bonus to AC and Athletics checks."
+          },
+          "FourBodiesBreakTheirOwnLine": {
+            "Title": "Four Bodies Break Their Own Line",
+            "Description": "With four or more enemies packed around you, the hostile source cannot recover its balance after the failed pressure. For 1 round, it becomes slowed 1 and takes a -1 circumstance penalty to attack rolls."
+          },
+          "AnchorAndTurn": {
+            "Title": "Anchor and Turn",
+            "Description": "You absorb the pressure, pivot on it, and make space where none existed. You may immediately Step as a free action; until the start of your next turn, reduce the first instance of forced movement that would move you by 5 feet. Apply this result manually."
+          },
+          "TheirGripGoesSoft": {
+            "Title": "Their Grip Goes Soft",
+            "Description": "A threatening source spends too much strength trying to hold you inside the ring. For 1 round, it becomes clumsy 1 and takes a -1 circumstance penalty to Athletics checks."
+          },
+          "WeightBecomesImpact": {
+            "Title": "Weight Becomes Impact",
+            "Description": "The ring gives every committed motion something solid to rebound from. For 1 round, you gain a +1 circumstance bonus to strike damage and Fortitude DC."
+          },
+          "BodyFindsTheSeam": {
+            "Title": "The Body Finds the Seam",
+            "Description": "You feel the ring's pressure change before the opening is visible. For 1 round, you gain a +5-foot circumstance bonus to your land Speed and a +1 circumstance bonus to Perception DC."
+          },
+          "BreakThePressureChain": {
+            "Title": "Break the Pressure Chain",
+            "Description": "Choose two enemies that currently threaten you. Until the start of your next turn, treat those two enemies as unable to cooperate with one another for flanking or similar positional assistance against you. Apply this result manually."
+          },
+          "StandThroughTheCrush": {
+            "Title": "Stand Through the Crush",
+            "Description": "The failed pressure leaves you one instant to reclaim your footing. If you are prone, grabbed, or restrained, you may immediately Stand or attempt to Escape as a free action with a +2 circumstance bonus. Apply this result manually."
           }
         },
         "Reflex": {
@@ -813,6 +893,46 @@
           "NeverStopInTheCenter": {
             "Title": "Never Stop in the Center",
             "Description": "The ring can only close around the place you were. For 1 round, you gain a +5-foot circumstance bonus to all your Speeds and a +1 circumstance bonus to Perception DC."
+          },
+          "TheirEyesCollide": {
+            "Title": "Their Eyes Collide",
+            "Description": "A threatening source loses you behind its own allies for a fraction of a second. For 1 round, it is dazzled and takes a -1 circumstance penalty to Perception checks."
+          },
+          "MotionHidesMotion": {
+            "Title": "Motion Hides Motion",
+            "Description": "The ring moves too much to keep your exact line clear. For 1 round, you are concealed and gain a +1 circumstance bonus to AC."
+          },
+          "ThreeThreatsOneSlipstream": {
+            "Title": "Three Threats, One Slipstream",
+            "Description": "With three or more enemies closing in, the wake of one movement hides the next. For 1 round, you are concealed and gain a +5-foot circumstance bonus to all Speeds."
+          },
+          "FourThreatsOneTangle": {
+            "Title": "Four Threats, One Tangle",
+            "Description": "With four or more enemies packed into the ring, the hostile source tangles itself in the formation. For 1 round, it is off-guard and clumsy 1."
+          },
+          "CutBetweenTheirReactions": {
+            "Title": "Cut Between Their Reactions",
+            "Description": "You move in the instant when every enemy expects someone else to stop you. You may immediately Step twice as free actions; enemies that currently threaten you cannot use reactions triggered by either Step. Apply this result manually."
+          },
+          "SourceLosesTheLane": {
+            "Title": "The Source Loses the Lane",
+            "Description": "A threatening source finds its route to you clogged by its own side. For 1 round, it takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Perception DC."
+          },
+          "YouAreTheMovingGap": {
+            "Title": "You Are the Moving Gap",
+            "Description": "The space between enemies travels with you instead of closing behind you. For 1 round, you are concealed and gain a +1 circumstance bonus to Reflex saves."
+          },
+          "MakeThemTurnTooFar": {
+            "Title": "Make Them Turn Too Far",
+            "Description": "A threatening source twists after you and gives up its balance to do it. For 1 round, it is dazzled and takes a -1 circumstance penalty to Reflex DC."
+          },
+          "TheRingCannotFaceEverywhere": {
+            "Title": "The Ring Cannot Face Everywhere",
+            "Description": "You force the circle to keep turning until its sightlines fray. For 1 round, you are concealed and gain a +1 circumstance bonus to Perception DC."
+          },
+          "RunTheSeam": {
+            "Title": "Run the Seam",
+            "Description": "You see the moving seam between overlapping threat zones. You may immediately Stride up to your Speed as a free action; enemies that currently threaten you cannot use reactions triggered by this movement, and if possible you must end where fewer enemies threaten you. Apply this result manually."
           }
         },
         "Will": {
@@ -895,6 +1015,46 @@
           "MindAboveTheRing": {
             "Title": "Mind Above the Ring",
             "Description": "You stop reacting to the circle and begin reading it as a whole. For 1 round, you gain a +1 status bonus to class DC and Perception DC."
+          },
+          "OneMindBreaksRank": {
+            "Title": "One Mind Breaks Rank",
+            "Description": "A threatening source realizes that the circle has not made you smaller. For 1 round, it becomes stupefied 1 and takes a -1 circumstance penalty to attack rolls."
+          },
+          "TheCircleCannotNameYou": {
+            "Title": "The Circle Cannot Name You",
+            "Description": "Their certainty stops defining the space you occupy. For 1 round, you gain a +1 circumstance bonus to Will saves and class DC."
+          },
+          "ThreeThreatsOneAudience": {
+            "Title": "Three Threats, One Audience",
+            "Description": "With three or more enemies pressing in, every hostile face becomes an audience for your refusal. For 1 round, you gain a +1 circumstance bonus to Intimidation and Perception checks."
+          },
+          "FourThreatsOneCollapseOfNerve": {
+            "Title": "Four Threats, One Collapse of Nerve",
+            "Description": "With four or more enemies crowding you, the threatening source finally understands that the ring has become a stage for your defiance. For 1 round, it becomes frightened 1 and stupefied 1."
+          },
+          "TurnTheChorusOnItself": {
+            "Title": "Turn the Chorus on Itself",
+            "Description": "You answer the ring loudly enough that its threats begin competing with one another. You may immediately attempt to Create a Diversion against all enemies that currently threaten you as a free action. Apply this result manually."
+          },
+          "ShoutDownTheChorus": {
+            "Title": "Shout Down the Chorus",
+            "Description": "When a threatening source tries to dominate the ring with sound, your refusal drowns it out. After an auditory effect, for 1 round the hostile source is deafened and takes a -1 circumstance penalty to Perception checks."
+          },
+          "FearTurnsIntoCommand": {
+            "Title": "Fear Turns Into Command",
+            "Description": "You take the energy of the fear effect and use it to seize the moment. After a fear effect, for 1 round you gain a +1 status bonus to attack rolls and Will DC."
+          },
+          "TheRingHasToListen": {
+            "Title": "The Ring Has to Listen",
+            "Description": "Your composure forces attention instead of merely surviving it. For 1 round, you gain a +1 circumstance bonus to Diplomacy and Perception checks."
+          },
+          "TheirFocusPointsInward": {
+            "Title": "Their Focus Points Inward",
+            "Description": "A threatening source spends so much attention holding the ring together that it exposes itself. For 1 round, it is off-guard and takes a -1 circumstance penalty to class DC."
+          },
+          "CallTheOpening": {
+            "Title": "Call the Opening",
+            "Description": "Your clarity finds a path not only for you. Choose one ally within 30 feet who can hear you; that ally may immediately Step as a free action toward you or toward a space adjacent to one of the enemies threatening you. Apply this result manually."
           }
         }
       }
@@ -1286,6 +1446,27 @@
           },
           "FourShadowsOneFlash": {
             "Name": "Four Shadows, One Flash"
+          },
+          "MakeThemWatchEachOther": {
+            "Name": "Make Them Watch Each Other"
+          },
+          "ThreeBladesHideTheTell": {
+            "Name": "Three Blades Hide the Tell"
+          },
+          "BreakTheirApproach": {
+            "Name": "Break Their Approach"
+          },
+          "MagicMakesABlindSide": {
+            "Name": "Magic Makes a Blind Side"
+          },
+          "CrowdFeedsTheArc": {
+            "Name": "The Crowd Feeds the Arc"
+          },
+          "ThreeThreatsOneAfterimage": {
+            "Name": "Three Threats, One Afterimage"
+          },
+          "FourThreatsOneFaultline": {
+            "Name": "Four Threats, One Faultline"
           }
         },
         "Fortitude": {
@@ -1339,6 +1520,27 @@
           },
           "TurnTheirWeightAgainstThem": {
             "Name": "Turn Their Weight Against Them"
+          },
+          "OvercommitmentCostsThem": {
+            "Name": "Overcommitment Costs Them"
+          },
+          "ShoulderThroughTheCrush": {
+            "Name": "Shoulder Through the Crush"
+          },
+          "ThreeBodiesOneBearing": {
+            "Name": "Three Bodies, One Bearing"
+          },
+          "FourBodiesBreakTheirOwnLine": {
+            "Name": "Four Bodies Break Their Own Line"
+          },
+          "TheirGripGoesSoft": {
+            "Name": "Their Grip Goes Soft"
+          },
+          "WeightBecomesImpact": {
+            "Name": "Weight Becomes Impact"
+          },
+          "BodyFindsTheSeam": {
+            "Name": "The Body Finds the Seam"
           }
         },
         "Reflex": {
@@ -1395,6 +1597,30 @@
           },
           "NeverStopInTheCenter": {
             "Name": "Never Stop in the Center"
+          },
+          "TheirEyesCollide": {
+            "Name": "Their Eyes Collide"
+          },
+          "MotionHidesMotion": {
+            "Name": "Motion Hides Motion"
+          },
+          "ThreeThreatsOneSlipstream": {
+            "Name": "Three Threats, One Slipstream"
+          },
+          "FourThreatsOneTangle": {
+            "Name": "Four Threats, One Tangle"
+          },
+          "SourceLosesTheLane": {
+            "Name": "The Source Loses the Lane"
+          },
+          "YouAreTheMovingGap": {
+            "Name": "You Are the Moving Gap"
+          },
+          "MakeThemTurnTooFar": {
+            "Name": "Make Them Turn Too Far"
+          },
+          "TheRingCannotFaceEverywhere": {
+            "Name": "The Ring Cannot Face Everywhere"
           }
         },
         "Will": {
@@ -1451,6 +1677,30 @@
           },
           "MindAboveTheRing": {
             "Name": "Mind Above the Ring"
+          },
+          "OneMindBreaksRank": {
+            "Name": "One Mind Breaks Rank"
+          },
+          "TheCircleCannotNameYou": {
+            "Name": "The Circle Cannot Name You"
+          },
+          "ThreeThreatsOneAudience": {
+            "Name": "Three Threats, One Audience"
+          },
+          "FourThreatsOneCollapseOfNerve": {
+            "Name": "Four Threats, One Collapse of Nerve"
+          },
+          "ShoutDownTheChorus": {
+            "Name": "Shout Down the Chorus"
+          },
+          "FearTurnsIntoCommand": {
+            "Name": "Fear Turns Into Command"
+          },
+          "TheRingHasToListen": {
+            "Name": "The Ring Has to Listen"
+          },
+          "TheirFocusPointsInward": {
+            "Name": "Their Focus Points Inward"
           }
         }
       }

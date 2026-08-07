@@ -303,4 +303,176 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
       ]
     }
   })
+,
+  defineSurroundedReflexCard({
+    id: "ssr-021-their-eyes-collide",
+    localizationKey: "TheirEyesCollide",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Their Eyes Collide",
+    fallbackDescription: "A threatening source loses you behind its own allies for a fraction of a second. For 1 round, it is dazzled and takes a -1 circumstance penalty to Perception checks.",
+    tags: ["hostile-source", "dazzled", "perception", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "dazzled" },
+        { type: "modifier", selector: "perception", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-022-motion-hides-motion",
+    localizationKey: "MotionHidesMotion",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Motion Hides Motion",
+    fallbackDescription: "The ring moves too much to keep your exact line clear. For 1 round, you are concealed and gain a +1 circumstance bonus to AC.",
+    tags: ["concealed", "ac", "evasion", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-023-three-threats-one-slipstream",
+    localizationKey: "ThreeThreatsOneSlipstream",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Three Threats, One Slipstream",
+    fallbackDescription: "With three or more enemies closing in, the wake of one movement hides the next. For 1 round, you are concealed and gain a +5-foot circumstance bonus to all Speeds.",
+    tags: ["heavily-surrounded", "concealed", "movement", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-024-four-threats-one-tangle",
+    localizationKey: "FourThreatsOneTangle",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Threats, One Tangle",
+    fallbackDescription: "With four or more enemies packed into the ring, the hostile source tangles itself in the formation. For 1 round, it is off-guard and clumsy 1.",
+    tags: ["heavily-surrounded", "hostile-source", "off-guard", "clumsy", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "off-guard" },
+        { type: "condition", slug: "clumsy", value: 1 }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-025-cut-between-their-reactions",
+    localizationKey: "CutBetweenTheirReactions",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Cut Between Their Reactions",
+    fallbackDescription: "You move in the instant when every enemy expects someone else to stop you. You may immediately Step twice as free actions; enemies that currently threaten you cannot use reactions triggered by either Step. Apply this result manually.",
+    tags: ["step", "reaction-denial", "positioning", "manual"],
+    contentBatch: 20,
+    effect: null
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-026-source-loses-the-lane",
+    localizationKey: "SourceLosesTheLane",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "The Source Loses the Lane",
+    fallbackDescription: "A threatening source finds its route to you clogged by its own side. For 1 round, it takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Perception DC.",
+    tags: ["hostile-source", "movement", "perception-dc", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-027-you-are-the-moving-gap",
+    localizationKey: "YouAreTheMovingGap",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "You Are the Moving Gap",
+    fallbackDescription: "The space between enemies travels with you instead of closing behind you. For 1 round, you are concealed and gain a +1 circumstance bonus to Reflex saves.",
+    tags: ["concealed", "reflex", "evasion", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-028-make-them-turn-too-far",
+    localizationKey: "MakeThemTurnTooFar",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Make Them Turn Too Far",
+    fallbackDescription: "A threatening source twists after you and gives up its balance to do it. For 1 round, it is dazzled and takes a -1 circumstance penalty to Reflex DC.",
+    tags: ["hostile-source", "dazzled", "reflex-dc", "counterposition", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "dazzled" },
+        { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-029-the-ring-cannot-face-everywhere",
+    localizationKey: "TheRingCannotFaceEverywhere",
+    tone: "dramatic",
+    impact: "light",
+    fallbackTitle: "The Ring Cannot Face Everywhere",
+    fallbackDescription: "You force the circle to keep turning until its sightlines fray. For 1 round, you are concealed and gain a +1 circumstance bonus to Perception DC.",
+    tags: ["concealed", "perception-dc", "awareness", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedReflexCard({
+    id: "ssr-030-run-the-seam",
+    localizationKey: "RunTheSeam",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Run the Seam",
+    fallbackDescription: "You see the moving seam between overlapping threat zones. You may immediately Stride up to your Speed as a free action; enemies that currently threaten you cannot use reactions triggered by this movement, and if possible you must end where fewer enemies threaten you. Apply this result manually.",
+    tags: ["stride", "reaction-denial", "escape", "manual"],
+    contentBatch: 20,
+    effect: null
+  })
+
 ]);

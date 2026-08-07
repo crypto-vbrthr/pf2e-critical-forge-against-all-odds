@@ -301,4 +301,168 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
       components: [{ type: "modifier", selector: ["class-dc", "perception-dc"], value: 1, modifierType: "status", predicate: [] }]
     }
   })
+,
+  defineSurroundedWillCard({
+    id: "ssw-021-one-mind-breaks-rank",
+    localizationKey: "OneMindBreaksRank",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "One Mind Breaks Rank",
+    fallbackDescription: "A threatening source realizes that the circle has not made you smaller. For 1 round, it becomes stupefied 1 and takes a -1 circumstance penalty to attack rolls.",
+    tags: ["hostile-source", "stupefied", "attack-roll", "counterpressure", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-022-the-circle-cannot-name-you",
+    localizationKey: "TheCircleCannotNameYou",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "The Circle Cannot Name You",
+    fallbackDescription: "Their certainty stops defining the space you occupy. For 1 round, you gain a +1 circumstance bonus to Will saves and class DC.",
+    tags: ["will", "class-dc", "resolve", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["will", "class-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-023-three-threats-one-audience",
+    localizationKey: "ThreeThreatsOneAudience",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Three Threats, One Audience",
+    fallbackDescription: "With three or more enemies pressing in, every hostile face becomes an audience for your refusal. For 1 round, you gain a +1 circumstance bonus to Intimidation and Perception checks.",
+    tags: ["heavily-surrounded", "intimidation", "perception", "presence", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["intimidation", "perception"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-024-four-threats-one-collapse-of-nerve",
+    localizationKey: "FourThreatsOneCollapseOfNerve",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Threats, One Collapse of Nerve",
+    fallbackDescription: "With four or more enemies crowding you, the threatening source finally understands that the ring has become a stage for your defiance. For 1 round, it becomes frightened 1 and stupefied 1.",
+    tags: ["heavily-surrounded", "hostile-source", "frightened", "stupefied", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    extraConditions: [
+      { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "condition", slug: "stupefied", value: 1 }
+      ]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-025-turn-the-chorus-on-itself",
+    localizationKey: "TurnTheChorusOnItself",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Turn the Chorus on Itself",
+    fallbackDescription: "You answer the ring loudly enough that its threats begin competing with one another. You may immediately attempt to Create a Diversion against all enemies that currently threaten you as a free action. Apply this result manually.",
+    tags: ["deception", "create-a-diversion", "free-action", "manual"],
+    contentBatch: 20,
+    effect: null
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-026-shout-down-the-chorus",
+    localizationKey: "ShoutDownTheChorus",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Shout Down the Chorus",
+    fallbackDescription: "When a threatening source tries to dominate the ring with sound, your refusal drowns it out. After an auditory effect, for 1 round the hostile source is deafened and takes a -1 circumstance penalty to Perception checks.",
+    tags: ["auditory", "hostile-source", "deafened", "perception", "counterpressure", "effect"],
+    filters: { attackTraits: ["auditory"] },
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "deafened" },
+        { type: "modifier", selector: "perception", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-027-fear-turns-into-command",
+    localizationKey: "FearTurnsIntoCommand",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Fear Turns Into Command",
+    fallbackDescription: "You take the energy of the fear effect and use it to seize the moment. After a fear effect, for 1 round you gain a +1 status bonus to attack rolls and Will DC.",
+    tags: ["fear", "attack-roll", "will-dc", "resolve", "effect"],
+    filters: { attackTraits: ["fear"] },
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["attack-roll", "will-dc"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-028-the-ring-has-to-listen",
+    localizationKey: "TheRingHasToListen",
+    tone: "serious",
+    impact: "light",
+    fallbackTitle: "The Ring Has to Listen",
+    fallbackDescription: "Your composure forces attention instead of merely surviving it. For 1 round, you gain a +1 circumstance bonus to Diplomacy and Perception checks.",
+    tags: ["diplomacy", "perception", "presence", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["diplomacy", "perception"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-029-their-focus-points-inward",
+    localizationKey: "TheirFocusPointsInward",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Their Focus Points Inward",
+    fallbackDescription: "A threatening source spends so much attention holding the ring together that it exposes itself. For 1 round, it is off-guard and takes a -1 circumstance penalty to class DC.",
+    tags: ["hostile-source", "off-guard", "class-dc", "counterpressure", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "off-guard" },
+        { type: "modifier", selector: "class-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedWillCard({
+    id: "ssw-030-call-the-opening",
+    localizationKey: "CallTheOpening",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Call the Opening",
+    fallbackDescription: "Your clarity finds a path not only for you. Choose one ally within 30 feet who can hear you; that ally may immediately Step as a free action toward you or toward a space adjacent to one of the enemies threatening you. Apply this result manually.",
+    tags: ["ally", "step", "support", "auditory", "manual"],
+    contentBatch: 20,
+    effect: null
+  })
+
 ]);

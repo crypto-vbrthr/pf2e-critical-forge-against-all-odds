@@ -565,15 +565,16 @@ test("Bloodied Triumphs completes 120 unique cards with a stable 108 automated /
 });
 
 
-test("Surrounded, Still Standing Attack deck contains twenty cards after the second pass", () => {
-  assert.equal(SURROUNDED_ATTACK_CARDS.length, 20);
-  assert.equal(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size, 20);
-  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 10);
-  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 10);
+test("Surrounded, Still Standing Attack deck contains thirty cards after the final pass", () => {
+  assert.equal(SURROUNDED_ATTACK_CARDS.length, 30);
+  assert.equal(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size, 30);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 15);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 15);
   assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
   assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_ATTACK_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 13), true);
-  assert.equal(SURROUNDED_ATTACK_CARDS.slice(10).every((card) => card.metadata.contentBatch === 17), true);
+  assert.equal(SURROUNDED_ATTACK_CARDS.slice(10, 20).every((card) => card.metadata.contentBatch === 17), true);
+  assert.equal(SURROUNDED_ATTACK_CARDS.slice(20).every((card) => card.metadata.contentBatch === 20), true);
 });
 
 test("all Surrounded Attack cards use the dynamic surrounded gate", () => {
@@ -670,7 +671,7 @@ test("Surrounded Attack second pass uses current-opponent threat gating for form
     "ssa-018-pressure-finds-the-weak-link",
     "ssa-019-four-shadows-one-flash"
   ]);
-  for (const card of SURROUNDED_ATTACK_CARDS.slice(10)) {
+  for (const card of SURROUNDED_ATTACK_CARDS.slice(10, 20)) {
     const suffix = card.id.split(".").at(-1);
     const hasGate = conditionLeaves(card.conditions).some((leaf) =>
       leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
@@ -679,15 +680,16 @@ test("Surrounded Attack second pass uses current-opponent threat gating for form
   }
 });
 
-test("Surrounded, Still Standing Fortitude deck contains twenty unique critical-save cards after two passes", () => {
-  assert.equal(SURROUNDED_FORTITUDE_CARDS.length, 20);
-  assert.equal(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size, 20);
+test("Surrounded, Still Standing Fortitude deck contains thirty unique critical-save cards after the final pass", () => {
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.length, 30);
+  assert.equal(new Set(SURROUNDED_FORTITUDE_CARDS.map((card) => card.id)).size, 30);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
   assert.equal(SURROUNDED_FORTITUDE_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 14), true);
-  assert.equal(SURROUNDED_FORTITUDE_CARDS.slice(10).every((card) => card.metadata.contentBatch === 18), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.slice(10, 20).every((card) => card.metadata.contentBatch === 18), true);
+  assert.equal(SURROUNDED_FORTITUDE_CARDS.slice(20).every((card) => card.metadata.contentBatch === 20), true);
 });
 
 test("all Surrounded Fortitude cards use the dynamic surrounded gate", () => {
@@ -784,15 +786,16 @@ test("Surrounded Fortitude second pass favors leverage and counterpressure over 
 });
 
 
-test("Surrounded, Still Standing Reflex deck contains twenty unique critical-save cards after two passes", () => {
-  assert.equal(SURROUNDED_REFLEX_CARDS.length, 20);
-  assert.equal(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size, 20);
+test("Surrounded, Still Standing Reflex deck contains thirty unique critical-save cards after the final pass", () => {
+  assert.equal(SURROUNDED_REFLEX_CARDS.length, 30);
+  assert.equal(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size, 30);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 15), true);
-  assert.equal(SURROUNDED_REFLEX_CARDS.slice(10).every((card) => card.metadata.contentBatch === 18), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.slice(10, 20).every((card) => card.metadata.contentBatch === 18), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.slice(20).every((card) => card.metadata.contentBatch === 20), true);
 });
 
 test("all Surrounded Reflex cards use the dynamic surrounded gate", () => {
@@ -880,13 +883,9 @@ test("Surrounded Reflex second pass uses current-opponent threat gating for ring
     "ssr-012-ring-trips-over-itself",
     "ssr-014-four-steps-one-misstep",
     "ssr-017-turn-their-eyes-sideways",
-    "ssr-019-one-body-blocks-the-next",
-    "ssw-011-make-one-voice-falter",
-    "ssw-014-four-threats-one-cracked-nerve",
-    "ssw-017-their-certainty-breaks-first",
-    "ssw-019-a-mental-grip-leaves-an-opening"
+    "ssr-019-one-body-blocks-the-next"
   ]);
-  for (const card of SURROUNDED_REFLEX_CARDS.slice(10)) {
+  for (const card of SURROUNDED_REFLEX_CARDS.slice(10, 20)) {
     const suffix = card.id.split(".").at(-1);
     const hasGate = conditionLeaves(card.conditions).some((leaf) =>
       leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
@@ -896,15 +895,16 @@ test("Surrounded Reflex second pass uses current-opponent threat gating for ring
 });
 
 
-test("Surrounded, Still Standing Will deck contains twenty unique critical-save cards after two passes", () => {
-  assert.equal(SURROUNDED_WILL_CARDS.length, 20);
-  assert.equal(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size, 20);
+test("Surrounded, Still Standing Will deck contains thirty unique critical-save cards after the final pass", () => {
+  assert.equal(SURROUNDED_WILL_CARDS.length, 30);
+  assert.equal(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size, 30);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.deckType === "will"), true);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
   assert.equal(SURROUNDED_WILL_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 16), true);
-  assert.equal(SURROUNDED_WILL_CARDS.slice(10).every((card) => card.metadata.contentBatch === 19), true);
+  assert.equal(SURROUNDED_WILL_CARDS.slice(10, 20).every((card) => card.metadata.contentBatch === 19), true);
+  assert.equal(SURROUNDED_WILL_CARDS.slice(20).every((card) => card.metadata.contentBatch === 20), true);
 });
 
 test("all Surrounded Will cards use the dynamic surrounded gate", () => {
@@ -996,7 +996,7 @@ test("Surrounded Will second pass scales at three and four threats and uses curr
     "ssw-017-their-certainty-breaks-first",
     "ssw-019-a-mental-grip-leaves-an-opening"
   ]);
-  for (const card of SURROUNDED_WILL_CARDS.slice(10)) {
+  for (const card of SURROUNDED_WILL_CARDS.slice(10, 20)) {
     const suffix = card.id.split(".").at(-1);
     const hasGate = conditionLeaves(card.conditions).some((leaf) =>
       leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
@@ -1044,7 +1044,23 @@ test("target-centric Surrounded cards require the current opponent to be a count
     "ssw-011-make-one-voice-falter",
     "ssw-014-four-threats-one-cracked-nerve",
     "ssw-017-their-certainty-breaks-first",
-    "ssw-019-a-mental-grip-leaves-an-opening"
+    "ssw-019-a-mental-grip-leaves-an-opening",
+    "ssa-021-make-them-watch-each-other",
+    "ssa-024-four-bodies-one-domino",
+    "ssa-025-break-their-approach",
+    "ssa-026-magic-makes-a-blind-side",
+    "ssa-029-four-threats-one-faultline",
+    "ssf-021-overcommitment-costs-them",
+    "ssf-024-four-bodies-break-their-own-line",
+    "ssf-026-their-grip-goes-soft",
+    "ssr-021-their-eyes-collide",
+    "ssr-024-four-threats-one-tangle",
+    "ssr-026-source-loses-the-lane",
+    "ssr-028-make-them-turn-too-far",
+    "ssw-021-one-mind-breaks-rank",
+    "ssw-024-four-threats-one-collapse-of-nerve",
+    "ssw-026-shout-down-the-chorus",
+    "ssw-029-their-focus-points-inward"
   ]);
   for (const card of ALL_SURROUNDED_CARDS) {
     const suffix = card.id.split(".").at(-1);
@@ -1052,6 +1068,74 @@ test("target-centric Surrounded cards require the current opponent to be a count
       leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
     );
     assert.equal(hasGate, expectedSuffixes.has(suffix), card.id);
+  }
+});
+
+
+test("Surrounded final pass completes thirty cards per deck and 120 unique theme cards", () => {
+  for (const cards of [SURROUNDED_ATTACK_CARDS, SURROUNDED_FORTITUDE_CARDS, SURROUNDED_REFLEX_CARDS, SURROUNDED_WILL_CARDS]) {
+    assert.equal(cards.length, 30);
+    assert.equal(cards.slice(20).every((card) => card.metadata.contentBatch === 20), true);
+  }
+  assert.equal(ALL_SURROUNDED_CARDS.length, 120);
+  assert.equal(new Set(ALL_SURROUNDED_CARDS.map((card) => card.id)).size, 120);
+  assert.equal(ALL_SURROUNDED_CARDS.filter((card) => card.effect).length, 100);
+  assert.equal(ALL_SURROUNDED_CARDS.filter((card) => !card.effect).length, 20);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 15);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 15);
+});
+
+test("Surrounded final pass uses the intended manual split and keeps strong results sparse", () => {
+  const expectations = [
+    [SURROUNDED_ATTACK_CARDS, ["ssa-022-hook-the-outer-edge", "ssa-024-four-bodies-one-domino", "ssa-030-blink-through-the-line"]],
+    [SURROUNDED_FORTITUDE_CARDS, ["ssf-025-anchor-and-turn", "ssf-029-break-the-pressure-chain", "ssf-030-stand-through-the-crush"]],
+    [SURROUNDED_REFLEX_CARDS, ["ssr-025-cut-between-their-reactions", "ssr-030-run-the-seam"]],
+    [SURROUNDED_WILL_CARDS, ["ssw-025-turn-the-chorus-on-itself", "ssw-030-call-the-opening"]]
+  ];
+  for (const [cards, expectedManual] of expectations) {
+    const finalPass = cards.slice(20);
+    assert.deepEqual(finalPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), expectedManual);
+    assert.equal(finalPass.filter((card) => card.impact === "strong").length, 1);
+  }
+});
+
+test("each Surrounded final deck adds exactly one three-threat and one four-threat escalation", () => {
+  for (const cards of [SURROUNDED_ATTACK_CARDS, SURROUNDED_FORTITUDE_CARDS, SURROUNDED_REFLEX_CARDS, SURROUNDED_WILL_CARDS]) {
+    const finalPass = cards.slice(20);
+    const three = finalPass.filter((card) => conditionLeaves(card.conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3
+    ));
+    const four = finalPass.filter((card) => conditionLeaves(card.conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4
+    ));
+    assert.equal(three.length, 1);
+    assert.equal(four.length, 1);
+  }
+});
+
+test("Surrounded final save passes avoid new resistance and immunity series", () => {
+  for (const cards of [SURROUNDED_FORTITUDE_CARDS, SURROUNDED_REFLEX_CARDS, SURROUNDED_WILL_CARDS]) {
+    const components = cards.slice(20).flatMap((card) => card.effect?.definition.components ?? []);
+    assert.equal(components.some((component) => component.type === "immunity"), false);
+    assert.equal(components.some((component) => component.type === "resistance"), false);
+  }
+});
+
+test("Surrounded final pass target gates match the cards that explicitly manipulate a ring opponent", () => {
+  const expectedByDeck = new Map([
+    [SURROUNDED_ATTACK_CARDS, new Set(["ssa-021-make-them-watch-each-other", "ssa-024-four-bodies-one-domino", "ssa-025-break-their-approach", "ssa-026-magic-makes-a-blind-side", "ssa-029-four-threats-one-faultline"])],
+    [SURROUNDED_FORTITUDE_CARDS, new Set(["ssf-021-overcommitment-costs-them", "ssf-024-four-bodies-break-their-own-line", "ssf-026-their-grip-goes-soft"])],
+    [SURROUNDED_REFLEX_CARDS, new Set(["ssr-021-their-eyes-collide", "ssr-024-four-threats-one-tangle", "ssr-026-source-loses-the-lane", "ssr-028-make-them-turn-too-far"])],
+    [SURROUNDED_WILL_CARDS, new Set(["ssw-021-one-mind-breaks-rank", "ssw-024-four-threats-one-collapse-of-nerve", "ssw-026-shout-down-the-chorus", "ssw-029-their-focus-points-inward"])]
+  ]);
+  for (const [cards, expected] of expectedByDeck) {
+    for (const card of cards.slice(20)) {
+      const suffix = card.id.split(".").at(-1);
+      const hasGate = conditionLeaves(card.conditions).some((leaf) =>
+        leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
+      );
+      assert.equal(hasGate, expected.has(suffix), card.id);
+    }
   }
 });
 

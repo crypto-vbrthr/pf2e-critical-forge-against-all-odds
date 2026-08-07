@@ -297,4 +297,162 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     effect: null
   })
 
+,
+  defineSurroundedFortitudeCard({
+    id: "ssf-021-overcommitment-costs-them",
+    localizationKey: "OvercommitmentCostsThem",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Overcommitment Costs Them",
+    fallbackDescription: "A threatening enemy leans too much of its strength into the ring and pays for it. For 1 round, the hostile source becomes enfeebled 1 and takes a -1 circumstance penalty to attack rolls.",
+    tags: ["hostile-source", "enfeebled", "attack-roll", "counterpressure", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "enfeebled", value: 1 },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-022-shoulder-through-the-crush",
+    localizationKey: "ShoulderThroughTheCrush",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Shoulder Through the Crush",
+    fallbackDescription: "The press of bodies becomes something you can drive against. For 1 round, you gain a +5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to Fortitude DC.",
+    tags: ["movement", "fortitude-dc", "brace", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" },
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-023-three-bodies-one-bearing",
+    localizationKey: "ThreeBodiesOneBearing",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Three Bodies, One Bearing",
+    fallbackDescription: "With three or more enemies pushing inward, you find a single line through all their weight. For 1 round, you gain a +1 circumstance bonus to AC and Athletics checks.",
+    tags: ["heavily-surrounded", "ac", "athletics", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["ac", "athletics"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-024-four-bodies-break-their-own-line",
+    localizationKey: "FourBodiesBreakTheirOwnLine",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Bodies Break Their Own Line",
+    fallbackDescription: "With four or more enemies packed around you, the hostile source cannot recover its balance after the failed pressure. For 1 round, it becomes slowed 1 and takes a -1 circumstance penalty to attack rolls.",
+    tags: ["heavily-surrounded", "hostile-source", "slowed", "attack-roll", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "slowed", value: 1 },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-025-anchor-and-turn",
+    localizationKey: "AnchorAndTurn",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Anchor and Turn",
+    fallbackDescription: "You absorb the pressure, pivot on it, and make space where none existed. You may immediately Step as a free action; until the start of your next turn, reduce the first instance of forced movement that would move you by 5 feet. Apply this result manually.",
+    tags: ["step", "forced-movement", "positioning", "manual"],
+    contentBatch: 20,
+    effect: null
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-026-their-grip-goes-soft",
+    localizationKey: "TheirGripGoesSoft",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Their Grip Goes Soft",
+    fallbackDescription: "A threatening source spends too much strength trying to hold you inside the ring. For 1 round, it becomes clumsy 1 and takes a -1 circumstance penalty to Athletics checks.",
+    tags: ["hostile-source", "clumsy", "athletics", "counterpressure", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 20,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "modifier", selector: "athletics", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-027-weight-becomes-impact",
+    localizationKey: "WeightBecomesImpact",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Weight Becomes Impact",
+    fallbackDescription: "The ring gives every committed motion something solid to rebound from. For 1 round, you gain a +1 circumstance bonus to strike damage and Fortitude DC.",
+    tags: ["strike-damage", "fortitude-dc", "momentum", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["strike-damage", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-028-body-finds-the-seam",
+    localizationKey: "BodyFindsTheSeam",
+    tone: "serious",
+    impact: "light",
+    fallbackTitle: "The Body Finds the Seam",
+    fallbackDescription: "You feel the ring's pressure change before the opening is visible. For 1 round, you gain a +5-foot circumstance bonus to your land Speed and a +1 circumstance bonus to Perception DC.",
+    tags: ["movement", "perception-dc", "awareness", "effect"],
+    contentBatch: 20,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "land", value: 5, modifierType: "circumstance" },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-029-break-the-pressure-chain",
+    localizationKey: "BreakThePressureChain",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Break the Pressure Chain",
+    fallbackDescription: "Choose two enemies that currently threaten you. Until the start of your next turn, treat those two enemies as unable to cooperate with one another for flanking or similar positional assistance against you. Apply this result manually.",
+    tags: ["formation", "flanking", "defense", "manual"],
+    contentBatch: 20,
+    effect: null
+  }),
+  defineSurroundedFortitudeCard({
+    id: "ssf-030-stand-through-the-crush",
+    localizationKey: "StandThroughTheCrush",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Stand Through the Crush",
+    fallbackDescription: "The failed pressure leaves you one instant to reclaim your footing. If you are prone, grabbed, or restrained, you may immediately Stand or attempt to Escape as a free action with a +2 circumstance bonus. Apply this result manually.",
+    tags: ["stand", "escape", "free-action", "manual"],
+    contentBatch: 20,
+    effect: null
+  })
+
 ]);

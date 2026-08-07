@@ -649,6 +649,46 @@
           "CarveAMagicalCorridor": {
             "Title": "Schlag einen magischen Korridor",
             "Description": "Der Zauber schlägt für einen Augenblick eine Gasse durch die Einkreisung. Du darfst sofort als freie Aktion bis zur halben Bewegungsrate Laufen; das Ziel des Zaubers kann keine durch diese Bewegung ausgelösten Reaktionen einsetzen. Wende dieses Ergebnis manuell an."
+          },
+          "MakeThemWatchEachOther": {
+            "Title": "Lass sie einander beobachten",
+            "Description": "Dein kritischer Treffer zwingt einen dich bedrohenden Gegner, auch seine eigenen Verbündeten im Blick zu behalten. Für 1 Runde ist das Ziel Geblendet und erhält einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "HookTheOuterEdge": {
+            "Title": "Zieh an der Außenkante vorbei",
+            "Description": "Der Treffer gibt dir einen Herzschlag, um den Ring zu umrunden, statt vor ihm zurückzuweichen. Du darfst sofort zweimal als freie Aktion einen Schritt ausführen; beide Schritte müssen dich zu mindestens einem dich bedrohenden Gegner angrenzend halten, und das Ziel kann auf diese Bewegung nicht reagieren. Wende dieses Ergebnis manuell an."
+          },
+          "ThreeBladesHideTheTell": {
+            "Title": "Drei Klingen verbergen deine Absicht",
+            "Description": "Wenn dich mindestens drei Gegner bedrängen, verbergen ihre eigenen Waffen deine nächste Absicht. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1 auf Täuschungswürfe."
+          },
+          "FourBodiesOneDomino": {
+            "Title": "Vier Körper, ein Domino",
+            "Description": "Wenn sich mindestens vier Gegner um dich drängen, wird der getroffene Gegner zum ersten Stein einer Kettenreaktion. Du darfst sofort als freie Aktion versuchen, das Ziel zu Stoßen; wird es dabei in den Raum oder die Reichweite eines anderen dich bedrohenden Gegners bewegt, kann der SL diesen zweiten Gegner um 1,5 m versetzen, um Platz zu schaffen. Wende dieses Ergebnis manuell an."
+          },
+          "BreakTheirApproach": {
+            "Title": "Brich ihren Anmarsch",
+            "Description": "Du triffst genau in dem Moment, in dem sich ein dich bedrohender Gegner im Ring festsetzen will. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten und -1 auf RK."
+          },
+          "MagicMakesABlindSide": {
+            "Title": "Magie schafft einen toten Winkel",
+            "Description": "Dein Zauber verwandelt das Gedränge für einen dich bedrohenden Gegner in visuelles Rauschen. Für 1 Runde ist das Ziel Geblendet und erhält einen Situationsmalus von -1 auf seinen Wahrnehmungs-SG."
+          },
+          "CrowdFeedsTheArc": {
+            "Title": "Das Gedränge speist den Bogen",
+            "Description": "Der Ring gibt deiner Magie eine Linie, entlang der sie weiterlaufen kann. Für 1 Runde erhältst du einen Situationsbonus von +1,5 m auf alle Bewegungsraten und +1 auf Zauberschaden."
+          },
+          "ThreeThreatsOneAfterimage": {
+            "Title": "Drei Bedrohungen, ein Nachbild",
+            "Description": "Wenn dich mindestens drei Gegner gleichzeitig verfolgen, hinterlässt dein Zauber zu viele falsche Linien, um dir sauber zu folgen. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1 auf Zauberangriffswürfe."
+          },
+          "FourThreatsOneFaultline": {
+            "Title": "Vier Bedrohungen, eine Bruchlinie",
+            "Description": "Wenn sich mindestens vier Gegner in dieselbe Formation drängen, bricht dein Zauber einen dich bedrohenden Gegner an der Naht zwischen Körper und Fokus. Für 1 Runde erhält das Ziel Unbeholfen 1 und Benommen 1."
+          },
+          "BlinkThroughTheLine": {
+            "Title": "Blink durch die Linie",
+            "Description": "Der kritische Zauber hinterlässt eine flüchtige Naht in der Einkreisung. Du darfst dich sofort bis zu 3 m auf ein freies Feld bewegen, das du sehen kannst; diese Bewegung löst keine Reaktionen bei Gegnern aus, die dich aktuell bedrohen. Wende dieses Ergebnis manuell an."
           }
         },
         "Fortitude": {
@@ -731,6 +771,46 @@
           "MakeAShieldOfThem": {
             "Title": "Mach aus ihnen einen Schild",
             "Description": "Mach einen dich bedrohenden Gegner zum Hindernis für den Rest. Wähle einen Gegner, der dich aktuell bedroht; bis zum Beginn deines nächsten Zuges gilt diese Kreatur für Angriffe anderer bedrohender Gegner als Deckung, wenn sie die Angriffslinie tatsächlich blockiert. Wende dieses Ergebnis manuell an."
+          },
+          "OvercommitmentCostsThem": {
+            "Title": "Überziehen kostet Kraft",
+            "Description": "Ein dich bedrohender Gegner legt zu viel Kraft in den Ring und bezahlt dafür. Für 1 Runde erhält die feindliche Quelle Kraftlos 1 und einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "ShoulderThroughTheCrush": {
+            "Title": "Durch das Gedränge schultern",
+            "Description": "Der Druck der Körper wird zu etwas, gegen das du dich vorarbeiten kannst. Für 1 Runde erhältst du einen Situationsbonus von +1,5 m auf alle Bewegungsraten und +1 auf deinen Zähigkeits-SG."
+          },
+          "ThreeBodiesOneBearing": {
+            "Title": "Drei Körper, ein Widerlager",
+            "Description": "Wenn mindestens drei Gegner nach innen drücken, findest du eine einzige tragende Linie durch ihr gesamtes Gewicht. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Athletikwürfe."
+          },
+          "FourBodiesBreakTheirOwnLine": {
+            "Title": "Vier Körper brechen ihre eigene Linie",
+            "Description": "Wenn sich mindestens vier Gegner um dich drängen, findet die feindliche Quelle nach dem gescheiterten Druck nicht mehr in den Takt zurück. Für 1 Runde erhält sie Verlangsamt 1 und einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "AnchorAndTurn": {
+            "Title": "Verankern und drehen",
+            "Description": "Du nimmst den Druck auf, drehst dich darin und schaffst Raum, wo keiner war. Du darfst sofort als freie Aktion einen Schritt ausführen; bis zum Beginn deines nächsten Zuges reduzierst du das erste erzwungene Bewegen, das dich treffen würde, um 1,5 m. Wende dieses Ergebnis manuell an."
+          },
+          "TheirGripGoesSoft": {
+            "Title": "Ihr Griff wird weich",
+            "Description": "Eine dich bedrohende Quelle verbraucht zu viel Kraft, um dich im Ring festzuhalten. Für 1 Runde erhält sie Unbeholfen 1 und einen Situationsmalus von -1 auf Athletikwürfe."
+          },
+          "WeightBecomesImpact": {
+            "Title": "Gewicht wird zu Wucht",
+            "Description": "Der Ring gibt jeder entschlossenen Bewegung etwas Festes, von dem sie zurückschlagen kann. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Trefferschaden und deinen Zähigkeits-SG."
+          },
+          "BodyFindsTheSeam": {
+            "Title": "Der Körper findet die Naht",
+            "Description": "Du spürst, wie sich der Druck des Rings verändert, noch bevor die Öffnung sichtbar wird. Für 1 Runde erhältst du einen Situationsbonus von +1,5 m auf deine Bewegungsrate am Boden und +1 auf deinen Wahrnehmungs-SG."
+          },
+          "BreakThePressureChain": {
+            "Title": "Brich die Druckkette",
+            "Description": "Wähle zwei Gegner, die dich aktuell bedrohen. Bis zum Beginn deines nächsten Zuges behandelst du diese beiden Gegner so, als könnten sie einander gegen dich weder beim Flankieren noch bei vergleichbarer positioneller Unterstützung helfen. Wende dieses Ergebnis manuell an."
+          },
+          "StandThroughTheCrush": {
+            "Title": "Steh durch das Gedränge",
+            "Description": "Der gescheiterte Druck gibt dir einen Augenblick, deine Haltung zurückzugewinnen. Bist du Liegend, Gegriffen oder Gebunden, darfst du sofort als freie Aktion Aufstehen oder mit einem Situationsbonus von +2 Entkommen versuchen. Wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -813,6 +893,46 @@
           "NeverStopInTheCenter": {
             "Title": "Bleib nie in der Mitte stehen",
             "Description": "Der Ring kann sich nur um den Ort schließen, an dem du eben noch warst. Für 1 Runde erhältst du einen Situationsbonus von 1,5 m auf alle deine Bewegungsraten und +1 auf deinen Wahrnehmungs-SG."
+          },
+          "TheirEyesCollide": {
+            "Title": "Ihre Blicke prallen aufeinander",
+            "Description": "Eine dich bedrohende Quelle verliert dich für einen Augenblick hinter ihren eigenen Verbündeten. Für 1 Runde ist sie Geblendet und erhält einen Situationsmalus von -1 auf Wahrnehmungswürfe."
+          },
+          "MotionHidesMotion": {
+            "Title": "Bewegung verbirgt Bewegung",
+            "Description": "Im Ring bewegt sich zu viel, als dass deine genaue Linie klar bleiben könnte. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1 auf RK."
+          },
+          "ThreeThreatsOneSlipstream": {
+            "Title": "Drei Bedrohungen, ein Windschatten",
+            "Description": "Wenn mindestens drei Gegner nach dir greifen, verbirgt die Bewegung des einen die des nächsten. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FourThreatsOneTangle": {
+            "Title": "Vier Bedrohungen, ein Gewirr",
+            "Description": "Wenn sich mindestens vier Gegner in den Ring drängen, verfängt sich die feindliche Quelle in der eigenen Formation. Für 1 Runde ist sie Auf dem falschen Fuß und erhält Unbeholfen 1."
+          },
+          "CutBetweenTheirReactions": {
+            "Title": "Zwischen ihren Reaktionen",
+            "Description": "Du bewegst dich genau in dem Moment, in dem jeder Gegner erwartet, dass ein anderer dich aufhält. Du darfst sofort zweimal als freie Aktion einen Schritt ausführen; Gegner, die dich aktuell bedrohen, können keine durch diese Schritte ausgelösten Reaktionen einsetzen. Wende dieses Ergebnis manuell an."
+          },
+          "SourceLosesTheLane": {
+            "Title": "Die Quelle verliert die Bahn",
+            "Description": "Eine dich bedrohende Quelle findet ihren Weg zu dir von den eigenen Leuten verstopft. Für 1 Runde erhält sie einen Situationsmalus von 1,5 m auf alle Bewegungsraten und -1 auf ihren Wahrnehmungs-SG."
+          },
+          "YouAreTheMovingGap": {
+            "Title": "Du bist die wandernde Lücke",
+            "Description": "Der Raum zwischen den Gegnern bewegt sich mit dir, statt sich hinter dir zu schließen. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1 auf Reflexwürfe."
+          },
+          "MakeThemTurnTooFar": {
+            "Title": "Zwing sie zur Überdrehung",
+            "Description": "Eine dich bedrohende Quelle dreht sich dir zu weit hinterher und gibt dabei ihr Gleichgewicht auf. Für 1 Runde ist sie Geblendet und erhält einen Situationsmalus von -1 auf ihren Reflex-SG."
+          },
+          "TheRingCannotFaceEverywhere": {
+            "Title": "Der Ring kann nicht überall hinsehen",
+            "Description": "Du zwingst den Kreis immer weiter zu drehen, bis seine Sichtlinien ausfransen. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
+          },
+          "RunTheSeam": {
+            "Title": "Lauf die Naht entlang",
+            "Description": "Du erkennst die wandernde Naht zwischen überlappenden Bedrohungszonen. Du darfst sofort als freie Aktion bis zu deiner Bewegungsrate Laufen; Gegner, die dich aktuell bedrohen, können keine durch diese Bewegung ausgelösten Reaktionen einsetzen, und wenn möglich musst du dort enden, wo dich weniger Gegner bedrohen. Wende dieses Ergebnis manuell an."
           }
         },
         "Will": {
@@ -895,6 +1015,46 @@
           "MindAboveTheRing": {
             "Title": "Der Geist über dem Ring",
             "Description": "Du hörst auf, nur auf den Ring zu reagieren, und beginnst ihn als Ganzes zu lesen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Klassen-SG und Wahrnehmungs-SG."
+          },
+          "OneMindBreaksRank": {
+            "Title": "Ein Geist bricht aus der Reihe",
+            "Description": "Eine dich bedrohende Quelle erkennt, dass der Ring dich nicht kleiner gemacht hat. Für 1 Runde erhält sie Benommen 1 und einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "TheCircleCannotNameYou": {
+            "Title": "Der Ring kann dich nicht benennen",
+            "Description": "Ihre Gewissheit bestimmt nicht länger den Raum, den du einnimmst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und deinen Klassen-SG."
+          },
+          "ThreeThreatsOneAudience": {
+            "Title": "Drei Bedrohungen, ein Publikum",
+            "Description": "Wenn dich mindestens drei Gegner bedrängen, wird jedes feindliche Gesicht zum Publikum für deine Weigerung zu brechen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Einschüchtern und Wahrnehmungswürfe."
+          },
+          "FourThreatsOneCollapseOfNerve": {
+            "Title": "Vier Bedrohungen, ein Nervenbruch",
+            "Description": "Wenn sich mindestens vier Gegner um dich drängen, begreift die bedrohende Quelle endlich, dass der Ring zur Bühne für deinen Trotz geworden ist. Für 1 Runde erhält sie Verängstigt 1 und Benommen 1."
+          },
+          "TurnTheChorusOnItself": {
+            "Title": "Dreh den Chor gegen sich selbst",
+            "Description": "Du antwortest dem Ring laut genug, dass seine Drohungen miteinander konkurrieren. Du darfst sofort als freie Aktion versuchen, gegen alle Gegner, die dich aktuell bedrohen, Für Ablenkung sorgen einzusetzen. Wende dieses Ergebnis manuell an."
+          },
+          "ShoutDownTheChorus": {
+            "Title": "Übertöne den Chor",
+            "Description": "Versucht eine dich bedrohende Quelle, den Ring mit Klang zu beherrschen, übertönt deine Weigerung sie. Nach einem Effekt der Kategorie Hörbar ist die feindliche Quelle für 1 Runde Taub und erhält einen Situationsmalus von -1 auf Wahrnehmungswürfe."
+          },
+          "FearTurnsIntoCommand": {
+            "Title": "Furcht wird zu Befehl",
+            "Description": "Du nimmst die Energie des Furchteffekts und verwendest sie, um den Augenblick an dich zu reißen. Nach einem Furchteffekt erhältst du für 1 Runde einen Zustandsbonus von +1 auf Angriffswürfe und deinen Willens-SG."
+          },
+          "TheRingHasToListen": {
+            "Title": "Der Ring muss zuhören",
+            "Description": "Deine Fassung zwingt Aufmerksamkeit, statt sie nur auszuhalten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Diplomatie- und Wahrnehmungswürfe."
+          },
+          "TheirFocusPointsInward": {
+            "Title": "Ihr Fokus zeigt nach innen",
+            "Description": "Eine dich bedrohende Quelle verwendet so viel Aufmerksamkeit darauf, den Ring zusammenzuhalten, dass sie sich selbst entblößt. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Klassen-SG."
+          },
+          "CallTheOpening": {
+            "Title": "Ruf die Öffnung",
+            "Description": "Deine Klarheit findet nicht nur für dich einen Weg. Wähle einen Verbündeten innerhalb von 9 m, der dich hören kann; dieser Verbündete darf sofort als freie Aktion einen Schritt auf dich zu oder auf ein Feld angrenzend zu einem der Gegner ausführen, die dich bedrohen. Wende dieses Ergebnis manuell an."
           }
         }
       }
@@ -1286,6 +1446,27 @@
           },
           "FourShadowsOneFlash": {
             "Name": "Vier Schatten, ein Lichtblitz"
+          },
+          "MakeThemWatchEachOther": {
+            "Name": "Lass sie einander beobachten"
+          },
+          "ThreeBladesHideTheTell": {
+            "Name": "Drei Klingen verbergen deine Absicht"
+          },
+          "BreakTheirApproach": {
+            "Name": "Brich ihren Anmarsch"
+          },
+          "MagicMakesABlindSide": {
+            "Name": "Magie schafft einen toten Winkel"
+          },
+          "CrowdFeedsTheArc": {
+            "Name": "Das Gedränge speist den Bogen"
+          },
+          "ThreeThreatsOneAfterimage": {
+            "Name": "Drei Bedrohungen, ein Nachbild"
+          },
+          "FourThreatsOneFaultline": {
+            "Name": "Vier Bedrohungen, eine Bruchlinie"
           }
         },
         "Fortitude": {
@@ -1339,6 +1520,27 @@
           },
           "TurnTheirWeightAgainstThem": {
             "Name": "Wende ihr Gewicht gegen sie"
+          },
+          "OvercommitmentCostsThem": {
+            "Name": "Überziehen kostet Kraft"
+          },
+          "ShoulderThroughTheCrush": {
+            "Name": "Durch das Gedränge schultern"
+          },
+          "ThreeBodiesOneBearing": {
+            "Name": "Drei Körper, ein Widerlager"
+          },
+          "FourBodiesBreakTheirOwnLine": {
+            "Name": "Vier Körper brechen ihre eigene Linie"
+          },
+          "TheirGripGoesSoft": {
+            "Name": "Ihr Griff wird weich"
+          },
+          "WeightBecomesImpact": {
+            "Name": "Gewicht wird zu Wucht"
+          },
+          "BodyFindsTheSeam": {
+            "Name": "Der Körper findet die Naht"
           }
         },
         "Reflex": {
@@ -1395,6 +1597,30 @@
           },
           "NeverStopInTheCenter": {
             "Name": "Bleib nie in der Mitte stehen"
+          },
+          "TheirEyesCollide": {
+            "Name": "Ihre Blicke prallen aufeinander"
+          },
+          "MotionHidesMotion": {
+            "Name": "Bewegung verbirgt Bewegung"
+          },
+          "ThreeThreatsOneSlipstream": {
+            "Name": "Drei Bedrohungen, ein Windschatten"
+          },
+          "FourThreatsOneTangle": {
+            "Name": "Vier Bedrohungen, ein Gewirr"
+          },
+          "SourceLosesTheLane": {
+            "Name": "Die Quelle verliert die Bahn"
+          },
+          "YouAreTheMovingGap": {
+            "Name": "Du bist die wandernde Lücke"
+          },
+          "MakeThemTurnTooFar": {
+            "Name": "Zwing sie zur Überdrehung"
+          },
+          "TheRingCannotFaceEverywhere": {
+            "Name": "Der Ring kann nicht überall hinsehen"
           }
         },
         "Will": {
@@ -1451,6 +1677,30 @@
           },
           "MindAboveTheRing": {
             "Name": "Der Geist über dem Ring"
+          },
+          "OneMindBreaksRank": {
+            "Name": "Ein Geist bricht aus der Reihe"
+          },
+          "TheCircleCannotNameYou": {
+            "Name": "Der Ring kann dich nicht benennen"
+          },
+          "ThreeThreatsOneAudience": {
+            "Name": "Drei Bedrohungen, ein Publikum"
+          },
+          "FourThreatsOneCollapseOfNerve": {
+            "Name": "Vier Bedrohungen, ein Nervenbruch"
+          },
+          "ShoutDownTheChorus": {
+            "Name": "Übertöne den Chor"
+          },
+          "FearTurnsIntoCommand": {
+            "Name": "Furcht wird zu Befehl"
+          },
+          "TheRingHasToListen": {
+            "Name": "Der Ring muss zuhören"
+          },
+          "TheirFocusPointsInward": {
+            "Name": "Ihr Fokus zeigt nach innen"
           }
         }
       }

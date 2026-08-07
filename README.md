@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.19.1` keeps **Bloodied Triumphs** complete at 120 cards and **Surrounded, Still Standing** at 80/120 cards after its 80-card review. The review corrects the impact of **Arc Through the Crowd**, gives **Four Steps, One Misstep** a distinct four-threat formation-break mechanic, and adds an internal duplicate-effect regression guard without changing any published card ID.
+Version `0.1.0-dev.20` completes **Surrounded, Still Standing** at 120 cards while keeping **Bloodied Triumphs** complete at 120 cards. The final Surrounded pass adds forty formation-focused results across Attack, Fortitude, Reflex, and Will, with more movement, reaction interaction, ally support, and opponent-in-ring conditions instead of expanding resistance or immunity series. All previously published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -67,17 +67,18 @@ Bloodied Triumphs is complete at 120 cards:
 - 108 automated Effect Engine cards;
 - 12 explicit manual cards.
 
-Surrounded, Still Standing has completed its 80-card review. The review strengthens impact consistency, removes the duplicated four-threat Reflex mechanic, and adds a regression guard for exact internal effect duplication while preserving all published IDs.
+Surrounded, Still Standing is complete at 120 cards:
 
-Surrounded, Still Standing now contains 80/120 cards:
+- thirty Attack-deck cards, split evenly between 15 ordinary and 15 spell critical hits;
+- thirty Fortitude-deck cards for critically successful Fortitude saves;
+- thirty Reflex-deck cards for critically successful Reflex saves;
+- thirty Will-deck cards for critically successful Will saves;
+- 100 automated Effect Engine cards and 20 explicit manual tactical results;
+- final-pass escalation remains sparse, with exactly one three-threat and one four-threat result added per deck;
+- formation-specific target effects can require the current opponent itself to be a counted melee threat;
+- exact automated effect overlap with Bloodied Triumphs remains limited to the nine reviewed legacy signatures, while internal exact duplicates remain limited to the two intentional reviewed pairs.
 
-- twenty Attack-deck cards, split evenly between ten ordinary and ten spell critical hits;
-- twenty Fortitude-deck cards for critically successful Fortitude saves;
-- twenty Reflex-deck cards for critically successful Reflex saves;
-- twenty Will-deck cards for critically successful Will saves;
-- 70 automated Effect Engine cards and 10 explicit manual tactical results across the theme;
-- all seventy require the live Surrounded trigger, while selected stronger cards additionally require three or four threatening enemies;
-- formation-specific target effects can require the current opponent itself to be a counted melee threat.
+Against All Odds therefore currently contains 240/480 planned cards across two complete themes.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 

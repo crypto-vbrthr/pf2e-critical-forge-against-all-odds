@@ -63,7 +63,7 @@ export function buildAgainstAllOddsPacks(settings = {}) {
       addOn: MODULE_ID,
       theme: theme.id,
       conditionPath: theme.conditionPath,
-      contentStatus: theme.id === THEME_IDS.BLOODIED ? "complete" : theme.id === THEME_IDS.SURROUNDED ? "in-progress" : "foundation",
+      contentStatus: (theme.id === THEME_IDS.BLOODIED || theme.id === THEME_IDS.SURROUNDED) ? "complete" : "foundation",
       plannedCardsPerDeck: 30
     },
     decks: Object.fromEntries(SPECIALIZED_DECK_TYPES.map((deckType) => [deckType, {
