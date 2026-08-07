@@ -51,9 +51,12 @@ The test suite covers:
 
 - ten first-pass Surrounded, Still Standing Attack cards, split 5/5 between ordinary and spell critical hits;
 - ten first-pass Surrounded, Still Standing Fortitude cards with Fortitude save isolation;
-- dynamic Surrounded gating plus three- and four-threat nested conditions in both published Surrounded decks;
+- ten first-pass Surrounded, Still Standing Reflex cards with Reflex save isolation;
+- ten first-pass Surrounded, Still Standing Will cards with Will save isolation;
+- dynamic Surrounded gating plus three- and four-threat nested conditions across all four published Surrounded decks;
+- Surrounded Will resolve, fear reversal, mental-defense, presence, target-role, and manual Demoralize coverage;
 - Surrounded localization, saving-actor/hostile-source target roles, tone/impact, filter, and schema-2 effect contracts.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current development baseline: 78 passing tests. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.
+Current development baseline: 99 passing tests. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.

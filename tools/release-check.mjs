@@ -70,6 +70,8 @@ const { BLOODIED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "sc
 const { BLOODIED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-will.js")).href);
 const { SURROUNDED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-attack.js")).href);
 const { SURROUNDED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-fortitude.js")).href);
+const { SURROUNDED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-reflex.js")).href);
+const { SURROUNDED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-will.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -114,6 +116,20 @@ check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"),
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Fortitude cards require critical save success.");
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Surrounded Fortitude cards must require Fortitude.");
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Fortitude cards must use the dynamic Surrounded condition.");
+
+check(SURROUNDED_REFLEX_CARDS.length === 10, "Surrounded, Still Standing Reflex deck must contain ten first-pass cards.");
+check(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size === 10, "Surrounded Reflex card IDs must be unique.");
+check(SURROUNDED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Surrounded Reflex cards must remain in the Reflex deck.");
+check(SURROUNDED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Reflex cards require critical save success.");
+check(SURROUNDED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Surrounded Reflex cards must require Reflex.");
+check(SURROUNDED_REFLEX_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Reflex cards must use the dynamic Surrounded condition.");
+
+check(SURROUNDED_WILL_CARDS.length === 10, "Surrounded, Still Standing Will deck must contain ten first-pass cards.");
+check(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size === 10, "Surrounded Will card IDs must be unique.");
+check(SURROUNDED_WILL_CARDS.every((card) => card.deckType === "will"), "Surrounded Will cards must remain in the Will deck.");
+check(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Will cards require critical save success.");
+check(SURROUNDED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Surrounded Will cards must require Will.");
+check(SURROUNDED_WILL_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Will cards must use the dynamic Surrounded condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

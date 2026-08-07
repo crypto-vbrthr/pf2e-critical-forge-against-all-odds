@@ -9,6 +9,8 @@ import { BLOODIED_REFLEX_CARDS } from "../scripts/data/cards/bloodied-reflex.js"
 import { BLOODIED_WILL_CARDS } from "../scripts/data/cards/bloodied-will.js";
 import { SURROUNDED_ATTACK_CARDS } from "../scripts/data/cards/surrounded-attack.js";
 import { SURROUNDED_FORTITUDE_CARDS } from "../scripts/data/cards/surrounded-fortitude.js";
+import { SURROUNDED_REFLEX_CARDS } from "../scripts/data/cards/surrounded-reflex.js";
+import { SURROUNDED_WILL_CARDS } from "../scripts/data/cards/surrounded-will.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -691,6 +693,150 @@ test("Surrounded Fortitude first pass uses Forge-supported tones, impacts, filte
     if (card.effect) {
       assert.equal(card.effect.definition.schemaVersion, 2, card.id);
       assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Fortitude."), true, card.id);
+    }
+  }
+});
+
+
+test("Surrounded, Still Standing first Reflex pass contains ten unique critical-save cards", () => {
+  assert.equal(SURROUNDED_REFLEX_CARDS.length, 10);
+  assert.equal(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.metadata.contentBatch === 15), true);
+});
+
+test("all Surrounded Reflex cards use the dynamic surrounded gate", () => {
+  for (const card of SURROUNDED_REFLEX_CARDS) {
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.matched" && leaf.operator === "eq" && leaf.value === true), true, card.id);
+    assert.equal(Object.isFrozen(card), true);
+    assert.equal(Object.isFrozen(card.conditions), true);
+  }
+});
+
+test("heavier Surrounded Reflex results require three or four threatening enemies", () => {
+  const three = SURROUNDED_REFLEX_CARDS.find((card) => card.id.endsWith("ssr-003-three-threats-one-current"));
+  const four = SURROUNDED_REFLEX_CARDS.find((card) => card.id.endsWith("ssr-004-four-threats-open-ground"));
+  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
+  assert.equal(conditionLeaves(four.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+});
+
+test("Surrounded Reflex first pass keeps boons on the saver and counterpressure on the hostile source", () => {
+  const automated = SURROUNDED_REFLEX_CARDS.filter((card) => card.effect);
+  assert.equal(automated.length, 9);
+  assert.deepEqual(SURROUNDED_REFLEX_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssr-010-ghost-through-the-ring"]);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 7);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 2);
+});
+
+test("Surrounded Reflex first pass covers mobility, anti-flanking, precision defense, and counter-openings", () => {
+  const components = SURROUNDED_REFLEX_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "movement" && component.movementType === "all" && component.value === 5), true);
+  assert.equal(components.some((component) => component.type === "immunity" && component.immunityType === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "precision" && component.value === 3), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "concealed"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "modifier" && component.selector === "reflex-dc" && component.value === -1), true);
+});
+
+test("Surrounded Reflex card and effect localization keys exist in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const language of [de, en]) {
+    for (const card of SURROUNDED_REFLEX_CARDS) {
+      assert.equal(typeof getPath(language, card.titleKey), "string", card.titleKey);
+      assert.equal(typeof getPath(language, card.descriptionKey), "string", card.descriptionKey);
+      if (card.effect) assert.equal(typeof getPath(language, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Surrounded Reflex first pass uses Forge-supported tones, impacts, filters, and schema-2 effects", () => {
+  const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const impacts = new Set(["light", "moderate", "strong"]);
+  for (const card of SURROUNDED_REFLEX_CARDS) {
+    assert.equal(tones.has(card.tone), true, card.id);
+    assert.equal(impacts.has(card.impact), true, card.id);
+    for (const key of FILTER_KEYS) assert.equal(Array.isArray(card.filters[key]), true, `${card.id}:${key}`);
+    if (card.effect) {
+      assert.equal(card.effect.definition.schemaVersion, 2, card.id);
+      assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Reflex."), true, card.id);
+    }
+  }
+});
+
+
+test("Surrounded, Still Standing first Will pass contains ten unique critical-save cards", () => {
+  assert.equal(SURROUNDED_WILL_CARDS.length, 10);
+  assert.equal(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
+  assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.deckType === "will"), true);
+  assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
+  assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.metadata.contentBatch === 16), true);
+});
+
+test("all Surrounded Will cards use the dynamic surrounded gate", () => {
+  for (const card of SURROUNDED_WILL_CARDS) {
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.matched" && leaf.operator === "eq" && leaf.value === true), true, card.id);
+    assert.equal(Object.isFrozen(card), true);
+    assert.equal(Object.isFrozen(card.conditions), true);
+  }
+});
+
+test("heavier Surrounded Will results require three or four threatening enemies", () => {
+  const three = SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-003-three-threats-one-answer"));
+  const four = SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-004-four-threats-one-doubt"));
+  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
+  assert.equal(conditionLeaves(four.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+});
+
+test("Surrounded Will first pass keeps most boons on the saver and two counterpressure effects on the hostile source", () => {
+  const automated = SURROUNDED_WILL_CARDS.filter((card) => card.effect);
+  assert.equal(automated.length, 9);
+  assert.deepEqual(SURROUNDED_WILL_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssw-010-answer-every-voice"]);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 7);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 2);
+});
+
+test("Surrounded Will first pass covers resolve, fear reversal, mental defense, presence, and counterpressure", () => {
+  const components = SURROUNDED_WILL_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "modifier" && component.selector === "will-dc" && component.value === 2), true);
+  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("will") && component.selector.includes("will-dc")), true);
+  assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "mental" && component.value === 3), true);
+  assert.equal(components.some((component) => component.type === "immunity" && component.immunityType === "controlled"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "frightened"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "stupefied"), true);
+  assert.deepEqual(SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-005-fear-finds-no-leader")).filters.attackTraits, ["fear"]);
+  assert.deepEqual(SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-006-no-command-owns-the-circle")).filters.attackTraits, ["mental"]);
+});
+
+test("Surrounded Will card and effect localization keys exist in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const language of [de, en]) {
+    for (const card of SURROUNDED_WILL_CARDS) {
+      assert.equal(typeof getPath(language, card.titleKey), "string", card.titleKey);
+      assert.equal(typeof getPath(language, card.descriptionKey), "string", card.descriptionKey);
+      if (card.effect) assert.equal(typeof getPath(language, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Surrounded Will first pass uses Forge-supported tones, impacts, filters, and schema-2 effects", () => {
+  const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const impacts = new Set(["light", "moderate", "strong"]);
+  for (const card of SURROUNDED_WILL_CARDS) {
+    assert.equal(tones.has(card.tone), true, card.id);
+    assert.equal(impacts.has(card.impact), true, card.id);
+    for (const key of FILTER_KEYS) assert.equal(Array.isArray(card.filters[key]), true, `${card.id}:${key}`);
+    if (card.effect) {
+      assert.equal(card.effect.definition.schemaVersion, 2, card.id);
+      assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Will."), true, card.id);
     }
   }
 });

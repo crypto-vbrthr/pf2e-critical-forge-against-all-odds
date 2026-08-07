@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.13` keeps **Bloodied Triumphs** complete at 120 cards and advances **Surrounded, Still Standing** to 20 cards: ten Attack and ten Fortitude results. Both decks use the real battlefield threat evaluation, with stronger results that additionally require three or four threatening enemies.
+Version `0.1.0-dev.15` keeps **Bloodied Triumphs** complete at 120 cards and completes the first ten-card pass across all four **Surrounded, Still Standing** decks, bringing that theme to 40 cards. All four published Surrounded decks use the live battlefield threat evaluation; selected stronger results additionally require three or four threatening enemies.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -67,13 +67,15 @@ Bloodied Triumphs is complete at 120 cards:
 - 108 automated Effect Engine cards;
 - 12 explicit manual cards.
 
-Surrounded, Still Standing is at 20/120 cards:
+Surrounded, Still Standing now contains 40/120 cards:
 
 - ten Attack-deck cards, split evenly between five ordinary and five spell critical hits;
 - ten Fortitude-deck cards for critically successful Fortitude saves;
-- eighteen automated Effect Engine cards and two explicit manual tactical results across the two decks;
-- all twenty require the live Surrounded trigger, while stronger cards additionally require three or four threatening enemies.
+- ten Reflex-deck cards for critically successful Reflex saves;
+- ten Will-deck cards for critically successful Will saves;
+- each published Surrounded deck contains nine automated Effect Engine cards and one explicit manual tactical result;
+- all forty require the live Surrounded trigger, while selected stronger cards additionally require three or four threatening enemies.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 
-Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. The published Surrounded Attack and Fortitude cards require `extensions.againstAllOdds.surrounded.matched == true`; selected stronger results additionally require three or four threatening enemies. Attack cards remain isolated to `attack`; Fortitude cards remain isolated to `fortitude` and require the Fortitude save filter.
+Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`.

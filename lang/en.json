@@ -650,6 +650,90 @@
             "Title": "Set Your Feet",
             "Description": "You root yourself against the whole ring at once. Until the start of your next turn, reduce any forced movement caused by a hostile effect by 10 feet, to a minimum of 0 feet. Apply this result manually."
           }
+        },
+        "Reflex": {
+          "ThreadBetweenBlades": {
+            "Title": "Thread Between the Blades",
+            "Description": "The ring leaves no path, so you turn the bodies inside it into landmarks. For 1 round, you gain a +2 circumstance bonus to Acrobatics checks."
+          },
+          "BodiesBecomeCover": {
+            "Title": "Bodies Become Cover",
+            "Description": "For one heartbeat, the enemies around you block one another's sightlines. You are concealed for 1 round."
+          },
+          "ThreeThreatsOneCurrent": {
+            "Title": "Three Threats, One Current",
+            "Description": "With three or more enemies threatening you, their motions merge into a single readable flow. For 1 round, you gain a +1 status bonus to Reflex saves."
+          },
+          "FourThreatsOpenGround": {
+            "Title": "Four Threats, Open Ground",
+            "Description": "With four or more enemies closing in, the only open ground is the ground you create. For 1 round, you gain a +5-foot circumstance bonus to all your Speeds."
+          },
+          "OverreachOpensTheSource": {
+            "Title": "Overreach Opens the Source",
+            "Description": "The hostile source commits too far into the crowded attack. It becomes off-guard for 1 round."
+          },
+          "BalanceTurnsAgainstThem": {
+            "Title": "Balance Turns Against Them",
+            "Description": "Your escape forces the hostile source to recover its footing instead of pressing the advantage. For 1 round, its Reflex DC takes a -1 circumstance penalty."
+          },
+          "NoOneOwnsYourBack": {
+            "Title": "No One Owns Your Back",
+            "Description": "The ring cannot decide which side of you is vulnerable. For 1 round, you are immune to the off-guard condition."
+          },
+          "TooManyBodiesNoCleanShot": {
+            "Title": "Too Many Bodies, No Clean Shot",
+            "Description": "Every enemy in the ring spoils another's perfect angle. For 1 round, you gain resistance 3 to precision damage."
+          },
+          "EyesOnEveryOpening": {
+            "Title": "Eyes on Every Opening",
+            "Description": "Tracking several threats at once sharpens your sense for the gap between them. For 1 round, you gain a +1 circumstance bonus to Perception checks and Perception DC."
+          },
+          "GhostThroughTheRing": {
+            "Title": "Ghost Through the Ring",
+            "Description": "You may immediately Stride as a free action, moving no more than half your Speed. This movement does not trigger reactions from creatures that currently threaten you; if possible, end where fewer enemies threaten you. Apply this result manually."
+          }
+        },
+        "Will": {
+          "CenterOfYourOwnMind": {
+            "Title": "Center of Your Own Mind",
+            "Description": "Every threat pushes inward, but your thoughts keep one inviolate center. For 1 round, your Will DC gains a +2 circumstance bonus."
+          },
+          "NoiseBecomesRhythm": {
+            "Title": "Noise Becomes Rhythm",
+            "Description": "Too many threats compete for your attention and become a pattern instead of a distraction. For 1 round, you gain a +1 circumstance bonus to Will saves."
+          },
+          "ThreeThreatsOneAnswer": {
+            "Title": "Three Threats, One Answer",
+            "Description": "With three or more enemies pressing in, every demand receives the same answer: no. For 1 round, you gain a +1 status bonus to Will saves and Will DC."
+          },
+          "FourThreatsOneDoubt": {
+            "Title": "Four Threats, One Doubt",
+            "Description": "Four or more enemies close around you, and the hostile source is the first to wonder why you still stand. It becomes stupefied 1 for 1 round."
+          },
+          "FearFindsNoLeader": {
+            "Title": "Fear Finds No Leader",
+            "Description": "The fear meant to make the ring feel larger rebounds toward the voice that shaped it. The hostile source becomes frightened 1 for 1 round."
+          },
+          "NoCommandOwnsTheCircle": {
+            "Title": "No Command Owns the Circle",
+            "Description": "A hostile will tries to turn the crowd into a cage and finds your mind already beyond its reach. After a mental effect, you are immune to the controlled condition for 1 round."
+          },
+          "CrowdCannotEnterWithThem": {
+            "Title": "The Crowd Cannot Enter With Them",
+            "Description": "The enemies around you can crowd your body, not your thoughts. For 1 round, you gain resistance 3 to mental damage."
+          },
+          "NameAboveTheNoise": {
+            "Title": "Your Name Above the Noise",
+            "Description": "Threats, curses, and shouted orders blur together beneath the certainty of who you are. For 1 round, you gain a +1 status bonus to checks based on Wisdom and Charisma."
+          },
+          "PresenceFillsTheRing": {
+            "Title": "Presence Fills the Ring",
+            "Description": "Surrounded, you stop looking like prey and start looking like the reason the circle formed. For 1 round, you gain a +1 circumstance bonus to Diplomacy and Intimidation checks."
+          },
+          "AnswerEveryVoice": {
+            "Title": "Answer Every Voice",
+            "Description": "Choose one enemy that currently threatens you. You may immediately attempt to Demoralize that enemy as a free action. Apply this result manually."
+          }
         }
       }
     },
@@ -1045,6 +1129,64 @@
           },
           "CrowdGivesYouLeverage": {
             "Name": "The Crowd Gives You Leverage"
+          }
+        },
+        "Reflex": {
+          "ThreadBetweenBlades": {
+            "Name": "Thread Between the Blades"
+          },
+          "BodiesBecomeCover": {
+            "Name": "Bodies Become Cover"
+          },
+          "ThreeThreatsOneCurrent": {
+            "Name": "Three Threats, One Current"
+          },
+          "FourThreatsOpenGround": {
+            "Name": "Four Threats, Open Ground"
+          },
+          "OverreachOpensTheSource": {
+            "Name": "Overreach Opens the Source"
+          },
+          "BalanceTurnsAgainstThem": {
+            "Name": "Balance Turns Against Them"
+          },
+          "NoOneOwnsYourBack": {
+            "Name": "No One Owns Your Back"
+          },
+          "TooManyBodiesNoCleanShot": {
+            "Name": "Too Many Bodies, No Clean Shot"
+          },
+          "EyesOnEveryOpening": {
+            "Name": "Eyes on Every Opening"
+          }
+        },
+        "Will": {
+          "CenterOfYourOwnMind": {
+            "Name": "Center of Your Own Mind"
+          },
+          "NoiseBecomesRhythm": {
+            "Name": "Noise Becomes Rhythm"
+          },
+          "ThreeThreatsOneAnswer": {
+            "Name": "Three Threats, One Answer"
+          },
+          "FourThreatsOneDoubt": {
+            "Name": "Four Threats, One Doubt"
+          },
+          "FearFindsNoLeader": {
+            "Name": "Fear Finds No Leader"
+          },
+          "NoCommandOwnsTheCircle": {
+            "Name": "No Command Owns the Circle"
+          },
+          "CrowdCannotEnterWithThem": {
+            "Name": "The Crowd Cannot Enter With Them"
+          },
+          "NameAboveTheNoise": {
+            "Name": "Your Name Above the Noise"
+          },
+          "PresenceFillsTheRing": {
+            "Name": "Presence Fills the Ring"
           }
         }
       }

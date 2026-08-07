@@ -650,6 +650,90 @@
             "Title": "Setz die Füße",
             "Description": "Du stemmst dich gegen den gesamten Ring zugleich. Bis zum Beginn deines nächsten Zuges reduzierst du jede durch einen feindlichen Effekt verursachte erzwungene Bewegung um 3 m, auf ein Minimum von 0 m. Wende dieses Ergebnis manuell an."
           }
+        },
+        "Reflex": {
+          "ThreadBetweenBlades": {
+            "Title": "Durch das Klingenwerk",
+            "Description": "Der Ring lässt keinen Weg frei, also machst du die Körper darin zu Wegmarken. Für 1 Runde erhältst du einen Situationsbonus von +2 auf Akrobatikwürfe."
+          },
+          "BodiesBecomeCover": {
+            "Title": "Körper werden zu Deckung",
+            "Description": "Für einen Herzschlag blockieren die Gegner um dich herum einander die Sichtlinien. Du bist für 1 Runde verborgen."
+          },
+          "ThreeThreatsOneCurrent": {
+            "Title": "Drei Bedrohungen, eine Strömung",
+            "Description": "Bedrohen dich drei oder mehr Gegner, verschmelzen ihre Bewegungen zu einer einzigen lesbaren Strömung. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Reflexwürfe."
+          },
+          "FourThreatsOpenGround": {
+            "Title": "Vier Bedrohungen, freies Feld",
+            "Description": "Schließen vier oder mehr Gegner den Ring, ist das einzige freie Feld dasjenige, das du selbst erschaffst. Für 1 Runde erhältst du einen Situationsbonus von 1,5 m auf alle deine Bewegungsraten."
+          },
+          "OverreachOpensTheSource": {
+            "Title": "Überdehnung schafft eine Lücke",
+            "Description": "Die feindliche Quelle lehnt sich zu weit in den Angriff aus dem Gedränge. Sie ist für 1 Runde Auf dem falschen Fuß."
+          },
+          "BalanceTurnsAgainstThem": {
+            "Title": "Das Gleichgewicht kippt gegen sie",
+            "Description": "Dein Ausweichen zwingt die feindliche Quelle, erst wieder festen Stand zu finden, statt ihren Vorteil auszunutzen. Für 1 Runde erhält ihr Reflex-SG einen Situationsmalus von -1."
+          },
+          "NoOneOwnsYourBack": {
+            "Title": "Keiner bekommt deinen Rücken",
+            "Description": "Der Ring kann nicht entscheiden, welche Seite von dir verwundbar sein soll. Für 1 Runde bist du gegen den Zustand Auf dem falschen Fuß immun."
+          },
+          "TooManyBodiesNoCleanShot": {
+            "Title": "Zu viele Körper, kein sauberer Treffer",
+            "Description": "Jeder Gegner im Ring verdirbt einem anderen den perfekten Winkel. Für 1 Runde erhältst du Resistenz 3 gegen Präzisionsschaden."
+          },
+          "EyesOnEveryOpening": {
+            "Title": "Augen auf jede Öffnung",
+            "Description": "Mehrere Bedrohungen zugleich zu verfolgen schärft deinen Sinn für die Lücken zwischen ihnen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und deinen Wahrnehmungs-SG."
+          },
+          "GhostThroughTheRing": {
+            "Title": "Wie ein Geist durch den Ring",
+            "Description": "Du darfst sofort als freie Aktion Laufen, jedoch höchstens bis zur Hälfte deiner Bewegungsrate. Diese Bewegung löst keine Reaktionen von Kreaturen aus, die dich derzeit bedrohen; wenn möglich, beende sie an einem Ort, an dem dich weniger Gegner bedrohen. Wende dieses Ergebnis manuell an."
+          }
+        },
+        "Will": {
+          "CenterOfYourOwnMind": {
+            "Title": "Mittelpunkt deines eigenen Geistes",
+            "Description": "Jede Bedrohung drängt nach innen, doch deine Gedanken bewahren einen unantastbaren Mittelpunkt. Für 1 Runde erhält dein Willens-SG einen Situationsbonus von +2."
+          },
+          "NoiseBecomesRhythm": {
+            "Title": "Lärm wird zu Rhythmus",
+            "Description": "Zu viele Bedrohungen kämpfen um deine Aufmerksamkeit und werden dadurch zu einem Muster statt zu einer Ablenkung. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe."
+          },
+          "ThreeThreatsOneAnswer": {
+            "Title": "Drei Bedrohungen, eine Antwort",
+            "Description": "Bedrängen dich drei oder mehr Gegner, erhält jede Forderung dieselbe Antwort: Nein. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Willenswürfe und deinen Willens-SG."
+          },
+          "FourThreatsOneDoubt": {
+            "Title": "Vier Bedrohungen, ein Zweifel",
+            "Description": "Vier oder mehr Gegner schließen den Ring, und die feindliche Quelle beginnt als Erste zu zweifeln, warum du noch stehst. Sie erhält für 1 Runde Benommen 1."
+          },
+          "FearFindsNoLeader": {
+            "Title": "Furcht findet keinen Anführer",
+            "Description": "Die Furcht, die den Ring größer erscheinen lassen sollte, schlägt auf die Stimme zurück, die sie geformt hat. Die feindliche Quelle erhält für 1 Runde Verängstigt 1."
+          },
+          "NoCommandOwnsTheCircle": {
+            "Title": "Kein Befehl beherrscht den Ring",
+            "Description": "Ein feindlicher Wille versucht, aus der Menge einen Käfig zu machen, und findet deinen Geist bereits außerhalb seiner Reichweite. Nach einem mentalen Effekt bist du für 1 Runde gegen den Zustand Gesteuert immun."
+          },
+          "CrowdCannotEnterWithThem": {
+            "Title": "Die Menge kommt nicht mit hinein",
+            "Description": "Die Gegner um dich herum können deinen Körper bedrängen, nicht aber deine Gedanken. Für 1 Runde erhältst du Resistenz 3 gegen mentalen Schaden."
+          },
+          "NameAboveTheNoise": {
+            "Title": "Dein Name über dem Lärm",
+            "Description": "Drohungen, Flüche und gebrüllte Befehle verschwimmen unter der Gewissheit darüber, wer du bist. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf weisheits- und charismabasierte Würfe."
+          },
+          "PresenceFillsTheRing": {
+            "Title": "Präsenz füllt den Ring",
+            "Description": "Umzingelt hörst du auf, wie Beute auszusehen, und wirkst stattdessen wie der Grund, aus dem sich der Ring gebildet hat. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Diplomatie- und Einschüchternwürfe."
+          },
+          "AnswerEveryVoice": {
+            "Title": "Antworte jeder Stimme",
+            "Description": "Wähle einen Gegner, der dich derzeit bedroht. Du darfst sofort als freie Aktion versuchen, diesen Gegner zu Demoralisieren. Wende dieses Ergebnis manuell an."
+          }
         }
       }
     },
@@ -1045,6 +1129,64 @@
           },
           "CrowdGivesYouLeverage": {
             "Name": "Das Gedränge gibt dir Hebel"
+          }
+        },
+        "Reflex": {
+          "ThreadBetweenBlades": {
+            "Name": "Durch das Klingenwerk"
+          },
+          "BodiesBecomeCover": {
+            "Name": "Körper werden zu Deckung"
+          },
+          "ThreeThreatsOneCurrent": {
+            "Name": "Drei Bedrohungen, eine Strömung"
+          },
+          "FourThreatsOpenGround": {
+            "Name": "Vier Bedrohungen, freies Feld"
+          },
+          "OverreachOpensTheSource": {
+            "Name": "Überdehnung schafft eine Lücke"
+          },
+          "BalanceTurnsAgainstThem": {
+            "Name": "Das Gleichgewicht kippt gegen sie"
+          },
+          "NoOneOwnsYourBack": {
+            "Name": "Keiner bekommt deinen Rücken"
+          },
+          "TooManyBodiesNoCleanShot": {
+            "Name": "Zu viele Körper, kein sauberer Treffer"
+          },
+          "EyesOnEveryOpening": {
+            "Name": "Augen auf jede Öffnung"
+          }
+        },
+        "Will": {
+          "CenterOfYourOwnMind": {
+            "Name": "Mittelpunkt deines eigenen Geistes"
+          },
+          "NoiseBecomesRhythm": {
+            "Name": "Lärm wird zu Rhythmus"
+          },
+          "ThreeThreatsOneAnswer": {
+            "Name": "Drei Bedrohungen, eine Antwort"
+          },
+          "FourThreatsOneDoubt": {
+            "Name": "Vier Bedrohungen, ein Zweifel"
+          },
+          "FearFindsNoLeader": {
+            "Name": "Furcht findet keinen Anführer"
+          },
+          "NoCommandOwnsTheCircle": {
+            "Name": "Kein Befehl beherrscht den Ring"
+          },
+          "CrowdCannotEnterWithThem": {
+            "Name": "Die Menge kommt nicht mit hinein"
+          },
+          "NameAboveTheNoise": {
+            "Name": "Dein Name über dem Lärm"
+          },
+          "PresenceFillsTheRing": {
+            "Name": "Präsenz füllt den Ring"
           }
         }
       }

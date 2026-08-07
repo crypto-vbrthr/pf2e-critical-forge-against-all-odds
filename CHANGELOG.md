@@ -1,22 +1,36 @@
 # Changelog
 
-## 0.1.0-dev.13
+## 0.1.0-dev.15
 
 ### Added
-- Added the first ten **Surrounded, Still Standing** Fortitude cards for critically successful Fortitude saves while threatened by multiple enemies.
-- Added eight saving-actor boons, one hostile-source counterpressure effect, and one manual forced-movement brace result.
-- Added anchoring Fortitude DC, physical and persistent-damage resistance, grabbed/restrained protection, fast healing, Athletics/attack leverage, and stronger three-/four-threat defensive results.
+- Added the first ten **Surrounded, Still Standing** Will-deck cards for critically successful Will saves.
+- Added resolve, Will-DC reinforcement, fear reversal, mental resistance, controlled-condition protection, Wisdom/Charisma presence, and one manual Demoralize counter-moment.
+- Added two stronger Will results that require at least three or four currently threatening enemies.
 - Added German and English localization for all ten cards and nine automated effects.
 
 ### Tests
-- Added Fortitude deck count, save-filter isolation, dynamic Surrounded gate, three/four threat, target-role, effect-diversity, localization, tone/impact, filter, and schema-2 effect coverage.
-- Extended pack/runtime/release contracts so Surrounded now registers ten Attack and ten Fortitude cards.
-- Revalidated the complete 140-card add-on state against the Critical Forge `1.0.0-rc` pack and effect contracts.
+- Raised the automated suite to 99 tests with Will count, save/deck isolation, dynamic-gate, nested-threat, target-role, mental/fear filter, mechanical-coverage, localization, and Forge-contract coverage.
+- Revalidated Bloodied Triumphs at 120 cards and Surrounded, Still Standing at 40 cards against the actual Critical Forge `1.0.0-rc` normalizer, validator, selection matcher, and Effect Engine.
 
 ### Compatibility
-- Bloodied Triumphs remains unchanged at 120/120 cards.
-- Existing Surrounded Attack card IDs are unchanged; this build only adds ten Fortitude IDs.
-- Card, pack, effect, diagnostic, and extension-contract schemas remain unchanged.
+- Existing 150 published card IDs are unchanged; this build only adds ten Surrounded Will IDs.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
+
+## 0.1.0-dev.14
+
+### Added
+- Added the first ten **Surrounded, Still Standing** Reflex-deck cards for critically successful Reflex saves.
+- Added crowded-field Acrobatics, concealment, anti-flanking protection, precision resistance, hostile-source counter-openings, Perception reinforcement, and one manual reaction-safe escape result.
+- Added two stronger Reflex results that require at least three or four currently threatening enemies.
+- Added German and English localization for all ten cards and nine automated effects.
+
+### Tests
+- Raised the automated suite to 92 tests with Reflex count, save/deck isolation, dynamic-gate, nested-threat, target-role, mechanical-coverage, localization, and Forge-contract coverage.
+- Revalidated Bloodied Triumphs at 120 cards and Surrounded, Still Standing at 30 cards against the actual Critical Forge `1.0.0-rc` normalizer, validator, selection matcher, and Effect Engine.
+
+### Compatibility
+- Existing 140 published card IDs are unchanged; this build only adds ten Surrounded Reflex IDs.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
 
 ## 0.1.0-dev.12
 
