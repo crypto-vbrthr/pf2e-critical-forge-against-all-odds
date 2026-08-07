@@ -63,16 +63,19 @@ The test suite covers:
 - review assertions for **Arc Through the Crowd** impact and **Four Steps, One Misstep** mechanics;
 - final-pass manual movement, Shove/Escape, reaction-denial, ally-support, and formation-break results;
 - Surrounded localization, source/target roles, tone/impact, filter, and schema-2 effect contracts.
-- twenty Giant-Slayer Attack cards after two passes, split 10/10 between ordinary and spell critical hits;
-- twenty Giant-Slayer Fortitude critical-success cards after two passes with matching save/deck isolation;
-- twenty Giant-Slayer Reflex critical-success cards after two passes with matching save/deck isolation;
+- thirty Giant-Slayer Attack cards after three passes, split 15/15 between ordinary and spell critical hits;
+- thirty Giant-Slayer Fortitude, Reflex, and Will critical-success cards after three passes with matching save/deck isolation;
+- a complete 120-card Giant-Slayer set with 99 automated and 21 manual results;
+- final content batch `29`, with eight automated and two manual results in each final deck;
 - the dynamic Giant-Slayer gate on every published Giant-Slayer card;
-- +4 and +5 level-gap escalation conditions in every first-pass Giant-Slayer deck, plus one additional +4 and +5 escalation in both the second Attack and second Fortitude passes;
+- +4 and +5 level-gap escalation conditions across all three Giant-Slayer passes, ending with three +4 and three +5 escalation cards in every completed deck;
 - the first Attack pass keeps nine automated effects plus one manual result; the second Attack pass adds eight automated effects plus manual Tumble Through and ally-Step results; the second Fortitude pass adds eight automated effects plus manual Shove and Escape/Step results; the second Reflex and Will passes each add eight automated and two manual results;
 - saver/source targeting for Fortitude and Reflex boons and explicit hostile-target roles for Giant-Slayer counterpressure;
-- no resistance or immunity filler in either Giant-Slayer Fortitude pass, the first Reflex pass, or the second Attack pass;
+- no resistance or immunity filler in the final Giant-Slayer Fortitude, Reflex, or Will passes;
 - Giant-Slayer localization, tone/impact, immutable filter, and schema-2 effect contracts;
-- exact automated-effect uniqueness for published Giant-Slayer cards against Bloodied, Surrounded, and earlier Giant-Slayer mechanics.
+- exact automated-effect uniqueness for all 120 Giant-Slayer cards against Bloodied, Surrounded, and one another;
+- a strict same-gate mechanical-superset regression contract across the complete Giant-Slayer set;
+- final manual Trip and Sense Motive cards preserving normal PF2e prerequisites/retry restrictions while explicitly overriding only what their card text grants.
 - Giant-Slayer current-opponent threat evidence reusing the immutable Battlefield snapshot, including remote/rejected opponents;
 - canonical PF2e participant-size normalization, unknown-safe larger-opponent relations, and explicit `sizeGap >= 2` gating for second-pass scale geometry;
 - physical Fortitude/Reflex counterplay requiring the actual threatening opponent;
@@ -81,5 +84,5 @@ The test suite covers:
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.28.1` baseline: **192/192 tests**, **99.48% line coverage**, **94.92% branch coverage**, and **98.64% function coverage**. The current build contains **320 published cards and 275 automated card effects**; Giant-Slayer contributes **80 cards, 67 automated effects, and 13 manual results**. The 80-card review additionally proves that no automated Giant-Slayer card is a strict same-gate mechanical superset of another, preserves exact-signature uniqueness across published packs, and regression-tests PF2e-specific prone, stupefied, Demoralize, Shove, threat, and mindless-target interactions. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
+Current `0.1.0-dev.29` baseline: **200/200 tests**, **99.53% line coverage**, **95.06% branch coverage**, and **98.69% function coverage**. The current build contains **360 published cards and 307 automated card effects**; Giant-Slayer contributes **120 cards, 99 automated effects, and 21 manual results**. The completed Giant-Slayer set proves exact automated-signature uniqueness across published packs and preserves the strict same-gate mechanical-superset regression contract. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
 

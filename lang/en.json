@@ -1142,6 +1142,46 @@
           "ShareTheImpossibleOpening": {
             "Title": "Share the Impossible Opening",
             "Description": "The critical spell opens a moment too large to keep for yourself. One ally within 30 feet who can see the target may immediately Step as a free action. Apply this result manually."
+          },
+          "BreakTheRecovery": {
+            "Title": "Break the Recovery",
+            "Description": "The stronger foe tries to reset after the critical hit. You make the recovery cost another opening. For 1 round, the target takes a -1 circumstance penalty to attack rolls and Perception DC."
+          },
+          "SmallTargetHeavyPrice": {
+            "Title": "Small Target, Heavy Price",
+            "Description": "The larger foe loses strength trying to follow an angle built for someone smaller. For 1 round, the target is enfeebled 1 and takes a -1 circumstance penalty to Perception DC."
+          },
+          "FourLevelsOneBadAngle": {
+            "Title": "Four Levels, One Bad Angle",
+            "Description": "Against a foe four or more levels above you, one bad angle is enough to make overwhelming technique stumble. For 1 round, the target is off-guard and takes a -1 circumstance penalty to Perception DC."
+          },
+          "CallTheOpening": {
+            "Title": "Call the Opening",
+            "Description": "Your critical hit proves the stronger foe can be reached. Choose one ally within 30 feet who can see the target. That ally gains a +1 circumstance bonus to their next attack roll against the target before the start of your next turn. Apply this result manually."
+          },
+          "UseTheirStrengthAgainstTheGuard": {
+            "Title": "Use Their Strength Against the Guard",
+            "Description": "A foe at least two size steps larger commits too much mass to stop your hit. For 1 round, you gain a +1 circumstance bonus to Strike damage and AC."
+          },
+          "SpellThroughTheBlindSide": {
+            "Title": "Spell Through the Blind Side",
+            "Description": "The critical spell blooms where the stronger foe cannot track it cleanly. For 1 round, the target is dazzled and takes a -1 circumstance penalty to spell DC."
+          },
+          "MagicBendsTheColossus": {
+            "Title": "Magic Bends the Colossus",
+            "Description": "The larger foe can absorb force, but the critical spell makes that scale betray precision. For 1 round, the target is clumsy 1 and takes a -1 circumstance penalty to class DC."
+          },
+          "FiveLevelsStillVulnerable": {
+            "Title": "Five Levels, Still Vulnerable",
+            "Description": "Against a foe five or more levels above you, the critical spell proves that greater power still has a mind that can lose the thread. For 1 round, the target is stupefied 1 and off-guard."
+          },
+          "BorrowTheirPowersEcho": {
+            "Title": "Borrow Their Power's Echo",
+            "Description": "Your spell catches the stronger foe's pressure and sends the rhythm back through your own magic. For 1 round, you gain a +1 status bonus to spell damage rolls and saving throws."
+          },
+          "SendTheWarningThroughTheLine": {
+            "Title": "Send the Warning Through the Line",
+            "Description": "The critical spell shows everyone exactly how the stronger foe answers pressure. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next saving throw against the target before the start of your next turn. Apply this result manually."
           }
         },
         "Fortitude": {
@@ -1224,6 +1264,46 @@
           "BreakTheImpossibleHold": {
             "Title": "Break the Impossible Hold",
             "Description": "The stronger foe fails to make your body obey, and for one instant every hold feels breakable. If you are grabbed, restrained, or immobilized by the hostile source, you may immediately attempt to Escape as a free action with a +2 circumstance bonus. Otherwise, you may immediately Step. Apply this result manually."
+          },
+          "TakeTheMeasureOfForce": {
+            "Title": "Take the Measure of Force",
+            "Description": "The stronger foe tests your body and accidentally teaches you the exact weight of the next impact. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and Perception DC."
+          },
+          "TheBiggerTheyLean": {
+            "Title": "The Bigger They Lean",
+            "Description": "The larger foe commits its whole frame and discovers that mass takes time to recover. For 1 round, the hostile source is clumsy 1 and takes a -1 circumstance penalty to Perception DC."
+          },
+          "FourLevelsForceRunsOut": {
+            "Title": "Four Levels, Force Runs Out",
+            "Description": "Against a foe four or more levels above you, surviving the full effort leaves its next motion late. For 1 round, the hostile source is slowed 1 and takes a -1 circumstance penalty to Athletics checks."
+          },
+          "PainConvertsToLeverage": {
+            "Title": "Pain Converts to Leverage",
+            "Description": "You absorb what should have folded you and turn the surviving tension into useful force. You gain 3 temporary Hit Points and a +1 circumstance bonus to Athletics checks for 1 round."
+          },
+          "StandBeforeTheColossus": {
+            "Title": "Stand Before the Colossus",
+            "Description": "The stronger foe expects the impact to decide where you belong. If you are prone, you may immediately Stand as a free action; this movement does not trigger reactions from the hostile source. Otherwise, you may immediately Step. Apply this result manually."
+          },
+          "FrameOutlastsImpact": {
+            "Title": "Frame Outlasts Impact",
+            "Description": "Your body takes the stronger foe's measure and refuses to be defined by it. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and class DC."
+          },
+          "TheirWeightBecomesDelay": {
+            "Title": "Their Weight Becomes Delay",
+            "Description": "The larger foe cannot pull all that weight back into guard at once. For 1 round, the hostile source takes a 5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Reflex saves."
+          },
+          "FiveLevelsStrengthBuckles": {
+            "Title": "Five Levels, Strength Buckles",
+            "Description": "Against a foe five or more levels above you, surviving the impossible effort makes the stronger body pay for every ounce of force. For 1 round, the hostile source is enfeebled 1 and slowed 1."
+          },
+          "EndureThenCommandSpace": {
+            "Title": "Endure, Then Command Space",
+            "Description": "The stronger foe tried to dictate the battlefield with force. Your survival gives you the authority to push back. For 1 round, you gain a +1 status bonus to Athletics checks and class DC."
+          },
+          "BringTheWeightDown": {
+            "Title": "Bring the Weight Down",
+            "Description": "The larger foe's own mass gives you the line. If the hostile source is within your reach and you meet the normal prerequisites for Trip other than its size restriction, you may immediately attempt to Trip it as a free action with a +2 circumstance bonus to the Athletics check, ignoring Trip's normal size restriction. Otherwise, you may immediately Step toward the hostile source. Apply this result manually."
           }
         },
         "Reflex": {
@@ -1306,6 +1386,46 @@
           "OutsideTheKillingLine": {
             "Title": "Outside the Killing Line",
             "Description": "The stronger foe's failed attack gives you more than an empty square; it gives you a route out of the next one. You may immediately Stride up to half your Speed as a free action. This movement must end farther from the hostile source and does not trigger reactions from it. Apply this result manually."
+          },
+          "MoveBeforeTheWeightSettles": {
+            "Title": "Move Before the Weight Settles",
+            "Description": "The critical dodge leaves you moving while the stronger foe is still committed. For 1 round, you gain a +1 circumstance bonus to Reflex saves and Stealth checks."
+          },
+          "TooLargeToWatchBothSides": {
+            "Title": "Too Large to Watch Both Sides",
+            "Description": "The larger foe loses your angle across its own scale. For 1 round, the hostile source is dazzled and takes a -1 circumstance penalty to Athletics checks."
+          },
+          "FourLevelsMomentumBreaksTheTurn": {
+            "Title": "Four Levels, Momentum Breaks the Turn",
+            "Description": "Against a foe four or more levels above you, the perfect evasion forces overwhelming momentum to finish the wrong movement. For 1 round, the hostile source is slowed 1 and off-guard."
+          },
+          "TheGapTravelsWithYou": {
+            "Title": "The Gap Travels with You",
+            "Description": "Against a foe at least two size steps larger, every change of angle creates another blind corridor. For 1 round, you gain a 5-foot status bonus to all Speeds and a +1 circumstance bonus to Stealth checks."
+          },
+          "VaultTheReach": {
+            "Title": "Vault the Reach",
+            "Description": "The larger foe's reach becomes a line to cross rather than a wall to fear. You may immediately Leap as a free action. This Leap does not trigger reactions from the hostile source. Apply this result manually."
+          },
+          "TheyCannotCorrectTwice": {
+            "Title": "They Cannot Correct Twice",
+            "Description": "The stronger foe adjusts once and has nothing left for your second angle. For 1 round, the hostile source takes a -1 circumstance penalty to Acrobatics checks and a 5-foot circumstance penalty to all Speeds."
+          },
+          "TurnEvasionIntoPressure": {
+            "Title": "Turn Evasion into Pressure",
+            "Description": "The critical escape is not retreat. It is the instant you choose the next attack line. For 1 round, you gain a +1 circumstance bonus to attack rolls and AC."
+          },
+          "FiveLevelsRunTheImpossibleLine": {
+            "Title": "Five Levels, Run the Impossible Line",
+            "Description": "Against a foe five or more levels above you, perfect timing opens a route that should not exist. You may immediately Stride up to your Speed as a free action, ending farther from the hostile source than you began. This movement does not trigger reactions from that source. Apply this result manually."
+          },
+          "TheColossusLosesTheHorizon": {
+            "Title": "The Colossus Loses the Horizon",
+            "Description": "The larger foe turns too much body through too little space and loses the battlefield around you. For 1 round, the hostile source is clumsy 1, takes a -1 circumstance penalty to Perception DC, and a 5-foot circumstance penalty to all Speeds."
+          },
+          "NeverWhereTheyMeasured": {
+            "Title": "Never Where They Measured",
+            "Description": "The stronger foe now knows where you were. That is already outdated information. For 1 round, you gain a +1 status bonus to Acrobatics checks, Stealth checks, and Reflex DC."
           }
         },
         "Will": {
@@ -1388,6 +1508,46 @@
           "AnswerWithACuttingWord": {
             "Title": "Answer with a Cutting Word",
             "Description": "The stronger foe tried to make you feel small. You find the sentence that makes the imbalance sound ridiculous. If you can use Bon Mot, you may immediately attempt Bon Mot against the hostile source as a free action with a +2 circumstance bonus to the Diplomacy check. Apply this result manually; normal Bon Mot restrictions still apply."
+          },
+          "YourVoiceCarriesUpward": {
+            "Title": "Your Voice Carries Upward",
+            "Description": "The stronger foe cannot make authority flow only one way. For 1 round, you gain a +1 circumstance bonus to Diplomacy checks, Intimidation checks, and Perception checks."
+          },
+          "TheMindOverreaches": {
+            "Title": "The Mind Overreaches",
+            "Description": "A mental assault from the stronger foe reaches too far and loses precision on the return. For 1 round, the hostile source is stupefied 1 and takes a -1 circumstance penalty to AC."
+          },
+          "FourLevelsTheCommandCracks": {
+            "Title": "Four Levels, the Command Cracks",
+            "Description": "Against a foe four or more levels above you, your perfect refusal turns command into hesitation. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to spell DC."
+          },
+          "DefianceHasWeight": {
+            "Title": "Defiance Has Weight",
+            "Description": "The stronger foe fails to move your mind and leaves something solid behind. You gain 3 temporary Hit Points and a +1 circumstance bonus to class DC for 1 round."
+          },
+          "ReadTheClaimBehindTheThreat": {
+            "Title": "Read the Claim Behind the Threat",
+            "Description": "Resisting the stronger foe strips the performance away from the intent beneath it. You may immediately use Sense Motive against the hostile source as a free action with a +2 circumstance bonus to the Perception check. The normal restriction on repeated attempts still applies. Apply this result manually."
+          },
+          "BreakTheResonance": {
+            "Title": "Break the Resonance",
+            "Description": "You refuse an overwhelming voice so completely that its authority breaks into noise. For 1 round, the hostile source is deafened and takes a -1 circumstance penalty to spell DC."
+          },
+          "TurnConvictionIntoCasting": {
+            "Title": "Turn Conviction into Casting",
+            "Description": "Your refusal becomes focus rather than merely survival. For 1 round, you gain a +1 circumstance bonus to spell attack rolls and Will DC."
+          },
+          "FiveLevelsStillYourName": {
+            "Title": "Five Levels, Still Your Name",
+            "Description": "Against a foe five or more levels above you, the pressure fails to decide who you are. For 1 round, you gain a +1 status bonus to Will saves, class DC, and spell DC."
+          },
+          "CertaintyCollapsesInward": {
+            "Title": "Certainty Collapses Inward",
+            "Description": "The stronger foe pushes certainty into your mind and discovers its own conviction can fracture under resistance. For 1 round, the hostile source is frightened 1 and stupefied 1, and takes a -1 circumstance penalty to Perception DC."
+          },
+          "NameTheOpeningForAnother": {
+            "Title": "Name the Opening for Another",
+            "Description": "You have heard the stronger foe's certainty crack and can tell someone else exactly where to press. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next check to Demoralize, Feint, Bon Mot, or Recall Knowledge against the hostile source before the start of your next turn. Apply this result manually."
           }
         }
       }
@@ -2089,6 +2249,30 @@
           },
           "TheFirstCrackIsReal": {
             "Name": "The First Crack Is Real"
+          },
+          "BreakTheRecovery": {
+            "Name": "Break the Recovery"
+          },
+          "SmallTargetHeavyPrice": {
+            "Name": "Small Target, Heavy Price"
+          },
+          "FourLevelsOneBadAngle": {
+            "Name": "Four Levels, One Bad Angle"
+          },
+          "UseTheirStrengthAgainstTheGuard": {
+            "Name": "Use Their Strength Against the Guard"
+          },
+          "SpellThroughTheBlindSide": {
+            "Name": "Spell Through the Blind Side"
+          },
+          "MagicBendsTheColossus": {
+            "Name": "Magic Bends the Colossus"
+          },
+          "FiveLevelsStillVulnerable": {
+            "Name": "Five Levels, Still Vulnerable"
+          },
+          "BorrowTheirPowersEcho": {
+            "Name": "Borrow Their Power's Echo"
           }
         },
         "Fortitude": {
@@ -2142,6 +2326,30 @@
           },
           "TheirFramePaysThePrice": {
             "Name": "Their Frame Pays the Price"
+          },
+          "TakeTheMeasureOfForce": {
+            "Name": "Take the Measure of Force"
+          },
+          "TheBiggerTheyLean": {
+            "Name": "The Bigger They Lean"
+          },
+          "FourLevelsForceRunsOut": {
+            "Name": "Four Levels, Force Runs Out"
+          },
+          "PainConvertsToLeverage": {
+            "Name": "Pain Converts to Leverage"
+          },
+          "FrameOutlastsImpact": {
+            "Name": "Frame Outlasts Impact"
+          },
+          "TheirWeightBecomesDelay": {
+            "Name": "Their Weight Becomes Delay"
+          },
+          "FiveLevelsStrengthBuckles": {
+            "Name": "Five Levels, Strength Buckles"
+          },
+          "EndureThenCommandSpace": {
+            "Name": "Endure, Then Command Space"
           }
         },
         "Reflex": {
@@ -2195,6 +2403,30 @@
           },
           "DragTheColossusOffLine": {
             "Name": "Drag the Colossus Off Line"
+          },
+          "MoveBeforeTheWeightSettles": {
+            "Name": "Move Before the Weight Settles"
+          },
+          "TooLargeToWatchBothSides": {
+            "Name": "Too Large to Watch Both Sides"
+          },
+          "FourLevelsMomentumBreaksTheTurn": {
+            "Name": "Four Levels, Momentum Breaks the Turn"
+          },
+          "TheGapTravelsWithYou": {
+            "Name": "The Gap Travels with You"
+          },
+          "TheyCannotCorrectTwice": {
+            "Name": "They Cannot Correct Twice"
+          },
+          "TurnEvasionIntoPressure": {
+            "Name": "Turn Evasion into Pressure"
+          },
+          "TheColossusLosesTheHorizon": {
+            "Name": "The Colossus Loses the Horizon"
+          },
+          "NeverWhereTheyMeasured": {
+            "Name": "Never Where They Measured"
           }
         },
         "Will": {
@@ -2248,6 +2480,30 @@
           },
           "PressureRebounds": {
             "Name": "Pressure Rebounds"
+          },
+          "YourVoiceCarriesUpward": {
+            "Name": "Your Voice Carries Upward"
+          },
+          "TheMindOverreaches": {
+            "Name": "The Mind Overreaches"
+          },
+          "FourLevelsTheCommandCracks": {
+            "Name": "Four Levels, the Command Cracks"
+          },
+          "DefianceHasWeight": {
+            "Name": "Defiance Has Weight"
+          },
+          "BreakTheResonance": {
+            "Name": "Break the Resonance"
+          },
+          "TurnConvictionIntoCasting": {
+            "Name": "Turn Conviction into Casting"
+          },
+          "FiveLevelsStillYourName": {
+            "Name": "Five Levels, Still Your Name"
+          },
+          "CertaintyCollapsesInward": {
+            "Name": "Certainty Collapses Inward"
           }
         }
       }

@@ -346,5 +346,180 @@ export const GIANT_SLAYER_ATTACK_CARDS = Object.freeze([
     contentBatch: 25,
     effect: null
   })
-
+,
+  defineGiantSlayerAttackCard({
+    id: "gsa-021-break-the-recovery",
+    localizationKey: "BreakTheRecovery",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Break the Recovery",
+    fallbackDescription: "The stronger foe tries to reset after the critical hit. You make the recovery cost another opening. For 1 round, the target takes a -1 circumstance penalty to attack rolls and Perception DC.",
+    tags: ["target", "attack-roll", "perception-dc", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["attack-roll", "perception-dc"], value: -1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-022-small-target-heavy-price",
+    localizationKey: "SmallTargetHeavyPrice",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Small Target, Heavy Price",
+    fallbackDescription: "The larger foe loses strength trying to follow an angle built for someone smaller. For 1 round, the target is enfeebled 1 and takes a -1 circumstance penalty to Perception DC.",
+    tags: ["target", "enfeebled", "perception-dc", "larger-opponent", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "enfeebled", value: 1 },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-023-four-levels-one-bad-angle",
+    localizationKey: "FourLevelsOneBadAngle",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Levels, One Bad Angle",
+    fallbackDescription: "Against a foe four or more levels above you, one bad angle is enough to make overwhelming technique stumble. For 1 round, the target is off-guard and takes a -1 circumstance penalty to Perception DC.",
+    tags: ["greater-gap", "target", "off-guard", "attack-roll", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "off-guard" },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-024-call-the-opening",
+    localizationKey: "CallTheOpening",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Call the Opening",
+    fallbackDescription: "Your critical hit proves the stronger foe can be reached. Choose one ally within 30 feet who can see the target. That ally gains a +1 circumstance bonus to their next attack roll against the target before the start of your next turn. Apply this result manually.",
+    tags: ["ally", "attack-roll", "support", "manual"],
+    contentBatch: 29,
+    effect: null
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-025-use-their-strength-against-the-guard",
+    localizationKey: "UseTheirStrengthAgainstTheGuard",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Use Their Strength Against the Guard",
+    fallbackDescription: "A foe at least two size steps larger commits too much mass to stop your hit. For 1 round, you gain a +1 circumstance bonus to Strike damage and AC.",
+    tags: ["size-gap", "strike-damage", "ac", "counteroffense", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.sizeGap", operator: "gte", value: 2 },
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["strike-damage", "ac"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-026-spell-through-the-blind-side",
+    localizationKey: "SpellThroughTheBlindSide",
+    category: "spellCriticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Spell Through the Blind Side",
+    fallbackDescription: "The critical spell blooms where the stronger foe cannot track it cleanly. For 1 round, the target is dazzled and takes a -1 circumstance penalty to spell DC.",
+    tags: ["spell", "target", "dazzled", "perception-dc", "effect"],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "dazzled" },
+        { type: "modifier", selector: "spell-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-027-magic-bends-the-colossus",
+    localizationKey: "MagicBendsTheColossus",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Magic Bends the Colossus",
+    fallbackDescription: "The larger foe can absorb force, but the critical spell makes that scale betray precision. For 1 round, the target is clumsy 1 and takes a -1 circumstance penalty to class DC.",
+    tags: ["spell", "target", "clumsy", "class-dc", "larger-opponent", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "modifier", selector: "class-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-028-five-levels-still-vulnerable",
+    localizationKey: "FiveLevelsStillVulnerable",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Levels, Still Vulnerable",
+    fallbackDescription: "Against a foe five or more levels above you, the critical spell proves that greater power still has a mind that can lose the thread. For 1 round, the target is stupefied 1 and off-guard.",
+    tags: ["spell", "extreme-gap", "target", "stupefied", "off-guard", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "condition", slug: "off-guard" }
+      ]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-029-borrow-their-powers-echo",
+    localizationKey: "BorrowTheirPowersEcho",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Borrow Their Power's Echo",
+    fallbackDescription: "Your spell catches the stronger foe's pressure and sends the rhythm back through your own magic. For 1 round, you gain a +1 status bonus to spell damage rolls and saving throws.",
+    tags: ["spell", "spell-damage", "saving-throws", "status-bonus", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["spell-damage", "saving-throw"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerAttackCard({
+    id: "gsa-030-send-the-warning-through-the-line",
+    localizationKey: "SendTheWarningThroughTheLine",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Send the Warning Through the Line",
+    fallbackDescription: "The critical spell shows everyone exactly how the stronger foe answers pressure. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next saving throw against the target before the start of your next turn. Apply this result manually.",
+    tags: ["spell", "ally", "saving-throws", "support", "manual"],
+    contentBatch: 29,
+    effect: null
+  })
 ]);

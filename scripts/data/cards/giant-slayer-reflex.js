@@ -214,7 +214,7 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
       duration: ONE_ROUND,
       components: [
         { type: "condition", slug: "off-guard" },
-        { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "acrobatics", value: -1, modifierType: "circumstance", predicate: [] },
         { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
       ]
     }
@@ -335,5 +335,178 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     contentBatch: 27,
     effect: null
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-021-move-before-the-weight-settles",
+    localizationKey: "MoveBeforeTheWeightSettles",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Move Before the Weight Settles",
+    fallbackDescription: "The critical dodge leaves you moving while the stronger foe is still committed. For 1 round, you gain a +1 circumstance bonus to Reflex saves and Stealth checks.",
+    tags: ["ac", "reflex-dc", "mobility", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["reflex", "stealth"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-022-too-large-to-watch-both-sides",
+    localizationKey: "TooLargeToWatchBothSides",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Too Large to Watch Both Sides",
+    fallbackDescription: "The larger foe loses your angle across its own scale. For 1 round, the hostile source is dazzled and takes a -1 circumstance penalty to Athletics checks.",
+    tags: ["hostile-source", "dazzled", "reflex-dc", "larger-opponent", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "dazzled" },
+        { type: "modifier", selector: "athletics", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-023-four-levels-momentum-breaks-the-turn",
+    localizationKey: "FourLevelsMomentumBreaksTheTurn",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Levels, Momentum Breaks the Turn",
+    fallbackDescription: "Against a foe four or more levels above you, the perfect evasion forces overwhelming momentum to finish the wrong movement. For 1 round, the hostile source is slowed 1 and off-guard.",
+    tags: ["greater-gap", "hostile-source", "slowed", "off-guard", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "slowed", value: 1 },
+        { type: "condition", slug: "off-guard" }
+      ]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-024-the-gap-travels-with-you",
+    localizationKey: "TheGapTravelsWithYou",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "The Gap Travels with You",
+    fallbackDescription: "Against a foe at least two size steps larger, every change of angle creates another blind corridor. For 1 round, you gain a 5-foot status bonus to all Speeds and a +1 circumstance bonus to Stealth checks.",
+    tags: ["size-gap", "movement", "stealth", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.sizeGap", operator: "gte", value: 2 },
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: 5, modifierType: "status" },
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-025-vault-the-reach",
+    localizationKey: "VaultTheReach",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Vault the Reach",
+    fallbackDescription: "The larger foe's reach becomes a line to cross rather than a wall to fear. You may immediately Leap as a free action. This Leap does not trigger reactions from the hostile source. Apply this result manually.",
+    tags: ["leap", "movement", "free-action", "larger-opponent", "melee-threat", "manual"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: null
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-026-they-cannot-correct-twice",
+    localizationKey: "TheyCannotCorrectTwice",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "They Cannot Correct Twice",
+    fallbackDescription: "The stronger foe adjusts once and has nothing left for your second angle. For 1 round, the hostile source takes a -1 circumstance penalty to Acrobatics checks and a 5-foot circumstance penalty to all Speeds.",
+    tags: ["hostile-source", "acrobatics", "movement", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "acrobatics", value: -1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-027-turn-evasion-into-pressure",
+    localizationKey: "TurnEvasionIntoPressure",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Turn Evasion into Pressure",
+    fallbackDescription: "The critical escape is not retreat. It is the instant you choose the next attack line. For 1 round, you gain a +1 circumstance bonus to attack rolls and AC.",
+    tags: ["attack-roll", "ac", "counteroffense", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["attack-roll", "ac"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-028-five-levels-run-the-impossible-line",
+    localizationKey: "FiveLevelsRunTheImpossibleLine",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Levels, Run the Impossible Line",
+    fallbackDescription: "Against a foe five or more levels above you, perfect timing opens a route that should not exist. You may immediately Stride up to your Speed as a free action, ending farther from the hostile source than you began. This movement does not trigger reactions from that source. Apply this result manually.",
+    tags: ["extreme-gap", "stride", "movement", "free-action", "melee-threat", "manual"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: null
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-029-the-colossus-loses-the-horizon",
+    localizationKey: "TheColossusLosesTheHorizon",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "The Colossus Loses the Horizon",
+    fallbackDescription: "The larger foe turns too much body through too little space and loses the battlefield around you. For 1 round, the hostile source is clumsy 1, takes a -1 circumstance penalty to Perception DC, and a 5-foot circumstance penalty to all Speeds.",
+    tags: ["hostile-source", "clumsy", "perception-dc", "movement", "larger-opponent", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineGiantSlayerReflexCard({
+    id: "gsr-030-never-where-they-measured",
+    localizationKey: "NeverWhereTheyMeasured",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Never Where They Measured",
+    fallbackDescription: "The stronger foe now knows where you were. That is already outdated information. For 1 round, you gain a +1 status bonus to Acrobatics checks, Stealth checks, and Reflex DC.",
+    tags: ["perception", "stealth", "reflex-dc", "status-bonus", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["acrobatics", "stealth", "reflex-dc"], value: 1, modifierType: "status", predicate: [] }]
+    }
   })
 ]);

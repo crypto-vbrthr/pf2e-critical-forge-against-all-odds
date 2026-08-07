@@ -309,5 +309,167 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     contentBatch: 28,
     effect: null
   })
-
+,
+  defineGiantSlayerWillCard({
+    id: "gsw-021-your-voice-carries-upward",
+    localizationKey: "YourVoiceCarriesUpward",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Your Voice Carries Upward",
+    fallbackDescription: "The stronger foe cannot make authority flow only one way. For 1 round, you gain a +1 circumstance bonus to Diplomacy checks, Intimidation checks, and Perception checks.",
+    tags: ["will", "diplomacy", "intimidation", "defiance", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["diplomacy", "intimidation", "perception"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-022-the-mind-overreaches",
+    localizationKey: "TheMindOverreaches",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "The Mind Overreaches",
+    fallbackDescription: "A mental assault from the stronger foe reaches too far and loses precision on the return. For 1 round, the hostile source is stupefied 1 and takes a -1 circumstance penalty to AC.",
+    tags: ["hostile-source", "mental", "stupefied", "attack-roll", "effect"],
+    filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "ac", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-023-four-levels-the-command-cracks",
+    localizationKey: "FourLevelsTheCommandCracks",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Levels, the Command Cracks",
+    fallbackDescription: "Against a foe four or more levels above you, your perfect refusal turns command into hesitation. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to spell DC.",
+    tags: ["greater-gap", "hostile-source", "frightened", "spell-dc", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "modifier", selector: "spell-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-024-defiance-has-weight",
+    localizationKey: "DefianceHasWeight",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Defiance Has Weight",
+    fallbackDescription: "The stronger foe fails to move your mind and leaves something solid behind. You gain 3 temporary Hit Points and a +1 circumstance bonus to class DC for 1 round.",
+    tags: ["temporary-hit-points", "class-dc", "defiance", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 3 },
+        { type: "modifier", selector: "class-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-025-read-the-claim-behind-the-threat",
+    localizationKey: "ReadTheClaimBehindTheThreat",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Read the Claim Behind the Threat",
+    fallbackDescription: "Resisting the stronger foe strips the performance away from the intent beneath it. You may immediately use Sense Motive against the hostile source as a free action with a +2 circumstance bonus to the Perception check. The normal restriction on repeated attempts still applies. Apply this result manually.",
+    tags: ["sense-motive", "perception", "free-action", "hostile-source", "manual"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    contentBatch: 29,
+    effect: null
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-026-break-the-resonance",
+    localizationKey: "BreakTheResonance",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Break the Resonance",
+    fallbackDescription: "You refuse an overwhelming voice so completely that its authority breaks into noise. For 1 round, the hostile source is deafened and takes a -1 circumstance penalty to spell DC.",
+    tags: ["hostile-source", "auditory", "deafened", "spell-dc", "effect"],
+    filters: { attackTraits: ["auditory"] },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "deafened" },
+        { type: "modifier", selector: "spell-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-027-turn-conviction-into-casting",
+    localizationKey: "TurnConvictionIntoCasting",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Turn Conviction into Casting",
+    fallbackDescription: "Your refusal becomes focus rather than merely survival. For 1 round, you gain a +1 circumstance bonus to spell attack rolls and Will DC.",
+    tags: ["spell-attack-roll", "will-dc", "focus", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["spell-attack-roll", "will-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-028-five-levels-still-your-name",
+    localizationKey: "FiveLevelsStillYourName",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Levels, Still Your Name",
+    fallbackDescription: "Against a foe five or more levels above you, the pressure fails to decide who you are. For 1 round, you gain a +1 status bonus to Will saves, class DC, and spell DC.",
+    tags: ["extreme-gap", "will", "class-dc", "spell-dc", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["will", "class-dc", "spell-dc"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-029-certainty-collapses-inward",
+    localizationKey: "CertaintyCollapsesInward",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Certainty Collapses Inward",
+    fallbackDescription: "The stronger foe pushes certainty into your mind and discovers its own conviction can fracture under resistance. For 1 round, the hostile source is frightened 1 and stupefied 1, and takes a -1 circumstance penalty to Perception DC.",
+    tags: ["hostile-source", "mental", "frightened", "stupefied", "perception-dc", "effect"],
+    filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] },
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerWillCard({
+    id: "gsw-030-name-the-opening-for-another",
+    localizationKey: "NameTheOpeningForAnother",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Name the Opening for Another",
+    fallbackDescription: "You have heard the stronger foe's certainty crack and can tell someone else exactly where to press. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next check to Demoralize, Feint, Bon Mot, or Recall Knowledge against the hostile source before the start of your next turn. Apply this result manually.",
+    tags: ["ally", "support", "skill-check", "hostile-source", "manual"],
+    filters: { excludedTargetTraits: ["mindless"] },
+    contentBatch: 29,
+    effect: null
+  })
 ]);

@@ -135,30 +135,35 @@ check(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCritic
 check(SURROUNDED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Surrounded Will cards must require Will.");
 check(SURROUNDED_WILL_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Will cards must use the dynamic Surrounded condition.");
 
-check(GIANT_SLAYER_ATTACK_CARDS.length === 20, "Giant-Slayer Moments Attack must contain twenty cards after the second pass.");
-check(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Attack card IDs must be unique.");
+check(GIANT_SLAYER_ATTACK_CARDS.length === 30, "Giant-Slayer Moments Attack must contain thirty cards after the final pass.");
+check(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size === 30, "Giant-Slayer Attack card IDs must be unique.");
 check(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Giant-Slayer cards must remain in the Attack deck.");
-check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 10, "Giant-Slayer Attack must contain ten ordinary critical-hit cards after the second pass.");
-check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Giant-Slayer Attack must contain ten spell critical-hit cards after the second pass.");
+check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 15, "Giant-Slayer Attack must contain fifteen ordinary critical-hit cards after the final pass.");
+check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 15, "Giant-Slayer Attack must contain fifteen spell critical-hit cards after the final pass.");
 check(GIANT_SLAYER_ATTACK_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Attack cards must use the dynamic Giant-Slayer condition.");
-check(GIANT_SLAYER_FORTITUDE_CARDS.length === 20, "Giant-Slayer Moments Fortitude must contain twenty cards after the second pass.");
-check(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Fortitude card IDs must be unique.");
+check(GIANT_SLAYER_FORTITUDE_CARDS.length === 30, "Giant-Slayer Moments Fortitude must contain thirty cards after the final pass.");
+check(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size === 30, "Giant-Slayer Fortitude card IDs must be unique.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Giant-Slayer Fortitude cards must remain in the Fortitude deck.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Fortitude cards require critical save success.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Giant-Slayer Fortitude cards must require Fortitude.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Fortitude cards must use the dynamic Giant-Slayer condition.");
-check(GIANT_SLAYER_REFLEX_CARDS.length === 20, "Giant-Slayer Moments Reflex must contain twenty cards after the second pass.");
-check(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Reflex card IDs must be unique.");
+check(GIANT_SLAYER_REFLEX_CARDS.length === 30, "Giant-Slayer Moments Reflex must contain thirty cards after the final pass.");
+check(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size === 30, "Giant-Slayer Reflex card IDs must be unique.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Giant-Slayer Reflex cards must remain in the Reflex deck.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Reflex cards require critical save success.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Giant-Slayer Reflex cards must require Reflex.");
 check(GIANT_SLAYER_REFLEX_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Reflex cards must use the dynamic Giant-Slayer condition.");
-check(GIANT_SLAYER_WILL_CARDS.length === 20, "Giant-Slayer Moments Will must contain twenty cards after the second pass.");
-check(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Will card IDs must be unique.");
+check(GIANT_SLAYER_WILL_CARDS.length === 30, "Giant-Slayer Moments Will must contain thirty cards after the final pass.");
+check(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size === 30, "Giant-Slayer Will card IDs must be unique.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => card.deckType === "will"), "Giant-Slayer Will cards must remain in the Will deck.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Will cards require critical save success.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Giant-Slayer Will cards must require Will.");
 check(GIANT_SLAYER_WILL_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Will cards must use the dynamic Giant-Slayer condition.");
+const giantFinalDecks = [GIANT_SLAYER_ATTACK_CARDS, GIANT_SLAYER_FORTITUDE_CARDS, GIANT_SLAYER_REFLEX_CARDS, GIANT_SLAYER_WILL_CARDS];
+check(giantFinalDecks.every((cards) => cards.slice(20, 30).every((card) => card.metadata?.contentBatch === 29)), "Every Giant-Slayer final-pass card must use content batch 29.");
+check(giantFinalDecks.every((cards) => cards.slice(20, 30).filter((card) => card.effect).length === 8), "Every Giant-Slayer final deck must contain eight automated results.");
+check(giantFinalDecks.every((cards) => cards.slice(20, 30).filter((card) => !card.effect).length === 2), "Every Giant-Slayer final deck must contain two manual results.");
+check(packsSource.includes('theme.id === THEME_IDS.GIANT_SLAYER) ? "complete"'), "Giant-Slayer package metadata must be marked complete.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

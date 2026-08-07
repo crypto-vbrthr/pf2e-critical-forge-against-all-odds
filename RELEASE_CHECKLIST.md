@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 192/192 passing.
-- [x] Current coverage: 99.48% lines, 94.92% branches, 98.64% functions.
-- [x] Current localization parity: 964 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 320 published cards and 275 automated card effects.
+- [x] Current automated test run: 200/200 passing.
+- [x] Current coverage: 99.53% lines, 95.06% branches, 98.69% functions.
+- [x] Current localization parity: 1076 keys in both German and English.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 360 published cards and 307 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -65,7 +65,7 @@
 - [x] Every published Giant-Slayer card uses the dynamic Giant-Slayer condition.
 - [x] Giant-Slayer escalation includes one +4 and one +5 level-gap result.
 - [x] Giant-Slayer first-pass automated effects are exact-signature distinct from published Bloodied and Surrounded effects.
-- [x] Giant-Slayer package metadata is marked in progress while all four first-pass decks expose ten cards.
+- [x] Giant-Slayer first-pass package metadata was correctly marked in progress while all four first-pass decks exposed ten cards.
 - [x] Foundry smoke test: ten localized Giant-Slayer Attack cards visible.
 - [x] Giant-Slayer Attack second pass adds ten cards in batch 25, preserving a 10/10 ordinary/spell split at 20/30.
 - [x] Giant-Slayer Attack second pass uses 8 automated / 2 manual results with no resistance or immunity filler.
@@ -115,15 +115,20 @@
 - [x] Scale-specific Giant-Slayer cards require an actually larger opponent.
 - [x] Five Levels, One Empty Square no longer applies global automated `concealed`; observer-relative concealment is manual.
 - [x] Dominance Loses Its Grip requires a mental trigger and Their Certainty Misses a Beat excludes mindless targets.
-- [ ] Foundry smoke test for `0.1.0-dev.28.1`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
-- [ ] Foundry smoke test for `0.1.0-dev.28.1`: reviewed Giant-Slayer physical/size/mental gating behaves as expected in a live scene.
-- [x] Giant-Slayer 80-card review preserves the exact 20/20/20/20 published deck layout and all 320 module card IDs.
-- [x] Giant-Slayer 80-card review leaves exactly two +4 and two +5 escalations in each 20-card deck.
-- [x] Giant-Slayer automated mechanics contain no strict same-gate mechanical superset and remain exact-signature unique against all previously published packs.
-- [x] Four Levels, Too Much Momentum no longer stacks a dead weaker circumstance attack penalty on top of Liegend/prone.
-- [x] Force Meets a Foundation, Endurance Reads the Opening, Their Frame Pays the Price, and Four Levels, Authority Fractures use distinct reviewed mechanical lanes.
-- [x] The Voice Falters is graded strong for its combined Benommen/stupefied caster pressure.
-- [x] Answer the Giant excludes mindless targets; Beneath Their Reach requires the actual current melee threat.
-- [x] Move the Immovable checks normal Shove reach/prerequisites, retains the explicit size override, and provides a Step fallback.
-- [x] German reviewed text uses Fortstoßen and consistent lower-case “freie Aktion”.
+- [ ] Foundry smoke test for `0.1.0-dev.29`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
+- [ ] Foundry smoke test for `0.1.0-dev.29`: reviewed Giant-Slayer physical/size/mental/auditory gating behaves as expected in a live scene.
 
+- [x] Giant-Slayer final pass adds forty cards in content batch 29: ten per specialized deck.
+- [x] Giant-Slayer final Attack pass completes the deck at fifteen ordinary and fifteen spell critical hits.
+- [x] Every Giant-Slayer final deck uses an 8 automated / 2 manual split.
+- [x] Every Giant-Slayer final deck adds exactly one +4 and one +5 level-gap escalation.
+- [x] Final physical Giant-Slayer cards use reviewed threat/larger-opponent/size-gap evidence where required.
+- [x] Final Will backlash uses mental/auditory trigger filters and mindless exclusions where required.
+- [x] Final Fortitude, Reflex, and Will passes add no resistance or immunity filler.
+- [x] Bring the Weight Down preserves normal Zu Fall bringen prerequisites while overriding only the size restriction and providing a Step fallback.
+- [x] Read the Claim Behind the Threat preserves the normal Motiv erkennen repeat-attempt restriction.
+- [x] Complete 120-card Giant-Slayer set has no automated exact signature duplicate against Bloodied, Surrounded, or itself.
+- [x] Complete 120-card Giant-Slayer set has no strict same-gate mechanical superset pair.
+- [x] Giant-Slayer package metadata is marked complete.
+- [ ] Foundry smoke test: thirty localized Giant-Slayer cards visible in each of Attack, Fortitude, Reflex, and Will.
+- [ ] Foundry smoke test: final manual Trip, Sense Motive, Leap, Stride, ally-support, and Stand/Step results read and resolve correctly.

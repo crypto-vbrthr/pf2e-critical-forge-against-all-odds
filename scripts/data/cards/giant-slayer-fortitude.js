@@ -124,7 +124,7 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
       duration: ONE_ROUND,
       components: [
         { type: "condition", slug: "enfeebled", value: 1 },
-        { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: "reflex", value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),
@@ -320,5 +320,179 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     contentBatch: 26,
     effect: null
   })
-
+,
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-021-take-the-measure-of-force",
+    localizationKey: "TakeTheMeasureOfForce",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Take the Measure of Force",
+    fallbackDescription: "The stronger foe tests your body and accidentally teaches you the exact weight of the next impact. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and Perception DC.",
+    tags: ["fortitude", "perception-dc", "assessment", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["fortitude", "perception-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-022-the-bigger-they-lean",
+    localizationKey: "TheBiggerTheyLean",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "The Bigger They Lean",
+    fallbackDescription: "The larger foe commits its whole frame and discovers that mass takes time to recover. For 1 round, the hostile source is clumsy 1 and takes a -1 circumstance penalty to Perception DC.",
+    tags: ["hostile-source", "clumsy", "attack-roll", "larger-opponent", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-023-four-levels-force-runs-out",
+    localizationKey: "FourLevelsForceRunsOut",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Levels, Force Runs Out",
+    fallbackDescription: "Against a foe four or more levels above you, surviving the full effort leaves its next motion late. For 1 round, the hostile source is slowed 1 and takes a -1 circumstance penalty to Athletics checks.",
+    tags: ["greater-gap", "hostile-source", "slowed", "athletics", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "slowed", value: 1 },
+        { type: "modifier", selector: "athletics", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-024-pain-converts-to-leverage",
+    localizationKey: "PainConvertsToLeverage",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Pain Converts to Leverage",
+    fallbackDescription: "You absorb what should have folded you and turn the surviving tension into useful force. You gain 3 temporary Hit Points and a +1 circumstance bonus to Athletics checks for 1 round.",
+    tags: ["temporary-hit-points", "athletics", "leverage", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 3 },
+        { type: "modifier", selector: "athletics", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-025-stand-before-the-colossus",
+    localizationKey: "StandBeforeTheColossus",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Stand Before the Colossus",
+    fallbackDescription: "The stronger foe expects the impact to decide where you belong. If you are prone, you may immediately Stand as a free action; this movement does not trigger reactions from the hostile source. Otherwise, you may immediately Step. Apply this result manually.",
+    tags: ["stand", "step", "movement", "free-action", "melee-threat", "manual"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+    contentBatch: 29,
+    effect: null
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-026-frame-outlasts-impact",
+    localizationKey: "FrameOutlastsImpact",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Frame Outlasts Impact",
+    fallbackDescription: "Your body takes the stronger foe's measure and refuses to be defined by it. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and class DC.",
+    tags: ["fortitude-dc", "class-dc", "resolve", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["fortitude-dc", "class-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-027-their-weight-becomes-delay",
+    localizationKey: "TheirWeightBecomesDelay",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Their Weight Becomes Delay",
+    fallbackDescription: "The larger foe cannot pull all that weight back into guard at once. For 1 round, the hostile source takes a 5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Reflex saves.",
+    tags: ["hostile-source", "movement", "reflex", "larger-opponent", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" },
+        { type: "modifier", selector: "reflex", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-028-five-levels-strength-buckles",
+    localizationKey: "FiveLevelsStrengthBuckles",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Levels, Strength Buckles",
+    fallbackDescription: "Against a foe five or more levels above you, surviving the impossible effort makes the stronger body pay for every ounce of force. For 1 round, the hostile source is enfeebled 1 and slowed 1.",
+    tags: ["extreme-gap", "hostile-source", "enfeebled", "slowed", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "enfeebled", value: 1 },
+        { type: "condition", slug: "slowed", value: 1 }
+      ]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-029-endure-then-command-space",
+    localizationKey: "EndureThenCommandSpace",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Endure, Then Command Space",
+    fallbackDescription: "The stronger foe tried to dictate the battlefield with force. Your survival gives you the authority to push back. For 1 round, you gain a +1 status bonus to Athletics checks and class DC.",
+    tags: ["athletics", "class-dc", "status-bonus", "effect"],
+    contentBatch: 29,
+    effect: {
+      duration: ONE_ROUND,
+      components: [{ type: "modifier", selector: ["athletics", "class-dc"], value: 1, modifierType: "status", predicate: [] }]
+    }
+  }),
+  defineGiantSlayerFortitudeCard({
+    id: "gsf-030-bring-the-weight-down",
+    localizationKey: "BringTheWeightDown",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Bring the Weight Down",
+    fallbackDescription: "The larger foe's own mass gives you the line. If the hostile source is within your reach and you meet the normal prerequisites for Trip other than its size restriction, you may immediately attempt to Trip it as a free action with a +2 circumstance bonus to the Athletics check, ignoring Trip's normal size restriction. Otherwise, you may immediately Step toward the hostile source. Apply this result manually.",
+    tags: ["trip", "athletics", "free-action", "larger-opponent", "melee-threat", "manual"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    contentBatch: 29,
+    effect: null
+  })
 ]);

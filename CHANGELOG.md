@@ -1,25 +1,36 @@
 # Changelog
 
-## 0.1.0-dev.28.1
+## 0.1.0-dev.29
 
-### Reviewed
-- Completed the dedicated **80-card Giant-Slayer Moments review** without changing any published card ID or deck count.
-- Removed three strict same-gate mechanical supersets by separating **Force Meets a Foundation**, **Endurance Reads the Opening**, and **Four Levels, Authority Fractures** into distinct defensive, counteroffensive, and perception-pressure lanes.
-- Rebalanced **Their Frame Pays the Price** so a baseline +3 card no longer outperforms the +4 Fortitude escalation that shares its physical theme.
-- Fixed **Four Levels, Too Much Momentum** so prone is paired with an Athletics penalty instead of a redundant weaker circumstance penalty to attack rolls.
-- Reclassified **The Voice Falters** as `strong`, matching the combined effect of stupefied 1 plus an additional circumstance penalty to spell DC.
-- Excluded mindless targets from the manual **Answer the Giant** Demoralize result and bound **Beneath Their Reach** to the actual current melee threat.
-- Hardened **Move the Immovable** against dead draws: Shove still overrides the target-size restriction, but now requires normal reach/prerequisites and falls back to an immediate Step toward the hostile source when Shove cannot be attempted.
-- Normalized German Remaster terminology and capitalization, including **Fortstoßen** and lower-case “freie Aktion”.
+### Added
+- Completed **Giant-Slayer Moments** with the final forty-card pass: ten Attack, ten Fortitude, ten Reflex, and ten Will cards.
+- Finished Giant-Slayer at 30/30 cards per specialized deck and 120/120 cards total.
+- Finalized Attack at fifteen ordinary and fifteen spell critical hits.
+- Added eight automated and two manual results to every final deck, for a complete Giant-Slayer total of 99 automated and 21 manual results.
+- Added one final +4 and one final +5 level-gap escalation to each deck, bringing every completed Giant-Slayer deck to three +4 and three +5 escalation cards across its three passes.
+- Added final threat-, larger-opponent-, size-gap-, mental-, auditory-, and mindless-aware gates without introducing resistance or immunity filler in the final save passes.
+- Added German and English localization for all forty cards and thirty-two automated effects.
+- Marked the Giant-Slayer pack metadata as complete.
+
+### Rules review
+- **Bring the Weight Down** preserves the normal prerequisites of *Trip / Zu Fall bringen* but explicitly overrides only its normal size restriction and supplies a Step fallback when the maneuver cannot be attempted.
+- **Read the Claim Behind the Threat** preserves the normal repeat-attempt restriction of *Sense Motive / Motiv erkennen* while allowing the immediate free-action attempt granted by the card.
+- Final automated definitions were adjusted until exact-signature uniqueness against Bloodied Triumphs, Surrounded, Still Standing, and prior Giant-Slayer cards remained clean.
+- The strict same-gate mechanical-superset regression check remains clean across the complete 120-card Giant-Slayer set.
 
 ### Tests
-- Added regression coverage for the exact 20/20/20/20 published-ID layout, strict same-gate mechanical dominance, the reviewed Fortitude lanes, prone redundancy, Will impact/gating, manual Shove/Demoralize safety, threat gating, and German terminology.
-- Giant-Slayer still contains 67 automated and 13 manual results; all 67 automated Giant-Slayer effect signatures remain exact-signature distinct from Bloodied Triumphs, Surrounded, Still Standing, and each other.
-- Current automated test and coverage totals are recorded in `RELEASE_CHECKLIST.md` and `docs/TESTING.md`.
+- Added final-pass count, ID, 15/15 Attack split, batch-29, 8/2 automation, +4/+5 escalation, threat/size, mental/auditory, no-resistance/immunity, and manual PF2e-action restriction coverage.
+- Updated runtime, pack, and release contracts for the completed 30/30/30/30 Giant-Slayer layout.
 
 ### Compatibility
-- All 320 published card IDs remain unchanged.
+- All 320 previously published card IDs remain unchanged; this build adds forty final Giant-Slayer IDs.
 - Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
+## 0.1.0-dev.28.1
+
+### Review
+- Reviewed the 80 published Giant-Slayer cards for balance, overlap, exact effect duplication, same-gate mechanical supersets, targeting, PF2e action interactions, and German terminology.
+- Preserved all 320 published card IDs while tightening Fortitude overlap, prone/stupefied interactions, mindless exclusions, threat gating, and manual Shove fallback behavior.
 
 ## 0.1.0-dev.28
 

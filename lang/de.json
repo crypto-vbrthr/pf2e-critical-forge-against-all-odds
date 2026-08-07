@@ -1142,6 +1142,46 @@
           "ShareTheImpossibleOpening": {
             "Title": "Teile die unmögliche Öffnung",
             "Description": "Der kritische Zauber öffnet einen Augenblick, der zu groß ist, um ihn für dich zu behalten. Ein Verbündeter innerhalb von 9 m, der das Ziel sehen kann, darf sofort als freie Aktion einen Schritt machen. Wende dieses Ergebnis manuell an."
+          },
+          "BreakTheRecovery": {
+            "Title": "Brich die Erholung",
+            "Description": "Der stärkere Gegner versucht, sich nach dem kritischen Treffer neu zu sammeln. Du machst selbst die Erholung zu einer weiteren Öffnung. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Angriffswürfe und seinen Wahrnehmungs-SG."
+          },
+          "SmallTargetHeavyPrice": {
+            "Title": "Kleines Ziel, hoher Preis",
+            "Description": "Der größere Gegner verliert Kraft bei dem Versuch, einem Winkel zu folgen, der für jemanden Kleineren gemacht ist. Für 1 Runde ist das Ziel Geschwächt 1 und erhält einen Situationsmalus von -1 auf seinen Wahrnehmungs-SG."
+          },
+          "FourLevelsOneBadAngle": {
+            "Title": "Vier Stufen, ein schlechter Winkel",
+            "Description": "Gegen einen Gegner, der mindestens 4 Stufen über dir ist, genügt ein schlechter Winkel, um selbst überwältigende Technik ins Wanken zu bringen. Für 1 Runde ist das Ziel Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf seinen Wahrnehmungs-SG."
+          },
+          "CallTheOpening": {
+            "Title": "Ruf die Öffnung aus",
+            "Description": "Dein kritischer Treffer beweist, dass der stärkere Gegner erreichbar ist. Wähle einen Verbündeten innerhalb von 9 m, der das Ziel sehen kann. Dieser Verbündete erhält einen Situationsbonus von +1 auf seinen nächsten Angriffswurf gegen das Ziel vor Beginn deines nächsten Zuges. Wende dieses Ergebnis manuell an."
+          },
+          "UseTheirStrengthAgainstTheGuard": {
+            "Title": "Nutze ihre Stärke gegen die Deckung",
+            "Description": "Ein Gegner, der mindestens zwei Größenkategorien größer ist, setzt zu viel Masse ein, um deinen Treffer aufzuhalten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Schaden durch Angriffe und auf deine RK."
+          },
+          "SpellThroughTheBlindSide": {
+            "Title": "Zauber durch den toten Winkel",
+            "Description": "Der kritische Zauber entfaltet sich dort, wo der stärkere Gegner ihn nicht sauber verfolgen kann. Für 1 Runde ist das Ziel Geblendet und erhält einen Situationsmalus von -1 auf seinen Zauber-SG."
+          },
+          "MagicBendsTheColossus": {
+            "Title": "Magie beugt den Koloss",
+            "Description": "Der größere Gegner kann Gewalt aufnehmen, doch der kritische Zauber lässt seine Größe gegen seine Präzision arbeiten. Für 1 Runde ist das Ziel Unbeholfen 1 und erhält einen Situationsmalus von -1 auf seinen Klassen-SG."
+          },
+          "FiveLevelsStillVulnerable": {
+            "Title": "Fünf Stufen, trotzdem verwundbar",
+            "Description": "Gegen einen Gegner, der mindestens 5 Stufen über dir ist, beweist der kritische Zauber, dass selbst größere Macht den Faden verlieren kann. Für 1 Runde ist das Ziel Benommen 1 und Auf dem Falschen Fuß."
+          },
+          "BorrowTheirPowersEcho": {
+            "Title": "Leih dir das Echo ihrer Macht",
+            "Description": "Dein Zauber fängt den Druck des stärkeren Gegners auf und führt den Rhythmus durch deine eigene Magie zurück. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zauberschadenswürfe und Rettungswürfe."
+          },
+          "SendTheWarningThroughTheLine": {
+            "Title": "Schick die Warnung durch die Reihe",
+            "Description": "Der kritische Zauber zeigt allen genau, wie der stärkere Gegner auf Druck reagiert. Wähle einen Verbündeten innerhalb von 9 m, der dich sehen oder hören kann. Dieser Verbündete erhält einen Situationsbonus von +1 auf seinen nächsten Rettungswurf gegen das Ziel vor Beginn deines nächsten Zuges. Wende dieses Ergebnis manuell an."
           }
         },
         "Fortitude": {
@@ -1224,6 +1264,46 @@
           "BreakTheImpossibleHold": {
             "Title": "Brich den unmöglichen Griff",
             "Description": "Der stärkere Gegner schafft es nicht, deinen Körper zum Gehorsam zu zwingen, und für einen Augenblick fühlt sich jeder Griff zerbrechlich an. Falls du von der feindlichen Quelle Gegriffen, Gebunden oder Bewegungsunfähig bist, darfst du sofort als freie Aktion mit einem Situationsbonus von +2 einen Entkommen-Versuch ablegen. Andernfalls darfst du sofort einen Schritt machen. Wende dieses Ergebnis manuell an."
+          },
+          "TakeTheMeasureOfForce": {
+            "Title": "Nimm das Maß der Gewalt",
+            "Description": "Der stärkere Gegner prüft deinen Körper und verrät dir dabei ungewollt das genaue Gewicht des nächsten Einschlags. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeitswürfe und deinen Wahrnehmungs-SG."
+          },
+          "TheBiggerTheyLean": {
+            "Title": "Je größer sie sich hineinlehnen",
+            "Description": "Der größere Gegner setzt seinen ganzen Körper ein und entdeckt, dass Masse Zeit braucht, um sich wieder zu fangen. Für 1 Runde ist die feindliche Quelle Unbeholfen 1 und erhält einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
+          },
+          "FourLevelsForceRunsOut": {
+            "Title": "Vier Stufen, die Kraft läuft aus",
+            "Description": "Gegen einen Gegner, der mindestens 4 Stufen über dir ist, lässt das Überstehen seines vollen Krafteinsatzes die nächste Bewegung zu spät kommen. Für 1 Runde ist die feindliche Quelle Verlangsamt 1 und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+          },
+          "PainConvertsToLeverage": {
+            "Title": "Schmerz wird zu Hebelwirkung",
+            "Description": "Du fängst ab, was dich hätte einknicken lassen, und machst aus der verbliebenen Spannung nutzbare Kraft. Du erhältst 3 temporäre Trefferpunkte und für 1 Runde einen Situationsbonus von +1 auf Athletikwürfe."
+          },
+          "StandBeforeTheColossus": {
+            "Title": "Steh vor dem Koloss",
+            "Description": "Der stärkere Gegner erwartet, dass der Einschlag bestimmt, wo du hingehörst. Bist du Liegend, darfst du sofort als freie Aktion Aufstehen; diese Bewegung löst keine Reaktionen der feindlichen Quelle aus. Andernfalls darfst du sofort einen Schritt machen. Wende dieses Ergebnis manuell an."
+          },
+          "FrameOutlastsImpact": {
+            "Title": "Der Körper überdauert den Einschlag",
+            "Description": "Dein Körper nimmt Maß am stärkeren Gegner und weigert sich, sich von ihm definieren zu lassen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Zähigkeits-SG und Klassen-SG."
+          },
+          "TheirWeightBecomesDelay": {
+            "Title": "Ihr Gewicht wird zur Verzögerung",
+            "Description": "Der größere Gegner kann all dieses Gewicht nicht augenblicklich zurück in die Deckung ziehen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von 1,5 m auf alle Bewegungsraten und von -1 auf Reflexwürfe."
+          },
+          "FiveLevelsStrengthBuckles": {
+            "Title": "Fünf Stufen, Stärke knickt ein",
+            "Description": "Gegen einen Gegner, der mindestens 5 Stufen über dir ist, lässt das Überstehen des unmöglichen Krafteinsatzes den stärkeren Körper für jede Unze Gewalt bezahlen. Für 1 Runde ist die feindliche Quelle Geschwächt 1 und Verlangsamt 1."
+          },
+          "EndureThenCommandSpace": {
+            "Title": "Ertrage, dann beherrsche den Raum",
+            "Description": "Der stärkere Gegner wollte das Schlachtfeld mit Gewalt diktieren. Dein Überstehen gibt dir die Möglichkeit, zurückzudrängen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Athletikwürfe und deinen Klassen-SG."
+          },
+          "BringTheWeightDown": {
+            "Title": "Bring das Gewicht zu Fall",
+            "Description": "Die eigene Masse des größeren Gegners liefert dir die Linie. Befindet sich die feindliche Quelle in deinem Angriffsradius und erfüllst du die normalen Voraussetzungen für Zu Fall bringen mit Ausnahme der Größenbeschränkung, darfst du sofort als freie Aktion mit einem Situationsbonus von +2 auf den Athletikwurf versuchen, sie Zu Fall zu bringen; ignoriere dabei die normale Größenbeschränkung dieser Handlung. Andernfalls darfst du sofort einen Schritt auf die feindliche Quelle zu machen. Wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -1306,6 +1386,46 @@
           "OutsideTheKillingLine": {
             "Title": "Außerhalb der tödlichen Linie",
             "Description": "Der verfehlte Angriff des stärkeren Gegners schenkt dir mehr als ein leeres Feld; er öffnet einen Weg aus dem nächsten. Du darfst sofort als freie Aktion bis zur Hälfte deiner Bewegungsrate Laufen. Diese Bewegung muss weiter von der feindlichen Quelle entfernt enden und löst keine Reaktionen von ihr aus. Wende dieses Ergebnis manuell an."
+          },
+          "MoveBeforeTheWeightSettles": {
+            "Title": "Beweg dich, bevor das Gewicht sich setzt",
+            "Description": "Das perfekte Ausweichen lässt dich weiterziehen, während der stärkere Gegner noch festgelegt ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Reflex- und Heimlichkeitswürfe."
+          },
+          "TooLargeToWatchBothSides": {
+            "Title": "Zu groß, um beide Seiten im Blick zu halten",
+            "Description": "Der größere Gegner verliert deinen Winkel über seine eigene Ausdehnung hinweg. Für 1 Runde ist die feindliche Quelle Geblendet und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+          },
+          "FourLevelsMomentumBreaksTheTurn": {
+            "Title": "Vier Stufen, Momentum bricht die Wende",
+            "Description": "Gegen einen Gegner, der mindestens 4 Stufen über dir ist, zwingt perfektes Ausweichen überwältigendes Momentum dazu, die falsche Bewegung zu Ende zu führen. Für 1 Runde ist die feindliche Quelle Verlangsamt 1 und Auf dem Falschen Fuß."
+          },
+          "TheGapTravelsWithYou": {
+            "Title": "Der Größenunterschied reist mit dir",
+            "Description": "Gegen einen Gegner, der mindestens zwei Größenkategorien größer ist, erzeugt jeder Winkelwechsel einen neuen blinden Korridor. Für 1 Runde erhältst du einen Zustandsbonus von 1,5 m auf alle Bewegungsraten und einen Situationsbonus von +1 auf Heimlichkeitswürfe."
+          },
+          "VaultTheReach": {
+            "Title": "Überspring die Reichweite",
+            "Description": "Die Reichweite des größeren Gegners wird zu einer Linie, die du überquerst, statt zu einer Mauer, die du fürchtest. Du darfst sofort als freie Aktion Springen. Dieser Sprung löst keine Reaktionen der feindlichen Quelle aus. Wende dieses Ergebnis manuell an."
+          },
+          "TheyCannotCorrectTwice": {
+            "Title": "Sie können nicht zweimal korrigieren",
+            "Description": "Der stärkere Gegner korrigiert einmal und hat für deinen zweiten Winkel nichts mehr übrig. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Akrobatikwürfe und von 1,5 m auf alle Bewegungsraten."
+          },
+          "TurnEvasionIntoPressure": {
+            "Title": "Mach aus Ausweichen Druck",
+            "Description": "Das perfekte Entkommen ist kein Rückzug. Es ist der Augenblick, in dem du die nächste Angriffslinie bestimmst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe und deine RK."
+          },
+          "FiveLevelsRunTheImpossibleLine": {
+            "Title": "Fünf Stufen, lauf die unmögliche Linie",
+            "Description": "Gegen einen Gegner, der mindestens 5 Stufen über dir ist, öffnet perfektes Timing einen Weg, der nicht existieren dürfte. Du darfst sofort als freie Aktion bis zu deiner Bewegungsrate Laufen und musst die Bewegung weiter von der feindlichen Quelle entfernt beenden als du begonnen hast. Diese Bewegung löst keine Reaktionen dieser Quelle aus. Wende dieses Ergebnis manuell an."
+          },
+          "TheColossusLosesTheHorizon": {
+            "Title": "Der Koloss verliert den Horizont",
+            "Description": "Der größere Gegner dreht zu viel Körper durch zu wenig Raum und verliert das Schlachtfeld um dich aus dem Blick. Für 1 Runde ist die feindliche Quelle Unbeholfen 1 und erhält einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG sowie von 1,5 m auf alle Bewegungsraten."
+          },
+          "NeverWhereTheyMeasured": {
+            "Title": "Nie dort, wo sie dich vermessen haben",
+            "Description": "Der stärkere Gegner weiß jetzt, wo du warst. Diese Information ist bereits veraltet. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Akrobatik- und Heimlichkeitswürfe sowie deinen Reflex-SG."
           }
         },
         "Will": {
@@ -1388,6 +1508,46 @@
           "AnswerWithACuttingWord": {
             "Title": "Antworte mit einem schneidenden Wort",
             "Description": "Der stärkere Gegner wollte dich klein erscheinen lassen. Du findest den Satz, der dieses Machtgefälle lächerlich klingen lässt. Falls du Bonmot einsetzen kannst, darfst du sofort als freie Aktion Bonmot gegen die feindliche Quelle versuchen und erhältst dabei einen Situationsbonus von +2 auf den Diplomatiewurf. Wende dieses Ergebnis manuell an; die normalen Einschränkungen von Bonmot gelten weiterhin."
+          },
+          "YourVoiceCarriesUpward": {
+            "Title": "Deine Stimme trägt nach oben",
+            "Description": "Der stärkere Gegner kann Autorität nicht nur in eine Richtung fließen lassen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Diplomatie-, Einschüchtern- und Wahrnehmungswürfe."
+          },
+          "TheMindOverreaches": {
+            "Title": "Der Geist greift zu weit",
+            "Description": "Ein mentaler Angriff des stärkeren Gegners greift zu weit aus und verliert auf dem Rückweg an Präzision. Für 1 Runde ist die feindliche Quelle Benommen 1 und erhält einen Situationsmalus von -1 auf ihre RK."
+          },
+          "FourLevelsTheCommandCracks": {
+            "Title": "Vier Stufen, der Befehl bekommt Risse",
+            "Description": "Gegen einen Gegner, der mindestens 4 Stufen über dir ist, verwandelt deine perfekte Weigerung Befehl in Zögern. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Zauber-SG."
+          },
+          "DefianceHasWeight": {
+            "Title": "Trotz hat Gewicht",
+            "Description": "Der stärkere Gegner schafft es nicht, deinen Geist zu bewegen, und hinterlässt etwas Festes. Du erhältst 3 temporäre Trefferpunkte und für 1 Runde einen Situationsbonus von +1 auf deinen Klassen-SG."
+          },
+          "ReadTheClaimBehindTheThreat": {
+            "Title": "Lies den Anspruch hinter der Drohung",
+            "Description": "Indem du dem stärkeren Gegner widerstehst, trennst du seine Inszenierung von der Absicht dahinter. Du darfst sofort als freie Aktion Motiv erkennen gegen die feindliche Quelle einsetzen und erhältst dabei einen Situationsbonus von +2 auf den Wahrnehmungswurf. Die normale Einschränkung für wiederholte Versuche gilt weiterhin. Wende dieses Ergebnis manuell an."
+          },
+          "BreakTheResonance": {
+            "Title": "Brich die Resonanz",
+            "Description": "Du verweigerst einer überwältigenden Stimme so vollständig den Gehorsam, dass ihre Autorität zu bloßem Lärm zerbricht. Für 1 Runde ist die feindliche Quelle Taub und erhält einen Situationsmalus von -1 auf ihren Zauber-SG."
+          },
+          "TurnConvictionIntoCasting": {
+            "Title": "Mach aus Überzeugung Zauberkraft",
+            "Description": "Deine Weigerung wird zu Fokus statt bloßem Überleben. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zauberangriffswürfe und deinen Willens-SG."
+          },
+          "FiveLevelsStillYourName": {
+            "Title": "Fünf Stufen, immer noch dein Name",
+            "Description": "Gegen einen Gegner, der mindestens 5 Stufen über dir ist, kann der Druck nicht entscheiden, wer du bist. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Willenswürfe, deinen Klassen-SG und deinen Zauber-SG."
+          },
+          "CertaintyCollapsesInward": {
+            "Title": "Gewissheit stürzt nach innen",
+            "Description": "Der stärkere Gegner drückt Gewissheit in deinen Geist und entdeckt, dass die eigene Überzeugung am Widerstand zerbrechen kann. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und Benommen 1 und erhält einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
+          },
+          "NameTheOpeningForAnother": {
+            "Title": "Benenne die Öffnung für einen anderen",
+            "Description": "Du hast gehört, wie die Gewissheit des stärkeren Gegners Risse bekommt, und kannst jemand anderem genau sagen, wo er ansetzen soll. Wähle einen Verbündeten innerhalb von 9 m, der dich sehen oder hören kann. Dieser Verbündete erhält einen Situationsbonus von +1 auf seinen nächsten Wurf zum Demoralisieren, für eine Finte, für Bonmot oder zum Wissen abrufen gegen die feindliche Quelle vor Beginn deines nächsten Zuges. Wende dieses Ergebnis manuell an."
           }
         }
       }
@@ -2089,6 +2249,30 @@
           },
           "TheFirstCrackIsReal": {
             "Name": "Der erste Riss ist echt"
+          },
+          "BreakTheRecovery": {
+            "Name": "Brich die Erholung"
+          },
+          "SmallTargetHeavyPrice": {
+            "Name": "Kleines Ziel, hoher Preis"
+          },
+          "FourLevelsOneBadAngle": {
+            "Name": "Vier Stufen, ein schlechter Winkel"
+          },
+          "UseTheirStrengthAgainstTheGuard": {
+            "Name": "Nutze ihre Stärke gegen die Deckung"
+          },
+          "SpellThroughTheBlindSide": {
+            "Name": "Zauber durch den toten Winkel"
+          },
+          "MagicBendsTheColossus": {
+            "Name": "Magie beugt den Koloss"
+          },
+          "FiveLevelsStillVulnerable": {
+            "Name": "Fünf Stufen, trotzdem verwundbar"
+          },
+          "BorrowTheirPowersEcho": {
+            "Name": "Leih dir das Echo ihrer Macht"
           }
         },
         "Fortitude": {
@@ -2142,6 +2326,30 @@
           },
           "TheirFramePaysThePrice": {
             "Name": "Ihr Körperbau zahlt den Preis"
+          },
+          "TakeTheMeasureOfForce": {
+            "Name": "Nimm das Maß der Gewalt"
+          },
+          "TheBiggerTheyLean": {
+            "Name": "Je größer sie sich hineinlehnen"
+          },
+          "FourLevelsForceRunsOut": {
+            "Name": "Vier Stufen, die Kraft läuft aus"
+          },
+          "PainConvertsToLeverage": {
+            "Name": "Schmerz wird zu Hebelwirkung"
+          },
+          "FrameOutlastsImpact": {
+            "Name": "Der Körper überdauert den Einschlag"
+          },
+          "TheirWeightBecomesDelay": {
+            "Name": "Ihr Gewicht wird zur Verzögerung"
+          },
+          "FiveLevelsStrengthBuckles": {
+            "Name": "Fünf Stufen, Stärke knickt ein"
+          },
+          "EndureThenCommandSpace": {
+            "Name": "Ertrage, dann beherrsche den Raum"
           }
         },
         "Reflex": {
@@ -2195,6 +2403,30 @@
           },
           "DragTheColossusOffLine": {
             "Name": "Zieh den Koloss aus der Linie"
+          },
+          "MoveBeforeTheWeightSettles": {
+            "Name": "Beweg dich, bevor das Gewicht sich setzt"
+          },
+          "TooLargeToWatchBothSides": {
+            "Name": "Zu groß, um beide Seiten im Blick zu halten"
+          },
+          "FourLevelsMomentumBreaksTheTurn": {
+            "Name": "Vier Stufen, Momentum bricht die Wende"
+          },
+          "TheGapTravelsWithYou": {
+            "Name": "Der Größenunterschied reist mit dir"
+          },
+          "TheyCannotCorrectTwice": {
+            "Name": "Sie können nicht zweimal korrigieren"
+          },
+          "TurnEvasionIntoPressure": {
+            "Name": "Mach aus Ausweichen Druck"
+          },
+          "TheColossusLosesTheHorizon": {
+            "Name": "Der Koloss verliert den Horizont"
+          },
+          "NeverWhereTheyMeasured": {
+            "Name": "Nie dort, wo sie dich vermessen haben"
           }
         },
         "Will": {
@@ -2248,6 +2480,30 @@
           },
           "PressureRebounds": {
             "Name": "Der Druck schlägt zurück"
+          },
+          "YourVoiceCarriesUpward": {
+            "Name": "Deine Stimme trägt nach oben"
+          },
+          "TheMindOverreaches": {
+            "Name": "Der Geist greift zu weit"
+          },
+          "FourLevelsTheCommandCracks": {
+            "Name": "Vier Stufen, der Befehl bekommt Risse"
+          },
+          "DefianceHasWeight": {
+            "Name": "Trotz hat Gewicht"
+          },
+          "BreakTheResonance": {
+            "Name": "Brich die Resonanz"
+          },
+          "TurnConvictionIntoCasting": {
+            "Name": "Mach aus Überzeugung Zauberkraft"
+          },
+          "FiveLevelsStillYourName": {
+            "Name": "Fünf Stufen, immer noch dein Name"
+          },
+          "CertaintyCollapsesInward": {
+            "Name": "Gewissheit stürzt nach innen"
           }
         }
       }
