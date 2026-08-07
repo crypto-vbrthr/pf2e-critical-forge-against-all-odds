@@ -9,7 +9,9 @@
 - [x] Bloodied Triumphs Reflex deck contains thirty reviewed cards.
 - [x] Bloodied Triumphs Will deck contains thirty reviewed cards.
 - [x] All 120 published cards include the dynamic Bloodied condition.
-- [x] Surrounded, Still Standing Attack first pass contains ten cards: five regular critical hits and five spell critical hits.
+- [x] Surrounded, Still Standing Attack contains twenty cards after two passes: ten regular critical hits and ten spell critical hits.
+- [x] Surrounded Attack second-pass target effects use current-opponent threat membership where formation membership matters.
+- [x] Surrounded Attack second-pass escalation cards test three/four threat counts.
 - [x] All Surrounded Attack cards include the dynamic Surrounded condition; stronger cards test three/four threat counts.
 - [x] Surrounded, Still Standing Fortitude first pass contains ten critical-success save cards.
 - [x] Surrounded, Still Standing Reflex first pass contains ten critical-success save cards.
@@ -19,7 +21,7 @@
 - [x] Target-centric Surrounded cards require the current opponent to be a counted melee threat.
 - [x] Exact automated Surrounded/Bloodied effect duplication is no greater than 25%.
 - [x] The first forty-card review preserves every previously published card ID.
-- [x] The second and final Attack, Fortitude, Reflex, and Will passes add new IDs without changing earlier published IDs.
+- [x] New content passes add IDs without changing earlier published IDs.
 - [x] Contextual poison, disease, mental, illusion, and emotion filters are covered by tests.
 - [x] German Remaster terminology uses Gesteuert and Kraftlos.
 - [x] All automated effects use Effect Definition schema 2.
@@ -40,7 +42,7 @@
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Fortitude cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Reflex cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Will cards visible.
-- [ ] Foundry smoke test: ten localized Surrounded Attack cards visible.
+- [ ] Foundry smoke test: twenty localized Surrounded Attack cards visible.
 - [ ] Foundry smoke test: ten localized Surrounded Fortitude cards visible.
 - [ ] Foundry smoke test: ten localized Surrounded Reflex cards visible.
 - [ ] Foundry smoke test: ten localized Surrounded Will cards visible.

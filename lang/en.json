@@ -609,6 +609,46 @@
           "NoFreeAngle": {
             "Title": "No Free Angle",
             "Description": "The spell catches a threatening enemy where the formation gives it nowhere clean to move or strike. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to attack rolls."
+          },
+          "TurnTheRingAgainstThem": {
+            "Title": "Turn the Ring Against Them",
+            "Description": "You drive a threatening foe into the bad geometry of its own formation. For 1 round, the target takes a -1 circumstance penalty to AC and Athletics checks."
+          },
+          "CrowdTheirFootwork": {
+            "Title": "Crowd Their Footwork",
+            "Description": "Your hit makes a threatening enemy trip over the very pressure meant to trap you. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and a -5-foot circumstance penalty to all Speeds."
+          },
+          "MoreBladesFewerOpenings": {
+            "Title": "More Blades, Fewer Openings",
+            "Description": "With three or more enemies crowding you, their attacks begin to obstruct one another. For 1 round, you gain a +1 circumstance bonus to AC and Reflex DC."
+          },
+          "FourBodiesOneBottleneck": {
+            "Title": "Four Bodies, One Bottleneck",
+            "Description": "With four or more enemies packed around you, a critical hit turns one threatening foe into a blockage. For 1 round, the target gains weakness 1 to weapons and takes a -5-foot circumstance penalty to all Speeds."
+          },
+          "ShoulderTheRingOpen": {
+            "Title": "Shoulder the Ring Open",
+            "Description": "Your critical hit gives you one brutal instant to disrupt the encirclement. You may immediately attempt to Shove one currently threatening enemy other than the target as a free action. Apply this result manually."
+          },
+          "SpellBetweenTheirBlades": {
+            "Title": "Spell Between Their Blades",
+            "Description": "You cast through a forest of weapons without giving the ring a clean opening. For 1 round, you gain a +1 circumstance bonus to spell attack rolls and AC."
+          },
+          "ArcThroughTheCrowd": {
+            "Title": "Arc Through the Crowd",
+            "Description": "The spell uses the ring's own congestion against a threatening foe. For 1 round, the target takes a -1 circumstance penalty to AC and saving throws."
+          },
+          "PressureFindsTheWeakLink": {
+            "Title": "Pressure Finds the Weak Link",
+            "Description": "With three or more enemies closing in, your spell exposes the one whose concentration holds the line together. A threatening target becomes stupefied 1 and takes a -5-foot circumstance penalty to all Speeds for 1 round."
+          },
+          "FourShadowsOneFlash": {
+            "Title": "Four Shadows, One Flash",
+            "Description": "Four or more enemies crowd your sightlines, and the spell still finds the exact break in the ring. A threatening target becomes off-guard and frightened 1 for 1 round."
+          },
+          "CarveAMagicalCorridor": {
+            "Title": "Carve a Magical Corridor",
+            "Description": "The spell punches a momentary lane through the encirclement. You may immediately Stride up to half your Speed as a free action; the spell's target cannot use reactions triggered by this movement. Apply this result manually."
           }
         },
         "Fortitude": {
@@ -1102,6 +1142,30 @@
           },
           "NoFreeAngle": {
             "Name": "No Free Angle"
+          },
+          "TurnTheRingAgainstThem": {
+            "Name": "Turn the Ring Against Them"
+          },
+          "CrowdTheirFootwork": {
+            "Name": "Crowd Their Footwork"
+          },
+          "MoreBladesFewerOpenings": {
+            "Name": "More Blades, Fewer Openings"
+          },
+          "FourBodiesOneBottleneck": {
+            "Name": "Four Bodies, One Bottleneck"
+          },
+          "SpellBetweenTheirBlades": {
+            "Name": "Spell Between Their Blades"
+          },
+          "ArcThroughTheCrowd": {
+            "Name": "Arc Through the Crowd"
+          },
+          "PressureFindsTheWeakLink": {
+            "Name": "Pressure Finds the Weak Link"
+          },
+          "FourShadowsOneFlash": {
+            "Name": "Four Shadows, One Flash"
           }
         },
         "Fortitude": {

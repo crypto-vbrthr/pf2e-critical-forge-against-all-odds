@@ -24,8 +24,8 @@ test("every theme reserves attack, Fortitude, Reflex, and Will decks", () => {
     for (const deckType of SPECIALIZED_DECK_TYPES) {
       const expected = pack.id.endsWith("bloodied-triumphs")
         ? 30
-        : pack.id.endsWith("surrounded-still-standing") && ["attack", "fortitude", "reflex", "will"].includes(deckType)
-          ? 10
+        : pack.id.endsWith("surrounded-still-standing")
+          ? (deckType === "attack" ? 20 : 10)
           : 0;
       assert.equal(pack.decks[deckType].cards.length, expected);
     }

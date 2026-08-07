@@ -565,14 +565,15 @@ test("Bloodied Triumphs completes 120 unique cards with a stable 108 automated /
 });
 
 
-test("Surrounded, Still Standing first Attack pass contains five Strike and five spell criticals", () => {
-  assert.equal(SURROUNDED_ATTACK_CARDS.length, 10);
-  assert.equal(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size, 10);
-  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 5);
-  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 5);
+test("Surrounded, Still Standing Attack deck contains twenty cards after the second pass", () => {
+  assert.equal(SURROUNDED_ATTACK_CARDS.length, 20);
+  assert.equal(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size, 20);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 10);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 10);
   assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
   assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
-  assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.metadata.contentBatch === 13), true);
+  assert.equal(SURROUNDED_ATTACK_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 13), true);
+  assert.equal(SURROUNDED_ATTACK_CARDS.slice(10).every((card) => card.metadata.contentBatch === 17), true);
 });
 
 test("all Surrounded Attack cards use the dynamic surrounded gate", () => {
@@ -592,12 +593,13 @@ test("heavier Surrounded Attack results require three or four threatening enemie
 });
 
 test("Surrounded Attack first pass keeps hostile and beneficial targets intentional", () => {
-  const automated = SURROUNDED_ATTACK_CARDS.filter((card) => card.effect);
+  const firstPass = SURROUNDED_ATTACK_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
   assert.equal(automated.length, 9);
-  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => !card.effect).length, 1);
+  assert.equal(firstPass.filter((card) => !card.effect).length, 1);
   assert.equal(automated.filter((card) => card.effect.target === "source").length, 3);
   assert.equal(automated.filter((card) => card.effect.target === "target").length, 6);
-  assert.equal(SURROUNDED_ATTACK_CARDS.find((card) => card.id.endsWith("ssa-008-four-against-one")).filters.excludedTargetTraits.includes("mindless"), true);
+  assert.equal(firstPass.find((card) => card.id.endsWith("ssa-008-four-against-one")).filters.excludedTargetTraits.includes("mindless"), true);
 });
 
 test("Surrounded Attack card and effect localization keys exist in German and English", () => {
@@ -627,6 +629,55 @@ test("Surrounded first-pass cards use Forge-supported tones, impacts, filters, a
   }
 });
 
+
+test("Surrounded Attack second pass adds five Strike and five spell criticals with formation-specific mechanics", () => {
+  const secondPass = SURROUNDED_ATTACK_CARDS.slice(10, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(secondPass.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 17), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "ssa-015-shoulder-the-ring-open",
+    "ssa-020-carve-a-magical-corridor"
+  ]);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "weakness" && component.weaknessType === "weapons"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "stupefied"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "frightened"), true);
+});
+
+test("Surrounded Attack second pass escalates at three and four threats without weakening the base pool", () => {
+  const bySuffix = Object.fromEntries(SURROUNDED_ATTACK_CARDS.slice(10).map((card) => [card.id.split(".").at(-1), card]));
+  for (const suffix of ["ssa-013-more-blades-fewer-openings", "ssa-018-pressure-finds-the-weak-link"]) {
+    assert.equal(conditionLeaves(bySuffix[suffix].conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3
+    ), true, suffix);
+  }
+  for (const suffix of ["ssa-014-four-bodies-one-bottleneck", "ssa-019-four-shadows-one-flash"]) {
+    assert.equal(conditionLeaves(bySuffix[suffix].conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4
+    ), true, suffix);
+  }
+});
+
+test("Surrounded Attack second pass uses current-opponent threat gating for formation attacks", () => {
+  const expected = new Set([
+    "ssa-011-turn-the-ring-against-them",
+    "ssa-012-crowd-their-footwork",
+    "ssa-014-four-bodies-one-bottleneck",
+    "ssa-017-arc-through-the-crowd",
+    "ssa-018-pressure-finds-the-weak-link",
+    "ssa-019-four-shadows-one-flash"
+  ]);
+  for (const card of SURROUNDED_ATTACK_CARDS.slice(10)) {
+    const suffix = card.id.split(".").at(-1);
+    const hasGate = conditionLeaves(card.conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
+    );
+    assert.equal(hasGate, expected.has(suffix), card.id);
+  }
+});
 
 test("Surrounded, Still Standing first Fortitude pass contains ten unique critical-save cards", () => {
   assert.equal(SURROUNDED_FORTITUDE_CARDS.length, 10);
@@ -850,6 +901,12 @@ test("target-centric Surrounded cards require the current opponent to be a count
     "ssa-007-magic-tears-the-formation",
     "ssa-009-ring-turns-inward",
     "ssa-010-no-free-angle",
+    "ssa-011-turn-the-ring-against-them",
+    "ssa-012-crowd-their-footwork",
+    "ssa-014-four-bodies-one-bottleneck",
+    "ssa-017-arc-through-the-crowd",
+    "ssa-018-pressure-finds-the-weak-link",
+    "ssa-019-four-shadows-one-flash",
     "ssf-006-make-them-spend-themselves",
     "ssr-005-overreach-opens-the-source",
     "ssr-006-balance-turns-against-them"

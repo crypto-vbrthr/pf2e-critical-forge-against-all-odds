@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-dev.16
+
+### Added
+- Added the second ten-card **Surrounded, Still Standing** Attack pass, bringing the Attack deck to 20/30 cards and the theme to 50/120 cards.
+- Added five ordinary critical-hit and five spell critical-hit results focused on formation geometry, bottlenecks, ring pressure, and tactical escape.
+- Added six new target-centric results that require `surrounded.opponentIsThreatening == true`, plus two three-threat and two four-threat escalation cards.
+- Added German and English localization for all ten cards and eight automated effects.
+
+### Tests
+- Raised the add-on suite to 107 tests with second-pass count, 10/10 Attack split, content-batch, manual/automated split, threat-gating, three/four-threat escalation, localization, and cross-theme duplication coverage.
+- Revalidated the full add-on against the actual Critical Forge `1.0.0-rc` pack, matcher, and Effect Engine contracts before packaging.
+
+### Compatibility
+- Existing 160 published card IDs remain unchanged; this build adds ten Surrounded Attack IDs.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.15.1
 
 ### Reviewed

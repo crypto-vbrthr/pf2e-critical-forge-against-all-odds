@@ -103,11 +103,11 @@ check(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCritical
 check(BLOODIED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Bloodied Triumphs Will cards must require Will.");
 check(BLOODIED_WILL_CARDS.every((card) => hasBloodiedGate(card.conditions)), "Bloodied Triumphs Will cards must use the dynamic Bloodied condition.");
 
-check(SURROUNDED_ATTACK_CARDS.length === 10, "Surrounded, Still Standing Attack deck must contain ten first-pass cards.");
-check(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size === 10, "Surrounded Attack card IDs must be unique.");
+check(SURROUNDED_ATTACK_CARDS.length === 20, "Surrounded, Still Standing Attack deck must contain twenty cards after two passes.");
+check(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size === 20, "Surrounded Attack card IDs must be unique.");
 check(SURROUNDED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Surrounded cards must remain in the Attack deck.");
-check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Surrounded Attack first pass must contain five ordinary critical-hit cards.");
-check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Surrounded Attack first pass must contain five spell critical-hit cards.");
+check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 10, "Surrounded Attack deck must contain ten ordinary critical-hit cards after two passes.");
+check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Surrounded Attack deck must contain ten spell critical-hit cards after two passes.");
 check(SURROUNDED_ATTACK_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Attack cards must use the dynamic Surrounded condition.");
 
 check(SURROUNDED_FORTITUDE_CARDS.length === 10, "Surrounded, Still Standing Fortitude deck must contain ten first-pass cards.");

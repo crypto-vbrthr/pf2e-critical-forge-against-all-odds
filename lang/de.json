@@ -609,6 +609,46 @@
           "NoFreeAngle": {
             "Title": "Kein freier Winkel",
             "Description": "Der Zauber erwischt einen dich bedrohenden Gegner dort, wo die Formation weder saubere Bewegung noch einen sauberen Angriff zulässt. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten und -1 auf Angriffswürfe."
+          },
+          "TurnTheRingAgainstThem": {
+            "Title": "Den Ring gegen sie wenden",
+            "Description": "Du treibst einen dich bedrohenden Gegner in die schlechte Geometrie seiner eigenen Formation. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf RK und Athletikwürfe."
+          },
+          "CrowdTheirFootwork": {
+            "Title": "Nimm ihnen den Raum",
+            "Description": "Dein Treffer lässt einen dich bedrohenden Gegner über genau den Druck stolpern, mit dem er dich festsetzen wollte. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Reflex-SG und 1,5 m auf alle Bewegungsraten."
+          },
+          "MoreBladesFewerOpenings": {
+            "Title": "Mehr Klingen, weniger Lücken",
+            "Description": "Wenn dich mindestens drei Gegner bedrängen, beginnen ihre Angriffe einander zu behindern. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Reflex-SG."
+          },
+          "FourBodiesOneBottleneck": {
+            "Title": "Vier Körper, ein Engpass",
+            "Description": "Wenn sich mindestens vier Gegner um dich drängen, macht dein kritischer Treffer einen dich bedrohenden Feind zum Engpass. Für 1 Runde erhält das Ziel Schwäche 1 gegen Waffen und einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          },
+          "ShoulderTheRingOpen": {
+            "Title": "Brich den Ring mit der Schulter",
+            "Description": "Dein kritischer Treffer gibt dir einen brutalen Augenblick, um die Einkreisung zu stören. Du darfst sofort als freie Aktion gegen einen dich aktuell bedrohenden Gegner außer dem Ziel einen Stoßen-Versuch ausführen. Wende dieses Ergebnis manuell an."
+          },
+          "SpellBetweenTheirBlades": {
+            "Title": "Zauber zwischen ihren Klingen",
+            "Description": "Du wirkst deinen Zauber durch einen Wald aus Waffen, ohne dem Ring eine saubere Öffnung zu geben. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zauberangriffswürfe und RK."
+          },
+          "ArcThroughTheCrowd": {
+            "Title": "Bogen durch das Gedränge",
+            "Description": "Der Zauber nutzt das Gedränge des Rings gegen einen dich bedrohenden Gegner. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf RK und Rettungswürfe."
+          },
+          "PressureFindsTheWeakLink": {
+            "Title": "Druck findet die Schwachstelle",
+            "Description": "Wenn dich mindestens drei Gegner bedrängen, legt dein Zauber denjenigen bloß, dessen Konzentration die Linie zusammenhält. Ein dich bedrohendes Ziel wird für 1 Runde Benommen 1 und erhält einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          },
+          "FourShadowsOneFlash": {
+            "Title": "Vier Schatten, ein Lichtblitz",
+            "Description": "Mindestens vier Gegner verstellen deine Sichtlinien, und trotzdem findet der Zauber exakt den Bruch im Ring. Ein dich bedrohendes Ziel wird für 1 Runde Auf dem falschen Fuß und Verängstigt 1."
+          },
+          "CarveAMagicalCorridor": {
+            "Title": "Schlag einen magischen Korridor",
+            "Description": "Der Zauber schlägt für einen Augenblick eine Gasse durch die Einkreisung. Du darfst sofort als freie Aktion bis zur halben Bewegungsrate Laufen; das Ziel des Zaubers kann keine durch diese Bewegung ausgelösten Reaktionen einsetzen. Wende dieses Ergebnis manuell an."
           }
         },
         "Fortitude": {
@@ -1102,6 +1142,30 @@
           },
           "NoFreeAngle": {
             "Name": "Kein freier Winkel"
+          },
+          "TurnTheRingAgainstThem": {
+            "Name": "Den Ring gegen sie wenden"
+          },
+          "CrowdTheirFootwork": {
+            "Name": "Nimm ihnen den Raum"
+          },
+          "MoreBladesFewerOpenings": {
+            "Name": "Mehr Klingen, weniger Lücken"
+          },
+          "FourBodiesOneBottleneck": {
+            "Name": "Vier Körper, ein Engpass"
+          },
+          "SpellBetweenTheirBlades": {
+            "Name": "Zauber zwischen ihren Klingen"
+          },
+          "ArcThroughTheCrowd": {
+            "Name": "Bogen durch das Gedränge"
+          },
+          "PressureFindsTheWeakLink": {
+            "Name": "Druck findet die Schwachstelle"
+          },
+          "FourShadowsOneFlash": {
+            "Name": "Vier Schatten, ein Lichtblitz"
           }
         },
         "Fortitude": {
