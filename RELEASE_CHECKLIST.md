@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 157/157 passing.
-- [x] Current coverage: 99.42% lines, 93.88% branches, 98.33% functions.
-- [x] Current localization parity: 849 keys in both German and English.
-- [x] Critical Forge `1.0.0-rc` validates 280 published cards and all 244 automated card effects through pack validation.
+- [x] Current automated test run: 163/163 passing.
+- [x] Current coverage: 99.44% lines, 94.14% branches, 98.39% functions.
+- [x] Current localization parity: 852 keys in both German and English.
+- [x] Critical Forge `1.0.0-rc` validates 280 published cards and all 243 automated card effects through pack validation.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -73,7 +73,7 @@
 - [x] Giant-Slayer Attack and Fortitude each contain one +4 and one +5 escalation result.
 - [x] Giant-Slayer Fortitude automated effects add no exact published signature duplicate.
 - [x] Foundry smoke test: ten localized Giant-Slayer Fortitude cards visible.
-- [x] Giant-Slayer Reflex first pass contains ten critical-success cards with 9 automated / 1 manual results.
+- [x] Giant-Slayer Reflex first pass contains ten critical-success cards with 8 automated / 2 manual results after the observer-relative concealment review.
 - [x] Giant-Slayer Reflex first pass adds no resistance or immunity components.
 - [x] Giant-Slayer Reflex saver/hostile target roles are regression-tested.
 - [x] Giant-Slayer Attack, Fortitude, and Reflex each contain one +4 and one +5 escalation result.
@@ -87,4 +87,13 @@
 - [x] Giant-Slayer Will saver/hostile target roles are regression-tested.
 - [x] Giant-Slayer Attack, Fortitude, Reflex, and Will each contain one +4 and one +5 escalation result.
 - [x] Giant-Slayer Will automated effects add no exact published signature duplicate.
-- [ ] Foundry smoke test: ten localized Giant-Slayer Will cards visible.
+- [x] Foundry smoke test: ten localized Giant-Slayer Will cards visible.
+
+- [x] Giant-Slayer first-40 review reuses Critical Forge threat evidence without a second scene scan.
+- [x] Giant-Slayer `opponentSize`, `sizeGap`, and `opponentIsLarger` are exposed to editor/diagnostics with unknown-safe semantics.
+- [x] Physical Giant-Slayer Fortitude/Reflex counterplay requires the actual threatening opponent.
+- [x] Scale-specific Giant-Slayer cards require an actually larger opponent.
+- [x] Five Levels, One Empty Square no longer applies global automated `concealed`; observer-relative concealment is manual.
+- [x] Dominance Loses Its Grip requires a mental trigger and Their Certainty Misses a Beat excludes mindless targets.
+- [ ] Foundry smoke test for `0.1.0-dev.24.1`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
+- [ ] Foundry smoke test for `0.1.0-dev.24.1`: reviewed Giant-Slayer physical/size/mental gating behaves as expected in a live scene.

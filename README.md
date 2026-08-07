@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.24` completes the first 40-card **Giant-Slayer Moments** review block by adding ten Will cards. Giant-Slayer now has ten cards in Attack, Fortitude, Reflex, and Will, all driven by the real level gap between the rolling actor and the current opponent. All previously published card IDs remain unchanged.
+Version `0.1.0-dev.24.1` applies the first 40-card **Giant-Slayer Moments** review. Giant-Slayer now reuses Critical Forge's existing battlefield threat evidence and participant sizes in addition to the level gap, allowing physical counterplay to distinguish a nearby melee threat from a remote caster and allowing explicitly scale-based cards to require a genuinely larger opponent. All 280 published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -82,16 +82,16 @@ Giant-Slayer Moments now contains 40/120 cards:
 
 - 10/30 Attack cards: five ordinary critical-hit cards and five spell critical-hit cards, with nine automated effects and one manual Recall Knowledge result;
 - 10/30 Fortitude cards for critically successful Fortitude saves, with nine automated effects and one manual closing Step;
-- 10/30 Reflex cards for critically successful Reflex saves, with nine automated effects and one manual dead-angle repositioning result;
+- 10/30 Reflex cards for critically successful Reflex saves, with eight automated effects and two manual observer-aware dead-angle results;
 - 10/30 Will cards for critically successful Will saves, with nine automated effects and one manual Demoralize counter-moment;
 - every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`;
 - each published deck has one result escalating at a level gap of +4 and one at +5;
 - the first Fortitude, Reflex, and Will passes deliberately add no resistance or immunity filler and keep positive effects on the saving actor while hostile countereffects target the stronger opponent;
-- the first Reflex pass focuses on blind spots, overshoot, momentum, movement, and balance instead of repeating Surrounded mobility mechanics;
-- the first Will pass focuses on defiance, broken arrogance, mental counterpressure, and refusing the stronger foe's implied authority.
+- the reviewed Reflex pass focuses on blind spots, overshoot, momentum, movement, and balance, while physical countermoves require the current opponent to be a counted melee threat and scale-specific cards require a larger opponent;
+- the reviewed Will pass focuses on defiance, broken arrogance, and mental counterpressure; explicitly mental dominance results now require a mental trigger and mindless foes are excluded where the fiction requires doubt or certainty.
 
 Against All Odds therefore currently contains **280/480 planned cards** across two complete themes and one theme in progress.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 
-Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`. Target-centric Surrounded cards may also require `extensions.againstAllOdds.surrounded.opponentIsThreatening == true`, which is derived from the Critical Forge `battlefield.hostileThreats` snapshot rather than from a second scene scan.
+Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`. Target-centric Surrounded cards may also require `extensions.againstAllOdds.surrounded.opponentIsThreatening == true`. Giant-Slayer reuses the same immutable threat evidence as `giantSlayer.opponentIsThreatening` and additionally exposes `opponentSize`, `sizeGap`, and `opponentIsLarger` from the existing participant snapshot. None of these fields performs a second scene scan.

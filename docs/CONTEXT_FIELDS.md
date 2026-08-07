@@ -48,6 +48,11 @@ giantSlayer.matched
 giantSlayer.rollerLevel
 giantSlayer.opponentLevel
 giantSlayer.levelGap
+giantSlayer.opponentIsThreatening
+giantSlayer.opponentThreatEvaluation
+giantSlayer.opponentSize
+giantSlayer.sizeGap
+giantSlayer.opponentIsLarger
 giantSlayer.threshold
 ```
 
@@ -58,6 +63,13 @@ opponent level - rolling actor level
 ```
 
 For saving throws, Critical Forge already assigns the saving actor to `participants.source` and the hostile cause or caster to `participants.target`. The default threshold is +3.
+
+### Threat and size evidence
+
+`giantSlayer.opponentIsThreatening` reuses the exact same current-opponent membership result as Surrounded. It is derived from the already captured `battlefield.hostileThreats` evidence and therefore stays `null` when the snapshot cannot resolve membership rather than guessing. No second scene scan occurs.
+
+`opponentSize` is normalized to PF2e snapshot slugs (`tiny`, `sm`, `med`, `lg`, `huge`, `grg`). `sizeGap` is the signed number of size steps between the rolling actor and opponent, and `opponentIsLarger` is `true` only for a positive gap. Missing or unknown participant sizes produce `null` for the relation fields. These values are evidence for scale-specific cards; Giant-Slayer itself still matches primarily by level gap.
+
 
 ## Narrow Escapes
 

@@ -54,8 +54,8 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Dominance Loses Its Grip",
     fallbackDescription: "The hostile source presses its mind against yours and discovers that superiority is not the same thing as control. For 1 round, it is stupefied 1 and takes a -1 circumstance penalty to Intimidation checks.",
-    tags: ["hostile-source", "stupefied", "intimidation", "counterpressure", "effect"],
-    filters: { excludedTargetTraits: ["mindless"] },
+    tags: ["hostile-source", "stupefied", "intimidation", "counterpressure", "mental", "effect"],
+    filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] },
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -100,6 +100,7 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     fallbackTitle: "Their Certainty Misses a Beat",
     fallbackDescription: "The stronger foe realizes that its pressure did not move you, and that realization costs it a moment of perfect command. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls, Will DC, and Perception DC.",
     tags: ["hostile-source", "attack-roll", "will-dc", "perception-dc", "effect"],
+    filters: { excludedTargetTraits: ["mindless"] },
     effect: {
       target: "target",
       duration: ONE_ROUND,

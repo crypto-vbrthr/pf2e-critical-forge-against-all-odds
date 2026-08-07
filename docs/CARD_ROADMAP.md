@@ -33,9 +33,9 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 9. Giant-Slayer Moments Fortitude, first pass: 10 cards. **Complete in `0.1.0-dev.22`, with 9 automated / 1 manual, +4/+5 escalation, and no resistance/immunity filler.**
 10. Giant-Slayer Moments Reflex, first pass: 10 cards. **Complete in `0.1.0-dev.23`, with 9 automated / 1 manual, +4/+5 escalation, and no resistance/immunity filler.**
 11. Giant-Slayer Moments Will first pass: 10 cards. **Complete in `0.1.0-dev.24`, with 9 automated / 1 manual, +4/+5 escalation, and no resistance/immunity filler.**
-12. Review the first 40 Giant-Slayer cards before beginning pass two.
+12. Review the first 40 Giant-Slayer cards before beginning pass two. **Complete in `0.1.0-dev.24.1`; physical counterplay now uses current-opponent threat membership, scale-specific cards use participant size relations, observer-relative concealment is manual, and Will context filters were tightened without changing IDs.**
 13. Continue Giant-Slayer through second/final reviewed passes, then repeat the process for **Narrow Escapes**.
-13. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+14. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
 Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments has reached 40/120 cards with its first Attack, Fortitude, Reflex, and Will passes complete.
 

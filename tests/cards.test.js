@@ -1404,13 +1404,16 @@ test("Giant-Slayer Reflex escalation cards require four or five levels of disadv
   assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
 });
 
-test("Giant-Slayer Reflex keeps nine automated results and one manual dead-angle result", () => {
+test("Giant-Slayer Reflex keeps eight automated results and two manual observer-aware dead-angle results", () => {
   const automated = GIANT_SLAYER_REFLEX_CARDS.filter((card) => card.effect);
   const manual = GIANT_SLAYER_REFLEX_CARDS.filter((card) => !card.effect);
-  assert.equal(automated.length, 9);
-  assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), ["gsr-010-cross-the-dead-angle"]);
-  assert.equal(manual[0].tags.includes("manual"), true);
-  assert.equal(manual[0].tags.includes("step"), true);
+  assert.equal(automated.length, 8);
+  assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), [
+    "gsr-004-five-levels-one-empty-square",
+    "gsr-010-cross-the-dead-angle"
+  ]);
+  assert.equal(manual.every((card) => card.tags.includes("manual")), true);
+  assert.equal(manual.every((card) => card.tags.includes("step")), true);
   for (const card of automated) {
     assert.equal(card.effect.definition.schemaVersion, 2);
     assert.equal(card.effect.definition.components.length > 0, true);
@@ -1478,6 +1481,60 @@ test("Giant-Slayer Reflex automated mechanics add no exact published duplicate",
 });
 
 
+test("Giant-Slayer review gates physical save counterplay to the actual melee threat", () => {
+  const cards = [...GIANT_SLAYER_FORTITUDE_CARDS, ...GIANT_SLAYER_REFLEX_CARDS];
+  const bySuffix = Object.fromEntries(cards.map((card) => [card.id.split(".").at(-1), card]));
+  for (const id of [
+    "gsf-002-their-force-betrays-them",
+    "gsf-004-weight-turns-against-them",
+    "gsf-007-impact-opens-the-guard",
+    "gsf-008-overreach-has-a-price",
+    "gsr-002-momentum-exposes-the-flank",
+    "gsr-003-let-the-giant-overshoot",
+    "gsr-006-footing-cannot-follow",
+    "gsr-008-four-levels-too-much-momentum",
+    "gsr-010-cross-the-dead-angle"
+  ]) {
+    const threat = conditionLeaves(bySuffix[id].conditions).find((leaf) =>
+      leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening"
+    );
+    assert.deepEqual({ operator: threat?.operator, value: threat?.value }, { operator: "eq", value: true }, id);
+  }
+});
+
+test("Giant-Slayer review reserves scale-specific cards for opponents that are actually larger", () => {
+  const cards = [...GIANT_SLAYER_ATTACK_CARDS, ...GIANT_SLAYER_FORTITUDE_CARDS, ...GIANT_SLAYER_REFLEX_CARDS];
+  const bySuffix = Object.fromEntries(cards.map((card) => [card.id.split(".").at(-1), card]));
+  for (const id of [
+    "gsa-004-reach-becomes-leverage",
+    "gsf-004-weight-turns-against-them",
+    "gsr-001-duck-beneath-the-impossible",
+    "gsr-002-momentum-exposes-the-flank",
+    "gsr-004-five-levels-one-empty-square",
+    "gsr-005-size-becomes-a-blind-spot"
+  ]) {
+    const larger = conditionLeaves(bySuffix[id].conditions).find((leaf) =>
+      leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsLarger"
+    );
+    assert.deepEqual({ operator: larger?.operator, value: larger?.value }, { operator: "eq", value: true }, id);
+  }
+});
+
+test("Five Levels, One Empty Square never automates observer-relative concealed", () => {
+  const card = GIANT_SLAYER_REFLEX_CARDS.find((entry) => entry.id.endsWith("gsr-004-five-levels-one-empty-square"));
+  assert.equal(card.effect, null);
+  assert.equal(card.tags.includes("manual"), true);
+  assert.equal(card.tags.includes("concealed"), true);
+  const allAutomatedConditions = ALL_GIANT_SLAYER_CARDS
+    .filter((entry) => entry.effect)
+    .flatMap((entry) => entry.effect.definition.components)
+    .filter((component) => component.type === "condition")
+    .map((component) => component.slug);
+  assert.equal(allAutomatedConditions.includes("concealed"), false);
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
+  assert.match(de.PF2E_AGAINST_ALL_ODDS.Cards.GiantSlayerMoments.Reflex.FiveLevelsOneEmptySquare.Description, /gegenüber der feindlichen Quelle Verborgen/u);
+});
+
 test("Giant-Slayer Moments first Will pass adds ten critical-success save cards", () => {
   assert.equal(GIANT_SLAYER_WILL_CARDS.length, 10);
   assert.equal(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size, 10);
@@ -1535,6 +1592,13 @@ test("Giant-Slayer Will preserves save-target roles for resolve boons and hostil
   for (const card of GIANT_SLAYER_WILL_CARDS.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
     assert.equal(card.effect.target, "source", card.id);
   }
+});
+
+test("Giant-Slayer review binds mental dominance to mental effects and excludes mindless certainty", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["gsw-004-dominance-loses-its-grip"].filters.attackTraits, ["mental"]);
+  assert.deepEqual(bySuffix["gsw-004-dominance-loses-its-grip"].filters.excludedTargetTraits, ["mindless"]);
+  assert.deepEqual(bySuffix["gsw-007-their-certainty-misses-a-beat"].filters.excludedTargetTraits, ["mindless"]);
 });
 
 test("Giant-Slayer Will first pass avoids resistance and immunity filler", () => {

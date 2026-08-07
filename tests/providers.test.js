@@ -34,8 +34,14 @@ test("the condition provider publishes unique typed editor fields", () => {
   assert.equal(paths.every((path) => path.startsWith("extensions.againstAllOdds.")), true);
   assert.equal(provider.fields.find((field) => field.path.endsWith("rollKind")).type, "enum");
   assert.deepEqual(provider.fields.find((field) => field.path.endsWith("rollKind")).values, ["attack", "fortitude", "reflex", "will", "unknown"]);
-  assert.equal(provider.fields.find((field) => field.path.endsWith("opponentIsThreatening")).type, "boolean");
-  assert.equal(provider.fields.find((field) => field.path.endsWith("opponentThreatEvaluation")).type, "string");
+  assert.equal(provider.fields.find((field) => field.path.endsWith("surrounded.opponentIsThreatening")).type, "boolean");
+  assert.equal(provider.fields.find((field) => field.path.endsWith("surrounded.opponentThreatEvaluation")).type, "string");
+  assert.equal(provider.fields.find((field) => field.path.endsWith("giantSlayer.opponentIsThreatening")).type, "boolean");
+  assert.equal(provider.fields.find((field) => field.path.endsWith("giantSlayer.opponentSize")).type, "enum");
+  assert.deepEqual(provider.fields.find((field) => field.path.endsWith("giantSlayer.opponentSize")).values, ["tiny", "sm", "med", "lg", "huge", "grg"]);
+  assert.equal(provider.fields.find((field) => field.path.endsWith("giantSlayer.sizeGap")).type, "number");
+  assert.equal(provider.fields.find((field) => field.path.endsWith("giantSlayer.opponentIsLarger")).type, "boolean");
+  assert.equal(provider.version, "1.2.0");
 });
 
 test("the diagnostic provider returns metrics or an explicit unavailable state", () => {

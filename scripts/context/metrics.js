@@ -9,6 +9,21 @@ const DANGEROUS_TRAITS = Object.freeze([
   "poison"
 ]);
 
+const SIZE_ALIASES = Object.freeze({
+  tiny: "tiny",
+  sm: "sm",
+  small: "sm",
+  med: "med",
+  medium: "med",
+  lg: "lg",
+  large: "lg",
+  huge: "huge",
+  grg: "grg",
+  gargantuan: "grg"
+});
+
+const SIZE_RANKS = Object.freeze({ tiny: 0, sm: 1, med: 2, lg: 3, huge: 4, grg: 5 });
+
 export function evaluateAgainstAllOdds(snapshot = {}, settings = {}) {
   const roller = snapshot?.participants?.source ?? {};
   const opponent = snapshot?.participants?.target ?? {};
@@ -47,11 +62,18 @@ export function evaluateAgainstAllOdds(snapshot = {}, settings = {}) {
     opponentThreat: opponentThreat.evidence
   });
 
+  const sizeRelation = evaluateSizeRelation(roller?.size, opponent?.size);
   const giantSlayer = Object.freeze({
     matched: levelGap != null && levelGap >= thresholds.giantSlayerLevelGap,
     rollerLevel,
     opponentLevel,
     levelGap,
+    opponentIsThreatening: opponentThreat.value,
+    opponentThreatEvaluation: opponentThreat.evaluation,
+    opponentThreat: opponentThreat.evidence,
+    opponentSize: sizeRelation.opponentSize,
+    sizeGap: sizeRelation.sizeGap,
+    opponentIsLarger: sizeRelation.opponentIsLarger,
     threshold: thresholds.giantSlayerLevelGap
   });
 
@@ -111,6 +133,21 @@ export function evaluateOpponentThreat(snapshot = {}) {
   }
 
   return deepFreeze({ value: null, evaluation: battlefield.threatEvaluation ?? "not-evaluated", evidence: null });
+}
+
+
+export function evaluateSizeRelation(rollerSize, opponentSize) {
+  const roller = normalizeSize(rollerSize);
+  const opponent = normalizeSize(opponentSize);
+  const rollerRank = roller == null ? null : SIZE_RANKS[roller];
+  const opponentRank = opponent == null ? null : SIZE_RANKS[opponent];
+  const sizeGap = rollerRank == null || opponentRank == null ? null : opponentRank - rollerRank;
+  return deepFreeze({
+    rollerSize: roller,
+    opponentSize: opponent,
+    sizeGap,
+    opponentIsLarger: sizeGap == null ? null : sizeGap > 0
+  });
 }
 
 export function evaluateDangerScore(snapshot = {}, {
@@ -231,4 +268,9 @@ function collectDangerousTraits(snapshot) {
 
 function component(id, points, data = {}) {
   return Object.freeze({ id, points, data: plainClone(data) });
+}
+
+function normalizeSize(value) {
+  const normalized = String(value ?? "").trim().toLowerCase();
+  return SIZE_ALIASES[normalized] ?? null;
 }

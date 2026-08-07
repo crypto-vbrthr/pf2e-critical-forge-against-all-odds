@@ -11,7 +11,7 @@ const GROUP_FALLBACK = "Against All Odds";
 export function createConditionProvider() {
   return Object.freeze({
     id: CONDITION_PROVIDER_ID,
-    version: "1.1.0",
+    version: "1.2.0",
     fields: Object.freeze([
       field("extensions.againstAllOdds.rollKind", "enum", "RollKind", {
         values: ["attack", "fortitude", "reflex", "will", "unknown"]
@@ -31,6 +31,13 @@ export function createConditionProvider() {
       field("extensions.againstAllOdds.giantSlayer.rollerLevel", "number", "RollerLevel"),
       field("extensions.againstAllOdds.giantSlayer.opponentLevel", "number", "OpponentLevel"),
       field("extensions.againstAllOdds.giantSlayer.levelGap", "number", "LevelGap"),
+      field("extensions.againstAllOdds.giantSlayer.opponentIsThreatening", "boolean", "OpponentIsThreatening"),
+      field("extensions.againstAllOdds.giantSlayer.opponentThreatEvaluation", "string", "OpponentThreatEvaluation"),
+      field("extensions.againstAllOdds.giantSlayer.opponentSize", "enum", "OpponentSize", {
+        values: ["tiny", "sm", "med", "lg", "huge", "grg"]
+      }),
+      field("extensions.againstAllOdds.giantSlayer.sizeGap", "number", "SizeGap"),
+      field("extensions.againstAllOdds.giantSlayer.opponentIsLarger", "boolean", "OpponentIsLarger"),
       field("extensions.againstAllOdds.giantSlayer.threshold", "number", "GiantSlayerThreshold"),
 
       field("extensions.againstAllOdds.narrowEscape.matched", "boolean", "NarrowEscapeMatched"),
@@ -44,7 +51,7 @@ export function createConditionProvider() {
 export function createDiagnosticProvider() {
   return Object.freeze({
     id: DIAGNOSTIC_PROVIDER_ID,
-    version: "1.1.0",
+    version: "1.2.0",
     priority: 50,
     inspect(diagnostic) {
       const metrics = diagnostic?.snapshot?.extensions?.againstAllOdds ?? null;

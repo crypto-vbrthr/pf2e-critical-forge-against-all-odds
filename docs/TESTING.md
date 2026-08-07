@@ -68,13 +68,18 @@ The test suite covers:
 - ten first-pass Giant-Slayer Reflex critical-success cards with matching save/deck isolation;
 - the dynamic Giant-Slayer gate on every published Giant-Slayer card;
 - +4 and +5 level-gap escalation conditions in all three published Giant-Slayer decks;
-- nine automated effects plus one manual result in each published Giant-Slayer deck;
+- nine automated effects plus one manual result in Attack, Fortitude, and Will, with the reviewed Reflex pass using eight automated and two manual observer-aware results;
 - saver/source targeting for Fortitude and Reflex boons and explicit hostile-target roles for Giant-Slayer counterpressure;
 - no resistance or immunity filler in the first Giant-Slayer Fortitude or Reflex pass;
 - Giant-Slayer localization, tone/impact, immutable filter, and schema-2 effect contracts;
 - exact automated-effect uniqueness for published Giant-Slayer cards against Bloodied, Surrounded, and earlier Giant-Slayer mechanics.
+- Giant-Slayer current-opponent threat evidence reusing the immutable Battlefield snapshot, including remote/rejected opponents;
+- canonical PF2e participant-size normalization and unknown-safe larger-opponent relations;
+- physical Fortitude/Reflex counterplay requiring the actual threatening opponent;
+- observer-relative concealed remaining manual rather than becoming a global actor condition;
+- mental Giant-Slayer Will filtering and mindless-target exclusions.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.24` baseline: **157/157 tests**, **99.42% line coverage**, **93.88% branch coverage**, and **98.33% function coverage**. The release also performs a direct validation pass against the actual Critical Forge `1.0.0-rc` pack validator; the current build contains **280 published cards and 244 automated card effects**, all accepted through that path before packaging. Giant-Slayer matcher smoke tests produce 0/8/9/10 eligible first-pass Will cards at level gaps +2/+3/+4/+5.
+Current `0.1.0-dev.24.1` baseline: **163/163 tests**, **99.44% line coverage**, **94.14% branch coverage**, and **98.39% function coverage**. The release also performs a direct validation pass against the actual Critical Forge `1.0.0-rc` pack validator; the current build contains **280 published cards and 243 automated card effects**, all accepted through that path before packaging. Matcher smoke tests additionally verify that a remote caster cannot trigger physical Giant-Slayer knockdown/overreach results, same-size bosses do not receive scale-only cards, larger bosses do, and mental Will results require the matching mental context.
 

@@ -71,7 +71,10 @@
       "DangerThreshold": "Benötigter Gefahrenwert",
       "DangerComponents": "Gefahrenkomponenten",
       "OpponentIsThreatening": "Aktueller Gegner bedroht den Actor",
-      "OpponentThreatEvaluation": "Auswertung des aktuellen Gegners"
+      "OpponentThreatEvaluation": "Auswertung des aktuellen Gegners",
+      "OpponentSize": "Größe des Gegners",
+      "SizeGap": "Größenunterschied",
+      "OpponentIsLarger": "Gegner ist größer"
     },
     "Notifications": {
       "Refreshed": "Against-All-Odds-Pakete wurden aktualisiert.",
@@ -1158,7 +1161,7 @@
           },
           "FiveLevelsOneEmptySquare": {
             "Title": "Fünf Stufen, ein leeres Feld",
-            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir verwandelt ein unmögliches Ausweichen seine Größe in störende Sichtlinien. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1,5 m auf deine Bewegungsrate an Land."
+            "Description": "Gegen einen größeren Gegner mindestens fünf Stufen über dir verwandelt ein unmögliches Ausweichen seine Größe in störende Sichtlinien. Bis zum Beginn deines nächsten Zuges bist du gegenüber der feindlichen Quelle Verborgen und darfst sofort als Freie Aktion einen Schritt ausführen. Wende diese beobachterabhängige Verborgenheit manuell an."
           },
           "SizeBecomesABlindSpot": {
             "Title": "Größe wird zum toten Winkel",

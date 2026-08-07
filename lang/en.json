@@ -71,7 +71,10 @@
       "DangerThreshold": "Required danger score",
       "DangerComponents": "Danger components",
       "OpponentIsThreatening": "Current opponent is threatening",
-      "OpponentThreatEvaluation": "Current-opponent threat evaluation"
+      "OpponentThreatEvaluation": "Current-opponent threat evaluation",
+      "OpponentSize": "Opponent Size",
+      "SizeGap": "Size Gap",
+      "OpponentIsLarger": "Opponent Is Larger"
     },
     "Notifications": {
       "Refreshed": "Against All Odds packs were refreshed.",
@@ -1158,7 +1161,7 @@
           },
           "FiveLevelsOneEmptySquare": {
             "Title": "Five Levels, One Empty Square",
-            "Description": "Against a foe five or more levels above you, one impossible dodge turns its scale into visual clutter. For 1 round, you are concealed and gain a +5-foot circumstance bonus to your land Speed."
+            "Description": "Against a larger foe five or more levels above you, one impossible dodge turns its scale into visual clutter. Until the start of your next turn, you are concealed from the hostile source, and you may immediately Step as a free action. Apply this observer-relative concealment manually."
           },
           "SizeBecomesABlindSpot": {
             "Title": "Size Becomes a Blind Spot",

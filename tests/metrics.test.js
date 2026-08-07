@@ -5,6 +5,7 @@ import {
   evaluateAgainstAllOdds,
   evaluateDangerScore,
   evaluateOpponentThreat,
+  evaluateSizeRelation,
   resolveRollKind
 } from "../scripts/context/metrics.js";
 import { coreReport, snapshot } from "./fixtures.js";
@@ -80,6 +81,67 @@ test("giant-slayer compares the opponent against the rolling actor", () => {
   assert.equal(below.giantSlayer.matched, false);
   assert.equal(exact.giantSlayer.levelGap, 3);
   assert.equal(exact.giantSlayer.matched, true);
+});
+
+test("giant-slayer reuses the same current-opponent threat evidence as Surrounded", () => {
+  const snap = snapshot({
+    participants: {
+      target: { uuid: "Actor.boss", tokenUuid: "Scene.test.Token.boss", level: 12 }
+    },
+    battlefield: {
+      hostileThreatCount: 2,
+      threatEvaluation: "scene-analysis",
+      hostileThreats: [
+        { actorUuid: "Actor.boss", tokenUuid: "Scene.test.Token.boss", counted: true, rejectedBy: [] }
+      ]
+    }
+  });
+  const metrics = evaluateAgainstAllOdds(snap, settings);
+  assert.equal(metrics.surrounded.opponentIsThreatening, true);
+  assert.equal(metrics.giantSlayer.opponentIsThreatening, true);
+  assert.equal(metrics.giantSlayer.opponentThreatEvaluation, "threat-evidence");
+  assert.deepEqual(metrics.giantSlayer.opponentThreat, metrics.surrounded.opponentThreat);
+
+  const remote = evaluateAgainstAllOdds(snapshot({
+    participants: { target: { uuid: "Actor.caster", tokenUuid: "Scene.test.Token.caster", level: 12 } },
+    battlefield: {
+      hostileThreatCount: 1,
+      threatEvaluation: "scene-analysis",
+      hostileThreats: [
+        { actorUuid: "Actor.caster", tokenUuid: "Scene.test.Token.caster", counted: false, rejectedBy: ["out-of-reach"] }
+      ]
+    }
+  }), settings);
+  assert.equal(remote.giantSlayer.matched, true);
+  assert.equal(remote.giantSlayer.opponentIsThreatening, false);
+});
+
+test("giant-slayer size relation is canonical, directional, and unknown-safe", () => {
+  assert.deepEqual(evaluateSizeRelation("med", "huge"), {
+    rollerSize: "med",
+    opponentSize: "huge",
+    sizeGap: 2,
+    opponentIsLarger: true
+  });
+  assert.deepEqual(evaluateSizeRelation("medium", "med"), {
+    rollerSize: "med",
+    opponentSize: "med",
+    sizeGap: 0,
+    opponentIsLarger: false
+  });
+  assert.deepEqual(evaluateSizeRelation(null, "lg"), {
+    rollerSize: null,
+    opponentSize: "lg",
+    sizeGap: null,
+    opponentIsLarger: null
+  });
+
+  const metrics = evaluateAgainstAllOdds(snapshot({
+    participants: { source: { size: "sm" }, target: { size: "lg" } }
+  }), settings);
+  assert.equal(metrics.giantSlayer.opponentSize, "lg");
+  assert.equal(metrics.giantSlayer.sizeGap, 2);
+  assert.equal(metrics.giantSlayer.opponentIsLarger, true);
 });
 
 test("the danger score records additive, serializable evidence", () => {

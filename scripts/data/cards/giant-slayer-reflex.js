@@ -10,7 +10,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Duck Beneath the Impossible",
     fallbackDescription: "The stronger foe fills the battlefield with danger, but scale also creates space beneath the obvious line. For 1 round, you gain a +1 status bonus to Reflex saves and Acrobatics checks.",
-    tags: ["reflex", "acrobatics", "dead-angle", "effect"],
+    tags: ["reflex", "acrobatics", "dead-angle", "larger-opponent", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "modifier", selector: ["reflex", "acrobatics"], value: 1, modifierType: "status", predicate: [] }]
@@ -23,7 +24,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Momentum Exposes the Flank",
     fallbackDescription: "The hostile source commits enough mass to overwhelm you and has too much of itself in motion to recover cleanly. For 1 round, it is off-guard and takes a -1 circumstance penalty to Athletics checks.",
-    tags: ["hostile-source", "off-guard", "athletics", "momentum", "effect"],
+    tags: ["hostile-source", "off-guard", "athletics", "momentum", "larger-opponent", "melee-threat", "effect"],
+    extraConditions: [{ field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }, { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }],
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -40,7 +42,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Let the Giant Overshoot",
     fallbackDescription: "You leave the line at the last possible instant and the stronger foe has to drag its own attack back under control. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and a 5-foot circumstance penalty to all Speeds.",
-    tags: ["hostile-source", "attack-roll", "movement", "overshoot", "effect"],
+    tags: ["hostile-source", "attack-roll", "movement", "overshoot", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -56,16 +59,13 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Five Levels, One Empty Square",
-    fallbackDescription: "Against a foe five or more levels above you, one impossible dodge turns its scale into visual clutter. For 1 round, you are concealed and gain a +5-foot circumstance bonus to your land Speed.",
-    tags: ["extreme-gap", "concealed", "movement", "escape", "effect"],
-    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
-    effect: {
-      duration: ONE_ROUND,
-      components: [
-        { type: "condition", slug: "concealed" },
-        { type: "movement", movementType: "land", value: 5, modifierType: "circumstance" }
-      ]
-    }
+    fallbackDescription: "Against a larger foe five or more levels above you, one impossible dodge turns its scale into visual clutter. Until the start of your next turn, you are concealed from the hostile source, and you may immediately Step as a free action. Apply this observer-relative concealment manually.",
+    tags: ["extreme-gap", "concealed", "step", "free-action", "larger-opponent", "manual"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 5 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }
+    ],
+    effect: null
   }),
   defineGiantSlayerReflexCard({
     id: "gsr-005-size-becomes-a-blind-spot",
@@ -74,7 +74,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Size Becomes a Blind Spot",
     fallbackDescription: "The stronger foe can dominate space but cannot watch every part of it equally well. For 1 round, you gain a +1 circumstance bonus to AC and Stealth checks.",
-    tags: ["ac", "stealth", "blind-spot", "effect"],
+    tags: ["ac", "stealth", "blind-spot", "larger-opponent", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "modifier", selector: ["ac", "stealth"], value: 1, modifierType: "circumstance", predicate: [] }]
@@ -87,7 +88,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Their Footing Cannot Follow",
     fallbackDescription: "You change direction faster than the stronger foe can bring its balance with it. For 1 round, the hostile source is clumsy 1 and takes a -1 circumstance penalty to Reflex DC.",
-    tags: ["hostile-source", "clumsy", "reflex-dc", "balance", "effect"],
+    tags: ["hostile-source", "clumsy", "reflex-dc", "balance", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -120,8 +122,11 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "strong",
     fallbackTitle: "Four Levels, Too Much Momentum",
     fallbackDescription: "Against a foe four or more levels above you, the force of the failed catch becomes a collapse in posture. For 1 round, the hostile source is prone and takes a -1 circumstance penalty to attack rolls.",
-    tags: ["greater-gap", "hostile-source", "prone", "attack-roll", "effect"],
-    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+    tags: ["greater-gap", "hostile-source", "prone", "attack-roll", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
+    ],
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -151,7 +156,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Cross the Dead Angle",
     fallbackDescription: "The stronger foe's failed attack creates a brief route through the space it cannot immediately cover. You may immediately Step or Take Cover as a free action. If you Step, movement does not trigger reactions from the hostile source. Apply this result manually.",
-    tags: ["step", "take-cover", "free-action", "dead-angle", "manual"],
+    tags: ["step", "take-cover", "free-action", "dead-angle", "melee-threat", "manual"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     effect: null
   })
 ]);

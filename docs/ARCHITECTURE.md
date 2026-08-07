@@ -19,7 +19,7 @@ The add-on Context Provider has priority 100, but it does not duplicate the PF2e
 pf2e/core-pf2e
 ```
 
-It clones the returned serializable report, adds `extensions.againstAllOdds`, changes the snapshot provider identity, and returns a newly frozen report. This preserves Critical Forge fixes and future PF2e adapter improvements. For Surrounded cards it also derives `surrounded.opponentIsThreatening` by matching `participants.target` against the already captured `battlefield.hostileThreats` actor/token identities. No Foundry document is retained and no second scene scan occurs.
+It clones the returned serializable report, adds `extensions.againstAllOdds`, changes the snapshot provider identity, and returns a newly frozen report. This preserves Critical Forge fixes and future PF2e adapter improvements. Current-opponent threat membership is derived once from the already captured `battlefield.hostileThreats` actor/token identities and reused by both Surrounded and Giant-Slayer. Giant-Slayer also compares the existing `participants.source.size` and `participants.target.size` snapshot values to publish a normalized size relation. No Foundry document is retained and no second scene scan occurs.
 
 ## Ownership
 
@@ -34,4 +34,4 @@ World settings that enable or disable a theme rebuild all four pack definitions 
 
 Playable cards are immutable schema-1 definitions below `scripts/data/cards/`. The shared card factory supplies complete filter arrays, theme-specific dynamic conditions, localization paths, deck assignment, Effect Definition schema 2 wrappers, and stable metadata. Theme pack construction only places those definitions into the appropriate specialized deck.
 
-Bloodied Triumphs is complete at 120 stable-ID cards across its four specialized deck files. Surrounded, Still Standing currently contributes two reviewed ten-card passes in each of its four deck files (80 cards total). Card filters and additive condition groups can bind specialized results to triggering traits, threat-count thresholds, or the current opponent being one of the counted melee threats. Giant-Slayer Moments and Narrow Escapes remain empty foundations until their controlled content passes begin.
+Bloodied Triumphs and Surrounded, Still Standing are complete at 120 stable-ID cards each across their four specialized deck files. Giant-Slayer Moments currently contributes its reviewed first ten-card pass in Attack, Fortitude, Reflex, and Will (40 cards total). Card filters and additive condition groups can bind specialized results to triggering traits, threat-count thresholds, the current opponent being one of the counted melee threats, level-gap escalation, or a verified larger-opponent size relation. Narrow Escapes remains the final empty foundation.

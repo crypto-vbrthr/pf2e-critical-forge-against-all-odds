@@ -23,7 +23,8 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Their Force Betrays Them",
     fallbackDescription: "The hostile source commits enough force to crush you and instead exposes its own structure. For 1 round, it takes a -1 circumstance penalty to attack rolls and Fortitude DC.",
-    tags: ["hostile-source", "attack-roll", "fortitude-dc", "counterpressure", "effect"],
+    tags: ["hostile-source", "attack-roll", "fortitude-dc", "counterpressure", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -50,7 +51,8 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Weight Turns Against Them",
     fallbackDescription: "The hostile source leans on overwhelming strength and finds its own mass fighting back. For 1 round, it is enfeebled 1 and takes a -1 circumstance penalty to Athletics checks.",
-    tags: ["hostile-source", "enfeebled", "athletics", "leverage", "effect"],
+    tags: ["hostile-source", "enfeebled", "athletics", "leverage", "larger-opponent", "melee-threat", "effect"],
+    extraConditions: [{ field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }, { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true }],
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -94,7 +96,8 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Impact Opens the Guard",
     fallbackDescription: "The hostile source expected you to fold and overcommits when you do not. For 1 round, it is off-guard and takes a -1 circumstance penalty to Fortitude DC.",
-    tags: ["hostile-source", "off-guard", "fortitude-dc", "opening", "effect"],
+    tags: ["hostile-source", "off-guard", "fortitude-dc", "opening", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -111,8 +114,11 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     impact: "strong",
     fallbackTitle: "Overreach Has a Price",
     fallbackDescription: "Against a foe four or more levels above you, surviving its full commitment turns strength into imbalance. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to Reflex DC.",
-    tags: ["greater-gap", "hostile-source", "enfeebled", "reflex-dc", "effect"],
-    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+    tags: ["greater-gap", "hostile-source", "enfeebled", "reflex-dc", "melee-threat", "effect"],
+    extraConditions: [
+      { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
+      { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
+    ],
     effect: {
       target: "target",
       duration: ONE_ROUND,

@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.24.1
+
+### Reviewed
+- Reused Critical Forge battlefield threat evidence for Giant-Slayer through additive `giantSlayer.opponentIsThreatening`, `opponentThreatEvaluation`, and diagnostic evidence fields; no second scene scan is performed.
+- Added Giant-Slayer size evidence with canonical `opponentSize`, signed `sizeGap`, and nullable `opponentIsLarger` values derived from the existing participant snapshot.
+- Bound physical Fortitude and Reflex counterpressure cards to the actual threatening opponent, so a remote caster cannot be knocked prone or physically overextended by an unrelated critical save.
+- Reserved six scale-specific first-pass cards for opponents that are genuinely larger than the rolling actor.
+- Reworked **Five Levels, One Empty Square** into a manual observer-relative concealed result plus an immediate Step, removing the incorrect global automated `concealed` condition.
+- Restricted **Dominance Loses Its Grip** to mental effects and excluded mindless targets from **Their Certainty Misses a Beat**.
+
+### Tests
+- Added regression coverage for shared threat evidence, remote opponents, canonical PF2e size ordering, unknown-safe size relations, melee-threat card gates, larger-opponent card gates, observer-relative concealment, mental filtering, and mindless exclusions.
+- Verified 163/163 tests with 99.44% line coverage, 94.14% branch coverage, and 98.39% function coverage.
+- Revalidated against the actual Critical Forge `1.0.0-rc` pack validator: 280 cards and 243 automated effects are valid. Matcher checks confirm that remote sources cannot trigger physical knockdown/overreach results, same-size bosses do not receive size-only cards, and mental Will cards require the matching context.
+
+### Compatibility
+- All 280 published card IDs remain unchanged.
+- Critical Forge APIs and card/pack/effect schemas remain unchanged.
+- Context Provider and Condition/Diagnostic Provider versions advance additively to 1.2.0.
+
 ## 0.1.0-dev.24
 
 ### Added

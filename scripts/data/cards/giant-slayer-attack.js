@@ -58,7 +58,8 @@ export const GIANT_SLAYER_ATTACK_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Reach Becomes Leverage",
     fallbackDescription: "The larger foe has farther to recover when you spoil the line of the attack. For 1 round, the target takes a -1 circumstance penalty to Athletics checks and a 5-foot circumstance penalty to all Speeds.",
-    tags: ["target", "athletics", "movement", "leverage", "effect"],
+    tags: ["target", "athletics", "movement", "leverage", "larger-opponent", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsLarger", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
