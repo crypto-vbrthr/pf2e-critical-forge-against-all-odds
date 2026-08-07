@@ -193,8 +193,8 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Steps, One Misstep",
-    fallbackDescription: "With four or more enemies pressing in, one threatening foe has nowhere to recover when you slip its attack. For 1 round, it becomes clumsy 1 and takes a -5-foot circumstance penalty to all Speeds.",
-    tags: ["heavily-surrounded", "target", "clumsy", "movement", "formation", "effect"],
+    fallbackDescription: "With four or more enemies pressing in, one threatening foe loses its footing when you break the shared rhythm. For 1 round, it becomes clumsy 1 and takes a -1 circumstance penalty to attack rolls.",
+    tags: ["heavily-surrounded", "target", "clumsy", "attack-roll", "formation", "effect"],
     extraConditions: [
       { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
       { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
@@ -205,7 +205,7 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
       duration: ONE_ROUND,
       components: [
         { type: "condition", slug: "clumsy", value: 1 },
-        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),

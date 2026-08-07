@@ -76,7 +76,7 @@ test("runtime registration binds all resources through the extension contract", 
   assert.equal(surrounded.decks.attack.cards.length, 20);
   assert.equal(surrounded.decks.fortitude.cards.length, 20);
   assert.equal(surrounded.decks.reflex.cards.length, 20);
-  assert.equal(surrounded.decks.will.cards.length, 10);
+  assert.equal(surrounded.decks.will.cards.length, 20);
 });
 
 test("runtime rejects a Forge without battlefield threat evaluation", () => {

@@ -269,7 +269,7 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     localizationKey: "ArcThroughTheCrowd",
     category: "spellCriticalHit",
     tone: "serious",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "Arc Through the Crowd",
     fallbackDescription: "The spell uses the ring's own congestion against a threatening foe. For 1 round, the target takes a -1 circumstance penalty to AC and saving throws.",
     tags: ["spell", "target", "ac", "saving-throws", "formation", "effect"],

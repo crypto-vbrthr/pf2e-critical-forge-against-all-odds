@@ -788,7 +788,7 @@
           },
           "FourStepsOneMisstep": {
             "Title": "Vier Schritte, ein Fehltritt",
-            "Description": "Drängen vier oder mehr Gegner auf dich ein, bleibt einem bedrohenden Gegner nach deinem Ausweichen kein Raum zur Korrektur. Für 1 Runde erhält er Unbeholfen 1 und einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+            "Description": "Drängen vier oder mehr Gegner auf dich ein, verliert ein bedrohender Gegner den Halt, als du den gemeinsamen Rhythmus durchbrichst. Für 1 Runde erhält er Unbeholfen 1 und einen Situationsmalus von -1 auf Angriffswürfe."
           },
           "TumbleThroughTheTeeth": {
             "Title": "Durch die Zähne hindurch",
@@ -855,6 +855,46 @@
           "AnswerEveryVoice": {
             "Title": "Antworte jeder Stimme",
             "Description": "Wähle einen Gegner, der dich derzeit bedroht. Du darfst sofort als freie Aktion versuchen, diesen Gegner zu Demoralisieren. Wende dieses Ergebnis manuell an."
+          },
+          "MakeOneVoiceFalter": {
+            "Title": "Eine Stimme gerät ins Wanken",
+            "Description": "Du beantwortest den Druck eines bedrohenden Gegners mit einem Blick, der seine Gewissheit bricht. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Willens-SG und Einschüchternwürfe."
+          },
+          "HoldTheInnerLine": {
+            "Title": "Halte die innere Linie",
+            "Description": "Der Ring schließt sich um deinen Körper, nicht um dein Urteilsvermögen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und Wahrnehmungs-SG."
+          },
+          "ThreeThreatsOneStillness": {
+            "Title": "Drei Bedrohungen, eine Stille",
+            "Description": "Wenn dich mindestens drei Gegner bedrängen, zerstreut sich deine Aufmerksamkeit nicht länger und wird vollkommen klar. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Willens-SG und Wahrnehmungswürfe."
+          },
+          "FourThreatsOneCrackedNerve": {
+            "Title": "Vier Bedrohungen, ein gerissener Nerv",
+            "Description": "Wenn sich mindestens vier Gegner um dich drängen, erkennt die bedrohende Quelle, dass ihre Überzahl nicht genügt. Für 1 Runde wird sie Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Willens-SG."
+          },
+          "PassTheDefianceOn": {
+            "Title": "Gib den Trotz weiter",
+            "Description": "Deine Weigerung gibt einem anderen Halt. Wähle einen Verbündeten innerhalb von 9 m, der dich hören kann; dieser Verbündete erhält einen Situationsbonus von +1 auf seinen nächsten Willenswurf vor dem Ende seines nächsten Zuges. Wende dieses Ergebnis manuell an."
+          },
+          "TheRingHearsYouBreathe": {
+            "Title": "Der Ring hört dich atmen",
+            "Description": "Du machst deine Ruhe hörbar, und der Ring muss sich damit auseinandersetzen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Einschüchternwürfe und Willens-SG."
+          },
+          "TheirCertaintyBreaksFirst": {
+            "Title": "Ihre Gewissheit bricht zuerst",
+            "Description": "Ein bedrohender Gegner erwartete, dass der Ring dich zögern lässt. Stattdessen verliert er selbst seine Entschlossenheit. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe und Klassen-SG."
+          },
+          "FearHasTooManyFaces": {
+            "Title": "Furcht hat zu viele Gesichter",
+            "Description": "Wenn Furcht aus einem Ring von Gegnern kommt, gibst du keinem einzelnen Gesicht mehr Macht über dich. Nach einem Furchteffekt erhältst du für 1 Runde einen Situationsbonus von +1 auf RK und Willens-SG."
+          },
+          "AMentalGripLeavesAnOpening": {
+            "Title": "Ein geistiger Griff schafft eine Lücke",
+            "Description": "Ein bedrohender Gegner greift nach deinen Gedanken und entblößt dabei seinen eigenen Fokus. Nach einem mentalen Effekt ist die feindliche Quelle für 1 Runde Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Willens-SG."
+          },
+          "MindAboveTheRing": {
+            "Title": "Der Geist über dem Ring",
+            "Description": "Du hörst auf, nur auf den Ring zu reagieren, und beginnst ihn als Ganzes zu lesen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Klassen-SG und Wahrnehmungs-SG."
           }
         }
       }
@@ -1384,6 +1424,33 @@
           },
           "PresenceFillsTheRing": {
             "Name": "Präsenz füllt den Ring"
+          },
+          "MakeOneVoiceFalter": {
+            "Name": "Eine Stimme gerät ins Wanken"
+          },
+          "HoldTheInnerLine": {
+            "Name": "Halte die innere Linie"
+          },
+          "ThreeThreatsOneStillness": {
+            "Name": "Drei Bedrohungen, eine Stille"
+          },
+          "FourThreatsOneCrackedNerve": {
+            "Name": "Vier Bedrohungen, ein gerissener Nerv"
+          },
+          "TheRingHearsYouBreathe": {
+            "Name": "Der Ring hört dich atmen"
+          },
+          "TheirCertaintyBreaksFirst": {
+            "Name": "Ihre Gewissheit bricht zuerst"
+          },
+          "FearHasTooManyFaces": {
+            "Name": "Furcht hat zu viele Gesichter"
+          },
+          "AMentalGripLeavesAnOpening": {
+            "Name": "Ein geistiger Griff schafft eine Lücke"
+          },
+          "MindAboveTheRing": {
+            "Name": "Der Geist über dem Ring"
           }
         }
       }

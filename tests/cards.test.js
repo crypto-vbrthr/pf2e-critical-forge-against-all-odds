@@ -880,7 +880,11 @@ test("Surrounded Reflex second pass uses current-opponent threat gating for ring
     "ssr-012-ring-trips-over-itself",
     "ssr-014-four-steps-one-misstep",
     "ssr-017-turn-their-eyes-sideways",
-    "ssr-019-one-body-blocks-the-next"
+    "ssr-019-one-body-blocks-the-next",
+    "ssw-011-make-one-voice-falter",
+    "ssw-014-four-threats-one-cracked-nerve",
+    "ssw-017-their-certainty-breaks-first",
+    "ssw-019-a-mental-grip-leaves-an-opening"
   ]);
   for (const card of SURROUNDED_REFLEX_CARDS.slice(10)) {
     const suffix = card.id.split(".").at(-1);
@@ -892,14 +896,15 @@ test("Surrounded Reflex second pass uses current-opponent threat gating for ring
 });
 
 
-test("Surrounded, Still Standing first Will pass contains ten unique critical-save cards", () => {
-  assert.equal(SURROUNDED_WILL_CARDS.length, 10);
-  assert.equal(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size, 10);
+test("Surrounded, Still Standing Will deck contains twenty unique critical-save cards after two passes", () => {
+  assert.equal(SURROUNDED_WILL_CARDS.length, 20);
+  assert.equal(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size, 20);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.deckType === "will"), true);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
-  assert.equal(SURROUNDED_WILL_CARDS.every((card) => card.metadata.contentBatch === 16), true);
+  assert.equal(SURROUNDED_WILL_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 16), true);
+  assert.equal(SURROUNDED_WILL_CARDS.slice(10).every((card) => card.metadata.contentBatch === 19), true);
 });
 
 test("all Surrounded Will cards use the dynamic surrounded gate", () => {
@@ -919,15 +924,16 @@ test("heavier Surrounded Will results require three or four threatening enemies"
 });
 
 test("Surrounded Will first pass keeps most boons on the saver and two counterpressure effects on the hostile source", () => {
-  const automated = SURROUNDED_WILL_CARDS.filter((card) => card.effect);
+  const firstPass = SURROUNDED_WILL_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
   assert.equal(automated.length, 9);
-  assert.deepEqual(SURROUNDED_WILL_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssw-010-answer-every-voice"]);
+  assert.deepEqual(firstPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssw-010-answer-every-voice"]);
   assert.equal(automated.filter((card) => card.effect.target === "source").length, 7);
   assert.equal(automated.filter((card) => card.effect.target === "target").length, 2);
 });
 
 test("Surrounded Will first pass covers resolve, fear reversal, mental defense, presence, and counterpressure", () => {
-  const components = SURROUNDED_WILL_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
+  const components = SURROUNDED_WILL_CARDS.slice(0, 10).flatMap((card) => card.effect?.definition.components ?? []);
   assert.equal(components.some((component) => component.type === "modifier" && component.selector === "will-dc" && component.value === 2), true);
   assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("will") && component.selector.includes("will-dc")), true);
   assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "mental" && component.value === 2), true);
@@ -950,7 +956,7 @@ test("Surrounded Will card and effect localization keys exist in German and Engl
   }
 });
 
-test("Surrounded Will first pass uses Forge-supported tones, impacts, filters, and schema-2 effects", () => {
+test("Surrounded Will cards use Forge-supported tones, impacts, filters, and schema-2 effects", () => {
   const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
   const impacts = new Set(["light", "moderate", "strong"]);
   for (const card of SURROUNDED_WILL_CARDS) {
@@ -964,6 +970,51 @@ test("Surrounded Will first pass uses Forge-supported tones, impacts, filters, a
   }
 });
 
+
+test("Surrounded Will second pass adds ten resolve-and-counterpressure critical-save cards", () => {
+  const secondPass = SURROUNDED_WILL_CARDS.slice(10, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 19), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "ssw-015-pass-the-defiance-on"
+  ]);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "frightened"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "resistance" || component.type === "immunity"), false);
+});
+
+test("Surrounded Will second pass scales at three and four threats and uses current-opponent gating for direct counterpressure", () => {
+  const three = SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-013-three-threats-one-stillness"));
+  const four = SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-014-four-threats-one-cracked-nerve"));
+  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
+  assert.equal(conditionLeaves(four.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+
+  const expected = new Set([
+    "ssw-011-make-one-voice-falter",
+    "ssw-014-four-threats-one-cracked-nerve",
+    "ssw-017-their-certainty-breaks-first",
+    "ssw-019-a-mental-grip-leaves-an-opening"
+  ]);
+  for (const card of SURROUNDED_WILL_CARDS.slice(10)) {
+    const suffix = card.id.split(".").at(-1);
+    const hasGate = conditionLeaves(card.conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
+    );
+    assert.equal(hasGate, expected.has(suffix), card.id);
+  }
+});
+
+test("Surrounded Will second pass separates self boons, hostile counterpressure, and one manual ally-support result", () => {
+  const secondPass = SURROUNDED_WILL_CARDS.slice(10, 20);
+  const automated = secondPass.filter((card) => card.effect);
+  assert.equal(automated.length, 9);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 5);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 4);
+  assert.equal(secondPass.find((card) => card.id.endsWith("ssw-015-pass-the-defiance-on")).tags.includes("ally"), true);
+  assert.deepEqual(secondPass.find((card) => card.id.endsWith("ssw-018-fear-has-too-many-faces")).filters.attackTraits, ["fear"]);
+  assert.deepEqual(secondPass.find((card) => card.id.endsWith("ssw-019-a-mental-grip-leaves-an-opening")).filters.attackTraits, ["mental"]);
+});
 
 test("target-centric Surrounded cards require the current opponent to be a counted melee threat", () => {
   const expectedSuffixes = new Set([
@@ -989,7 +1040,11 @@ test("target-centric Surrounded cards require the current opponent to be a count
     "ssr-012-ring-trips-over-itself",
     "ssr-014-four-steps-one-misstep",
     "ssr-017-turn-their-eyes-sideways",
-    "ssr-019-one-body-blocks-the-next"
+    "ssr-019-one-body-blocks-the-next",
+    "ssw-011-make-one-voice-falter",
+    "ssw-014-four-threats-one-cracked-nerve",
+    "ssw-017-their-certainty-breaks-first",
+    "ssw-019-a-mental-grip-leaves-an-opening"
   ]);
   for (const card of ALL_SURROUNDED_CARDS) {
     const suffix = card.id.split(".").at(-1);
@@ -1014,5 +1069,38 @@ test("Three Blades, One Focus is a moderate mixed awareness-and-attack result af
   assert.equal(card.impact, "moderate");
   assert.deepEqual(card.effect.definition.components, [
     { type: "modifier", selector: ["attack-roll", "perception"], value: 1, modifierType: "circumstance", predicate: [] }
+  ]);
+});
+
+
+test("Arc Through the Crowd is classified as strong after the eighty-card review", () => {
+  const card = SURROUNDED_ATTACK_CARDS.find((entry) => entry.id.endsWith("ssa-017-arc-through-the-crowd"));
+  assert.equal(card.impact, "strong");
+});
+
+test("Four Steps, One Misstep has its own formation-break mechanic after review", () => {
+  const card = SURROUNDED_REFLEX_CARDS.find((entry) => entry.id.endsWith("ssr-014-four-steps-one-misstep"));
+  assert.deepEqual(card.effect.definition.components, [
+    { type: "condition", slug: "clumsy", value: 1 },
+    { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
+});
+
+test("Surrounded internal exact automated duplicates remain limited to the two intentional pairs", () => {
+  const signature = (card) => card.effect == null ? null : JSON.stringify({ target: card.effect.target, definition: card.effect.definition });
+  const groups = new Map();
+  for (const card of ALL_SURROUNDED_CARDS.filter((entry) => entry.effect)) {
+    const key = signature(card);
+    const list = groups.get(key) ?? [];
+    list.push(card.id.split(".").at(-1));
+    groups.set(key, list);
+  }
+  const duplicateGroups = [...groups.values()]
+    .filter((entries) => entries.length > 1)
+    .map((entries) => entries.sort())
+    .sort((left, right) => left[0].localeCompare(right[0]));
+  assert.deepEqual(duplicateGroups, [
+    ["ssa-002-break-their-rhythm", "ssf-006-make-them-spend-themselves"],
+    ["ssa-008-four-against-one", "ssw-005-fear-finds-no-leader"]
   ]);
 });

@@ -124,8 +124,8 @@ check(SURROUNDED_REFLEX_CARDS.every((card) => card.category === "savingThrowCrit
 check(SURROUNDED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Surrounded Reflex cards must require Reflex.");
 check(SURROUNDED_REFLEX_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Reflex cards must use the dynamic Surrounded condition.");
 
-check(SURROUNDED_WILL_CARDS.length === 10, "Surrounded, Still Standing Will deck must contain ten first-pass cards.");
-check(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size === 10, "Surrounded Will card IDs must be unique.");
+check(SURROUNDED_WILL_CARDS.length === 20, "Surrounded, Still Standing Will deck must contain twenty cards after two passes.");
+check(new Set(SURROUNDED_WILL_CARDS.map((card) => card.id)).size === 20, "Surrounded Will card IDs must be unique.");
 check(SURROUNDED_WILL_CARDS.every((card) => card.deckType === "will"), "Surrounded Will cards must remain in the Will deck.");
 check(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Will cards require critical save success.");
 check(SURROUNDED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Surrounded Will cards must require Will.");

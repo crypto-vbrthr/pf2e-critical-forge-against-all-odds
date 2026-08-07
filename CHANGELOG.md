@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.1.0-dev.19.1
+
+### Reviewed
+- Reclassified **Arc Through the Crowd** as `strong` to match its team-wide AC-and-save debuff.
+- Reworked **Four Steps, One Misstep** so the four-threat Reflex escalation now makes a threatening foe off-guard and penalizes its attack rolls instead of duplicating **One Foe Becomes the Gap**.
+- Preserved every published card ID and all deck counts.
+
+### Tests
+- Added a regression contract that monitors exact automated effect duplication inside Surrounded, Still Standing and permits only the two remaining intentional pairs.
+- Added explicit review assertions for the Arc Through the Crowd impact and Four Steps, One Misstep effect definition.
+
+### Compatibility
+- All 200 published card IDs remain unchanged.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
+## 0.1.0-dev.19
+
+### Added
+- Added the second ten-card **Surrounded, Still Standing** Will pass, bringing the Will deck to 20/30 cards and the theme to 80/120 cards.
+- Added nine automated and one manual result focused on mental composure under encirclement, current-opponent counterpressure, fear/mental context, ally support, Will/Perception pressure, and class-DC awareness.
+- Added one three-threat and one four-threat escalation result; four direct counterpressure cards require the current hostile source to be a counted melee threat.
+- Added German and English localization for all ten cards and nine automated effects.
+
+### Tests
+- Added second-pass Will count/content-batch, no-new-resistance/immunity-series, target-role, threat escalation, current-opponent gating, fear/mental filter, ally-support, localization, and cross-theme duplication coverage.
+- Revalidated the complete add-on against the actual Critical Forge `1.0.0-rc` pack, matcher, and Effect Engine contracts before packaging.
+
+### Compatibility
+- Existing 190 published card IDs remain unchanged; this build adds ten Surrounded Will IDs.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.18
 
 ### Added

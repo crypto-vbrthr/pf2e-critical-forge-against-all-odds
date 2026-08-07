@@ -51,17 +51,19 @@ The test suite covers:
 
 - twenty Surrounded, Still Standing Attack cards after two passes, split 10/10 between ordinary and spell critical hits;
 - twenty Surrounded, Still Standing Fortitude cards after two passes with Fortitude save isolation, batch separation, current-opponent gating, and three/four-threat escalation;
-- ten first-pass Surrounded, Still Standing Reflex cards with Reflex save isolation;
-- ten first-pass Surrounded, Still Standing Will cards with Will save isolation;
+- twenty Surrounded, Still Standing Reflex cards after two passes with Reflex save isolation, ring-geometry/current-opponent gating, and three/four-threat escalation;
+- twenty Surrounded, Still Standing Will cards after two passes with Will save isolation, fear/mental filters, ally-support/manual coverage, current-opponent gating, and three/four-threat escalation;
 - dynamic Surrounded gating plus three- and four-threat nested conditions across all four published Surrounded decks;
 - current-opponent membership resolution from immutable `battlefield.hostileThreats` evidence, including counted, rejected, missing, and explicit-count-only cases;
 - target-centric Surrounded cards requiring `surrounded.opponentIsThreatening == true`;
 - a cross-theme regression contract limiting exact automated Surrounded/Bloodied effect duplication to 25%;
-- Surrounded Will resolve, fear reversal, mental-defense, presence, target-role, and manual Demoralize coverage;
+- an internal Surrounded duplicate-signature contract limiting exact automated duplicates to the two reviewed intentional pairs;
+- review assertions for **Arc Through the Crowd** impact and **Four Steps, One Misstep** mechanics;
+- Surrounded Will two-pass resolve, fear reversal, mental-defense, presence, ally-support, target-role, current-opponent counterpressure, and manual-action coverage;
 - Surrounded localization, saving-actor/hostile-source target roles, tone/impact, filter, and schema-2 effect contracts.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current development baseline: 112 passing tests, with 99.34% line coverage in `npm run test:coverage`. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.
+Current development baseline is verified by the current test and coverage runs; exact counts are recorded in the release checklist for each build. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.
 
 - Surrounded Reflex two-pass count, save/deck isolation, dynamic gating, 3-/4-threat escalation, current-opponent threat membership, source/target roles, ring-geometry/mobility mechanics, and localization.

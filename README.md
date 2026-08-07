@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.18` keeps **Bloodied Triumphs** complete at 120 cards and advances **Surrounded, Still Standing** to 70/120 cards with its second Reflex pass. The new Reflex cards emphasize ring geometry, current-opponent pressure, movement momentum, Perception disruption, and tactical Tumble Through play rather than adding another resistance or immunity series.
+Version `0.1.0-dev.19.1` keeps **Bloodied Triumphs** complete at 120 cards and **Surrounded, Still Standing** at 80/120 cards after its 80-card review. The review corrects the impact of **Arc Through the Crowd**, gives **Four Steps, One Misstep** a distinct four-threat formation-break mechanic, and adds an internal duplicate-effect regression guard without changing any published card ID.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -67,13 +67,15 @@ Bloodied Triumphs is complete at 120 cards:
 - 108 automated Effect Engine cards;
 - 12 explicit manual cards.
 
-Surrounded, Still Standing now contains 70/120 cards:
+Surrounded, Still Standing has completed its 80-card review. The review strengthens impact consistency, removes the duplicated four-threat Reflex mechanic, and adds a regression guard for exact internal effect duplication while preserving all published IDs.
+
+Surrounded, Still Standing now contains 80/120 cards:
 
 - twenty Attack-deck cards, split evenly between ten ordinary and ten spell critical hits;
 - twenty Fortitude-deck cards for critically successful Fortitude saves;
 - twenty Reflex-deck cards for critically successful Reflex saves;
-- ten Will-deck cards for critically successful Will saves;
-- 61 automated Effect Engine cards and 9 explicit manual tactical results across the theme;
+- twenty Will-deck cards for critically successful Will saves;
+- 70 automated Effect Engine cards and 10 explicit manual tactical results across the theme;
 - all seventy require the live Surrounded trigger, while selected stronger cards additionally require three or four threatening enemies;
 - formation-specific target effects can require the current opponent itself to be a counted melee threat.
 

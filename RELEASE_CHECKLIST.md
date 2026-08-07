@@ -15,7 +15,7 @@
 - [x] All Surrounded Attack cards include the dynamic Surrounded condition; stronger cards test three/four threat counts.
 - [x] Surrounded, Still Standing Fortitude contains twenty critical-success save cards after two passes.
 - [x] Surrounded, Still Standing Reflex contains twenty critical-success save cards after two passes.
-- [x] Surrounded, Still Standing Will first pass contains ten critical-success save cards.
+- [x] Surrounded, Still Standing Will contains twenty critical-success save cards after two passes.
 - [x] All published Surrounded save cards use the matching save deck/filter and preserve saver/source target roles.
 - [x] Current-opponent threat membership is exposed to the Card Editor and Diagnostics 2.0.
 - [x] Target-centric Surrounded cards require the current opponent to be a counted melee threat.
@@ -45,7 +45,10 @@
 - [ ] Foundry smoke test: twenty localized Surrounded Attack cards visible.
 - [ ] Foundry smoke test: twenty localized Surrounded Fortitude cards visible.
 - [ ] Foundry smoke test: twenty localized Surrounded Reflex cards visible.
-- [ ] Foundry smoke test: ten localized Surrounded Will cards visible.
+- [ ] Foundry smoke test: twenty localized Surrounded Will cards visible.
 - [ ] Foundry smoke test: Surrounded cards are unavailable below the configured threat threshold.
 - [ ] Foundry smoke test: automated effects apply to the intended source or target.
 - [ ] Foundry smoke test: cards are unavailable above the Bloodied threshold.
+
+- [x] Internal Surrounded automated-effect duplicate signatures are regression-tested after the 80-card review.
+- [x] Arc Through the Crowd impact and Four Steps, One Misstep mechanics match the reviewed definitions.

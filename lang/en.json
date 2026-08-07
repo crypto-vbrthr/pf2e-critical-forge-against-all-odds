@@ -788,7 +788,7 @@
           },
           "FourStepsOneMisstep": {
             "Title": "Four Steps, One Misstep",
-            "Description": "With four or more enemies pressing in, one threatening foe has nowhere to recover when you slip its attack. For 1 round, it becomes clumsy 1 and takes a -5-foot circumstance penalty to all Speeds."
+            "Description": "With four or more enemies pressing in, one threatening foe loses its footing when you break the shared rhythm. For 1 round, it becomes clumsy 1 and takes a -1 circumstance penalty to attack rolls."
           },
           "TumbleThroughTheTeeth": {
             "Title": "Tumble Through the Teeth",
@@ -855,6 +855,46 @@
           "AnswerEveryVoice": {
             "Title": "Answer Every Voice",
             "Description": "Choose one enemy that currently threatens you. You may immediately attempt to Demoralize that enemy as a free action. Apply this result manually."
+          },
+          "MakeOneVoiceFalter": {
+            "Title": "Make One Voice Falter",
+            "Description": "You meet one threatening enemy's pressure with a stare that breaks its certainty. For 1 round, the hostile source takes a -1 circumstance penalty to Will DC and Intimidation checks."
+          },
+          "HoldTheInnerLine": {
+            "Title": "Hold the Inner Line",
+            "Description": "The circle closes around your body, not your judgment. For 1 round, you gain a +1 circumstance bonus to Will saves and Perception DC."
+          },
+          "ThreeThreatsOneStillness": {
+            "Title": "Three Threats, One Stillness",
+            "Description": "With three or more enemies pressing in, your attention stops scattering and becomes absolute. For 1 round, you gain a +1 status bonus to Will DC and Perception checks."
+          },
+          "FourThreatsOneCrackedNerve": {
+            "Title": "Four Threats, One Cracked Nerve",
+            "Description": "With four or more enemies packed around you, the threatening source realizes that numbers are no longer enough. For 1 round, it becomes frightened 1 and takes a -1 circumstance penalty to Will DC."
+          },
+          "PassTheDefianceOn": {
+            "Title": "Pass the Defiance On",
+            "Description": "Your refusal steadies someone else. Choose one ally within 30 feet who can hear you; that ally gains a +1 circumstance bonus to their next Will save before the end of their next turn. Apply this result manually."
+          },
+          "TheRingHearsYouBreathe": {
+            "Title": "The Ring Hears You Breathe",
+            "Description": "You make your calm audible, and the circle has to reckon with it. For 1 round, you gain a +1 circumstance bonus to Intimidation checks and Will DC."
+          },
+          "TheirCertaintyBreaksFirst": {
+            "Title": "Their Certainty Breaks First",
+            "Description": "A threatening enemy expected the ring to make you hesitate. Instead, it loses the initiative of conviction. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and class DC."
+          },
+          "FearHasTooManyFaces": {
+            "Title": "Fear Has Too Many Faces",
+            "Description": "When fear comes from inside a ring of enemies, you stop giving any one face authority over you. After a fear effect, for 1 round you gain a +1 circumstance bonus to AC and Will DC."
+          },
+          "AMentalGripLeavesAnOpening": {
+            "Title": "A Mental Grip Leaves an Opening",
+            "Description": "A threatening enemy reaches for your thoughts and exposes its own focus. After a mental effect, for 1 round the hostile source is off-guard and takes a -1 circumstance penalty to Will DC."
+          },
+          "MindAboveTheRing": {
+            "Title": "Mind Above the Ring",
+            "Description": "You stop reacting to the circle and begin reading it as a whole. For 1 round, you gain a +1 status bonus to class DC and Perception DC."
           }
         }
       }
@@ -1384,6 +1424,33 @@
           },
           "PresenceFillsTheRing": {
             "Name": "Presence Fills the Ring"
+          },
+          "MakeOneVoiceFalter": {
+            "Name": "Make One Voice Falter"
+          },
+          "HoldTheInnerLine": {
+            "Name": "Hold the Inner Line"
+          },
+          "ThreeThreatsOneStillness": {
+            "Name": "Three Threats, One Stillness"
+          },
+          "FourThreatsOneCrackedNerve": {
+            "Name": "Four Threats, One Cracked Nerve"
+          },
+          "TheRingHearsYouBreathe": {
+            "Name": "The Ring Hears You Breathe"
+          },
+          "TheirCertaintyBreaksFirst": {
+            "Name": "Their Certainty Breaks First"
+          },
+          "FearHasTooManyFaces": {
+            "Name": "Fear Has Too Many Faces"
+          },
+          "AMentalGripLeavesAnOpening": {
+            "Name": "A Mental Grip Leaves an Opening"
+          },
+          "MindAboveTheRing": {
+            "Name": "Mind Above the Ring"
           }
         }
       }
