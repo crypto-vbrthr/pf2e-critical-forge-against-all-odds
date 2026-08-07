@@ -73,6 +73,7 @@ const { SURROUNDED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root
 const { SURROUNDED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-reflex.js")).href);
 const { SURROUNDED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-will.js")).href);
 const { GIANT_SLAYER_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-attack.js")).href);
+const { GIANT_SLAYER_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-fortitude.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -138,6 +139,12 @@ check(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Gi
 check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Giant-Slayer Attack first pass must contain five ordinary critical-hit cards.");
 check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Giant-Slayer Attack first pass must contain five spell critical-hit cards.");
 check(GIANT_SLAYER_ATTACK_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Attack cards must use the dynamic Giant-Slayer condition.");
+check(GIANT_SLAYER_FORTITUDE_CARDS.length === 10, "Giant-Slayer Moments Fortitude first pass must contain ten cards.");
+check(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Fortitude card IDs must be unique.");
+check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Giant-Slayer Fortitude cards must remain in the Fortitude deck.");
+check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Fortitude cards require critical save success.");
+check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Giant-Slayer Fortitude cards must require Fortitude.");
+check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Fortitude cards must use the dynamic Giant-Slayer condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

@@ -1100,6 +1100,48 @@
             "Title": "Lies den Koloss",
             "Description": "Der kritische Zauber zeigt dir, wie der stärkere Gegner zusammengesetzt ist. Du darfst sofort als freie Aktion Wissen abrufen über das Ziel mit einem Situationsbonus von +2. Wende dieses Ergebnis manuell an."
           }
+        },
+        "Fortitude": {
+          "UnmovedByTheImpossible": {
+            "Title": "Vom Unmöglichen nicht bewegt",
+            "Description": "Der stärkere Gegner erwartet, dass rohe Gewalt die Sache entscheidet. Dein Körper verweigert diese Annahme. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Zähigkeits-SG und Athletikwürfe."
+          },
+          "TheirForceBetraysThem": {
+            "Title": "Ihre Kraft verrät sie",
+            "Description": "Die feindliche Quelle setzt genug Kraft ein, um dich zu zerschmettern, und legt stattdessen ihre eigene Struktur offen. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Angriffswürfe und ihren Zähigkeits-SG."
+          },
+          "SurviveThenStrike": {
+            "Title": "Überlebe, dann schlag zu",
+            "Description": "Du widerstehst etwas, das den Schlagabtausch hätte beenden sollen, und machst aus dem Überleben perfektes Timing. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeitswürfe und Angriffswürfe."
+          },
+          "WeightTurnsAgainstThem": {
+            "Title": "Gewicht wendet sich gegen sie",
+            "Description": "Die feindliche Quelle verlässt sich auf überwältigende Stärke und muss erleben, wie ihre eigene Masse gegen sie arbeitet. Für 1 Runde ist sie Kraftlos 1 und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+          },
+          "FiveLevelsStillStanding": {
+            "Title": "Fünf Stufen, noch immer aufrecht",
+            "Description": "Ein Gegner mindestens fünf Stufen über dir entfesselt seine Kraft, und du stehst noch, als sie vorüber ist. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf RK und Rettungswürfe."
+          },
+          "HeartAboveTheMeasure": {
+            "Title": "Ein Herz über jedem Maß",
+            "Description": "Der Vergleich sagt, dass du unterlegen bist. Dein Körper gibt eine andere Antwort. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeitswürfe und deinen Klassen-SG."
+          },
+          "ImpactOpensTheGuard": {
+            "Title": "Der Einschlag öffnet die Deckung",
+            "Description": "Die feindliche Quelle erwartet, dass du einknickst, und verausgabt sich, als du es nicht tust. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Zähigkeits-SG."
+          },
+          "OverreachHasAPrice": {
+            "Title": "Überdehnung hat ihren Preis",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir verwandelt das Überstehen seines vollen Krafteinsatzes Stärke in Ungleichgewicht. Für 1 Runde ist die feindliche Quelle Kraftlos 1 und erhält einen Situationsmalus von -1 auf ihren Reflex-SG."
+          },
+          "SurvivalBecomesCounterforce": {
+            "Title": "Überleben wird zur Gegenkraft",
+            "Description": "Du fängst die Macht des stärkeren Gegners nicht nur ab, du trägst sie in deine Antwort. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffsschaden und Zähigkeitswürfe."
+          },
+          "StepIntoTheirShadow": {
+            "Title": "Tritt in ihren Schatten",
+            "Description": "Die Macht des stärkeren Gegners zieht an dir vorbei und lässt einen Augenblick zurück, in dem die Entfernung dir gehört. Du darfst sofort als freie Aktion einen Schritt machen. Wenn möglich, muss der Schritt die Entfernung zur feindlichen Quelle verringern. Wende dieses Ergebnis manuell an."
+          }
         }
       }
     },
@@ -1776,6 +1818,35 @@
           },
           "ImpossibleArcPerfectImpact": {
             "Name": "Unmöglicher Bogen, perfekter Einschlag"
+          }
+        },
+        "Fortitude": {
+          "UnmovedByTheImpossible": {
+            "Name": "Vom Unmöglichen nicht bewegt"
+          },
+          "TheirForceBetraysThem": {
+            "Name": "Ihre Kraft verrät sie"
+          },
+          "SurviveThenStrike": {
+            "Name": "Überlebe, dann schlag zu"
+          },
+          "WeightTurnsAgainstThem": {
+            "Name": "Gewicht wendet sich gegen sie"
+          },
+          "FiveLevelsStillStanding": {
+            "Name": "Fünf Stufen, noch immer aufrecht"
+          },
+          "HeartAboveTheMeasure": {
+            "Name": "Ein Herz über jedem Maß"
+          },
+          "ImpactOpensTheGuard": {
+            "Name": "Der Einschlag öffnet die Deckung"
+          },
+          "OverreachHasAPrice": {
+            "Name": "Überdehnung hat ihren Preis"
+          },
+          "SurvivalBecomesCounterforce": {
+            "Name": "Überleben wird zur Gegenkraft"
           }
         }
       }

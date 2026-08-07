@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.22
+
+### Added
+- Added the first ten **Giant-Slayer Moments** Fortitude-deck cards for critically successful Fortitude saves.
+- Added nine automated Effect Engine results and one manual free-action Step that closes distance toward the stronger hostile source.
+- Added physical counterpressure mechanics that turn overwhelming force, mass, and overcommitment against the higher-level opponent without adding a resistance or immunity series.
+- Added one +4 level-gap escalation and one +5 level-gap escalation.
+- Added German and English localization for all ten cards and nine automated effects.
+- Extended the Giant-Slayer pack registry so Attack and Fortitude now each expose ten cards.
+
+### Tests
+- Added Giant-Slayer Fortitude count, deck/save isolation, dynamic gate, +4/+5 escalation, target-role, no-resistance/immunity, localization, presentation, and exact-signature uniqueness tests.
+- Updated runtime, pack, and release contracts for the 10/10/0/0 Giant-Slayer deck layout.
+- Revalidated the add-on against the actual Critical Forge `1.0.0-rc` pack validator and matcher before packaging: 260 cards and 226 automated effects valid; Giant-Slayer Fortitude selection yields 0/8/9/10 cards at level gaps +2/+3/+4/+5.
+- Verified 139/139 tests with 99.17% line coverage, 94.04% branch coverage, and 97.87% function coverage.
+
+### Compatibility
+- Existing 250 published card IDs remain unchanged; this build adds ten Giant-Slayer Fortitude IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.21
 
 ### Added

@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.21` begins **Giant-Slayer Moments** with its first ten Attack cards while keeping **Bloodied Triumphs** and **Surrounded, Still Standing** complete at 120 cards each. The new deck is split evenly between five ordinary and five spell critical hits and uses the real level gap between the rolling actor and the current opponent. All previously published card IDs remain unchanged.
+Version `0.1.0-dev.22` adds the first ten **Giant-Slayer Moments** Fortitude cards while keeping **Bloodied Triumphs** and **Surrounded, Still Standing** complete at 120 cards each. Giant-Slayer now has ten Attack and ten Fortitude cards, all driven by the real level gap between the rolling actor and the current opponent. All previously published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -78,14 +78,15 @@ Surrounded, Still Standing is complete at 120 cards:
 - formation-specific target effects can require the current opponent itself to be a counted melee threat;
 - exact automated effect overlap with Bloodied Triumphs remains limited to the nine reviewed legacy signatures, while internal exact duplicates remain limited to the two intentional reviewed pairs.
 
-Giant-Slayer Moments has begun with 10/30 Attack cards:
+Giant-Slayer Moments now contains 20/120 cards:
 
-- five ordinary critical-hit cards and five spell critical-hit cards;
-- nine automated Effect Engine cards and one manual Recall Knowledge result;
-- every card requires `extensions.againstAllOdds.giantSlayer.matched == true`;
-- one card escalates at a level gap of +4 and one at +5.
+- 10/30 Attack cards: five ordinary critical-hit cards and five spell critical-hit cards, with nine automated effects and one manual Recall Knowledge result;
+- 10/30 Fortitude cards for critically successful Fortitude saves, with nine automated effects and one manual closing Step;
+- every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`;
+- each published deck has one result escalating at a level gap of +4 and one at +5;
+- the first Fortitude pass deliberately adds no resistance or immunity filler and keeps positive effects on the saving actor while hostile countereffects target the stronger opponent.
 
-Against All Odds therefore currently contains **250/480 planned cards** across two complete themes and one theme in progress.
+Against All Odds therefore currently contains **260/480 planned cards** across two complete themes and one theme in progress.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 

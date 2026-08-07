@@ -1100,6 +1100,48 @@
             "Title": "Read the Colossus",
             "Description": "The critical spell reveals how the stronger foe is put together. You may immediately Recall Knowledge about the target as a free action with a +2 circumstance bonus. Apply this result manually."
           }
+        },
+        "Fortitude": {
+          "UnmovedByTheImpossible": {
+            "Title": "Unmoved by the Impossible",
+            "Description": "The stronger foe expected raw force to decide the matter. Your body refuses the premise. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and Athletics checks."
+          },
+          "TheirForceBetraysThem": {
+            "Title": "Their Force Betrays Them",
+            "Description": "The hostile source commits enough force to crush you and instead exposes its own structure. For 1 round, it takes a -1 circumstance penalty to attack rolls and Fortitude DC."
+          },
+          "SurviveThenStrike": {
+            "Title": "Survive, Then Strike",
+            "Description": "You withstand what should have ended the exchange and turn survival into timing. For 1 round, you gain a +1 status bonus to Fortitude saves and attack rolls."
+          },
+          "WeightTurnsAgainstThem": {
+            "Title": "Weight Turns Against Them",
+            "Description": "The hostile source leans on overwhelming strength and finds its own mass fighting back. For 1 round, it is enfeebled 1 and takes a -1 circumstance penalty to Athletics checks."
+          },
+          "FiveLevelsStillStanding": {
+            "Title": "Five Levels, Still Standing",
+            "Description": "A foe five or more levels above you unleashes its strength and you are still there when the force passes. For 1 round, you gain a +1 status bonus to AC and saving throws."
+          },
+          "HeartAboveTheMeasure": {
+            "Title": "Heart Above the Measure",
+            "Description": "The contest says you are outmatched. Your body supplies a different answer. For 1 round, you gain a +1 status bonus to Fortitude saves and class DC."
+          },
+          "ImpactOpensTheGuard": {
+            "Title": "Impact Opens the Guard",
+            "Description": "The hostile source expected you to fold and overcommits when you do not. For 1 round, it is off-guard and takes a -1 circumstance penalty to Fortitude DC."
+          },
+          "OverreachHasAPrice": {
+            "Title": "Overreach Has a Price",
+            "Description": "Against a foe four or more levels above you, surviving its full commitment turns strength into imbalance. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to Reflex DC."
+          },
+          "SurvivalBecomesCounterforce": {
+            "Title": "Survival Becomes Counterforce",
+            "Description": "You do not merely absorb the stronger foe's power; you carry it into the answer. For 1 round, you gain a +1 circumstance bonus to Strike damage and Fortitude saves."
+          },
+          "StepIntoTheirShadow": {
+            "Title": "Step Into Their Shadow",
+            "Description": "The stronger foe's power passes you and leaves one instant in which distance belongs to you. You may immediately Step as a free action. If possible, the Step must reduce the distance to the hostile source. Apply this result manually."
+          }
         }
       }
     },
@@ -1776,6 +1818,35 @@
           },
           "ImpossibleArcPerfectImpact": {
             "Name": "Impossible Arc, Perfect Impact"
+          }
+        },
+        "Fortitude": {
+          "UnmovedByTheImpossible": {
+            "Name": "Unmoved by the Impossible"
+          },
+          "TheirForceBetraysThem": {
+            "Name": "Their Force Betrays Them"
+          },
+          "SurviveThenStrike": {
+            "Name": "Survive, Then Strike"
+          },
+          "WeightTurnsAgainstThem": {
+            "Name": "Weight Turns Against Them"
+          },
+          "FiveLevelsStillStanding": {
+            "Name": "Five Levels, Still Standing"
+          },
+          "HeartAboveTheMeasure": {
+            "Name": "Heart Above the Measure"
+          },
+          "ImpactOpensTheGuard": {
+            "Name": "Impact Opens the Guard"
+          },
+          "OverreachHasAPrice": {
+            "Name": "Overreach Has a Price"
+          },
+          "SurvivalBecomesCounterforce": {
+            "Name": "Survival Becomes Counterforce"
           }
         }
       }

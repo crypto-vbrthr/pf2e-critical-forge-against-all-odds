@@ -12,6 +12,7 @@ import { SURROUNDED_FORTITUDE_CARDS } from "../scripts/data/cards/surrounded-for
 import { SURROUNDED_REFLEX_CARDS } from "../scripts/data/cards/surrounded-reflex.js";
 import { SURROUNDED_WILL_CARDS } from "../scripts/data/cards/surrounded-will.js";
 import { GIANT_SLAYER_ATTACK_CARDS } from "../scripts/data/cards/giant-slayer-attack.js";
+import { GIANT_SLAYER_FORTITUDE_CARDS } from "../scripts/data/cards/giant-slayer-fortitude.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -22,7 +23,7 @@ const FILTER_KEYS = [
 ];
 const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS, ...BLOODIED_WILL_CARDS];
 const ALL_SURROUNDED_CARDS = [...SURROUNDED_ATTACK_CARDS, ...SURROUNDED_FORTITUDE_CARDS, ...SURROUNDED_REFLEX_CARDS, ...SURROUNDED_WILL_CARDS];
-const ALL_GIANT_SLAYER_CARDS = [...GIANT_SLAYER_ATTACK_CARDS];
+const ALL_GIANT_SLAYER_CARDS = [...GIANT_SLAYER_ATTACK_CARDS, ...GIANT_SLAYER_FORTITUDE_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -1259,10 +1260,112 @@ test("Giant-Slayer first-pass card and effect localization keys exist in German 
   }
 });
 
-test("Giant-Slayer first-pass automated mechanics are distinct from published Bloodied and Surrounded exact signatures", () => {
+test("published Giant-Slayer automated mechanics are distinct from Bloodied and Surrounded exact signatures", () => {
   const signature = (card) => card.effect == null ? null : JSON.stringify({ target: card.effect.target, definition: card.effect.definition });
   const existing = new Set([...ALL_CARDS, ...ALL_SURROUNDED_CARDS].filter((card) => card.effect).map(signature));
   const giantAutomated = ALL_GIANT_SLAYER_CARDS.filter((card) => card.effect);
   assert.equal(giantAutomated.filter((card) => existing.has(signature(card))).length, 0);
   assert.equal(new Set(giantAutomated.map(signature)).size, giantAutomated.length);
+});
+
+test("Giant-Slayer Moments first Fortitude pass adds ten critical-success save cards", () => {
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.length, 10);
+  assert.equal(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.metadata.contentBatch === 22), true);
+});
+
+test("all first-pass Giant-Slayer Fortitude cards use the dynamic level-gap gate", () => {
+  for (const card of GIANT_SLAYER_FORTITUDE_CARDS) {
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.giantSlayer.matched" && leaf.operator === "eq" && leaf.value === true
+    ), true, card.id);
+    assert.equal(Object.isFrozen(card), true);
+    assert.equal(Object.isFrozen(card.conditions), true);
+  }
+});
+
+test("Giant-Slayer Fortitude escalation cards require four or five levels of disadvantage", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["gsf-008-overreach-has-a-price"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  const five = conditionLeaves(bySuffix["gsf-005-five-levels-still-standing"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  assert.deepEqual({ operator: four.operator, value: four.value }, { operator: "gte", value: 4 });
+  assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
+});
+
+test("Giant-Slayer Fortitude keeps nine automated results and one manual closing Step", () => {
+  const automated = GIANT_SLAYER_FORTITUDE_CARDS.filter((card) => card.effect);
+  const manual = GIANT_SLAYER_FORTITUDE_CARDS.filter((card) => !card.effect);
+  assert.equal(automated.length, 9);
+  assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), ["gsf-010-step-into-their-shadow"]);
+  assert.equal(manual[0].tags.includes("manual"), true);
+  assert.equal(manual[0].tags.includes("step"), true);
+  for (const card of automated) {
+    assert.equal(card.effect.definition.schemaVersion, 2);
+    assert.equal(card.effect.definition.components.length > 0, true);
+    assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.GiantSlayerMoments.Fortitude."), true);
+  }
+});
+
+test("Giant-Slayer Fortitude preserves save-target roles for boons and countereffects", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const hostile = [
+    "gsf-002-their-force-betrays-them",
+    "gsf-004-weight-turns-against-them",
+    "gsf-007-impact-opens-the-guard",
+    "gsf-008-overreach-has-a-price"
+  ];
+  for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
+  for (const card of GIANT_SLAYER_FORTITUDE_CARDS.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+    assert.equal(card.effect.target, "source", card.id);
+  }
+});
+
+test("Giant-Slayer Fortitude first pass avoids resistance and immunity filler", () => {
+  const types = GIANT_SLAYER_FORTITUDE_CARDS.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
+  assert.equal(types.includes("resistance"), false);
+  assert.equal(types.includes("immunity"), false);
+  assert.equal(types.includes("condition"), true);
+  assert.equal(types.includes("modifier"), true);
+});
+
+test("Giant-Slayer Fortitude cards use complete filters and Forge-supported presentation values", () => {
+  const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const impacts = new Set(["light", "moderate", "strong"]);
+  for (const card of GIANT_SLAYER_FORTITUDE_CARDS) {
+    assert.deepEqual(Object.keys(card.filters), FILTER_KEYS);
+    assert.equal(FILTER_KEYS.every((key) => Array.isArray(card.filters[key]) && Object.isFrozen(card.filters[key])), true, card.id);
+    assert.equal(tones.has(card.tone), true, card.id);
+    assert.equal(impacts.has(card.impact), true, card.id);
+  }
+});
+
+test("Giant-Slayer Fortitude card and effect localization keys exist in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang/en.json"), "utf8"));
+  for (const card of GIANT_SLAYER_FORTITUDE_CARDS) {
+    for (const tree of [de, en]) {
+      assert.equal(typeof getPath(tree, card.titleKey), "string", card.titleKey);
+      assert.equal(typeof getPath(tree, card.descriptionKey), "string", card.descriptionKey);
+      if (card.effect) assert.equal(typeof getPath(tree, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Giant-Slayer Fortitude automated mechanics add no exact published duplicate", () => {
+  const signature = (card) => card.effect == null ? null : JSON.stringify({ target: card.effect.target, definition: card.effect.definition });
+  const prior = new Set([
+    ...ALL_CARDS,
+    ...ALL_SURROUNDED_CARDS,
+    ...GIANT_SLAYER_ATTACK_CARDS
+  ].filter((card) => card.effect).map(signature));
+  const automated = GIANT_SLAYER_FORTITUDE_CARDS.filter((card) => card.effect);
+  assert.equal(automated.filter((card) => prior.has(signature(card))).length, 0);
+  assert.equal(new Set(automated.map(signature)).size, automated.length);
 });

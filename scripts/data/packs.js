@@ -13,6 +13,7 @@ import { SURROUNDED_FORTITUDE_CARDS } from "./cards/surrounded-fortitude.js";
 import { SURROUNDED_REFLEX_CARDS } from "./cards/surrounded-reflex.js";
 import { SURROUNDED_WILL_CARDS } from "./cards/surrounded-will.js";
 import { GIANT_SLAYER_ATTACK_CARDS } from "./cards/giant-slayer-attack.js";
+import { GIANT_SLAYER_FORTITUDE_CARDS } from "./cards/giant-slayer-fortitude.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -86,7 +87,9 @@ export function buildAgainstAllOddsPacks(settings = {}) {
                       ? SURROUNDED_WILL_CARDS
                       : theme.id === THEME_IDS.GIANT_SLAYER && deckType === "attack"
                         ? GIANT_SLAYER_ATTACK_CARDS
-                        : []
+                        : theme.id === THEME_IDS.GIANT_SLAYER && deckType === "fortitude"
+                          ? GIANT_SLAYER_FORTITUDE_CARDS
+                          : []
     }]))
   }));
 }

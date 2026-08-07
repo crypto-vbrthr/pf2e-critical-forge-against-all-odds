@@ -6,7 +6,7 @@ Against All Odds plans four themes and four specialized decks per theme. The tar
 |---|---:|---:|---:|---:|---:|
 | Bloodied Triumphs | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
 | Surrounded, Still Standing | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
-| Giant-Slayer Moments | **10/30** | 0/30 | 0/30 | 0/30 | **10/120** |
+| Giant-Slayer Moments | **10/30** | **10/30** | 0/30 | 0/30 | **20/120** |
 | Narrow Escapes | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 
 The full target is 480 cards. Cards are introduced in controlled batches rather than as one monolithic change.
@@ -30,11 +30,12 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 6. Review the first 80 **Surrounded, Still Standing** cards before the final passes. **Complete in `0.1.0-dev.19.1`; internal exact-effect duplication is now monitored and the two review adjustments preserve all card IDs.**
 7. Surrounded final pass: 10 Attack, 10 Fortitude, 10 Reflex, and 10 Will cards. **Complete in `0.1.0-dev.20`; Surrounded is now 120/120.**
 8. Giant-Slayer Moments Attack, first pass: 10 cards. **Complete in `0.1.0-dev.21`, with a 5/5 ordinary/spell split and +4/+5 level-gap escalation.**
-9. Giant-Slayer Moments Fortitude, Reflex, and Will first passes, followed by the 40-card review.
-10. Continue Giant-Slayer through second/final reviewed passes, then repeat the process for **Narrow Escapes**.
+9. Giant-Slayer Moments Fortitude, first pass: 10 cards. **Complete in `0.1.0-dev.22`, with 9 automated / 1 manual, +4/+5 escalation, and no resistance/immunity filler.**
+10. Giant-Slayer Moments Reflex and Will first passes, followed by the 40-card review.
+11. Continue Giant-Slayer through second/final reviewed passes, then repeat the process for **Narrow Escapes**.
 11. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments has started at 10/120 cards.
+Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments has reached 20/120 cards with its first Attack and Fortitude passes complete.
 
 Every card will:
 
