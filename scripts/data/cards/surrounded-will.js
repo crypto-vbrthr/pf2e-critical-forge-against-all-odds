@@ -78,14 +78,17 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     id: "ssw-006-no-command-owns-the-circle",
     localizationKey: "NoCommandOwnsTheCircle",
     tone: "dramatic",
-    impact: "strong",
+    impact: "moderate",
     fallbackTitle: "No Command Owns the Circle",
-    fallbackDescription: "A hostile will tries to turn the crowd into a cage and finds your mind already beyond its reach. After a mental effect, you are immune to the controlled condition for 1 round.",
-    tags: ["mental", "controlled", "immunity", "effect"],
+    fallbackDescription: "A hostile will tries to turn the crowd into a cage and only sharpens your resistance. After a mental effect, for 1 round you gain a +1 circumstance bonus to Will saves and resistance 2 to mental damage.",
+    tags: ["mental", "will", "resistance", "effect"],
     filters: { attackTraits: ["mental"] },
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "immunity", immunityType: "controlled" }]
+      components: [
+        { type: "modifier", selector: "will", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "resistance", resistanceType: "mental", value: 2 }
+      ]
     }
   }),
   defineSurroundedWillCard({
@@ -94,11 +97,14 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "The Crowd Cannot Enter With Them",
-    fallbackDescription: "The enemies around you can crowd your body, not your thoughts. For 1 round, you gain resistance 3 to mental damage.",
-    tags: ["mental", "resistance", "resolve", "effect"],
+    fallbackDescription: "The enemies around you can crowd your body, not your thoughts. For 1 round, you gain resistance 2 to mental damage and a +1 circumstance bonus to Perception DC.",
+    tags: ["mental", "resistance", "perception-dc", "resolve", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "resistance", resistanceType: "mental", value: 3 }]
+      components: [
+        { type: "resistance", resistanceType: "mental", value: 2 },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedWillCard({

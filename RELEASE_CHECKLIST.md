@@ -15,6 +15,9 @@
 - [x] Surrounded, Still Standing Reflex first pass contains ten critical-success save cards.
 - [x] Surrounded, Still Standing Will first pass contains ten critical-success save cards.
 - [x] All published Surrounded save cards use the matching save deck/filter and preserve saver/source target roles.
+- [x] Current-opponent threat membership is exposed to the Card Editor and Diagnostics 2.0.
+- [x] Target-centric Surrounded cards require the current opponent to be a counted melee threat.
+- [x] Exact automated Surrounded/Bloodied effect duplication is no greater than 25%.
 - [x] The first forty-card review preserves every previously published card ID.
 - [x] The second and final Attack, Fortitude, Reflex, and Will passes add new IDs without changing earlier published IDs.
 - [x] Contextual poison, disease, mental, illusion, and emotion filters are covered by tests.

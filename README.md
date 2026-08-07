@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.15` keeps **Bloodied Triumphs** complete at 120 cards and completes the first ten-card pass across all four **Surrounded, Still Standing** decks, bringing that theme to 40 cards. All four published Surrounded decks use the live battlefield threat evaluation; selected stronger results additionally require three or four threatening enemies.
+Version `0.1.0-dev.15.1` keeps **Bloodied Triumphs** complete at 120 cards and reviews the first 40 **Surrounded, Still Standing** cards. Surrounded now distinguishes the current opponent from other melee threats, binds target-centric formation cards to opponents that actually threaten the actor, and reduces exact automated effect duplication with Bloodied Triumphs to 25%.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -78,4 +78,4 @@ Surrounded, Still Standing now contains 40/120 cards:
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 
-Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`.
+Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`. Target-centric Surrounded cards may also require `extensions.againstAllOdds.surrounded.opponentIsThreatening == true`, which is derived from the Critical Forge `battlefield.hostileThreats` snapshot rather than from a second scene scan.

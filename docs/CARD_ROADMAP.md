@@ -22,8 +22,8 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 
 ## Next content milestones
 
-1. Review the first 40 **Surrounded, Still Standing** cards for balance, overlap, targeting, threat scaling, and automation. Attack is complete in `0.1.0-dev.12`, Fortitude in `0.1.0-dev.13`, Reflex in `0.1.0-dev.14`, and Will in `0.1.0-dev.15`.
-2. Continue Surrounded with the second ten-card pass per deck after that review.
+1. Review the first 40 **Surrounded, Still Standing** cards for balance, overlap, targeting, threat scaling, and automation. **Complete in `0.1.0-dev.15.1`, including current-opponent threat membership and the 25% cross-theme duplicate ceiling.**
+2. Continue Surrounded with the second ten-card pass per deck.
 3. Repeat the process for **Giant-Slayer Moments** and **Narrow Escapes**.
 4. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 

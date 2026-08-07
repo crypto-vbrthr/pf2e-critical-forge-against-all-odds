@@ -9,40 +9,40 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "The Body Is the Anchor",
-    fallbackDescription: "The ring presses inward and your stance answers by becoming absolute. For 1 round, your Fortitude DC gains a +2 circumstance bonus.",
-    tags: ["fortitude-dc", "circumstance-bonus", "anchor", "effect"],
+    fallbackDescription: "The ring presses inward and your stance ties defense to endurance. For 1 round, you gain a +1 circumstance bonus to AC and Fortitude DC.",
+    tags: ["ac", "fortitude-dc", "anchor", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: "fortitude-dc", value: 2, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["ac", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedFortitudeCard({
     id: "ssf-002-pressure-hardens-the-frame",
     localizationKey: "PressureHardensTheFrame",
     tone: "dramatic",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "Pressure Hardens the Frame",
-    fallbackDescription: "Every enemy leaning into the crush teaches your body where to harden next. For 1 round, you gain resistance 2 to physical damage.",
-    tags: ["physical", "resistance", "defense", "effect"],
+    fallbackDescription: "Every enemy leaning into the crush teaches your body where to harden and brace. For 1 round, you gain resistance 2 to physical damage and a +1 circumstance bonus to Athletics checks.",
+    tags: ["physical", "resistance", "athletics", "brace", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "resistance", resistanceType: "physical", value: 2 }]
+      components: [
+        { type: "resistance", resistanceType: "physical", value: 2 },
+        { type: "modifier", selector: "athletics", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedFortitudeCard({
     id: "ssf-003-no-hand-finds-purchase",
     localizationKey: "NoHandFindsPurchase",
     tone: "dramatic",
-    impact: "strong",
+    impact: "moderate",
     fallbackTitle: "No Hand Finds Purchase",
-    fallbackDescription: "Too many hands reach for you and none can make the hold real. For 1 round, you are immune to the grabbed and restrained conditions.",
-    tags: ["grabbed", "restrained", "immunity", "effect"],
+    fallbackDescription: "Too many hands reach for you, giving you leverage against every hold. For 1 round, you gain a +2 circumstance bonus to Athletics checks and Fortitude DC.",
+    tags: ["grab", "athletics", "fortitude-dc", "brace", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [
-        { type: "immunity", immunityType: "grabbed" },
-        { type: "immunity", immunityType: "restrained" }
-      ]
+      components: [{ type: "modifier", selector: ["athletics", "fortitude-dc"], value: 2, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedFortitudeCard({
@@ -79,12 +79,13 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Make Them Spend Themselves",
-    fallbackDescription: "The force meant to break you rebounds through the attacker instead. For 1 round, the hostile source becomes enfeebled 1.",
-    tags: ["hostile-source", "enfeebled", "counterpressure", "effect"],
+    fallbackDescription: "A threatening enemy commits too much force trying to break you. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and Athletics checks.",
+    tags: ["hostile-source", "attack-roll", "athletics", "counterpressure", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "condition", slug: "enfeebled", value: 1 }]
+      components: [{ type: "modifier", selector: ["attack-roll", "athletics"], value: -1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedFortitudeCard({
@@ -106,11 +107,14 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Every Wound Shares the Load",
-    fallbackDescription: "No single injury gets to own your attention while the ring is still closing. For 1 round, you gain resistance 3 to persistent damage.",
-    tags: ["persistent-damage", "resistance", "endurance", "effect"],
+    fallbackDescription: "No single injury gets to own your attention while the ring is closing. For 1 round, you gain resistance 2 to persistent damage and fast healing 2.",
+    tags: ["persistent-damage", "resistance", "fast-healing", "endurance", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "resistance", resistanceType: "persistent-damage", value: 3 }]
+      components: [
+        { type: "resistance", resistanceType: "persistent-damage", value: 2 },
+        { type: "fastHealing", value: 2 }
+      ]
     }
   }),
   defineSurroundedFortitudeCard({

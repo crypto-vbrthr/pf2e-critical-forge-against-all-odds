@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-dev.15.1
+
+### Reviewed
+- Added `extensions.againstAllOdds.surrounded.opponentIsThreatening` so Surrounded cards can distinguish the current target/source from other melee threats in the ring.
+- Added current-opponent threat evidence to the Condition Provider and Diagnostics payload.
+- Bound eight target-centric Surrounded cards to the new opponent-threat condition so remote enemies are no longer treated as part of the encirclement.
+- Reworked fifteen first-pass Surrounded automated effects while preserving every published card ID. Exact automated effect duplication with Bloodied Triumphs drops from 24/36 (66.7%) to 9/36 (25%).
+- Reclassified **Three Blades, One Focus** as moderate and broadened it into a mixed attack/Perception formation-reading result.
+
+### Tests
+- Added opponent-threat identity tests for counted and out-of-reach scene threats plus explicit-count unknown-state coverage.
+- Added Condition Provider coverage for the new boolean/evaluation fields.
+- Added card-level regression coverage for all eight opponent-threat gates and a maximum 25% exact-effect duplication contract against Bloodied Triumphs.
+
+### Compatibility
+- All 160 published card IDs remain unchanged.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
+- Context Provider version advances additively to 1.1.0; no Critical Forge change or data migration is required.
+
 ## 0.1.0-dev.15
 
 ### Added

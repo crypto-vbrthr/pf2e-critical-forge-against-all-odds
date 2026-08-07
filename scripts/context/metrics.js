@@ -36,11 +36,15 @@ export function evaluateAgainstAllOdds(snapshot = {}, settings = {}) {
     defeated
   });
 
+  const opponentThreat = evaluateOpponentThreat(snapshot);
   const surrounded = Object.freeze({
     matched: hostileThreatCount != null && hostileThreatCount >= thresholds.surroundedCount,
     count: hostileThreatCount,
     threshold: thresholds.surroundedCount,
-    evaluation: snapshot?.battlefield?.threatEvaluation ?? "not-evaluated"
+    evaluation: snapshot?.battlefield?.threatEvaluation ?? "not-evaluated",
+    opponentIsThreatening: opponentThreat.value,
+    opponentThreatEvaluation: opponentThreat.evaluation,
+    opponentThreat: opponentThreat.evidence
   });
 
   const giantSlayer = Object.freeze({
@@ -68,6 +72,45 @@ export function evaluateAgainstAllOdds(snapshot = {}, settings = {}) {
     giantSlayer,
     narrowEscape
   });
+}
+
+export function evaluateOpponentThreat(snapshot = {}) {
+  const opponent = snapshot?.participants?.target ?? {};
+  const battlefield = snapshot?.battlefield ?? {};
+  const threats = Array.isArray(battlefield.hostileThreats) ? battlefield.hostileThreats : [];
+  const identities = new Set([
+    opponent.uuid, opponent.tokenUuid, opponent.id, opponent.actorUuid, opponent.actorId, opponent.tokenId
+  ].map(normalizedIdentity).filter(Boolean));
+
+  if (!identities.size) {
+    return deepFreeze({ value: null, evaluation: "opponent-unresolved", evidence: null });
+  }
+
+  const matchingThreat = threats.find((entry) => [
+    entry?.actorUuid, entry?.tokenUuid, entry?.actorId, entry?.tokenId
+  ].map(normalizedIdentity).some((identity) => identity && identities.has(identity)));
+
+  if (matchingThreat) {
+    return deepFreeze({
+      value: matchingThreat.counted === true,
+      evaluation: "threat-evidence",
+      evidence: {
+        actorUuid: matchingThreat.actorUuid ?? null,
+        tokenUuid: matchingThreat.tokenUuid ?? null,
+        actorId: matchingThreat.actorId ?? null,
+        tokenId: matchingThreat.tokenId ?? null,
+        name: matchingThreat.name ?? null,
+        counted: matchingThreat.counted === true,
+        rejectedBy: Array.isArray(matchingThreat.rejectedBy) ? [...matchingThreat.rejectedBy] : []
+      }
+    });
+  }
+
+  if (battlefield.threatEvaluation === "scene-analysis") {
+    return deepFreeze({ value: false, evaluation: "scene-analysis-no-match", evidence: null });
+  }
+
+  return deepFreeze({ value: null, evaluation: battlefield.threatEvaluation ?? "not-evaluated", evidence: null });
 }
 
 export function evaluateDangerScore(snapshot = {}, {
@@ -164,6 +207,11 @@ export function resolveRollKind(snapshot = {}) {
   const category = String(snapshot?.roll?.category ?? "");
   if (category.includes("Hit") || category.includes("Fumble")) return "attack";
   return "unknown";
+}
+
+function normalizedIdentity(value) {
+  const normalized = String(value ?? "").trim();
+  return normalized || null;
 }
 
 function levelDifference(snapshot) {

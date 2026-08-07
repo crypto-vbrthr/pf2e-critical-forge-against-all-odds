@@ -11,7 +11,7 @@ const GROUP_FALLBACK = "Against All Odds";
 export function createConditionProvider() {
   return Object.freeze({
     id: CONDITION_PROVIDER_ID,
-    version: "1.0.0",
+    version: "1.1.0",
     fields: Object.freeze([
       field("extensions.againstAllOdds.rollKind", "enum", "RollKind", {
         values: ["attack", "fortitude", "reflex", "will", "unknown"]
@@ -24,6 +24,8 @@ export function createConditionProvider() {
       field("extensions.againstAllOdds.surrounded.matched", "boolean", "SurroundedMatched"),
       field("extensions.againstAllOdds.surrounded.count", "number", "ThreatCount"),
       field("extensions.againstAllOdds.surrounded.threshold", "number", "SurroundedThreshold"),
+      field("extensions.againstAllOdds.surrounded.opponentIsThreatening", "boolean", "OpponentIsThreatening"),
+      field("extensions.againstAllOdds.surrounded.opponentThreatEvaluation", "string", "OpponentThreatEvaluation"),
 
       field("extensions.againstAllOdds.giantSlayer.matched", "boolean", "GiantSlayerMatched"),
       field("extensions.againstAllOdds.giantSlayer.rollerLevel", "number", "RollerLevel"),
@@ -42,7 +44,7 @@ export function createConditionProvider() {
 export function createDiagnosticProvider() {
   return Object.freeze({
     id: DIAGNOSTIC_PROVIDER_ID,
-    version: "1.0.0",
+    version: "1.1.0",
     priority: 50,
     inspect(diagnostic) {
       const metrics = diagnostic?.snapshot?.extensions?.againstAllOdds ?? null;

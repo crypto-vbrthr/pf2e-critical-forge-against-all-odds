@@ -29,6 +29,18 @@ surrounded.evaluation
 
 `count` is the Critical Forge battlefield result. The condition matches when the count reaches the configured threshold, default 2. A missing count remains `null` and does not become zero by assumption.
 
+
+### Current opponent membership
+
+```text
+extensions.againstAllOdds.surrounded.opponentIsThreatening
+extensions.againstAllOdds.surrounded.opponentThreatEvaluation
+```
+
+`opponentIsThreatening` is `true` only when the current `participants.target` matches a counted entry in Critical Forge's immutable `battlefield.hostileThreats` evidence. A matching rejected threat, such as an out-of-reach enemy, produces `false`. If only an explicit threat count is available and no per-token evidence exists, the value remains `null` rather than guessing.
+
+The add-on compares actor and token UUID/ID references already present in the snapshot and never performs a second scene scan. This keeps card conditions, Diagnostics 2.0, snapshot replay, and the Card Editor on the same battlefield truth as Critical Forge.
+
 ## Giant-Slayer Moments
 
 ```text

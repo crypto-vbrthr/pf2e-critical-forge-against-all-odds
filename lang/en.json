@@ -69,7 +69,9 @@
       "NarrowEscapeMatched": "Danger requirement met",
       "DangerScore": "Danger score",
       "DangerThreshold": "Required danger score",
-      "DangerComponents": "Danger components"
+      "DangerComponents": "Danger components",
+      "OpponentIsThreatening": "Current opponent is threatening",
+      "OpponentThreatEvaluation": "Current-opponent threat evaluation"
     },
     "Notifications": {
       "Refreshed": "Against All Odds packs were refreshed.",
@@ -574,15 +576,15 @@
           },
           "BreakTheirRhythm": {
             "Title": "Break Their Rhythm",
-            "Description": "Your counterstroke makes the ring hesitate. For 1 round, the target takes a -1 circumstance penalty to attack rolls."
+            "Description": "Your counterstroke makes one fighter in the ring hesitate. For 1 round, a threatening target takes a -1 circumstance penalty to attack rolls and Athletics checks."
           },
           "OneFoeBecomesTheGap": {
             "Title": "One Foe Becomes the Gap",
-            "Description": "The critical hit turns one part of the encirclement into a liability. The target becomes clumsy 1 for 1 round."
+            "Description": "Your critical hit turns a threatening enemy into the weak seam of the ring. For 1 round, the target becomes clumsy 1 and takes a -5-foot circumstance penalty to all Speeds."
           },
           "ThreeBladesOneFocus": {
             "Title": "Three Blades, One Focus",
-            "Description": "With three or more enemies pressing in, every threat becomes a guide to the next opening. For 1 round, you gain a +1 circumstance bonus to attack rolls."
+            "Description": "With three or more enemies pressing in, every threat becomes a landmark. For 1 round, you gain a +1 circumstance bonus to attack rolls and Perception checks."
           },
           "ThroughTheGap": {
             "Title": "Through the Gap",
@@ -594,7 +596,7 @@
           },
           "MagicTearsTheFormation": {
             "Title": "Magic Tears the Formation",
-            "Description": "The spell turns the target into the weak seam of the encirclement. For 1 round, the target takes a -1 circumstance penalty to saving throws."
+            "Description": "The spell makes a threatening enemy the weak seam of the formation. For 1 round, the target takes a -1 circumstance penalty to saving throws and Perception checks."
           },
           "FourAgainstOne": {
             "Title": "Four Against One",
@@ -606,21 +608,21 @@
           },
           "NoFreeAngle": {
             "Title": "No Free Angle",
-            "Description": "The spell steals the target's ability to close the ring cleanly. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds."
+            "Description": "The spell catches a threatening enemy where the formation gives it nowhere clean to move or strike. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to attack rolls."
           }
         },
         "Fortitude": {
           "BodyIsTheAnchor": {
             "Title": "The Body Is the Anchor",
-            "Description": "The ring presses inward and your stance answers by becoming absolute. For 1 round, your Fortitude DC gains a +2 circumstance bonus."
+            "Description": "The ring presses inward and your stance ties defense to endurance. For 1 round, you gain a +1 circumstance bonus to AC and Fortitude DC."
           },
           "PressureHardensTheFrame": {
             "Title": "Pressure Hardens the Frame",
-            "Description": "Every enemy leaning into the crush teaches your body where to harden next. For 1 round, you gain resistance 2 to physical damage."
+            "Description": "Every enemy leaning into the crush teaches your body where to harden and brace. For 1 round, you gain resistance 2 to physical damage and a +1 circumstance bonus to Athletics checks."
           },
           "NoHandFindsPurchase": {
             "Title": "No Hand Finds Purchase",
-            "Description": "Too many hands reach for you and none can make the hold real. For 1 round, you are immune to the grabbed and restrained conditions."
+            "Description": "Too many hands reach for you, giving you leverage against every hold. For 1 round, you gain a +2 circumstance bonus to Athletics checks and Fortitude DC."
           },
           "ThreeAgainstStone": {
             "Title": "Three Against Stone",
@@ -632,7 +634,7 @@
           },
           "MakeThemSpendThemselves": {
             "Title": "Make Them Spend Themselves",
-            "Description": "The force meant to break you rebounds through the attacker instead. For 1 round, the hostile source becomes enfeebled 1."
+            "Description": "A threatening enemy commits too much force trying to break you. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and Athletics checks."
           },
           "BreathBetweenBlows": {
             "Title": "Breath Between Blows",
@@ -640,7 +642,7 @@
           },
           "EveryWoundSharesTheLoad": {
             "Title": "Every Wound Shares the Load",
-            "Description": "No single injury gets to own your attention while the ring is still closing. For 1 round, you gain resistance 3 to persistent damage."
+            "Description": "No single injury gets to own your attention while the ring is closing. For 1 round, you gain resistance 2 to persistent damage and fast healing 2."
           },
           "CrowdGivesYouLeverage": {
             "Title": "The Crowd Gives You Leverage",
@@ -658,7 +660,7 @@
           },
           "BodiesBecomeCover": {
             "Title": "Bodies Become Cover",
-            "Description": "For one heartbeat, the enemies around you block one another's sightlines. You are concealed for 1 round."
+            "Description": "For one heartbeat, the enemies around you block one another's sightlines and attacks. You are concealed for 1 round and gain a +1 circumstance bonus to Reflex DC."
           },
           "ThreeThreatsOneCurrent": {
             "Title": "Three Threats, One Current",
@@ -670,7 +672,7 @@
           },
           "OverreachOpensTheSource": {
             "Title": "Overreach Opens the Source",
-            "Description": "The hostile source commits too far into the crowded attack. It becomes off-guard for 1 round."
+            "Description": "A threatening source commits too far into the crowded attack. For 1 round, it becomes off-guard and takes a -1 circumstance penalty to attack rolls."
           },
           "BalanceTurnsAgainstThem": {
             "Title": "Balance Turns Against Them",
@@ -678,7 +680,7 @@
           },
           "NoOneOwnsYourBack": {
             "Title": "No One Owns Your Back",
-            "Description": "The ring cannot decide which side of you is vulnerable. For 1 round, you are immune to the off-guard condition."
+            "Description": "The ring cannot agree which side of you is vulnerable. For 1 round, you gain a +1 circumstance bonus to AC, Perception checks, and Perception DC."
           },
           "TooManyBodiesNoCleanShot": {
             "Title": "Too Many Bodies, No Clean Shot",
@@ -716,11 +718,11 @@
           },
           "NoCommandOwnsTheCircle": {
             "Title": "No Command Owns the Circle",
-            "Description": "A hostile will tries to turn the crowd into a cage and finds your mind already beyond its reach. After a mental effect, you are immune to the controlled condition for 1 round."
+            "Description": "A hostile will tries to turn the crowd into a cage and only sharpens your resistance. After a mental effect, for 1 round you gain a +1 circumstance bonus to Will saves and resistance 2 to mental damage."
           },
           "CrowdCannotEnterWithThem": {
             "Title": "The Crowd Cannot Enter With Them",
-            "Description": "The enemies around you can crowd your body, not your thoughts. For 1 round, you gain resistance 3 to mental damage."
+            "Description": "The enemies around you can crowd your body, not your thoughts. For 1 round, you gain resistance 2 to mental damage and a +1 circumstance bonus to Perception DC."
           },
           "NameAboveTheNoise": {
             "Title": "Your Name Above the Noise",

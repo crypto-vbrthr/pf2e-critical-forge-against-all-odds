@@ -4,6 +4,7 @@ import {
   enrichContextReport,
   evaluateAgainstAllOdds,
   evaluateDangerScore,
+  evaluateOpponentThreat,
   resolveRollKind
 } from "../scripts/context/metrics.js";
 import { coreReport, snapshot } from "./fixtures.js";
@@ -39,6 +40,37 @@ test("surrounded stays unavailable when battlefield evaluation has no count", ()
   }), settings);
   assert.equal(metrics.surrounded.count, null);
   assert.equal(metrics.surrounded.matched, false);
+});
+
+test("surrounded identifies whether the current opponent is one of the counted melee threats", () => {
+  const threatening = snapshot({
+    participants: { target: { uuid: "Actor.orc", tokenUuid: "Scene.test.Token.orc" } },
+    battlefield: {
+      hostileThreatCount: 2,
+      threatEvaluation: "scene-analysis",
+      hostileThreats: [
+        { actorUuid: "Actor.orc", tokenUuid: "Scene.test.Token.orc", name: "Orc", counted: true, rejectedBy: [] },
+        { actorUuid: "Actor.archer", tokenUuid: "Scene.test.Token.archer", name: "Archer", counted: false, rejectedBy: ["out-of-reach"] }
+      ]
+    }
+  });
+  const remote = snapshot({
+    participants: { target: { uuid: "Actor.archer", tokenUuid: "Scene.test.Token.archer" } },
+    battlefield: threatening.battlefield
+  });
+  assert.equal(evaluateOpponentThreat(threatening).value, true);
+  assert.equal(evaluateOpponentThreat(remote).value, false);
+  assert.equal(evaluateAgainstAllOdds(threatening, settings).surrounded.opponentIsThreatening, true);
+  assert.equal(evaluateAgainstAllOdds(remote, settings).surrounded.opponentIsThreatening, false);
+});
+
+test("opponent threat membership stays unknown when only an explicit count is available", () => {
+  const value = evaluateOpponentThreat(snapshot({
+    participants: { target: { uuid: "Actor.remote" } },
+    battlefield: { hostileThreatCount: 3, threatEvaluation: "explicit", hostileThreats: [] }
+  }));
+  assert.equal(value.value, null);
+  assert.equal(value.evaluation, "explicit");
 });
 
 test("giant-slayer compares the opponent against the rolling actor", () => {

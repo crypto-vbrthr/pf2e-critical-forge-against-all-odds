@@ -22,11 +22,14 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Bodies Become Cover",
-    fallbackDescription: "For one heartbeat, the enemies around you block one another's sightlines. You are concealed for 1 round.",
-    tags: ["concealed", "crowd", "defense", "effect"],
+    fallbackDescription: "For one heartbeat, the enemies around you block one another's sightlines and attacks. You are concealed for 1 round and gain a +1 circumstance bonus to Reflex DC.",
+    tags: ["concealed", "reflex-dc", "crowd", "defense", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "condition", slug: "concealed" }]
+      components: [
+        { type: "condition", slug: "concealed" },
+        { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedReflexCard({
@@ -61,14 +64,18 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     id: "ssr-005-overreach-opens-the-source",
     localizationKey: "OverreachOpensTheSource",
     tone: "dramatic",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "Overreach Opens the Source",
-    fallbackDescription: "The hostile source commits too far into the crowded attack. It becomes off-guard for 1 round.",
-    tags: ["target", "off-guard", "countermove", "effect"],
+    fallbackDescription: "A threatening source commits too far into the crowded attack. For 1 round, it becomes off-guard and takes a -1 circumstance penalty to attack rolls.",
+    tags: ["target", "off-guard", "attack-roll", "countermove", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "condition", slug: "off-guard" }]
+      components: [
+        { type: "condition", slug: "off-guard" },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedReflexCard({
@@ -79,6 +86,7 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     fallbackTitle: "Balance Turns Against Them",
     fallbackDescription: "Your escape forces the hostile source to recover its footing instead of pressing the advantage. For 1 round, its Reflex DC takes a -1 circumstance penalty.",
     tags: ["target", "reflex-dc", "circumstance-penalty", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
@@ -89,13 +97,13 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     id: "ssr-007-no-one-owns-your-back",
     localizationKey: "NoOneOwnsYourBack",
     tone: "dramatic",
-    impact: "strong",
+    impact: "moderate",
     fallbackTitle: "No One Owns Your Back",
-    fallbackDescription: "The ring cannot decide which side of you is vulnerable. For 1 round, you are immune to the off-guard condition.",
-    tags: ["off-guard", "anti-flanking", "immunity", "effect"],
+    fallbackDescription: "The ring cannot agree which side of you is vulnerable. For 1 round, you gain a +1 circumstance bonus to AC, Perception checks, and Perception DC.",
+    tags: ["anti-flanking", "ac", "perception", "circumstance-bonus", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "immunity", immunityType: "off-guard" }]
+      components: [{ type: "modifier", selector: ["ac", "perception", "perception-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedReflexCard({

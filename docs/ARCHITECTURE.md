@@ -19,7 +19,7 @@ The add-on Context Provider has priority 100, but it does not duplicate the PF2e
 pf2e/core-pf2e
 ```
 
-It clones the returned serializable report, adds `extensions.againstAllOdds`, changes the snapshot provider identity, and returns a newly frozen report. This preserves Critical Forge fixes and future PF2e adapter improvements.
+It clones the returned serializable report, adds `extensions.againstAllOdds`, changes the snapshot provider identity, and returns a newly frozen report. This preserves Critical Forge fixes and future PF2e adapter improvements. For Surrounded cards it also derives `surrounded.opponentIsThreatening` by matching `participants.target` against the already captured `battlefield.hostileThreats` actor/token identities. No Foundry document is retained and no second scene scan occurs.
 
 ## Ownership
 
@@ -34,4 +34,4 @@ World settings that enable or disable a theme rebuild all four pack definitions 
 
 Playable cards are immutable schema-1 definitions below `scripts/data/cards/`. The shared card factory supplies complete filter arrays, theme-specific dynamic conditions, localization paths, deck assignment, Effect Definition schema 2 wrappers, and stable metadata. Theme pack construction only places those definitions into the appropriate specialized deck.
 
-The first reviewed content pass is split across `bloodied-attack.js`, `bloodied-fortitude.js`, `bloodied-reflex.js`, and `bloodied-will.js`. Each file contains ten stable-ID cards for its specialized deck. Card filters may additionally bind a specialized result to triggering item traits such as poison, disease, mental, illusion, or emotion. The remaining twelve specialized decks stay empty until their own controlled content passes begin.
+Bloodied Triumphs is complete at 120 stable-ID cards across its four specialized deck files. Surrounded, Still Standing currently contributes a reviewed first pass of ten cards in each of its four deck files. Card filters and additive condition groups can bind specialized results to triggering traits, threat-count thresholds, or the current opponent being one of the counted melee threats. Giant-Slayer Moments and Narrow Escapes remain empty foundations until their controlled content passes begin.

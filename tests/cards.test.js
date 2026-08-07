@@ -20,6 +20,7 @@ const FILTER_KEYS = [
   "excludedSourceTraits", "excludedTargetTraits"
 ];
 const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS, ...BLOODIED_WILL_CARDS];
+const ALL_SURROUNDED_CARDS = [...SURROUNDED_ATTACK_CARDS, ...SURROUNDED_FORTITUDE_CARDS, ...SURROUNDED_REFLEX_CARDS, ...SURROUNDED_WILL_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -662,13 +663,13 @@ test("Surrounded Fortitude first pass keeps boons on the saver and one counterpr
   assert.equal(SURROUNDED_FORTITUDE_CARDS.find((card) => card.id.endsWith("ssf-006-make-them-spend-themselves")).effect.target, "target");
 });
 
-test("Surrounded Fortitude first pass covers anchoring, restraint resistance, recovery, and counterpressure", () => {
+test("Surrounded Fortitude first pass covers anchoring, bracing, recovery, and counterpressure", () => {
   const components = SURROUNDED_FORTITUDE_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
-  assert.equal(components.some((component) => component.type === "modifier" && component.selector === "fortitude-dc" && component.value === 2), true);
+  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("fortitude-dc") && component.selector.includes("ac")), true);
   assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "physical"), true);
   assert.equal(components.some((component) => component.type === "fastHealing" && component.value === 3), true);
-  assert.equal(components.some((component) => component.type === "condition" && component.slug === "enfeebled"), true);
-  assert.deepEqual(components.filter((component) => component.type === "immunity").map((component) => component.immunityType).sort(), ["grabbed", "restrained"]);
+  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("attack-roll") && component.selector.includes("athletics") && component.value === -1), true);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
 });
 
 test("Surrounded Fortitude card and effect localization keys exist in German and English", () => {
@@ -732,10 +733,10 @@ test("Surrounded Reflex first pass keeps boons on the saver and counterpressure 
   assert.equal(automated.filter((card) => card.effect.target === "target").length, 2);
 });
 
-test("Surrounded Reflex first pass covers mobility, anti-flanking, precision defense, and counter-openings", () => {
+test("Surrounded Reflex first pass covers mobility, cross-cover, precision defense, and counter-openings", () => {
   const components = SURROUNDED_REFLEX_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
   assert.equal(components.some((component) => component.type === "movement" && component.movementType === "all" && component.value === 5), true);
-  assert.equal(components.some((component) => component.type === "immunity" && component.immunityType === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("ac") && component.selector.includes("perception-dc")), true);
   assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "precision" && component.value === 3), true);
   assert.equal(components.some((component) => component.type === "condition" && component.slug === "concealed"), true);
   assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
@@ -807,8 +808,8 @@ test("Surrounded Will first pass covers resolve, fear reversal, mental defense, 
   const components = SURROUNDED_WILL_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
   assert.equal(components.some((component) => component.type === "modifier" && component.selector === "will-dc" && component.value === 2), true);
   assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("will") && component.selector.includes("will-dc")), true);
-  assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "mental" && component.value === 3), true);
-  assert.equal(components.some((component) => component.type === "immunity" && component.immunityType === "controlled"), true);
+  assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "mental" && component.value === 2), true);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
   assert.equal(components.some((component) => component.type === "condition" && component.slug === "frightened"), true);
   assert.equal(components.some((component) => component.type === "condition" && component.slug === "stupefied"), true);
   assert.deepEqual(SURROUNDED_WILL_CARDS.find((card) => card.id.endsWith("ssw-005-fear-finds-no-leader")).filters.attackTraits, ["fear"]);
@@ -839,4 +840,42 @@ test("Surrounded Will first pass uses Forge-supported tones, impacts, filters, a
       assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Will."), true, card.id);
     }
   }
+});
+
+
+test("target-centric Surrounded cards require the current opponent to be a counted melee threat", () => {
+  const expectedSuffixes = new Set([
+    "ssa-002-break-their-rhythm",
+    "ssa-003-one-foe-becomes-the-gap",
+    "ssa-007-magic-tears-the-formation",
+    "ssa-009-ring-turns-inward",
+    "ssa-010-no-free-angle",
+    "ssf-006-make-them-spend-themselves",
+    "ssr-005-overreach-opens-the-source",
+    "ssr-006-balance-turns-against-them"
+  ]);
+  for (const card of ALL_SURROUNDED_CARDS) {
+    const suffix = card.id.split(".").at(-1);
+    const hasGate = conditionLeaves(card.conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
+    );
+    assert.equal(hasGate, expectedSuffixes.has(suffix), card.id);
+  }
+});
+
+test("Surrounded exact automated effect duplication against Bloodied stays at or below 25 percent", () => {
+  const signature = (card) => card.effect == null ? null : JSON.stringify({ target: card.effect.target, definition: card.effect.definition });
+  const bloodiedSignatures = new Set(ALL_CARDS.filter((card) => card.effect).map(signature));
+  const automated = ALL_SURROUNDED_CARDS.filter((card) => card.effect);
+  const duplicateCount = automated.filter((card) => bloodiedSignatures.has(signature(card))).length;
+  assert.equal(duplicateCount, 9);
+  assert.ok(duplicateCount / automated.length <= 0.25);
+});
+
+test("Three Blades, One Focus is a moderate mixed awareness-and-attack result after review", () => {
+  const card = SURROUNDED_ATTACK_CARDS.find((entry) => entry.id.endsWith("ssa-004-three-blades-one-focus"));
+  assert.equal(card.impact, "moderate");
+  assert.deepEqual(card.effect.definition.components, [
+    { type: "modifier", selector: ["attack-roll", "perception"], value: 1, modifierType: "circumstance", predicate: [] }
+  ]);
 });

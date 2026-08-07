@@ -25,12 +25,13 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Break Their Rhythm",
-    fallbackDescription: "Your counterstroke makes the ring hesitate. For 1 round, the target takes a -1 circumstance penalty to attack rolls.",
-    tags: ["target", "attack-roll", "circumstance-penalty", "effect"],
+    fallbackDescription: "Your counterstroke makes one fighter in the ring hesitate. For 1 round, a threatening target takes a -1 circumstance penalty to attack rolls and Athletics checks.",
+    tags: ["target", "attack-roll", "athletics", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
-      components: [{ type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["attack-roll", "athletics"], value: -1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedAttackCard({
@@ -38,14 +39,18 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     localizationKey: "OneFoeBecomesTheGap",
     category: "criticalHit",
     tone: "dramatic",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "One Foe Becomes the Gap",
-    fallbackDescription: "The critical hit turns one part of the encirclement into a liability. The target becomes clumsy 1 for 1 round.",
-    tags: ["target", "clumsy", "formation", "effect"],
+    fallbackDescription: "Your critical hit turns a threatening enemy into the weak seam of the ring. For 1 round, the target becomes clumsy 1 and takes a -5-foot circumstance penalty to all Speeds.",
+    tags: ["target", "clumsy", "movement", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
-      components: [{ type: "condition", slug: "clumsy", value: 1 }]
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+      ]
     }
   }),
   defineSurroundedAttackCard({
@@ -53,14 +58,14 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     localizationKey: "ThreeBladesOneFocus",
     category: "criticalHit",
     tone: "dramatic",
-    impact: "strong",
+    impact: "moderate",
     fallbackTitle: "Three Blades, One Focus",
-    fallbackDescription: "With three or more enemies pressing in, every threat becomes a guide to the next opening. For 1 round, you gain a +1 circumstance bonus to attack rolls.",
-    tags: ["heavily-surrounded", "attack-roll", "circumstance-bonus", "effect"],
+    fallbackDescription: "With three or more enemies pressing in, every threat becomes a landmark. For 1 round, you gain a +1 circumstance bonus to attack rolls and Perception checks.",
+    tags: ["heavily-surrounded", "attack-roll", "perception", "circumstance-bonus", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
     effect: {
       duration: SOURCE_ONE_ROUND,
-      components: [{ type: "modifier", selector: "attack-roll", value: 1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["attack-roll", "perception"], value: 1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedAttackCard({
@@ -95,12 +100,13 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Magic Tears the Formation",
-    fallbackDescription: "The spell turns the target into the weak seam of the encirclement. For 1 round, the target takes a -1 circumstance penalty to saving throws.",
-    tags: ["spell", "target", "saving-throws", "circumstance-penalty", "effect"],
+    fallbackDescription: "The spell makes a threatening enemy the weak seam of the formation. For 1 round, the target takes a -1 circumstance penalty to saving throws and Perception checks.",
+    tags: ["spell", "target", "saving-throws", "perception", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
-      components: [{ type: "modifier", selector: "saving-throw", value: -1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["saving-throw", "perception"], value: -1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedAttackCard({
@@ -129,6 +135,7 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     fallbackTitle: "The Ring Turns Inward",
     fallbackDescription: "The spell makes one enemy the fault line in the whole formation. For 1 round, the target gains weakness 1 to all damage.",
     tags: ["spell", "target", "weakness", "teamwork", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
@@ -140,14 +147,18 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     localizationKey: "NoFreeAngle",
     category: "spellCriticalHit",
     tone: "serious",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "No Free Angle",
-    fallbackDescription: "The spell steals the target's ability to close the ring cleanly. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds.",
-    tags: ["spell", "target", "movement", "circumstance-penalty", "effect"],
+    fallbackDescription: "The spell catches a threatening enemy where the formation gives it nowhere clean to move or strike. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to attack rolls.",
+    tags: ["spell", "target", "movement", "attack-roll", "formation", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
-      components: [{ type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }]
+      components: [
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   })
 ]);

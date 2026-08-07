@@ -69,7 +69,9 @@
       "NarrowEscapeMatched": "Gefahrenwert erfüllt",
       "DangerScore": "Gefahrenwert",
       "DangerThreshold": "Benötigter Gefahrenwert",
-      "DangerComponents": "Gefahrenkomponenten"
+      "DangerComponents": "Gefahrenkomponenten",
+      "OpponentIsThreatening": "Aktueller Gegner bedroht den Actor",
+      "OpponentThreatEvaluation": "Auswertung des aktuellen Gegners"
     },
     "Notifications": {
       "Refreshed": "Against-All-Odds-Pakete wurden aktualisiert.",
@@ -574,15 +576,15 @@
           },
           "BreakTheirRhythm": {
             "Title": "Spreng ihren Rhythmus",
-            "Description": "Dein Gegenstoß lässt den Ring zögern. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Angriffswürfe."
+            "Description": "Dein Gegenstoß lässt einen Kämpfer im Ring zögern. Für 1 Runde erhält ein dich bedrohendes Ziel einen Situationsmalus von -1 auf Angriffswürfe und Athletikwürfe."
           },
           "OneFoeBecomesTheGap": {
             "Title": "Ein Feind wird zur Lücke",
-            "Description": "Der kritische Treffer macht einen Teil der Einkreisung zur Schwachstelle. Das Ziel erhält für 1 Runde Unbeholfen 1."
+            "Description": "Dein kritischer Treffer macht einen dich bedrohenden Gegner zur Schwachstelle des Rings. Für 1 Runde wird das Ziel Unbeholfen 1 und erhält einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
           },
           "ThreeBladesOneFocus": {
             "Title": "Drei Klingen, ein Fokus",
-            "Description": "Wenn drei oder mehr Gegner auf dich eindringen, weist jede Bedrohung auf die nächste Öffnung. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe."
+            "Description": "Wenn dich mindestens drei Gegner bedrängen, wird jede Bedrohung zu einem Orientierungspunkt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe und Wahrnehmungswürfe."
           },
           "ThroughTheGap": {
             "Title": "Durch die Lücke",
@@ -594,7 +596,7 @@
           },
           "MagicTearsTheFormation": {
             "Title": "Magie zerreißt die Formation",
-            "Description": "Der Zauber macht das Ziel zur schwachen Naht der Einkreisung. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Rettungswürfe."
+            "Description": "Der Zauber macht einen dich bedrohenden Gegner zur Schwachstelle der Formation. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Rettungswürfe und Wahrnehmungswürfe."
           },
           "FourAgainstOne": {
             "Title": "Vier gegen einen",
@@ -606,21 +608,21 @@
           },
           "NoFreeAngle": {
             "Title": "Kein freier Winkel",
-            "Description": "Der Zauber raubt dem Ziel die Möglichkeit, den Ring sauber zu schließen. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+            "Description": "Der Zauber erwischt einen dich bedrohenden Gegner dort, wo die Formation weder saubere Bewegung noch einen sauberen Angriff zulässt. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten und -1 auf Angriffswürfe."
           }
         },
         "Fortitude": {
           "BodyIsTheAnchor": {
             "Title": "Der Körper ist der Anker",
-            "Description": "Der Ring drückt nach innen, und deine Haltung antwortet, indem sie absolut wird. Für 1 Runde erhält dein Zähigkeits-SG einen Situationsbonus von +2."
+            "Description": "Der Ring drückt nach innen, und deine Haltung verbindet Verteidigung mit Ausdauer. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Zähigkeits-SG."
           },
           "PressureHardensTheFrame": {
             "Title": "Druck härtet das Gerüst",
-            "Description": "Jeder Gegner, der in das Gedränge drückt, zeigt deinem Körper, wo er als Nächstes hart werden muss. Für 1 Runde erhältst du Resistenz 2 gegen körperlichen Schaden."
+            "Description": "Jeder Gegner, der in das Gedränge drückt, lehrt deinen Körper, wo er härten und sich abstützen muss. Für 1 Runde erhältst du Resistenz 2 gegen körperlichen Schaden und einen Situationsbonus von +1 auf Athletikwürfe."
           },
           "NoHandFindsPurchase": {
             "Title": "Keine Hand findet Halt",
-            "Description": "Zu viele Hände greifen nach dir, doch keine bekommt einen wirklichen Halt. Für 1 Runde bist du immun gegen Gegriffen und Gebunden."
+            "Description": "Zu viele Hände greifen nach dir und geben dir dadurch Hebel gegen jeden Halt. Für 1 Runde erhältst du einen Situationsbonus von +2 auf Athletikwürfe und Zähigkeits-SG."
           },
           "ThreeAgainstStone": {
             "Title": "Drei gegen Stein",
@@ -632,7 +634,7 @@
           },
           "MakeThemSpendThemselves": {
             "Title": "Lass sie sich verausgaben",
-            "Description": "Die Kraft, die dich brechen sollte, schlägt stattdessen durch den Angreifer zurück. Für 1 Runde erhält die feindliche Quelle Kraftlos 1."
+            "Description": "Ein dich bedrohender Gegner setzt zu viel Kraft ein, um dich zu brechen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe und Athletikwürfe."
           },
           "BreathBetweenBlows": {
             "Title": "Atem zwischen Schlägen",
@@ -640,7 +642,7 @@
           },
           "EveryWoundSharesTheLoad": {
             "Title": "Jede Wunde trägt mit",
-            "Description": "Keine einzelne Verletzung darf deine Aufmerksamkeit besitzen, solange der Ring sich weiter schließt. Für 1 Runde erhältst du Resistenz 3 gegen anhaltenden Schaden."
+            "Description": "Keine einzelne Verletzung darf deine Aufmerksamkeit beherrschen, solange sich der Ring schließt. Für 1 Runde erhältst du Resistenz 2 gegen anhaltenden Schaden und Schnelle Heilung 2."
           },
           "CrowdGivesYouLeverage": {
             "Title": "Das Gedränge gibt dir Hebel",
@@ -658,7 +660,7 @@
           },
           "BodiesBecomeCover": {
             "Title": "Körper werden zu Deckung",
-            "Description": "Für einen Herzschlag blockieren die Gegner um dich herum einander die Sichtlinien. Du bist für 1 Runde verborgen."
+            "Description": "Für einen Herzschlag blockieren die Gegner um dich herum einander Sichtlinien und Angriffe. Du bist für 1 Runde verborgen und erhältst einen Situationsbonus von +1 auf deinen Reflex-SG."
           },
           "ThreeThreatsOneCurrent": {
             "Title": "Drei Bedrohungen, eine Strömung",
@@ -670,7 +672,7 @@
           },
           "OverreachOpensTheSource": {
             "Title": "Überdehnung schafft eine Lücke",
-            "Description": "Die feindliche Quelle lehnt sich zu weit in den Angriff aus dem Gedränge. Sie ist für 1 Runde Auf dem falschen Fuß."
+            "Description": "Eine dich bedrohende Quelle lehnt sich im Gedränge zu weit vor. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Angriffswürfe."
           },
           "BalanceTurnsAgainstThem": {
             "Title": "Das Gleichgewicht kippt gegen sie",
@@ -678,7 +680,7 @@
           },
           "NoOneOwnsYourBack": {
             "Title": "Keiner bekommt deinen Rücken",
-            "Description": "Der Ring kann nicht entscheiden, welche Seite von dir verwundbar sein soll. Für 1 Runde bist du gegen den Zustand Auf dem falschen Fuß immun."
+            "Description": "Der Ring kann sich nicht darauf einigen, welche Seite von dir verwundbar ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK, Wahrnehmungswürfe und Wahrnehmungs-SG."
           },
           "TooManyBodiesNoCleanShot": {
             "Title": "Zu viele Körper, kein sauberer Treffer",
@@ -716,11 +718,11 @@
           },
           "NoCommandOwnsTheCircle": {
             "Title": "Kein Befehl beherrscht den Ring",
-            "Description": "Ein feindlicher Wille versucht, aus der Menge einen Käfig zu machen, und findet deinen Geist bereits außerhalb seiner Reichweite. Nach einem mentalen Effekt bist du für 1 Runde gegen den Zustand Gesteuert immun."
+            "Description": "Ein feindlicher Wille versucht, aus der Menge einen Käfig zu machen, und schärft damit nur deinen Widerstand. Nach einem mentalen Effekt erhältst du für 1 Runde einen Situationsbonus von +1 auf Willenswürfe und Resistenz 2 gegen mentalen Schaden."
           },
           "CrowdCannotEnterWithThem": {
             "Title": "Die Menge kommt nicht mit hinein",
-            "Description": "Die Gegner um dich herum können deinen Körper bedrängen, nicht aber deine Gedanken. Für 1 Runde erhältst du Resistenz 3 gegen mentalen Schaden."
+            "Description": "Die Gegner um dich herum können deinen Körper bedrängen, nicht deine Gedanken. Für 1 Runde erhältst du Resistenz 2 gegen mentalen Schaden und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
           },
           "NameAboveTheNoise": {
             "Title": "Dein Name über dem Lärm",
