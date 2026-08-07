@@ -1,5 +1,44 @@
 # Changelog
 
+## 0.1.0-dev.24
+
+### Added
+- Added the first ten **Giant-Slayer Moments** Will-deck cards for critically successful Will saves.
+- Added 9 automated effects and 1 manual Demoralize counter-moment, with one +4 and one +5 level-gap escalation result.
+- Added German and English localization for the complete first Giant-Slayer Will pass.
+
+### Changed
+- Extended the Giant-Slayer pack registry so Attack, Fortitude, Reflex, and Will now each expose ten cards.
+- Giant-Slayer has reached the first 40-card review milestone at 10/10/10/10.
+
+### Tests
+- Added Giant-Slayer Will count, deck/save isolation, dynamic gate, +4/+5 escalation, automation split, target-role, no-resistance/immunity, localization, presentation, and exact-signature uniqueness tests.
+- Updated runtime, pack, and release contracts for the 10/10/10/10 Giant-Slayer deck layout.
+- Revalidated the add-on against the actual Critical Forge `1.0.0-rc` pack validator and matcher before packaging: 280 cards and 244 automated effects valid; Giant-Slayer Will selection yields 0/8/9/10 cards at level gaps +2/+3/+4/+5.
+
+### Compatibility
+- Existing 270 published card IDs remain unchanged; this build adds ten Giant-Slayer Will IDs.
+
+## 0.1.0-dev.23
+
+### Added
+- Added the first ten **Giant-Slayer Moments** Reflex-deck cards for critically successful Reflex saves.
+- Added nine automated Effect Engine results and one manual dead-angle result allowing an immediate Step or Take Cover, with the Step protected from reactions by the hostile source.
+- Added blind-spot, overshoot, momentum, balance, movement, and positioning mechanics designed around evading a substantially higher-level opponent rather than repeating Surrounded mobility patterns.
+- Added one +4 level-gap escalation and one +5 level-gap escalation.
+- Added German and English localization for all ten cards and nine automated effects.
+- Extended the Giant-Slayer pack registry so Attack, Fortitude, and Reflex now each expose ten cards.
+
+### Tests
+- Added Giant-Slayer Reflex count, save/deck isolation, dynamic gate, +4/+5 escalation, automation split, target-role, no-resistance/immunity, localization, presentation, and exact-signature uniqueness tests.
+- Updated runtime, pack, and release contracts for the 10/10/10/0 Giant-Slayer deck layout.
+- Revalidated the add-on against the actual Critical Forge `1.0.0-rc` pack validator and matcher before packaging: 270 cards and 235 automated effects valid; Giant-Slayer Reflex selection yields 0/8/9/10 cards at level gaps +2/+3/+4/+5.
+- Verified 148/148 tests with 99.30% line coverage, 93.95% branch coverage, and 98.11% function coverage.
+
+### Compatibility
+- Existing 260 published card IDs remain unchanged; this build adds ten Giant-Slayer Reflex IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.22
 
 ### Added

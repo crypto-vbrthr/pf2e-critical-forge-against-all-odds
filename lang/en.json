@@ -1142,6 +1142,90 @@
             "Title": "Step Into Their Shadow",
             "Description": "The stronger foe's power passes you and leaves one instant in which distance belongs to you. You may immediately Step as a free action. If possible, the Step must reduce the distance to the hostile source. Apply this result manually."
           }
+        },
+        "Reflex": {
+          "DuckBeneathTheImpossible": {
+            "Title": "Duck Beneath the Impossible",
+            "Description": "The stronger foe fills the battlefield with danger, but scale also creates space beneath the obvious line. For 1 round, you gain a +1 status bonus to Reflex saves and Acrobatics checks."
+          },
+          "MomentumExposesTheFlank": {
+            "Title": "Momentum Exposes the Flank",
+            "Description": "The hostile source commits enough mass to overwhelm you and has too much of itself in motion to recover cleanly. For 1 round, it is off-guard and takes a -1 circumstance penalty to Athletics checks."
+          },
+          "LetTheGiantOvershoot": {
+            "Title": "Let the Giant Overshoot",
+            "Description": "You leave the line at the last possible instant and the stronger foe has to drag its own attack back under control. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and a 5-foot circumstance penalty to all Speeds."
+          },
+          "FiveLevelsOneEmptySquare": {
+            "Title": "Five Levels, One Empty Square",
+            "Description": "Against a foe five or more levels above you, one impossible dodge turns its scale into visual clutter. For 1 round, you are concealed and gain a +5-foot circumstance bonus to your land Speed."
+          },
+          "SizeBecomesABlindSpot": {
+            "Title": "Size Becomes a Blind Spot",
+            "Description": "The stronger foe can dominate space but cannot watch every part of it equally well. For 1 round, you gain a +1 circumstance bonus to AC and Stealth checks."
+          },
+          "FootingCannotFollow": {
+            "Title": "Their Footing Cannot Follow",
+            "Description": "You change direction faster than the stronger foe can bring its balance with it. For 1 round, the hostile source is clumsy 1 and takes a -1 circumstance penalty to Reflex DC."
+          },
+          "ImpactBecomesDistance": {
+            "Title": "Impact Becomes Distance",
+            "Description": "The force meant to catch you becomes the rhythm of your escape. For 1 round, you gain a +5-foot status bonus to your land Speed and a +1 circumstance bonus to Reflex DC."
+          },
+          "FourLevelsTooMuchMomentum": {
+            "Title": "Four Levels, Too Much Momentum",
+            "Description": "Against a foe four or more levels above you, the force of the failed catch becomes a collapse in posture. For 1 round, the hostile source is prone and takes a -1 circumstance penalty to attack rolls."
+          },
+          "ReadTheShadowNotTheWeapon": {
+            "Title": "Read the Shadow, Not the Weapon",
+            "Description": "Against something this powerful, watching the weapon is already too late. You read the whole body instead. For 1 round, you gain a +1 status bonus to Perception checks and Reflex DC."
+          },
+          "CrossTheDeadAngle": {
+            "Title": "Cross the Dead Angle",
+            "Description": "The stronger foe's failed attack creates a brief route through the space it cannot immediately cover. You may immediately Step or Take Cover as a free action. If you Step, movement does not trigger reactions from the hostile source. Apply this result manually."
+          }
+        },
+        "Will": {
+          "TheImpossibleHasAName": {
+            "Title": "The Impossible Has a Name",
+            "Description": "A foe this powerful stops being an abstraction the moment you understand that it can still be opposed. For 1 round, you gain a +1 circumstance bonus to Will saves and Intimidation checks."
+          },
+          "ArroganceCracks": {
+            "Title": "Arrogance Cracks",
+            "Description": "The stronger foe expected obedience, terror, or hesitation. Your refusal leaves a visible fracture in that certainty. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Perception DC."
+          },
+          "DefianceBecomesAuthority": {
+            "Title": "Defiance Becomes Authority",
+            "Description": "Resisting something far beyond you gives your own intent unexpected weight. For 1 round, you gain a +1 status bonus to Will DC and class DC."
+          },
+          "DominanceLosesItsGrip": {
+            "Title": "Dominance Loses Its Grip",
+            "Description": "The hostile source presses its mind against yours and discovers that superiority is not the same thing as control. For 1 round, it is stupefied 1 and takes a -1 circumstance penalty to Intimidation checks."
+          },
+          "FiveLevelsStillNoGod": {
+            "Title": "Five Levels, Still No God",
+            "Description": "Against a foe five or more levels above you, the difference in power becomes undeniable and somehow less frightening for being named. For 1 round, you gain a +1 status bonus to Will saves, AC, and Perception DC."
+          },
+          "SpeakAcrossTheGap": {
+            "Title": "Speak Across the Gap",
+            "Description": "You answer overwhelming presence with a voice that refuses to become smaller. For 1 round, you gain a +1 circumstance bonus to Diplomacy checks and Will DC."
+          },
+          "TheirCertaintyMissesABeat": {
+            "Title": "Their Certainty Misses a Beat",
+            "Description": "The stronger foe realizes that its pressure did not move you, and that realization costs it a moment of perfect command. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls, Will DC, and Perception DC."
+          },
+          "FourLevelsOneDoubt": {
+            "Title": "Four Levels, One Doubt",
+            "Description": "Against a foe four or more levels above you, your refusal plants a doubt powerful enough to survive inside its certainty. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to class DC."
+          },
+          "LookBackWithoutFlinching": {
+            "Title": "Look Back Without Flinching",
+            "Description": "You stop measuring yourself against the stronger foe and start measuring the battlefield instead. For 1 round, you gain a +1 status bonus to Perception checks, Intimidation checks, and Will DC."
+          },
+          "AnswerTheGiant": {
+            "Title": "Answer the Giant",
+            "Description": "The stronger foe tried to impose its will and gave you the perfect moment to answer. You may immediately attempt to Demoralize the hostile source as a free action with a +2 circumstance bonus. Apply this result manually; normal Demoralize restrictions still apply."
+          }
         }
       }
     },
@@ -1847,6 +1931,64 @@
           },
           "SurvivalBecomesCounterforce": {
             "Name": "Survival Becomes Counterforce"
+          }
+        },
+        "Reflex": {
+          "DuckBeneathTheImpossible": {
+            "Name": "Duck Beneath the Impossible"
+          },
+          "MomentumExposesTheFlank": {
+            "Name": "Momentum Exposes the Flank"
+          },
+          "LetTheGiantOvershoot": {
+            "Name": "Let the Giant Overshoot"
+          },
+          "FiveLevelsOneEmptySquare": {
+            "Name": "Five Levels, One Empty Square"
+          },
+          "SizeBecomesABlindSpot": {
+            "Name": "Size Becomes a Blind Spot"
+          },
+          "FootingCannotFollow": {
+            "Name": "Their Footing Cannot Follow"
+          },
+          "ImpactBecomesDistance": {
+            "Name": "Impact Becomes Distance"
+          },
+          "FourLevelsTooMuchMomentum": {
+            "Name": "Four Levels, Too Much Momentum"
+          },
+          "ReadTheShadowNotTheWeapon": {
+            "Name": "Read the Shadow, Not the Weapon"
+          }
+        },
+        "Will": {
+          "TheImpossibleHasAName": {
+            "Name": "The Impossible Has a Name"
+          },
+          "ArroganceCracks": {
+            "Name": "Arrogance Cracks"
+          },
+          "DefianceBecomesAuthority": {
+            "Name": "Defiance Becomes Authority"
+          },
+          "DominanceLosesItsGrip": {
+            "Name": "Dominance Loses Its Grip"
+          },
+          "FiveLevelsStillNoGod": {
+            "Name": "Five Levels, Still No God"
+          },
+          "SpeakAcrossTheGap": {
+            "Name": "Speak Across the Gap"
+          },
+          "TheirCertaintyMissesABeat": {
+            "Name": "Their Certainty Misses a Beat"
+          },
+          "FourLevelsOneDoubt": {
+            "Name": "Four Levels, One Doubt"
+          },
+          "LookBackWithoutFlinching": {
+            "Name": "Look Back Without Flinching"
           }
         }
       }

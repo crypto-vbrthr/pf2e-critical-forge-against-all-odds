@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.22` adds the first ten **Giant-Slayer Moments** Fortitude cards while keeping **Bloodied Triumphs** and **Surrounded, Still Standing** complete at 120 cards each. Giant-Slayer now has ten Attack and ten Fortitude cards, all driven by the real level gap between the rolling actor and the current opponent. All previously published card IDs remain unchanged.
+Version `0.1.0-dev.24` completes the first 40-card **Giant-Slayer Moments** review block by adding ten Will cards. Giant-Slayer now has ten cards in Attack, Fortitude, Reflex, and Will, all driven by the real level gap between the rolling actor and the current opponent. All previously published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -78,15 +78,19 @@ Surrounded, Still Standing is complete at 120 cards:
 - formation-specific target effects can require the current opponent itself to be a counted melee threat;
 - exact automated effect overlap with Bloodied Triumphs remains limited to the nine reviewed legacy signatures, while internal exact duplicates remain limited to the two intentional reviewed pairs.
 
-Giant-Slayer Moments now contains 20/120 cards:
+Giant-Slayer Moments now contains 40/120 cards:
 
 - 10/30 Attack cards: five ordinary critical-hit cards and five spell critical-hit cards, with nine automated effects and one manual Recall Knowledge result;
 - 10/30 Fortitude cards for critically successful Fortitude saves, with nine automated effects and one manual closing Step;
+- 10/30 Reflex cards for critically successful Reflex saves, with nine automated effects and one manual dead-angle repositioning result;
+- 10/30 Will cards for critically successful Will saves, with nine automated effects and one manual Demoralize counter-moment;
 - every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`;
 - each published deck has one result escalating at a level gap of +4 and one at +5;
-- the first Fortitude pass deliberately adds no resistance or immunity filler and keeps positive effects on the saving actor while hostile countereffects target the stronger opponent.
+- the first Fortitude, Reflex, and Will passes deliberately add no resistance or immunity filler and keep positive effects on the saving actor while hostile countereffects target the stronger opponent;
+- the first Reflex pass focuses on blind spots, overshoot, momentum, movement, and balance instead of repeating Surrounded mobility mechanics;
+- the first Will pass focuses on defiance, broken arrogance, mental counterpressure, and refusing the stronger foe's implied authority.
 
-Against All Odds therefore currently contains **260/480 planned cards** across two complete themes and one theme in progress.
+Against All Odds therefore currently contains **280/480 planned cards** across two complete themes and one theme in progress.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 

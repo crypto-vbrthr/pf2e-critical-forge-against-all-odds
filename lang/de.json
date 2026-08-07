@@ -1142,6 +1142,90 @@
             "Title": "Tritt in ihren Schatten",
             "Description": "Die Macht des stärkeren Gegners zieht an dir vorbei und lässt einen Augenblick zurück, in dem die Entfernung dir gehört. Du darfst sofort als freie Aktion einen Schritt machen. Wenn möglich, muss der Schritt die Entfernung zur feindlichen Quelle verringern. Wende dieses Ergebnis manuell an."
           }
+        },
+        "Reflex": {
+          "DuckBeneathTheImpossible": {
+            "Title": "Unter dem Unmöglichen hindurch",
+            "Description": "Der stärkere Gegner füllt das Schlachtfeld mit Gefahr, doch seine Größe schafft auch Raum unter der offensichtlichen Linie. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Reflexwürfe und Akrobatikwürfe."
+          },
+          "MomentumExposesTheFlank": {
+            "Title": "Schwung legt die Flanke frei",
+            "Description": "Die feindliche Quelle setzt genug Masse ein, um dich zu überwältigen, und hat danach zu viel von sich selbst in Bewegung, um sauber abzufangen. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+          },
+          "LetTheGiantOvershoot": {
+            "Title": "Lass den Riesen vorbeischwingen",
+            "Description": "Du verlässt die Linie im letzten möglichen Augenblick, und der stärkere Gegner muss seinen eigenen Angriff mühsam wieder unter Kontrolle bringen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe und -1,5 m auf alle Bewegungsraten."
+          },
+          "FiveLevelsOneEmptySquare": {
+            "Title": "Fünf Stufen, ein leeres Feld",
+            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir verwandelt ein unmögliches Ausweichen seine Größe in störende Sichtlinien. Für 1 Runde bist du Verborgen und erhältst einen Situationsbonus von +1,5 m auf deine Bewegungsrate an Land."
+          },
+          "SizeBecomesABlindSpot": {
+            "Title": "Größe wird zum toten Winkel",
+            "Description": "Der stärkere Gegner kann Raum beherrschen, aber nicht jeden Teil davon gleich gut im Blick behalten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Heimlichkeitswürfe."
+          },
+          "FootingCannotFollow": {
+            "Title": "Ihre Balance kommt nicht hinterher",
+            "Description": "Du wechselst die Richtung schneller, als der stärkere Gegner sein Gleichgewicht mitnehmen kann. Für 1 Runde ist die feindliche Quelle Unbeholfen 1 und erhält einen Situationsmalus von -1 auf ihren Reflex-SG."
+          },
+          "ImpactBecomesDistance": {
+            "Title": "Einschlag wird zu Distanz",
+            "Description": "Die Kraft, die dich erwischen sollte, wird zum Rhythmus deiner Flucht. Für 1 Runde erhältst du einen Zustandsbonus von +1,5 m auf deine Bewegungsrate an Land und einen Situationsbonus von +1 auf deinen Reflex-SG."
+          },
+          "FourLevelsTooMuchMomentum": {
+            "Title": "Vier Stufen, zu viel Schwung",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir wird die Kraft des verfehlten Zugriffs zum Zusammenbruch seiner Haltung. Für 1 Runde liegt die feindliche Quelle Liegend und erhält einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "ReadTheShadowNotTheWeapon": {
+            "Title": "Lies den Schatten, nicht die Waffe",
+            "Description": "Gegen etwas so Mächtiges ist es bereits zu spät, wenn du nur die Waffe beobachtest. Du liest stattdessen den ganzen Körper. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Wahrnehmungswürfe und deinen Reflex-SG."
+          },
+          "CrossTheDeadAngle": {
+            "Title": "Durchquere den toten Winkel",
+            "Description": "Der verfehlte Angriff des stärkeren Gegners öffnet kurz einen Weg durch den Raum, den er nicht sofort abdecken kann. Du darfst sofort als freie Aktion einen Schritt ausführen oder Deckung suchen. Führst du einen Schritt aus, löst diese Bewegung keine Reaktionen der feindlichen Quelle aus. Wende dieses Ergebnis manuell an."
+          }
+        },
+        "Will": {
+          "TheImpossibleHasAName": {
+            "Title": "Das Unmögliche hat einen Namen",
+            "Description": "Ein Gegner dieser Macht hört auf, eine abstrakte Bedrohung zu sein, sobald du begreifst, dass man ihm trotzdem widerstehen kann. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und Einschüchternwürfe."
+          },
+          "ArroganceCracks": {
+            "Title": "Arroganz bekommt Risse",
+            "Description": "Der stärkere Gegner erwartete Gehorsam, Furcht oder Zögern. Deine Weigerung hinterlässt einen sichtbaren Riss in dieser Gewissheit. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
+          },
+          "DefianceBecomesAuthority": {
+            "Title": "Trotz wird zu Autorität",
+            "Description": "Etwas weit Überlegenem zu widerstehen, verleiht deinem eigenen Willen unerwartetes Gewicht. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf deinen Willens-SG und Klassen-SG."
+          },
+          "DominanceLosesItsGrip": {
+            "Title": "Dominanz verliert ihren Griff",
+            "Description": "Die feindliche Quelle drückt ihren Geist gegen deinen und entdeckt, dass Überlegenheit nicht dasselbe ist wie Kontrolle. Für 1 Runde ist sie Benommen 1 und erhält einen Situationsmalus von -1 auf Einschüchternwürfe."
+          },
+          "FiveLevelsStillNoGod": {
+            "Title": "Fünf Stufen, noch immer kein Gott",
+            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir wird der Unterschied in der Macht unbestreitbar und gerade deshalb weniger furchteinflößend. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Willenswürfe, RK und deinen Wahrnehmungs-SG."
+          },
+          "SpeakAcrossTheGap": {
+            "Title": "Sprich über den Abgrund hinweg",
+            "Description": "Du beantwortest überwältigende Präsenz mit einer Stimme, die sich weigert, kleiner zu werden. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Diplomatie- und deinen Willens-SG."
+          },
+          "TheirCertaintyMissesABeat": {
+            "Title": "Ihre Gewissheit setzt einen Herzschlag aus",
+            "Description": "Der stärkere Gegner erkennt, dass sein Druck dich nicht bewegt hat, und diese Erkenntnis kostet ihn einen Augenblick vollkommener Kontrolle. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe, ihren Willens-SG und Wahrnehmungs-SG."
+          },
+          "FourLevelsOneDoubt": {
+            "Title": "Vier Stufen, ein Zweifel",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir pflanzt deine Weigerung einen Zweifel, der selbst in seiner Gewissheit bestehen bleibt. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Klassen-SG."
+          },
+          "LookBackWithoutFlinching": {
+            "Title": "Blick zurück, ohne zu zucken",
+            "Description": "Du hörst auf, dich am stärkeren Gegner zu messen, und beginnst stattdessen, das Schlachtfeld zu messen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Wahrnehmungswürfe, Einschüchternwürfe und deinen Willens-SG."
+          },
+          "AnswerTheGiant": {
+            "Title": "Antworte dem Riesen",
+            "Description": "Der stärkere Gegner wollte dir seinen Willen aufzwingen und gab dir damit den perfekten Augenblick für eine Antwort. Du darfst sofort als freie Aktion versuchen, die feindliche Quelle mit einem Situationsbonus von +2 zu Demoralisieren. Wende dieses Ergebnis manuell an; die normalen Einschränkungen von Demoralisieren gelten weiterhin."
+          }
         }
       }
     },
@@ -1847,6 +1931,64 @@
           },
           "SurvivalBecomesCounterforce": {
             "Name": "Überleben wird zur Gegenkraft"
+          }
+        },
+        "Reflex": {
+          "DuckBeneathTheImpossible": {
+            "Name": "Unter dem Unmöglichen hindurch"
+          },
+          "MomentumExposesTheFlank": {
+            "Name": "Schwung legt die Flanke frei"
+          },
+          "LetTheGiantOvershoot": {
+            "Name": "Lass den Riesen vorbeischwingen"
+          },
+          "FiveLevelsOneEmptySquare": {
+            "Name": "Fünf Stufen, ein leeres Feld"
+          },
+          "SizeBecomesABlindSpot": {
+            "Name": "Größe wird zum toten Winkel"
+          },
+          "FootingCannotFollow": {
+            "Name": "Ihre Balance kommt nicht hinterher"
+          },
+          "ImpactBecomesDistance": {
+            "Name": "Einschlag wird zu Distanz"
+          },
+          "FourLevelsTooMuchMomentum": {
+            "Name": "Vier Stufen, zu viel Schwung"
+          },
+          "ReadTheShadowNotTheWeapon": {
+            "Name": "Lies den Schatten, nicht die Waffe"
+          }
+        },
+        "Will": {
+          "TheImpossibleHasAName": {
+            "Name": "Das Unmögliche hat einen Namen"
+          },
+          "ArroganceCracks": {
+            "Name": "Arroganz bekommt Risse"
+          },
+          "DefianceBecomesAuthority": {
+            "Name": "Trotz wird zu Autorität"
+          },
+          "DominanceLosesItsGrip": {
+            "Name": "Dominanz verliert ihren Griff"
+          },
+          "FiveLevelsStillNoGod": {
+            "Name": "Fünf Stufen, noch immer kein Gott"
+          },
+          "SpeakAcrossTheGap": {
+            "Name": "Sprich über den Abgrund hinweg"
+          },
+          "TheirCertaintyMissesABeat": {
+            "Name": "Ihre Gewissheit setzt einen Herzschlag aus"
+          },
+          "FourLevelsOneDoubt": {
+            "Name": "Vier Stufen, ein Zweifel"
+          },
+          "LookBackWithoutFlinching": {
+            "Name": "Blick zurück, ohne zu zucken"
           }
         }
       }

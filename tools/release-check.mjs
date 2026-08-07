@@ -74,6 +74,8 @@ const { SURROUNDED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "
 const { SURROUNDED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-will.js")).href);
 const { GIANT_SLAYER_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-attack.js")).href);
 const { GIANT_SLAYER_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-fortitude.js")).href);
+const { GIANT_SLAYER_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-reflex.js")).href);
+const { GIANT_SLAYER_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-will.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -145,6 +147,18 @@ check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Fortitude cards require critical save success.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Giant-Slayer Fortitude cards must require Fortitude.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Fortitude cards must use the dynamic Giant-Slayer condition.");
+check(GIANT_SLAYER_REFLEX_CARDS.length === 10, "Giant-Slayer Moments Reflex first pass must contain ten cards.");
+check(new Set(GIANT_SLAYER_REFLEX_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Reflex card IDs must be unique.");
+check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Giant-Slayer Reflex cards must remain in the Reflex deck.");
+check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Reflex cards require critical save success.");
+check(GIANT_SLAYER_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Giant-Slayer Reflex cards must require Reflex.");
+check(GIANT_SLAYER_REFLEX_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Reflex cards must use the dynamic Giant-Slayer condition.");
+check(GIANT_SLAYER_WILL_CARDS.length === 10, "Giant-Slayer Moments Will first pass must contain ten cards.");
+check(new Set(GIANT_SLAYER_WILL_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Will card IDs must be unique.");
+check(GIANT_SLAYER_WILL_CARDS.every((card) => card.deckType === "will"), "Giant-Slayer Will cards must remain in the Will deck.");
+check(GIANT_SLAYER_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Giant-Slayer Will cards require critical save success.");
+check(GIANT_SLAYER_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Giant-Slayer Will cards must require Will.");
+check(GIANT_SLAYER_WILL_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Will cards must use the dynamic Giant-Slayer condition.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

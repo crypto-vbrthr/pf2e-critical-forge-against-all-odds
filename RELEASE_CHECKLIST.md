@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 139/139 passing.
-- [x] Current coverage: 99.17% lines, 94.04% branches, 97.87% functions.
-- [x] Current localization parity: 791 keys in both German and English.
-- [x] Critical Forge `1.0.0-rc` validates 260 published cards and all 226 automated card effects through pack validation.
+- [x] Current automated test run: 157/157 passing.
+- [x] Current coverage: 99.42% lines, 93.88% branches, 98.33% functions.
+- [x] Current localization parity: 849 keys in both German and English.
+- [x] Critical Forge `1.0.0-rc` validates 280 published cards and all 244 automated card effects through pack validation.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -65,13 +65,26 @@
 - [x] Every published Giant-Slayer card uses the dynamic Giant-Slayer condition.
 - [x] Giant-Slayer escalation includes one +4 and one +5 level-gap result.
 - [x] Giant-Slayer first-pass automated effects are exact-signature distinct from published Bloodied and Surrounded effects.
-- [x] Giant-Slayer package metadata is marked in progress while Reflex and Will remain reserved and empty.
+- [x] Giant-Slayer package metadata is marked in progress while all four first-pass decks expose ten cards.
 - [x] Foundry smoke test: ten localized Giant-Slayer Attack cards visible.
 - [x] Giant-Slayer Fortitude first pass contains ten critical-success cards with 9 automated / 1 manual results.
 - [x] Giant-Slayer Fortitude first pass adds no resistance or immunity components.
 - [x] Giant-Slayer Fortitude saver/hostile target roles are regression-tested.
 - [x] Giant-Slayer Attack and Fortitude each contain one +4 and one +5 escalation result.
 - [x] Giant-Slayer Fortitude automated effects add no exact published signature duplicate.
-- [ ] Foundry smoke test: ten localized Giant-Slayer Fortitude cards visible.
-- [ ] Foundry smoke test: Giant-Slayer cards are unavailable below the configured level-gap threshold.
+- [x] Foundry smoke test: ten localized Giant-Slayer Fortitude cards visible.
+- [x] Giant-Slayer Reflex first pass contains ten critical-success cards with 9 automated / 1 manual results.
+- [x] Giant-Slayer Reflex first pass adds no resistance or immunity components.
+- [x] Giant-Slayer Reflex saver/hostile target roles are regression-tested.
+- [x] Giant-Slayer Attack, Fortitude, and Reflex each contain one +4 and one +5 escalation result.
+- [x] Giant-Slayer Reflex automated effects add no exact published signature duplicate.
+- [x] Foundry smoke test: ten localized Giant-Slayer Reflex cards visible.
+- [x] Foundry smoke test: Giant-Slayer cards are unavailable below the configured level-gap threshold.
 
+
+- [x] Giant-Slayer Will first pass contains ten critical-success cards with 9 automated / 1 manual results.
+- [x] Giant-Slayer Will first pass adds no resistance or immunity components.
+- [x] Giant-Slayer Will saver/hostile target roles are regression-tested.
+- [x] Giant-Slayer Attack, Fortitude, Reflex, and Will each contain one +4 and one +5 escalation result.
+- [x] Giant-Slayer Will automated effects add no exact published signature duplicate.
+- [ ] Foundry smoke test: ten localized Giant-Slayer Will cards visible.
