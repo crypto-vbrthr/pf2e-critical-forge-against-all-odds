@@ -35,6 +35,13 @@ const SURROUNDED_CONDITION = Object.freeze({
   value: true
 });
 
+const GIANT_SLAYER_CONDITION = Object.freeze({
+  type: "condition",
+  field: "extensions.againstAllOdds.giantSlayer.matched",
+  operator: "eq",
+  value: true
+});
+
 function unique(values = []) {
   return [...new Set(values.map((value) => String(value).trim()).filter(Boolean))];
 }
@@ -73,6 +80,10 @@ function combineBloodiedConditions(extraConditions) {
 
 function combineSurroundedConditions(extraConditions) {
   return combineConditions(SURROUNDED_CONDITION, extraConditions);
+}
+
+function combineGiantSlayerConditions(extraConditions) {
+  return combineConditions(GIANT_SLAYER_CONDITION, extraConditions);
 }
 
 function freezeEffect(effect, { themeToken, deckToken, localizationKey, fallbackTitle }) {
@@ -296,6 +307,94 @@ export function defineSurroundedWillCard(options) {
   return defineSurroundedCard({
     ...options, category: "savingThrowCriticalSuccess", deckType: "will", deckToken: "Will",
     contentBatch: options.contentBatch ?? 16, tags: ["save", "will", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["will"] }
+  });
+}
+
+
+function defineGiantSlayerCard({
+  id,
+  localizationKey,
+  category,
+  deckType,
+  deckToken,
+  tone,
+  impact,
+  fallbackTitle,
+  fallbackDescription,
+  weight = 1,
+  tags = [],
+  filters = {},
+  effect = null,
+  extraConditions = null,
+  contentBatch
+}) {
+  return Object.freeze({
+    schemaVersion: 1,
+    id: `${MODULE_ID}.giant-slayer-moments.${deckType}.${id}`,
+    packId: AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments,
+    category,
+    deckType,
+    tone,
+    impact,
+    titleKey: `PF2E_AGAINST_ALL_ODDS.Cards.GiantSlayerMoments.${deckToken}.${localizationKey}.Title`,
+    descriptionKey: `PF2E_AGAINST_ALL_ODDS.Cards.GiantSlayerMoments.${deckToken}.${localizationKey}.Description`,
+    fallbackTitle,
+    fallbackDescription,
+    weight,
+    tags: Object.freeze([
+      "against-all-odds",
+      "giant-slayer-moments",
+      deckType,
+      "critical-success",
+      ...unique(tags)
+    ]),
+    filters: freezeFilters(filters),
+    conditions: combineGiantSlayerConditions(extraConditions),
+    effect: freezeEffect(effect, { themeToken: "GiantSlayerMoments", deckToken, localizationKey, fallbackTitle }),
+    metadata: Object.freeze({ collection: "giant-slayer-moments", deck: deckType, contentBatch })
+  });
+}
+
+export function defineGiantSlayerAttackCard(options) {
+  if (!["criticalHit", "spellCriticalHit"].includes(options.category)) {
+    throw new TypeError(`Giant-Slayer attack cards require an attack critical-success category: ${options.category}`);
+  }
+  return defineGiantSlayerCard({
+    ...options, deckType: "attack", deckToken: "Attack", contentBatch: options.contentBatch ?? 21,
+    tags: [options.category === "spellCriticalHit" ? "spell" : "strike", ...(options.tags ?? [])]
+  });
+}
+
+export function defineGiantSlayerFortitudeCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Giant-Slayer Fortitude cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineGiantSlayerCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "fortitude", deckToken: "Fortitude",
+    contentBatch: options.contentBatch ?? 22, tags: ["save", "fortitude", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["fortitude"] }
+  });
+}
+
+export function defineGiantSlayerReflexCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Giant-Slayer Reflex cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineGiantSlayerCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "reflex", deckToken: "Reflex",
+    contentBatch: options.contentBatch ?? 23, tags: ["save", "reflex", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["reflex"] }
+  });
+}
+
+export function defineGiantSlayerWillCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Giant-Slayer Will cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineGiantSlayerCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "will", deckToken: "Will",
+    contentBatch: options.contentBatch ?? 24, tags: ["save", "will", ...(options.tags ?? [])],
     filters: { ...options.filters, saveTypes: ["will"] }
   });
 }

@@ -12,6 +12,7 @@ import { SURROUNDED_ATTACK_CARDS } from "./cards/surrounded-attack.js";
 import { SURROUNDED_FORTITUDE_CARDS } from "./cards/surrounded-fortitude.js";
 import { SURROUNDED_REFLEX_CARDS } from "./cards/surrounded-reflex.js";
 import { SURROUNDED_WILL_CARDS } from "./cards/surrounded-will.js";
+import { GIANT_SLAYER_ATTACK_CARDS } from "./cards/giant-slayer-attack.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -63,7 +64,7 @@ export function buildAgainstAllOddsPacks(settings = {}) {
       addOn: MODULE_ID,
       theme: theme.id,
       conditionPath: theme.conditionPath,
-      contentStatus: (theme.id === THEME_IDS.BLOODIED || theme.id === THEME_IDS.SURROUNDED) ? "complete" : "foundation",
+      contentStatus: (theme.id === THEME_IDS.BLOODIED || theme.id === THEME_IDS.SURROUNDED) ? "complete" : theme.id === THEME_IDS.GIANT_SLAYER ? "in-progress" : "foundation",
       plannedCardsPerDeck: 30
     },
     decks: Object.fromEntries(SPECIALIZED_DECK_TYPES.map((deckType) => [deckType, {
@@ -83,7 +84,9 @@ export function buildAgainstAllOddsPacks(settings = {}) {
                     ? SURROUNDED_REFLEX_CARDS
                     : theme.id === THEME_IDS.SURROUNDED && deckType === "will"
                       ? SURROUNDED_WILL_CARDS
-                      : []
+                      : theme.id === THEME_IDS.GIANT_SLAYER && deckType === "attack"
+                        ? GIANT_SLAYER_ATTACK_CARDS
+                        : []
     }]))
   }));
 }

@@ -1057,6 +1057,50 @@
             "Description": "Deine Klarheit findet nicht nur für dich einen Weg. Wähle einen Verbündeten innerhalb von 9 m, der dich hören kann; dieser Verbündete darf sofort als freie Aktion einen Schritt auf dich zu oder auf ein Feld angrenzend zu einem der Gegner ausführen, die dich bedrohen. Wende dieses Ergebnis manuell an."
           }
         }
+      },
+      "GiantSlayerMoments": {
+        "Attack": {
+          "FindTheJoint": {
+            "Title": "Finde das Gelenk",
+            "Description": "Macht schützt die offensichtlichen Stellen. Dein kritischer Treffer findet stattdessen die Naht. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf RK und Zähigkeits-SG."
+          },
+          "BeneathTheirReach": {
+            "Title": "Unter ihrer Reichweite",
+            "Description": "Der stärkere Gegner hat Reichweite, Gewicht und Selbstvertrauen. Du bist bereits unter all das getreten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Reflexwürfe."
+          },
+          "MakeTheGiantKneel": {
+            "Title": "Bring den Riesen auf die Knie",
+            "Description": "Dein kritischer Treffer raubt einem Gegner den Stand, den du eigentlich nicht bewegen können solltest. Für 1 Runde ist das Ziel Liegend und erhält einen Situationsmalus von -1 auf seinen Reflex-SG."
+          },
+          "ReachBecomesLeverage": {
+            "Title": "Reichweite wird zum Hebel",
+            "Description": "Der größere Gegner muss weiter ausholen und weiter zurückfinden, wenn du seine Angriffslinie zerstörst. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Athletikwürfe und von 1,5 m auf alle Bewegungsraten."
+          },
+          "FiveLevelsOneMistake": {
+            "Title": "Fünf Stufen, ein Fehler",
+            "Description": "Ein Gegner mindestens fünf Stufen über dir macht einen einzigen Fehler, und du machst ihn riesig. Für 1 Runde ist das Ziel Unbeholfen 1 und Auf dem falschen Fuß."
+          },
+          "FormulaAboveYourStation": {
+            "Title": "Eine Formel über deiner Gewichtsklasse",
+            "Description": "Der Zauber gelingt dort, wo die Mathematik ihn längst abgeschrieben hatte. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zauberangriffswürfe und deinen Zauber-SG."
+          },
+          "MagicFindsTheSmallestCrack": {
+            "Title": "Magie findet den kleinsten Riss",
+            "Description": "Dein Zauber macht aus einem haarfeinen Fehler in unmöglichen Verteidigungen eine Bresche für alle. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf RK, Rettungswürfe und Wahrnehmungswürfe."
+          },
+          "GreaterPowerRecoils": {
+            "Title": "Größere Macht schlägt zurück",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir lässt der kritische Zauber dessen eigene Macht durch die Öffnung zurückschlagen. Für 1 Runde ist das Ziel Benommen 1 und erhält einen Situationsmalus von -1 auf seinen Klassen-SG."
+          },
+          "ImpossibleArcPerfectImpact": {
+            "Title": "Unmöglicher Bogen, perfekter Einschlag",
+            "Description": "Die Größe des Gegners macht die unmögliche Flugbahn plötzlich offensichtlich. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zauberschadenswürfe und Wahrnehmungswürfe."
+          },
+          "ReadTheColossus": {
+            "Title": "Lies den Koloss",
+            "Description": "Der kritische Zauber zeigt dir, wie der stärkere Gegner zusammengesetzt ist. Du darfst sofort als freie Aktion Wissen abrufen über das Ziel mit einem Situationsbonus von +2. Wende dieses Ergebnis manuell an."
+          }
+        }
       }
     },
     "Effects": {
@@ -1701,6 +1745,37 @@
           },
           "TheirFocusPointsInward": {
             "Name": "Ihr Fokus zeigt nach innen"
+          }
+        }
+      },
+      "GiantSlayerMoments": {
+        "Attack": {
+          "FindTheJoint": {
+            "Name": "Finde das Gelenk"
+          },
+          "BeneathTheirReach": {
+            "Name": "Unter ihrer Reichweite"
+          },
+          "MakeTheGiantKneel": {
+            "Name": "Bring den Riesen auf die Knie"
+          },
+          "ReachBecomesLeverage": {
+            "Name": "Reichweite wird zum Hebel"
+          },
+          "FiveLevelsOneMistake": {
+            "Name": "Fünf Stufen, ein Fehler"
+          },
+          "FormulaAboveYourStation": {
+            "Name": "Eine Formel über deiner Gewichtsklasse"
+          },
+          "MagicFindsTheSmallestCrack": {
+            "Name": "Magie findet den kleinsten Riss"
+          },
+          "GreaterPowerRecoils": {
+            "Name": "Größere Macht schlägt zurück"
+          },
+          "ImpossibleArcPerfectImpact": {
+            "Name": "Unmöglicher Bogen, perfekter Einschlag"
           }
         }
       }

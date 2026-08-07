@@ -72,6 +72,7 @@ const { SURROUNDED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "
 const { SURROUNDED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-fortitude.js")).href);
 const { SURROUNDED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-reflex.js")).href);
 const { SURROUNDED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-will.js")).href);
+const { GIANT_SLAYER_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-attack.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -131,6 +132,13 @@ check(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCritic
 check(SURROUNDED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Surrounded Will cards must require Will.");
 check(SURROUNDED_WILL_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Will cards must use the dynamic Surrounded condition.");
 
+check(GIANT_SLAYER_ATTACK_CARDS.length === 10, "Giant-Slayer Moments Attack first pass must contain ten cards.");
+check(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Attack card IDs must be unique.");
+check(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Giant-Slayer first-pass cards must remain in the Attack deck.");
+check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Giant-Slayer Attack first pass must contain five ordinary critical-hit cards.");
+check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Giant-Slayer Attack first pass must contain five spell critical-hit cards.");
+check(GIANT_SLAYER_ATTACK_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Attack cards must use the dynamic Giant-Slayer condition.");
+
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {
   console.error(errors.map((entry) => `- ${entry}`).join("\n"));
@@ -151,6 +159,15 @@ function hasSurroundedGate(tree) {
     return tree.operator === "eq" && tree.value === true;
   }
   return (tree.conditions ?? []).some((child) => hasSurroundedGate(child));
+}
+
+
+function hasGiantSlayerGate(tree) {
+  if (!tree || typeof tree !== "object") return false;
+  if ((tree.type === "condition" || tree.field) && tree.field === "extensions.againstAllOdds.giantSlayer.matched") {
+    return tree.operator === "eq" && tree.value === true;
+  }
+  return (tree.conditions ?? []).some((child) => hasGiantSlayerGate(child));
 }
 
 function hasBloodiedGate(tree) {

@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 123/123 passing.
-- [x] Current coverage: 99.45% lines, 94.13% branches, 97.98% functions.
-- [x] Current localization parity: 733 keys in both German and English.
-- [x] Critical Forge `1.0.0-rc` validates 240 published cards and all 208 automated card effects through pack validation.
+- [x] Current automated test run: 130/130 passing.
+- [x] Current coverage: 99.03% lines, 94.13% branches, 97.61% functions.
+- [x] Current localization parity: 762 keys in both German and English.
+- [x] Critical Forge `1.0.0-rc` validates 250 published cards and all 217 automated card effects through pack validation.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -61,4 +61,11 @@
 - [x] Final Surrounded save passes add no new resistance or immunity series.
 - [x] Surrounded Attack finishes at fifteen ordinary and fifteen spell critical hits.
 - [x] Surrounded package metadata is marked complete.
+- [x] Giant-Slayer Moments Attack first pass contains ten cards: five ordinary critical hits and five spell critical hits.
+- [x] Every published Giant-Slayer card uses the dynamic Giant-Slayer condition.
+- [x] Giant-Slayer escalation includes one +4 and one +5 level-gap result.
+- [x] Giant-Slayer first-pass automated effects are exact-signature distinct from published Bloodied and Surrounded effects.
+- [x] Giant-Slayer package metadata is marked in progress while the other three deck slots remain reserved and empty.
+- [ ] Foundry smoke test: ten localized Giant-Slayer Attack cards visible.
+- [ ] Foundry smoke test: Giant-Slayer cards are unavailable below the configured level-gap threshold.
 

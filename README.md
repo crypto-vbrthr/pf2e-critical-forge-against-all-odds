@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.20` completes **Surrounded, Still Standing** at 120 cards while keeping **Bloodied Triumphs** complete at 120 cards. The final Surrounded pass adds forty formation-focused results across Attack, Fortitude, Reflex, and Will, with more movement, reaction interaction, ally support, and opponent-in-ring conditions instead of expanding resistance or immunity series. All previously published card IDs remain unchanged.
+Version `0.1.0-dev.21` begins **Giant-Slayer Moments** with its first ten Attack cards while keeping **Bloodied Triumphs** and **Surrounded, Still Standing** complete at 120 cards each. The new deck is split evenly between five ordinary and five spell critical hits and uses the real level gap between the rolling actor and the current opponent. All previously published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -78,8 +78,15 @@ Surrounded, Still Standing is complete at 120 cards:
 - formation-specific target effects can require the current opponent itself to be a counted melee threat;
 - exact automated effect overlap with Bloodied Triumphs remains limited to the nine reviewed legacy signatures, while internal exact duplicates remain limited to the two intentional reviewed pairs.
 
-Against All Odds therefore currently contains 240/480 planned cards across two complete themes.
+Giant-Slayer Moments has begun with 10/30 Attack cards:
+
+- five ordinary critical-hit cards and five spell critical-hit cards;
+- nine automated Effect Engine cards and one manual Recall Knowledge result;
+- every card requires `extensions.againstAllOdds.giantSlayer.matched == true`;
+- one card escalates at a level gap of +4 and one at +5.
+
+Against All Odds therefore currently contains **250/480 planned cards** across two complete themes and one theme in progress.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 
-Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`. Target-centric Surrounded cards may also require `extensions.againstAllOdds.surrounded.opponentIsThreatening == true`, which is derived from the Critical Forge `battlefield.hostileThreats` snapshot rather than from a second scene scan.
+Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Every published Surrounded card requires `extensions.againstAllOdds.surrounded.matched == true`. Every published Giant-Slayer card requires `extensions.againstAllOdds.giantSlayer.matched == true`. Attack cards remain isolated to `attack`; the Fortitude, Reflex, and Will cards remain isolated to their matching specialized deck and require the corresponding save filter. Stronger Surrounded results can additionally inspect `extensions.againstAllOdds.surrounded.count`. Target-centric Surrounded cards may also require `extensions.againstAllOdds.surrounded.opponentIsThreatening == true`, which is derived from the Critical Forge `battlefield.hostileThreats` snapshot rather than from a second scene scan.

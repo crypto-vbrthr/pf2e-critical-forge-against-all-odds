@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.21
+
+### Added
+- Began **Giant-Slayer Moments** with the first ten Attack-deck cards.
+- Added five ordinary critical-hit and five spell-critical-hit results focused on exploiting the defenses, reach, scale, and overconfidence of opponents at least three levels above the acting hero.
+- Added one +4 level-gap escalation and one +5 level-gap escalation.
+- Added nine automated Effect Engine results and one manual Recall Knowledge result.
+- Added German and English localization for all ten cards and nine automated effects.
+- Extended the shared card factory and pack registry with Giant-Slayer Attack support while leaving the three save decks reserved and empty.
+
+### Tests
+- Added Giant-Slayer count, 5/5 category split, dynamic gate, level-gap escalation, automation split, filter, localization, and effect-schema tests.
+- Added a first-pass exact-signature regression check preventing Giant-Slayer from copying existing Bloodied or Surrounded automated mechanics.
+- Revalidated the add-on against the actual Critical Forge `1.0.0-rc` pack validator and matcher before packaging: 250 cards and 217 automated effects valid; Giant-Slayer selection yields 0/8/9/10 first-pass Attack cards at level gaps +2/+3/+4/+5.
+- Verified 130/130 tests with 99.03% line coverage, 94.13% branch coverage, and 97.61% function coverage.
+
+### Compatibility
+- Existing 240 published card IDs remain unchanged; this build adds ten Giant-Slayer Attack IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.20
 
 - Completed **Surrounded, Still Standing** with the final forty-card pass: ten Attack, ten Fortitude, ten Reflex, and ten Will cards.
