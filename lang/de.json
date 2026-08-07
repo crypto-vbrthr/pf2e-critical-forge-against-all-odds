@@ -1102,6 +1102,46 @@
           "ReadTheColossus": {
             "Title": "Lies den Koloss",
             "Description": "Der kritische Zauber zeigt dir, wie der stärkere Gegner zusammengesetzt ist. Du darfst sofort als freie Aktion Wissen abrufen über das Ziel mit einem Situationsbonus von +2. Wende dieses Ergebnis manuell an."
+          },
+          "CutTheLongLever": {
+            "Title": "Brich den langen Hebel",
+            "Description": "Bei einem größeren Gegner ist die Gliedmaße, die ihm Reichweite gibt, zugleich ein Hebel. Dein kritischer Treffer macht ihn unbrauchbar. Für 1 Runde ist das Ziel Kraftlos 1 und erhält einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          },
+          "BeneathTheCenterOfMass": {
+            "Title": "Unter dem Schwerpunkt",
+            "Description": "Ein Gegner mindestens zwei Größenkategorien über dir hat überall Macht, nur nicht im Winkel direkt unter seinem Gleichgewicht. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Akrobatikwürfe und Angriffsschaden."
+          },
+          "MakePowerCommit": {
+            "Title": "Zwing die Macht zum Einsatz",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir ist die einzige sichere Öffnung jene, die er durch zu großen Krafteinsatz selbst schafft. Für 1 Runde ist das Ziel Unbeholfen 1 und erhält einen Situationsmalus von -1 auf seinen Zähigkeits-SG."
+          },
+          "HitAboveTheNumbers": {
+            "Title": "Triff jenseits der Zahlen",
+            "Description": "Der stärkere Gegner kann gewöhnlichen Druck abfangen. Dein kritischer Treffer greift die Stellen an, die seine Werte nicht schützen können. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Zähigkeits-SG und Reflex-SG."
+          },
+          "RunTheGiantsLine": {
+            "Title": "Durch die Linie des Riesen",
+            "Description": "Dein kritischer Treffer öffnet einen Weg durch die Stellung des größeren Gegners. Du darfst sofort als freie Aktion Hindurchturnen gegen das Ziel versuchen und erhältst einen Situationsbonus von +2 auf den Akrobatikwurf. Wende dieses Ergebnis manuell an."
+          },
+          "PowerNeedsRoom": {
+            "Title": "Macht braucht Raum",
+            "Description": "Der kritische Zauber verweigert dem stärkeren Gegner den Raum, den seine Macht voraussetzt. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten und von -1 auf seinen Reflex-SG."
+          },
+          "MakeTheImpossibleBlink": {
+            "Title": "Bring das Unmögliche zum Blinzeln",
+            "Description": "Der stärkere Gegner hat schon Macht gesehen. Aber nicht deine, wenn sie so einschlägt. Für 1 Runde ist das Ziel Geblendet und erhält einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          },
+          "FiveLevelsOneBreach": {
+            "Title": "Fünf Stufen, eine Bresche",
+            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir beweist der kritische Zauber, dass selbst unmögliche Verteidigungen gemeinsam versagen können. Für 1 Runde ist das Ziel Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Rettungswürfe."
+          },
+          "TheFirstCrackIsReal": {
+            "Title": "Der erste Riss ist echt",
+            "Description": "Sobald dein Zauber beweist, dass der stärkere Gegner verwundet werden kann, sieht jeder, wo die Legende endet und das Ziel beginnt. Für 1 Runde erhält das Ziel Schwäche 1 gegen jeglichen Schaden und einen Situationsmalus von -1 auf RK."
+          },
+          "ShareTheImpossibleOpening": {
+            "Title": "Teile die unmögliche Öffnung",
+            "Description": "Der kritische Zauber öffnet einen Augenblick, der zu groß ist, um ihn für dich zu behalten. Ein Verbündeter innerhalb von 9 m, der das Ziel sehen kann, darf sofort als freie Aktion einen Schritt machen. Wende dieses Ergebnis manuell an."
           }
         },
         "Fortitude": {
@@ -1905,6 +1945,30 @@
           },
           "ImpossibleArcPerfectImpact": {
             "Name": "Unmöglicher Bogen, perfekter Einschlag"
+          },
+          "CutTheLongLever": {
+            "Name": "Brich den langen Hebel"
+          },
+          "BeneathTheCenterOfMass": {
+            "Name": "Unter dem Schwerpunkt"
+          },
+          "MakePowerCommit": {
+            "Name": "Zwing die Macht zum Einsatz"
+          },
+          "HitAboveTheNumbers": {
+            "Name": "Triff jenseits der Zahlen"
+          },
+          "PowerNeedsRoom": {
+            "Name": "Macht braucht Raum"
+          },
+          "MakeTheImpossibleBlink": {
+            "Name": "Bring das Unmögliche zum Blinzeln"
+          },
+          "FiveLevelsOneBreach": {
+            "Name": "Fünf Stufen, eine Bresche"
+          },
+          "TheFirstCrackIsReal": {
+            "Name": "Der erste Riss ist echt"
           }
         },
         "Fortitude": {

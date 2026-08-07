@@ -135,11 +135,11 @@ check(SURROUNDED_WILL_CARDS.every((card) => card.category === "savingThrowCritic
 check(SURROUNDED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Surrounded Will cards must require Will.");
 check(SURROUNDED_WILL_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Will cards must use the dynamic Surrounded condition.");
 
-check(GIANT_SLAYER_ATTACK_CARDS.length === 10, "Giant-Slayer Moments Attack first pass must contain ten cards.");
-check(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Attack card IDs must be unique.");
-check(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Giant-Slayer first-pass cards must remain in the Attack deck.");
-check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Giant-Slayer Attack first pass must contain five ordinary critical-hit cards.");
-check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Giant-Slayer Attack first pass must contain five spell critical-hit cards.");
+check(GIANT_SLAYER_ATTACK_CARDS.length === 20, "Giant-Slayer Moments Attack must contain twenty cards after the second pass.");
+check(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size === 20, "Giant-Slayer Attack card IDs must be unique.");
+check(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Giant-Slayer cards must remain in the Attack deck.");
+check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 10, "Giant-Slayer Attack must contain ten ordinary critical-hit cards after the second pass.");
+check(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Giant-Slayer Attack must contain ten spell critical-hit cards after the second pass.");
 check(GIANT_SLAYER_ATTACK_CARDS.every((card) => hasGiantSlayerGate(card.conditions)), "Giant-Slayer Attack cards must use the dynamic Giant-Slayer condition.");
 check(GIANT_SLAYER_FORTITUDE_CARDS.length === 10, "Giant-Slayer Moments Fortitude first pass must contain ten cards.");
 check(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Giant-Slayer Fortitude card IDs must be unique.");

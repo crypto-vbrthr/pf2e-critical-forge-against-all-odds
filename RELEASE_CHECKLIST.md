@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 163/163 passing.
-- [x] Current coverage: 99.44% lines, 94.14% branches, 98.39% functions.
-- [x] Current localization parity: 852 keys in both German and English.
-- [x] Critical Forge `1.0.0-rc` validates 280 published cards and all 243 automated card effects through pack validation.
+- [x] Current automated test run: 167/167 passing.
+- [x] Current coverage: 99.45% lines, 94.25% branches, 98.44% functions.
+- [x] Current localization parity: 880 keys in both German and English.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 290 published cards and 251 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -67,6 +67,11 @@
 - [x] Giant-Slayer first-pass automated effects are exact-signature distinct from published Bloodied and Surrounded effects.
 - [x] Giant-Slayer package metadata is marked in progress while all four first-pass decks expose ten cards.
 - [x] Foundry smoke test: ten localized Giant-Slayer Attack cards visible.
+- [x] Giant-Slayer Attack second pass adds ten cards in batch 25, preserving a 10/10 ordinary/spell split at 20/30.
+- [x] Giant-Slayer Attack second pass uses 8 automated / 2 manual results with no resistance or immunity filler.
+- [x] Giant-Slayer Attack second pass adds one +4 and one +5 escalation and uses reviewed threat/size evidence only on matching physical geometry.
+- [x] Giant-Slayer Attack second-pass automated effects add no exact published signature duplicate.
+- [ ] Foundry smoke test: twenty localized Giant-Slayer Attack cards visible and second-pass manual actions read correctly.
 - [x] Giant-Slayer Fortitude first pass contains ten critical-success cards with 9 automated / 1 manual results.
 - [x] Giant-Slayer Fortitude first pass adds no resistance or immunity components.
 - [x] Giant-Slayer Fortitude saver/hostile target roles are regression-tested.
@@ -95,5 +100,5 @@
 - [x] Scale-specific Giant-Slayer cards require an actually larger opponent.
 - [x] Five Levels, One Empty Square no longer applies global automated `concealed`; observer-relative concealment is manual.
 - [x] Dominance Loses Its Grip requires a mental trigger and Their Certainty Misses a Beat excludes mindless targets.
-- [ ] Foundry smoke test for `0.1.0-dev.24.1`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
-- [ ] Foundry smoke test for `0.1.0-dev.24.1`: reviewed Giant-Slayer physical/size/mental gating behaves as expected in a live scene.
+- [ ] Foundry smoke test for `0.1.0-dev.25`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
+- [ ] Foundry smoke test for `0.1.0-dev.25`: reviewed Giant-Slayer physical/size/mental gating behaves as expected in a live scene.

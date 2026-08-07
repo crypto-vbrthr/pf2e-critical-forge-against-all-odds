@@ -1195,17 +1195,18 @@ test("Surrounded internal exact automated duplicates remain limited to the two i
 });
 
 
-test("Giant-Slayer Moments begins with ten Attack cards split five/five between Strike and spell criticals", () => {
-  assert.equal(GIANT_SLAYER_ATTACK_CARDS.length, 10);
-  assert.equal(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size, 10);
-  assert.equal(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
-  assert.equal(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
-  assert.equal(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 5);
-  assert.equal(GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 5);
-  assert.equal(GIANT_SLAYER_ATTACK_CARDS.every((card) => card.metadata.contentBatch === 21), true);
+test("Giant-Slayer Moments preserves its first ten Attack cards split five/five between Strike and spell criticals", () => {
+  const firstPass = GIANT_SLAYER_ATTACK_CARDS.slice(0, 10);
+  assert.equal(firstPass.length, 10);
+  assert.equal(new Set(firstPass.map((card) => card.id)).size, 10);
+  assert.equal(firstPass.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
+  assert.equal(firstPass.every((card) => card.deckType === "attack"), true);
+  assert.equal(firstPass.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(firstPass.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(firstPass.every((card) => card.metadata.contentBatch === 21), true);
 });
 
-test("all first-pass Giant-Slayer Attack cards use the dynamic level-gap gate", () => {
+test("all published Giant-Slayer Attack cards use the dynamic level-gap gate", () => {
   for (const card of GIANT_SLAYER_ATTACK_CARDS) {
     const leaves = conditionLeaves(card.conditions);
     assert.equal(leaves.some((leaf) =>
@@ -1227,8 +1228,9 @@ test("Giant-Slayer first-pass escalation cards require four or five levels of di
 });
 
 test("Giant-Slayer first-pass Attack cards keep nine automated results and one manual insight result", () => {
-  const automated = GIANT_SLAYER_ATTACK_CARDS.filter((card) => card.effect);
-  const manual = GIANT_SLAYER_ATTACK_CARDS.filter((card) => !card.effect);
+  const firstPass = GIANT_SLAYER_ATTACK_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
+  const manual = firstPass.filter((card) => !card.effect);
   assert.equal(automated.length, 9);
   assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), ["gsa-010-read-the-colossus"]);
   assert.equal(manual[0].tags.includes("manual"), true);
@@ -1239,7 +1241,7 @@ test("Giant-Slayer first-pass Attack cards keep nine automated results and one m
   }
 });
 
-test("Giant-Slayer first-pass cards use complete immutable filters and Forge-supported presentation values", () => {
+test("Giant-Slayer Attack cards use complete immutable filters and Forge-supported presentation values", () => {
   const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
   const impacts = new Set(["light", "moderate", "strong"]);
   for (const card of GIANT_SLAYER_ATTACK_CARDS) {
@@ -1250,7 +1252,7 @@ test("Giant-Slayer first-pass cards use complete immutable filters and Forge-sup
   }
 });
 
-test("Giant-Slayer first-pass card and effect localization keys exist in German and English", () => {
+test("Giant-Slayer Attack card and effect localization keys exist in German and English", () => {
   const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
   const en = JSON.parse(fs.readFileSync(path.join(root, "lang/en.json"), "utf8"));
   for (const card of GIANT_SLAYER_ATTACK_CARDS) {
@@ -1260,6 +1262,55 @@ test("Giant-Slayer first-pass card and effect localization keys exist in German 
       if (card.effect) assert.equal(typeof getPath(tree, card.effect.nameKey), "string", card.effect.nameKey);
     }
   }
+});
+
+test("Giant-Slayer Attack second pass adds five Strike and five spell criticals in content batch 25", () => {
+  const secondPass = GIANT_SLAYER_ATTACK_CARDS.slice(10, 20);
+  assert.equal(GIANT_SLAYER_ATTACK_CARDS.length, 20);
+  assert.equal(new Set(GIANT_SLAYER_ATTACK_CARDS.map((card) => card.id)).size, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(secondPass.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 25), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "gsa-015-run-the-giants-line",
+    "gsa-020-share-the-impossible-opening"
+  ]);
+  assert.equal(secondPass.filter((card) => card.effect).length, 8);
+});
+
+test("Giant-Slayer Attack second pass keeps one +4 and one +5 level-gap escalation", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_ATTACK_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["gsa-013-make-power-commit"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  const five = conditionLeaves(bySuffix["gsa-018-five-levels-one-breach"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  assert.deepEqual({ operator: four.operator, value: four.value }, { operator: "gte", value: 4 });
+  assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
+});
+
+test("Giant-Slayer Attack second pass uses reviewed threat and size evidence only where fiction requires it", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_ATTACK_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  for (const suffix of ["gsa-011-cut-the-long-lever", "gsa-015-run-the-giants-line"]) {
+    const leaves = conditionLeaves(bySuffix[suffix].conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsLarger" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+  }
+  const sizeGap = conditionLeaves(bySuffix["gsa-012-beneath-the-center-of-mass"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.sizeGap");
+  assert.deepEqual({ operator: sizeGap.operator, value: sizeGap.value }, { operator: "gte", value: 2 });
+});
+
+test("Giant-Slayer Attack second pass favors asymmetric counterplay over generic resistance or immunity filler", () => {
+  const secondPass = GIANT_SLAYER_ATTACK_CARDS.slice(10, 20);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "resistance"), false);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
+  assert.equal(components.some((component) => component.type === "movement"), true);
+  assert.equal(components.some((component) => component.type === "weakness" && component.weaknessType === "all-damage"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "dazzled"), true);
+  assert.equal(secondPass.filter((card) => card.effect?.target === "source").length, 1);
+  assert.equal(secondPass.filter((card) => card.effect?.target === "target").length, 7);
 });
 
 test("published Giant-Slayer automated mechanics are distinct from Bloodied and Surrounded exact signatures", () => {

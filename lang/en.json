@@ -1102,6 +1102,46 @@
           "ReadTheColossus": {
             "Title": "Read the Colossus",
             "Description": "The critical spell reveals how the stronger foe is put together. You may immediately Recall Knowledge about the target as a free action with a +2 circumstance bonus. Apply this result manually."
+          },
+          "CutTheLongLever": {
+            "Title": "Cut the Long Lever",
+            "Description": "Against a larger foe, the limb that grants reach is also a lever. Your critical hit spoils it. For 1 round, the target is enfeebled 1 and takes a 5-foot circumstance penalty to all Speeds."
+          },
+          "BeneathTheCenterOfMass": {
+            "Title": "Beneath the Center of Mass",
+            "Description": "A foe two or more size steps above you has power everywhere except the angle directly beneath its balance. For 1 round, you gain a +1 circumstance bonus to Acrobatics checks and Strike damage."
+          },
+          "MakePowerCommit": {
+            "Title": "Make Power Commit",
+            "Description": "Against a foe four or more levels above you, the only safe opening is the one it creates by committing too much. For 1 round, the target is clumsy 1 and takes a -1 circumstance penalty to Fortitude DC."
+          },
+          "HitAboveTheNumbers": {
+            "Title": "Hit Above the Numbers",
+            "Description": "The stronger foe can absorb ordinary pressure. Your critical hit attacks the places its statistics cannot cover. For 1 round, the target takes a -1 circumstance penalty to Fortitude DC and Reflex DC."
+          },
+          "RunTheGiantsLine": {
+            "Title": "Run the Giant's Line",
+            "Description": "Your critical hit opens a route through the larger foe's own stance. You may immediately attempt to Tumble Through the target as a free action with a +2 circumstance bonus to the Acrobatics check. Apply this result manually."
+          },
+          "PowerNeedsRoom": {
+            "Title": "Power Needs Room",
+            "Description": "The critical spell denies the stronger foe the space its power expects. For 1 round, the target takes a 5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Reflex DC."
+          },
+          "MakeTheImpossibleBlink": {
+            "Title": "Make the Impossible Blink",
+            "Description": "The stronger foe has seen power before. It has not seen yours land like this. For 1 round, the target is dazzled and takes a 5-foot circumstance penalty to all Speeds."
+          },
+          "FiveLevelsOneBreach": {
+            "Title": "Five Levels, One Breach",
+            "Description": "Against a foe five or more levels above you, the critical spell proves that even impossible defenses can fail together. For 1 round, the target is off-guard and takes a -1 circumstance penalty to saving throws."
+          },
+          "TheFirstCrackIsReal": {
+            "Title": "The First Crack Is Real",
+            "Description": "Once your spell proves the stronger foe can be hurt, everyone sees where the legend ends and the target begins. For 1 round, the target gains weakness 1 to all damage and takes a -1 circumstance penalty to AC."
+          },
+          "ShareTheImpossibleOpening": {
+            "Title": "Share the Impossible Opening",
+            "Description": "The critical spell opens a moment too large to keep for yourself. One ally within 30 feet who can see the target may immediately Step as a free action. Apply this result manually."
           }
         },
         "Fortitude": {
@@ -1905,6 +1945,30 @@
           },
           "ImpossibleArcPerfectImpact": {
             "Name": "Impossible Arc, Perfect Impact"
+          },
+          "CutTheLongLever": {
+            "Name": "Cut the Long Lever"
+          },
+          "BeneathTheCenterOfMass": {
+            "Name": "Beneath the Center of Mass"
+          },
+          "MakePowerCommit": {
+            "Name": "Make Power Commit"
+          },
+          "HitAboveTheNumbers": {
+            "Name": "Hit Above the Numbers"
+          },
+          "PowerNeedsRoom": {
+            "Name": "Power Needs Room"
+          },
+          "MakeTheImpossibleBlink": {
+            "Name": "Make the Impossible Blink"
+          },
+          "FiveLevelsOneBreach": {
+            "Name": "Five Levels, One Breach"
+          },
+          "TheFirstCrackIsReal": {
+            "Name": "The First Crack Is Real"
           }
         },
         "Fortitude": {

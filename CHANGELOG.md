@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-dev.25
+
+### Added
+- Added the second ten-card **Giant-Slayer Moments** Attack pass, bringing Attack to 20/30 and the theme to 50/120 cards.
+- Added five ordinary critical-hit and five spell-critical-hit results, with eight automated Effect Engine results and two explicit manual tactical moments.
+- Added one new +4 and one new +5 level-gap escalation while keeping the base +3 Giant-Slayer pool broad.
+- Added reviewed scale-aware counterplay using `opponentIsLarger` and `sizeGap >= 2`, plus melee-only leverage results using `opponentIsThreatening`.
+- Added a manual free-action **Tumble Through** result against a larger threatening opponent and a manual ally **Step** opened by a critical spell.
+- Added German and English localization for all ten cards and eight automated effects.
+
+### Tests
+- Added second-pass Attack count, 5/5 category split, content-batch, automation/manual, escalation, threat/size-evidence, targeting, component-mix, localization, and exact-signature uniqueness coverage.
+- Preserved the exact-signature rule: no automated Giant-Slayer mechanic duplicates Bloodied Triumphs, Surrounded, Still Standing, or another published Giant-Slayer effect.
+- Updated runtime, pack, and release contracts for the 20/10/10/10 Giant-Slayer deck layout.
+
+### Compatibility
+- All 280 previously published card IDs remain unchanged; this build adds ten new Giant-Slayer Attack IDs.
+- Critical Forge APIs and card/pack/effect schemas remain unchanged.
+
 ## 0.1.0-dev.24.1
 
 ### Reviewed

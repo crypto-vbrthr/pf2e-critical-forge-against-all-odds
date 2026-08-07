@@ -63,23 +63,23 @@ The test suite covers:
 - review assertions for **Arc Through the Crowd** impact and **Four Steps, One Misstep** mechanics;
 - final-pass manual movement, Shove/Escape, reaction-denial, ally-support, and formation-break results;
 - Surrounded localization, source/target roles, tone/impact, filter, and schema-2 effect contracts.
-- ten first-pass Giant-Slayer Attack cards split 5/5 between ordinary and spell critical hits;
+- twenty Giant-Slayer Attack cards after two passes, split 10/10 between ordinary and spell critical hits;
 - ten first-pass Giant-Slayer Fortitude critical-success cards with matching save/deck isolation;
 - ten first-pass Giant-Slayer Reflex critical-success cards with matching save/deck isolation;
 - the dynamic Giant-Slayer gate on every published Giant-Slayer card;
-- +4 and +5 level-gap escalation conditions in all three published Giant-Slayer decks;
-- nine automated effects plus one manual result in Attack, Fortitude, and Will, with the reviewed Reflex pass using eight automated and two manual observer-aware results;
+- +4 and +5 level-gap escalation conditions in every first-pass Giant-Slayer deck, plus one additional +4 and +5 escalation in the second Attack pass;
+- the first Attack pass keeps nine automated effects plus one manual result; the second Attack pass adds eight automated effects plus manual Tumble Through and ally-Step results; Fortitude and Will remain 9/1 and the reviewed Reflex pass remains 8/2;
 - saver/source targeting for Fortitude and Reflex boons and explicit hostile-target roles for Giant-Slayer counterpressure;
-- no resistance or immunity filler in the first Giant-Slayer Fortitude or Reflex pass;
+- no resistance or immunity filler in the first Giant-Slayer Fortitude or Reflex pass or the second Giant-Slayer Attack pass;
 - Giant-Slayer localization, tone/impact, immutable filter, and schema-2 effect contracts;
 - exact automated-effect uniqueness for published Giant-Slayer cards against Bloodied, Surrounded, and earlier Giant-Slayer mechanics.
 - Giant-Slayer current-opponent threat evidence reusing the immutable Battlefield snapshot, including remote/rejected opponents;
-- canonical PF2e participant-size normalization and unknown-safe larger-opponent relations;
+- canonical PF2e participant-size normalization, unknown-safe larger-opponent relations, and explicit `sizeGap >= 2` gating for second-pass scale geometry;
 - physical Fortitude/Reflex counterplay requiring the actual threatening opponent;
 - observer-relative concealed remaining manual rather than becoming a global actor condition;
 - mental Giant-Slayer Will filtering and mindless-target exclusions.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.24.1` baseline: **163/163 tests**, **99.44% line coverage**, **94.14% branch coverage**, and **98.39% function coverage**. The release also performs a direct validation pass against the actual Critical Forge `1.0.0-rc` pack validator; the current build contains **280 published cards and 243 automated card effects**, all accepted through that path before packaging. Matcher smoke tests additionally verify that a remote caster cannot trigger physical Giant-Slayer knockdown/overreach results, same-size bosses do not receive scale-only cards, larger bosses do, and mental Will results require the matching mental context.
+Current `0.1.0-dev.25` baseline: **167/167 tests**, **99.45% line coverage**, **94.25% branch coverage**, and **98.44% function coverage**. The current build contains **290 published cards and 251 automated card effects**. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging. Existing matcher regression coverage still verifies that remote sources cannot trigger physical Giant-Slayer counterplay, same-size bosses do not receive scale-only cards, larger bosses do, and mental Will results require the matching context.
 
