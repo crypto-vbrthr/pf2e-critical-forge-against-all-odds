@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-dev.12
+
+### Added
+- Began **Surrounded, Still Standing** with the first ten Attack-deck cards.
+- Added five ordinary critical-hit and five spell critical-hit results focused on holding the center, disrupting an encirclement, exploiting formation gaps, and creating tactical space.
+- Added stronger contextual results that require at least three or four currently threatening enemies.
+- Extended the shared card factory with theme-specific Surrounded card definitions while preserving all existing Bloodied Triumphs output and IDs.
+
+### Tests
+- Added first-pass Surrounded card-count, 5/5 category split, dynamic-gate, nested-threat, target-role, localization, tone/impact, filter, and effect-schema coverage.
+- Extended pack/runtime/release contracts so the Surrounded Attack deck must register exactly ten cards while the other three Surrounded decks remain empty.
+
+### Compatibility
+- Bloodied Triumphs remains unchanged at 120/120 cards.
+- Card, pack, effect, diagnostic, and extension-contract schemas remain unchanged.
+
 ## 0.1.0-dev.11
 
 ### Added

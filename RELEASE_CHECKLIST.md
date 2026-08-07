@@ -9,6 +9,8 @@
 - [x] Bloodied Triumphs Reflex deck contains thirty reviewed cards.
 - [x] Bloodied Triumphs Will deck contains thirty reviewed cards.
 - [x] All 120 published cards include the dynamic Bloodied condition.
+- [x] Surrounded, Still Standing Attack first pass contains ten cards: five regular critical hits and five spell critical hits.
+- [x] All Surrounded Attack cards include the dynamic Surrounded condition; stronger cards test three/four threat counts.
 - [x] The first forty-card review preserves every previously published card ID.
 - [x] The second and final Attack, Fortitude, Reflex, and Will passes add new IDs without changing earlier published IDs.
 - [x] Contextual poison, disease, mental, illusion, and emotion filters are covered by tests.
@@ -31,5 +33,7 @@
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Fortitude cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Reflex cards visible.
 - [ ] Foundry smoke test: thirty localized Bloodied Triumphs Will cards visible.
+- [ ] Foundry smoke test: ten localized Surrounded Attack cards visible.
+- [ ] Foundry smoke test: Surrounded cards are unavailable below the configured threat threshold.
 - [ ] Foundry smoke test: automated effects apply to the intended source or target.
 - [ ] Foundry smoke test: cards are unavailable above the Bloodied threshold.

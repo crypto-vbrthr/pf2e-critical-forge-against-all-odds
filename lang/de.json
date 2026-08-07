@@ -565,6 +565,50 @@
             "Description": "Der gescheiterte Angriff verrät etwas über die Kreatur dahinter. Du darfst sofort als freie Aktion einen passenden Wissen-abrufen-Wurf über die feindliche Quelle ablegen und erhältst dabei einen Situationsbonus von +2; wende dieses Ergebnis manuell an."
           }
         }
+      },
+      "SurroundedStillStanding": {
+        "Attack": {
+          "CenterDoesNotBreak": {
+            "Title": "Der Mittelpunkt bricht nicht",
+            "Description": "Wo andere zurückweichen würden, wirst du zum festen Punkt im Ring. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK."
+          },
+          "BreakTheirRhythm": {
+            "Title": "Spreng ihren Rhythmus",
+            "Description": "Dein Gegenstoß lässt den Ring zögern. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Angriffswürfe."
+          },
+          "OneFoeBecomesTheGap": {
+            "Title": "Ein Feind wird zur Lücke",
+            "Description": "Der kritische Treffer macht einen Teil der Einkreisung zur Schwachstelle. Das Ziel erhält für 1 Runde Unbeholfen 1."
+          },
+          "ThreeBladesOneFocus": {
+            "Title": "Drei Klingen, ein Fokus",
+            "Description": "Wenn drei oder mehr Gegner auf dich eindringen, weist jede Bedrohung auf die nächste Öffnung. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe."
+          },
+          "ThroughTheGap": {
+            "Title": "Durch die Lücke",
+            "Description": "Der kritische Treffer öffnet für einen Herzschlag Raum. Du darfst sofort als freie Aktion einen Schritt ausführen; wenn möglich, beende den Schritt auf einem Feld, auf dem dich weniger Gegner bedrohen. Wende dieses Ergebnis manuell an."
+          },
+          "PressureSharpensTheFormula": {
+            "Title": "Druck schärft die Formel",
+            "Description": "Jede näher rückende Klinge schneidet eine weitere Ablenkung aus dem Zauber. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zauberangriffswürfe."
+          },
+          "MagicTearsTheFormation": {
+            "Title": "Magie zerreißt die Formation",
+            "Description": "Der Zauber macht das Ziel zur schwachen Naht der Einkreisung. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Rettungswürfe."
+          },
+          "FourAgainstOne": {
+            "Title": "Vier gegen einen",
+            "Description": "Vier oder mehr Gegner schließen den Ring, und trotzdem trifft der Zauber vollkommen. Das Ziel erhält Verängstigt 1."
+          },
+          "RingTurnsInward": {
+            "Title": "Der Ring schlägt nach innen",
+            "Description": "Der Zauber macht einen Gegner zur Bruchlinie der gesamten Formation. Für 1 Runde erhält das Ziel Schwäche 1 gegen jeglichen Schaden."
+          },
+          "NoFreeAngle": {
+            "Title": "Kein freier Winkel",
+            "Description": "Der Zauber raubt dem Ziel die Möglichkeit, den Ring sauber zu schließen. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          }
+        }
       }
     },
     "Effects": {
@@ -899,6 +943,37 @@
           },
           "ImpossibleIsNotEnough": {
             "Name": "Unmöglich reicht nicht"
+          }
+        }
+      },
+      "SurroundedStillStanding": {
+        "Attack": {
+          "CenterDoesNotBreak": {
+            "Name": "Der Mittelpunkt bricht nicht"
+          },
+          "BreakTheirRhythm": {
+            "Name": "Spreng ihren Rhythmus"
+          },
+          "OneFoeBecomesTheGap": {
+            "Name": "Ein Feind wird zur Lücke"
+          },
+          "ThreeBladesOneFocus": {
+            "Name": "Drei Klingen, ein Fokus"
+          },
+          "PressureSharpensTheFormula": {
+            "Name": "Druck schärft die Formel"
+          },
+          "MagicTearsTheFormation": {
+            "Name": "Magie zerreißt die Formation"
+          },
+          "FourAgainstOne": {
+            "Name": "Vier gegen einen"
+          },
+          "RingTurnsInward": {
+            "Name": "Der Ring schlägt nach innen"
+          },
+          "NoFreeAngle": {
+            "Name": "Kein freier Winkel"
           }
         }
       }

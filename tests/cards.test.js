@@ -7,6 +7,7 @@ import { BLOODIED_ATTACK_CARDS } from "../scripts/data/cards/bloodied-attack.js"
 import { BLOODIED_FORTITUDE_CARDS } from "../scripts/data/cards/bloodied-fortitude.js";
 import { BLOODIED_REFLEX_CARDS } from "../scripts/data/cards/bloodied-reflex.js";
 import { BLOODIED_WILL_CARDS } from "../scripts/data/cards/bloodied-will.js";
+import { SURROUNDED_ATTACK_CARDS } from "../scripts/data/cards/surrounded-attack.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -557,4 +558,67 @@ test("Bloodied Triumphs completes 120 unique cards with a stable 108 automated /
   assert.equal(new Set(ALL_CARDS.map((card) => card.id)).size, 120);
   assert.equal(ALL_CARDS.filter((card) => card.effect).length, 108);
   assert.equal(ALL_CARDS.filter((card) => !card.effect).length, 12);
+});
+
+
+test("Surrounded, Still Standing first Attack pass contains five Strike and five spell criticals", () => {
+  assert.equal(SURROUNDED_ATTACK_CARDS.length, 10);
+  assert.equal(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
+  assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
+  assert.equal(SURROUNDED_ATTACK_CARDS.every((card) => card.metadata.contentBatch === 13), true);
+});
+
+test("all Surrounded Attack cards use the dynamic surrounded gate", () => {
+  for (const card of SURROUNDED_ATTACK_CARDS) {
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.matched" && leaf.operator === "eq" && leaf.value === true), true, card.id);
+    assert.equal(Object.isFrozen(card), true);
+    assert.equal(Object.isFrozen(card.conditions), true);
+  }
+});
+
+test("heavier Surrounded Attack results require three or four threatening enemies", () => {
+  const three = SURROUNDED_ATTACK_CARDS.find((card) => card.id.endsWith("ssa-004-three-blades-one-focus"));
+  const four = SURROUNDED_ATTACK_CARDS.find((card) => card.id.endsWith("ssa-008-four-against-one"));
+  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
+  assert.equal(conditionLeaves(four.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+});
+
+test("Surrounded Attack first pass keeps hostile and beneficial targets intentional", () => {
+  const automated = SURROUNDED_ATTACK_CARDS.filter((card) => card.effect);
+  assert.equal(automated.length, 9);
+  assert.equal(SURROUNDED_ATTACK_CARDS.filter((card) => !card.effect).length, 1);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 3);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 6);
+  assert.equal(SURROUNDED_ATTACK_CARDS.find((card) => card.id.endsWith("ssa-008-four-against-one")).filters.excludedTargetTraits.includes("mindless"), true);
+});
+
+test("Surrounded Attack card and effect localization keys exist in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const language of [de, en]) {
+    for (const card of SURROUNDED_ATTACK_CARDS) {
+      assert.equal(typeof getPath(language, card.titleKey), "string", card.titleKey);
+      assert.equal(typeof getPath(language, card.descriptionKey), "string", card.descriptionKey);
+      if (card.effect) assert.equal(typeof getPath(language, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+
+test("Surrounded first-pass cards use Forge-supported tones, impacts, filters, and schema-2 effects", () => {
+  const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const impacts = new Set(["light", "moderate", "strong"]);
+  for (const card of SURROUNDED_ATTACK_CARDS) {
+    assert.equal(tones.has(card.tone), true, card.id);
+    assert.equal(impacts.has(card.impact), true, card.id);
+    for (const key of FILTER_KEYS) assert.equal(Array.isArray(card.filters[key]), true, `${card.id}:${key}`);
+    if (card.effect) {
+      assert.equal(card.effect.definition.schemaVersion, 2, card.id);
+      assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Attack."), true, card.id);
+    }
+  }
 });

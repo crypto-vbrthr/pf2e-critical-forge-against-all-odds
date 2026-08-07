@@ -28,6 +28,13 @@ const BLOODIED_CONDITION = Object.freeze({
   value: true
 });
 
+const SURROUNDED_CONDITION = Object.freeze({
+  type: "condition",
+  field: "extensions.againstAllOdds.surrounded.matched",
+  operator: "eq",
+  value: true
+});
+
 function unique(values = []) {
   return [...new Set(values.map((value) => String(value).trim()).filter(Boolean))];
 }
@@ -46,25 +53,33 @@ function freezeConditionTree(value) {
   ));
 }
 
-function combineBloodiedConditions(extraConditions) {
+function combineConditions(baseCondition, extraConditions) {
   const extras = extraConditions == null
     ? []
     : Array.isArray(extraConditions)
       ? extraConditions
       : [extraConditions];
-  if (!extras.length) return BLOODIED_CONDITION;
+  if (!extras.length) return baseCondition;
   return freezeConditionTree({
     type: "group",
     mode: "all",
-    conditions: [BLOODIED_CONDITION, ...extras]
+    conditions: [baseCondition, ...extras]
   });
 }
 
-function freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }) {
+function combineBloodiedConditions(extraConditions) {
+  return combineConditions(BLOODIED_CONDITION, extraConditions);
+}
+
+function combineSurroundedConditions(extraConditions) {
+  return combineConditions(SURROUNDED_CONDITION, extraConditions);
+}
+
+function freezeEffect(effect, { themeToken, deckToken, localizationKey, fallbackTitle }) {
   if (!effect) return null;
   return Object.freeze({
     target: effect.target ?? "source",
-    nameKey: `PF2E_AGAINST_ALL_ODDS.Effects.BloodiedTriumphs.${deckToken}.${localizationKey}.Name`,
+    nameKey: `PF2E_AGAINST_ALL_ODDS.Effects.${themeToken}.${deckToken}.${localizationKey}.Name`,
     fallbackName: effect.fallbackName ?? fallbackTitle,
     definition: Object.freeze({
       schemaVersion: 2,
@@ -118,7 +133,7 @@ function defineBloodiedCard({
     ]),
     filters: freezeFilters(filters),
     conditions: combineBloodiedConditions(extraConditions),
-    effect: freezeEffect(effect, { deckToken, localizationKey, fallbackTitle }),
+    effect: freezeEffect(effect, { themeToken: "BloodiedTriumphs", deckToken, localizationKey, fallbackTitle }),
     metadata: Object.freeze({
       collection: "bloodied-triumphs",
       deck: deckType,
@@ -185,6 +200,102 @@ export function defineBloodiedWillCard(options) {
     deckToken: "Will",
     contentBatch: options.contentBatch ?? 4,
     tags: ["save", "will", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["will"] }
+  });
+}
+
+
+function defineSurroundedCard({
+  id,
+  localizationKey,
+  category,
+  deckType,
+  deckToken,
+  tone,
+  impact,
+  fallbackTitle,
+  fallbackDescription,
+  weight = 1,
+  tags = [],
+  filters = {},
+  effect = null,
+  extraConditions = null,
+  contentBatch
+}) {
+  return Object.freeze({
+    schemaVersion: 1,
+    id: `${MODULE_ID}.surrounded-still-standing.${deckType}.${id}`,
+    packId: AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding,
+    category,
+    deckType,
+    tone,
+    impact,
+    titleKey: `PF2E_AGAINST_ALL_ODDS.Cards.SurroundedStillStanding.${deckToken}.${localizationKey}.Title`,
+    descriptionKey: `PF2E_AGAINST_ALL_ODDS.Cards.SurroundedStillStanding.${deckToken}.${localizationKey}.Description`,
+    fallbackTitle,
+    fallbackDescription,
+    weight,
+    tags: Object.freeze([
+      "against-all-odds",
+      "surrounded-still-standing",
+      deckType,
+      "critical-success",
+      ...unique(tags)
+    ]),
+    filters: freezeFilters(filters),
+    conditions: combineSurroundedConditions(extraConditions),
+    effect: freezeEffect(effect, { themeToken: "SurroundedStillStanding", deckToken, localizationKey, fallbackTitle }),
+    metadata: Object.freeze({
+      collection: "surrounded-still-standing",
+      deck: deckType,
+      contentBatch
+    })
+  });
+}
+
+export function defineSurroundedAttackCard(options) {
+  if (!["criticalHit", "spellCriticalHit"].includes(options.category)) {
+    throw new TypeError(`Surrounded attack cards require an attack critical-success category: ${options.category}`);
+  }
+
+  return defineSurroundedCard({
+    ...options,
+    deckType: "attack",
+    deckToken: "Attack",
+    contentBatch: options.contentBatch ?? 13,
+    tags: [options.category === "spellCriticalHit" ? "spell" : "strike", ...(options.tags ?? [])]
+  });
+}
+
+export function defineSurroundedFortitudeCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Surrounded Fortitude cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineSurroundedCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "fortitude", deckToken: "Fortitude",
+    contentBatch: options.contentBatch ?? 14, tags: ["save", "fortitude", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["fortitude"] }
+  });
+}
+
+export function defineSurroundedReflexCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Surrounded Reflex cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineSurroundedCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "reflex", deckToken: "Reflex",
+    contentBatch: options.contentBatch ?? 15, tags: ["save", "reflex", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["reflex"] }
+  });
+}
+
+export function defineSurroundedWillCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Surrounded Will cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineSurroundedCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "will", deckToken: "Will",
+    contentBatch: options.contentBatch ?? 16, tags: ["save", "will", ...(options.tags ?? [])],
     filters: { ...options.filters, saveTypes: ["will"] }
   });
 }

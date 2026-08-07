@@ -24,11 +24,13 @@ test("every theme reserves attack, Fortitude, Reflex, and Will decks", () => {
     for (const deckType of SPECIALIZED_DECK_TYPES) {
       const expected = pack.id.endsWith("bloodied-triumphs")
         ? 30
-        : 0;
+        : pack.id.endsWith("surrounded-still-standing") && deckType === "attack"
+          ? 10
+          : 0;
       assert.equal(pack.decks[deckType].cards.length, expected);
     }
     assert.equal(pack.metadata.plannedCardsPerDeck, 30);
-    assert.equal(pack.metadata.contentStatus, pack.id.endsWith("bloodied-triumphs") ? "complete" : "foundation");
+    assert.equal(pack.metadata.contentStatus, pack.id.endsWith("bloodied-triumphs") ? "complete" : pack.id.endsWith("surrounded-still-standing") ? "in-progress" : "foundation");
   }
 });
 

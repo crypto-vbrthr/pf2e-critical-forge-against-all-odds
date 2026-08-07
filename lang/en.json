@@ -565,6 +565,50 @@
             "Description": "The failed assault reveals something about the creature behind it. You may immediately attempt an appropriate Recall Knowledge check about the hostile source as a free action, gaining a +2 circumstance bonus to that check; apply this result manually."
           }
         }
+      },
+      "SurroundedStillStanding": {
+        "Attack": {
+          "CenterDoesNotBreak": {
+            "Title": "The Center Does Not Break",
+            "Description": "Where others would retreat, you become the fixed point in the ring. For 1 round, you gain a +1 circumstance bonus to AC."
+          },
+          "BreakTheirRhythm": {
+            "Title": "Break Their Rhythm",
+            "Description": "Your counterstroke makes the ring hesitate. For 1 round, the target takes a -1 circumstance penalty to attack rolls."
+          },
+          "OneFoeBecomesTheGap": {
+            "Title": "One Foe Becomes the Gap",
+            "Description": "The critical hit turns one part of the encirclement into a liability. The target becomes clumsy 1 for 1 round."
+          },
+          "ThreeBladesOneFocus": {
+            "Title": "Three Blades, One Focus",
+            "Description": "With three or more enemies pressing in, every threat becomes a guide to the next opening. For 1 round, you gain a +1 circumstance bonus to attack rolls."
+          },
+          "ThroughTheGap": {
+            "Title": "Through the Gap",
+            "Description": "The critical blow opens a heartbeat of space. You may immediately Step as a free action; if possible, end the Step in a space where fewer enemies threaten you. Apply this result manually."
+          },
+          "PressureSharpensTheFormula": {
+            "Title": "Pressure Sharpens the Formula",
+            "Description": "Every closing blade strips another distraction from the spell. For 1 round, you gain a +1 circumstance bonus to spell attack rolls."
+          },
+          "MagicTearsTheFormation": {
+            "Title": "Magic Tears the Formation",
+            "Description": "The spell turns the target into the weak seam of the encirclement. For 1 round, the target takes a -1 circumstance penalty to saving throws."
+          },
+          "FourAgainstOne": {
+            "Title": "Four Against One",
+            "Description": "Four or more enemies close in and still the spell lands perfectly. The target becomes frightened 1."
+          },
+          "RingTurnsInward": {
+            "Title": "The Ring Turns Inward",
+            "Description": "The spell makes one enemy the fault line in the whole formation. For 1 round, the target gains weakness 1 to all damage."
+          },
+          "NoFreeAngle": {
+            "Title": "No Free Angle",
+            "Description": "The spell steals the target's ability to close the ring cleanly. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds."
+          }
+        }
       }
     },
     "Effects": {
@@ -899,6 +943,37 @@
           },
           "ImpossibleIsNotEnough": {
             "Name": "Impossible Is Not Enough"
+          }
+        }
+      },
+      "SurroundedStillStanding": {
+        "Attack": {
+          "CenterDoesNotBreak": {
+            "Name": "The Center Does Not Break"
+          },
+          "BreakTheirRhythm": {
+            "Name": "Break Their Rhythm"
+          },
+          "OneFoeBecomesTheGap": {
+            "Name": "One Foe Becomes the Gap"
+          },
+          "ThreeBladesOneFocus": {
+            "Name": "Three Blades, One Focus"
+          },
+          "PressureSharpensTheFormula": {
+            "Name": "Pressure Sharpens the Formula"
+          },
+          "MagicTearsTheFormation": {
+            "Name": "Magic Tears the Formation"
+          },
+          "FourAgainstOne": {
+            "Name": "Four Against One"
+          },
+          "RingTurnsInward": {
+            "Name": "The Ring Turns Inward"
+          },
+          "NoFreeAngle": {
+            "Name": "No Free Angle"
           }
         }
       }

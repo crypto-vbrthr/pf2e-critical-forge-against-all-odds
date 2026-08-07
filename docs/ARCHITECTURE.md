@@ -32,6 +32,6 @@ World settings that enable or disable a theme rebuild all four pack definitions 
 
 ## Card content
 
-Playable cards are immutable schema-1 definitions below `scripts/data/cards/`. The shared card factory supplies complete filter arrays, the dynamic Bloodied condition, localization paths, deck assignment, Effect Definition schema 2 wrappers, and stable metadata. Theme pack construction only places those definitions into the appropriate specialized deck.
+Playable cards are immutable schema-1 definitions below `scripts/data/cards/`. The shared card factory supplies complete filter arrays, theme-specific dynamic conditions, localization paths, deck assignment, Effect Definition schema 2 wrappers, and stable metadata. Theme pack construction only places those definitions into the appropriate specialized deck.
 
 The first reviewed content pass is split across `bloodied-attack.js`, `bloodied-fortitude.js`, `bloodied-reflex.js`, and `bloodied-will.js`. Each file contains ten stable-ID cards for its specialized deck. Card filters may additionally bind a specialized result to triggering item traits such as poison, disease, mental, illusion, or emotion. The remaining twelve specialized decks stay empty until their own controlled content passes begin.

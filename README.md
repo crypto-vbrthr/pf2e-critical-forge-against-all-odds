@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.11` completes **Bloodied Triumphs** at 120 cards. Attack, Fortitude, Reflex, and Will now each contain their planned 30 cards; the Attack deck is split evenly between 15 ordinary critical hits and 15 spell critical hits. The final pass adds more contextual weapon, spell-trait, quarter-health, wounded, elemental, and battlefield-threat results while preserving all previously published card IDs. Bloodied Triumphs now contains 108 automated Effect Engine cards and 12 explicit manual results.
+Version `0.1.0-dev.12` keeps **Bloodied Triumphs** complete at 120 cards and begins **Surrounded, Still Standing** with its first ten Attack cards. The new Attack pass is split evenly between five ordinary and five spell critical hits, all gated by the real battlefield threat evaluation; two stronger results additionally require three or four threatening enemies.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -67,6 +67,12 @@ Bloodied Triumphs is complete at 120 cards:
 - 108 automated Effect Engine cards;
 - 12 explicit manual cards.
 
-All three reviewed ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
+Surrounded, Still Standing has begun at 10/120 cards:
 
-Every card requires `extensions.againstAllOdds.bloodied.matched == true`. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.
+- ten Attack-deck cards, split evenly between five ordinary and five spell critical hits;
+- nine automated Effect Engine cards and one explicit manual positioning result;
+- all ten require the live Surrounded trigger, while two stronger cards additionally require three or four threatening enemies.
+
+All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
+
+Every Bloodied Triumphs card requires `extensions.againstAllOdds.bloodied.matched == true`. Surrounded, Still Standing now adds ten Attack cards requiring `extensions.againstAllOdds.surrounded.matched == true`; its first pass contains five ordinary critical-hit and five spell-critical-hit cards, including stronger three- and four-threat results. Attack cards remain isolated to `attack`; save cards remain isolated to their matching specialized deck and require the corresponding save filter.

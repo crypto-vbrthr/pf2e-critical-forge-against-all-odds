@@ -68,6 +68,7 @@ const { BLOODIED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "sc
 const { BLOODIED_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-fortitude.js")).href);
 const { BLOODIED_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-reflex.js")).href);
 const { BLOODIED_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/bloodied-will.js")).href);
+const { SURROUNDED_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/surrounded-attack.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -99,6 +100,13 @@ check(BLOODIED_WILL_CARDS.every((card) => card.category === "savingThrowCritical
 check(BLOODIED_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Bloodied Triumphs Will cards must require Will.");
 check(BLOODIED_WILL_CARDS.every((card) => hasBloodiedGate(card.conditions)), "Bloodied Triumphs Will cards must use the dynamic Bloodied condition.");
 
+check(SURROUNDED_ATTACK_CARDS.length === 10, "Surrounded, Still Standing Attack deck must contain ten first-pass cards.");
+check(new Set(SURROUNDED_ATTACK_CARDS.map((card) => card.id)).size === 10, "Surrounded Attack card IDs must be unique.");
+check(SURROUNDED_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Surrounded cards must remain in the Attack deck.");
+check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Surrounded Attack first pass must contain five ordinary critical-hit cards.");
+check(SURROUNDED_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Surrounded Attack first pass must contain five spell critical-hit cards.");
+check(SURROUNDED_ATTACK_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Attack cards must use the dynamic Surrounded condition.");
+
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {
   console.error(errors.map((entry) => `- ${entry}`).join("\n"));
@@ -112,6 +120,14 @@ console.log(JSON.stringify({
   javascriptFiles: files.filter((entry) => entry.endsWith(".js") || entry.endsWith(".mjs")).length,
   status: "ok"
 }));
+
+function hasSurroundedGate(tree) {
+  if (!tree || typeof tree !== "object") return false;
+  if ((tree.type === "condition" || tree.field) && tree.field === "extensions.againstAllOdds.surrounded.matched") {
+    return tree.operator === "eq" && tree.value === true;
+  }
+  return (tree.conditions ?? []).some((child) => hasSurroundedGate(child));
+}
 
 function hasBloodiedGate(tree) {
   if (!tree || typeof tree !== "object") return false;
