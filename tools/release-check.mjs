@@ -117,8 +117,8 @@ check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.category === "savingThrowC
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Surrounded Fortitude cards must require Fortitude.");
 check(SURROUNDED_FORTITUDE_CARDS.every((card) => hasSurroundedGate(card.conditions)), "Surrounded Fortitude cards must use the dynamic Surrounded condition.");
 
-check(SURROUNDED_REFLEX_CARDS.length === 10, "Surrounded, Still Standing Reflex deck must contain ten first-pass cards.");
-check(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size === 10, "Surrounded Reflex card IDs must be unique.");
+check(SURROUNDED_REFLEX_CARDS.length === 20, "Surrounded, Still Standing Reflex deck must contain twenty cards after two passes.");
+check(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size === 20, "Surrounded Reflex card IDs must be unique.");
 check(SURROUNDED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Surrounded Reflex cards must remain in the Reflex deck.");
 check(SURROUNDED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Surrounded Reflex cards require critical save success.");
 check(SURROUNDED_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Surrounded Reflex cards must require Reflex.");

@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-dev.18
+
+### Added
+- Added the second ten-card **Surrounded, Still Standing** Reflex pass, bringing the Reflex deck to 20/30 cards and the theme to 70/120 cards.
+- Added nine automated and one manual result focused on ring geometry, current-opponent misdirection, movement momentum, Acrobatics, Perception disruption, and reaction-safe Tumble Through play.
+- Added one three-threat and one four-threat escalation result; four formation-specific cards require the current hostile source to be a counted melee threat.
+- Added German and English localization for all ten cards and nine automated effects.
+
+### Tests
+- Added second-pass Reflex count/content-batch, no-new-resistance/immunity-series, threat escalation, current-opponent gating, target-role, mechanical-coverage, and localization regression coverage.
+- Revalidated the complete add-on against the actual Critical Forge `1.0.0-rc` pack, matcher, and Effect Engine contracts before packaging.
+
+### Compatibility
+- Existing 180 published card IDs remain unchanged; this build adds ten Surrounded Reflex IDs.
+- Card, pack, effect, diagnostic, API, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.17
 
 ### Added

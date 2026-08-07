@@ -773,6 +773,46 @@
           "GhostThroughTheRing": {
             "Title": "Ghost Through the Ring",
             "Description": "You may immediately Stride as a free action, moving no more than half your Speed. This movement does not trigger reactions from creatures that currently threaten you; if possible, end where fewer enemies threaten you. Apply this result manually."
+          },
+          "EdgeBecomesExit": {
+            "Title": "The Edge Becomes an Exit",
+            "Description": "You stop treating the ring as a wall and start reading its edge as a route. For 1 round, you gain a +1 circumstance bonus to AC and Acrobatics checks."
+          },
+          "RingTripsOverItself": {
+            "Title": "The Ring Trips Over Itself",
+            "Description": "A threatening source has to correct for the bodies crowding its attack. For 1 round, it takes a -1 circumstance penalty to attack rolls and Reflex DC."
+          },
+          "ThreeAnglesOneTempo": {
+            "Title": "Three Angles, One Tempo",
+            "Description": "With three or more enemies threatening you, their separate attacks collapse into one rhythm you can read. For 1 round, you gain a +1 circumstance bonus to Reflex saves and Perception checks."
+          },
+          "FourStepsOneMisstep": {
+            "Title": "Four Steps, One Misstep",
+            "Description": "With four or more enemies pressing in, one threatening foe has nowhere to recover when you slip its attack. For 1 round, it becomes clumsy 1 and takes a -5-foot circumstance penalty to all Speeds."
+          },
+          "TumbleThroughTheTeeth": {
+            "Title": "Tumble Through the Teeth",
+            "Description": "You may immediately attempt to Tumble Through one creature that currently threatens you as a free action, gaining a +2 circumstance bonus to the Acrobatics check. That creature cannot use reactions triggered by this movement. Apply this result manually."
+          },
+          "CrowdBuildsYourMomentum": {
+            "Title": "The Crowd Builds Your Momentum",
+            "Description": "Every correction an enemy makes gives you another fraction of motion. For 1 round, you gain a +1 circumstance bonus to attack rolls and a +5-foot circumstance bonus to all your Speeds."
+          },
+          "TurnTheirEyesSideways": {
+            "Title": "Turn Their Eyes Sideways",
+            "Description": "A threatening source loses track of the whole formation when you vanish from its expected line. For 1 round, it takes a -1 circumstance penalty to Perception checks and Perception DC."
+          },
+          "GapStaysOpen": {
+            "Title": "The Gap Stays Open",
+            "Description": "Once you find the opening, your body remembers it. For 1 round, you gain a +1 circumstance bonus to Acrobatics checks and Reflex DC."
+          },
+          "OneBodyBlocksTheNext": {
+            "Title": "One Body Blocks the Next",
+            "Description": "You make a threatening source occupy exactly the wrong place for the rest of the ring. For 1 round, it is off-guard and takes a -1 circumstance penalty to Reflex DC."
+          },
+          "NeverStopInTheCenter": {
+            "Title": "Never Stop in the Center",
+            "Description": "The ring can only close around the place you were. For 1 round, you gain a +5-foot circumstance bonus to all your Speeds and a +1 circumstance bonus to Perception DC."
           }
         },
         "Will": {
@@ -1288,6 +1328,33 @@
           },
           "EyesOnEveryOpening": {
             "Name": "Eyes on Every Opening"
+          },
+          "EdgeBecomesExit": {
+            "Name": "The Edge Becomes an Exit"
+          },
+          "RingTripsOverItself": {
+            "Name": "The Ring Trips Over Itself"
+          },
+          "ThreeAnglesOneTempo": {
+            "Name": "Three Angles, One Tempo"
+          },
+          "FourStepsOneMisstep": {
+            "Name": "Four Steps, One Misstep"
+          },
+          "CrowdBuildsYourMomentum": {
+            "Name": "The Crowd Builds Your Momentum"
+          },
+          "TurnTheirEyesSideways": {
+            "Name": "Turn Their Eyes Sideways"
+          },
+          "GapStaysOpen": {
+            "Name": "The Gap Stays Open"
+          },
+          "OneBodyBlocksTheNext": {
+            "Name": "One Body Blocks the Next"
+          },
+          "NeverStopInTheCenter": {
+            "Name": "Never Stop in the Center"
           }
         },
         "Will": {

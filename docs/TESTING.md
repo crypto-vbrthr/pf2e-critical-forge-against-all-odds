@@ -62,4 +62,6 @@ The test suite covers:
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current development baseline: 110 passing tests, with 99.31% line coverage in `npm run test:coverage`. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.
+Current development baseline: 112 passing tests, with 99.34% line coverage in `npm run test:coverage`. The release also performs a direct validation pass against the Critical Forge RC pack and Effect Engine contracts before packaging.
+
+- Surrounded Reflex two-pass count, save/deck isolation, dynamic gating, 3-/4-threat escalation, current-opponent threat membership, source/target roles, ring-geometry/mobility mechanics, and localization.

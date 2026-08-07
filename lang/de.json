@@ -773,6 +773,46 @@
           "GhostThroughTheRing": {
             "Title": "Wie ein Geist durch den Ring",
             "Description": "Du darfst sofort als freie Aktion Laufen, jedoch höchstens bis zur Hälfte deiner Bewegungsrate. Diese Bewegung löst keine Reaktionen von Kreaturen aus, die dich derzeit bedrohen; wenn möglich, beende sie an einem Ort, an dem dich weniger Gegner bedrohen. Wende dieses Ergebnis manuell an."
+          },
+          "EdgeBecomesExit": {
+            "Title": "Die Kante wird zum Ausgang",
+            "Description": "Du behandelst den Ring nicht länger wie eine Wand, sondern liest seinen Rand als Weg. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Akrobatikwürfe."
+          },
+          "RingTripsOverItself": {
+            "Title": "Der Ring stolpert über sich selbst",
+            "Description": "Eine dich bedrohende Quelle muss ihren Angriff wegen der drängenden Körper korrigieren. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Angriffswürfe und ihren Reflex-SG."
+          },
+          "ThreeAnglesOneTempo": {
+            "Title": "Drei Winkel, ein Takt",
+            "Description": "Bedrohen dich drei oder mehr Gegner, verschmelzen ihre einzelnen Angriffe zu einem Rhythmus, den du lesen kannst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Reflexwürfe und Wahrnehmungswürfe."
+          },
+          "FourStepsOneMisstep": {
+            "Title": "Vier Schritte, ein Fehltritt",
+            "Description": "Drängen vier oder mehr Gegner auf dich ein, bleibt einem bedrohenden Gegner nach deinem Ausweichen kein Raum zur Korrektur. Für 1 Runde erhält er Unbeholfen 1 und einen Situationsmalus von 1,5 m auf alle Bewegungsraten."
+          },
+          "TumbleThroughTheTeeth": {
+            "Title": "Durch die Zähne hindurch",
+            "Description": "Du darfst sofort als freie Aktion versuchen, durch eine Kreatur hindurchzuturnen, die dich derzeit bedroht, und erhältst dabei einen Situationsbonus von +2 auf den Akrobatikwurf. Diese Kreatur kann keine durch diese Bewegung ausgelösten Reaktionen einsetzen. Wende dieses Ergebnis manuell an."
+          },
+          "CrowdBuildsYourMomentum": {
+            "Title": "Das Gedränge gibt dir Schwung",
+            "Description": "Jede Korrektur eines Gegners schenkt dir einen weiteren Hauch Bewegung. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Angriffswürfe und 1,5 m auf alle deine Bewegungsraten."
+          },
+          "TurnTheirEyesSideways": {
+            "Title": "Lenk ihre Blicke zur Seite",
+            "Description": "Eine dich bedrohende Quelle verliert die Formation aus den Augen, als du aus ihrer erwarteten Linie verschwindest. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Wahrnehmungswürfe und ihren Wahrnehmungs-SG."
+          },
+          "GapStaysOpen": {
+            "Title": "Die Lücke bleibt offen",
+            "Description": "Sobald du die Öffnung gefunden hast, erinnert sich dein Körper an sie. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Akrobatikwürfe und deinen Reflex-SG."
+          },
+          "OneBodyBlocksTheNext": {
+            "Title": "Ein Körper blockiert den nächsten",
+            "Description": "Du bringst eine dich bedrohende Quelle genau an die falsche Stelle für den Rest des Rings. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Reflex-SG."
+          },
+          "NeverStopInTheCenter": {
+            "Title": "Bleib nie in der Mitte stehen",
+            "Description": "Der Ring kann sich nur um den Ort schließen, an dem du eben noch warst. Für 1 Runde erhältst du einen Situationsbonus von 1,5 m auf alle deine Bewegungsraten und +1 auf deinen Wahrnehmungs-SG."
           }
         },
         "Will": {
@@ -1288,6 +1328,33 @@
           },
           "EyesOnEveryOpening": {
             "Name": "Augen auf jede Öffnung"
+          },
+          "EdgeBecomesExit": {
+            "Name": "Die Kante wird zum Ausgang"
+          },
+          "RingTripsOverItself": {
+            "Name": "Der Ring stolpert über sich selbst"
+          },
+          "ThreeAnglesOneTempo": {
+            "Name": "Drei Winkel, ein Takt"
+          },
+          "FourStepsOneMisstep": {
+            "Name": "Vier Schritte, ein Fehltritt"
+          },
+          "CrowdBuildsYourMomentum": {
+            "Name": "Das Gedränge gibt dir Schwung"
+          },
+          "TurnTheirEyesSideways": {
+            "Name": "Lenk ihre Blicke zur Seite"
+          },
+          "GapStaysOpen": {
+            "Name": "Die Lücke bleibt offen"
+          },
+          "OneBodyBlocksTheNext": {
+            "Name": "Ein Körper blockiert den nächsten"
+          },
+          "NeverStopInTheCenter": {
+            "Name": "Bleib nie in der Mitte stehen"
           }
         },
         "Will": {

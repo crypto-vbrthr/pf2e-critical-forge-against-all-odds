@@ -784,14 +784,15 @@ test("Surrounded Fortitude second pass favors leverage and counterpressure over 
 });
 
 
-test("Surrounded, Still Standing first Reflex pass contains ten unique critical-save cards", () => {
-  assert.equal(SURROUNDED_REFLEX_CARDS.length, 10);
-  assert.equal(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size, 10);
+test("Surrounded, Still Standing Reflex deck contains twenty unique critical-save cards after two passes", () => {
+  assert.equal(SURROUNDED_REFLEX_CARDS.length, 20);
+  assert.equal(new Set(SURROUNDED_REFLEX_CARDS.map((card) => card.id)).size, 20);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.surroundedStillStanding), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
-  assert.equal(SURROUNDED_REFLEX_CARDS.every((card) => card.metadata.contentBatch === 15), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 15), true);
+  assert.equal(SURROUNDED_REFLEX_CARDS.slice(10).every((card) => card.metadata.contentBatch === 18), true);
 });
 
 test("all Surrounded Reflex cards use the dynamic surrounded gate", () => {
@@ -804,27 +805,33 @@ test("all Surrounded Reflex cards use the dynamic surrounded gate", () => {
 });
 
 test("heavier Surrounded Reflex results require three or four threatening enemies", () => {
-  const three = SURROUNDED_REFLEX_CARDS.find((card) => card.id.endsWith("ssr-003-three-threats-one-current"));
-  const four = SURROUNDED_REFLEX_CARDS.find((card) => card.id.endsWith("ssr-004-four-threats-open-ground"));
-  assert.equal(conditionLeaves(three.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true);
-  assert.equal(conditionLeaves(four.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true);
+  for (const suffix of ["ssr-003-three-threats-one-current", "ssr-013-three-angles-one-tempo"]) {
+    const card = SURROUNDED_REFLEX_CARDS.find((entry) => entry.id.endsWith(suffix));
+    assert.equal(conditionLeaves(card.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 3), true, suffix);
+  }
+  for (const suffix of ["ssr-004-four-threats-open-ground", "ssr-014-four-steps-one-misstep"]) {
+    const card = SURROUNDED_REFLEX_CARDS.find((entry) => entry.id.endsWith(suffix));
+    assert.equal(conditionLeaves(card.conditions).some((leaf) => leaf.field === "extensions.againstAllOdds.surrounded.count" && leaf.operator === "gte" && leaf.value === 4), true, suffix);
+  }
 });
 
 test("Surrounded Reflex first pass keeps boons on the saver and counterpressure on the hostile source", () => {
-  const automated = SURROUNDED_REFLEX_CARDS.filter((card) => card.effect);
+  const firstPass = SURROUNDED_REFLEX_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
   assert.equal(automated.length, 9);
-  assert.deepEqual(SURROUNDED_REFLEX_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssr-010-ghost-through-the-ring"]);
+  assert.deepEqual(firstPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["ssr-010-ghost-through-the-ring"]);
   assert.equal(automated.filter((card) => card.effect.target === "source").length, 7);
   assert.equal(automated.filter((card) => card.effect.target === "target").length, 2);
 });
 
-test("Surrounded Reflex first pass covers mobility, cross-cover, precision defense, and counter-openings", () => {
+test("Surrounded Reflex cards cover mobility, cross-cover, precision defense, and counter-openings", () => {
   const components = SURROUNDED_REFLEX_CARDS.flatMap((card) => card.effect?.definition.components ?? []);
   assert.equal(components.some((component) => component.type === "movement" && component.movementType === "all" && component.value === 5), true);
   assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("ac") && component.selector.includes("perception-dc")), true);
   assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "precision" && component.value === 3), true);
   assert.equal(components.some((component) => component.type === "condition" && component.slug === "concealed"), true);
   assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "clumsy"), true);
   assert.equal(components.some((component) => component.type === "modifier" && component.selector === "reflex-dc" && component.value === -1), true);
 });
 
@@ -840,7 +847,7 @@ test("Surrounded Reflex card and effect localization keys exist in German and En
   }
 });
 
-test("Surrounded Reflex first pass uses Forge-supported tones, impacts, filters, and schema-2 effects", () => {
+test("Surrounded Reflex cards use Forge-supported tones, impacts, filters, and schema-2 effects", () => {
   const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
   const impacts = new Set(["light", "moderate", "strong"]);
   for (const card of SURROUNDED_REFLEX_CARDS) {
@@ -851,6 +858,36 @@ test("Surrounded Reflex first pass uses Forge-supported tones, impacts, filters,
       assert.equal(card.effect.definition.schemaVersion, 2, card.id);
       assert.equal(card.effect.nameKey.startsWith("PF2E_AGAINST_ALL_ODDS.Effects.SurroundedStillStanding.Reflex."), true, card.id);
     }
+  }
+});
+
+test("Surrounded Reflex second pass adds ten formation-and-mobility critical-save cards", () => {
+  const secondPass = SURROUNDED_REFLEX_CARDS.slice(10, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 18), true);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "ssr-015-tumble-through-the-teeth"
+  ]);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "clumsy"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "off-guard"), true);
+  assert.equal(components.some((component) => component.type === "movement" && component.movementType === "all" && component.value === 5), true);
+  assert.equal(components.some((component) => component.type === "resistance" || component.type === "immunity"), false);
+});
+
+test("Surrounded Reflex second pass uses current-opponent threat gating for ring geometry", () => {
+  const expected = new Set([
+    "ssr-012-ring-trips-over-itself",
+    "ssr-014-four-steps-one-misstep",
+    "ssr-017-turn-their-eyes-sideways",
+    "ssr-019-one-body-blocks-the-next"
+  ]);
+  for (const card of SURROUNDED_REFLEX_CARDS.slice(10)) {
+    const suffix = card.id.split(".").at(-1);
+    const hasGate = conditionLeaves(card.conditions).some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.surrounded.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
+    );
+    assert.equal(hasGate, expected.has(suffix), card.id);
   }
 });
 
@@ -948,7 +985,11 @@ test("target-centric Surrounded cards require the current opponent to be a count
     "ssf-018-one-body-takes-the-weight",
     "ssf-019-force-meets-formation",
     "ssr-005-overreach-opens-the-source",
-    "ssr-006-balance-turns-against-them"
+    "ssr-006-balance-turns-against-them",
+    "ssr-012-ring-trips-over-itself",
+    "ssr-014-four-steps-one-misstep",
+    "ssr-017-turn-their-eyes-sideways",
+    "ssr-019-one-body-blocks-the-next"
   ]);
   for (const card of ALL_SURROUNDED_CARDS) {
     const suffix = card.id.split(".").at(-1);

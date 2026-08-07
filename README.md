@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.17` keeps **Bloodied Triumphs** complete at 120 cards and advances **Surrounded, Still Standing** to 60/120 cards with its second Fortitude pass. The new Fortitude cards emphasize bracing, current-opponent counterpressure, formation leverage, and tactical escape rather than adding another resistance or immunity series.
+Version `0.1.0-dev.18` keeps **Bloodied Triumphs** complete at 120 cards and advances **Surrounded, Still Standing** to 70/120 cards with its second Reflex pass. The new Reflex cards emphasize ring geometry, current-opponent pressure, movement momentum, Perception disruption, and tactical Tumble Through play rather than adding another resistance or immunity series.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -67,14 +67,14 @@ Bloodied Triumphs is complete at 120 cards:
 - 108 automated Effect Engine cards;
 - 12 explicit manual cards.
 
-Surrounded, Still Standing now contains 60/120 cards:
+Surrounded, Still Standing now contains 70/120 cards:
 
 - twenty Attack-deck cards, split evenly between ten ordinary and ten spell critical hits;
 - twenty Fortitude-deck cards for critically successful Fortitude saves;
-- ten Reflex-deck cards for critically successful Reflex saves;
+- twenty Reflex-deck cards for critically successful Reflex saves;
 - ten Will-deck cards for critically successful Will saves;
-- 52 automated Effect Engine cards and 8 explicit manual tactical results across the theme;
-- all sixty require the live Surrounded trigger, while selected stronger cards additionally require three or four threatening enemies;
+- 61 automated Effect Engine cards and 9 explicit manual tactical results across the theme;
+- all seventy require the live Surrounded trigger, while selected stronger cards additionally require three or four threatening enemies;
 - formation-specific target effects can require the current opponent itself to be a counted melee threat.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
