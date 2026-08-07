@@ -1184,6 +1184,46 @@
           "StepIntoTheirShadow": {
             "Title": "Step Into Their Shadow",
             "Description": "The stronger foe's power passes you and leaves one instant in which distance belongs to you. You may immediately Step as a free action. If possible, the Step must reduce the distance to the hostile source. Apply this result manually."
+          },
+          "ForceMeetsAFoundation": {
+            "Title": "Force Meets a Foundation",
+            "Description": "The stronger foe brings enough force to move anyone. Your critical success proves that you are not anyone. For 1 round, you gain a +1 circumstance bonus to Fortitude saves, Athletics checks, and Fortitude DC."
+          },
+          "AnchorBeneathTheColossus": {
+            "Title": "Anchor Beneath the Colossus",
+            "Description": "A larger foe tries to make scale itself the weapon. You find the point where all that mass has to push against you. For 1 round, you gain a +1 circumstance bonus to AC, Athletics checks, and Fortitude saves."
+          },
+          "FourLevelsSpentStrength": {
+            "Title": "Four Levels, Spent Strength",
+            "Description": "Against a foe four or more levels above you, surviving its full commitment leaves its strength badly placed. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls, Athletics checks, and Fortitude DC."
+          },
+          "TheBodyKeepsTheLesson": {
+            "Title": "The Body Keeps the Lesson",
+            "Description": "Your body survives the impossible once and immediately learns from it. For 1 round, you gain 5 temporary Hit Points and a +1 circumstance bonus to attack rolls."
+          },
+          "MoveTheImmovable": {
+            "Title": "Move the Immovable",
+            "Description": "The larger foe expected you to be the thing that moved. Instead, you get one impossible instant of leverage. You may immediately attempt to Shove the hostile source as a free action with a +2 circumstance bonus to the Athletics check. You can attempt this Shove regardless of the target's size. Apply this result manually."
+          },
+          "MassCannotRecover": {
+            "Title": "Mass Cannot Recover",
+            "Description": "A larger hostile source commits its whole frame and discovers that mass is slow to recover. For 1 round, it is clumsy 1, takes a -1 circumstance penalty to Fortitude DC, and takes a 5-foot circumstance penalty to all Speeds."
+          },
+          "EnduranceReadsTheOpening": {
+            "Title": "Endurance Reads the Opening",
+            "Description": "You remain conscious inside pressure that should have erased every useful thought. For 1 round, you gain a +1 status bonus to Fortitude saves, Perception checks, and class DC."
+          },
+          "FiveLevelsStillBreathing": {
+            "Title": "Five Levels, Still Breathing",
+            "Description": "A foe five or more levels above you spends enough power to end the argument. Your body answers by continuing. For 1 round, you gain fast healing 3 and a +1 status bonus to saving throws."
+          },
+          "TheirFramePaysThePrice": {
+            "Title": "Their Frame Pays the Price",
+            "Description": "You survive the stronger foe's pressure long enough for its own body to become the weak link. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to Reflex DC and a 5-foot circumstance penalty to all Speeds."
+          },
+          "BreakTheImpossibleHold": {
+            "Title": "Break the Impossible Hold",
+            "Description": "The stronger foe fails to make your body obey, and for one instant every hold feels breakable. If you are grabbed, restrained, or immobilized by the hostile source, you may immediately attempt to Escape as a free action with a +2 circumstance bonus. Otherwise, you may immediately Step. Apply this result manually."
           }
         },
         "Reflex": {
@@ -1998,6 +2038,30 @@
           },
           "SurvivalBecomesCounterforce": {
             "Name": "Survival Becomes Counterforce"
+          },
+          "ForceMeetsAFoundation": {
+            "Name": "Force Meets a Foundation"
+          },
+          "AnchorBeneathTheColossus": {
+            "Name": "Anchor Beneath the Colossus"
+          },
+          "FourLevelsSpentStrength": {
+            "Name": "Four Levels, Spent Strength"
+          },
+          "TheBodyKeepsTheLesson": {
+            "Name": "The Body Keeps the Lesson"
+          },
+          "MassCannotRecover": {
+            "Name": "Mass Cannot Recover"
+          },
+          "EnduranceReadsTheOpening": {
+            "Name": "Endurance Reads the Opening"
+          },
+          "FiveLevelsStillBreathing": {
+            "Name": "Five Levels, Still Breathing"
+          },
+          "TheirFramePaysThePrice": {
+            "Name": "Their Frame Pays the Price"
           }
         },
         "Reflex": {

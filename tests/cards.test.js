@@ -1321,17 +1321,18 @@ test("published Giant-Slayer automated mechanics are distinct from Bloodied and 
   assert.equal(new Set(giantAutomated.map(signature)).size, giantAutomated.length);
 });
 
-test("Giant-Slayer Moments first Fortitude pass adds ten critical-success save cards", () => {
-  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.length, 10);
-  assert.equal(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size, 10);
-  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
-  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
-  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
-  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
-  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.every((card) => card.metadata.contentBatch === 22), true);
+test("Giant-Slayer Moments preserves its first ten Fortitude critical-success save cards", () => {
+  const firstPass = GIANT_SLAYER_FORTITUDE_CARDS.slice(0, 10);
+  assert.equal(firstPass.length, 10);
+  assert.equal(new Set(firstPass.map((card) => card.id)).size, 10);
+  assert.equal(firstPass.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.giantSlayerMoments), true);
+  assert.equal(firstPass.every((card) => card.deckType === "fortitude"), true);
+  assert.equal(firstPass.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(firstPass.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
+  assert.equal(firstPass.every((card) => card.metadata.contentBatch === 22), true);
 });
 
-test("all first-pass Giant-Slayer Fortitude cards use the dynamic level-gap gate", () => {
+test("all published Giant-Slayer Fortitude cards use the dynamic level-gap gate", () => {
   for (const card of GIANT_SLAYER_FORTITUDE_CARDS) {
     const leaves = conditionLeaves(card.conditions);
     assert.equal(leaves.some((leaf) =>
@@ -1352,9 +1353,10 @@ test("Giant-Slayer Fortitude escalation cards require four or five levels of dis
   assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
 });
 
-test("Giant-Slayer Fortitude keeps nine automated results and one manual closing Step", () => {
-  const automated = GIANT_SLAYER_FORTITUDE_CARDS.filter((card) => card.effect);
-  const manual = GIANT_SLAYER_FORTITUDE_CARDS.filter((card) => !card.effect);
+test("Giant-Slayer Fortitude first pass keeps nine automated results and one manual closing Step", () => {
+  const firstPass = GIANT_SLAYER_FORTITUDE_CARDS.slice(0, 10);
+  const automated = firstPass.filter((card) => card.effect);
+  const manual = firstPass.filter((card) => !card.effect);
   assert.equal(automated.length, 9);
   assert.deepEqual(manual.map((card) => card.id.split(".").at(-1)), ["gsf-010-step-into-their-shadow"]);
   assert.equal(manual[0].tags.includes("manual"), true);
@@ -1366,8 +1368,9 @@ test("Giant-Slayer Fortitude keeps nine automated results and one manual closing
   }
 });
 
-test("Giant-Slayer Fortitude preserves save-target roles for boons and countereffects", () => {
-  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+test("Giant-Slayer Fortitude first pass preserves save-target roles for boons and countereffects", () => {
+  const firstPass = GIANT_SLAYER_FORTITUDE_CARDS.slice(0, 10);
+  const bySuffix = Object.fromEntries(firstPass.map((card) => [card.id.split(".").at(-1), card]));
   const hostile = [
     "gsf-002-their-force-betrays-them",
     "gsf-004-weight-turns-against-them",
@@ -1375,13 +1378,13 @@ test("Giant-Slayer Fortitude preserves save-target roles for boons and counteref
     "gsf-008-overreach-has-a-price"
   ];
   for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
-  for (const card of GIANT_SLAYER_FORTITUDE_CARDS.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+  for (const card of firstPass.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
     assert.equal(card.effect.target, "source", card.id);
   }
 });
 
 test("Giant-Slayer Fortitude first pass avoids resistance and immunity filler", () => {
-  const types = GIANT_SLAYER_FORTITUDE_CARDS.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
+  const types = GIANT_SLAYER_FORTITUDE_CARDS.slice(0, 10).flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []);
   assert.equal(types.includes("resistance"), false);
   assert.equal(types.includes("immunity"), false);
   assert.equal(types.includes("condition"), true);
@@ -1421,6 +1424,72 @@ test("Giant-Slayer Fortitude automated mechanics add no exact published duplicat
   const automated = GIANT_SLAYER_FORTITUDE_CARDS.filter((card) => card.effect);
   assert.equal(automated.filter((card) => prior.has(signature(card))).length, 0);
   assert.equal(new Set(automated.map(signature)).size, automated.length);
+});
+
+test("Giant-Slayer Fortitude second pass adds ten cards in content batch 26 with an eight/two automation split", () => {
+  const secondPass = GIANT_SLAYER_FORTITUDE_CARDS.slice(10, 20);
+  assert.equal(GIANT_SLAYER_FORTITUDE_CARDS.length, 20);
+  assert.equal(new Set(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => card.id)).size, 20);
+  assert.equal(secondPass.length, 10);
+  assert.equal(secondPass.every((card) => card.metadata.contentBatch === 26), true);
+  assert.equal(secondPass.filter((card) => card.effect).length, 8);
+  assert.deepEqual(secondPass.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "gsf-015-move-the-immovable",
+    "gsf-020-break-the-impossible-hold"
+  ]);
+});
+
+test("Giant-Slayer Fortitude second pass adds one +4 and one +5 level-gap escalation", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["gsf-013-four-levels-spent-strength"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  const five = conditionLeaves(bySuffix["gsf-018-five-levels-still-breathing"].conditions)
+    .find((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.levelGap");
+  assert.deepEqual({ operator: four.operator, value: four.value }, { operator: "gte", value: 4 });
+  assert.deepEqual({ operator: five.operator, value: five.value }, { operator: "gte", value: 5 });
+});
+
+test("Giant-Slayer Fortitude second pass uses reviewed threat and size evidence for physical leverage", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  for (const suffix of ["gsf-012-anchor-beneath-the-colossus", "gsf-015-move-the-immovable", "gsf-016-mass-cannot-recover"]) {
+    const leaves = conditionLeaves(bySuffix[suffix].conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsLarger" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+  }
+  for (const suffix of ["gsf-013-four-levels-spent-strength", "gsf-019-their-frame-pays-the-price", "gsf-020-break-the-impossible-hold"]) {
+    const leaves = conditionLeaves(bySuffix[suffix].conditions);
+    assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true), true, suffix);
+  }
+});
+
+test("Giant-Slayer Fortitude second pass preserves saver and hostile-source target roles", () => {
+  const secondPass = GIANT_SLAYER_FORTITUDE_CARDS.slice(10, 20);
+  const bySuffix = Object.fromEntries(secondPass.map((card) => [card.id.split(".").at(-1), card]));
+  const hostile = ["gsf-013-four-levels-spent-strength", "gsf-016-mass-cannot-recover", "gsf-019-their-frame-pays-the-price"];
+  for (const id of hostile) assert.equal(bySuffix[id].effect.target, "target", id);
+  for (const card of secondPass.filter((entry) => entry.effect && !hostile.includes(entry.id.split(".").at(-1)))) {
+    assert.equal(card.effect.target, "source", card.id);
+  }
+});
+
+test("Giant-Slayer Fortitude second pass favors endurance and leverage over resistance or immunity filler", () => {
+  const secondPass = GIANT_SLAYER_FORTITUDE_CARDS.slice(10, 20);
+  const components = secondPass.flatMap((card) => card.effect?.definition.components ?? []);
+  assert.equal(components.some((component) => component.type === "resistance"), false);
+  assert.equal(components.some((component) => component.type === "immunity"), false);
+  assert.equal(components.some((component) => component.type === "temporaryHitPoints"), true);
+  assert.equal(components.some((component) => component.type === "fastHealing"), true);
+  assert.equal(components.some((component) => component.type === "movement"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "clumsy"), true);
+  assert.equal(components.some((component) => component.type === "condition" && component.slug === "enfeebled"), true);
+});
+
+test("Giant-Slayer Fortitude second-pass manual results are explicit physical counterplay", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.slice(10, 20).map((card) => [card.id.split(".").at(-1), card]));
+  assert.equal(bySuffix["gsf-015-move-the-immovable"].tags.includes("shove"), true);
+  assert.equal(bySuffix["gsf-015-move-the-immovable"].tags.includes("manual"), true);
+  assert.equal(bySuffix["gsf-020-break-the-impossible-hold"].tags.includes("escape"), true);
+  assert.equal(bySuffix["gsf-020-break-the-impossible-hold"].tags.includes("manual"), true);
 });
 
 

@@ -6,7 +6,7 @@ Against All Odds plans four themes and four specialized decks per theme. The tar
 |---|---:|---:|---:|---:|---:|
 | Bloodied Triumphs | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
 | Surrounded, Still Standing | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
-| Giant-Slayer Moments | **20/30** | **10/30** | **10/30** | **10/30** | **50/120** |
+| Giant-Slayer Moments | **20/30** | **20/30** | **10/30** | **10/30** | **60/120** |
 | Narrow Escapes | 0/30 | 0/30 | 0/30 | 0/30 | 0/120 |
 
 The full target is 480 cards. Cards are introduced in controlled batches rather than as one monolithic change.
@@ -35,10 +35,11 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 11. Giant-Slayer Moments Will first pass: 10 cards. **Complete in `0.1.0-dev.24`, with 9 automated / 1 manual, +4/+5 escalation, and no resistance/immunity filler.**
 12. Review the first 40 Giant-Slayer cards before beginning pass two. **Complete in `0.1.0-dev.24.1`; physical counterplay now uses current-opponent threat membership, scale-specific cards use participant size relations, observer-relative concealment is manual, and Will context filters were tightened without changing IDs.**
 13. Giant-Slayer Moments Attack, second pass: 10 cards. **Complete in `0.1.0-dev.25`, with a 5/5 ordinary/spell split, 8 automated / 2 manual results, one additional +4 and +5 escalation, and reviewed threat/size gates.**
-14. Continue Giant-Slayer Fortitude, Reflex, and Will through their second passes, review the 80-card milestone, then complete the final pass and repeat the process for **Narrow Escapes**.
-15. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+14. Giant-Slayer Moments Fortitude, second pass: 10 cards. **Complete in `0.1.0-dev.26`, with 8 automated / 2 manual results, one additional +4 and +5 escalation, reviewed threat/size gates, and no resistance/immunity filler.**
+15. Continue Giant-Slayer Reflex and Will through their second passes, review the 80-card milestone, then complete the final pass and repeat the process for **Narrow Escapes**.
+16. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments has reached 50/120 cards: Attack is at 20/30 after its second pass, while Fortitude, Reflex, and Will remain at their reviewed first ten-card passes.
+Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments has reached 60/120 cards: Attack and Fortitude are at 20/30 after their second passes, while Reflex and Will remain at their reviewed first ten-card passes.
 
 Every card will:
 

@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-dev.26
+
+### Added
+- Added the second ten-card **Giant-Slayer Moments** Fortitude pass, bringing Fortitude to 20/30 and the theme to 60/120 cards.
+- Added eight automated and two manual results centered on enduring overwhelming force, turning body mass and commitment into leverage, and converting a critical Fortitude success into immediate counterplay.
+- Added one new +4 and one new +5 level-gap escalation while keeping the base +3 Giant-Slayer pool broad.
+- Added reviewed larger-opponent and current-melee-threat gates for scale-specific bracing, Shove, recovery, and hostile counterpressure.
+- Added temporary Hit Points, fast healing, movement pressure, and physical debuffs without adding resistance or immunity filler.
+- Added German and English localization for all ten cards and eight automated effects.
+
+### Tests
+- Added second-pass Fortitude count/content-batch, 8/2 automation split, +4/+5 escalation, threat/size gating, saver/hostile target-role, manual counterplay, no-resistance/immunity, localization, and exact-signature uniqueness coverage.
+- Updated runtime and release contracts for the 20/20/10/10 Giant-Slayer deck layout.
+- Verified 173/173 tests with 99.47% line coverage, 94.44% branch coverage, and 98.50% function coverage; package-local release checks report 908 localization keys per language.
+
+### Compatibility
+- All 290 previously published card IDs remain unchanged; this build adds ten new Giant-Slayer Fortitude IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.25
 
 ### Added

@@ -1184,6 +1184,46 @@
           "StepIntoTheirShadow": {
             "Title": "Tritt in ihren Schatten",
             "Description": "Die Macht des stärkeren Gegners zieht an dir vorbei und lässt einen Augenblick zurück, in dem die Entfernung dir gehört. Du darfst sofort als freie Aktion einen Schritt machen. Wenn möglich, muss der Schritt die Entfernung zur feindlichen Quelle verringern. Wende dieses Ergebnis manuell an."
+          },
+          "ForceMeetsAFoundation": {
+            "Title": "Kraft trifft auf ein Fundament",
+            "Description": "Der stärkere Gegner bringt genug Kraft auf, um jeden zu bewegen. Dein Kritischer Erfolg beweist, dass du nicht jeder bist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeitswürfe, Athletikwürfe und deinen Zähigkeits-SG."
+          },
+          "AnchorBeneathTheColossus": {
+            "Title": "Anker unter dem Koloss",
+            "Description": "Ein größerer Gegner versucht, seine Größe selbst zur Waffe zu machen. Du findest den Punkt, an dem all diese Masse gegen dich drücken muss. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK, Athletikwürfe und Zähigkeitswürfe."
+          },
+          "FourLevelsSpentStrength": {
+            "Title": "Vier Stufen, verausgabte Kraft",
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir lässt das Überstehen seines vollen Krafteinsatzes seine Stärke schlecht ausgerichtet zurück. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe, Athletikwürfe und ihren Zähigkeits-SG."
+          },
+          "TheBodyKeepsTheLesson": {
+            "Title": "Der Körper behält die Lektion",
+            "Description": "Dein Körper übersteht das Unmögliche einmal und lernt sofort daraus. Für 1 Runde erhältst du 5 temporäre Trefferpunkte und einen Situationsbonus von +1 auf Angriffswürfe."
+          },
+          "MoveTheImmovable": {
+            "Title": "Bewege das Unbewegliche",
+            "Description": "Der größere Gegner erwartete, dass du nachgibst. Stattdessen erhältst du einen unmöglichen Augenblick voller Hebelwirkung. Du darfst sofort als freie Aktion versuchen, die feindliche Quelle mit Stoßen zu bewegen, und erhältst dafür einen Situationsbonus von +2 auf den Athletikwurf. Du darfst diesen Stoßen-Versuch unabhängig von der Größe des Ziels ablegen. Wende dieses Ergebnis manuell an."
+          },
+          "MassCannotRecover": {
+            "Title": "Masse erholt sich nicht",
+            "Description": "Eine größere feindliche Quelle setzt ihren ganzen Körper ein und entdeckt, dass Masse sich nur langsam fängt. Für 1 Runde ist sie Unbeholfen 1, erhält einen Situationsmalus von -1 auf ihren Zähigkeits-SG und einen Situationsmalus von -1,5 m auf alle Bewegungsraten."
+          },
+          "EnduranceReadsTheOpening": {
+            "Title": "Ausdauer erkennt die Öffnung",
+            "Description": "Du bleibst unter einem Druck bei Bewusstsein, der jeden brauchbaren Gedanken hätte auslöschen sollen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeitswürfe, Wahrnehmungswürfe und deinen Klassen-SG."
+          },
+          "FiveLevelsStillBreathing": {
+            "Title": "Fünf Stufen, noch immer atmend",
+            "Description": "Ein Gegner mindestens fünf Stufen über dir setzt genug Macht ein, um die Sache zu beenden. Dein Körper antwortet, indem er einfach weitermacht. Für 1 Runde erhältst du Schnelle Heilung 3 und einen Zustandsbonus von +1 auf Rettungswürfe."
+          },
+          "TheirFramePaysThePrice": {
+            "Title": "Ihr Körperbau zahlt den Preis",
+            "Description": "Du überstehst den Druck des stärkeren Gegners lange genug, bis sein eigener Körper zur Schwachstelle wird. Für 1 Runde ist die feindliche Quelle Kraftlos 1 und erhält einen Situationsmalus von -1 auf ihren Reflex-SG sowie einen Situationsmalus von -1,5 m auf alle Bewegungsraten."
+          },
+          "BreakTheImpossibleHold": {
+            "Title": "Brich den unmöglichen Griff",
+            "Description": "Der stärkere Gegner schafft es nicht, deinen Körper zum Gehorsam zu zwingen, und für einen Augenblick fühlt sich jeder Griff zerbrechlich an. Falls du von der feindlichen Quelle Gegriffen, Gebunden oder Bewegungsunfähig bist, darfst du sofort als freie Aktion mit einem Situationsbonus von +2 einen Entkommen-Versuch ablegen. Andernfalls darfst du sofort einen Schritt machen. Wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -1998,6 +2038,30 @@
           },
           "SurvivalBecomesCounterforce": {
             "Name": "Überleben wird zur Gegenkraft"
+          },
+          "ForceMeetsAFoundation": {
+            "Name": "Kraft trifft auf ein Fundament"
+          },
+          "AnchorBeneathTheColossus": {
+            "Name": "Anker unter dem Koloss"
+          },
+          "FourLevelsSpentStrength": {
+            "Name": "Vier Stufen, verausgabte Kraft"
+          },
+          "TheBodyKeepsTheLesson": {
+            "Name": "Der Körper behält die Lektion"
+          },
+          "MassCannotRecover": {
+            "Name": "Masse erholt sich nicht"
+          },
+          "EnduranceReadsTheOpening": {
+            "Name": "Ausdauer erkennt die Öffnung"
+          },
+          "FiveLevelsStillBreathing": {
+            "Name": "Fünf Stufen, noch immer atmend"
+          },
+          "TheirFramePaysThePrice": {
+            "Name": "Ihr Körperbau zahlt den Preis"
           }
         },
         "Reflex": {
