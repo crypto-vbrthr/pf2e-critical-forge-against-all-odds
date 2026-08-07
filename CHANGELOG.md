@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-dev.28.1
+
+### Reviewed
+- Completed the dedicated **80-card Giant-Slayer Moments review** without changing any published card ID or deck count.
+- Removed three strict same-gate mechanical supersets by separating **Force Meets a Foundation**, **Endurance Reads the Opening**, and **Four Levels, Authority Fractures** into distinct defensive, counteroffensive, and perception-pressure lanes.
+- Rebalanced **Their Frame Pays the Price** so a baseline +3 card no longer outperforms the +4 Fortitude escalation that shares its physical theme.
+- Fixed **Four Levels, Too Much Momentum** so prone is paired with an Athletics penalty instead of a redundant weaker circumstance penalty to attack rolls.
+- Reclassified **The Voice Falters** as `strong`, matching the combined effect of stupefied 1 plus an additional circumstance penalty to spell DC.
+- Excluded mindless targets from the manual **Answer the Giant** Demoralize result and bound **Beneath Their Reach** to the actual current melee threat.
+- Hardened **Move the Immovable** against dead draws: Shove still overrides the target-size restriction, but now requires normal reach/prerequisites and falls back to an immediate Step toward the hostile source when Shove cannot be attempted.
+- Normalized German Remaster terminology and capitalization, including **Fortstoßen** and lower-case “freie Aktion”.
+
+### Tests
+- Added regression coverage for the exact 20/20/20/20 published-ID layout, strict same-gate mechanical dominance, the reviewed Fortitude lanes, prone redundancy, Will impact/gating, manual Shove/Demoralize safety, threat gating, and German terminology.
+- Giant-Slayer still contains 67 automated and 13 manual results; all 67 automated Giant-Slayer effect signatures remain exact-signature distinct from Bloodied Triumphs, Surrounded, Still Standing, and each other.
+- Current automated test and coverage totals are recorded in `RELEASE_CHECKLIST.md` and `docs/TESTING.md`.
+
+### Compatibility
+- All 320 published card IDs remain unchanged.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.28
 
 ### Added

@@ -147,6 +147,7 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     fallbackTitle: "Answer the Giant",
     fallbackDescription: "The stronger foe tried to impose its will and gave you the perfect moment to answer. You may immediately attempt to Demoralize the hostile source as a free action with a +2 circumstance bonus. Apply this result manually; normal Demoralize restrictions still apply.",
     tags: ["demoralize", "free-action", "intimidation", "hostile-source", "manual"],
+    filters: { excludedTargetTraits: ["mindless"] },
     effect: null
   }),
 
@@ -168,7 +169,7 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     id: "gsw-012-the-voice-falters",
     localizationKey: "TheVoiceFalters",
     tone: "dramatic",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "The Voice Falters",
     fallbackDescription: "A mental assault from the stronger foe meets resistance sharp enough to break its rhythm. For 1 round, the hostile source is stupefied 1 and takes a -1 circumstance penalty to spell DC.",
     tags: ["hostile-source", "mental", "stupefied", "spell-dc", "effect"],
@@ -189,8 +190,8 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Levels, Authority Fractures",
-    fallbackDescription: "Against a foe four or more levels above you, a perfect refusal turns certainty into visible strain. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Will DC and class DC.",
-    tags: ["greater-gap", "hostile-source", "frightened", "will-dc", "effect"],
+    fallbackDescription: "Against a foe four or more levels above you, a perfect refusal turns certainty into visible strain. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Will DC and Perception DC.",
+    tags: ["greater-gap", "hostile-source", "frightened", "will-dc", "perception-dc", "effect"],
     filters: { excludedTargetTraits: ["mindless"] },
     extraConditions: { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
     contentBatch: 28,
@@ -199,7 +200,7 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
       duration: ONE_ROUND,
       components: [
         { type: "condition", slug: "frightened", value: 1 },
-        { type: "modifier", selector: ["will-dc", "class-dc"], value: -1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: ["will-dc", "perception-dc"], value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),

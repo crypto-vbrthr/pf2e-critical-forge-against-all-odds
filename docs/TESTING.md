@@ -65,7 +65,7 @@ The test suite covers:
 - Surrounded localization, source/target roles, tone/impact, filter, and schema-2 effect contracts.
 - twenty Giant-Slayer Attack cards after two passes, split 10/10 between ordinary and spell critical hits;
 - twenty Giant-Slayer Fortitude critical-success cards after two passes with matching save/deck isolation;
-- ten first-pass Giant-Slayer Reflex critical-success cards with matching save/deck isolation;
+- twenty Giant-Slayer Reflex critical-success cards after two passes with matching save/deck isolation;
 - the dynamic Giant-Slayer gate on every published Giant-Slayer card;
 - +4 and +5 level-gap escalation conditions in every first-pass Giant-Slayer deck, plus one additional +4 and +5 escalation in both the second Attack and second Fortitude passes;
 - the first Attack pass keeps nine automated effects plus one manual result; the second Attack pass adds eight automated effects plus manual Tumble Through and ally-Step results; the second Fortitude pass adds eight automated effects plus manual Shove and Escape/Step results; the second Reflex and Will passes each add eight automated and two manual results;
@@ -81,5 +81,5 @@ The test suite covers:
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.28` baseline: **185/185 tests**, **99.50% line coverage**, **94.84% branch coverage**, and **98.59% function coverage**. The current build contains **320 published cards and 275 automated card effects**. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging. Existing matcher regression coverage still verifies that remote sources cannot trigger physical Giant-Slayer counterplay, same-size bosses do not receive scale-only cards, larger bosses do, and mental Will results require the matching context.
+Current `0.1.0-dev.28.1` baseline: **192/192 tests**, **99.48% line coverage**, **94.92% branch coverage**, and **98.64% function coverage**. The current build contains **320 published cards and 275 automated card effects**; Giant-Slayer contributes **80 cards, 67 automated effects, and 13 manual results**. The 80-card review additionally proves that no automated Giant-Slayer card is a strict same-gate mechanical superset of another, preserves exact-signature uniqueness across published packs, and regression-tests PF2e-specific prone, stupefied, Demoralize, Shove, threat, and mindless-target interactions. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
 

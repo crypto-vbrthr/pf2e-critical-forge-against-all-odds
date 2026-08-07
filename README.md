@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.28` completes the second **Giant-Slayer Moments** pass with ten new Will cards. The new results turn overwhelming mental pressure into resolve, broken authority, ally support, and verbal counterplay: explicitly mental backlash requires a mental trigger, mindless foes are excluded where doubt or social pressure would make no sense, and the broader Will pool still keys primarily from level disparity. All 310 previously published card IDs remain unchanged.
+Version `0.1.0-dev.28.1` is the dedicated **80-card Giant-Slayer Moments review**. Attack, Fortitude, Reflex, and Will remain at 20/30 cards each, but the review removes same-gate mechanical supersets, fixes a redundant prone/attack penalty, tightens reach and mindless-target gates, regrades a strong caster shutdown, and normalizes German Remaster action terminology. All 320 published card IDs remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 

@@ -1,6 +1,6 @@
 {
   "name": "pf2e-critical-forge-against-all-odds",
-  "version": "0.1.0-dev.28",
+  "version": "0.1.0-dev.28.1",
   "private": true,
   "type": "module",
   "scripts": {

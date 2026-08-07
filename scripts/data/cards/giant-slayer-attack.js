@@ -26,7 +26,8 @@ export const GIANT_SLAYER_ATTACK_CARDS = Object.freeze([
     impact: "moderate",
     fallbackTitle: "Beneath Their Reach",
     fallbackDescription: "The stronger foe has reach, weight, and confidence. You have already stepped inside all three. For 1 round, you gain a +1 circumstance bonus to AC and Reflex saves.",
-    tags: ["ac", "reflex", "defense", "effect"],
+    tags: ["ac", "reflex", "defense", "melee-threat", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       duration: ONE_ROUND,
       components: [{ type: "modifier", selector: ["ac", "reflex"], value: 1, modifierType: "circumstance", predicate: [] }]

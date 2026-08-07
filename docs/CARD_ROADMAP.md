@@ -38,10 +38,12 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 14. Giant-Slayer Moments Fortitude, second pass: 10 cards. **Complete in `0.1.0-dev.26`, with 8 automated / 2 manual results, one additional +4 and +5 escalation, reviewed threat/size gates, and no resistance/immunity filler.**
 15. Giant-Slayer Moments Reflex, second pass: 10 cards. **Complete in `0.1.0-dev.27`, with 8 automated / 2 manual results, one additional +4 and +5 escalation, reviewed threat/size-gap gates, and no resistance/immunity filler.**
 16. Giant-Slayer Moments Will, second pass: 10 cards. **Complete in `0.1.0-dev.28`, with 8 automated / 2 manual results, one additional +4 and +5 escalation, reviewed mental/mindless gates, and no resistance/immunity filler.**
-17. Review the 80-card Giant-Slayer milestone, then complete the final pass and repeat the process for **Narrow Escapes**.
-18. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+17. Review the 80-card Giant-Slayer milestone. **Complete in `0.1.0-dev.28.1`; all 320 published IDs are preserved, strict same-gate supersets are removed, PF2e condition/action interactions were rechecked, manual dead-result cases were tightened, and exact automated Giant-Slayer signatures remain unique.**
+18. Giant-Slayer Moments final pass: 10 Attack, 10 Fortitude, 10 Reflex, and 10 Will cards.
+19. Repeat the reviewed three-pass process for **Narrow Escapes**.
+20. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments has reached 80/120 cards: Attack, Fortitude, Reflex, and Will are all at 20/30 after their second passes. The next milestone is the dedicated 80-card review before any final-pass cards are added.
+Bloodied Triumphs and Surrounded, Still Standing are complete at 120/120 cards each after three reviewed passes. Giant-Slayer Moments remains at 80/120 cards: Attack, Fortitude, Reflex, and Will are all at 20/30, and the dedicated 80-card review is complete. The next milestone is the final forty-card Giant-Slayer pass.
 
 Every card will:
 

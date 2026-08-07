@@ -1187,7 +1187,7 @@
           },
           "ForceMeetsAFoundation": {
             "Title": "Force Meets a Foundation",
-            "Description": "The stronger foe brings enough force to move anyone. Your critical success proves that you are not anyone. For 1 round, you gain a +1 circumstance bonus to Fortitude saves, Athletics checks, and Fortitude DC."
+            "Description": "The stronger foe brings enough force to move anyone. Your critical success proves that you are not anyone. For 1 round, you gain a +1 circumstance bonus to Fortitude saves, AC, and Fortitude DC."
           },
           "AnchorBeneathTheColossus": {
             "Title": "Anchor Beneath the Colossus",
@@ -1203,7 +1203,7 @@
           },
           "MoveTheImmovable": {
             "Title": "Move the Immovable",
-            "Description": "The larger foe expected you to be the thing that moved. Instead, you get one impossible instant of leverage. You may immediately attempt to Shove the hostile source as a free action with a +2 circumstance bonus to the Athletics check. You can attempt this Shove regardless of the target's size. Apply this result manually."
+            "Description": "The larger foe expected you to be the thing that moved. Instead, you get one impossible instant of leverage. If the hostile source is within your reach and you meet the other normal prerequisites for Shove, you may immediately attempt to Shove it as a free action with a +2 circumstance bonus to the Athletics check. You can attempt this Shove regardless of the target's size. Otherwise, you may immediately Step toward the hostile source. Apply this result manually."
           },
           "MassCannotRecover": {
             "Title": "Mass Cannot Recover",
@@ -1211,7 +1211,7 @@
           },
           "EnduranceReadsTheOpening": {
             "Title": "Endurance Reads the Opening",
-            "Description": "You remain conscious inside pressure that should have erased every useful thought. For 1 round, you gain a +1 status bonus to Fortitude saves, Perception checks, and class DC."
+            "Description": "You remain conscious inside pressure that should have erased every useful thought. For 1 round, you gain a +1 status bonus to Perception checks, attack rolls, and class DC."
           },
           "FiveLevelsStillBreathing": {
             "Title": "Five Levels, Still Breathing",
@@ -1219,7 +1219,7 @@
           },
           "TheirFramePaysThePrice": {
             "Title": "Their Frame Pays the Price",
-            "Description": "You survive the stronger foe's pressure long enough for its own body to become the weak link. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to Reflex DC and a 5-foot circumstance penalty to all Speeds."
+            "Description": "You survive the stronger foe's pressure long enough for its own body to become the weak link. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to AC."
           },
           "BreakTheImpossibleHold": {
             "Title": "Break the Impossible Hold",
@@ -1257,7 +1257,7 @@
           },
           "FourLevelsTooMuchMomentum": {
             "Title": "Four Levels, Too Much Momentum",
-            "Description": "Against a foe four or more levels above you, the force of the failed catch becomes a collapse in posture. For 1 round, the hostile source is prone and takes a -1 circumstance penalty to attack rolls."
+            "Description": "Against a foe four or more levels above you, the force of the failed catch becomes a collapse in posture. For 1 round, the hostile source is prone and takes a -1 circumstance penalty to Athletics checks."
           },
           "ReadTheShadowNotTheWeapon": {
             "Title": "Read the Shadow, Not the Weapon",
@@ -1359,7 +1359,7 @@
           },
           "FourLevelsAuthorityFractures": {
             "Title": "Four Levels, Authority Fractures",
-            "Description": "Against a foe four or more levels above you, a perfect refusal turns certainty into visible strain. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Will DC and class DC."
+            "Description": "Against a foe four or more levels above you, a perfect refusal turns certainty into visible strain. For 1 round, the hostile source is frightened 1 and takes a -1 circumstance penalty to Will DC and Perception DC."
           },
           "MeasureTheThreatNotYourself": {
             "Title": "Measure the Threat, Not Yourself",

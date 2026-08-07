@@ -1910,3 +1910,92 @@ test("Giant-Slayer Will second-pass manual results provide ally resolve and verb
   assert.equal(bySuffix["gsw-020-answer-with-a-cutting-word"].tags.includes("manual"), true);
 });
 
+
+test("Giant-Slayer eighty-card review preserves the 20/20/20/20 published ID layout", () => {
+  const expected = (prefix) => Array.from({ length: 20 }, (_, index) => `${prefix}-${String(index + 1).padStart(3, "0")}`);
+  const actual = (cards) => cards.map((card) => card.id.split(".").at(-1).split("-").slice(0, 2).join("-"));
+  assert.deepEqual(actual(GIANT_SLAYER_ATTACK_CARDS), expected("gsa"));
+  assert.deepEqual(actual(GIANT_SLAYER_FORTITUDE_CARDS), expected("gsf"));
+  assert.deepEqual(actual(GIANT_SLAYER_REFLEX_CARDS), expected("gsr"));
+  assert.deepEqual(actual(GIANT_SLAYER_WILL_CARDS), expected("gsw"));
+});
+
+test("Giant-Slayer eighty-card review removes strict same-gate mechanical supersets", () => {
+  const automated = ALL_GIANT_SLAYER_CARDS.filter((card) => card.effect);
+  const atomize = (components) => components.flatMap((component) => {
+    if (component.type === "modifier" && Array.isArray(component.selector)) {
+      return component.selector.map((selector) => JSON.stringify({ ...component, selector }));
+    }
+    return [JSON.stringify(component)];
+  });
+  const gate = (card) => JSON.stringify({
+    filters: card.filters,
+    conditions: card.conditions,
+    target: card.effect.target,
+    duration: card.effect.definition.duration
+  });
+  const dominated = [];
+  for (let leftIndex = 0; leftIndex < automated.length; leftIndex += 1) {
+    for (let rightIndex = 0; rightIndex < automated.length; rightIndex += 1) {
+      if (leftIndex === rightIndex || gate(automated[leftIndex]) !== gate(automated[rightIndex])) continue;
+      const left = new Set(atomize(automated[leftIndex].effect.definition.components));
+      const right = new Set(atomize(automated[rightIndex].effect.definition.components));
+      if (left.size < right.size && [...left].every((entry) => right.has(entry))) {
+        dominated.push([automated[leftIndex].id, automated[rightIndex].id]);
+      }
+    }
+  }
+  assert.deepEqual(dominated, []);
+});
+
+test("Giant-Slayer Fortitude review separates foundation, opening, and baseline frame pressure", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["gsf-011-force-meets-a-foundation"].effect.definition.components, [
+    { type: "modifier", selector: ["fortitude", "ac", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.deepEqual(bySuffix["gsf-017-endurance-reads-the-opening"].effect.definition.components, [
+    { type: "modifier", selector: ["perception", "attack-roll", "class-dc"], value: 1, modifierType: "status", predicate: [] }
+  ]);
+  assert.deepEqual(bySuffix["gsf-019-their-frame-pays-the-price"].effect.definition.components, [
+    { type: "condition", slug: "enfeebled", value: 1 },
+    { type: "modifier", selector: "ac", value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
+});
+
+test("Giant-Slayer Reflex +4 collapse does not add a redundant prone attack penalty", () => {
+  const card = GIANT_SLAYER_REFLEX_CARDS.find((entry) => entry.id.endsWith("gsr-008-four-levels-too-much-momentum"));
+  assert.equal(card.effect.definition.components.some((component) => component.type === "modifier" && component.selector === "attack-roll"), false);
+  assert.equal(card.effect.definition.components.some((component) => component.type === "modifier" && component.selector === "athletics"), true);
+});
+
+test("Giant-Slayer Will review differentiates +4 authority lanes and grades caster shutdown as strong", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["gsw-013-four-levels-authority-fractures"].effect.definition.components, [
+    { type: "condition", slug: "frightened", value: 1 },
+    { type: "modifier", selector: ["will-dc", "perception-dc"], value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.equal(bySuffix["gsw-012-the-voice-falters"].impact, "strong");
+});
+
+test("Giant-Slayer manual Demoralize and Shove review avoids known dead-result cases", () => {
+  const will = GIANT_SLAYER_WILL_CARDS.find((card) => card.id.endsWith("gsw-010-answer-the-giant"));
+  const fortitude = GIANT_SLAYER_FORTITUDE_CARDS.find((card) => card.id.endsWith("gsf-015-move-the-immovable"));
+  assert.deepEqual(will.filters.excludedTargetTraits, ["mindless"]);
+  assert.match(fortitude.fallbackDescription, /within your reach/u);
+  assert.match(fortitude.fallbackDescription, /Otherwise, you may immediately Step/u);
+});
+
+test("Giant-Slayer review uses threat gating and German Remaster terminology consistently", () => {
+  const beneath = GIANT_SLAYER_ATTACK_CARDS.find((card) => card.id.endsWith("gsa-002-beneath-their-reach"));
+  assert.equal(conditionLeaves(beneath.conditions).some((leaf) =>
+    leaf.field === "extensions.againstAllOdds.giantSlayer.opponentIsThreatening" && leaf.operator === "eq" && leaf.value === true
+  ), true);
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
+  const giant = de.PF2E_AGAINST_ALL_ODDS.Cards.GiantSlayerMoments;
+  assert.match(giant.Fortitude.MoveTheImmovable.Description, /Fortstoßen/u);
+  assert.doesNotMatch(giant.Fortitude.MoveTheImmovable.Description, /Stoßen-Versuch/u);
+  assert.match(giant.Fortitude.ForceMeetsAFoundation.Description, /Dein kritischer Erfolg/u);
+  for (const key of ["FiveLevelsOneEmptySquare", "SlipBetweenTheirSteps", "OutsideTheKillingLine"]) {
+    assert.doesNotMatch(giant.Reflex[key].Description, /als Freie Aktion/u);
+  }
+});

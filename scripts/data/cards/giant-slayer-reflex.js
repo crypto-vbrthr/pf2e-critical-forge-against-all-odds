@@ -121,8 +121,8 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Levels, Too Much Momentum",
-    fallbackDescription: "Against a foe four or more levels above you, the force of the failed catch becomes a collapse in posture. For 1 round, the hostile source is prone and takes a -1 circumstance penalty to attack rolls.",
-    tags: ["greater-gap", "hostile-source", "prone", "attack-roll", "melee-threat", "effect"],
+    fallbackDescription: "Against a foe four or more levels above you, the force of the failed catch becomes a collapse in posture. For 1 round, the hostile source is prone and takes a -1 circumstance penalty to Athletics checks.",
+    tags: ["greater-gap", "hostile-source", "prone", "athletics", "melee-threat", "effect"],
     extraConditions: [
       { field: "extensions.againstAllOdds.giantSlayer.levelGap", operator: "gte", value: 4 },
       { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true }
@@ -132,7 +132,7 @@ export const GIANT_SLAYER_REFLEX_CARDS = Object.freeze([
       duration: ONE_ROUND,
       components: [
         { type: "condition", slug: "prone" },
-        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: "athletics", value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),

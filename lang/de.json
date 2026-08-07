@@ -1187,7 +1187,7 @@
           },
           "ForceMeetsAFoundation": {
             "Title": "Kraft trifft auf ein Fundament",
-            "Description": "Der stärkere Gegner bringt genug Kraft auf, um jeden zu bewegen. Dein Kritischer Erfolg beweist, dass du nicht jeder bist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeitswürfe, Athletikwürfe und deinen Zähigkeits-SG."
+            "Description": "Der stärkere Gegner bringt genug Kraft auf, um jeden zu bewegen. Dein kritischer Erfolg beweist, dass du nicht jeder bist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeitswürfe, RK und deinen Zähigkeits-SG."
           },
           "AnchorBeneathTheColossus": {
             "Title": "Anker unter dem Koloss",
@@ -1203,7 +1203,7 @@
           },
           "MoveTheImmovable": {
             "Title": "Bewege das Unbewegliche",
-            "Description": "Der größere Gegner erwartete, dass du nachgibst. Stattdessen erhältst du einen unmöglichen Augenblick voller Hebelwirkung. Du darfst sofort als freie Aktion versuchen, die feindliche Quelle mit Stoßen zu bewegen, und erhältst dafür einen Situationsbonus von +2 auf den Athletikwurf. Du darfst diesen Stoßen-Versuch unabhängig von der Größe des Ziels ablegen. Wende dieses Ergebnis manuell an."
+            "Description": "Der größere Gegner erwartete, dass du nachgibst. Stattdessen erhältst du einen unmöglichen Augenblick voller Hebelwirkung. Befindet sich die feindliche Quelle in deinem Angriffsradius und erfüllst du die übrigen normalen Voraussetzungen für Fortstoßen, darfst du sofort als freie Aktion versuchen, sie fortzustoßen, und erhältst dabei einen Situationsbonus von +2 auf den Athletikwurf. Du darfst Fortstoßen hierbei unabhängig von der Größe des Ziels einsetzen. Andernfalls darfst du sofort einen Schritt in Richtung der feindlichen Quelle ausführen. Wende dieses Ergebnis manuell an."
           },
           "MassCannotRecover": {
             "Title": "Masse erholt sich nicht",
@@ -1211,7 +1211,7 @@
           },
           "EnduranceReadsTheOpening": {
             "Title": "Ausdauer erkennt die Öffnung",
-            "Description": "Du bleibst unter einem Druck bei Bewusstsein, der jeden brauchbaren Gedanken hätte auslöschen sollen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeitswürfe, Wahrnehmungswürfe und deinen Klassen-SG."
+            "Description": "Du bleibst unter einem Druck bei Bewusstsein, der jeden brauchbaren Gedanken hätte auslöschen sollen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Wahrnehmungswürfe, Angriffswürfe und deinen Klassen-SG."
           },
           "FiveLevelsStillBreathing": {
             "Title": "Fünf Stufen, noch immer atmend",
@@ -1219,7 +1219,7 @@
           },
           "TheirFramePaysThePrice": {
             "Title": "Ihr Körperbau zahlt den Preis",
-            "Description": "Du überstehst den Druck des stärkeren Gegners lange genug, bis sein eigener Körper zur Schwachstelle wird. Für 1 Runde ist die feindliche Quelle Kraftlos 1 und erhält einen Situationsmalus von -1 auf ihren Reflex-SG sowie einen Situationsmalus von -1,5 m auf alle Bewegungsraten."
+            "Description": "Du überstehst den Druck des stärkeren Gegners lange genug, bis sein eigener Körper zur Schwachstelle wird. Für 1 Runde ist die feindliche Quelle Kraftlos 1 und erhält einen Situationsmalus von -1 auf ihre RK."
           },
           "BreakTheImpossibleHold": {
             "Title": "Brich den unmöglichen Griff",
@@ -1241,7 +1241,7 @@
           },
           "FiveLevelsOneEmptySquare": {
             "Title": "Fünf Stufen, ein leeres Feld",
-            "Description": "Gegen einen größeren Gegner mindestens fünf Stufen über dir verwandelt ein unmögliches Ausweichen seine Größe in störende Sichtlinien. Bis zum Beginn deines nächsten Zuges bist du gegenüber der feindlichen Quelle Verborgen und darfst sofort als Freie Aktion einen Schritt ausführen. Wende diese beobachterabhängige Verborgenheit manuell an."
+            "Description": "Gegen einen größeren Gegner mindestens fünf Stufen über dir verwandelt ein unmögliches Ausweichen seine Größe in störende Sichtlinien. Bis zum Beginn deines nächsten Zuges bist du gegenüber der feindlichen Quelle Verborgen und darfst sofort als freie Aktion einen Schritt ausführen. Wende diese beobachterabhängige Verborgenheit manuell an."
           },
           "SizeBecomesABlindSpot": {
             "Title": "Größe wird zum toten Winkel",
@@ -1257,7 +1257,7 @@
           },
           "FourLevelsTooMuchMomentum": {
             "Title": "Vier Stufen, zu viel Schwung",
-            "Description": "Gegen einen Gegner mindestens vier Stufen über dir wird die Kraft des verfehlten Zugriffs zum Zusammenbruch seiner Haltung. Für 1 Runde liegt die feindliche Quelle Liegend und erhält einen Situationsmalus von -1 auf Angriffswürfe."
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir wird die Kraft des verfehlten Zugriffs zum Zusammenbruch seiner Haltung. Für 1 Runde liegt die feindliche Quelle Liegend und erhält einen Situationsmalus von -1 auf Athletikwürfe."
           },
           "ReadTheShadowNotTheWeapon": {
             "Title": "Lies den Schatten, nicht die Waffe",
@@ -1285,7 +1285,7 @@
           },
           "SlipBetweenTheirSteps": {
             "Title": "Schlüpf zwischen ihre Schritte",
-            "Description": "Ein Gegner, der mindestens zwei Größenstufen größer ist, lässt eine wandernde Lücke dort entstehen, wo Reichweite und Stand nicht zusammenpassen. Du darfst dich sofort als Freie Aktion bis zu 3 m bewegen. Diese Bewegung löst keine Reaktionen der feindlichen Quelle aus und muss in derselben oder geringerer Entfernung zu ihr enden als zu Beginn. Wende dieses Ergebnis manuell an."
+            "Description": "Ein Gegner, der mindestens zwei Größenstufen größer ist, lässt eine wandernde Lücke dort entstehen, wo Reichweite und Stand nicht zusammenpassen. Du darfst dich sofort als freie Aktion bis zu 3 m bewegen. Diese Bewegung löst keine Reaktionen der feindlichen Quelle aus und muss in derselben oder geringerer Entfernung zu ihr enden als zu Beginn. Wende dieses Ergebnis manuell an."
           },
           "TooMuchBodyToTurn": {
             "Title": "Zu viel Körper zum Drehen",
@@ -1305,7 +1305,7 @@
           },
           "OutsideTheKillingLine": {
             "Title": "Außerhalb der tödlichen Linie",
-            "Description": "Der verfehlte Angriff des stärkeren Gegners schenkt dir mehr als ein leeres Feld; er öffnet einen Weg aus dem nächsten. Du darfst sofort als Freie Aktion bis zur Hälfte deiner Bewegungsrate Laufen. Diese Bewegung muss weiter von der feindlichen Quelle entfernt enden und löst keine Reaktionen von ihr aus. Wende dieses Ergebnis manuell an."
+            "Description": "Der verfehlte Angriff des stärkeren Gegners schenkt dir mehr als ein leeres Feld; er öffnet einen Weg aus dem nächsten. Du darfst sofort als freie Aktion bis zur Hälfte deiner Bewegungsrate Laufen. Diese Bewegung muss weiter von der feindlichen Quelle entfernt enden und löst keine Reaktionen von ihr aus. Wende dieses Ergebnis manuell an."
           }
         },
         "Will": {
@@ -1359,7 +1359,7 @@
           },
           "FourLevelsAuthorityFractures": {
             "Title": "Vier Stufen, Autorität zerbricht",
-            "Description": "Gegen einen Gegner mindestens vier Stufen über dir verwandelt eine vollkommene Weigerung seine Gewissheit in sichtbare Anspannung. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Willens-SG und Klassen-SG."
+            "Description": "Gegen einen Gegner mindestens vier Stufen über dir verwandelt eine vollkommene Weigerung seine Gewissheit in sichtbare Anspannung. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und erhält einen Situationsmalus von -1 auf ihren Willens-SG und Wahrnehmungs-SG."
           },
           "MeasureTheThreatNotYourself": {
             "Title": "Miss die Bedrohung, nicht dich selbst",

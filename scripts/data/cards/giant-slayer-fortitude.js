@@ -157,12 +157,12 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Force Meets a Foundation",
-    fallbackDescription: "The stronger foe brings enough force to move anyone. Your critical success proves that you are not anyone. For 1 round, you gain a +1 circumstance bonus to Fortitude saves, Athletics checks, and Fortitude DC.",
-    tags: ["fortitude", "athletics", "fortitude-dc", "brace", "effect"],
+    fallbackDescription: "The stronger foe brings enough force to move anyone. Your critical success proves that you are not anyone. For 1 round, you gain a +1 circumstance bonus to Fortitude saves, AC, and Fortitude DC.",
+    tags: ["fortitude", "ac", "fortitude-dc", "brace", "effect"],
     contentBatch: 26,
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: ["fortitude", "athletics", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["fortitude", "ac", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineGiantSlayerFortitudeCard({
@@ -225,7 +225,7 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Move the Immovable",
-    fallbackDescription: "The larger foe expected you to be the thing that moved. Instead, you get one impossible instant of leverage. You may immediately attempt to Shove the hostile source as a free action with a +2 circumstance bonus to the Athletics check. You can attempt this Shove regardless of the target's size. Apply this result manually.",
+    fallbackDescription: "The larger foe expected you to be the thing that moved. Instead, you get one impossible instant of leverage. If the hostile source is within your reach and you meet the other normal prerequisites for Shove, you may immediately attempt to Shove it as a free action with a +2 circumstance bonus to the Athletics check. You can attempt this Shove regardless of the target's size. Otherwise, you may immediately Step toward the hostile source. Apply this result manually.",
     tags: ["shove", "athletics", "free-action", "larger-opponent", "melee-threat", "manual"],
     extraConditions: [
       { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
@@ -263,12 +263,12 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Endurance Reads the Opening",
-    fallbackDescription: "You remain conscious inside pressure that should have erased every useful thought. For 1 round, you gain a +1 status bonus to Fortitude saves, Perception checks, and class DC.",
-    tags: ["fortitude", "perception", "class-dc", "awareness", "effect"],
+    fallbackDescription: "You remain conscious inside pressure that should have erased every useful thought. For 1 round, you gain a +1 status bonus to Perception checks, attack rolls, and class DC.",
+    tags: ["perception", "attack-roll", "class-dc", "awareness", "counteroffense", "effect"],
     contentBatch: 26,
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: ["fortitude", "perception", "class-dc"], value: 1, modifierType: "status", predicate: [] }]
+      components: [{ type: "modifier", selector: ["perception", "attack-roll", "class-dc"], value: 1, modifierType: "status", predicate: [] }]
     }
   }),
   defineGiantSlayerFortitudeCard({
@@ -295,8 +295,8 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Their Frame Pays the Price",
-    fallbackDescription: "You survive the stronger foe's pressure long enough for its own body to become the weak link. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to Reflex DC and a 5-foot circumstance penalty to all Speeds.",
-    tags: ["hostile-source", "enfeebled", "reflex-dc", "movement", "melee-threat", "effect"],
+    fallbackDescription: "You survive the stronger foe's pressure long enough for its own body to become the weak link. For 1 round, the hostile source is enfeebled 1 and takes a -1 circumstance penalty to AC.",
+    tags: ["hostile-source", "enfeebled", "ac", "melee-threat", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.giantSlayer.opponentIsThreatening", operator: "eq", value: true },
     contentBatch: 26,
     effect: {
@@ -304,8 +304,7 @@ export const GIANT_SLAYER_FORTITUDE_CARDS = Object.freeze([
       duration: ONE_ROUND,
       components: [
         { type: "condition", slug: "enfeebled", value: 1 },
-        { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] },
-        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+        { type: "modifier", selector: "ac", value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),
