@@ -76,6 +76,7 @@ const { GIANT_SLAYER_ATTACK_CARDS } = await import(pathToFileURL(path.join(root,
 const { GIANT_SLAYER_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-fortitude.js")).href);
 const { GIANT_SLAYER_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-reflex.js")).href);
 const { GIANT_SLAYER_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-will.js")).href);
+const { NARROW_ESCAPE_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-attack.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -165,6 +166,17 @@ check(giantFinalDecks.every((cards) => cards.slice(20, 30).filter((card) => card
 check(giantFinalDecks.every((cards) => cards.slice(20, 30).filter((card) => !card.effect).length === 2), "Every Giant-Slayer final deck must contain two manual results.");
 check(packsSource.includes('theme.id === THEME_IDS.GIANT_SLAYER) ? "complete"'), "Giant-Slayer package metadata must be marked complete.");
 
+check(NARROW_ESCAPE_ATTACK_CARDS.length === 10, "Narrow Escapes Attack must contain ten first-pass cards.");
+check(new Set(NARROW_ESCAPE_ATTACK_CARDS.map((card) => card.id)).size === 10, "Narrow Escapes Attack card IDs must be unique.");
+check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Narrow Escapes first-pass cards must remain in the Attack deck.");
+check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Narrow Escapes Attack must contain five ordinary critical-hit cards.");
+check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Narrow Escapes Attack must contain five spell critical-hit cards.");
+check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => hasNarrowEscapeGate(card.conditions)), "Narrow Escapes Attack cards must use the dynamic Narrow Escape condition.");
+check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.metadata?.contentBatch === 30), "Narrow Escapes Attack first pass must use content batch 30.");
+check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Attack first pass must contain nine automated results.");
+check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Attack first pass must contain one manual result.");
+check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "attack"'), "Narrow Escapes Attack cards are not wired into the pack registry.");
+
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {
   console.error(errors.map((entry) => `- ${entry}`).join("\n"));
@@ -194,6 +206,14 @@ function hasGiantSlayerGate(tree) {
     return tree.operator === "eq" && tree.value === true;
   }
   return (tree.conditions ?? []).some((child) => hasGiantSlayerGate(child));
+}
+
+function hasNarrowEscapeGate(tree) {
+  if (!tree || typeof tree !== "object") return false;
+  if ((tree.type === "condition" || tree.field) && tree.field === "extensions.againstAllOdds.narrowEscape.matched") {
+    return tree.operator === "eq" && tree.value === true;
+  }
+  return (tree.conditions ?? []).some((child) => hasNarrowEscapeGate(child));
 }
 
 function hasBloodiedGate(tree) {

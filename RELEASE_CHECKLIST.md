@@ -38,7 +38,7 @@
 - [x] Current automated test run: 200/200 passing.
 - [x] Current coverage: 99.53% lines, 95.06% branches, 98.69% functions.
 - [x] Current localization parity: 1076 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 360 published cards and 307 automated card effects.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 370 published cards and 316 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -136,6 +136,18 @@
 - [x] Certainty Collapses Inward no longer duplicates the frightened + stupefied core of Pressure Rebounds.
 - [x] Giant-Slayer German localization consistently uses Kraftlos, Auf dem Falschen Fuß, and Größenkategorie.
 - [x] Complete Giant-Slayer strict same-gate mechanical-superset audit remains clean after the review patch.
-- [ ] Foundry smoke test for `0.1.0-dev.29.1`: revised Certainty Collapses Inward applies off-guard, attack-roll -1, and class-DC -1 to the hostile source.
-- [ ] Foundry smoke test for `0.1.0-dev.29.1`: reviewed German Giant-Slayer text renders with the corrected Remaster terminology.
+- [x] Foundry smoke test for `0.1.0-dev.29.1`: revised Certainty Collapses Inward applies off-guard, attack-roll -1, and class-DC -1 to the hostile source.
+- [x] Foundry smoke test for `0.1.0-dev.29.1`: reviewed German Giant-Slayer text renders with the corrected Remaster terminology.
 
+
+## Narrow Escapes
+
+- [x] Narrow Escapes Attack first pass contains ten cards with a 5/5 ordinary/spell critical split.
+- [x] Narrow Escapes Attack first pass uses content batch 30 with 9 automated / 1 manual result.
+- [x] Every published Narrow Escape card uses the dynamic `narrowEscape.matched` gate.
+- [x] First-pass escalation includes danger-score 4 and danger-score 5 results.
+- [x] Narrow Escape automated Attack effects add no exact published signature duplicate.
+- [x] Attack-roll danger scoring ignores the acting hero's own dangerous offensive traits.
+- [x] German and English localization exists for all ten cards and nine automated effects.
+- [ ] Foundry smoke test: ten localized Narrow Escape Attack cards are visible and the manual Raise a Shield / Step result reads correctly.
+- [ ] Foundry smoke test: dangerous traits on the acting hero's own attack do not raise Narrow Escape danger score.

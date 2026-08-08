@@ -187,3 +187,18 @@ test("context enrichment preserves the core report and adds one extension branch
   assert.equal(enriched.diagnostics.at(-1).code, "AAO_CONTEXT_EVALUATED");
   assert.equal(Object.isFrozen(enriched), true);
 });
+
+test("Narrow Escape danger does not count the acting hero's own dangerous attack traits", () => {
+  const danger = evaluateDangerScore(snapshot({
+    roll: { category: "criticalHit", family: "attack", saveType: null },
+    participants: {
+      source: { level: 8, hp: { current: 60, max: 60, ratio: 1 }, conditions: { wounded: 0 } },
+      target: { level: 8 }
+    },
+    battlefield: { hostileThreatCount: 0 },
+    selection: { attackTraits: ["death", "poison"], spellTraits: [], sourceTraits: [] }
+  }), { threshold: 1 });
+  assert.equal(danger.score, 0);
+  assert.equal(danger.componentIds.includes("dangerous-trait"), false);
+  assert.equal(danger.matched, false);
+});

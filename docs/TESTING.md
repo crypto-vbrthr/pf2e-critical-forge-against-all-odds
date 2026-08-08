@@ -84,7 +84,15 @@ The test suite covers:
 - the final 120-card Will counterpressure audit keeping Pressure Rebounds and Certainty Collapses Inward mechanically distinct;
 - German Giant-Slayer Remaster terminology, including Kraftlos, Auf dem Falschen Fuß, and Größenkategorie.
 
+- ten Narrow Escape Attack cards in content batch `30`, split 5/5 between ordinary and spell critical hits;
+- the dynamic Narrow Escape gate on every published Narrow Escape card;
+- nine automated and one manual Narrow Escape Attack result;
+- danger-score 4 and 5 escalation conditions;
+- exact automated-signature uniqueness against all previously published Bloodied, Surrounded, and Giant-Slayer effects;
+- attack-roll danger scoring excluding the acting hero's own dangerous offensive traits while preserving dangerous incoming save evidence;
+- German and English Narrow Escape card/effect localization and reviewed Remaster terminology;
+
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.29.1` baseline: **202/202 tests**, **99.53% line coverage**, **95.09% branch coverage**, and **98.70% function coverage**. The current build contains **360 published cards and 307 automated card effects**; Giant-Slayer contributes **120 cards, 99 automated effects, and 21 manual results**. The completed Giant-Slayer set preserves automated-signature uniqueness across the reviewed pack context, keeps the strict same-gate mechanical-superset regression contract clean, separates the final Will near-duplicate, and enforces reviewed German Remaster terminology. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
+Current `0.1.0-dev.30` baseline: **212/212 tests**, **99.52% line coverage**, **95.15% branch coverage**, and **98.74% function coverage**. The current build contains **370 published cards and 316 automated card effects**; Narrow Escapes contributes **10 Attack cards, 9 automated effects, and 1 manual result**. The first Narrow Escape pass keeps exact automated signatures distinct from all previously published themes and includes a regression guard preventing the acting hero's own dangerous attack traits from inflating Attack-roll danger. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
 

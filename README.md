@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.29.1` is the final **120-card Giant-Slayer Moments review**. Attack, Fortitude, Reflex, and Will remain complete at 30 cards each, with the Attack deck at a 15/15 ordinary/spell critical split and the theme at 99 automated plus 21 manual results. The review preserves every published card ID while separating the last overlapping Will counterpressure concept and normalizing German Remaster terminology for Kraftlos, Auf dem Falschen Fuß, and Größenkategorie. The reviewed threat/size, mental/auditory, +4/+5 escalation, targeting, and manual-action contracts remain unchanged.
+Version `0.1.0-dev.30` begins **Narrow Escapes** with the first ten Attack cards. The first pass is split evenly between ordinary and spell critical hits, uses nine automated effects plus one manual defensive escape result, and adds danger-score escalation at 4 and 5. The Narrow Escape trigger now deliberately ignores dangerous traits on the acting hero's own attack so poison, death, or similar offensive traits cannot manufacture their own danger score.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -92,7 +92,15 @@ Giant-Slayer Moments is complete at 120/120 cards:
 - the final Fortitude, Reflex, and Will passes add no resistance or immunity filler;
 - exact automated Giant-Slayer signatures remain distinct from Bloodied Triumphs, Surrounded, Still Standing, and one another, while the same-gate superset regression contract remains clean.
 
-Against All Odds therefore currently contains **360/480 planned cards** across three complete themes; only Narrow Escapes remains to be written.
+Against All Odds therefore currently contains **370/480 planned cards**: three complete 120-card themes plus the first 10/120 Narrow Escapes cards.
+
+Narrow Escapes is now in progress:
+
+- 10/30 Attack cards, split 5/5 between ordinary and spell critical hits;
+- 9 automated Effect Engine results and 1 explicit manual result;
+- every published Narrow Escape card requires `extensions.againstAllOdds.narrowEscape.matched == true`;
+- two stronger cards additionally require danger score 4 or 5;
+- the acting hero's own dangerous attack traits no longer contribute to the danger score on attack rolls.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 

@@ -1550,6 +1550,50 @@
             "Description": "Du hast gehört, wie die Gewissheit des stärkeren Gegners Risse bekommt, und kannst jemand anderem genau sagen, wo er ansetzen soll. Wähle einen Verbündeten innerhalb von 9 m, der dich sehen oder hören kann. Dieser Verbündete erhält einen Situationsbonus von +1 auf seinen nächsten Wurf zum Demoralisieren, für eine Finte, für Bonmot oder zum Wissen abrufen gegen die feindliche Quelle vor Beginn deines nächsten Zuges. Wende dieses Ergebnis manuell an."
           }
         }
+      },
+      "NarrowEscapes": {
+        "Attack": {
+          "CutOpenTheExit": {
+            "Title": "Schneide den Ausweg frei",
+            "Description": "Der kritische Treffer verwundet nicht nur. Er reißt einen Weg durch die Gefahr. Für 1 Runde ist das Ziel Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Wahrnehmungswürfe."
+          },
+          "OneSecondBought": {
+            "Title": "Eine Sekunde erkauft",
+            "Description": "Die Öffnung ist winzig, aber sie gehört dir. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Zähigkeitswürfe."
+          },
+          "RunOnTheOpening": {
+            "Title": "Nutze die Öffnung zur Flucht",
+            "Description": "Du bewunderst den Treffer nicht. Du nutzt ihn. Für 1 Runde erhältst du einen Situationsbonus von +1,5 m auf alle Bewegungsraten und einen Situationsbonus von +1 auf Akrobatikwürfe."
+          },
+          "MakePursuitExpensive": {
+            "Title": "Mach die Verfolgung teuer",
+            "Description": "Der kritische Treffer bestraft genau den Augenblick, in dem sich dein Gegner fängt und dir nachsetzen will. Für 1 Runde erhält das Ziel einen Situationsmalus von -1,5 m auf alle Bewegungsraten und einen Situationsmalus von -1 auf Wahrnehmungswürfe."
+          },
+          "ShieldTheHeartbeat": {
+            "Title": "Schütze den nächsten Herzschlag",
+            "Description": "Der Treffer erkauft gerade genug Zeit, um das Leben dahinter zu schützen. Falls du einen Schild führst und Schild heben einsetzen kannst, darfst du ihn sofort als freie Aktion heben. Andernfalls darfst du sofort einen Schritt machen. Wende dieses Ergebnis manuell an."
+          },
+          "CastThroughTheGap": {
+            "Title": "Zaubere durch die Lücke",
+            "Description": "Der kritische Zauber hinterlässt Schwung statt Rauch. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zauberangriffswürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FlashOfAnExit": {
+            "Title": "Ein Aufblitzen des Auswegs",
+            "Description": "Der Zauber beleuchtet den einzigen Weg, der vor einem Herzschlag noch unsichtbar war. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK, Reflexwürfe und Wahrnehmungswürfe."
+          },
+          "DangerBreaksItsStride": {
+            "Title": "Die Gefahr verliert den Tritt",
+            "Description": "Wenn die Gefahr bereits groß ist, zwingt der kritische Zauber die Verfolgung in die Erholung. Bei einem Gefahrenwert von 4 oder höher ist das Ziel für 1 Runde Unbeholfen 1 und erhält einen Situationsmalus von -1 auf Wahrnehmungswürfe."
+          },
+          "StillHereStillMoving": {
+            "Title": "Noch hier, noch in Bewegung",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher beweist der Zauber, dass es noch eine Zukunft gibt, auf die du zulaufen kannst. Für 1 Runde erhältst du 4 temporäre Trefferpunkte und einen Situationsbonus von +1 auf Reflexwürfe."
+          },
+          "CollapseTheLineBehindYou": {
+            "Title": "Lass die Linie hinter dir zusammenbrechen",
+            "Description": "Der kritische Zauber zwingt den Verfolger, sich zwischen dir und seinem Stand zu entscheiden. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Reflex-SG und Wahrnehmungswürfe."
+          }
+        }
       }
     },
     "Effects": {
@@ -2504,6 +2548,37 @@
           },
           "CertaintyCollapsesInward": {
             "Name": "Gewissheit stürzt nach innen"
+          }
+        }
+      },
+      "NarrowEscapes": {
+        "Attack": {
+          "CutOpenTheExit": {
+            "Name": "Schneide den Ausweg frei"
+          },
+          "OneSecondBought": {
+            "Name": "Eine Sekunde erkauft"
+          },
+          "RunOnTheOpening": {
+            "Name": "Nutze die Öffnung zur Flucht"
+          },
+          "MakePursuitExpensive": {
+            "Name": "Mach die Verfolgung teuer"
+          },
+          "CastThroughTheGap": {
+            "Name": "Zaubere durch die Lücke"
+          },
+          "FlashOfAnExit": {
+            "Name": "Ein Aufblitzen des Auswegs"
+          },
+          "DangerBreaksItsStride": {
+            "Name": "Die Gefahr verliert den Tritt"
+          },
+          "StillHereStillMoving": {
+            "Name": "Noch hier, noch in Bewegung"
+          },
+          "CollapseTheLineBehindYou": {
+            "Name": "Lass die Linie hinter dir zusammenbrechen"
           }
         }
       }

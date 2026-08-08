@@ -16,6 +16,7 @@ import { GIANT_SLAYER_ATTACK_CARDS } from "./cards/giant-slayer-attack.js";
 import { GIANT_SLAYER_FORTITUDE_CARDS } from "./cards/giant-slayer-fortitude.js";
 import { GIANT_SLAYER_REFLEX_CARDS } from "./cards/giant-slayer-reflex.js";
 import { GIANT_SLAYER_WILL_CARDS } from "./cards/giant-slayer-will.js";
+import { NARROW_ESCAPE_ATTACK_CARDS } from "./cards/narrow-escape-attack.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -67,7 +68,7 @@ export function buildAgainstAllOddsPacks(settings = {}) {
       addOn: MODULE_ID,
       theme: theme.id,
       conditionPath: theme.conditionPath,
-      contentStatus: (theme.id === THEME_IDS.BLOODIED || theme.id === THEME_IDS.SURROUNDED || theme.id === THEME_IDS.GIANT_SLAYER) ? "complete" : "foundation",
+      contentStatus: (theme.id === THEME_IDS.BLOODIED || theme.id === THEME_IDS.SURROUNDED || theme.id === THEME_IDS.GIANT_SLAYER) ? "complete" : "in-progress",
       plannedCardsPerDeck: 30
     },
     decks: Object.fromEntries(SPECIALIZED_DECK_TYPES.map((deckType) => [deckType, {
@@ -95,7 +96,9 @@ export function buildAgainstAllOddsPacks(settings = {}) {
                             ? GIANT_SLAYER_REFLEX_CARDS
                             : theme.id === THEME_IDS.GIANT_SLAYER && deckType === "will"
                               ? GIANT_SLAYER_WILL_CARDS
-                              : []
+                              : theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "attack"
+                                ? NARROW_ESCAPE_ATTACK_CARDS
+                                : []
     }]))
   }));
 }

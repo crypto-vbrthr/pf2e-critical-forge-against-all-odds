@@ -398,3 +398,68 @@ export function defineGiantSlayerWillCard(options) {
     filters: { ...options.filters, saveTypes: ["will"] }
   });
 }
+
+const NARROW_ESCAPE_CONDITION = Object.freeze({
+  type: "condition",
+  field: "extensions.againstAllOdds.narrowEscape.matched",
+  operator: "eq",
+  value: true
+});
+
+function combineNarrowEscapeConditions(extraConditions) {
+  return combineConditions(NARROW_ESCAPE_CONDITION, extraConditions);
+}
+
+function defineNarrowEscapeCard({
+  id,
+  localizationKey,
+  category,
+  deckType,
+  deckToken,
+  tone,
+  impact,
+  fallbackTitle,
+  fallbackDescription,
+  weight = 1,
+  tags = [],
+  filters = {},
+  effect = null,
+  extraConditions = null,
+  contentBatch
+}) {
+  return Object.freeze({
+    schemaVersion: 1,
+    id: `${MODULE_ID}.narrow-escapes.${deckType}.${id}`,
+    packId: AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes,
+    category,
+    deckType,
+    tone,
+    impact,
+    titleKey: `PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes.${deckToken}.${localizationKey}.Title`,
+    descriptionKey: `PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes.${deckToken}.${localizationKey}.Description`,
+    fallbackTitle,
+    fallbackDescription,
+    weight,
+    tags: Object.freeze([
+      "against-all-odds",
+      "narrow-escapes",
+      deckType,
+      "critical-success",
+      ...unique(tags)
+    ]),
+    filters: freezeFilters(filters),
+    conditions: combineNarrowEscapeConditions(extraConditions),
+    effect: freezeEffect(effect, { themeToken: "NarrowEscapes", deckToken, localizationKey, fallbackTitle }),
+    metadata: Object.freeze({ collection: "narrow-escapes", deck: deckType, contentBatch })
+  });
+}
+
+export function defineNarrowEscapeAttackCard(options) {
+  if (!["criticalHit", "spellCriticalHit"].includes(options.category)) {
+    throw new TypeError(`Narrow Escape attack cards require an attack critical-success category: ${options.category}`);
+  }
+  return defineNarrowEscapeCard({
+    ...options, deckType: "attack", deckToken: "Attack", contentBatch: options.contentBatch ?? 30,
+    tags: [options.category === "spellCriticalHit" ? "spell" : "strike", ...(options.tags ?? [])]
+  });
+}

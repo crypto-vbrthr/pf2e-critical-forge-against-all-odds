@@ -93,11 +93,11 @@ The initial danger model is additive:
 | Wounded 1 or higher | 1 |
 | At least 2 threatening enemies | 1 |
 | At least 4 threatening enemies | 2 |
-| Attack, spell, or source has curse, death, disease, incapacitation, or poison | 1 |
+| Incoming save context has curse, death, disease, incapacitation, or poison | 1 |
 
-Higher entries replace the lesser entry in the same category. The default matching threshold is 3. The DC is preserved as evidence but does not yet alter the score because no stable relative-DC baseline has been adopted.
+Higher entries replace the lesser entry in the same category. The default matching threshold is 3. On attack rolls, dangerous traits belonging to the acting hero's own attack are ignored so an offensive poison, death, or similar trait cannot inflate its own Narrow Escape score. On saving throws, dangerous incoming attack/spell trait evidence can still contribute. The DC is preserved as evidence but does not yet alter the score because no stable relative-DC baseline has been adopted.
 
-This scoring model has no gameplay effect in `0.1.0-dev.1` because the module contains no cards yet. It can therefore be reviewed and adjusted before Narrow Escape cards are authored.
+This scoring model now drives the published Narrow Escape cards. The Attack first pass also uses `narrowEscape.score >= 4` and `>= 5` for two escalation results.
 
 ## Roll kind
 

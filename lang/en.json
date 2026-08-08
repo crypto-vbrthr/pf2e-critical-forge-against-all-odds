@@ -1550,6 +1550,50 @@
             "Description": "You have heard the stronger foe's certainty crack and can tell someone else exactly where to press. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next check to Demoralize, Feint, Bon Mot, or Recall Knowledge against the hostile source before the start of your next turn. Apply this result manually."
           }
         }
+      },
+      "NarrowEscapes": {
+        "Attack": {
+          "CutOpenTheExit": {
+            "Title": "Cut Open the Exit",
+            "Description": "The critical hit does more than wound. It tears a route through the danger. For 1 round, the target is off-guard and takes a -1 circumstance penalty to Perception checks."
+          },
+          "OneSecondBought": {
+            "Title": "One Second Bought",
+            "Description": "The opening is tiny, but it is yours. For 1 round, you gain a +1 circumstance bonus to AC and Fortitude saves."
+          },
+          "RunOnTheOpening": {
+            "Title": "Run on the Opening",
+            "Description": "You do not admire the hit. You use it. For 1 round, you gain a 5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to Acrobatics checks."
+          },
+          "MakePursuitExpensive": {
+            "Title": "Make Pursuit Expensive",
+            "Description": "The critical hit punishes the instant they try to recover and chase. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to Perception checks."
+          },
+          "ShieldTheHeartbeat": {
+            "Title": "Shield the Heartbeat",
+            "Description": "The hit buys exactly enough time to protect the life behind it. If you are wielding a shield and can Raise a Shield, you may immediately Raise it as a free action. Otherwise, you may immediately Step. Apply this result manually."
+          },
+          "CastThroughTheGap": {
+            "Title": "Cast Through the Gap",
+            "Description": "The critical spell leaves momentum behind instead of smoke. For 1 round, you gain a +1 circumstance bonus to spell attack rolls and a 5-foot circumstance bonus to all Speeds."
+          },
+          "FlashOfAnExit": {
+            "Title": "Flash of an Exit",
+            "Description": "The spell lights the one route that was invisible a heartbeat ago. For 1 round, you gain a +1 circumstance bonus to AC, Reflex saves, and Perception checks."
+          },
+          "DangerBreaksItsStride": {
+            "Title": "Danger Breaks Its Stride",
+            "Description": "When the danger is already severe, the critical spell turns pursuit into recovery. At danger score 4 or higher, for 1 round the target is clumsy 1 and takes a -1 circumstance penalty to Perception checks."
+          },
+          "StillHereStillMoving": {
+            "Title": "Still Here, Still Moving",
+            "Description": "At danger score 5 or higher, the spell proves there is still a future to move toward. For 1 round, you gain 4 temporary Hit Points and a +1 circumstance bonus to Reflex saves."
+          },
+          "CollapseTheLineBehindYou": {
+            "Title": "Collapse the Line Behind You",
+            "Description": "The critical spell leaves the pursuer choosing between you and its footing. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and Perception checks."
+          }
+        }
       }
     },
     "Effects": {
@@ -2504,6 +2548,37 @@
           },
           "CertaintyCollapsesInward": {
             "Name": "Certainty Collapses Inward"
+          }
+        }
+      },
+      "NarrowEscapes": {
+        "Attack": {
+          "CutOpenTheExit": {
+            "Name": "Cut Open the Exit"
+          },
+          "OneSecondBought": {
+            "Name": "One Second Bought"
+          },
+          "RunOnTheOpening": {
+            "Name": "Run on the Opening"
+          },
+          "MakePursuitExpensive": {
+            "Name": "Make Pursuit Expensive"
+          },
+          "CastThroughTheGap": {
+            "Name": "Cast Through the Gap"
+          },
+          "FlashOfAnExit": {
+            "Name": "Flash of an Exit"
+          },
+          "DangerBreaksItsStride": {
+            "Name": "Danger Breaks Its Stride"
+          },
+          "StillHereStillMoving": {
+            "Name": "Still Here, Still Moving"
+          },
+          "CollapseTheLineBehindYou": {
+            "Name": "Collapse the Line Behind You"
           }
         }
       }

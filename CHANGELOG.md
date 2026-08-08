@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-dev.30
+
+### Added
+- Began **Narrow Escapes** with the first ten Attack-deck cards.
+- Added five ordinary critical-hit and five spell critical-hit cards, with nine automated Effect Engine results and one manual Raise a Shield / Step result.
+- Added danger-score escalation at 4 and 5 for two stronger Narrow Escape results.
+- Added German and English localization for all ten cards and nine automated effects.
+- Wired the Narrow Escape Attack deck into the pack registry and marked the theme as in progress.
+
+### Context review
+- Corrected the initial Narrow Escape danger model for Attack rolls: dangerous traits on the acting hero's own attack no longer contribute to the danger score. This prevents poison, death, disease, incapacitation, or curse traits on the successful attack from manufacturing the danger required to trigger Narrow Escapes.
+- Saving-throw contexts continue to count dangerous incoming attack/spell trait evidence.
+
+### Tests
+- Added Narrow Escape count, ID, 5/5 category split, dynamic gate, batch-30, 9/1 automation, danger-score escalation, immutable filter, localization, German terminology, and cross-theme exact-signature uniqueness coverage.
+- Added regression coverage for the Attack-roll dangerous-trait correction.
+- Verified **212/212 tests** with **99.52% line coverage**, **95.15% branch coverage**, and **98.74% function coverage**.
+- Existing 360 published card IDs remain unchanged; this build adds ten Narrow Escape Attack IDs.
+
+### Compatibility
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.29.1
 
 ### Review

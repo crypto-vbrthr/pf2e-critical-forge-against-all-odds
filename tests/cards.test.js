@@ -15,6 +15,7 @@ import { GIANT_SLAYER_ATTACK_CARDS } from "../scripts/data/cards/giant-slayer-at
 import { GIANT_SLAYER_FORTITUDE_CARDS } from "../scripts/data/cards/giant-slayer-fortitude.js";
 import { GIANT_SLAYER_REFLEX_CARDS } from "../scripts/data/cards/giant-slayer-reflex.js";
 import { GIANT_SLAYER_WILL_CARDS } from "../scripts/data/cards/giant-slayer-will.js";
+import { NARROW_ESCAPE_ATTACK_CARDS } from "../scripts/data/cards/narrow-escape-attack.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -26,6 +27,7 @@ const FILTER_KEYS = [
 const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS, ...BLOODIED_WILL_CARDS];
 const ALL_SURROUNDED_CARDS = [...SURROUNDED_ATTACK_CARDS, ...SURROUNDED_FORTITUDE_CARDS, ...SURROUNDED_REFLEX_CARDS, ...SURROUNDED_WILL_CARDS];
 const ALL_GIANT_SLAYER_CARDS = [...GIANT_SLAYER_ATTACK_CARDS, ...GIANT_SLAYER_FORTITUDE_CARDS, ...GIANT_SLAYER_REFLEX_CARDS, ...GIANT_SLAYER_WILL_CARDS];
+const ALL_NARROW_ESCAPE_CARDS = [...NARROW_ESCAPE_ATTACK_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -2134,3 +2136,102 @@ test("Giant-Slayer 120-card review enforces German Remaster condition and size t
   assert.match(giant.Will.CertaintyCollapsesInward.Description, /Auf dem Falschen Fuß/u);
 });
 
+
+test("Narrow Escapes Attack first pass contains ten unique cards with a 5/5 critical split", () => {
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.length, 10);
+  assert.equal(new Set(NARROW_ESCAPE_ATTACK_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 5);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 5);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.metadata.contentBatch === 30), true);
+});
+
+test("every published Narrow Escape card uses the dynamic Narrow Escape gate", () => {
+  for (const card of ALL_NARROW_ESCAPE_CARDS) {
+    const leaves = conditionLeaves(card.conditions);
+    assert.equal(leaves.some((leaf) =>
+      leaf.field === "extensions.againstAllOdds.narrowEscape.matched" && leaf.operator === "eq" && leaf.value === true
+    ), true, card.id);
+    assert.equal(Object.isFrozen(card), true);
+    assert.equal(Object.isFrozen(card.conditions), true);
+  }
+});
+
+test("Narrow Escape Attack first pass uses nine automated results and one manual escape action", () => {
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect).length, 9);
+  assert.deepEqual(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "nea-005-shield-the-heartbeat"
+  ]);
+});
+
+test("Narrow Escape Attack first pass adds danger-score escalation at four and five", () => {
+  const bySuffix = Object.fromEntries(NARROW_ESCAPE_ATTACK_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["nea-008-danger-breaks-its-stride"].conditions);
+  const five = conditionLeaves(bySuffix["nea-009-still-here-still-moving"].conditions);
+  assert.equal(four.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4), true);
+  assert.equal(five.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
+});
+
+test("Narrow Escape Attack first-pass filters remain complete immutable schema-1 sets", () => {
+  for (const card of NARROW_ESCAPE_ATTACK_CARDS) {
+    assert.deepEqual(Object.keys(card.filters), FILTER_KEYS);
+    assert.equal(FILTER_KEYS.every((key) => Array.isArray(card.filters[key])), true);
+    assert.equal(FILTER_KEYS.every((key) => Object.isFrozen(card.filters[key])), true);
+  }
+});
+
+test("Narrow Escape Attack automated effects use unique signatures across all published themes", () => {
+  const prior = [
+    ...ALL_CARDS,
+    ...ALL_SURROUNDED_CARDS,
+    ...ALL_GIANT_SLAYER_CARDS
+  ].filter((card) => card.effect);
+  const signature = (card) => JSON.stringify({
+    target: card.effect.target,
+    duration: card.effect.definition.duration,
+    components: card.effect.definition.components
+  });
+  const seen = new Map(prior.map((card) => [signature(card), card.id]));
+  for (const card of NARROW_ESCAPE_ATTACK_CARDS.filter((entry) => entry.effect)) {
+    const key = signature(card);
+    assert.equal(seen.has(key), false, `${card.id} duplicates ${seen.get(key)}`);
+    seen.set(key, card.id);
+  }
+});
+
+test("Narrow Escape Attack first pass localizes every card and automated effect in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const card of NARROW_ESCAPE_ATTACK_CARDS) {
+    assert.equal(typeof getPath(de, card.titleKey), "string", card.titleKey);
+    assert.equal(typeof getPath(en, card.titleKey), "string", card.titleKey);
+    assert.equal(typeof getPath(de, card.descriptionKey), "string", card.descriptionKey);
+    assert.equal(typeof getPath(en, card.descriptionKey), "string", card.descriptionKey);
+    if (card.effect) {
+      assert.equal(typeof getPath(de, card.effect.nameKey), "string", card.effect.nameKey);
+      assert.equal(typeof getPath(en, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Narrow Escape German Attack text uses reviewed Remaster terminology", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const attack = de.PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes.Attack;
+  assert.match(attack.CutOpenTheExit.Description, /Auf dem Falschen Fuß/u);
+  assert.match(attack.DangerBreaksItsStride.Description, /Unbeholfen 1/u);
+  assert.match(attack.ShieldTheHeartbeat.Description, /Schild heben/u);
+  assert.match(attack.ShieldTheHeartbeat.Description, /freie Aktion/u);
+});
+
+test("Narrow Escape Attack first pass uses supported presentation values and intentional effect recipients", () => {
+  const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
+  const impacts = new Set(["narrative", "light", "moderate", "strong"]);
+  for (const card of NARROW_ESCAPE_ATTACK_CARDS) {
+    assert.equal(tones.has(card.tone), true, card.id);
+    assert.equal(impacts.has(card.impact), true, card.id);
+  }
+  const automated = NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 5);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 4);
+});

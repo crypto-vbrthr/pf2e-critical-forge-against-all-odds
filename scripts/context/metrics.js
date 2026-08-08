@@ -179,7 +179,7 @@ export function evaluateDangerScore(snapshot = {}, {
     components.push(component("surrounded", 1, { hostileThreatCount }));
   }
 
-  const dangerousTraits = collectDangerousTraits(snapshot);
+  const dangerousTraits = resolveRollKind(snapshot) === "attack" ? [] : collectDangerousTraits(snapshot);
   if (dangerousTraits.length) {
     components.push(component("dangerous-trait", 1, { traits: dangerousTraits }));
   }
