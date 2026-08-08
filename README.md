@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.33` completes the first forty-card **Narrow Escapes** pass with ten Will cards after the successful Reflex smoke test. Will uses nine automated effects plus one manual Seek result, keeps stronger results behind danger score 4 and 5, and adds focused fear- and mental-effect gates without broadly restricting the rest of the deck. The Attack trigger continues to ignore dangerous traits on the acting hero's own attack so offensive poison, death, or similar traits cannot manufacture their own danger score.
+Version `0.1.0-dev.33.1` is the first **40-card Narrow Escapes review**. The review preserves all forty published card IDs and mechanics, confirms the 10/10/10/10 deck layout, 36 automated / 4 manual split, one danger-score 4 and one danger-score 5 escalation per deck, and finds no strict same-gate mechanical superset among the automated results. German Narrow Escapes text now consistently uses the Remaster term **Zustandsbonus**. The Attack trigger continues to ignore dangerous traits on the acting hero's own attack so offensive poison, death, or similar traits cannot manufacture their own danger score.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 

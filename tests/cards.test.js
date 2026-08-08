@@ -2529,3 +2529,69 @@ test("Narrow Escape Will first pass keeps positive automated effects on the savi
   const automated = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.effect);
   assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });
+
+test("Narrow Escape forty-card review preserves the balanced 10/10/10/10 first-pass layout", () => {
+  const decks = [
+    NARROW_ESCAPE_ATTACK_CARDS,
+    NARROW_ESCAPE_FORTITUDE_CARDS,
+    NARROW_ESCAPE_REFLEX_CARDS,
+    NARROW_ESCAPE_WILL_CARDS
+  ];
+  assert.deepEqual(decks.map((cards) => cards.length), [10, 10, 10, 10]);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.length, 40);
+  assert.equal(new Set(ALL_NARROW_ESCAPE_CARDS.map((card) => card.id)).size, 40);
+  assert.deepEqual(decks.map((cards) => cards.filter((card) => card.effect).length), [9, 9, 9, 9]);
+  assert.deepEqual(decks.map((cards) => cards.filter((card) => !card.effect).length), [1, 1, 1, 1]);
+  for (const cards of decks) {
+    const leaves = cards.flatMap((card) => conditionLeaves(card.conditions));
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 1);
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 1);
+  }
+});
+
+test("Narrow Escape forty-card review has no strict same-gate mechanical supersets", () => {
+  const automated = ALL_NARROW_ESCAPE_CARDS.filter((card) => card.effect);
+  const atomize = (components) => components.flatMap((component) => {
+    if (component.type === "modifier" && Array.isArray(component.selector)) {
+      return component.selector.map((selector) => JSON.stringify({ ...component, selector }));
+    }
+    return [JSON.stringify(component)];
+  });
+  const gate = (card) => JSON.stringify({
+    category: card.category,
+    filters: card.filters,
+    conditions: card.conditions,
+    target: card.effect.target,
+    duration: card.effect.definition.duration
+  });
+  const dominated = [];
+  for (let leftIndex = 0; leftIndex < automated.length; leftIndex += 1) {
+    for (let rightIndex = 0; rightIndex < automated.length; rightIndex += 1) {
+      if (leftIndex === rightIndex || gate(automated[leftIndex]) !== gate(automated[rightIndex])) continue;
+      const left = new Set(atomize(automated[leftIndex].effect.definition.components));
+      const right = new Set(atomize(automated[rightIndex].effect.definition.components));
+      if (left.size < right.size && [...left].every((entry) => right.has(entry))) {
+        dominated.push([automated[leftIndex].id, automated[rightIndex].id]);
+      }
+    }
+  }
+  assert.deepEqual(dominated, []);
+});
+
+test("Narrow Escape forty-card review keeps all automated signatures exact-distinct", () => {
+  const automated = ALL_NARROW_ESCAPE_CARDS.filter((card) => card.effect);
+  const signature = (card) => JSON.stringify({
+    target: card.effect.target,
+    duration: card.effect.definition.duration,
+    components: card.effect.definition.components
+  });
+  assert.equal(new Set(automated.map(signature)).size, automated.length);
+});
+
+test("Narrow Escape German review uses the Remaster term Zustandsbonus consistently", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
+  const narrow = de.PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes;
+  const text = JSON.stringify(narrow);
+  assert.doesNotMatch(text, /Statusbonus/u);
+  assert.match(text, /Zustandsbonus/u);
+});

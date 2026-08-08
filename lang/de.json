@@ -1643,7 +1643,7 @@
           },
           "TheAngleStaysOpen": {
             "Title": "Der Winkel bleibt offen",
-            "Description": "Der Weg ist so schmal, dass jedes Zögern ihn schließen würde. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und einen Statusbonus von +1 auf Akrobatikwürfe."
+            "Description": "Der Weg ist so schmal, dass jedes Zögern ihn schließen würde. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und einen Zustandsbonus von +1 auf Akrobatikwürfe."
           },
           "ReadTheFallingLine": {
             "Title": "Lies die Linie des Einschlags",
@@ -1659,19 +1659,19 @@
           },
           "TheFinishingBlowMisses": {
             "Title": "Der entscheidende Schlag verfehlt",
-            "Description": "Ein Effekt, der den Kampf beenden sollte, scheitert genau in dem einen entscheidenden Augenblick. Nach einem kritischen Erfolg gegen einen Effekt mit der Kategorie Kampfunfähig erhältst du für 1 Runde einen Statusbonus von +1 auf Reflexwürfe und einen Situationsbonus von +1 auf deine RK."
+            "Description": "Ein Effekt, der den Kampf beenden sollte, scheitert genau in dem einen entscheidenden Augenblick. Nach einem kritischen Erfolg gegen einen Effekt mit der Kategorie Kampfunfähig erhältst du für 1 Runde einen Zustandsbonus von +1 auf Reflexwürfe und einen Situationsbonus von +1 auf deine RK."
           },
           "MomentumStaysYours": {
             "Title": "Der Schwung bleibt deiner",
-            "Description": "Du lässt die Flucht nicht enden, nur weil die unmittelbare Gefahr vorüber ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und einen Statusbonus von +1,5 m auf alle Bewegungsraten."
+            "Description": "Du lässt die Flucht nicht enden, nur weil die unmittelbare Gefahr vorüber ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und einen Zustandsbonus von +1,5 m auf alle Bewegungsraten."
           },
           "FourPointsNoRoomLeft": {
             "Title": "Vier Punkte, kein Raum mehr",
-            "Description": "Bei einem Gefahrenwert von 4 oder höher zählt jeder verbleibende Zentimeter. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Statusbonus von +1 auf Akrobatikwürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+            "Description": "Bei einem Gefahrenwert von 4 oder höher zählt jeder verbleibende Zentimeter. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Zustandsbonus von +1 auf Akrobatikwürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
           },
           "FivePointsNowhereButThrough": {
             "Title": "Fünf Punkte, nur noch hindurch",
-            "Description": "Bei einem Gefahrenwert von 5 oder höher ist Überleben keine Wahl zwischen mehreren Wegen mehr. Es gibt nur noch den, den du selbst schaffst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und Reflexwürfe sowie einen Statusbonus von +3 m auf deine Bewegungsrate an Land."
+            "Description": "Bei einem Gefahrenwert von 5 oder höher ist Überleben keine Wahl zwischen mehreren Wegen mehr. Es gibt nur noch den, den du selbst schaffst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und Reflexwürfe sowie einen Zustandsbonus von +3 m auf deine Bewegungsrate an Land."
           },
           "LeaveOnlyAnAfterimage": {
             "Title": "Hinterlass nur ein Nachbild",
@@ -1681,7 +1681,7 @@
         "Will": {
           "KeepYourName": {
             "Title": "Behalte deinen Namen",
-            "Description": "Die Gefahr greift nach dem Teil von dir, der bestimmt, wer du bist, und geht leer aus. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und einen Statusbonus von +1 auf Täuschungswürfe."
+            "Description": "Die Gefahr greift nach dem Teil von dir, der bestimmt, wer du bist, und geht leer aus. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und einen Zustandsbonus von +1 auf Täuschungswürfe."
           },
           "PanicSpendsItsLastBreath": {
             "Title": "Die Panik verbraucht ihren letzten Atemzug",
@@ -1689,7 +1689,7 @@
           },
           "ThoughtFindsTheDoor": {
             "Title": "Dein Verstand findet den Ausgang",
-            "Description": "In dem Augenblick, in dem dein Geist wieder klar wird, erkennst du den Weg, den die Panik verborgen hatte. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und einen Statusbonus von +1,5 m auf alle Bewegungsraten."
+            "Description": "In dem Augenblick, in dem dein Geist wieder klar wird, erkennst du den Weg, den die Panik verborgen hatte. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und einen Zustandsbonus von +1,5 m auf alle Bewegungsraten."
           },
           "YourVoiceReturnsFirst": {
             "Title": "Deine Stimme kehrt zuerst zurück",
@@ -1701,19 +1701,19 @@
           },
           "TheMentalGripSlips": {
             "Title": "Der mentale Griff rutscht ab",
-            "Description": "Ein mentaler Effekt findet für einen Augenblick Halt und verliert dich dann vollständig. Nach einem kritischen Erfolg gegen einen mentalen Effekt erhältst du für 1 Runde Resistenz 2 gegen Mentalen Schaden und einen Statusbonus von +1 auf Willenswürfe."
+            "Description": "Ein mentaler Effekt findet für einen Augenblick Halt und verliert dich dann vollständig. Nach einem kritischen Erfolg gegen einen mentalen Effekt erhältst du für 1 Runde Resistenz 2 gegen Mentalen Schaden und einen Zustandsbonus von +1 auf Willenswürfe."
           },
           "ChoiceBecomesMotion": {
             "Title": "Entscheidung wird zu Bewegung",
-            "Description": "Die Gefahr scheitert daran, für dich zu entscheiden. Deine nächste Entscheidung kommt bereits in Bewegung. Für 1 Runde erhältst du einen Statusbonus von +1 auf deinen Willens-SG und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+            "Description": "Die Gefahr scheitert daran, für dich zu entscheiden. Deine nächste Entscheidung kommt bereits in Bewegung. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf deinen Willens-SG und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
           },
           "FourPointsMindStillMine": {
             "Title": "Vier Punkte, mein Geist gehört mir",
-            "Description": "Bei einem Gefahrenwert von 4 oder höher ist es selbst schon der Ausweg, die Kontrolle über dich zu behalten. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Statusbonus von +1 auf Willenswürfe und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
+            "Description": "Bei einem Gefahrenwert von 4 oder höher ist es selbst schon der Ausweg, die Kontrolle über dich zu behalten. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Zustandsbonus von +1 auf Willenswürfe und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
           },
           "FivePointsRefuseTheEnding": {
             "Title": "Fünf Punkte, verweigere das Ende",
-            "Description": "Bei einem Gefahrenwert von 5 oder höher wird Verweigerung zu einem vollständigen Überlebensinstinkt. Für 1 Runde erhältst du einen Statusbonus von +1 auf Rettungswürfe und Wahrnehmungswürfe sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+            "Description": "Bei einem Gefahrenwert von 5 oder höher wird Verweigerung zu einem vollständigen Überlebensinstinkt. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Rettungswürfe und Wahrnehmungswürfe sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
           },
           "NothingLeftToCommand": {
             "Title": "Nichts mehr zu befehlen",

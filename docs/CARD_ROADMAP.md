@@ -45,11 +45,12 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 21. Narrow Escapes Fortitude, first pass: 10 cards. **Complete in `0.1.0-dev.31`, with 9 automated / 1 manual result, danger-score 4/5 escalation, an incoming-poison gate, and saver-only positive targeting.**
 22. Narrow Escapes Reflex, first pass: 10 cards. **Complete in `0.1.0-dev.32`, with 9 automated / 1 manual result, danger-score 4/5 escalation, an incoming-incapacitation gate, and saver-only positive targeting.**
 23. Narrow Escapes Will, first pass: 10 cards. **Complete in `0.1.0-dev.33`, with 9 automated / 1 manual Seek result, danger-score 4/5 escalation, focused incoming fear/mental gates, and saver-only positive targeting.**
+24. Narrow Escapes first 40-card review. **Complete in `0.1.0-dev.33.1`: all 40 IDs/mechanics preserved, 36 automated / 4 manual split confirmed, one score-4 and one score-5 escalation per deck confirmed, same-gate superset audit clean, and German `Zustandsbonus` terminology normalized.**
 24. Review the first 40 **Narrow Escapes** cards for balance, overlap, danger-score scaling, targeting, terminology, and automation.
 25. Continue the reviewed second and final passes for **Narrow Escapes**.
 26. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs, Surrounded, Still Standing, and Giant-Slayer Moments are each complete at 120/120 cards after three reviewed passes and a final complete-set review. Against All Odds now contains 400/480 planned cards. Narrow Escapes Attack, Fortitude, Reflex, and Will are each at 10/30; the next content milestone is the first 40-card Narrow Escapes review.
+Bloodied Triumphs, Surrounded, Still Standing, and Giant-Slayer Moments are each complete at 120/120 cards after three reviewed passes and a final complete-set review. Against All Odds now contains 400/480 planned cards. Narrow Escapes Attack, Fortitude, Reflex, and Will are each at 10/30; the next content milestone is Narrow Escapes Attack, second pass (cards 11–20).
 
 Every card will:
 

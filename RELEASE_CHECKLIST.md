@@ -35,8 +35,8 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 239/239 passing.
-- [x] Current coverage: 99.51% lines, 94.91% branches, 98.86% functions.
+- [x] Current automated test run: 243/243 passing.
+- [x] Current coverage: 99.49% lines, 94.96% branches, 98.88% functions.
 - [x] Current localization parity: 1192 keys in both German and English.
 - [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 400 published cards and 343 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
@@ -176,5 +176,12 @@
 - [x] Every automated Narrow Escape Will effect targets the saving actor.
 - [x] Narrow Escape Will automated effects add no exact published signature duplicate.
 - [x] German and English localization exists for all ten Will cards and nine automated effects.
-- [ ] Foundry smoke test: ten localized Narrow Escape Will cards are visible and the manual Seek result reads correctly.
+- [x] Foundry smoke test: ten localized Narrow Escape Will cards are visible and the manual Seek result reads correctly.
 - [ ] Foundry smoke test: fear- and mental-gated Will cards appear only for matching incoming evidence.
+- [x] Narrow Escapes first-40 review preserves all 40 published IDs and card mechanics.
+- [x] First-40 review confirms a 10/10/10/10 layout with 36 automated and 4 manual results.
+- [x] Each reviewed Narrow Escape deck contains exactly one danger-score 4 and one danger-score 5 escalation.
+- [x] Complete first-40 Narrow Escape same-gate mechanical-superset audit is clean.
+- [x] Complete first-40 Narrow Escape automated exact-signature audit is clean.
+- [x] German Narrow Escapes text consistently uses the Remaster term Zustandsbonus.
+

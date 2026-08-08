@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-dev.33.1
+
+- Completed the first **40-card Narrow Escapes review** without changing any published card ID or card mechanic.
+- Confirmed the balanced 10/10/10/10 deck layout, 36 automated / 4 manual split, and exactly one danger-score 4 plus one danger-score 5 escalation per deck.
+- Added a complete Narrow Escapes same-gate mechanical-superset regression audit; the reviewed 36 automated effects contain no strict same-gate supersets and remain exact-signature distinct.
+- Normalized all German Narrow Escapes status-modifier wording to the Remaster term **Zustandsbonus**.
+- Updated Narrow Escapes architecture, context-field, roadmap, testing, and release documentation to include the completed Will first pass and 40-card review.
+- Verified **243/243 tests** with **99.49% line coverage**, **94.96% branch coverage**, and **98.88% function coverage**; package-local release checks report **1192 localization keys per language**.
+
 ## 0.1.0-dev.33
 
 ### Added
