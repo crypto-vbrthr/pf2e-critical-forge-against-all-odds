@@ -1756,6 +1756,46 @@
           "LeaveOnlyAnAfterimage": {
             "Title": "Leave Only an Afterimage",
             "Description": "By the time the danger finishes passing, the place you occupied is already old information. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Perception DC."
+          },
+          "ThreadTheSecondImpact": {
+            "Title": "Thread the Second Impact",
+            "Description": "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and Acrobatics checks."
+          },
+          "ReadTheRebound": {
+            "Title": "Read the Rebound",
+            "Description": "You see how the danger will ricochet before it has finished missing you. For 1 round, you gain a +1 status bonus to Perception checks and a +1 circumstance bonus to AC."
+          },
+          "FeetFindTheNarrowGround": {
+            "Title": "Feet Find the Narrow Ground",
+            "Description": "There is almost nowhere safe to stand, so your feet choose the one place that still works. For 1 round, your land Speed gains a +5-foot status bonus and you gain a +1 circumstance bonus to Stealth checks."
+          },
+          "FourPointsOnlyOneAngle": {
+            "Title": "Four Points, Only One Angle",
+            "Description": "At danger score 4 or higher, there is no safe field, only the least impossible angle. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Reflex DC, and a +5-foot circumstance bonus to all Speeds."
+          },
+          "LeapTheLastGap": {
+            "Title": "Leap the Last Gap",
+            "Description": "The safe route is not a path anymore. It is a gap. You may immediately Leap as a free action. If you cannot Leap, you may Step instead. If there is an identifiable hostile source, you must end farther from it than you began if possible. Apply this result manually."
+          },
+          "LetTheBlastSpendItself": {
+            "Title": "Let the Blast Spend Itself",
+            "Description": "You move with the force instead of trying to stop it. For 1 round, your land Speed gains a +10-foot circumstance bonus and you gain a +1 circumstance bonus to Fortitude saves."
+          },
+          "KeepYourBalanceThroughIt": {
+            "Title": "Keep Your Balance Through It",
+            "Description": "The ground, the blast, and your own momentum all disagree about where you should be. You refuse all three. For 1 round, you gain a +1 status bonus to Acrobatics checks and a +1 circumstance bonus to Fortitude DC."
+          },
+          "FivePointsFasterThanRuin": {
+            "Title": "Five Points, Faster Than Ruin",
+            "Description": "At danger score 5 or higher, the only defense left is to be somewhere else before the disaster notices. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to AC, and a +10-foot circumstance bonus to all Speeds."
+          },
+          "LeaveNoEasyLine": {
+            "Title": "Leave No Easy Line",
+            "Description": "You leave the danger no clean line to follow. For 1 round, you gain a +1 status bonus to Stealth checks and a +1 circumstance bonus to Perception DC."
+          },
+          "TumbleThroughTheClosingEdge": {
+            "Title": "Tumble Through the Closing Edge",
+            "Description": "The danger closes from the obvious direction, so you escape through the space it thought it controlled. You may immediately Tumble Through as a free action with a +2 circumstance bonus to the Acrobatics check. If Tumble Through is not applicable, you may instead Stride up to 10 feet. If there is an identifiable hostile source, that Stride must end farther from it than you began if possible. Apply this result manually."
           }
         },
         "Will": {
@@ -2891,6 +2931,30 @@
           },
           "LeaveOnlyAnAfterimage": {
             "Name": "Leave Only an Afterimage"
+          },
+          "ThreadTheSecondImpact": {
+            "Name": "Thread the Second Impact"
+          },
+          "ReadTheRebound": {
+            "Name": "Read the Rebound"
+          },
+          "FeetFindTheNarrowGround": {
+            "Name": "Feet Find the Narrow Ground"
+          },
+          "FourPointsOnlyOneAngle": {
+            "Name": "Four Points, Only One Angle"
+          },
+          "LetTheBlastSpendItself": {
+            "Name": "Let the Blast Spend Itself"
+          },
+          "KeepYourBalanceThroughIt": {
+            "Name": "Keep Your Balance Through It"
+          },
+          "FivePointsFasterThanRuin": {
+            "Name": "Five Points, Faster Than Ruin"
+          },
+          "LeaveNoEasyLine": {
+            "Name": "Leave No Easy Line"
           }
         },
         "Will": {

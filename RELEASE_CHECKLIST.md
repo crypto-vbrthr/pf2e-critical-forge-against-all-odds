@@ -201,5 +201,15 @@
 - [x] Every automated Narrow Escape Fortitude effect targets the saving actor, and the second pass adds no resistance or immunity filler.
 - [x] German and English localization exists for all ten second-pass Fortitude cards and eight new automated effects.
 - [x] Package-local tests cover Entkommen, Laufen, and In Deckung gehen terminology for the two new manual results.
-- [ ] Foundry smoke test: Narrow Escape Fortitude cards 11–20 are visible and both new manual escape results read correctly.
-- [ ] Foundry smoke test: death-gated and score-4/score-5 second-pass Fortitude cards appear only for matching incoming evidence and danger thresholds.
+- [x] Foundry smoke test: Narrow Escape Fortitude cards 11–20 are visible and both new manual escape results read correctly.
+- [x] Foundry smoke test: death-gated and score-4/score-5 second-pass Fortitude cards appear only for matching incoming evidence and danger thresholds.
+
+- [x] Narrow Escapes Reflex second pass adds cards 11–20 in content batch 36.
+- [x] Narrow Escapes Reflex second pass uses 8 automated / 2 manual results and preserves all first-pass IDs and mechanics.
+- [x] Second-pass Reflex adds one additional danger-score 4 and one additional danger-score 5 escalation.
+- [x] Every automated Narrow Escape Reflex effect targets the saving actor, and the second pass adds no resistance or immunity filler.
+- [x] German and English localization exists for all ten second-pass Reflex cards and eight new automated effects.
+- [x] Package-local tests cover Springen, Schritt, Hindurchturnen, and Laufen terminology for the two new manual results.
+- [x] Narrow Escape exact-signature and same-gate mechanical-superset audits remain clean across all 70 published Narrow Escape cards.
+- [ ] Foundry smoke test: Narrow Escape Reflex cards 11–20 are visible and both new manual escape results read correctly.
+- [ ] Foundry smoke test: score-4 and score-5 second-pass Reflex cards appear only at the matching danger thresholds.

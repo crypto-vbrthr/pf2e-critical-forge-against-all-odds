@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-dev.36
+
+### Added
+- Added **Narrow Escapes Reflex cards 11–20**, bringing Reflex to 20/30, Narrow Escapes to 70/120, and the full add-on to 430/480 planned cards.
+- Added content batch 36 with **8 automated Effect Engine results and 2 manual escape results**.
+- Added one additional danger-score 4 escalation and one additional danger-score 5 escalation for Reflex.
+- Added manual **Leap the Last Gap**, granting an immediate Leap with a Step fallback, and **Tumble Through the Closing Edge**, granting an immediate Tumble Through with +2 and a short Stride fallback when no enemy space can be crossed.
+- Added German and English localization for all ten new cards and eight automated effects using the Remaster action names `Springen`, `Schritt`, `Hindurchturnen`, and `Laufen`.
+
+### Review and tests
+- Preserved all 420 previously published card IDs and every reviewed first-pass Narrow Escape mechanic.
+- Extended Narrow Escape exact-signature and same-gate mechanical-superset audits across all 70 published Narrow Escape cards.
+- Confirmed all 17 automated Narrow Escape Reflex effects target the saving actor.
+- Confirmed the second Reflex pass adds no resistance or immunity filler.
+- Expanded card, pack, runtime, localization, danger-threshold, manual-fallback, and release-check regression coverage for the 20/20/20/10 Narrow Escape layout.
+- Verified **253/253 tests** with **99.52% line coverage**, **95.23% branch coverage**, and **98.95% function coverage**.
+- Package-local release checks report **1276 localization keys per language**.
+
+### Compatibility
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.35
 
 ### Added

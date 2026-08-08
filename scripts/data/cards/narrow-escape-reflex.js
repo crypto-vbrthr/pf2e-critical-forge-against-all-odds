@@ -158,5 +158,167 @@ export const NARROW_ESCAPE_REFLEX_CARDS = Object.freeze([
         { type: "modifier", selector: ["stealth", "perception-dc"], value: 1, modifierType: "circumstance", predicate: [] }
       ]
     }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-011-thread-the-second-impact",
+    localizationKey: "ThreadTheSecondImpact",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Thread the Second Impact",
+    fallbackDescription: "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and Acrobatics checks.",
+    tags: ["reflex-dc", "acrobatics", "follow-through", "escape", "effect"],
+    contentBatch: 36,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: ["reflex-dc", "acrobatics"], value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-012-read-the-rebound",
+    localizationKey: "ReadTheRebound",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Read the Rebound",
+    fallbackDescription: "You see how the danger will ricochet before it has finished missing you. For 1 round, you gain a +1 status bonus to Perception checks and a +1 circumstance bonus to AC.",
+    tags: ["perception", "ac", "rebound", "effect"],
+    contentBatch: 36,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-013-feet-find-the-narrow-ground",
+    localizationKey: "FeetFindTheNarrowGround",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Feet Find the Narrow Ground",
+    fallbackDescription: "There is almost nowhere safe to stand, so your feet choose the one place that still works. For 1 round, your land Speed gains a +5-foot status bonus and you gain a +1 circumstance bonus to Stealth checks.",
+    tags: ["land-speed", "stealth", "positioning", "escape", "effect"],
+    contentBatch: 36,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "land", value: 5, modifierType: "status" },
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-014-four-points-only-one-angle",
+    localizationKey: "FourPointsOnlyOneAngle",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, Only One Angle",
+    fallbackDescription: "At danger score 4 or higher, there is no safe field, only the least impossible angle. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Reflex DC, and a +5-foot circumstance bonus to all Speeds.",
+    tags: ["danger-score", "temporary-hit-points", "reflex-dc", "movement", "effect"],
+    contentBatch: 36,
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 4 },
+        { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-015-leap-the-last-gap",
+    localizationKey: "LeapTheLastGap",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Leap the Last Gap",
+    fallbackDescription: "The safe route is not a path anymore. It is a gap. You may immediately Leap as a free action. If you cannot Leap, you may Step instead. If there is an identifiable hostile source, you must end farther from it than you began if possible. Apply this result manually.",
+    tags: ["leap", "step", "free-action", "movement", "manual"],
+    contentBatch: 36,
+    effect: null
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-016-let-the-blast-spend-itself",
+    localizationKey: "LetTheBlastSpendItself",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Let the Blast Spend Itself",
+    fallbackDescription: "You move with the force instead of trying to stop it. For 1 round, your land Speed gains a +10-foot circumstance bonus and you gain a +1 circumstance bonus to Fortitude saves.",
+    tags: ["land-speed", "fortitude", "momentum", "effect"],
+    contentBatch: 36,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "land", value: 10, modifierType: "circumstance" },
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-017-keep-your-balance-through-it",
+    localizationKey: "KeepYourBalanceThroughIt",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Keep Your Balance Through It",
+    fallbackDescription: "The ground, the blast, and your own momentum all disagree about where you should be. You refuse all three. For 1 round, you gain a +1 status bonus to Acrobatics checks and a +1 circumstance bonus to Fortitude DC.",
+    tags: ["acrobatics", "fortitude-dc", "balance", "effect"],
+    contentBatch: 36,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "acrobatics", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-018-five-points-faster-than-ruin",
+    localizationKey: "FivePointsFasterThanRuin",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, Faster Than Ruin",
+    fallbackDescription: "At danger score 5 or higher, the only defense left is to be somewhere else before the disaster notices. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to AC, and a +10-foot circumstance bonus to all Speeds.",
+    tags: ["danger-score", "temporary-hit-points", "ac", "movement", "effect"],
+    contentBatch: 36,
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 4 },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "all", value: 10, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-019-leave-no-easy-line",
+    localizationKey: "LeaveNoEasyLine",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Leave No Easy Line",
+    fallbackDescription: "You leave the danger no clean line to follow. For 1 round, you gain a +1 status bonus to Stealth checks and a +1 circumstance bonus to Perception DC.",
+    tags: ["stealth", "perception-dc", "escape-line", "effect"],
+    contentBatch: 36,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-020-tumble-through-the-closing-edge",
+    localizationKey: "TumbleThroughTheClosingEdge",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Tumble Through the Closing Edge",
+    fallbackDescription: "The danger closes from the obvious direction, so you escape through the space it thought it controlled. You may immediately Tumble Through as a free action with a +2 circumstance bonus to the Acrobatics check. If Tumble Through is not applicable, you may instead Stride up to 10 feet. If there is an identifiable hostile source, that Stride must end farther from it than you began if possible. Apply this result manually.",
+    tags: ["tumble-through", "stride", "free-action", "acrobatics", "manual"],
+    contentBatch: 36,
+    effect: null
   })
+
 ]);

@@ -1756,6 +1756,46 @@
           "LeaveOnlyAnAfterimage": {
             "Title": "Hinterlass nur ein Nachbild",
             "Description": "Wenn die Gefahr endgültig vorübergezogen ist, ist der Ort, an dem du eben noch standest, bereits veraltete Information. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Heimlichkeitswürfe und deinen Wahrnehmungs-SG."
+          },
+          "ThreadTheSecondImpact": {
+            "Title": "Durch den zweiten Einschlag",
+            "Description": "Die erste Gefahr verfehlt dich. Du liest bereits, wo der nächste Teil der Katastrophe einschlagen wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und Akrobatikwürfe."
+          },
+          "ReadTheRebound": {
+            "Title": "Lies den Rückprall",
+            "Description": "Du erkennst, wohin die Gefahr zurückschlagen wird, noch bevor sie dich vollständig verfehlt hat. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Wahrnehmungswürfe und einen Situationsbonus von +1 auf deine RK."
+          },
+          "FeetFindTheNarrowGround": {
+            "Title": "Die Füße finden den schmalen Grund",
+            "Description": "Es gibt fast keinen sicheren Stand mehr, also finden deine Füße genau den einen Ort, der noch funktioniert. Für 1 Runde erhält deine Bewegungsrate an Land einen Zustandsbonus von +1,5 m und du erhältst einen Situationsbonus von +1 auf Heimlichkeitswürfe."
+          },
+          "FourPointsOnlyOneAngle": {
+            "Title": "Vier Punkte, nur ein Winkel",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher gibt es kein sicheres Feld mehr, nur noch den am wenigsten unmöglichen Winkel. Für 1 Runde erhältst du 4 temporäre Trefferpunkte, einen Zustandsbonus von +1 auf deinen Reflex-SG und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "LeapTheLastGap": {
+            "Title": "Spring durch die letzte Lücke",
+            "Description": "Der sichere Weg ist kein Weg mehr. Er ist eine Lücke. Du darfst sofort als freie Aktion Springen. Kannst du nicht Springen, darfst du stattdessen einen Schritt ausführen. Gibt es eine eindeutig erkennbare feindliche Quelle, musst du deine Bewegung nach Möglichkeit weiter von ihr entfernt beenden als zuvor. Wende dieses Ergebnis manuell an."
+          },
+          "LetTheBlastSpendItself": {
+            "Title": "Lass die Wucht auslaufen",
+            "Description": "Du bewegst dich mit der Wucht, statt zu versuchen, sie aufzuhalten. Für 1 Runde erhält deine Bewegungsrate an Land einen Situationsbonus von +3 m und du erhältst einen Situationsbonus von +1 auf Zähigkeitswürfe."
+          },
+          "KeepYourBalanceThroughIt": {
+            "Title": "Halte durch alles hindurch das Gleichgewicht",
+            "Description": "Der Boden, die Wucht und dein eigener Schwung sind sich uneinig, wo du sein solltest. Du widersprichst allen dreien. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Akrobatikwürfe und einen Situationsbonus von +1 auf deinen Zähigkeits-SG."
+          },
+          "FivePointsFasterThanRuin": {
+            "Title": "Fünf Punkte, schneller als der Untergang",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher besteht die einzige Verteidigung darin, woanders zu sein, bevor die Katastrophe es bemerkt. Für 1 Runde erhältst du 4 temporäre Trefferpunkte, einen Zustandsbonus von +1 auf deine RK und einen Situationsbonus von +3 m auf alle Bewegungsraten."
+          },
+          "LeaveNoEasyLine": {
+            "Title": "Lass keine einfache Linie zurück",
+            "Description": "Du lässt der Gefahr keine klare Linie, der sie folgen könnte. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Heimlichkeitswürfe und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
+          },
+          "TumbleThroughTheClosingEdge": {
+            "Title": "Turne durch die sich schließende Lücke",
+            "Description": "Die Gefahr schließt sich aus der offensichtlichen Richtung, also entkommst du durch den Raum, den sie bereits unter Kontrolle glaubte. Du darfst sofort als freie Aktion Hindurchturnen und erhältst dabei einen Situationsbonus von +2 auf den Akrobatikwurf. Ist Hindurchturnen nicht anwendbar, darfst du stattdessen bis zu 3 m Laufen. Gibt es eine eindeutig erkennbare feindliche Quelle, musst du diese Bewegung nach Möglichkeit weiter von ihr entfernt beenden als zuvor. Wende dieses Ergebnis manuell an."
           }
         },
         "Will": {
@@ -2891,6 +2931,30 @@
           },
           "LeaveOnlyAnAfterimage": {
             "Name": "Hinterlass nur ein Nachbild"
+          },
+          "ThreadTheSecondImpact": {
+            "Name": "Durch den zweiten Einschlag"
+          },
+          "ReadTheRebound": {
+            "Name": "Lies den Rückprall"
+          },
+          "FeetFindTheNarrowGround": {
+            "Name": "Die Füße finden den schmalen Grund"
+          },
+          "FourPointsOnlyOneAngle": {
+            "Name": "Vier Punkte, nur ein Winkel"
+          },
+          "LetTheBlastSpendItself": {
+            "Name": "Lass die Wucht auslaufen"
+          },
+          "KeepYourBalanceThroughIt": {
+            "Name": "Halte durch alles hindurch das Gleichgewicht"
+          },
+          "FivePointsFasterThanRuin": {
+            "Name": "Fünf Punkte, schneller als der Untergang"
+          },
+          "LeaveNoEasyLine": {
+            "Name": "Lass keine einfache Linie zurück"
           }
         },
         "Will": {
