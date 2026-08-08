@@ -80,9 +80,11 @@ The test suite covers:
 - canonical PF2e participant-size normalization, unknown-safe larger-opponent relations, and explicit `sizeGap >= 2` gating for second-pass scale geometry;
 - physical Fortitude/Reflex counterplay requiring the actual threatening opponent;
 - observer-relative concealed remaining manual rather than becoming a global actor condition;
-- mental Giant-Slayer Will filtering and mindless-target exclusions.
+- mental Giant-Slayer Will filtering and mindless-target exclusions;
+- the final 120-card Will counterpressure audit keeping Pressure Rebounds and Certainty Collapses Inward mechanically distinct;
+- German Giant-Slayer Remaster terminology, including Kraftlos, Auf dem Falschen Fuß, and Größenkategorie.
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.29` baseline: **200/200 tests**, **99.53% line coverage**, **95.06% branch coverage**, and **98.69% function coverage**. The current build contains **360 published cards and 307 automated card effects**; Giant-Slayer contributes **120 cards, 99 automated effects, and 21 manual results**. The completed Giant-Slayer set proves exact automated-signature uniqueness across published packs and preserves the strict same-gate mechanical-superset regression contract. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
+Current `0.1.0-dev.29.1` baseline: **202/202 tests**, **99.53% line coverage**, **95.09% branch coverage**, and **98.70% function coverage**. The current build contains **360 published cards and 307 automated card effects**; Giant-Slayer contributes **120 cards, 99 automated effects, and 21 manual results**. The completed Giant-Slayer set preserves automated-signature uniqueness across the reviewed pack context, keeps the strict same-gate mechanical-superset regression contract clean, separates the final Will near-duplicate, and enforces reviewed German Remaster terminology. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
 

@@ -446,17 +446,17 @@ export const GIANT_SLAYER_WILL_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Certainty Collapses Inward",
-    fallbackDescription: "The stronger foe pushes certainty into your mind and discovers its own conviction can fracture under resistance. For 1 round, the hostile source is frightened 1 and stupefied 1, and takes a -1 circumstance penalty to Perception DC.",
-    tags: ["hostile-source", "mental", "frightened", "stupefied", "perception-dc", "effect"],
+    fallbackDescription: "The stronger foe pushes certainty into your mind and feels its own control fracture when you refuse it. For 1 round, the hostile source is off-guard and takes a -1 circumstance penalty to attack rolls and class DC.",
+    tags: ["hostile-source", "mental", "off-guard", "attack-roll", "class-dc", "counterpressure", "effect"],
     filters: { attackTraits: ["mental"], excludedTargetTraits: ["mindless"] },
     contentBatch: 29,
     effect: {
       target: "target",
       duration: ONE_ROUND,
       components: [
-        { type: "condition", slug: "frightened", value: 1 },
-        { type: "condition", slug: "stupefied", value: 1 },
-        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+        { type: "condition", slug: "off-guard" },
+        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "class-dc", value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),

@@ -1081,7 +1081,7 @@
           },
           "FiveLevelsOneMistake": {
             "Title": "Fünf Stufen, ein Fehler",
-            "Description": "Ein Gegner mindestens fünf Stufen über dir macht einen einzigen Fehler, und du machst ihn riesig. Für 1 Runde ist das Ziel Unbeholfen 1 und Auf dem falschen Fuß."
+            "Description": "Ein Gegner mindestens fünf Stufen über dir macht einen einzigen Fehler, und du machst ihn riesig. Für 1 Runde ist das Ziel Unbeholfen 1 und Auf dem Falschen Fuß."
           },
           "FormulaAboveYourStation": {
             "Title": "Eine Formel über deiner Gewichtsklasse",
@@ -1133,7 +1133,7 @@
           },
           "FiveLevelsOneBreach": {
             "Title": "Fünf Stufen, eine Bresche",
-            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir beweist der kritische Zauber, dass selbst unmögliche Verteidigungen gemeinsam versagen können. Für 1 Runde ist das Ziel Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Rettungswürfe."
+            "Description": "Gegen einen Gegner mindestens fünf Stufen über dir beweist der kritische Zauber, dass selbst unmögliche Verteidigungen gemeinsam versagen können. Für 1 Runde ist das Ziel Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Rettungswürfe."
           },
           "TheFirstCrackIsReal": {
             "Title": "Der erste Riss ist echt",
@@ -1149,7 +1149,7 @@
           },
           "SmallTargetHeavyPrice": {
             "Title": "Kleines Ziel, hoher Preis",
-            "Description": "Der größere Gegner verliert Kraft bei dem Versuch, einem Winkel zu folgen, der für jemanden Kleineren gemacht ist. Für 1 Runde ist das Ziel Geschwächt 1 und erhält einen Situationsmalus von -1 auf seinen Wahrnehmungs-SG."
+            "Description": "Der größere Gegner verliert Kraft bei dem Versuch, einem Winkel zu folgen, der für jemanden Kleineren gemacht ist. Für 1 Runde ist das Ziel Kraftlos 1 und erhält einen Situationsmalus von -1 auf seinen Wahrnehmungs-SG."
           },
           "FourLevelsOneBadAngle": {
             "Title": "Vier Stufen, ein schlechter Winkel",
@@ -1211,7 +1211,7 @@
           },
           "ImpactOpensTheGuard": {
             "Title": "Der Einschlag öffnet die Deckung",
-            "Description": "Die feindliche Quelle erwartet, dass du einknickst, und verausgabt sich, als du es nicht tust. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Zähigkeits-SG."
+            "Description": "Die feindliche Quelle erwartet, dass du einknickst, und verausgabt sich, als du es nicht tust. Für 1 Runde ist sie Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Zähigkeits-SG."
           },
           "OverreachHasAPrice": {
             "Title": "Überdehnung hat ihren Preis",
@@ -1295,7 +1295,7 @@
           },
           "FiveLevelsStrengthBuckles": {
             "Title": "Fünf Stufen, Stärke knickt ein",
-            "Description": "Gegen einen Gegner, der mindestens 5 Stufen über dir ist, lässt das Überstehen des unmöglichen Krafteinsatzes den stärkeren Körper für jede Unze Gewalt bezahlen. Für 1 Runde ist die feindliche Quelle Geschwächt 1 und Verlangsamt 1."
+            "Description": "Gegen einen Gegner, der mindestens 5 Stufen über dir ist, lässt das Überstehen des unmöglichen Krafteinsatzes den stärkeren Körper für jede Unze Gewalt bezahlen. Für 1 Runde ist die feindliche Quelle Kraftlos 1 und Verlangsamt 1."
           },
           "EndureThenCommandSpace": {
             "Title": "Ertrage, dann beherrsche den Raum",
@@ -1313,7 +1313,7 @@
           },
           "MomentumExposesTheFlank": {
             "Title": "Schwung legt die Flanke frei",
-            "Description": "Die feindliche Quelle setzt genug Masse ein, um dich zu überwältigen, und hat danach zu viel von sich selbst in Bewegung, um sauber abzufangen. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+            "Description": "Die feindliche Quelle setzt genug Masse ein, um dich zu überwältigen, und hat danach zu viel von sich selbst in Bewegung, um sauber abzufangen. Für 1 Runde ist sie Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Athletikwürfe."
           },
           "LetTheGiantOvershoot": {
             "Title": "Lass den Riesen vorbeischwingen",
@@ -1353,11 +1353,11 @@
           },
           "TheirReachBecomesYourRoute": {
             "Title": "Ihre Reichweite wird zu deinem Weg",
-            "Description": "Mindestens zwei Größenstufen Unterschied schaffen einen Korridor, sobald du aufhörst, in die offensichtliche Richtung zu fliehen. Für 1 Runde erhältst du einen Zustandsbonus von +1,5 m auf deine Bewegungsrate an Land und einen Zustandsbonus von +1 auf Akrobatikwürfe."
+            "Description": "Mindestens zwei Größenkategorien Unterschied schaffen einen Korridor, sobald du aufhörst, in die offensichtliche Richtung zu fliehen. Für 1 Runde erhältst du einen Zustandsbonus von +1,5 m auf deine Bewegungsrate an Land und einen Zustandsbonus von +1 auf Akrobatikwürfe."
           },
           "FourLevelsCannotStopShort": {
             "Title": "Vier Stufen, kein rechtzeitiges Abbremsen",
-            "Description": "Gegen einen bedrohenden Gegner mindestens vier Stufen über dir wird der verfehlte Zugriff zu einer Überdehnung, die er nicht mehr rechtzeitig auffangen kann. Für 1 Runde ist die feindliche Quelle Auf dem falschen Fuß, erhält einen Situationsmalus von -1 auf ihren Reflex-SG und -1,5 m auf alle Bewegungsraten."
+            "Description": "Gegen einen bedrohenden Gegner mindestens vier Stufen über dir wird der verfehlte Zugriff zu einer Überdehnung, die er nicht mehr rechtzeitig auffangen kann. Für 1 Runde ist die feindliche Quelle Auf dem Falschen Fuß, erhält einen Situationsmalus von -1 auf ihren Reflex-SG und -1,5 m auf alle Bewegungsraten."
           },
           "ReadTheImpactBeforeItLands": {
             "Title": "Lies den Einschlag, bevor er kommt",
@@ -1365,7 +1365,7 @@
           },
           "SlipBetweenTheirSteps": {
             "Title": "Schlüpf zwischen ihre Schritte",
-            "Description": "Ein Gegner, der mindestens zwei Größenstufen größer ist, lässt eine wandernde Lücke dort entstehen, wo Reichweite und Stand nicht zusammenpassen. Du darfst dich sofort als freie Aktion bis zu 3 m bewegen. Diese Bewegung löst keine Reaktionen der feindlichen Quelle aus und muss in derselben oder geringerer Entfernung zu ihr enden als zu Beginn. Wende dieses Ergebnis manuell an."
+            "Description": "Ein Gegner, der mindestens zwei Größenkategorien größer ist, lässt eine wandernde Lücke dort entstehen, wo Reichweite und Stand nicht zusammenpassen. Du darfst dich sofort als freie Aktion bis zu 3 m bewegen. Diese Bewegung löst keine Reaktionen der feindlichen Quelle aus und muss in derselben oder geringerer Entfernung zu ihr enden als zu Beginn. Wende dieses Ergebnis manuell an."
           },
           "TooMuchBodyToTurn": {
             "Title": "Zu viel Körper zum Drehen",
@@ -1543,7 +1543,7 @@
           },
           "CertaintyCollapsesInward": {
             "Title": "Gewissheit stürzt nach innen",
-            "Description": "Der stärkere Gegner drückt Gewissheit in deinen Geist und entdeckt, dass die eigene Überzeugung am Widerstand zerbrechen kann. Für 1 Runde ist die feindliche Quelle Verängstigt 1 und Benommen 1 und erhält einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
+            "Description": "Der stärkere Gegner drückt Gewissheit in deinen Geist und spürt, wie die eigene Kontrolle an deiner Weigerung zerbricht. Für 1 Runde ist die feindliche Quelle Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Angriffswürfe und ihren Klassen-SG."
           },
           "NameTheOpeningForAnother": {
             "Title": "Benenne die Öffnung für einen anderen",

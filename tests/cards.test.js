@@ -1920,7 +1920,7 @@ test("Giant-Slayer eighty-card review preserves the 20/20/20/20 published ID lay
   assert.deepEqual(actual(GIANT_SLAYER_WILL_CARDS.slice(0, 20)), expected("gsw"));
 });
 
-test("Giant-Slayer eighty-card review removes strict same-gate mechanical supersets", () => {
+test("Giant-Slayer complete-set review removes strict same-gate mechanical supersets", () => {
   const automated = ALL_GIANT_SLAYER_CARDS.filter((card) => card.effect);
   const atomize = (components) => components.flatMap((component) => {
     if (component.type === "modifier" && Array.isArray(component.selector)) {
@@ -2101,3 +2101,36 @@ test("Giant-Slayer final manual Trip and Sense Motive results preserve their nor
   assert.match(senseMotive.fallbackDescription, /\+2 circumstance bonus/u);
   assert.match(senseMotive.fallbackDescription, /restriction on repeated attempts still applies/u);
 });
+
+test("Giant-Slayer 120-card review separates the two final mental counterpressure lanes", () => {
+  const bySuffix = Object.fromEntries(GIANT_SLAYER_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const rebound = bySuffix["gsw-019-pressure-rebounds"];
+  const collapse = bySuffix["gsw-029-certainty-collapses-inward"];
+  assert.deepEqual(rebound.effect.definition.components, [
+    { type: "condition", slug: "frightened", value: 1 },
+    { type: "condition", slug: "stupefied", value: 1 },
+    { type: "modifier", selector: "will-dc", value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.deepEqual(collapse.effect.definition.components, [
+    { type: "condition", slug: "off-guard" },
+    { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] },
+    { type: "modifier", selector: "class-dc", value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.deepEqual(collapse.filters.attackTraits, ["mental"]);
+  assert.deepEqual(collapse.filters.excludedTargetTraits, ["mindless"]);
+});
+
+test("Giant-Slayer 120-card review enforces German Remaster condition and size terminology", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
+  const giant = de.PF2E_AGAINST_ALL_ODDS.Cards.GiantSlayerMoments;
+  const descriptions = Object.values(giant).flatMap((deck) => Object.values(deck).map((entry) => entry.Description));
+  assert.equal(descriptions.some((text) => /Geschwächt 1/u.test(text)), false);
+  assert.equal(descriptions.some((text) => /Auf dem falschen Fuß/u.test(text)), false);
+  assert.equal(descriptions.some((text) => /Größenstufen/u.test(text)), false);
+  assert.match(giant.Attack.SmallTargetHeavyPrice.Description, /Kraftlos 1/u);
+  assert.match(giant.Fortitude.FiveLevelsStrengthBuckles.Description, /Kraftlos 1/u);
+  assert.match(giant.Reflex.TheirReachBecomesYourRoute.Description, /Größenkategorien/u);
+  assert.match(giant.Reflex.SlipBetweenTheirSteps.Description, /Größenkategorien/u);
+  assert.match(giant.Will.CertaintyCollapsesInward.Description, /Auf dem Falschen Fuß/u);
+});
+

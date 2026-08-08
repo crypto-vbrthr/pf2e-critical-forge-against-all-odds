@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.29` completes **Giant-Slayer Moments** with the final forty-card pass. Attack, Fortitude, Reflex, and Will now each contain 30 cards, the Attack deck finishes at a 15/15 ordinary/spell critical split, and every final deck adds eight automated plus two explicit manual results. The final pass keeps physical geometry on the reviewed threat/size evidence, keeps mental backlash on matching mental or auditory triggers, and adds one final +4 and +5 level-gap escalation per deck. All 320 previously published card IDs remain unchanged.
+Version `0.1.0-dev.29.1` is the final **120-card Giant-Slayer Moments review**. Attack, Fortitude, Reflex, and Will remain complete at 30 cards each, with the Attack deck at a 15/15 ordinary/spell critical split and the theme at 99 automated plus 21 manual results. The review preserves every published card ID while separating the last overlapping Will counterpressure concept and normalizing German Remaster terminology for Kraftlos, Auf dem Falschen Fuß, and Größenkategorie. The reviewed threat/size, mental/auditory, +4/+5 escalation, targeting, and manual-action contracts remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 

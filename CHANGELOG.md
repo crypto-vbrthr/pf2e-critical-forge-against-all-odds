@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.0-dev.29.1
+
+### Review
+- Completed the final **120-card Giant-Slayer Moments** review across Attack, Fortitude, Reflex, and Will.
+- Preserved all 360 published card IDs, all 120 Giant-Slayer IDs, deck counts, automation/manual splits, level-gap escalation counts, and existing public schemas.
+- Reworked **Certainty Collapses Inward** so it no longer repeats the same frightened + stupefied counterpressure core as **Pressure Rebounds**. It now turns a resisted mental assault into an exposed hostile source: off-guard with a -1 circumstance penalty to attack rolls and class DC for 1 round.
+- Normalized German Giant-Slayer Remaster terminology: `enfeebled` is consistently **Kraftlos**, `off-guard` is consistently **Auf dem Falschen Fuß**, and size language consistently uses **Größenkategorie** rather than Größenstufe.
+
+### Tests
+- Added targeted regression coverage for the separated Will counterpressure lanes and German Remaster terminology across the full Giant-Slayer localization tree.
+- Renamed the strict same-gate mechanical-superset audit to reflect that it now covers the complete 120-card Giant-Slayer set.
+- Verified **202/202 tests** with **99.53% line coverage**, **95.09% branch coverage**, and **98.70% function coverage**.
+
+### Compatibility
+- No card IDs were added, removed, or renamed.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.29
 
 ### Added

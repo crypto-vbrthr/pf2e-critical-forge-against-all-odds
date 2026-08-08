@@ -115,8 +115,8 @@
 - [x] Scale-specific Giant-Slayer cards require an actually larger opponent.
 - [x] Five Levels, One Empty Square no longer applies global automated `concealed`; observer-relative concealment is manual.
 - [x] Dominance Loses Its Grip requires a mental trigger and Their Certainty Misses a Beat excludes mindless targets.
-- [ ] Foundry smoke test for `0.1.0-dev.29`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
-- [ ] Foundry smoke test for `0.1.0-dev.29`: reviewed Giant-Slayer physical/size/mental/auditory gating behaves as expected in a live scene.
+- [x] Foundry smoke test for `0.1.0-dev.29`: Giant-Slayer threat and size fields are visible in Card Editor/Diagnostics.
+- [x] Foundry smoke test for `0.1.0-dev.29`: reviewed Giant-Slayer physical/size/mental/auditory gating behaves as expected in a live scene.
 
 - [x] Giant-Slayer final pass adds forty cards in content batch 29: ten per specialized deck.
 - [x] Giant-Slayer final Attack pass completes the deck at fifteen ordinary and fifteen spell critical hits.
@@ -130,5 +130,12 @@
 - [x] Complete 120-card Giant-Slayer set has no automated exact signature duplicate against Bloodied, Surrounded, or itself.
 - [x] Complete 120-card Giant-Slayer set has no strict same-gate mechanical superset pair.
 - [x] Giant-Slayer package metadata is marked complete.
-- [ ] Foundry smoke test: thirty localized Giant-Slayer cards visible in each of Attack, Fortitude, Reflex, and Will.
-- [ ] Foundry smoke test: final manual Trip, Sense Motive, Leap, Stride, ally-support, and Stand/Step results read and resolve correctly.
+- [x] Foundry smoke test: thirty localized Giant-Slayer cards visible in each of Attack, Fortitude, Reflex, and Will.
+- [x] Foundry smoke test: final manual Trip, Sense Motive, Leap, Stride, ally-support, and Stand/Step results read and resolve correctly.
+- [x] Final 120-card Giant-Slayer review preserves all 360 published card IDs and all 120 Giant-Slayer IDs.
+- [x] Certainty Collapses Inward no longer duplicates the frightened + stupefied core of Pressure Rebounds.
+- [x] Giant-Slayer German localization consistently uses Kraftlos, Auf dem Falschen Fuß, and Größenkategorie.
+- [x] Complete Giant-Slayer strict same-gate mechanical-superset audit remains clean after the review patch.
+- [ ] Foundry smoke test for `0.1.0-dev.29.1`: revised Certainty Collapses Inward applies off-guard, attack-roll -1, and class-DC -1 to the hostile source.
+- [ ] Foundry smoke test for `0.1.0-dev.29.1`: reviewed German Giant-Slayer text renders with the corrected Remaster terminology.
+

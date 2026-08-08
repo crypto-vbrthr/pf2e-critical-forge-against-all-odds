@@ -40,10 +40,11 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 16. Giant-Slayer Moments Will, second pass: 10 cards. **Complete in `0.1.0-dev.28`, with 8 automated / 2 manual results, one additional +4 and +5 escalation, reviewed mental/mindless gates, and no resistance/immunity filler.**
 17. Review the 80-card Giant-Slayer milestone. **Complete in `0.1.0-dev.28.1`; all 320 published IDs are preserved, strict same-gate supersets are removed, PF2e condition/action interactions were rechecked, manual dead-result cases were tightened, and exact automated Giant-Slayer signatures remain unique.**
 18. Giant-Slayer Moments final pass: 10 Attack, 10 Fortitude, 10 Reflex, and 10 Will cards. **Complete in `0.1.0-dev.29`; Giant-Slayer is now 120/120 with an 8 automated / 2 manual final batch in every deck, one final +4/+5 escalation pair per deck, reviewed threat/size/mental gates, and no new exact automated signatures.**
-19. Repeat the reviewed three-pass process for **Narrow Escapes**.
-20. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+19. Final review of all 120 Giant-Slayer cards. **Complete in `0.1.0-dev.29.1`; all IDs and deck structures are preserved, the remaining Will near-duplicate is separated mechanically, German Remaster terminology is normalized, and the complete-set same-gate audit remains clean.**
+20. Repeat the reviewed three-pass process for **Narrow Escapes**.
+21. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs, Surrounded, Still Standing, and Giant-Slayer Moments are each complete at 120/120 cards after three reviewed passes. Against All Odds now contains 360/480 planned cards. The next content milestone is the first Narrow Escapes pass, followed by the same staged review process used for the completed themes.
+Bloodied Triumphs, Surrounded, Still Standing, and Giant-Slayer Moments are each complete at 120/120 cards after three reviewed passes and a final complete-set review. Against All Odds now contains 360/480 planned cards. The next content milestone is the first Narrow Escapes pass, followed by the same staged review process used for the completed themes.
 
 Every card will:
 
