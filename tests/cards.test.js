@@ -2837,3 +2837,80 @@ test("Narrow Escape German review uses the Remaster term Zustandsbonus consisten
   assert.doesNotMatch(text, /Statusbonus/u);
   assert.match(text, /Zustandsbonus/u);
 });
+
+test("Narrow Escape 80-card review confirms balanced deck growth and escalation counts", () => {
+  const decks = [
+    NARROW_ESCAPE_ATTACK_CARDS,
+    NARROW_ESCAPE_FORTITUDE_CARDS,
+    NARROW_ESCAPE_REFLEX_CARDS,
+    NARROW_ESCAPE_WILL_CARDS
+  ];
+  assert.deepEqual(decks.map((cards) => cards.length), [20, 20, 20, 20]);
+  assert.deepEqual(decks.map((cards) => cards.filter((card) => card.effect).length), [17, 17, 17, 17]);
+  assert.deepEqual(decks.map((cards) => cards.filter((card) => !card.effect).length), [3, 3, 3, 3]);
+  for (const cards of decks) {
+    const leaves = cards.flatMap((card) => conditionLeaves(card.conditions));
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
+  }
+});
+
+test("Narrow Escape 80-card review rejects order-only automated duplicates across all published themes", () => {
+  const stableObject = (value) => {
+    if (Array.isArray(value)) return value.map(stableObject);
+    if (!value || typeof value !== "object") return value;
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableObject(value[key])]));
+  };
+  const normalizedComponent = (component) => {
+    const normalized = structuredClone(component);
+    if (normalized.type === "modifier" && Array.isArray(normalized.selector)) {
+      normalized.selector.sort();
+    }
+    if (Array.isArray(normalized.predicate)) {
+      normalized.predicate = normalized.predicate
+        .map(stableObject)
+        .sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right)));
+    }
+    return JSON.stringify(stableObject(normalized));
+  };
+  const signature = (card) => JSON.stringify(stableObject({
+    target: card.effect.target,
+    duration: card.effect.definition.duration,
+    components: card.effect.definition.components.map(normalizedComponent).sort()
+  }));
+
+  const earlier = [...ALL_CARDS, ...ALL_SURROUNDED_CARDS, ...ALL_GIANT_SLAYER_CARDS].filter((card) => card.effect);
+  const seen = new Map(earlier.map((card) => [signature(card), card.id]));
+  for (const card of ALL_NARROW_ESCAPE_CARDS.filter((entry) => entry.effect)) {
+    const key = signature(card);
+    assert.equal(seen.has(key), false, `${card.id} canonically duplicates ${seen.get(key)}`);
+    seen.set(key, card.id);
+  }
+});
+
+test("Narrow Escape 80-card review separates four previously order-hidden effect overlaps", () => {
+  const attack = Object.fromEntries(NARROW_ESCAPE_ATTACK_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const fortitude = Object.fromEntries(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const reflex = Object.fromEntries(NARROW_ESCAPE_REFLEX_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+
+  assert.deepEqual(attack["nea-007-flash-of-an-exit"].effect.definition.components, [
+    { type: "modifier", selector: ["ac", "reflex"], value: 1, modifierType: "circumstance", predicate: [] },
+    { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+  ]);
+  assert.deepEqual(attack["nea-016-spell-buys-cover"].effect.definition.components, [
+    { type: "modifier", selector: "stealth", value: 1, modifierType: "circumstance", predicate: [] },
+    { type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }
+  ]);
+  assert.deepEqual(reflex["ner-011-thread-the-second-impact"].effect.definition.components, [
+    { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] },
+    { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
+  ]);
+  assert.deepEqual(reflex["ner-017-keep-your-balance-through-it"].effect.definition.components, [
+    { type: "modifier", selector: "acrobatics", value: 1, modifierType: "status", predicate: [] },
+    { type: "modifier", selector: "fortitude", value: 1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.notDeepEqual(
+    fortitude["nef-011-adrenaline-finds-the-legs"].effect.definition.components,
+    reflex["ner-017-keep-your-balance-through-it"].effect.definition.components
+  );
+});

@@ -1579,7 +1579,7 @@
           },
           "FlashOfAnExit": {
             "Title": "Ein Aufblitzen des Auswegs",
-            "Description": "Der Zauber beleuchtet den einzigen Weg, der vor einem Herzschlag noch unsichtbar war. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK, Reflexwürfe und Wahrnehmungswürfe."
+            "Description": "Der Zauber beleuchtet den einzigen Weg, der vor einem Herzschlag noch unsichtbar war. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Reflexwürfe sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
           },
           "DangerBreaksItsStride": {
             "Title": "Die Gefahr verliert den Tritt",
@@ -1615,7 +1615,7 @@
           },
           "SpellBuysCover": {
             "Title": "Der Zauber erkauft Deckung",
-            "Description": "Der kritische Zauber schenkt dir einen Herzschlag, in dem die Gefahr deine Kontur verliert. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Heimlichkeitswürfe und Reflexwürfe."
+            "Description": "Der kritische Zauber schenkt dir einen Herzschlag, in dem die Gefahr deine Kontur verliert. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Heimlichkeitswürfe und einen Zustandsbonus von +1 auf Reflexwürfe."
           },
           "MagicMakesThemHesitate": {
             "Title": "Magie lässt sie zögern",
@@ -1759,7 +1759,7 @@
           },
           "ThreadTheSecondImpact": {
             "Title": "Durch den zweiten Einschlag",
-            "Description": "Die erste Gefahr verfehlt dich. Du liest bereits, wo der nächste Teil der Katastrophe einschlagen wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und Akrobatikwürfe."
+            "Description": "Die erste Gefahr verfehlt dich. Du liest bereits, wo der nächste Teil der Katastrophe einschlagen wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und einen Zustandsbonus von +1 auf Wahrnehmungswürfe."
           },
           "ReadTheRebound": {
             "Title": "Lies den Rückprall",
@@ -1782,8 +1782,8 @@
             "Description": "Du bewegst dich mit der Wucht, statt zu versuchen, sie aufzuhalten. Für 1 Runde erhält deine Bewegungsrate an Land einen Situationsbonus von +3 m und du erhältst einen Situationsbonus von +1 auf Zähigkeitswürfe."
           },
           "KeepYourBalanceThroughIt": {
-            "Title": "Halte durch alles hindurch das Gleichgewicht",
-            "Description": "Der Boden, die Wucht und dein eigener Schwung sind sich uneinig, wo du sein solltest. Du widersprichst allen dreien. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Akrobatikwürfe und einen Situationsbonus von +1 auf deinen Zähigkeits-SG."
+            "Title": "Halte trotz allem das Gleichgewicht",
+            "Description": "Der Boden, die Wucht und dein eigener Schwung sind sich uneinig, wo du sein solltest. Du widersprichst allen dreien. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Akrobatikwürfe und einen Situationsbonus von +1 auf Zähigkeitswürfe."
           },
           "FivePointsFasterThanRuin": {
             "Title": "Fünf Punkte, schneller als der Untergang",
@@ -2988,7 +2988,7 @@
             "Name": "Lass die Wucht auslaufen"
           },
           "KeepYourBalanceThroughIt": {
-            "Name": "Halte durch alles hindurch das Gleichgewicht"
+            "Name": "Halte trotz allem das Gleichgewicht"
           },
           "FivePointsFasterThanRuin": {
             "Name": "Fünf Punkte, schneller als der Untergang"

@@ -1579,7 +1579,7 @@
           },
           "FlashOfAnExit": {
             "Title": "Flash of an Exit",
-            "Description": "The spell lights the one route that was invisible a heartbeat ago. For 1 round, you gain a +1 circumstance bonus to AC, Reflex saves, and Perception checks."
+            "Description": "The spell lights the one route that was invisible a heartbeat ago. For 1 round, you gain a +1 circumstance bonus to AC and Reflex saves and a 5-foot circumstance bonus to all Speeds."
           },
           "DangerBreaksItsStride": {
             "Title": "Danger Breaks Its Stride",
@@ -1615,7 +1615,7 @@
           },
           "SpellBuysCover": {
             "Title": "The Spell Buys Cover",
-            "Description": "The critical spell gives you a heartbeat in which danger loses your outline. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Reflex saves."
+            "Description": "The critical spell gives you a heartbeat in which danger loses your outline. For 1 round, you gain a +1 circumstance bonus to Stealth checks and a +1 status bonus to Reflex saves."
           },
           "MagicMakesThemHesitate": {
             "Title": "Magic Makes Them Hesitate",
@@ -1759,7 +1759,7 @@
           },
           "ThreadTheSecondImpact": {
             "Title": "Thread the Second Impact",
-            "Description": "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and Acrobatics checks."
+            "Description": "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a +1 status bonus to Perception checks."
           },
           "ReadTheRebound": {
             "Title": "Read the Rebound",
@@ -1783,7 +1783,7 @@
           },
           "KeepYourBalanceThroughIt": {
             "Title": "Keep Your Balance Through It",
-            "Description": "The ground, the blast, and your own momentum all disagree about where you should be. You refuse all three. For 1 round, you gain a +1 status bonus to Acrobatics checks and a +1 circumstance bonus to Fortitude DC."
+            "Description": "The ground, the blast, and your own momentum all disagree about where you should be. You refuse all three. For 1 round, you gain a +1 status bonus to Acrobatics checks and a +1 circumstance bonus to Fortitude saves."
           },
           "FivePointsFasterThanRuin": {
             "Title": "Five Points, Faster Than Ruin",

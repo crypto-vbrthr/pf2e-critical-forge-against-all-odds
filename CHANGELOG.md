@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.1.0-dev.37.1
+
+### 80-card Narrow Escapes review
+- Reviewed all 80 published Narrow Escape cards across Attack, Fortitude, Reflex, and Will for balance, overlap, danger-score scaling, targeting, terminology, and automation.
+- Preserved all 440 published card IDs, the 20/20/20/20 Narrow Escape deck layout, the 68 automated / 12 manual split, and two danger-score 4 plus two danger-score 5 escalations per deck.
+- Found that the previous exact-signature audit was order-sensitive: mechanically identical effects could evade it when component order or multi-selector order differed.
+- Added an order-insensitive canonical effect-signature audit across all earlier themes and all published Narrow Escape effects.
+- Separated **Flash of an Exit** from Giant-Slayer **Read the Impact Before It Lands** by replacing the Perception bonus with escape movement.
+- Separated **The Spell Buys Cover** from Giant-Slayer **Move Before the Weight Settles** by making its Reflex bonus a status bonus alongside its circumstance Stealth bonus.
+- Separated **Thread the Second Impact** from Surrounded **The Gap Stays Open** by turning the second benefit into a status Perception bonus.
+- Separated **Keep Your Balance Through It** from Fortitude **Adrenaline Finds the Legs** by changing the second benefit from Fortitude DC to Fortitude saves.
+- Updated stale effect tags and tightened the German **Keep Your Balance Through It** title to **Halte trotz allem das Gleichgewicht**.
+- Corrected review documentation that still described only three second-pass Narrow Escape decks.
+
+### Review and tests
+- Added explicit 80-card layout/escalation regression coverage.
+- Added canonical duplicate detection that normalizes component order, selector-array order, predicate order, and object-key order.
+- Added regression assertions for all four reviewed effect definitions.
+- Verified **259/259 tests** with **99.53% line coverage**, **95.37% branch coverage**, and **98.90% function coverage**.
+- Package-local release checks report **1304 localization keys per language**.
+- The strict same-gate mechanical-superset audit remains clean.
+- Foundry smoke results reported for `0.1.0-dev.37` are recorded for the second Will pass; only the four revised review effects require a focused `0.1.0-dev.37.1` smoke check.
+
+### Compatibility
+- Card IDs, pack IDs, context fields, schemas, provider versions, and Critical Forge API requirements remain unchanged.
+
 ## 0.1.0-dev.37
 
 ### Added

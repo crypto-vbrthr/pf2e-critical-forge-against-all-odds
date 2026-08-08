@@ -165,13 +165,14 @@ export const NARROW_ESCAPE_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Thread the Second Impact",
-    fallbackDescription: "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and Acrobatics checks.",
-    tags: ["reflex-dc", "acrobatics", "follow-through", "escape", "effect"],
+    fallbackDescription: "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a +1 status bonus to Perception checks.",
+    tags: ["reflex-dc", "perception", "follow-through", "escape", "effect"],
     contentBatch: 36,
     effect: {
       duration: ONE_ROUND,
       components: [
-        { type: "modifier", selector: ["reflex-dc", "acrobatics"], value: 1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
       ]
     }
   }),
@@ -262,14 +263,14 @@ export const NARROW_ESCAPE_REFLEX_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Keep Your Balance Through It",
-    fallbackDescription: "The ground, the blast, and your own momentum all disagree about where you should be. You refuse all three. For 1 round, you gain a +1 status bonus to Acrobatics checks and a +1 circumstance bonus to Fortitude DC.",
-    tags: ["acrobatics", "fortitude-dc", "balance", "effect"],
+    fallbackDescription: "The ground, the blast, and your own momentum all disagree about where you should be. You refuse all three. For 1 round, you gain a +1 status bonus to Acrobatics checks and a +1 circumstance bonus to Fortitude saves.",
+    tags: ["acrobatics", "fortitude", "balance", "effect"],
     contentBatch: 36,
     effect: {
       duration: ONE_ROUND,
       components: [
         { type: "modifier", selector: "acrobatics", value: 1, modifierType: "status", predicate: [] },
-        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),

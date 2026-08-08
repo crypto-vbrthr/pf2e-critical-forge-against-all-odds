@@ -107,12 +107,13 @@ export const NARROW_ESCAPE_ATTACK_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Flash of an Exit",
-    fallbackDescription: "The spell lights the one route that was invisible a heartbeat ago. For 1 round, you gain a +1 circumstance bonus to AC, Reflex saves, and Perception checks.",
-    tags: ["spell", "ac", "reflex", "perception", "effect"],
+    fallbackDescription: "The spell lights the one route that was invisible a heartbeat ago. For 1 round, you gain a +1 circumstance bonus to AC and Reflex saves and a 5-foot circumstance bonus to all Speeds.",
+    tags: ["spell", "ac", "reflex", "movement", "escape", "effect"],
     effect: {
       duration: ONE_ROUND,
       components: [
-        { type: "modifier", selector: ["ac", "reflex", "perception"], value: 1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: ["ac", "reflex"], value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
       ]
     }
   }),
@@ -263,13 +264,14 @@ export const NARROW_ESCAPE_ATTACK_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "The Spell Buys Cover",
-    fallbackDescription: "The critical spell gives you a heartbeat in which danger loses your outline. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Reflex saves.",
+    fallbackDescription: "The critical spell gives you a heartbeat in which danger loses your outline. For 1 round, you gain a +1 circumstance bonus to Stealth checks and a +1 status bonus to Reflex saves.",
     tags: ["spell", "stealth", "reflex", "escape", "effect"],
     contentBatch: 34,
     effect: {
       duration: ONE_ROUND,
       components: [
-        { type: "modifier", selector: ["stealth", "reflex"], value: 1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }
       ]
     }
   }),

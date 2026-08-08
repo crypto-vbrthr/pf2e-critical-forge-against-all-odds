@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.37` adds the **second Narrow Escapes Will pass**. Will now contains 20/30 cards with 17 automated effects and 3 manual escape results. The ten new cards use content batch 37, add one additional danger-score 4 and one additional danger-score 5 escalation, retain focused incoming `fear` and `mental` gates, and preserve every reviewed first-pass ID and mechanic. The two new manual results turn recovered agency into an immediate **Step / Schritt** or a **Recall Knowledge / Wissen abrufen** attempt with a +2 circumstance bonus.
+Version `0.1.0-dev.37.1` is the **80-card Narrow Escapes review patch**. It preserves all 440 published card IDs and the 20/20/20/20 deck layout, but corrects four automated effects whose mechanics were duplicates once component order and selector ordering were normalized. The review also strengthens the regression suite with an order-insensitive canonical effect-signature audit across Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes. Danger-score scaling, save-card source targeting, manual routes, and the 68 automated / 12 manual Narrow Escape split remain unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -104,6 +104,8 @@ Narrow Escapes is now in progress:
 - Attack, Fortitude, Reflex, and Will now each contain two danger-score 4 and two danger-score 5 escalation cards across their two passes;
 - **The Toxin Loses the Race** is gated to an incoming poison effect and **Death Flinches First** to an incoming death effect; **The Finishing Blow Misses** requires incoming incapacitation evidence, and the Will deck uses focused fear and mental gates for **Panic Spends Its Last Breath**, **The Mental Grip Slips**, **Fear Loses the Next Step**, and **The Mental Hook Comes Free**; all automated Narrow Escape save effects currently stay on the saving actor;
 - the acting hero's own dangerous attack traits do not contribute to the danger score on attack rolls, while dangerous incoming save traits remain valid danger evidence.
+- the 80-card review now compares automated effects canonically rather than by raw JSON order; after the review there are no order-insensitive exact effect duplicates between Narrow Escapes and any earlier theme or within Narrow Escapes itself;
+- **Flash of an Exit**, **The Spell Buys Cover**, **Thread the Second Impact**, and **Keep Your Balance Through It** were separated from previously equivalent mechanics without changing their card IDs or trigger gates.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
 

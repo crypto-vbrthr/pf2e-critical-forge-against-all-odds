@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 243/243 passing.
-- [x] Current coverage: 99.49% lines, 94.96% branches, 98.88% functions.
-- [x] Current localization parity: 1192 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 400 published cards and 343 automated card effects.
+- [x] Current automated test run: 259/259 passing.
+- [x] Current coverage: 99.53% lines, 95.37% branches, 98.90% functions.
+- [x] Current localization parity: 1304 keys in both German and English.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 440 published cards and 375 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -219,6 +219,13 @@
 - [x] Every automated Narrow Escape Will effect targets the saving actor, and the second pass adds no resistance or immunity filler.
 - [x] German and English localization exists for all ten second-pass Will cards and eight new automated effects.
 - [x] Package-local tests cover Schritt, Wissen abrufen, +2 manual Recall Knowledge, danger thresholds, and exact-signature uniqueness.
-- [ ] Foundry smoke test: Narrow Escape Will cards 11–20 are visible and both new manual results read correctly.
-- [ ] Foundry smoke test: fear-/mental-gated and score-4/score-5 second-pass Will cards appear only for matching incoming evidence and danger thresholds.
+- [x] Foundry smoke test: Narrow Escape Will cards 11–20 are visible and both new manual results read correctly.
+- [x] Foundry smoke test: fear-/mental-gated and score-4/score-5 second-pass Will cards appear only for matching incoming evidence and danger thresholds.
+- [x] Narrow Escapes 80-card review confirms a 20/20/20/20 layout with 68 automated and 12 manual results.
+- [x] Every reviewed Narrow Escape deck contains exactly two danger-score 4 and two danger-score 5 escalations.
+- [x] The 80-card canonical effect audit is order-insensitive and clean against Bloodied, Surrounded, Giant-Slayer, and Narrow Escapes itself.
+- [x] Flash of an Exit, The Spell Buys Cover, Thread the Second Impact, and Keep Your Balance Through It no longer share canonically identical mechanics with previously published cards.
+- [x] Narrow Escape strict same-gate mechanical-superset audit remains clean after the 80-card review.
+- [x] Review documentation now reflects all four completed second-pass decks.
+- [ ] Foundry smoke test for `0.1.0-dev.37.1`: the four revised review effects apply their updated mechanics and German text correctly.
 
