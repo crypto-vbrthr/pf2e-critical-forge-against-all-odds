@@ -171,4 +171,175 @@ export const NARROW_ESCAPE_ATTACK_CARDS = Object.freeze([
       ]
     }
   })
+,
+  defineNarrowEscapeAttackCard({
+    id: "nea-011-turn-the-counterstroke-aside",
+    localizationKey: "TurnTheCounterstrokeAside",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Turn the Counterstroke Aside",
+    fallbackDescription: "The critical hit gives you just enough warning to survive the answer. For 1 round, you gain a +1 circumstance bonus to AC and Perception DC.",
+    tags: ["ac", "perception-dc", "counterattack", "effect"],
+    contentBatch: 34,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: ["ac", "perception-dc"], value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-012-keep-the-exit-behind-you",
+    localizationKey: "KeepTheExitBehindYou",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Keep the Exit Behind You",
+    fallbackDescription: "You strike without losing sight of the way out. For 1 round, you gain a 5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to Perception checks.",
+    tags: ["movement", "perception", "escape-route", "effect"],
+    contentBatch: 34,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-013-leave-them-reaching",
+    localizationKey: "LeaveThemReaching",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Leave Them Reaching",
+    fallbackDescription: "The critical hit forces the pursuer to answer from a bad position. For 1 round, the target takes a -1 circumstance penalty to attack rolls and Perception checks.",
+    tags: ["target", "attack-roll", "perception", "pursuit", "effect"],
+    contentBatch: 34,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: ["attack-roll", "perception"], value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-014-four-points-break-contact",
+    localizationKey: "FourPointsBreakContact",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, Break Contact",
+    fallbackDescription: "At danger score 4 or higher, the critical hit becomes the instant you stop being trapped. For 1 round, you gain a +1 circumstance bonus to saving throws and a 5-foot circumstance bonus to all Speeds.",
+    tags: ["danger-score", "saving-throws", "movement", "escape", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    contentBatch: 34,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "saving-throw", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-015-sprint-through-the-reprieve",
+    localizationKey: "SprintThroughTheReprieve",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Sprint Through the Reprieve",
+    fallbackDescription: "The critical hit buys more than a step. You may immediately Stride up to half your Speed as a free action. This movement must end farther from the target than you began and does not trigger reactions from that target. Apply this result manually.",
+    tags: ["stride", "movement", "free-action", "escape", "manual"],
+    contentBatch: 34,
+    effect: null
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-016-spell-buys-cover",
+    localizationKey: "SpellBuysCover",
+    category: "spellCriticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "The Spell Buys Cover",
+    fallbackDescription: "The critical spell gives you a heartbeat in which danger loses your outline. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Reflex saves.",
+    tags: ["spell", "stealth", "reflex", "escape", "effect"],
+    contentBatch: 34,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: ["stealth", "reflex"], value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-017-magic-makes-them-hesitate",
+    localizationKey: "MagicMakesThemHesitate",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Magic Makes Them Hesitate",
+    fallbackDescription: "The spell lands hard enough that the pursuer's answer comes a beat late. For 1 round, you gain a +1 circumstance bonus to AC and saving throws.",
+    tags: ["spell", "ac", "saving-throws", "disruption", "effect"],
+    contentBatch: 34,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: ["ac", "saving-throw"], value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-018-five-points-run-before-it-closes",
+    localizationKey: "FivePointsRunBeforeItCloses",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, Run Before It Closes",
+    fallbackDescription: "At danger score 5 or higher, the critical spell gives you one impossible breath of safety. For 1 round, you gain 5 temporary Hit Points, a +1 circumstance bonus to saving throws, and a 5-foot circumstance bonus to all Speeds.",
+    tags: ["spell", "danger-score", "temporary-hit-points", "saving-throws", "movement", "survival", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    contentBatch: 34,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 5 },
+        { type: "modifier", selector: "saving-throw", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-019-cast-the-pursuer-off-balance",
+    localizationKey: "CastThePursuerOffBalance",
+    category: "spellCriticalHit",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "Cast the Pursuer Off Balance",
+    fallbackDescription: "The critical spell makes pursuit cost balance. For 1 round, the target is off-guard and takes a -5-foot circumstance penalty to all Speeds.",
+    tags: ["spell", "target", "off-guard", "movement", "pursuit", "effect"],
+    contentBatch: 34,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "off-guard" },
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-020-hide-in-the-spells-wake",
+    localizationKey: "HideInTheSpellsWake",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Hide in the Spell's Wake",
+    fallbackDescription: "The critical spell leaves just enough confusion to vanish from the obvious line of danger. You may immediately Step as a free action. If that Step leaves you with cover or concealment from the target, you may immediately attempt to Hide as part of the same free action. Apply this result manually.",
+    tags: ["spell", "step", "hide", "free-action", "escape", "manual"],
+    contentBatch: 34,
+    effect: null
+  })
+
 ]);

@@ -1592,6 +1592,46 @@
           "CollapseTheLineBehindYou": {
             "Title": "Collapse the Line Behind You",
             "Description": "The critical spell leaves the pursuer choosing between you and its footing. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and Perception checks."
+          },
+          "TurnTheCounterstrokeAside": {
+            "Title": "Turn the Counterstroke Aside",
+            "Description": "The critical hit gives you just enough warning to survive the answer. For 1 round, you gain a +1 circumstance bonus to AC and Perception DC."
+          },
+          "KeepTheExitBehindYou": {
+            "Title": "Keep the Exit Behind You",
+            "Description": "You strike without losing sight of the way out. For 1 round, you gain a 5-foot circumstance bonus to all Speeds and a +1 circumstance bonus to Perception checks."
+          },
+          "LeaveThemReaching": {
+            "Title": "Leave Them Reaching",
+            "Description": "The critical hit forces the pursuer to answer from a bad position. For 1 round, the target takes a -1 circumstance penalty to attack rolls and Perception checks."
+          },
+          "FourPointsBreakContact": {
+            "Title": "Four Points, Break Contact",
+            "Description": "At danger score 4 or higher, the critical hit becomes the instant you stop being trapped. For 1 round, you gain a +1 circumstance bonus to saving throws and a 5-foot circumstance bonus to all Speeds."
+          },
+          "SprintThroughTheReprieve": {
+            "Title": "Sprint Through the Reprieve",
+            "Description": "The critical hit buys more than a step. You may immediately Stride up to half your Speed as a free action. This movement must end farther from the target than you began and does not trigger reactions from that target. Apply this result manually."
+          },
+          "SpellBuysCover": {
+            "Title": "The Spell Buys Cover",
+            "Description": "The critical spell gives you a heartbeat in which danger loses your outline. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Reflex saves."
+          },
+          "MagicMakesThemHesitate": {
+            "Title": "Magic Makes Them Hesitate",
+            "Description": "The spell lands hard enough that the pursuer's answer comes a beat late. For 1 round, you gain a +1 circumstance bonus to AC and saving throws."
+          },
+          "FivePointsRunBeforeItCloses": {
+            "Title": "Five Points, Run Before It Closes",
+            "Description": "At danger score 5 or higher, the critical spell gives you one impossible breath of safety. For 1 round, you gain 5 temporary Hit Points, a +1 circumstance bonus to saving throws, and a 5-foot circumstance bonus to all Speeds."
+          },
+          "CastThePursuerOffBalance": {
+            "Title": "Cast the Pursuer Off Balance",
+            "Description": "The critical spell makes pursuit cost balance. For 1 round, the target is off-guard and takes a -5-foot circumstance penalty to all Speeds."
+          },
+          "HideInTheSpellsWake": {
+            "Title": "Hide in the Spell's Wake",
+            "Description": "The critical spell leaves just enough confusion to vanish from the obvious line of danger. You may immediately Step as a free action. If that Step leaves you with cover or concealment from the target, you may immediately attempt to Hide as part of the same free action. Apply this result manually."
           }
         },
         "Fortitude": {
@@ -2705,6 +2745,30 @@
           },
           "CollapseTheLineBehindYou": {
             "Name": "Collapse the Line Behind You"
+          },
+          "TurnTheCounterstrokeAside": {
+            "Name": "Turn the Counterstroke Aside"
+          },
+          "KeepTheExitBehindYou": {
+            "Name": "Keep the Exit Behind You"
+          },
+          "LeaveThemReaching": {
+            "Name": "Leave Them Reaching"
+          },
+          "FourPointsBreakContact": {
+            "Name": "Four Points, Break Contact"
+          },
+          "SpellBuysCover": {
+            "Name": "The Spell Buys Cover"
+          },
+          "MagicMakesThemHesitate": {
+            "Name": "Magic Makes Them Hesitate"
+          },
+          "FivePointsRunBeforeItCloses": {
+            "Name": "Five Points, Run Before It Closes"
+          },
+          "CastThePursuerOffBalance": {
+            "Name": "Cast the Pursuer Off Balance"
           }
         },
         "Fortitude": {

@@ -169,15 +169,20 @@ check(giantFinalDecks.every((cards) => cards.slice(20, 30).filter((card) => card
 check(giantFinalDecks.every((cards) => cards.slice(20, 30).filter((card) => !card.effect).length === 2), "Every Giant-Slayer final deck must contain two manual results.");
 check(packsSource.includes('theme.id === THEME_IDS.GIANT_SLAYER) ? "complete"'), "Giant-Slayer package metadata must be marked complete.");
 
-check(NARROW_ESCAPE_ATTACK_CARDS.length === 10, "Narrow Escapes Attack must contain ten first-pass cards.");
-check(new Set(NARROW_ESCAPE_ATTACK_CARDS.map((card) => card.id)).size === 10, "Narrow Escapes Attack card IDs must be unique.");
-check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Narrow Escapes first-pass cards must remain in the Attack deck.");
-check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 5, "Narrow Escapes Attack must contain five ordinary critical-hit cards.");
-check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 5, "Narrow Escapes Attack must contain five spell critical-hit cards.");
+check(NARROW_ESCAPE_ATTACK_CARDS.length === 20, "Narrow Escapes Attack must contain twenty cards after the second pass.");
+check(new Set(NARROW_ESCAPE_ATTACK_CARDS.map((card) => card.id)).size === 20, "Narrow Escapes Attack card IDs must be unique.");
+check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.deckType === "attack"), "Narrow Escapes Attack cards must remain in the Attack deck.");
+check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length === 10, "Narrow Escapes Attack must contain ten ordinary critical-hit cards.");
+check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length === 10, "Narrow Escapes Attack must contain ten spell critical-hit cards.");
 check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => hasNarrowEscapeGate(card.conditions)), "Narrow Escapes Attack cards must use the dynamic Narrow Escape condition.");
-check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.metadata?.contentBatch === 30), "Narrow Escapes Attack first pass must use content batch 30.");
-check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Attack first pass must contain nine automated results.");
-check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Attack first pass must contain one manual result.");
+const narrowAttackFirst = NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.metadata?.contentBatch === 30);
+const narrowAttackSecond = NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.metadata?.contentBatch === 34);
+check(narrowAttackFirst.length === 10, "Narrow Escapes Attack first pass must preserve ten content-batch-30 cards.");
+check(narrowAttackFirst.filter((card) => card.effect).length === 9, "Narrow Escapes Attack first pass must preserve nine automated results.");
+check(narrowAttackFirst.filter((card) => !card.effect).length === 1, "Narrow Escapes Attack first pass must preserve one manual result.");
+check(narrowAttackSecond.length === 10, "Narrow Escapes Attack second pass must use ten content-batch-34 cards.");
+check(narrowAttackSecond.filter((card) => card.effect).length === 8, "Narrow Escapes Attack second pass must contain eight automated results.");
+check(narrowAttackSecond.filter((card) => !card.effect).length === 2, "Narrow Escapes Attack second pass must contain two manual results.");
 check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "attack"'), "Narrow Escapes Attack cards are not wired into the pack registry.");
 check(NARROW_ESCAPE_FORTITUDE_CARDS.length === 10, "Narrow Escapes Fortitude must contain ten first-pass cards.");
 check(new Set(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Narrow Escapes Fortitude card IDs must be unique.");

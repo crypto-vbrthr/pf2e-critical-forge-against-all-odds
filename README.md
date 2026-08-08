@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.33.1` is the first **40-card Narrow Escapes review**. The review preserves all forty published card IDs and mechanics, confirms the 10/10/10/10 deck layout, 36 automated / 4 manual split, one danger-score 4 and one danger-score 5 escalation per deck, and finds no strict same-gate mechanical superset among the automated results. German Narrow Escapes text now consistently uses the Remaster term **Zustandsbonus**. The Attack trigger continues to ignore dangerous traits on the acting hero's own attack so offensive poison, death, or similar traits cannot manufacture their own danger score.
+Version `0.1.0-dev.34` adds the **second Narrow Escapes Attack pass**. Attack now contains 20/30 cards with a 10/10 ordinary/spell critical split, 17 automated effects, and 3 manual escape results. The ten new cards use content batch 34, add one new danger-score 4 and one new danger-score 5 escalation, preserve all reviewed first-pass IDs and mechanics, and keep every automated signature exact-distinct from all earlier published themes. The Attack trigger continues to ignore dangerous traits on the acting hero's own attack so offensive poison, death, or similar traits cannot manufacture their own danger score.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -92,16 +92,16 @@ Giant-Slayer Moments is complete at 120/120 cards:
 - the final Fortitude, Reflex, and Will passes add no resistance or immunity filler;
 - exact automated Giant-Slayer signatures remain distinct from Bloodied Triumphs, Surrounded, Still Standing, and one another, while the same-gate superset regression contract remains clean.
 
-Against All Odds therefore currently contains **400/480 planned cards**, with **343 automated Effect Engine results and 57 explicit manual results**: three complete 120-card themes plus the first 40/120 Narrow Escapes cards.
+Against All Odds therefore currently contains **410/480 planned cards**, with **351 automated Effect Engine results and 59 explicit manual results**: three complete 120-card themes plus the first 50/120 Narrow Escapes cards.
 
 Narrow Escapes is now in progress:
 
-- 10/30 Attack cards, split 5/5 between ordinary and spell critical hits, with 9 automated results and 1 manual Raise a Shield / Step result;
+- 20/30 Attack cards, split 10/10 between ordinary and spell critical hits, with 17 automated results and 3 manual escape results across two passes;
 - 10/30 Fortitude cards for critically successful Fortitude saves, with 9 automated results and 1 manual Stand / Step result;
 - 10/30 Reflex cards for critically successful Reflex saves, with 9 automated results and 1 manual two-Step escape result;
 - 10/30 Will cards for critically successful Will saves, with 9 automated results and 1 manual Seek result;
 - every published Narrow Escape card requires `extensions.againstAllOdds.narrowEscape.matched == true`;
-- Attack, Fortitude, Reflex, and Will each contain one stronger danger-score 4 card and one danger-score 5 card;
+- Attack now contains two danger-score 4 and two danger-score 5 escalation cards across its two passes; Fortitude, Reflex, and Will each currently contain one of each;
 - **The Toxin Loses the Race** is gated to an incoming poison effect, **The Finishing Blow Misses** requires incoming incapacitation evidence, and the Will deck uses focused fear and mental gates for **Panic Spends Its Last Breath** and **The Mental Grip Slips**; all automated Narrow Escape save effects currently stay on the saving actor;
 - the acting hero's own dangerous attack traits do not contribute to the danger score on attack rolls, while dangerous incoming save traits remain valid danger evidence.
 

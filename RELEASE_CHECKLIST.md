@@ -185,3 +185,12 @@
 - [x] Complete first-40 Narrow Escape automated exact-signature audit is clean.
 - [x] German Narrow Escapes text consistently uses the Remaster term Zustandsbonus.
 
+- [x] Narrow Escapes Attack second pass adds cards 11–20 in content batch 34 with a 5/5 ordinary/spell critical split.
+- [x] Narrow Escapes Attack second pass uses 8 automated / 2 manual results and preserves all first-pass IDs and mechanics.
+- [x] Second-pass Attack adds one additional danger-score 4 and one additional danger-score 5 escalation.
+- [x] Second-pass Attack automated effects remain exact-signature distinct from all earlier published themes and all other Narrow Escape effects.
+- [x] Second-pass Attack cards remain broadly available and do not filter on the acting hero's own attack or spell traits.
+- [x] German and English localization exists for all ten second-pass Attack cards and eight new automated effects.
+- [ ] Foundry smoke test: Narrow Escape Attack cards 11–20 are visible and both new manual escape results read correctly.
+- [ ] Foundry smoke test: score-4 and score-5 second-pass Attack cards appear only at the matching danger thresholds.
+

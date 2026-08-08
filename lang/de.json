@@ -1592,6 +1592,46 @@
           "CollapseTheLineBehindYou": {
             "Title": "Lass die Linie hinter dir zusammenbrechen",
             "Description": "Der kritische Zauber zwingt den Verfolger, sich zwischen dir und seinem Stand zu entscheiden. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Reflex-SG und Wahrnehmungswürfe."
+          },
+          "TurnTheCounterstrokeAside": {
+            "Title": "Lenke den Gegenschlag ab",
+            "Description": "Der kritische Treffer warnt dich gerade früh genug, um die Antwort zu überleben. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Wahrnehmungs-SG."
+          },
+          "KeepTheExitBehindYou": {
+            "Title": "Behalte den Ausweg im Rücken",
+            "Description": "Du schlägst zu, ohne den Fluchtweg aus den Augen zu verlieren. Für 1 Runde erhältst du einen Situationsbonus von +1,5 m auf alle Bewegungsraten und einen Situationsbonus von +1 auf Wahrnehmungswürfe."
+          },
+          "LeaveThemReaching": {
+            "Title": "Lass sie ins Leere greifen",
+            "Description": "Der kritische Treffer zwingt den Verfolger, aus einer schlechten Position zu antworten. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Angriffswürfe und Wahrnehmungswürfe."
+          },
+          "FourPointsBreakContact": {
+            "Title": "Vier Punkte, löse dich",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher wird der kritische Treffer zu dem Augenblick, in dem du nicht länger feststeckst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Rettungswürfe und von +1,5 m auf alle Bewegungsraten."
+          },
+          "SprintThroughTheReprieve": {
+            "Title": "Sprinte durch die Atempause",
+            "Description": "Der kritische Treffer erkauft mehr als einen Schritt. Du darfst sofort als freie Aktion bis zur Hälfte deiner Bewegungsrate laufen. Diese Bewegung muss weiter vom Ziel entfernt enden, als sie begonnen hat, und löst keine Reaktionen dieses Ziels aus. Wende dieses Ergebnis manuell an."
+          },
+          "SpellBuysCover": {
+            "Title": "Der Zauber erkauft Deckung",
+            "Description": "Der kritische Zauber schenkt dir einen Herzschlag, in dem die Gefahr deine Kontur verliert. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Heimlichkeitswürfe und Reflexwürfe."
+          },
+          "MagicMakesThemHesitate": {
+            "Title": "Magie lässt sie zögern",
+            "Description": "Der Zauber trifft hart genug, dass die Antwort des Verfolgers einen Herzschlag zu spät kommt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Rettungswürfe."
+          },
+          "FivePointsRunBeforeItCloses": {
+            "Title": "Fünf Punkte, lauf bevor es sich schließt",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher schenkt dir der kritische Zauber einen unmöglichen Atemzug Sicherheit. Für 1 Runde erhältst du 5 temporäre Trefferpunkte, einen Situationsbonus von +1 auf Rettungswürfe und von +1,5 m auf alle Bewegungsraten."
+          },
+          "CastThePursuerOffBalance": {
+            "Title": "Bring den Verfolger aus dem Gleichgewicht",
+            "Description": "Der kritische Zauber macht Verfolgung zu einer Frage des Gleichgewichts. Für 1 Runde ist das Ziel Auf dem Falschen Fuß und erhält einen Situationsmalus von -1,5 m auf alle Bewegungsraten."
+          },
+          "HideInTheSpellsWake": {
+            "Title": "Verbirg dich im Nachhall des Zaubers",
+            "Description": "Der kritische Zauber hinterlässt gerade genug Verwirrung, um aus der offensichtlichen Gefahrenlinie zu verschwinden. Du darfst sofort als freie Aktion einen Schritt machen. Falls du danach Deckung oder Verborgenheit gegenüber dem Ziel hast, darfst du als Teil derselben freien Aktion sofort einen Versuch für Verstecken ablegen. Wende dieses Ergebnis manuell an."
           }
         },
         "Fortitude": {
@@ -2705,6 +2745,30 @@
           },
           "CollapseTheLineBehindYou": {
             "Name": "Lass die Linie hinter dir zusammenbrechen"
+          },
+          "TurnTheCounterstrokeAside": {
+            "Name": "Lenke den Gegenschlag ab"
+          },
+          "KeepTheExitBehindYou": {
+            "Name": "Behalte den Ausweg im Rücken"
+          },
+          "LeaveThemReaching": {
+            "Name": "Lass sie ins Leere greifen"
+          },
+          "FourPointsBreakContact": {
+            "Name": "Vier Punkte, löse dich"
+          },
+          "SpellBuysCover": {
+            "Name": "Der Zauber erkauft Deckung"
+          },
+          "MagicMakesThemHesitate": {
+            "Name": "Magie lässt sie zögern"
+          },
+          "FivePointsRunBeforeItCloses": {
+            "Name": "Fünf Punkte, lauf bevor es sich schließt"
+          },
+          "CastThePursuerOffBalance": {
+            "Name": "Bring den Verfolger aus dem Gleichgewicht"
           }
         },
         "Fortitude": {

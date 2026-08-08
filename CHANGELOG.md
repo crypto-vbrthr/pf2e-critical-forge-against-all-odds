@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.34
+
+### Added
+- Added **Narrow Escapes Attack cards 11–20**, bringing Narrow Escapes to 50/120 cards and the full add-on to 410/480 planned cards.
+- Added five ordinary critical-hit and five spell-critical cards in content batch 34, with 8 automated Effect Engine results and 2 manual escape actions.
+- Added one additional danger-score 4 escalation and one additional danger-score 5 escalation for the Attack deck.
+- Added manual **Sprint Through the Reprieve**, allowing an immediate half-Speed Stride away from the target without triggering that target's reactions, and **Hide in the Spell's Wake**, combining an immediate Step with a conditional Hide attempt when cover or concealment is gained.
+- Added German and English localization for all ten new cards and eight automated effects.
+
+### Review and tests
+- Preserved all 400 previously published card IDs and every reviewed first-pass Narrow Escape mechanic.
+- Extended Narrow Escape same-gate mechanical-superset and exact-signature audits across all 50 currently published Narrow Escape cards.
+- Confirmed the second Attack pass remains broad rather than filtering on the acting hero's own attack or spell traits.
+- Updated pack/runtime contracts and package-local release checks for the 20/10/10/10 Narrow Escape layout.
+- Verified **246/246 tests** with **99.50% line coverage**, **95.04% branch coverage**, and **98.90% function coverage**.
+- Package-local release checks report **1220 localization keys per language**.
+
+### Compatibility
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.33.1
 
 - Completed the first **40-card Narrow Escapes review** without changing any published card ID or card mechanic.
