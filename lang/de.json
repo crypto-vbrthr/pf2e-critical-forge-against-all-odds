@@ -1593,6 +1593,48 @@
             "Title": "Lass die Linie hinter dir zusammenbrechen",
             "Description": "Der kritische Zauber zwingt den Verfolger, sich zwischen dir und seinem Stand zu entscheiden. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Reflex-SG und Wahrnehmungswürfe."
           }
+        },
+        "Fortitude": {
+          "HoldTogetherLongEnough": {
+            "Title": "Lange genug zusammenhalten",
+            "Description": "Die Gefahr schafft es nicht, dich zu brechen, bevor sich eine Öffnung zeigt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeitswürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "ShockFindsNoGrip": {
+            "Title": "Der Schock findet keinen Halt",
+            "Description": "Dein Körper findet genau die Haltung, in der die Gefahr keinen Halt bekommt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zähigkeits-SG und Reflexwürfe."
+          },
+          "PainMarksTheExit": {
+            "Title": "Der Schmerz markiert den Ausweg",
+            "Description": "Der Schmerz lässt die Welt nicht verschwimmen. Er zeichnet den Weg nach, der noch offen ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungs- und Akrobatikwürfe."
+          },
+          "OneBreathAhead": {
+            "Title": "Einen Atemzug voraus",
+            "Description": "Du stiehlst dem Rand des Zusammenbruchs einen einzigen klaren Atemzug. Für 1 Runde erhältst du Schnelle Heilung 2 und einen Situationsbonus von +1 auf Zähigkeitswürfe."
+          },
+          "UpBeforeItCloses": {
+            "Title": "Auf den Beinen, bevor es sich schließt",
+            "Description": "Dein Körper reagiert, bevor die Gefahr sich vollständig um dich schließen kann. Falls du Liegend bist, darfst du sofort als freie Aktion Aufstehen. Andernfalls darfst du sofort einen Schritt machen. Wende dieses Ergebnis manuell an."
+          },
+          "ToxinLosesTheRace": {
+            "Title": "Das Gift verliert das Rennen",
+            "Description": "Das Gift ist gefährlich, aber nicht schneller als deine Weigerung zu fallen. Gegen einen eingehenden Gifteffekt erhältst du für 1 Runde Resistenz 2 gegen Giftschaden und einen Zustandsbonus von +1 auf Zähigkeitswürfe."
+          },
+          "BodyRefusesToLock": {
+            "Title": "Der Körper weigert sich zu erstarren",
+            "Description": "Muskeln, Atem und Herzschlag geben dieselbe Antwort: noch nicht. Für 1 Runde erhältst du 3 temporäre Trefferpunkte und einen Situationsbonus von +1 auf Zähigkeits-SG."
+          },
+          "FourPointsStillBreathing": {
+            "Title": "Vier Punkte, noch am Atmen",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher wird das Überleben selbst zu einem Schub an Schwung. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Zustandsbonus von +1 auf Zähigkeitswürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FivePointsOneMoreSecond": {
+            "Title": "Fünf Punkte, noch eine Sekunde",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher erzwingt dein Körper eine weitere unmögliche Sekunde. Für 1 Runde erhältst du Schnelle Heilung 3, einen Zustandsbonus von +1 auf Rettungswürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "TheExitStaysOpen": {
+            "Title": "Der Ausweg bleibt offen",
+            "Description": "Die Gefahr hatte eine Gelegenheit, deinen Körper zu stoppen. Sie ist vorbei. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Zähigkeits-SG sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          }
         }
       }
     },
@@ -2579,6 +2621,35 @@
           },
           "CollapseTheLineBehindYou": {
             "Name": "Lass die Linie hinter dir zusammenbrechen"
+          }
+        },
+        "Fortitude": {
+          "HoldTogetherLongEnough": {
+            "Name": "Lange genug zusammenhalten"
+          },
+          "ShockFindsNoGrip": {
+            "Name": "Der Schock findet keinen Halt"
+          },
+          "PainMarksTheExit": {
+            "Name": "Der Schmerz markiert den Ausweg"
+          },
+          "OneBreathAhead": {
+            "Name": "Einen Atemzug voraus"
+          },
+          "ToxinLosesTheRace": {
+            "Name": "Das Gift verliert das Rennen"
+          },
+          "BodyRefusesToLock": {
+            "Name": "Der Körper weigert sich zu erstarren"
+          },
+          "FourPointsStillBreathing": {
+            "Name": "Vier Punkte, noch am Atmen"
+          },
+          "FivePointsOneMoreSecond": {
+            "Name": "Fünf Punkte, noch eine Sekunde"
+          },
+          "TheExitStaysOpen": {
+            "Name": "Der Ausweg bleibt offen"
           }
         }
       }

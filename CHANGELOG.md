@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.31
+
+### Added
+- Added the first ten **Narrow Escapes Fortitude** cards, bringing Narrow Escapes to 20/120 cards and the full add-on to 380/480 planned cards.
+- Added nine automated Effect Engine results and one manual Stand / Step result centered on surviving bodily collapse long enough to escape.
+- Added danger-score 4 and 5 escalation for two stronger Fortitude results.
+- Added **The Toxin Loses the Race**, gated to incoming poison evidence and granting poison resistance plus a Fortitude bonus to the saving actor.
+- Added German and English localization for all ten Fortitude cards and nine automated effects.
+- Wired the Narrow Escape Fortitude deck into the protected multi-deck pack.
+
+### Tests
+- Added Fortitude count, unique-ID, save/deck isolation, batch-31, 9/1 automation, danger escalation, poison-filter, immutable-filter, localization, German terminology, saver-targeting, and cross-theme exact-signature uniqueness coverage.
+- Updated runtime, pack, and release-contract tests for the 10/10/0/0 Narrow Escape deck layout.
+- Verified **221/221 tests** with **99.52% line coverage**, **95.11% branch coverage**, and **98.79% function coverage**.
+- Package-local release checks report **1134 localization keys per language**.
+
+### Compatibility
+- All 370 previously published card IDs remain unchanged; this build adds ten Narrow Escape Fortitude IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.30
 
 ### Added

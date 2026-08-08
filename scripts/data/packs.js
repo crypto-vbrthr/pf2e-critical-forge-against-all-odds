@@ -17,6 +17,7 @@ import { GIANT_SLAYER_FORTITUDE_CARDS } from "./cards/giant-slayer-fortitude.js"
 import { GIANT_SLAYER_REFLEX_CARDS } from "./cards/giant-slayer-reflex.js";
 import { GIANT_SLAYER_WILL_CARDS } from "./cards/giant-slayer-will.js";
 import { NARROW_ESCAPE_ATTACK_CARDS } from "./cards/narrow-escape-attack.js";
+import { NARROW_ESCAPE_FORTITUDE_CARDS } from "./cards/narrow-escape-fortitude.js";
 
 const THEMES = Object.freeze([
   Object.freeze({
@@ -98,7 +99,9 @@ export function buildAgainstAllOddsPacks(settings = {}) {
                               ? GIANT_SLAYER_WILL_CARDS
                               : theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "attack"
                                 ? NARROW_ESCAPE_ATTACK_CARDS
-                                : []
+                                : theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "fortitude"
+                                  ? NARROW_ESCAPE_FORTITUDE_CARDS
+                                  : []
     }]))
   }));
 }

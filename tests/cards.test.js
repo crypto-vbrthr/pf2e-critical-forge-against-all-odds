@@ -16,6 +16,7 @@ import { GIANT_SLAYER_FORTITUDE_CARDS } from "../scripts/data/cards/giant-slayer
 import { GIANT_SLAYER_REFLEX_CARDS } from "../scripts/data/cards/giant-slayer-reflex.js";
 import { GIANT_SLAYER_WILL_CARDS } from "../scripts/data/cards/giant-slayer-will.js";
 import { NARROW_ESCAPE_ATTACK_CARDS } from "../scripts/data/cards/narrow-escape-attack.js";
+import { NARROW_ESCAPE_FORTITUDE_CARDS } from "../scripts/data/cards/narrow-escape-fortitude.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -27,7 +28,7 @@ const FILTER_KEYS = [
 const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS, ...BLOODIED_WILL_CARDS];
 const ALL_SURROUNDED_CARDS = [...SURROUNDED_ATTACK_CARDS, ...SURROUNDED_FORTITUDE_CARDS, ...SURROUNDED_REFLEX_CARDS, ...SURROUNDED_WILL_CARDS];
 const ALL_GIANT_SLAYER_CARDS = [...GIANT_SLAYER_ATTACK_CARDS, ...GIANT_SLAYER_FORTITUDE_CARDS, ...GIANT_SLAYER_REFLEX_CARDS, ...GIANT_SLAYER_WILL_CARDS];
-const ALL_NARROW_ESCAPE_CARDS = [...NARROW_ESCAPE_ATTACK_CARDS];
+const ALL_NARROW_ESCAPE_CARDS = [...NARROW_ESCAPE_ATTACK_CARDS, ...NARROW_ESCAPE_FORTITUDE_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -2234,4 +2235,100 @@ test("Narrow Escape Attack first pass uses supported presentation values and int
   const automated = NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect);
   assert.equal(automated.filter((card) => card.effect.target === "source").length, 5);
   assert.equal(automated.filter((card) => card.effect.target === "target").length, 4);
+});
+
+
+test("Narrow Escapes Fortitude first pass contains ten unique critical-save cards", () => {
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.length, 10);
+  assert.equal(new Set(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.metadata.contentBatch === 31), true);
+});
+
+test("Narrow Escape Fortitude first pass uses nine automated results and one manual Stand or Step result", () => {
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.effect).length, 9);
+  const manuals = NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => !card.effect);
+  assert.deepEqual(manuals.map((card) => card.id.split(".").at(-1)), ["nef-005-up-before-it-closes"]);
+  assert.match(manuals[0].fallbackDescription, /prone/u);
+  assert.match(manuals[0].fallbackDescription, /Stand as a free action/u);
+  assert.match(manuals[0].fallbackDescription, /Step/u);
+});
+
+test("Narrow Escape Fortitude first pass adds danger-score escalation at four and five", () => {
+  const bySuffix = Object.fromEntries(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["nef-008-four-points-still-breathing"].conditions);
+  const five = conditionLeaves(bySuffix["nef-009-five-points-one-more-second"].conditions);
+  assert.equal(four.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4), true);
+  assert.equal(five.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
+});
+
+test("Narrow Escape Fortitude first pass uses incoming dangerous-trait evidence only where the card needs it", () => {
+  const bySuffix = Object.fromEntries(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["nef-006-toxin-loses-the-race"].filters.attackTraits, ["poison"]);
+  for (const [id, card] of Object.entries(bySuffix)) {
+    if (id === "nef-006-toxin-loses-the-race") continue;
+    assert.deepEqual(card.filters.attackTraits, [], id);
+  }
+});
+
+test("Narrow Escape Fortitude first-pass filters remain complete immutable schema-1 sets", () => {
+  for (const card of NARROW_ESCAPE_FORTITUDE_CARDS) {
+    assert.deepEqual(Object.keys(card.filters), FILTER_KEYS);
+    assert.equal(FILTER_KEYS.every((key) => Array.isArray(card.filters[key])), true);
+    assert.equal(FILTER_KEYS.every((key) => Object.isFrozen(card.filters[key])), true);
+  }
+});
+
+test("Narrow Escape Fortitude automated effects use unique signatures across all earlier published cards", () => {
+  const prior = [
+    ...ALL_CARDS,
+    ...ALL_SURROUNDED_CARDS,
+    ...ALL_GIANT_SLAYER_CARDS,
+    ...NARROW_ESCAPE_ATTACK_CARDS
+  ].filter((card) => card.effect);
+  const signature = (card) => JSON.stringify({
+    target: card.effect.target,
+    duration: card.effect.definition.duration,
+    components: card.effect.definition.components
+  });
+  const seen = new Map(prior.map((card) => [signature(card), card.id]));
+  for (const card of NARROW_ESCAPE_FORTITUDE_CARDS.filter((entry) => entry.effect)) {
+    const key = signature(card);
+    assert.equal(seen.has(key), false, `${card.id} duplicates ${seen.get(key)}`);
+    seen.set(key, card.id);
+  }
+});
+
+test("Narrow Escape Fortitude first pass localizes every card and automated effect in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const card of NARROW_ESCAPE_FORTITUDE_CARDS) {
+    assert.equal(typeof getPath(de, card.titleKey), "string", card.titleKey);
+    assert.equal(typeof getPath(en, card.titleKey), "string", card.titleKey);
+    assert.equal(typeof getPath(de, card.descriptionKey), "string", card.descriptionKey);
+    assert.equal(typeof getPath(en, card.descriptionKey), "string", card.descriptionKey);
+    if (card.effect) {
+      assert.equal(typeof getPath(de, card.effect.nameKey), "string", card.effect.nameKey);
+      assert.equal(typeof getPath(en, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Narrow Escape German Fortitude text uses reviewed Remaster terminology", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const fortitude = de.PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes.Fortitude;
+  assert.match(fortitude.ShockFindsNoGrip.Description, /Zähigkeits-SG/u);
+  assert.match(fortitude.OneBreathAhead.Description, /Schnelle Heilung 2/u);
+  assert.match(fortitude.UpBeforeItCloses.Description, /Liegend/u);
+  assert.match(fortitude.UpBeforeItCloses.Description, /Aufstehen/u);
+  assert.match(fortitude.UpBeforeItCloses.Description, /freie Aktion/u);
+  assert.match(fortitude.ToxinLosesTheRace.Description, /Resistenz 2 gegen Giftschaden/u);
+});
+
+test("Narrow Escape Fortitude first pass keeps positive automated effects on the saving actor", () => {
+  const automated = NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.effect);
+  assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });

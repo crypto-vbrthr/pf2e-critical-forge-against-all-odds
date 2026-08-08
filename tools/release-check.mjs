@@ -77,6 +77,7 @@ const { GIANT_SLAYER_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(ro
 const { GIANT_SLAYER_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-reflex.js")).href);
 const { GIANT_SLAYER_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-will.js")).href);
 const { NARROW_ESCAPE_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-attack.js")).href);
+const { NARROW_ESCAPE_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-fortitude.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -176,6 +177,16 @@ check(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.metadata?.contentBatch ===
 check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Attack first pass must contain nine automated results.");
 check(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Attack first pass must contain one manual result.");
 check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "attack"'), "Narrow Escapes Attack cards are not wired into the pack registry.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.length === 10, "Narrow Escapes Fortitude must contain ten first-pass cards.");
+check(new Set(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => card.id)).size === 10, "Narrow Escapes Fortitude card IDs must be unique.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), "Narrow Escapes Fortitude cards must remain in the Fortitude deck.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Narrow Escapes Fortitude cards require critical save success.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "fortitude"), "Narrow Escapes Fortitude cards must require Fortitude.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => hasNarrowEscapeGate(card.conditions)), "Narrow Escapes Fortitude cards must use the dynamic Narrow Escape condition.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.metadata?.contentBatch === 31), "Narrow Escapes Fortitude first pass must use content batch 31.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Fortitude first pass must contain nine automated results.");
+check(NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Fortitude first pass must contain one manual result.");
+check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "fortitude"'), "Narrow Escapes Fortitude cards are not wired into the pack registry.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

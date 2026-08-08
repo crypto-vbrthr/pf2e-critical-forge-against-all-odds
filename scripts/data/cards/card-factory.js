@@ -463,3 +463,14 @@ export function defineNarrowEscapeAttackCard(options) {
     tags: [options.category === "spellCriticalHit" ? "spell" : "strike", ...(options.tags ?? [])]
   });
 }
+
+export function defineNarrowEscapeFortitudeCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Narrow Escape Fortitude cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineNarrowEscapeCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "fortitude", deckToken: "Fortitude",
+    contentBatch: options.contentBatch ?? 31, tags: ["save", "fortitude", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["fortitude"] }
+  });
+}

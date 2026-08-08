@@ -2,7 +2,7 @@
   "id": "pf2e-critical-forge-against-all-odds",
   "title": "PF2E Critical Forge: Against All Odds",
   "description": "A context-sensitive expansion for PF2E Critical Forge, focused on bloodied triumphs, desperate stands, giant-slayer moments, and narrow escapes.",
-  "version": "0.1.0-dev.30",
+  "version": "0.1.0-dev.31",
   "authors": [
     {
       "name": "crypto-vbrthr"
@@ -51,5 +51,5 @@
   "readme": "README.md",
   "url": "https://github.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds",
   "manifest": "https://raw.githubusercontent.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds/main/module.json",
-  "download": "https://github.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds/releases/download/0.1.0-dev.30/pf2e-critical-forge-against-all-odds.zip"
+  "download": "https://github.com/crypto-vbrthr/pf2e-critical-forge-against-all-odds/releases/download/0.1.0-dev.31/pf2e-critical-forge-against-all-odds.zip"
 }

@@ -85,14 +85,17 @@ The test suite covers:
 - German Giant-Slayer Remaster terminology, including Kraftlos, Auf dem Falschen Fuß, and Größenkategorie.
 
 - ten Narrow Escape Attack cards in content batch `30`, split 5/5 between ordinary and spell critical hits;
+- ten Narrow Escape Fortitude cards in content batch `31`, isolated to critical Fortitude successes;
 - the dynamic Narrow Escape gate on every published Narrow Escape card;
-- nine automated and one manual Narrow Escape Attack result;
-- danger-score 4 and 5 escalation conditions;
-- exact automated-signature uniqueness against all previously published Bloodied, Surrounded, and Giant-Slayer effects;
+- nine automated and one manual result in each first-pass Narrow Escape deck;
+- danger-score 4 and 5 escalation conditions in both Attack and Fortitude;
+- an incoming-poison filter for **The Toxin Loses the Race** without broad dangerous-trait over-filtering on the remaining Fortitude cards;
+- saver/source targeting for every automated Narrow Escape Fortitude result;
+- exact automated-signature uniqueness against all earlier published Bloodied, Surrounded, Giant-Slayer, and Narrow Escape Attack effects;
 - attack-roll danger scoring excluding the acting hero's own dangerous offensive traits while preserving dangerous incoming save evidence;
-- German and English Narrow Escape card/effect localization and reviewed Remaster terminology;
+- German and English Narrow Escape card/effect localization and reviewed Remaster terminology, including Zähigkeits-SG, Schnelle Heilung, Liegend, and Aufstehen;
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.30` baseline: **212/212 tests**, **99.52% line coverage**, **95.15% branch coverage**, and **98.74% function coverage**. The current build contains **370 published cards and 316 automated card effects**; Narrow Escapes contributes **10 Attack cards, 9 automated effects, and 1 manual result**. The first Narrow Escape pass keeps exact automated signatures distinct from all previously published themes and includes a regression guard preventing the acting hero's own dangerous attack traits from inflating Attack-roll danger. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
+Current `0.1.0-dev.31` baseline: **221/221 tests**, **99.52% line coverage**, **95.11% branch coverage**, and **98.79% function coverage**. The current build contains **380 published cards and 325 automated card effects**; Narrow Escapes contributes **20 cards, 18 automated effects, and 2 manual results** across Attack and Fortitude. Both first-pass decks keep exact automated signatures distinct from all earlier published cards, Fortitude preserves the saving actor as recipient for every positive automated effect, and the Attack danger-score regression guard continues to prevent the hero's own dangerous offensive traits from inflating Narrow Escape danger. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
 

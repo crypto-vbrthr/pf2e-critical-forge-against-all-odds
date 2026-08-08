@@ -1593,6 +1593,48 @@
             "Title": "Collapse the Line Behind You",
             "Description": "The critical spell leaves the pursuer choosing between you and its footing. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and Perception checks."
           }
+        },
+        "Fortitude": {
+          "HoldTogetherLongEnough": {
+            "Title": "Hold Together Long Enough",
+            "Description": "The danger fails to break you before the opening appears. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and a 5-foot circumstance bonus to all Speeds."
+          },
+          "ShockFindsNoGrip": {
+            "Title": "Shock Finds No Grip",
+            "Description": "Your body locks into the one posture that keeps the danger from taking hold. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and Reflex saves."
+          },
+          "PainMarksTheExit": {
+            "Title": "Pain Marks the Exit",
+            "Description": "The pain does not blur the world. It outlines the route that is still open. For 1 round, you gain a +1 circumstance bonus to Perception and Acrobatics checks."
+          },
+          "OneBreathAhead": {
+            "Title": "One Breath Ahead",
+            "Description": "You steal one clean breath from the edge of collapse. For 1 round, you gain fast healing 2 and a +1 circumstance bonus to Fortitude saves."
+          },
+          "UpBeforeItCloses": {
+            "Title": "Up Before It Closes",
+            "Description": "Your body answers before the danger can finish closing around you. If you are prone, you may immediately Stand as a free action. Otherwise, you may immediately Step. Apply this result manually."
+          },
+          "ToxinLosesTheRace": {
+            "Title": "The Toxin Loses the Race",
+            "Description": "The poison is dangerous, but it is not faster than your refusal to fall. Against an incoming poison effect, for 1 round you gain resistance 2 to poison damage and a +1 status bonus to Fortitude saves."
+          },
+          "BodyRefusesToLock": {
+            "Title": "The Body Refuses to Lock",
+            "Description": "Muscle, breath, and heartbeat all choose the same answer: not yet. For 1 round, you gain 3 temporary Hit Points and a +1 circumstance bonus to Fortitude DC."
+          },
+          "FourPointsStillBreathing": {
+            "Title": "Four Points, Still Breathing",
+            "Description": "At danger score 4 or higher, survival becomes its own burst of momentum. For 1 round, you gain 3 temporary Hit Points, a +1 status bonus to Fortitude saves, and a 5-foot circumstance bonus to all Speeds."
+          },
+          "FivePointsOneMoreSecond": {
+            "Title": "Five Points, One More Second",
+            "Description": "At danger score 5 or higher, your body manufactures one impossible second more. For 1 round, you gain fast healing 3, a +1 status bonus to saving throws, and a 5-foot circumstance bonus to all Speeds."
+          },
+          "TheExitStaysOpen": {
+            "Title": "The Exit Stays Open",
+            "Description": "The danger had one chance to stop your body. It missed. For 1 round, you gain a +1 circumstance bonus to AC and Fortitude DC and a 5-foot circumstance bonus to all Speeds."
+          }
         }
       }
     },
@@ -2579,6 +2621,35 @@
           },
           "CollapseTheLineBehindYou": {
             "Name": "Collapse the Line Behind You"
+          }
+        },
+        "Fortitude": {
+          "HoldTogetherLongEnough": {
+            "Name": "Hold Together Long Enough"
+          },
+          "ShockFindsNoGrip": {
+            "Name": "Shock Finds No Grip"
+          },
+          "PainMarksTheExit": {
+            "Name": "Pain Marks the Exit"
+          },
+          "OneBreathAhead": {
+            "Name": "One Breath Ahead"
+          },
+          "ToxinLosesTheRace": {
+            "Name": "The Toxin Loses the Race"
+          },
+          "BodyRefusesToLock": {
+            "Name": "The Body Refuses to Lock"
+          },
+          "FourPointsStillBreathing": {
+            "Name": "Four Points, Still Breathing"
+          },
+          "FivePointsOneMoreSecond": {
+            "Name": "Five Points, One More Second"
+          },
+          "TheExitStaysOpen": {
+            "Name": "The Exit Stays Open"
           }
         }
       }
