@@ -18,6 +18,7 @@ import { GIANT_SLAYER_WILL_CARDS } from "../scripts/data/cards/giant-slayer-will
 import { NARROW_ESCAPE_ATTACK_CARDS } from "../scripts/data/cards/narrow-escape-attack.js";
 import { NARROW_ESCAPE_FORTITUDE_CARDS } from "../scripts/data/cards/narrow-escape-fortitude.js";
 import { NARROW_ESCAPE_REFLEX_CARDS } from "../scripts/data/cards/narrow-escape-reflex.js";
+import { NARROW_ESCAPE_WILL_CARDS } from "../scripts/data/cards/narrow-escape-will.js";
 import { AGAINST_ALL_ODDS_PACK_IDS } from "../scripts/data/cards/card-factory.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -29,7 +30,7 @@ const FILTER_KEYS = [
 const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLOODIED_REFLEX_CARDS, ...BLOODIED_WILL_CARDS];
 const ALL_SURROUNDED_CARDS = [...SURROUNDED_ATTACK_CARDS, ...SURROUNDED_FORTITUDE_CARDS, ...SURROUNDED_REFLEX_CARDS, ...SURROUNDED_WILL_CARDS];
 const ALL_GIANT_SLAYER_CARDS = [...GIANT_SLAYER_ATTACK_CARDS, ...GIANT_SLAYER_FORTITUDE_CARDS, ...GIANT_SLAYER_REFLEX_CARDS, ...GIANT_SLAYER_WILL_CARDS];
-const ALL_NARROW_ESCAPE_CARDS = [...NARROW_ESCAPE_ATTACK_CARDS, ...NARROW_ESCAPE_FORTITUDE_CARDS, ...NARROW_ESCAPE_REFLEX_CARDS];
+const ALL_NARROW_ESCAPE_CARDS = [...NARROW_ESCAPE_ATTACK_CARDS, ...NARROW_ESCAPE_FORTITUDE_CARDS, ...NARROW_ESCAPE_REFLEX_CARDS, ...NARROW_ESCAPE_WILL_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -2427,5 +2428,104 @@ test("Narrow Escape German Reflex text uses reviewed Remaster terminology", () =
 
 test("Narrow Escape Reflex first pass keeps positive automated effects on the saving actor", () => {
   const automated = NARROW_ESCAPE_REFLEX_CARDS.filter((card) => card.effect);
+  assert.equal(automated.every((card) => card.effect.target === "source"), true);
+});
+
+
+test("Narrow Escapes Will first pass contains ten unique critical-save cards", () => {
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.length, 10);
+  assert.equal(new Set(NARROW_ESCAPE_WILL_CARDS.map((card) => card.id)).size, 10);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.deckType === "will"), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.metadata.contentBatch === 33), true);
+});
+
+test("Narrow Escape Will first pass uses nine automated results and one manual Seek result", () => {
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.filter((card) => card.effect).length, 9);
+  const manuals = NARROW_ESCAPE_WILL_CARDS.filter((card) => !card.effect);
+  assert.deepEqual(manuals.map((card) => card.id.split(".").at(-1)), ["new-005-look-for-the-way-out"]);
+  assert.match(manuals[0].fallbackDescription, /Seek as a free action/u);
+  assert.match(manuals[0].fallbackDescription, /\+2 circumstance bonus/u);
+});
+
+test("Narrow Escape Will first pass adds danger-score escalation at four and five", () => {
+  const bySuffix = Object.fromEntries(NARROW_ESCAPE_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const four = conditionLeaves(bySuffix["new-008-four-points-mind-still-mine"].conditions);
+  const five = conditionLeaves(bySuffix["new-009-five-points-refuse-the-ending"].conditions);
+  assert.equal(four.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4), true);
+  assert.equal(five.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
+});
+
+test("Narrow Escape Will first pass uses incoming fear and mental evidence only where required", () => {
+  const bySuffix = Object.fromEntries(NARROW_ESCAPE_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  assert.deepEqual(bySuffix["new-002-panic-spends-its-last-breath"].filters.attackTraits, ["fear"]);
+  assert.deepEqual(bySuffix["new-006-the-mental-grip-slips"].filters.attackTraits, ["mental"]);
+  for (const [id, card] of Object.entries(bySuffix)) {
+    if (["new-002-panic-spends-its-last-breath", "new-006-the-mental-grip-slips"].includes(id)) continue;
+    assert.deepEqual(card.filters.attackTraits, [], id);
+  }
+});
+
+test("Narrow Escape Will first-pass filters remain complete immutable schema-1 sets", () => {
+  for (const card of NARROW_ESCAPE_WILL_CARDS) {
+    assert.deepEqual(Object.keys(card.filters), FILTER_KEYS);
+    assert.equal(FILTER_KEYS.every((key) => Array.isArray(card.filters[key])), true);
+    assert.equal(FILTER_KEYS.every((key) => Object.isFrozen(card.filters[key])), true);
+  }
+});
+
+test("Narrow Escape Will automated effects use unique signatures across all earlier published cards", () => {
+  const prior = [
+    ...ALL_CARDS,
+    ...ALL_SURROUNDED_CARDS,
+    ...ALL_GIANT_SLAYER_CARDS,
+    ...NARROW_ESCAPE_ATTACK_CARDS,
+    ...NARROW_ESCAPE_FORTITUDE_CARDS,
+    ...NARROW_ESCAPE_REFLEX_CARDS
+  ].filter((card) => card.effect);
+  const signature = (card) => JSON.stringify({
+    target: card.effect.target,
+    duration: card.effect.definition.duration,
+    components: card.effect.definition.components
+  });
+  const seen = new Map(prior.map((card) => [signature(card), card.id]));
+  for (const card of NARROW_ESCAPE_WILL_CARDS.filter((entry) => entry.effect)) {
+    const key = signature(card);
+    assert.equal(seen.has(key), false, `${card.id} duplicates ${seen.get(key)}`);
+    seen.set(key, card.id);
+  }
+});
+
+test("Narrow Escape Will first pass localizes every card and automated effect in German and English", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const card of NARROW_ESCAPE_WILL_CARDS) {
+    assert.equal(typeof getPath(de, card.titleKey), "string", card.titleKey);
+    assert.equal(typeof getPath(en, card.titleKey), "string", card.titleKey);
+    assert.equal(typeof getPath(de, card.descriptionKey), "string", card.descriptionKey);
+    assert.equal(typeof getPath(en, card.descriptionKey), "string", card.descriptionKey);
+    if (card.effect) {
+      assert.equal(typeof getPath(de, card.effect.nameKey), "string", card.effect.nameKey);
+      assert.equal(typeof getPath(en, card.effect.nameKey), "string", card.effect.nameKey);
+    }
+  }
+});
+
+test("Narrow Escape German Will text uses reviewed Remaster terminology", () => {
+  const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
+  const will = de.PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes.Will;
+  assert.match(will.KeepYourName.Description, /Willenswürfe/u);
+  assert.match(will.PanicSpendsItsLastBreath.Description, /Furchteffekt/u);
+  assert.match(will.YourVoiceReturnsFirst.Description, /Willens-SG/u);
+  assert.match(will.LookForTheWayOut.Description, /Suchen/u);
+  assert.match(will.LookForTheWayOut.Description, /freie Aktion/u);
+  assert.match(will.TheMentalGripSlips.Description, /Mentalen Schaden/u);
+  assert.match(will.FourPointsMindStillMine.Description, /Wahrnehmungs-SG/u);
+});
+
+test("Narrow Escape Will first pass keeps positive automated effects on the saving actor", () => {
+  const automated = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.effect);
   assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });

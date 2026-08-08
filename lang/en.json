@@ -1677,6 +1677,48 @@
             "Title": "Leave Only an Afterimage",
             "Description": "By the time the danger finishes passing, the place you occupied is already old information. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Perception DC."
           }
+        },
+        "Will": {
+          "KeepYourName": {
+            "Title": "Keep Your Name",
+            "Description": "The danger reaches for the part of you that decides who you are and comes away empty. For 1 round, you gain a +1 circumstance bonus to Will saves and a +1 status bonus to Deception checks."
+          },
+          "PanicSpendsItsLastBreath": {
+            "Title": "Panic Spends Its Last Breath",
+            "Description": "Fear spends everything it has trying to close the world around you. After critically succeeding against a fear effect, for 1 round you gain 2 temporary Hit Points and a +1 circumstance bonus to Will saves."
+          },
+          "ThoughtFindsTheDoor": {
+            "Title": "Thought Finds the Door",
+            "Description": "The instant your mind clears, you see the route that panic had hidden. For 1 round, you gain a +1 circumstance bonus to Perception checks and a 5-foot status bonus to all Speeds."
+          },
+          "YourVoiceReturnsFirst": {
+            "Title": "Your Voice Returns First",
+            "Description": "The pressure breaks before your voice does. For 1 round, you gain a +1 circumstance bonus to Diplomacy checks, Intimidation checks, and Will DC."
+          },
+          "LookForTheWayOut": {
+            "Title": "Look for the Way Out",
+            "Description": "The instant your mind is yours again, you use it. You may immediately Seek as a free action with a +2 circumstance bonus to the Perception check. Apply this result manually."
+          },
+          "TheMentalGripSlips": {
+            "Title": "The Mental Grip Slips",
+            "Description": "A mental effect finds purchase for one instant and then loses you completely. After critically succeeding against a mental effect, for 1 round you gain resistance 2 to mental damage and a +1 status bonus to Will saves."
+          },
+          "ChoiceBecomesMotion": {
+            "Title": "Choice Becomes Motion",
+            "Description": "The danger fails to choose for you. Your next decision arrives already in motion. For 1 round, you gain a +1 status bonus to Will DC and a 5-foot circumstance bonus to all Speeds."
+          },
+          "FourPointsMindStillMine": {
+            "Title": "Four Points, Mind Still Mine",
+            "Description": "At danger score 4 or higher, keeping hold of yourself is the opening. For 1 round, you gain 3 temporary Hit Points, a +1 status bonus to Will saves, and a +1 circumstance bonus to Perception DC."
+          },
+          "FivePointsRefuseTheEnding": {
+            "Title": "Five Points, Refuse the Ending",
+            "Description": "At danger score 5 or higher, refusal becomes a complete survival instinct. For 1 round, you gain a +1 status bonus to saving throws and Perception checks and a 5-foot circumstance bonus to all Speeds."
+          },
+          "NothingLeftToCommand": {
+            "Title": "Nothing Left to Command",
+            "Description": "Whatever tried to dictate your next move has lost the argument. For 1 round, you gain a +1 circumstance bonus to Deception checks, Will DC, and class DC."
+          }
         }
       }
     },
@@ -2721,6 +2763,35 @@
           },
           "LeaveOnlyAnAfterimage": {
             "Name": "Leave Only an Afterimage"
+          }
+        },
+        "Will": {
+          "KeepYourName": {
+            "Name": "Keep Your Name"
+          },
+          "PanicSpendsItsLastBreath": {
+            "Name": "Panic Spends Its Last Breath"
+          },
+          "ThoughtFindsTheDoor": {
+            "Name": "Thought Finds the Door"
+          },
+          "YourVoiceReturnsFirst": {
+            "Name": "Your Voice Returns First"
+          },
+          "TheMentalGripSlips": {
+            "Name": "The Mental Grip Slips"
+          },
+          "ChoiceBecomesMotion": {
+            "Name": "Choice Becomes Motion"
+          },
+          "FourPointsMindStillMine": {
+            "Name": "Four Points, Mind Still Mine"
+          },
+          "FivePointsRefuseTheEnding": {
+            "Name": "Five Points, Refuse the Ending"
+          },
+          "NothingLeftToCommand": {
+            "Name": "Nothing Left to Command"
           }
         }
       }

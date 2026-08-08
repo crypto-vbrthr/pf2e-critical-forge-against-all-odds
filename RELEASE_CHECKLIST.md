@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 230/230 passing.
-- [x] Current coverage: 99.51% lines, 95.07% branches, 98.82% functions.
-- [x] Current localization parity: 1163 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 390 published cards and 334 automated card effects.
+- [x] Current automated test run: 239/239 passing.
+- [x] Current coverage: 99.51% lines, 94.91% branches, 98.86% functions.
+- [x] Current localization parity: 1192 keys in both German and English.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 400 published cards and 343 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -167,5 +167,14 @@
 - [x] Every automated Narrow Escape Reflex effect targets the saving actor.
 - [x] Narrow Escape Reflex automated effects add no exact published signature duplicate.
 - [x] German and English localization exists for all ten Reflex cards and nine automated effects.
-- [ ] Foundry smoke test: ten localized Narrow Escape Reflex cards are visible and the manual two-Step result reads correctly.
-- [ ] Foundry smoke test: incapacitation-gated Reflex card appears only for matching incoming incapacitation evidence.
+- [x] Foundry smoke test: ten localized Narrow Escape Reflex cards are visible and the manual two-Step result reads correctly.
+- [x] Foundry smoke test: incapacitation-gated Reflex card appears only for matching incoming incapacitation evidence.
+- [x] Narrow Escapes Will first pass contains ten critical-success save cards in content batch 33.
+- [x] Narrow Escapes Will first pass uses 9 automated / 1 manual Seek result.
+- [x] Narrow Escapes Will adds danger-score 4 and danger-score 5 escalation.
+- [x] Panic Spends Its Last Breath and The Mental Grip Slips require incoming fear and mental trait evidence respectively.
+- [x] Every automated Narrow Escape Will effect targets the saving actor.
+- [x] Narrow Escape Will automated effects add no exact published signature duplicate.
+- [x] German and English localization exists for all ten Will cards and nine automated effects.
+- [ ] Foundry smoke test: ten localized Narrow Escape Will cards are visible and the manual Seek result reads correctly.
+- [ ] Foundry smoke test: fear- and mental-gated Will cards appear only for matching incoming evidence.

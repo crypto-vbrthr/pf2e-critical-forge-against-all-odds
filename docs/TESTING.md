@@ -86,16 +86,18 @@ The test suite covers:
 
 - ten Narrow Escape Attack cards in content batch `30`, split 5/5 between ordinary and spell critical hits;
 - ten Narrow Escape Fortitude cards in content batch `31`, isolated to critical Fortitude successes;
+- ten Narrow Escape Reflex cards in content batch `32`, isolated to critical Reflex successes;
+- ten Narrow Escape Will cards in content batch `33`, isolated to critical Will successes;
 - the dynamic Narrow Escape gate on every published Narrow Escape card;
 - nine automated and one manual result in each first-pass Narrow Escape deck;
-- danger-score 4 and 5 escalation conditions in both Attack and Fortitude;
-- an incoming-poison filter for **The Toxin Loses the Race** without broad dangerous-trait over-filtering on the remaining Fortitude cards;
-- saver/source targeting for every automated Narrow Escape Fortitude result;
-- exact automated-signature uniqueness against all earlier published Bloodied, Surrounded, Giant-Slayer, and Narrow Escape Attack effects;
+- danger-score 4 and 5 escalation conditions in all four first-pass Narrow Escape decks;
+- an incoming-poison filter for **The Toxin Loses the Race**, an incoming-incapacitation filter for **The Finishing Blow Misses**, and focused incoming fear/mental filters for the two matching Will cards without broad over-filtering on the remaining cards;
+- saver/source targeting for every automated Narrow Escape Fortitude, Reflex, and Will result;
+- exact automated-signature uniqueness across all published Narrow Escape effects and against all earlier Bloodied, Surrounded, and Giant-Slayer effects;
 - attack-roll danger scoring excluding the acting hero's own dangerous offensive traits while preserving dangerous incoming save evidence;
-- German and English Narrow Escape card/effect localization and reviewed Remaster terminology, including Zähigkeits-SG, Schnelle Heilung, Liegend, and Aufstehen;
+- German and English Narrow Escape card/effect localization and reviewed Remaster terminology, including Zähigkeits-SG, Schnelle Heilung, Liegend, Aufstehen, Willens-SG, Furchteffekt, Mentalen Schaden, and the simple action Suchen;
 
 During development, the pack and provider definitions are additionally smoke-tested against the actual Critical Forge `1.0.0-rc` registries. The Foundry smoke test remains necessary because Foundry hook timing, world settings, protected editor rendering, and live diagnostic presentation cannot be reproduced completely by Node tests.
 
-Current `0.1.0-dev.32` baseline: **230/230 tests**, **99.51% line coverage**, **95.07% branch coverage**, and **98.82% function coverage**. The current build contains **390 published cards and 334 automated card effects**; Narrow Escapes contributes **30 cards, 27 automated effects, and 3 manual results** across Attack, Fortitude, and Reflex. All three first-pass decks keep exact automated signatures distinct from earlier published cards, Fortitude and Reflex preserve the saving actor as recipient for every positive automated effect, and the Attack danger-score regression guard continues to prevent the hero's own dangerous offensive traits from inflating Narrow Escape danger. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
+Current `0.1.0-dev.33` baseline: **239/239 tests**, **99.51% line coverage**, **94.91% branch coverage**, and **98.86% function coverage**. The current build contains **400 published cards and 343 automated card effects**; Narrow Escapes contributes **40 cards, 36 automated effects, and 4 manual results** across all four specialized decks. All four first-pass decks keep exact automated signatures distinct from earlier published cards, Fortitude, Reflex, and Will preserve the saving actor as recipient for every positive automated effect, and the Attack danger-score regression guard continues to prevent the hero's own dangerous offensive traits from inflating Narrow Escape danger. The package-local release and schema checks cover all add-on contracts available in this workspace; the direct integration smoke test against the actual Critical Forge `1.0.0-rc` pack validator should be repeated in the integrated Critical Forge/Foundry workspace before tagging.
 

@@ -485,3 +485,13 @@ export function defineNarrowEscapeReflexCard(options) {
     filters: { ...options.filters, saveTypes: ["reflex"] }
   });
 }
+export function defineNarrowEscapeWillCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Narrow Escape Will cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineNarrowEscapeCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "will", deckToken: "Will",
+    contentBatch: options.contentBatch ?? 33, tags: ["save", "will", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["will"] }
+  });
+}

@@ -78,6 +78,8 @@ const { GIANT_SLAYER_REFLEX_CARDS } = await import(pathToFileURL(path.join(root,
 const { GIANT_SLAYER_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/giant-slayer-will.js")).href);
 const { NARROW_ESCAPE_ATTACK_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-attack.js")).href);
 const { NARROW_ESCAPE_FORTITUDE_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-fortitude.js")).href);
+const { NARROW_ESCAPE_REFLEX_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-reflex.js")).href);
+const { NARROW_ESCAPE_WILL_CARDS } = await import(pathToFileURL(path.join(root, "scripts/data/cards/narrow-escape-will.js")).href);
 for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
   check(constants.includes(`"${deckType}"`), `Missing specialized deck constant: ${deckType}`);
 }
@@ -187,6 +189,26 @@ check(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.metadata?.contentBatch 
 check(NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Fortitude first pass must contain nine automated results.");
 check(NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Fortitude first pass must contain one manual result.");
 check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "fortitude"'), "Narrow Escapes Fortitude cards are not wired into the pack registry.");
+check(NARROW_ESCAPE_REFLEX_CARDS.length === 10, "Narrow Escapes Reflex must contain ten first-pass cards.");
+check(new Set(NARROW_ESCAPE_REFLEX_CARDS.map((card) => card.id)).size === 10, "Narrow Escapes Reflex card IDs must be unique.");
+check(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.deckType === "reflex"), "Narrow Escapes Reflex cards must remain in the Reflex deck.");
+check(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Narrow Escapes Reflex cards require critical save success.");
+check(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "reflex"), "Narrow Escapes Reflex cards must require Reflex.");
+check(NARROW_ESCAPE_REFLEX_CARDS.every((card) => hasNarrowEscapeGate(card.conditions)), "Narrow Escapes Reflex cards must use the dynamic Narrow Escape condition.");
+check(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.metadata?.contentBatch === 32), "Narrow Escapes Reflex first pass must use content batch 32.");
+check(NARROW_ESCAPE_REFLEX_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Reflex first pass must contain nine automated results.");
+check(NARROW_ESCAPE_REFLEX_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Reflex first pass must contain one manual result.");
+check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "reflex"'), "Narrow Escapes Reflex cards are not wired into the pack registry.");
+check(NARROW_ESCAPE_WILL_CARDS.length === 10, "Narrow Escapes Will must contain ten first-pass cards.");
+check(new Set(NARROW_ESCAPE_WILL_CARDS.map((card) => card.id)).size === 10, "Narrow Escapes Will card IDs must be unique.");
+check(NARROW_ESCAPE_WILL_CARDS.every((card) => card.deckType === "will"), "Narrow Escapes Will cards must remain in the Will deck.");
+check(NARROW_ESCAPE_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), "Narrow Escapes Will cards require critical save success.");
+check(NARROW_ESCAPE_WILL_CARDS.every((card) => card.filters?.saveTypes?.length === 1 && card.filters.saveTypes[0] === "will"), "Narrow Escapes Will cards must require Will.");
+check(NARROW_ESCAPE_WILL_CARDS.every((card) => hasNarrowEscapeGate(card.conditions)), "Narrow Escapes Will cards must use the dynamic Narrow Escape condition.");
+check(NARROW_ESCAPE_WILL_CARDS.every((card) => card.metadata?.contentBatch === 33), "Narrow Escapes Will first pass must use content batch 33.");
+check(NARROW_ESCAPE_WILL_CARDS.filter((card) => card.effect).length === 9, "Narrow Escapes Will first pass must contain nine automated results.");
+check(NARROW_ESCAPE_WILL_CARDS.filter((card) => !card.effect).length === 1, "Narrow Escapes Will first pass must contain one manual result.");
+check(packsSource.includes('theme.id === THEME_IDS.NARROW_ESCAPE && deckType === "will"'), "Narrow Escapes Will cards are not wired into the pack registry.");
 
 if (warnings.length) console.warn(warnings.join("\n"));
 if (errors.length) {

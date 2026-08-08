@@ -1677,6 +1677,48 @@
             "Title": "Hinterlass nur ein Nachbild",
             "Description": "Wenn die Gefahr endgültig vorübergezogen ist, ist der Ort, an dem du eben noch standest, bereits veraltete Information. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Heimlichkeitswürfe und deinen Wahrnehmungs-SG."
           }
+        },
+        "Will": {
+          "KeepYourName": {
+            "Title": "Behalte deinen Namen",
+            "Description": "Die Gefahr greift nach dem Teil von dir, der bestimmt, wer du bist, und geht leer aus. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe und einen Statusbonus von +1 auf Täuschungswürfe."
+          },
+          "PanicSpendsItsLastBreath": {
+            "Title": "Die Panik verbraucht ihren letzten Atemzug",
+            "Description": "Die Furcht setzt alles daran, die Welt um dich herum zu schließen. Nach einem kritischen Erfolg gegen einen Furchteffekt erhältst du für 1 Runde 2 temporäre Trefferpunkte und einen Situationsbonus von +1 auf Willenswürfe."
+          },
+          "ThoughtFindsTheDoor": {
+            "Title": "Dein Verstand findet den Ausgang",
+            "Description": "In dem Augenblick, in dem dein Geist wieder klar wird, erkennst du den Weg, den die Panik verborgen hatte. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und einen Statusbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "YourVoiceReturnsFirst": {
+            "Title": "Deine Stimme kehrt zuerst zurück",
+            "Description": "Der Druck bricht, bevor deine Stimme es tut. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Diplomatie- und Einschüchternwürfe sowie auf deinen Willens-SG."
+          },
+          "LookForTheWayOut": {
+            "Title": "Such nach dem Ausweg",
+            "Description": "In dem Augenblick, in dem dein Geist wieder dir gehört, nutzt du ihn. Du darfst sofort als freie Aktion Suchen und erhältst einen Situationsbonus von +2 auf den Wahrnehmungswurf. Wende dieses Ergebnis manuell an."
+          },
+          "TheMentalGripSlips": {
+            "Title": "Der mentale Griff rutscht ab",
+            "Description": "Ein mentaler Effekt findet für einen Augenblick Halt und verliert dich dann vollständig. Nach einem kritischen Erfolg gegen einen mentalen Effekt erhältst du für 1 Runde Resistenz 2 gegen Mentalen Schaden und einen Statusbonus von +1 auf Willenswürfe."
+          },
+          "ChoiceBecomesMotion": {
+            "Title": "Entscheidung wird zu Bewegung",
+            "Description": "Die Gefahr scheitert daran, für dich zu entscheiden. Deine nächste Entscheidung kommt bereits in Bewegung. Für 1 Runde erhältst du einen Statusbonus von +1 auf deinen Willens-SG und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FourPointsMindStillMine": {
+            "Title": "Vier Punkte, mein Geist gehört mir",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher ist es selbst schon der Ausweg, die Kontrolle über dich zu behalten. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Statusbonus von +1 auf Willenswürfe und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
+          },
+          "FivePointsRefuseTheEnding": {
+            "Title": "Fünf Punkte, verweigere das Ende",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher wird Verweigerung zu einem vollständigen Überlebensinstinkt. Für 1 Runde erhältst du einen Statusbonus von +1 auf Rettungswürfe und Wahrnehmungswürfe sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "NothingLeftToCommand": {
+            "Title": "Nichts mehr zu befehlen",
+            "Description": "Was auch immer versucht hat, deine nächste Handlung zu bestimmen, hat den Streit verloren. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Täuschungswürfe, deinen Willens-SG und deinen Klassen-SG."
+          }
         }
       }
     },
@@ -2721,6 +2763,35 @@
           },
           "LeaveOnlyAnAfterimage": {
             "Name": "Hinterlass nur ein Nachbild"
+          }
+        },
+        "Will": {
+          "KeepYourName": {
+            "Name": "Behalte deinen Namen"
+          },
+          "PanicSpendsItsLastBreath": {
+            "Name": "Die Panik verbraucht ihren letzten Atemzug"
+          },
+          "ThoughtFindsTheDoor": {
+            "Name": "Dein Verstand findet den Ausgang"
+          },
+          "YourVoiceReturnsFirst": {
+            "Name": "Deine Stimme kehrt zuerst zurück"
+          },
+          "TheMentalGripSlips": {
+            "Name": "Der mentale Griff rutscht ab"
+          },
+          "ChoiceBecomesMotion": {
+            "Name": "Entscheidung wird zu Bewegung"
+          },
+          "FourPointsMindStillMine": {
+            "Name": "Vier Punkte, mein Geist gehört mir"
+          },
+          "FivePointsRefuseTheEnding": {
+            "Name": "Fünf Punkte, verweigere das Ende"
+          },
+          "NothingLeftToCommand": {
+            "Name": "Nichts mehr zu befehlen"
           }
         }
       }

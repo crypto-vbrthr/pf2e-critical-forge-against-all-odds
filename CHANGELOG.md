@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-dev.33
+
+### Added
+- Added the first ten **Narrow Escapes Will** cards, completing the first 40-card Narrow Escapes pass and bringing the full add-on to 400/480 planned cards.
+- Added nine automated Effect Engine results and one manual **Seek / Suchen** result centered on reclaiming agency after a critical Will success, spotting the exit once panic clears, and turning mental survival into immediate momentum.
+- Added danger-score 4 and 5 escalation for two stronger Will results.
+- Added focused incoming **fear** and **mental** gates for **Panic Spends Its Last Breath** and **The Mental Grip Slips** while leaving the remaining Will pool broadly available.
+- Added German and English localization for all ten Will cards and nine automated effects.
+- Wired the Narrow Escape Will deck into the protected multi-deck pack and added a matching Will card factory path.
+
+### Tests
+- Added Will count, unique-ID, save/deck isolation, batch-33, 9/1 automation, danger escalation, fear/mental-filter, immutable-filter, localization, German terminology, saver-targeting, and cross-theme exact-signature uniqueness coverage.
+- Extended package-local release checks to cover both Narrow Escape Reflex and Will first-pass contracts.
+- Updated runtime and pack contracts for the 10/10/10/10 Narrow Escape first-pass layout.
+- Verified **239/239 tests** with **99.51% line coverage**, **94.91% branch coverage**, and **98.86% function coverage**.
+- Package-local release checks report **1192 localization keys per language**.
+
+### Compatibility
+- All 390 previously published card IDs remain unchanged; this build adds ten Narrow Escape Will IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.32
 
 ### Added
