@@ -474,3 +474,14 @@ export function defineNarrowEscapeFortitudeCard(options) {
     filters: { ...options.filters, saveTypes: ["fortitude"] }
   });
 }
+
+export function defineNarrowEscapeReflexCard(options) {
+  if (options.category && options.category !== "savingThrowCriticalSuccess") {
+    throw new TypeError(`Narrow Escape Reflex cards require savingThrowCriticalSuccess: ${options.category}`);
+  }
+  return defineNarrowEscapeCard({
+    ...options, category: "savingThrowCriticalSuccess", deckType: "reflex", deckToken: "Reflex",
+    contentBatch: options.contentBatch ?? 32, tags: ["save", "reflex", ...(options.tags ?? [])],
+    filters: { ...options.filters, saveTypes: ["reflex"] }
+  });
+}

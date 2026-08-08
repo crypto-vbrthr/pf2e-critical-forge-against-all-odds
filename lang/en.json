@@ -1635,6 +1635,48 @@
             "Title": "The Exit Stays Open",
             "Description": "The danger had one chance to stop your body. It missed. For 1 round, you gain a +1 circumstance bonus to AC and Fortitude DC and a 5-foot circumstance bonus to all Speeds."
           }
+        },
+        "Reflex": {
+          "HalfAHeartbeatClear": {
+            "Title": "Half a Heartbeat Clear",
+            "Description": "You are moving before the danger has finished becoming real. For 1 round, you gain a +1 circumstance bonus to Reflex saves and a 5-foot circumstance bonus to all Speeds."
+          },
+          "TheAngleStaysOpen": {
+            "Title": "The Angle Stays Open",
+            "Description": "The path is narrow enough that hesitation would close it. For 1 round, you gain a +1 circumstance bonus to AC and a +1 status bonus to Acrobatics checks."
+          },
+          "ReadTheFallingLine": {
+            "Title": "Read the Falling Line",
+            "Description": "The danger shows you where it will be a fraction of a second before it arrives. For 1 round, you gain a +1 circumstance bonus to Perception checks and Reflex DC."
+          },
+          "DistanceBeforeImpact": {
+            "Title": "Distance Before Impact",
+            "Description": "You turn the successful dodge into distance before the danger can reset. For 1 round, your land Speed gains a +10-foot circumstance bonus and you gain a +1 circumstance bonus to Acrobatics checks."
+          },
+          "TwoStepsFromDisaster": {
+            "Title": "Two Steps from Disaster",
+            "Description": "The first step avoids the danger. The second makes sure it cannot simply close again. You may immediately Step up to twice as a single free action. If there is an identifiable hostile source, you must end farther from it than you began. Apply this result manually."
+          },
+          "TheFinishingBlowMisses": {
+            "Title": "The Finishing Blow Misses",
+            "Description": "An effect meant to end the fight fails at the one instant that mattered. After critically succeeding against an incapacitation effect, for 1 round you gain a +1 status bonus to Reflex saves and a +1 circumstance bonus to AC."
+          },
+          "MomentumStaysYours": {
+            "Title": "Momentum Stays Yours",
+            "Description": "You do not let the escape end when the immediate danger does. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a 5-foot status bonus to all Speeds."
+          },
+          "FourPointsNoRoomLeft": {
+            "Title": "Four Points, No Room Left",
+            "Description": "At danger score 4 or higher, every remaining inch matters. For 1 round, you gain 3 temporary Hit Points, a +1 status bonus to Acrobatics checks, and a 5-foot circumstance bonus to all Speeds."
+          },
+          "FivePointsNowhereButThrough": {
+            "Title": "Five Points, Nowhere but Through",
+            "Description": "At danger score 5 or higher, survival stops being a choice between routes. There is only the one you make. For 1 round, you gain a +1 circumstance bonus to AC and Reflex saves and a +10-foot status bonus to your land Speed."
+          },
+          "LeaveOnlyAnAfterimage": {
+            "Title": "Leave Only an Afterimage",
+            "Description": "By the time the danger finishes passing, the place you occupied is already old information. For 1 round, you gain a +1 circumstance bonus to Stealth checks and Perception DC."
+          }
         }
       }
     },
@@ -2650,6 +2692,35 @@
           },
           "TheExitStaysOpen": {
             "Name": "The Exit Stays Open"
+          }
+        },
+        "Reflex": {
+          "HalfAHeartbeatClear": {
+            "Name": "Half a Heartbeat Clear"
+          },
+          "TheAngleStaysOpen": {
+            "Name": "The Angle Stays Open"
+          },
+          "ReadTheFallingLine": {
+            "Name": "Read the Falling Line"
+          },
+          "DistanceBeforeImpact": {
+            "Name": "Distance Before Impact"
+          },
+          "TheFinishingBlowMisses": {
+            "Name": "The Finishing Blow Misses"
+          },
+          "MomentumStaysYours": {
+            "Name": "Momentum Stays Yours"
+          },
+          "FourPointsNoRoomLeft": {
+            "Name": "Four Points, No Room Left"
+          },
+          "FivePointsNowhereButThrough": {
+            "Name": "Five Points, Nowhere but Through"
+          },
+          "LeaveOnlyAnAfterimage": {
+            "Name": "Leave Only an Afterimage"
           }
         }
       }

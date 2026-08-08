@@ -35,10 +35,10 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 221/221 passing.
-- [x] Current coverage: 99.52% lines, 95.11% branches, 98.79% functions.
-- [x] Current localization parity: 1134 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 380 published cards and 325 automated card effects.
+- [x] Current automated test run: 230/230 passing.
+- [x] Current coverage: 99.51% lines, 95.07% branches, 98.82% functions.
+- [x] Current localization parity: 1163 keys in both German and English.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 390 published cards and 334 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -158,5 +158,14 @@
 - [x] Every automated Narrow Escape Fortitude effect targets the saving actor.
 - [x] Narrow Escape Fortitude automated effects add no exact published signature duplicate.
 - [x] German and English localization exists for all ten Fortitude cards and nine automated effects.
-- [ ] Foundry smoke test: ten localized Narrow Escape Fortitude cards are visible and the manual Stand / Step result reads correctly.
-- [ ] Foundry smoke test: poison-gated Fortitude card appears only for matching incoming poison evidence.
+- [x] Foundry smoke test: ten localized Narrow Escape Fortitude cards are visible and the manual Stand / Step result reads correctly.
+- [x] Foundry smoke test: poison-gated Fortitude card appears only for matching incoming poison evidence.
+- [x] Narrow Escapes Reflex first pass contains ten critical-success save cards in content batch 32.
+- [x] Narrow Escapes Reflex first pass uses 9 automated / 1 manual result.
+- [x] Narrow Escapes Reflex adds danger-score 4 and danger-score 5 escalation.
+- [x] The Finishing Blow Misses requires incoming incapacitation trait evidence.
+- [x] Every automated Narrow Escape Reflex effect targets the saving actor.
+- [x] Narrow Escape Reflex automated effects add no exact published signature duplicate.
+- [x] German and English localization exists for all ten Reflex cards and nine automated effects.
+- [ ] Foundry smoke test: ten localized Narrow Escape Reflex cards are visible and the manual two-Step result reads correctly.
+- [ ] Foundry smoke test: incapacitation-gated Reflex card appears only for matching incoming incapacitation evidence.

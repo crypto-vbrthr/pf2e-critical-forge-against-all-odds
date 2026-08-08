@@ -85,7 +85,7 @@ test("runtime registration binds all resources through the extension contract", 
   const narrowEscapes = runtime.listPacks().find((pack) => pack.id.endsWith("narrow-escapes"));
   assert.equal(narrowEscapes.decks.attack.cards.length, 10);
   assert.equal(narrowEscapes.decks.fortitude.cards.length, 10);
-  assert.equal(narrowEscapes.decks.reflex.cards.length, 0);
+  assert.equal(narrowEscapes.decks.reflex.cards.length, 10);
   assert.equal(narrowEscapes.decks.will.cards.length, 0);
 });
 

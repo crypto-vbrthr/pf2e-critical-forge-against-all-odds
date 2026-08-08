@@ -97,7 +97,7 @@ The initial danger model is additive:
 
 Higher entries replace the lesser entry in the same category. The default matching threshold is 3. On attack rolls, dangerous traits belonging to the acting hero's own attack are ignored so an offensive poison, death, or similar trait cannot inflate its own Narrow Escape score. On saving throws, dangerous incoming attack/spell trait evidence can still contribute. The DC is preserved as evidence but does not yet alter the score because no stable relative-DC baseline has been adopted.
 
-This scoring model now drives the published Narrow Escape cards. The Attack first pass also uses `narrowEscape.score >= 4` and `>= 5` for two escalation results.
+This scoring model now drives the published Narrow Escape cards. The first-pass Attack, Fortitude, and Reflex decks each use `narrowEscape.score >= 4` and `>= 5` for two escalation results.
 
 ## Roll kind
 

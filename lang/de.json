@@ -1635,6 +1635,48 @@
             "Title": "Der Ausweg bleibt offen",
             "Description": "Die Gefahr hatte eine Gelegenheit, deinen Körper zu stoppen. Sie ist vorbei. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Zähigkeits-SG sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
           }
+        },
+        "Reflex": {
+          "HalfAHeartbeatClear": {
+            "Title": "Einen halben Herzschlag voraus",
+            "Description": "Du bewegst dich bereits, bevor die Gefahr überhaupt vollständig Wirklichkeit geworden ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Reflexwürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "TheAngleStaysOpen": {
+            "Title": "Der Winkel bleibt offen",
+            "Description": "Der Weg ist so schmal, dass jedes Zögern ihn schließen würde. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und einen Statusbonus von +1 auf Akrobatikwürfe."
+          },
+          "ReadTheFallingLine": {
+            "Title": "Lies die Linie des Einschlags",
+            "Description": "Die Gefahr zeigt dir einen Sekundenbruchteil zu früh, wo sie gleich sein wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und deinen Reflex-SG."
+          },
+          "DistanceBeforeImpact": {
+            "Title": "Abstand vor dem Einschlag",
+            "Description": "Du verwandelst das erfolgreiche Ausweichen in Abstand, bevor die Gefahr sich neu ausrichten kann. Für 1 Runde erhält deine Bewegungsrate an Land einen Situationsbonus von +3 m und du erhältst einen Situationsbonus von +1 auf Akrobatikwürfe."
+          },
+          "TwoStepsFromDisaster": {
+            "Title": "Zwei Schritte vor der Katastrophe",
+            "Description": "Der erste Schritt weicht der Gefahr aus. Der zweite sorgt dafür, dass sie sich nicht sofort wieder schließen kann. Du darfst sofort als eine einzige freie Aktion bis zu zweimal einen Schritt ausführen. Gibt es eine eindeutig erkennbare feindliche Quelle, musst du danach weiter von ihr entfernt sein als zuvor. Wende dieses Ergebnis manuell an."
+          },
+          "TheFinishingBlowMisses": {
+            "Title": "Der entscheidende Schlag verfehlt",
+            "Description": "Ein Effekt, der den Kampf beenden sollte, scheitert genau in dem einen entscheidenden Augenblick. Nach einem kritischen Erfolg gegen einen Effekt mit der Kategorie Kampfunfähig erhältst du für 1 Runde einen Statusbonus von +1 auf Reflexwürfe und einen Situationsbonus von +1 auf deine RK."
+          },
+          "MomentumStaysYours": {
+            "Title": "Der Schwung bleibt deiner",
+            "Description": "Du lässt die Flucht nicht enden, nur weil die unmittelbare Gefahr vorüber ist. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und einen Statusbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FourPointsNoRoomLeft": {
+            "Title": "Vier Punkte, kein Raum mehr",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher zählt jeder verbleibende Zentimeter. Für 1 Runde erhältst du 3 temporäre Trefferpunkte, einen Statusbonus von +1 auf Akrobatikwürfe und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FivePointsNowhereButThrough": {
+            "Title": "Fünf Punkte, nur noch hindurch",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher ist Überleben keine Wahl zwischen mehreren Wegen mehr. Es gibt nur noch den, den du selbst schaffst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK und Reflexwürfe sowie einen Statusbonus von +3 m auf deine Bewegungsrate an Land."
+          },
+          "LeaveOnlyAnAfterimage": {
+            "Title": "Hinterlass nur ein Nachbild",
+            "Description": "Wenn die Gefahr endgültig vorübergezogen ist, ist der Ort, an dem du eben noch standest, bereits veraltete Information. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Heimlichkeitswürfe und deinen Wahrnehmungs-SG."
+          }
         }
       }
     },
@@ -2650,6 +2692,35 @@
           },
           "TheExitStaysOpen": {
             "Name": "Der Ausweg bleibt offen"
+          }
+        },
+        "Reflex": {
+          "HalfAHeartbeatClear": {
+            "Name": "Einen halben Herzschlag voraus"
+          },
+          "TheAngleStaysOpen": {
+            "Name": "Der Winkel bleibt offen"
+          },
+          "ReadTheFallingLine": {
+            "Name": "Lies die Linie des Einschlags"
+          },
+          "DistanceBeforeImpact": {
+            "Name": "Abstand vor dem Einschlag"
+          },
+          "TheFinishingBlowMisses": {
+            "Name": "Der entscheidende Schlag verfehlt"
+          },
+          "MomentumStaysYours": {
+            "Name": "Der Schwung bleibt deiner"
+          },
+          "FourPointsNoRoomLeft": {
+            "Name": "Vier Punkte, kein Raum mehr"
+          },
+          "FivePointsNowhereButThrough": {
+            "Name": "Fünf Punkte, nur noch hindurch"
+          },
+          "LeaveOnlyAnAfterimage": {
+            "Name": "Hinterlass nur ein Nachbild"
           }
         }
       }

@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-dev.32
+
+### Added
+- Added the first ten **Narrow Escapes Reflex** cards, bringing Narrow Escapes to 30/120 cards and the full add-on to 390/480 planned cards.
+- Added nine automated Effect Engine results and one manual two-Step escape result centered on turning a critical Reflex success into immediate distance, positioning, and a surviving route.
+- Added danger-score 4 and 5 escalation for two stronger Reflex results.
+- Added **The Finishing Blow Misses**, gated to incoming incapacitation trait evidence.
+- Added German and English localization for all ten Reflex cards and nine automated effects.
+- Wired the Narrow Escape Reflex deck into the protected multi-deck pack.
+
+### Tests
+- Added Reflex count, unique-ID, save/deck isolation, batch-32, 9/1 automation, danger escalation, incapacitation-filter, immutable-filter, localization, German terminology, saver-targeting, and cross-theme exact-signature uniqueness coverage.
+- Updated runtime and pack contracts for the 10/10/10/0 Narrow Escape deck layout.
+- Verified **230/230 tests** with **99.51% line coverage**, **95.07% branch coverage**, and **98.82% function coverage**.
+- Package-local release checks report **1163 localization keys per language**.
+
+### Compatibility
+- All 380 previously published card IDs remain unchanged; this build adds ten Narrow Escape Reflex IDs.
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.31
 
 ### Added
