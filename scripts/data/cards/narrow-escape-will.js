@@ -398,14 +398,14 @@ export const NARROW_ESCAPE_WILL_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "The Lie Gives You a Landmark",
-    fallbackDescription: "Once the false path fails, it becomes something you can navigate around. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Will DC.",
-    tags: ["perception", "will-dc", "clarity", "effect"],
+    fallbackDescription: "Once the false path fails, it becomes something you can recognize before it closes around you again. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Will saves.",
+    tags: ["perception", "will", "clarity", "effect"],
     contentBatch: 38,
     effect: {
       duration: ONE_ROUND,
       components: [
         { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] },
-        { type: "modifier", selector: "will-dc", value: 1, modifierType: "status", predicate: [] }
+        { type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }
       ]
     }
   }),

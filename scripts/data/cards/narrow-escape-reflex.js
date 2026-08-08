@@ -165,14 +165,14 @@ export const NARROW_ESCAPE_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Thread the Second Impact",
-    fallbackDescription: "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a +1 status bonus to Perception checks.",
+    fallbackDescription: "The first danger misses. You are already bracing for where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a +1 status bonus to Fortitude saves.",
     tags: ["reflex-dc", "perception", "follow-through", "escape", "effect"],
     contentBatch: 36,
     effect: {
       duration: ONE_ROUND,
       components: [
         { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] },
-        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "status", predicate: [] }
       ]
     }
   }),
@@ -299,14 +299,14 @@ export const NARROW_ESCAPE_REFLEX_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Leave No Easy Line",
-    fallbackDescription: "You leave the danger no clean line to follow. For 1 round, you gain a +1 status bonus to Stealth checks and a +1 circumstance bonus to Perception DC.",
+    fallbackDescription: "You leave the danger no clean line to follow. For 1 round, you gain a +1 status bonus to Stealth checks and a +1 circumstance bonus to Reflex DC.",
     tags: ["stealth", "perception-dc", "escape-line", "effect"],
     contentBatch: 36,
     effect: {
       duration: ONE_ROUND,
       components: [
         { type: "modifier", selector: "stealth", value: 1, modifierType: "status", predicate: [] },
-        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),

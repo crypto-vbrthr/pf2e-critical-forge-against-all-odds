@@ -244,7 +244,17 @@
 - [x] All 440 previously published card IDs remain unchanged.
 - [x] Narrow Escapes package metadata is marked complete.
 - [x] Full add-on reaches 480/480 planned cards with 407 automated and 73 manual results.
-- [ ] Foundry smoke test for `0.1.0-dev.38`: all four Narrow Escape decks expose 30 localized cards.
+- [x] Foundry smoke test for `0.1.0-dev.38`: all four Narrow Escape decks expose 30 localized cards.
 - [ ] Foundry smoke test for `0.1.0-dev.38`: final manual movement, cover, Balance, ally-support, and Step routes read and resolve correctly.
 - [ ] Foundry smoke test for `0.1.0-dev.38`: final disease, inhaled, fear, mental, auditory, score-4, and score-5 gates appear only in matching contexts.
 
+
+### Narrow Escapes final review (`0.1.0-dev.38.1`)
+
+- [x] Final review covers all 120 Narrow Escape cards without changing any published card ID.
+- [x] 30/30/30/30 deck layout, 100 automated / 20 manual split, and three score-4 plus three score-5 escalations per deck remain intact.
+- [x] Three same-gate near-duplicate concepts are separated mechanically: Thread the Second Impact, Leave No Easy Line, and The Lie Gives You a Landmark.
+- [x] Same-gate conceptual-footprint regression audit is clean across all automated Narrow Escape cards.
+- [x] Canonical exact-effect and strict same-gate superset audits remain clean after the review changes.
+- [x] Architecture, Testing, Roadmap, README, and release-check documentation describe the complete 120-card theme.
+- [ ] Foundry smoke test for `0.1.0-dev.38.1`: the three revised card effects display and apply with their updated mechanics.

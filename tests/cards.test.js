@@ -2917,7 +2917,7 @@ test("Narrow Escape 80-card review rejects order-only automated duplicates acros
   }
 });
 
-test("Narrow Escape 80-card review separates four previously order-hidden effect overlaps", () => {
+test("Narrow Escape 80-card review fixes remain preserved through the final review", () => {
   const attack = Object.fromEntries(NARROW_ESCAPE_ATTACK_CARDS.map((card) => [card.id.split(".").at(-1), card]));
   const fortitude = Object.fromEntries(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
   const reflex = Object.fromEntries(NARROW_ESCAPE_REFLEX_CARDS.map((card) => [card.id.split(".").at(-1), card]));
@@ -2932,7 +2932,7 @@ test("Narrow Escape 80-card review separates four previously order-hidden effect
   ]);
   assert.deepEqual(reflex["ner-011-thread-the-second-impact"].effect.definition.components, [
     { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] },
-    { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
+    { type: "modifier", selector: "fortitude", value: 1, modifierType: "status", predicate: [] }
   ]);
   assert.deepEqual(reflex["ner-017-keep-your-balance-through-it"].effect.definition.components, [
     { type: "modifier", selector: "acrobatics", value: 1, modifierType: "status", predicate: [] },
@@ -2978,3 +2978,52 @@ test("Narrow Escape final pass adds no resistance or immunity filler", () => {
   assert.equal(types.includes("immunity"), false);
 });
 
+
+test("Narrow Escape final review rejects same-gate conceptual selector duplicates", () => {
+  const stableObject = (value) => {
+    if (Array.isArray(value)) return value.map(stableObject);
+    if (!value || typeof value !== "object") return value;
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableObject(value[key])]));
+  };
+  const gate = (card) => JSON.stringify(stableObject({
+    category: card.category,
+    filters: card.filters,
+    conditions: card.conditions,
+    target: card.effect.target,
+    duration: card.effect.definition.duration
+  }));
+  const footprint = (card) => card.effect.definition.components.flatMap((component) => {
+    if (component.type === "modifier") {
+      const selectors = Array.isArray(component.selector) ? component.selector : [component.selector];
+      return selectors.map((selector) => `modifier:${selector}:${Math.sign(component.value)}`);
+    }
+    if (component.type === "movement") return [`movement:${component.movementType}:${Math.sign(component.value)}`];
+    if (component.type === "condition") return [`condition:${component.slug}`];
+    return [`${component.type}:${Math.sign(component.value ?? 1)}`];
+  }).sort().join("|");
+
+  const seen = new Map();
+  for (const card of ALL_NARROW_ESCAPE_CARDS.filter((entry) => entry.effect)) {
+    const key = `${gate(card)}::${footprint(card)}`;
+    assert.equal(seen.has(key), false, `${card.id} conceptually duplicates ${seen.get(key)}`);
+    seen.set(key, card.id);
+  }
+});
+
+test("Narrow Escape final review separates the three same-gate near-duplicate concepts", () => {
+  const reflex = Object.fromEntries(NARROW_ESCAPE_REFLEX_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+  const will = Object.fromEntries(NARROW_ESCAPE_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
+
+  assert.deepEqual(reflex["ner-011-thread-the-second-impact"].effect.definition.components, [
+    { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] },
+    { type: "modifier", selector: "fortitude", value: 1, modifierType: "status", predicate: [] }
+  ]);
+  assert.deepEqual(reflex["ner-019-leave-no-easy-line"].effect.definition.components, [
+    { type: "modifier", selector: "stealth", value: 1, modifierType: "status", predicate: [] },
+    { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] }
+  ]);
+  assert.deepEqual(will["new-025-the-lie-gives-you-a-landmark"].effect.definition.components, [
+    { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] },
+    { type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }
+  ]);
+});

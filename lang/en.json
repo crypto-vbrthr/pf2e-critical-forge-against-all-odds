@@ -1839,7 +1839,7 @@
           },
           "ThreadTheSecondImpact": {
             "Title": "Thread the Second Impact",
-            "Description": "The first danger misses. You are already reading where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a +1 status bonus to Perception checks."
+            "Description": "The first danger misses. You are already bracing for where the next piece of the disaster will land. For 1 round, you gain a +1 circumstance bonus to Reflex DC and a +1 status bonus to Fortitude saves."
           },
           "ReadTheRebound": {
             "Title": "Read the Rebound",
@@ -1871,7 +1871,7 @@
           },
           "LeaveNoEasyLine": {
             "Title": "Leave No Easy Line",
-            "Description": "You leave the danger no clean line to follow. For 1 round, you gain a +1 status bonus to Stealth checks and a +1 circumstance bonus to Perception DC."
+            "Description": "You leave the danger no clean line to follow. For 1 round, you gain a +1 status bonus to Stealth checks and a +1 circumstance bonus to Reflex DC."
           },
           "TumbleThroughTheClosingEdge": {
             "Title": "Tumble Through the Closing Edge",
@@ -2017,7 +2017,7 @@
           },
           "TheLieGivesYouALandmark": {
             "Title": "The Lie Gives You a Landmark",
-            "Description": "Once the false path fails, it becomes something you can navigate around. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Will DC."
+            "Description": "Once the false path fails, it becomes something you can recognize before it closes around you again. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Will saves."
           },
           "ThoughtSlipsTheHook": {
             "Title": "Thought Slips the Hook",

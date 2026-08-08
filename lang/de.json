@@ -1839,7 +1839,7 @@
           },
           "ThreadTheSecondImpact": {
             "Title": "Durch den zweiten Einschlag",
-            "Description": "Die erste Gefahr verfehlt dich. Du liest bereits, wo der nächste Teil der Katastrophe einschlagen wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und einen Zustandsbonus von +1 auf Wahrnehmungswürfe."
+            "Description": "Die erste Gefahr verfehlt dich. Du wappnest dich bereits für den Ort, an dem der nächste Teil der Katastrophe einschlagen wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Reflex-SG und einen Zustandsbonus von +1 auf Zähigkeitswürfe."
           },
           "ReadTheRebound": {
             "Title": "Lies den Rückprall",
@@ -1871,7 +1871,7 @@
           },
           "LeaveNoEasyLine": {
             "Title": "Lass keine einfache Linie zurück",
-            "Description": "Du lässt der Gefahr keine klare Linie, der sie folgen könnte. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Heimlichkeitswürfe und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
+            "Description": "Du lässt der Gefahr keine klare Linie, der sie folgen könnte. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Heimlichkeitswürfe und einen Situationsbonus von +1 auf deinen Reflex-SG."
           },
           "TumbleThroughTheClosingEdge": {
             "Title": "Turne durch die sich schließende Lücke",
@@ -2017,7 +2017,7 @@
           },
           "TheLieGivesYouALandmark": {
             "Title": "Die Lüge gibt dir einen Orientierungspunkt",
-            "Description": "Sobald der falsche Weg scheitert, wird er zu etwas, an dem du vorbeinavigieren kannst. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und einen Zustandsbonus von +1 auf deinen Willens-SG."
+            "Description": "Sobald der falsche Weg scheitert, wird er zu etwas, das du erkennen kannst, bevor es sich erneut um dich schließt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und einen Zustandsbonus von +1 auf Willenswürfe."
           },
           "ThoughtSlipsTheHook": {
             "Title": "Der Gedanke gleitet vom Haken",

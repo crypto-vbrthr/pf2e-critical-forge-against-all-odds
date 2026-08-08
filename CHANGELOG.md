@@ -1,3 +1,20 @@
+# Changelog
+
+## 0.1.0-dev.38.1
+
+### Final 120-card Narrow Escapes review
+
+- Reviewed all 120 Narrow Escapes cards across Attack, Fortitude, Reflex, and Will for balance, overlap, danger-score scaling, targeting, manual routes, terminology, and automation.
+- Preserved all 480 published card IDs and the complete 30/30/30/30 Narrow Escape deck structure.
+- Separated three same-gate near-duplicate automated concepts that previously differed mainly by bonus type:
+  - **Thread the Second Impact** now combines Reflex DC with Fortitude saves instead of repeating the Perception/Reflex-DC footprint of **Read the Falling Line**.
+  - **Leave No Easy Line** now combines Stealth with Reflex DC instead of repeating the Stealth/Perception-DC footprint of **Leave Only an Afterimage**.
+  - **The Lie Gives You a Landmark** now combines Perception with Will saves instead of mirroring the Perception/Will-DC footprint of **Clarity Survives the Pressure**.
+- Added a same-gate conceptual-footprint regression audit so selector-equivalent cards cannot hide behind swapped circumstance/status bonus types.
+- Canonical order-insensitive exact-effect uniqueness and strict same-gate mechanical-superset audits remain clean across all 120 Narrow Escapes cards.
+- Synchronized Architecture, Testing, Roadmap, README, and release-check documentation with the completed final pass and review.
+- Recorded the successful Foundry smoke test of the complete `0.1.0-dev.38` 30/30/30/30 deck layout.
+
 ## 0.1.0-dev.38
 
 ### Final Narrow Escapes content pass
@@ -13,8 +30,6 @@
 - Marked Narrow Escapes pack metadata `complete` and updated runtime/pack contracts to 30 cards in every specialized deck.
 - Preserved all 440 previously published card IDs.
 - Against All Odds now contains the planned **480/480 cards: 407 automated Effect Engine results and 73 explicit manual results**.
-
-# Changelog
 
 ## 0.1.0-dev.37.1
 

@@ -52,10 +52,10 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 28. Narrow Escapes Will, second pass: cards 11–20. **Complete in `0.1.0-dev.37`, with 8 automated / 2 manual results, one additional score-4 and score-5 escalation, focused incoming fear/mental gates, saver-only automated targeting, Step and Recall Knowledge manual routes, and no resistance/immunity filler.**
 29. Review the first 80 **Narrow Escapes** cards for balance, overlap, danger-score scaling, targeting, terminology, and automation. **Complete in `0.1.0-dev.37.1`; all 440 published IDs are preserved, four order-hidden exact effect duplicates are separated, a canonical order-insensitive effect-signature audit is added, the 68/12 automated/manual split and danger-score scaling remain intact, and documentation drift from pass two is corrected.**
 30. Complete the final 40 **Narrow Escapes** cards, ten per deck. **Complete in `0.1.0-dev.38`; all four decks reach 30/30, the final pass uses an 8/2 automated/manual split per deck, each deck gains one additional score-4 and score-5 escalation, and the add-on reaches 480/480 planned cards.**
-30. Continue the reviewed final passes for **Narrow Escapes**.
-31. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
+31. Final review of all 120 **Narrow Escapes** cards. **Complete in `0.1.0-dev.38.1`; all IDs and deck structures are preserved, three same-gate near-duplicate concepts are separated, conceptual-footprint regression coverage is added, and final-pass documentation drift is corrected.**
+32. Perform the complete 480-card cross-pack duplicate-concept, effect, localization, diagnostic, and release-readiness audit.
 
-Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes are now all complete at 120/120 cards. Against All Odds has reached its planned 480/480-card content target. The next milestone is the final 120-card Narrow Escapes review and then the complete 480-card release review.
+Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes are now all complete at 120/120 cards. Against All Odds has reached its planned 480/480-card content target. The final 120-card Narrow Escapes review is complete. The next milestone is the complete 480-card release review.
 
 Every card will:
 

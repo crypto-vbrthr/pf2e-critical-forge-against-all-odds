@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.38` completes the **final 40 Narrow Escapes cards**. Attack, Fortitude, Reflex, and Will now each contain 30 cards, so Against All Odds reaches its planned **480/480 card** content target. The final Narrow Escapes pass adds 8 automated and 2 manual results per deck, one additional danger-score 4 and one danger-score 5 escalation per deck, focused incoming-trait gates where the fiction requires them, and no new resistance or immunity filler. The canonical order-insensitive duplicate audit and strict same-gate superset audit remain clean.
+Version `0.1.0-dev.38.1` completes the **final 120-card Narrow Escapes review**. All 120 IDs and the 30/30/30/30 deck structure are preserved. Three same-gate near-duplicates that differed mainly by modifier type have been separated mechanically, and the regression suite now audits same-gate conceptual footprints in addition to exact canonical signatures and strict mechanical supersets. Documentation has also been synchronized with the completed 120-card theme.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -107,6 +107,7 @@ Narrow Escapes is complete at 120/120 cards:
 - the acting hero's own dangerous attack traits do not contribute to the Narrow Escape danger score on attack rolls, while dangerous incoming save traits remain valid danger evidence;
 - the canonical effect audit normalizes component order, selector order, predicates, and object fields and reports no exact automated duplicates against the three earlier themes or within Narrow Escapes;
 - the strict same-gate mechanical-superset audit remains clean across all 120 Narrow Escape cards;
+- the final review also rejects same-gate conceptual duplicates that use the same mechanical selector footprint with only modifier-type reshuffling;
 - the final 40 cards add no new resistance or immunity filler and preserve all 440 previously published card IDs.
 
 All three reviewed Bloodied ten-card passes are complete. The final pass deliberately adds fewer immunities and more context-sensitive results, including quarter-health, wounded, battlefield-threat, weapon damage-type, spell-trait, elemental-damage, fear, curse, auditory, linguistic, and incapacitation gates.
