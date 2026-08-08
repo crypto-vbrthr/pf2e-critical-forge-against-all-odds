@@ -1838,6 +1838,46 @@
           "NothingLeftToCommand": {
             "Title": "Nichts mehr zu befehlen",
             "Description": "Was auch immer versucht hat, deine nächste Handlung zu bestimmen, hat den Streit verloren. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Täuschungswürfe, deinen Willens-SG und deinen Klassen-SG."
+          },
+          "ClaritySurvivesThePressure": {
+            "Title": "Klarheit überlebt den Druck",
+            "Description": "Die Gefahr lässt deinem Geist einen einzigen klaren Gedanken, und einer genügt. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Willens-SG und einen Zustandsbonus von +1 auf Wahrnehmungswürfe."
+          },
+          "FearLosesTheNextStep": {
+            "Title": "Die Furcht verliert den nächsten Schritt",
+            "Description": "Die Furcht bestimmt beinahe deine nächste Bewegung und verliert dann den Streit. Nach einem kritischen Erfolg gegen einen Furchteffekt erhältst du für 1 Runde einen Zustandsbonus von +1 auf deine RK und einen Situationsbonus von +1 auf Einschüchternwürfe."
+          },
+          "TheCommandLeavesASeam": {
+            "Title": "Der Befehl lässt eine Naht offen",
+            "Description": "Der Druck, der sich beinahe um deine Entscheidungen geschlossen hätte, lässt eine sichtbare Naht offen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Klassen-SG und einen Zustandsbonus von +1 auf Täuschungswürfe."
+          },
+          "FourPointsOneClearRoute": {
+            "Title": "Vier Punkte, ein klarer Weg",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher misst sich Klarheit in Herzschlägen und Abstand. Für 1 Runde erhältst du 4 temporäre Trefferpunkte, einen Situationsbonus von +1 auf deinen Willens-SG und einen Zustandsbonus von +1,5 m auf deine Bewegungsrate an Land."
+          },
+          "BreakTheSpiral": {
+            "Title": "Brich die Spirale",
+            "Description": "Der Gedanke, der dich gefangen hätte, zerbricht, bevor er sich wiederholen kann. Du darfst sofort als freie Aktion einen Schritt machen. Gibt es eine erkennbare feindliche Quelle, musst du nach Möglichkeit weiter von ihr entfernt enden als zu Beginn. Wende dieses Ergebnis manuell an."
+          },
+          "TheMentalHookComesFree": {
+            "Title": "Der mentale Haken löst sich",
+            "Description": "Ein mentaler Effekt greift für einen Augenblick und reißt dann los, ohne deinen Fokus mitzunehmen. Nach einem kritischen Erfolg gegen einen mentalen Effekt erhältst du für 1 Runde einen Situationsbonus von +1 auf deinen Willens-SG und einen Zustandsbonus von +1 auf deinen Zauber-SG."
+          },
+          "ChooseTheNextMotion": {
+            "Title": "Bestimme die nächste Bewegung",
+            "Description": "Die Gefahr hätte beinahe für dich entschieden. Die nächste Bewegung gehört aus Prinzip dir. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Täuschungswürfe und einen Situationsbonus von +1 auf deinen Reflex-SG."
+          },
+          "FivePointsTheMindReboots": {
+            "Title": "Fünf Punkte, der Geist startet neu",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher fühlt sich der Augenblick nach deiner Verweigerung an, als würde dein Geist wieder hochfahren. Für 1 Runde erhältst du Schnelle Heilung 3, einen Situationsbonus von +1 auf Willenswürfe und einen Zustandsbonus von +1 auf deine RK."
+          },
+          "LeaveThemGuessing": {
+            "Title": "Lass sie im Ungewissen",
+            "Description": "Die Gefahr weiß nicht mehr, ob sie dich erschreckt, getäuscht oder einfach verloren hat. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Täuschungswürfe und einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG."
+          },
+          "NameWhatAlmostTookYou": {
+            "Title": "Benenne, was dich beinahe erwischt hätte",
+            "Description": "Sobald der Druck bricht, wird Verständnis zu einer weiteren Form von Abstand. Du darfst sofort als freie Aktion Wissen abrufen über die feindliche Quelle oder den Effekt, dem du gerade widerstanden hast, und erhältst einen Situationsbonus von +2 auf den Wurf. Wende dieses Ergebnis manuell an; die normalen Einschränkungen von Wissen abrufen gelten weiterhin."
           }
         }
       }
@@ -2984,6 +3024,30 @@
           },
           "NothingLeftToCommand": {
             "Name": "Nichts mehr zu befehlen"
+          },
+          "ClaritySurvivesThePressure": {
+            "Name": "Klarheit überlebt den Druck"
+          },
+          "FearLosesTheNextStep": {
+            "Name": "Die Furcht verliert den nächsten Schritt"
+          },
+          "TheCommandLeavesASeam": {
+            "Name": "Der Befehl lässt eine Naht offen"
+          },
+          "FourPointsOneClearRoute": {
+            "Name": "Vier Punkte, ein klarer Weg"
+          },
+          "TheMentalHookComesFree": {
+            "Name": "Der mentale Haken löst sich"
+          },
+          "ChooseTheNextMotion": {
+            "Name": "Bestimme die nächste Bewegung"
+          },
+          "FivePointsTheMindReboots": {
+            "Name": "Fünf Punkte, der Geist startet neu"
+          },
+          "LeaveThemGuessing": {
+            "Name": "Lass sie im Ungewissen"
           }
         }
       }

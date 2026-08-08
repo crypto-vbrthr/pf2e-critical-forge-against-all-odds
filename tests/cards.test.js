@@ -2618,43 +2618,72 @@ test("Narrow Escape Reflex second pass adds no resistance or immunity filler", (
 });
 
 
-test("Narrow Escapes Will first pass contains ten unique critical-save cards", () => {
-  assert.equal(NARROW_ESCAPE_WILL_CARDS.length, 10);
-  assert.equal(new Set(NARROW_ESCAPE_WILL_CARDS.map((card) => card.id)).size, 10);
+test("Narrow Escapes Will second pass contains twenty unique critical-save cards", () => {
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.length, 20);
+  assert.equal(new Set(NARROW_ESCAPE_WILL_CARDS.map((card) => card.id)).size, 20);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.deckType === "will"), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
-  assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.metadata.contentBatch === 33), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 33), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.slice(10).every((card) => card.metadata.contentBatch === 37), true);
 });
 
-test("Narrow Escape Will first pass uses nine automated results and one manual Seek result", () => {
-  assert.equal(NARROW_ESCAPE_WILL_CARDS.filter((card) => card.effect).length, 9);
-  const manuals = NARROW_ESCAPE_WILL_CARDS.filter((card) => !card.effect);
-  assert.deepEqual(manuals.map((card) => card.id.split(".").at(-1)), ["new-005-look-for-the-way-out"]);
-  assert.match(manuals[0].fallbackDescription, /Seek as a free action/u);
-  assert.match(manuals[0].fallbackDescription, /\+2 circumstance bonus/u);
+test("Narrow Escape Will preserves the first-pass 9/1 split and adds an 8/2 second pass", () => {
+  const first = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.metadata.contentBatch === 33);
+  const second = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.metadata.contentBatch === 37);
+  assert.equal(first.length, 10);
+  assert.equal(first.filter((card) => card.effect).length, 9);
+  assert.deepEqual(first.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), ["new-005-look-for-the-way-out"]);
+  assert.equal(second.length, 10);
+  assert.equal(second.filter((card) => card.effect).length, 8);
+  assert.deepEqual(second.filter((card) => !card.effect).map((card) => card.id.split(".").at(-1)), [
+    "new-015-break-the-spiral",
+    "new-020-name-what-almost-took-you"
+  ]);
 });
 
-test("Narrow Escape Will first pass adds danger-score escalation at four and five", () => {
-  const bySuffix = Object.fromEntries(NARROW_ESCAPE_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
-  const four = conditionLeaves(bySuffix["new-008-four-points-mind-still-mine"].conditions);
-  const five = conditionLeaves(bySuffix["new-009-five-points-refuse-the-ending"].conditions);
-  assert.equal(four.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4), true);
-  assert.equal(five.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
+test("Narrow Escape Will second pass preserves stable IDs 11 through 20 in content batch 37", () => {
+  const second = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.metadata.contentBatch === 37);
+  assert.deepEqual(second.map((card) => card.id.split(".").at(-1)), [
+    "new-011-clarity-survives-the-pressure",
+    "new-012-fear-loses-the-next-step",
+    "new-013-the-command-leaves-a-seam",
+    "new-014-four-points-one-clear-route",
+    "new-015-break-the-spiral",
+    "new-016-the-mental-hook-comes-free",
+    "new-017-choose-the-next-motion",
+    "new-018-five-points-the-mind-reboots",
+    "new-019-leave-them-guessing",
+    "new-020-name-what-almost-took-you"
+  ]);
 });
 
-test("Narrow Escape Will first pass uses incoming fear and mental evidence only where required", () => {
+test("Narrow Escape Will has two danger-score 4 and two danger-score 5 escalations after pass two", () => {
+  const leaves = NARROW_ESCAPE_WILL_CARDS.flatMap((card) => conditionLeaves(card.conditions));
+  assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
+  assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
+});
+
+test("Narrow Escape Will uses incoming fear and mental evidence only where required through pass two", () => {
   const bySuffix = Object.fromEntries(NARROW_ESCAPE_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
   assert.deepEqual(bySuffix["new-002-panic-spends-its-last-breath"].filters.attackTraits, ["fear"]);
   assert.deepEqual(bySuffix["new-006-the-mental-grip-slips"].filters.attackTraits, ["mental"]);
+  assert.deepEqual(bySuffix["new-012-fear-loses-the-next-step"].filters.attackTraits, ["fear"]);
+  assert.deepEqual(bySuffix["new-016-the-mental-hook-comes-free"].filters.attackTraits, ["mental"]);
+  const gated = new Set([
+    "new-002-panic-spends-its-last-breath",
+    "new-006-the-mental-grip-slips",
+    "new-012-fear-loses-the-next-step",
+    "new-016-the-mental-hook-comes-free"
+  ]);
   for (const [id, card] of Object.entries(bySuffix)) {
-    if (["new-002-panic-spends-its-last-breath", "new-006-the-mental-grip-slips"].includes(id)) continue;
+    if (gated.has(id)) continue;
     assert.deepEqual(card.filters.attackTraits, [], id);
   }
 });
 
-test("Narrow Escape Will first-pass filters remain complete immutable schema-1 sets", () => {
+test("Narrow Escape Will filters remain complete immutable schema-1 sets through pass two", () => {
   for (const card of NARROW_ESCAPE_WILL_CARDS) {
     assert.deepEqual(Object.keys(card.filters), FILTER_KEYS);
     assert.equal(FILTER_KEYS.every((key) => Array.isArray(card.filters[key])), true);
@@ -2684,7 +2713,7 @@ test("Narrow Escape Will automated effects use unique signatures across all earl
   }
 });
 
-test("Narrow Escape Will first pass localizes every card and automated effect in German and English", () => {
+test("Narrow Escape Will localizes every card and automated effect in German and English through pass two", () => {
   const de = JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8"));
   const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
   for (const card of NARROW_ESCAPE_WILL_CARDS) {
@@ -2699,7 +2728,7 @@ test("Narrow Escape Will first pass localizes every card and automated effect in
   }
 });
 
-test("Narrow Escape German Will text uses reviewed Remaster terminology", () => {
+test("Narrow Escape German Will text uses reviewed Remaster terminology through pass two", () => {
   const de = JSON.parse(fs.readFileSync(path.join(root, "lang/de.json"), "utf8"));
   const will = de.PF2E_AGAINST_ALL_ODDS.Cards.NarrowEscapes.Will;
   assert.match(will.KeepYourName.Description, /Willenswürfe/u);
@@ -2709,14 +2738,33 @@ test("Narrow Escape German Will text uses reviewed Remaster terminology", () => 
   assert.match(will.LookForTheWayOut.Description, /freie Aktion/u);
   assert.match(will.TheMentalGripSlips.Description, /Mentalen Schaden/u);
   assert.match(will.FourPointsMindStillMine.Description, /Wahrnehmungs-SG/u);
+  assert.match(will.BreakTheSpiral.Description, /Schritt/u);
+  assert.match(will.FivePointsTheMindReboots.Description, /Schnelle Heilung 3/u);
+  assert.match(will.NameWhatAlmostTookYou.Description, /Wissen abrufen/u);
+  assert.match(will.NameWhatAlmostTookYou.Description, /Situationsbonus von \+2/u);
 });
 
-test("Narrow Escape Will first pass keeps positive automated effects on the saving actor", () => {
+test("Narrow Escape Will keeps positive automated effects on the saving actor through pass two", () => {
   const automated = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.effect);
   assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });
 
-test("Narrow Escape reviewed first pass remains stable while Attack, Fortitude, and Reflex advance to twenty cards", () => {
+test("Narrow Escape Will second-pass manual results provide distinct Step and Recall Knowledge routes", () => {
+  const second = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.metadata.contentBatch === 37);
+  const bySuffix = Object.fromEntries(second.map((card) => [card.id.split(".").at(-1), card]));
+  assert.match(bySuffix["new-015-break-the-spiral"].fallbackDescription, /Step as a free action/u);
+  assert.match(bySuffix["new-020-name-what-almost-took-you"].fallbackDescription, /Recall Knowledge as a free action/u);
+  assert.match(bySuffix["new-020-name-what-almost-took-you"].fallbackDescription, /\+2 circumstance bonus/u);
+});
+
+test("Narrow Escape Will second pass adds no resistance or immunity filler", () => {
+  const second = NARROW_ESCAPE_WILL_CARDS.filter((card) => card.metadata.contentBatch === 37 && card.effect);
+  const componentTypes = second.flatMap((card) => card.effect.definition.components.map((component) => component.type));
+  assert.equal(componentTypes.includes("resistance"), false);
+  assert.equal(componentTypes.includes("immunity"), false);
+});
+
+test("Narrow Escape reviewed first pass remains stable while all four decks advance to twenty cards", () => {
   const firstPassDecks = [
     NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.metadata.contentBatch === 30),
     NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.metadata.contentBatch === 31),
@@ -2736,9 +2784,11 @@ test("Narrow Escape reviewed first pass remains stable while Attack, Fortitude, 
     NARROW_ESCAPE_FORTITUDE_CARDS.length,
     NARROW_ESCAPE_REFLEX_CARDS.length,
     NARROW_ESCAPE_WILL_CARDS.length
-  ], [20, 20, 20, 10]);
-  assert.equal(ALL_NARROW_ESCAPE_CARDS.length, 70);
-  assert.equal(new Set(ALL_NARROW_ESCAPE_CARDS.map((card) => card.id)).size, 70);
+  ], [20, 20, 20, 20]);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.length, 80);
+  assert.equal(new Set(ALL_NARROW_ESCAPE_CARDS.map((card) => card.id)).size, 80);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.filter((card) => card.effect).length, 68);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.filter((card) => !card.effect).length, 12);
 });
 
 test("Narrow Escape published cards have no strict same-gate mechanical supersets", () => {

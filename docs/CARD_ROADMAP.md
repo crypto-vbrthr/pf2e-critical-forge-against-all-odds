@@ -7,7 +7,7 @@ Against All Odds plans four themes and four specialized decks per theme. The tar
 | Bloodied Triumphs | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
 | Surrounded, Still Standing | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
 | Giant-Slayer Moments | **30/30** | **30/30** | **30/30** | **30/30** | **120/120** |
-| Narrow Escapes | **20/30** | **20/30** | **20/30** | **10/30** | **70/120** |
+| Narrow Escapes | **20/30** | **20/30** | **20/30** | **20/30** | **80/120** |
 
 The full target is 480 cards. Cards are introduced in controlled batches rather than as one monolithic change.
 
@@ -49,12 +49,12 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 25. Narrow Escapes Attack, second pass: cards 11–20. **Complete in `0.1.0-dev.34`, with a 5/5 ordinary/spell split, 8 automated / 2 manual results, one additional score-4 and score-5 escalation, and exact-signature uniqueness preserved.**
 26. Narrow Escapes Fortitude, second pass: cards 11–20. **Complete in `0.1.0-dev.35`, with 8 automated / 2 manual results, one additional score-4 and score-5 escalation, a focused incoming-death gate, saver-only positive targeting, and no resistance/immunity filler.**
 27. Narrow Escapes Reflex, second pass: cards 11–20. **Complete in `0.1.0-dev.36`, with 8 automated / 2 manual results, one additional score-4 and score-5 escalation, saver-only automated targeting, Leap/Step and Tumble Through/Stride manual routes, and no resistance/immunity filler.**
-28. Narrow Escapes Will, second pass: cards 11–20.
+28. Narrow Escapes Will, second pass: cards 11–20. **Complete in `0.1.0-dev.37`, with 8 automated / 2 manual results, one additional score-4 and score-5 escalation, focused incoming fear/mental gates, saver-only automated targeting, Step and Recall Knowledge manual routes, and no resistance/immunity filler.**
 29. Review the first 80 **Narrow Escapes** cards for balance, overlap, danger-score scaling, targeting, terminology, and automation.
 30. Continue the reviewed final passes for **Narrow Escapes**.
 31. Perform cross-pack duplicate-concept, effect, localization, and diagnostic audits.
 
-Bloodied Triumphs, Surrounded, Still Standing, and Giant-Slayer Moments are each complete at 120/120 cards after three reviewed passes and a final complete-set review. Against All Odds now contains 430/480 planned cards. Narrow Escapes Attack, Fortitude, and Reflex are at 20/30 while Will remains at 10/30; the next content milestone is Narrow Escapes Will, second pass (cards 11–20).
+Bloodied Triumphs, Surrounded, Still Standing, and Giant-Slayer Moments are each complete at 120/120 cards after three reviewed passes and a final complete-set review. Against All Odds now contains 440/480 planned cards. Narrow Escapes Attack, Fortitude, Reflex, and Will are all at 20/30; the next content milestone is the 80-card Narrow Escapes review.
 
 Every card will:
 

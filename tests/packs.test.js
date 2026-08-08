@@ -27,7 +27,7 @@ test("every theme reserves attack, Fortitude, Reflex, and Will decks", () => {
         : pack.id.endsWith("narrow-escapes") && ["attack", "fortitude", "reflex"].includes(deckType)
           ? 20
           : pack.id.endsWith("narrow-escapes") && ["will"].includes(deckType)
-            ? 10
+            ? 20
             : 0;
       assert.equal(pack.decks[deckType].cards.length, expected);
     }

@@ -160,4 +160,170 @@ export const NARROW_ESCAPE_WILL_CARDS = Object.freeze([
       ]
     }
   })
+,
+  defineNarrowEscapeWillCard({
+    id: "new-011-clarity-survives-the-pressure",
+    localizationKey: "ClaritySurvivesThePressure",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Clarity Survives the Pressure",
+    fallbackDescription: "The danger leaves your mind one clear thought, and one is enough. For 1 round, you gain a +1 circumstance bonus to Will DC and a +1 status bonus to Perception checks.",
+    tags: ["will-dc", "perception", "clarity", "effect"],
+    contentBatch: 37,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-012-fear-loses-the-next-step",
+    localizationKey: "FearLosesTheNextStep",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Fear Loses the Next Step",
+    fallbackDescription: "Fear almost chooses your next move and then loses the argument. After critically succeeding against a fear effect, for 1 round you gain a +1 status bonus to AC and a +1 circumstance bonus to Intimidation checks.",
+    tags: ["fear", "ac", "intimidation", "effect"],
+    filters: { attackTraits: ["fear"] },
+    contentBatch: 37,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "intimidation", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-013-the-command-leaves-a-seam",
+    localizationKey: "TheCommandLeavesASeam",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "The Command Leaves a Seam",
+    fallbackDescription: "The pressure that nearly closed around your choices leaves one visible seam. For 1 round, you gain a +1 circumstance bonus to class DC and a +1 status bonus to Deception checks.",
+    tags: ["class-dc", "deception", "agency", "effect"],
+    contentBatch: 37,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "class-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "deception", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-014-four-points-one-clear-route",
+    localizationKey: "FourPointsOneClearRoute",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, One Clear Route",
+    fallbackDescription: "At danger score 4 or higher, clarity is measured in heartbeats and distance. For 1 round, you gain 4 temporary Hit Points, a +1 circumstance bonus to Will DC, and a 5-foot status bonus to your land Speed.",
+    tags: ["danger-score", "temporary-hit-points", "will-dc", "land-speed", "effect"],
+    contentBatch: 37,
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 4 },
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "land", value: 5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-015-break-the-spiral",
+    localizationKey: "BreakTheSpiral",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Break the Spiral",
+    fallbackDescription: "The thought that would have trapped you breaks before it can repeat. You may immediately Step as a free action. If there is an identifiable hostile source, end farther from it than you began if possible. Apply this result manually.",
+    tags: ["step", "free-action", "movement", "manual"],
+    contentBatch: 37,
+    effect: null
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-016-the-mental-hook-comes-free",
+    localizationKey: "TheMentalHookComesFree",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "The Mental Hook Comes Free",
+    fallbackDescription: "A mental effect catches for an instant, then tears loose without taking your focus with it. After critically succeeding against a mental effect, for 1 round you gain a +1 circumstance bonus to Will DC and a +1 status bonus to spell DC.",
+    tags: ["mental", "will-dc", "spell-dc", "effect"],
+    filters: { attackTraits: ["mental"] },
+    contentBatch: 37,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "spell-dc", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-017-choose-the-next-motion",
+    localizationKey: "ChooseTheNextMotion",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Choose the Next Motion",
+    fallbackDescription: "The danger nearly chose for you. The next motion is yours on principle. For 1 round, you gain a +1 status bonus to Deception checks and a +1 circumstance bonus to Reflex DC.",
+    tags: ["deception", "reflex-dc", "agency", "effect"],
+    contentBatch: 37,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "deception", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "reflex-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-018-five-points-the-mind-reboots",
+    localizationKey: "FivePointsTheMindReboots",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, the Mind Reboots",
+    fallbackDescription: "At danger score 5 or higher, the instant after refusal feels like a system coming back online. For 1 round, you gain fast healing 3, a +1 circumstance bonus to Will saves, and a +1 status bonus to AC.",
+    tags: ["danger-score", "fast-healing", "will", "ac", "effect"],
+    contentBatch: 37,
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "fastHealing", value: 3 },
+        { type: "modifier", selector: "will", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-019-leave-them-guessing",
+    localizationKey: "LeaveThemGuessing",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Leave Them Guessing",
+    fallbackDescription: "The danger no longer knows whether it frightened you, fooled you, or simply lost you. For 1 round, you gain a +1 status bonus to Deception checks and a +1 circumstance bonus to Perception DC.",
+    tags: ["deception", "perception-dc", "uncertainty", "effect"],
+    contentBatch: 37,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "deception", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-020-name-what-almost-took-you",
+    localizationKey: "NameWhatAlmostTookYou",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "Name What Almost Took You",
+    fallbackDescription: "Once the pressure breaks, understanding becomes another kind of distance. You may immediately attempt Recall Knowledge as a free action about the hostile source or the effect you just resisted, with a +2 circumstance bonus to the check. Apply this result manually; normal Recall Knowledge restrictions still apply.",
+    tags: ["recall-knowledge", "free-action", "knowledge", "manual"],
+    contentBatch: 37,
+    effect: null
+  })
+
 ]);

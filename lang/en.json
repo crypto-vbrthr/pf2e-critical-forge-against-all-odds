@@ -1838,6 +1838,46 @@
           "NothingLeftToCommand": {
             "Title": "Nothing Left to Command",
             "Description": "Whatever tried to dictate your next move has lost the argument. For 1 round, you gain a +1 circumstance bonus to Deception checks, Will DC, and class DC."
+          },
+          "ClaritySurvivesThePressure": {
+            "Title": "Clarity Survives the Pressure",
+            "Description": "The danger leaves your mind one clear thought, and one is enough. For 1 round, you gain a +1 circumstance bonus to Will DC and a +1 status bonus to Perception checks."
+          },
+          "FearLosesTheNextStep": {
+            "Title": "Fear Loses the Next Step",
+            "Description": "Fear almost chooses your next move and then loses the argument. After critically succeeding against a fear effect, for 1 round you gain a +1 status bonus to AC and a +1 circumstance bonus to Intimidation checks."
+          },
+          "TheCommandLeavesASeam": {
+            "Title": "The Command Leaves a Seam",
+            "Description": "The pressure that nearly closed around your choices leaves one visible seam. For 1 round, you gain a +1 circumstance bonus to class DC and a +1 status bonus to Deception checks."
+          },
+          "FourPointsOneClearRoute": {
+            "Title": "Four Points, One Clear Route",
+            "Description": "At danger score 4 or higher, clarity is measured in heartbeats and distance. For 1 round, you gain 4 temporary Hit Points, a +1 circumstance bonus to Will DC, and a 5-foot status bonus to your land Speed."
+          },
+          "BreakTheSpiral": {
+            "Title": "Break the Spiral",
+            "Description": "The thought that would have trapped you breaks before it can repeat. You may immediately Step as a free action. If there is an identifiable hostile source, end farther from it than you began if possible. Apply this result manually."
+          },
+          "TheMentalHookComesFree": {
+            "Title": "The Mental Hook Comes Free",
+            "Description": "A mental effect catches for an instant, then tears loose without taking your focus with it. After critically succeeding against a mental effect, for 1 round you gain a +1 circumstance bonus to Will DC and a +1 status bonus to spell DC."
+          },
+          "ChooseTheNextMotion": {
+            "Title": "Choose the Next Motion",
+            "Description": "The danger nearly chose for you. The next motion is yours on principle. For 1 round, you gain a +1 status bonus to Deception checks and a +1 circumstance bonus to Reflex DC."
+          },
+          "FivePointsTheMindReboots": {
+            "Title": "Five Points, the Mind Reboots",
+            "Description": "At danger score 5 or higher, the instant after refusal feels like a system coming back online. For 1 round, you gain fast healing 3, a +1 circumstance bonus to Will saves, and a +1 status bonus to AC."
+          },
+          "LeaveThemGuessing": {
+            "Title": "Leave Them Guessing",
+            "Description": "The danger no longer knows whether it frightened you, fooled you, or simply lost you. For 1 round, you gain a +1 status bonus to Deception checks and a +1 circumstance bonus to Perception DC."
+          },
+          "NameWhatAlmostTookYou": {
+            "Title": "Name What Almost Took You",
+            "Description": "Once the pressure breaks, understanding becomes another kind of distance. You may immediately attempt Recall Knowledge as a free action about the hostile source or the effect you just resisted, with a +2 circumstance bonus to the check. Apply this result manually; normal Recall Knowledge restrictions still apply."
           }
         }
       }
@@ -2984,6 +3024,30 @@
           },
           "NothingLeftToCommand": {
             "Name": "Nothing Left to Command"
+          },
+          "ClaritySurvivesThePressure": {
+            "Name": "Clarity Survives the Pressure"
+          },
+          "FearLosesTheNextStep": {
+            "Name": "Fear Loses the Next Step"
+          },
+          "TheCommandLeavesASeam": {
+            "Name": "The Command Leaves a Seam"
+          },
+          "FourPointsOneClearRoute": {
+            "Name": "Four Points, One Clear Route"
+          },
+          "TheMentalHookComesFree": {
+            "Name": "The Mental Hook Comes Free"
+          },
+          "ChooseTheNextMotion": {
+            "Name": "Choose the Next Motion"
+          },
+          "FivePointsTheMindReboots": {
+            "Name": "Five Points, the Mind Reboots"
+          },
+          "LeaveThemGuessing": {
+            "Name": "Leave Them Guessing"
           }
         }
       }
