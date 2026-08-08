@@ -83,10 +83,10 @@ test("runtime registration binds all resources through the extension contract", 
   assert.equal(giantSlayer.decks.reflex.cards.length, 30);
   assert.equal(giantSlayer.decks.will.cards.length, 30);
   const narrowEscapes = runtime.listPacks().find((pack) => pack.id.endsWith("narrow-escapes"));
-  assert.equal(narrowEscapes.decks.attack.cards.length, 20);
-  assert.equal(narrowEscapes.decks.fortitude.cards.length, 20);
-  assert.equal(narrowEscapes.decks.reflex.cards.length, 20);
-  assert.equal(narrowEscapes.decks.will.cards.length, 20);
+  assert.equal(narrowEscapes.decks.attack.cards.length, 30);
+  assert.equal(narrowEscapes.decks.fortitude.cards.length, 30);
+  assert.equal(narrowEscapes.decks.reflex.cards.length, 30);
+  assert.equal(narrowEscapes.decks.will.cards.length, 30);
 });
 
 test("runtime rejects a Forge without battlefield threat evaluation", () => {

@@ -1632,6 +1632,46 @@
           "HideInTheSpellsWake": {
             "Title": "Hide in the Spell's Wake",
             "Description": "The critical spell leaves just enough confusion to vanish from the obvious line of danger. You may immediately Step as a free action. If that Step leaves you with cover or concealment from the target, you may immediately attempt to Hide as part of the same free action. Apply this result manually."
+          },
+          "KeepMovingAfterTheHit": {
+            "Title": "Keep Moving After the Hit",
+            "Description": "The critical hit is not the end of the exchange; it is the instant your body remembers the route out. For 1 round, you gain a +1 status bonus to Athletics checks and a +1 circumstance bonus to Fortitude DC."
+          },
+          "CutThePursuitShort": {
+            "Title": "Cut the Pursuit Short",
+            "Description": "The pursuer has to choose between answering your hit and keeping control of the chase. For 1 round, the target takes a -1 circumstance penalty to class DC and a -5-foot circumstance penalty to all Speeds."
+          },
+          "FourPointsTurnTheCorner": {
+            "Title": "Four Points, Turn the Corner",
+            "Description": "At danger score 4 or higher, the critical hit buys enough distance to make the next heartbeat belong to you. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Perception checks, and a +10-foot circumstance bonus to your land Speed."
+          },
+          "TakeTheNarrowWay": {
+            "Title": "Take the Narrow Way",
+            "Description": "The opening is too small to waste. You may immediately Stride up to 10 feet as a free action. The first 5 feet of difficult terrain during this movement cost no extra movement, and the target cannot use reactions triggered by this movement. Apply this result manually."
+          },
+          "MakeThemGuardTheWrongSide": {
+            "Title": "Make Them Guard the Wrong Side",
+            "Description": "The critical hit makes the pursuer defend the place you are no longer going to be. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and a -5-foot status penalty to all Speeds."
+          },
+          "MagicMarksTheSafeLine": {
+            "Title": "Magic Marks the Safe Line",
+            "Description": "For one clear instant, the spell shows where danger is not. For 1 round, you gain a +1 status bonus to Perception DC and a +1 circumstance bonus to spell DC."
+          },
+          "LeaveTheBlastBehind": {
+            "Title": "Leave the Blast Behind",
+            "Description": "The spell finishes behind you instead of around you. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and a +5-foot status bonus to all Speeds."
+          },
+          "FivePointsVanishBeforeTheAnswer": {
+            "Title": "Five Points, Vanish Before the Answer",
+            "Description": "At danger score 5 or higher, the spell lands and you are already somewhere harder to finish. For 1 round, you gain 5 temporary Hit Points, a +1 status bonus to Stealth checks, and a +10-foot circumstance bonus to your land Speed."
+          },
+          "CloseThePursuitWindow": {
+            "Title": "Close the Pursuit Window",
+            "Description": "The critical spell leaves the pursuer reacting too slowly to keep the route closed. For 1 round, the target is clumsy 1 and takes a -1 circumstance penalty to spell DC."
+          },
+          "RunForTheCoverTheSpellMade": {
+            "Title": "Run for the Cover the Spell Made",
+            "Description": "The spell gives you one moving pocket of safety. You may immediately Stride up to 10 feet as a free action. If you end this movement with cover from the target, you may immediately Take Cover as part of the same free action. The target cannot use reactions triggered by this movement. Apply this result manually."
           }
         },
         "Fortitude": {
@@ -1714,6 +1754,46 @@
           "GetSomethingSolidBetweenYou": {
             "Title": "Get Something Solid Between You",
             "Description": "You survive the impact and move before the danger can line up another. You may immediately Step as a free action. If that Step gives you cover from the identifiable hostile source of the incoming danger, you may immediately Take Cover as part of the same free action. Apply this result manually."
+          },
+          "SecondWindFindsTheExit": {
+            "Title": "Second Wind Finds the Exit",
+            "Description": "The body recovers just enough to notice that survival still has a direction. For 1 round, you gain fast healing 2 and a +1 status bonus to Perception checks."
+          },
+          "KeepTheCoreSteady": {
+            "Title": "Keep the Core Steady",
+            "Description": "Everything around you can lurch as long as the center holds. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and a +1 status bonus to AC."
+          },
+          "FourPointsBloodStillMoving": {
+            "Title": "Four Points, Blood Still Moving",
+            "Description": "At danger score 4 or higher, the body refuses to spend its final reserve all at once. For 1 round, you gain 5 temporary Hit Points, a +2 status bonus to healing received, and a +1 circumstance bonus to Fortitude DC."
+          },
+          "DragYourselfClear": {
+            "Title": "Drag Yourself Clear",
+            "Description": "If you are prone, you may immediately Crawl up to 10 feet as a free action; otherwise, you may immediately Step. If there is an identifiable hostile source, this movement must end farther from it than you began if possible and does not trigger reactions from that source. Apply this result manually."
+          },
+          "TheSicknessMissesItsWindow": {
+            "Title": "The Sickness Misses Its Window",
+            "Description": "A disease tries to turn the body into a prison and arrives one heartbeat too late. After critically succeeding against a disease effect, for 1 round you gain a +1 status bonus to Fortitude saves and a +5-foot status bonus to all Speeds."
+          },
+          "BreathePastTheChokePoint": {
+            "Title": "Breathe Past the Choke Point",
+            "Description": "The air itself tried to stop you and failed. After critically succeeding against an inhaled effect, for 1 round you gain a +1 status bonus to Fortitude DC and a +5-foot circumstance bonus to your land Speed."
+          },
+          "AdrenalineGuardsTheFollowUp": {
+            "Title": "Adrenaline Guards the Follow-Up",
+            "Description": "The first danger fails, and your body prepares for the second before you can think about it. For 1 round, you gain a +1 circumstance bonus to AC and a +1 status bonus to Fortitude DC."
+          },
+          "FivePointsBodyAnswersAgain": {
+            "Title": "Five Points, Body Answers Again",
+            "Description": "At danger score 5 or higher, the body finds one last reserve and spends it on distance. For 1 round, you gain fast healing 4, a +1 status bonus to Fortitude saves, and a +10-foot circumstance bonus to your land Speed."
+          },
+          "KeepTheHandsWorking": {
+            "Title": "Keep the Hands Working",
+            "Description": "Pain and shock do not get to decide whether you still have leverage. For 1 round, you gain a +1 circumstance bonus to Athletics checks and a +1 status bonus to Perception checks."
+          },
+          "ShoulderThroughTheBottleneck": {
+            "Title": "Shoulder Through the Bottleneck",
+            "Description": "You may immediately Stride up to 10 feet as a free action. The first 5 feet of difficult terrain during this movement cost no extra movement. If there is an identifiable hostile source, end farther from it than you began if possible. Apply this result manually."
           }
         },
         "Reflex": {
@@ -1796,6 +1876,46 @@
           "TumbleThroughTheClosingEdge": {
             "Title": "Tumble Through the Closing Edge",
             "Description": "The danger closes from the obvious direction, so you escape through the space it thought it controlled. You may immediately Tumble Through as a free action with a +2 circumstance bonus to the Acrobatics check. If Tumble Through is not applicable, you may instead Stride up to 10 feet. If there is an identifiable hostile source, that Stride must end farther from it than you began if possible. Apply this result manually."
+          },
+          "FeetBeatTheEcho": {
+            "Title": "Feet Beat the Echo",
+            "Description": "You are already gone before the danger finishes making noise. For 1 round, you gain a +1 circumstance bonus to Reflex saves and a +1 status bonus to Stealth checks."
+          },
+          "NeverGiveTheFollowUpALine": {
+            "Title": "Never Give the Follow-Up a Line",
+            "Description": "The first disaster misses cleanly, and you refuse to stand where the second expects you. For 1 round, you gain a +1 circumstance bonus to Perception DC, a +1 status bonus to AC, and a +5-foot status bonus to your land Speed."
+          },
+          "FourPointsIntoTheBlindSpot": {
+            "Title": "Four Points, Into the Blind Spot",
+            "Description": "At danger score 4 or higher, there is no safe ground, only ground the danger has not caught up with yet. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Stealth checks, and a +10-foot circumstance bonus to your land Speed."
+          },
+          "DiveBehindSomethingSolid": {
+            "Title": "Dive Behind Something Solid",
+            "Description": "You may immediately Stride up to 10 feet as a free action toward a space that gives you cover from the identifiable hostile source. If you end with cover, you may immediately Take Cover as part of the same free action. This movement does not trigger reactions from that source. Apply this result manually."
+          },
+          "TurnTheLandingIntoDistance": {
+            "Title": "Turn the Landing into Distance",
+            "Description": "You land already committed to the next escape. For 1 round, you gain a +1 circumstance bonus to Acrobatics checks and a +5-foot status bonus to all Speeds."
+          },
+          "LetTheFloorTakeTheForce": {
+            "Title": "Let the Floor Take the Force",
+            "Description": "You redirect the impact through motion instead of letting it settle in your body. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and a +1 status bonus to Reflex saves."
+          },
+          "BreakTheTargetingLine": {
+            "Title": "Break the Targeting Line",
+            "Description": "The danger loses the clean geometry it needed to keep you pinned. For 1 round, you gain a +1 status bonus to Perception DC and a +1 circumstance bonus to Reflex saves."
+          },
+          "FivePointsGoneBeforeTheDust": {
+            "Title": "Five Points, Gone Before the Dust",
+            "Description": "At danger score 5 or higher, the disaster finishes where you used to be. For 1 round, you gain 5 temporary Hit Points, a +1 status bonus to Reflex saves, and a +10-foot circumstance bonus to all Speeds."
+          },
+          "StayUnreadableOnTheMove": {
+            "Title": "Stay Unreadable on the Move",
+            "Description": "The escape works because the danger cannot tell which motion is the real one. For 1 round, you gain a +1 circumstance bonus to Stealth checks and a +1 status bonus to AC."
+          },
+          "BalanceAcrossTheLastFooting": {
+            "Title": "Balance Across the Last Footing",
+            "Description": "If Balance is applicable, you may immediately attempt Balance as a free action with a +2 circumstance bonus to the Acrobatics check. If Balance is not applicable, you may instead Step. Apply this result manually; normal Balance restrictions still apply."
           }
         },
         "Will": {
@@ -1878,6 +1998,46 @@
           "NameWhatAlmostTookYou": {
             "Title": "Name What Almost Took You",
             "Description": "Once the pressure breaks, understanding becomes another kind of distance. You may immediately attempt Recall Knowledge as a free action about the hostile source or the effect you just resisted, with a +2 circumstance bonus to the check. Apply this result manually; normal Recall Knowledge restrictions still apply."
+          },
+          "OneThoughtAhead": {
+            "Title": "One Thought Ahead",
+            "Description": "The pressure loses because you are already thinking about the next safe choice. For 1 round, you gain a +1 circumstance bonus to Will saves and a +1 status bonus to Perception DC."
+          },
+          "TurnPanicIntoDirection": {
+            "Title": "Turn Panic into Direction",
+            "Description": "Fear points at every bad ending at once. You pick a direction anyway. After critically succeeding against a fear effect, for 1 round you gain a +1 status bonus to Intimidation checks and a +5-foot circumstance bonus to all Speeds."
+          },
+          "FourPointsKeepTheThread": {
+            "Title": "Four Points, Keep the Thread",
+            "Description": "At danger score 4 or higher, one coherent thought is enough to pull the rest of you through. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Will DC, and a +1 circumstance bonus to Perception checks."
+          },
+          "CallSomeoneBack": {
+            "Title": "Call Someone Back",
+            "Description": "Your refusal gives someone else a voice to follow. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next Will save against the same hostile source before the start of your next turn. Apply this result manually."
+          },
+          "TheLieGivesYouALandmark": {
+            "Title": "The Lie Gives You a Landmark",
+            "Description": "Once the false path fails, it becomes something you can navigate around. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Will DC."
+          },
+          "ThoughtSlipsTheHook": {
+            "Title": "Thought Slips the Hook",
+            "Description": "The mental effect catches the shape of your thought and nothing underneath it. After critically succeeding against a mental effect, for 1 round you gain a +1 status bonus to spell attack rolls and a +1 circumstance bonus to Will saves."
+          },
+          "HearTheExitNotTheOrder": {
+            "Title": "Hear the Exit, Not the Order",
+            "Description": "The sound reaches you; the authority inside it does not. After critically succeeding against an auditory effect, for 1 round you gain a +1 status bonus to Perception checks and a +1 circumstance bonus to Will saves."
+          },
+          "FivePointsSelfStillIntact": {
+            "Title": "Five Points, Self Still Intact",
+            "Description": "At danger score 5 or higher, surviving the thought is enough to rebuild the rest of the moment. For 1 round, you gain 5 temporary Hit Points, a +1 status bonus to saving throws, and a +1 circumstance bonus to Will DC."
+          },
+          "ResolveBecomesPosition": {
+            "Title": "Resolve Becomes Position",
+            "Description": "Refusing the danger is only useful if it changes where the next blow can find you. For 1 round, you gain a +1 status bonus to AC, a +1 circumstance bonus to Will DC, and a +5-foot status bonus to your land Speed."
+          },
+          "PullThemWithYou": {
+            "Title": "Pull Them with You",
+            "Description": "You escape the mental trap loudly enough for someone else to follow. Choose one ally within 30 feet who can see or hear you. That ally may immediately Step as a free action. If there is an identifiable hostile source, the Step must end farther from it than it began if possible. Apply this result manually."
           }
         }
       }
@@ -2889,6 +3049,30 @@
           },
           "CastThePursuerOffBalance": {
             "Name": "Cast the Pursuer Off Balance"
+          },
+          "KeepMovingAfterTheHit": {
+            "Name": "Keep Moving After the Hit"
+          },
+          "CutThePursuitShort": {
+            "Name": "Cut the Pursuit Short"
+          },
+          "FourPointsTurnTheCorner": {
+            "Name": "Four Points, Turn the Corner"
+          },
+          "MakeThemGuardTheWrongSide": {
+            "Name": "Make Them Guard the Wrong Side"
+          },
+          "MagicMarksTheSafeLine": {
+            "Name": "Magic Marks the Safe Line"
+          },
+          "LeaveTheBlastBehind": {
+            "Name": "Leave the Blast Behind"
+          },
+          "FivePointsVanishBeforeTheAnswer": {
+            "Name": "Five Points, Vanish Before the Answer"
+          },
+          "CloseThePursuitWindow": {
+            "Name": "Close the Pursuit Window"
           }
         },
         "Fortitude": {
@@ -2942,6 +3126,30 @@
           },
           "KeepTheLimbsWorking": {
             "Name": "Keep the Limbs Working"
+          },
+          "SecondWindFindsTheExit": {
+            "Name": "Second Wind Finds the Exit"
+          },
+          "KeepTheCoreSteady": {
+            "Name": "Keep the Core Steady"
+          },
+          "FourPointsBloodStillMoving": {
+            "Name": "Four Points, Blood Still Moving"
+          },
+          "TheSicknessMissesItsWindow": {
+            "Name": "The Sickness Misses Its Window"
+          },
+          "BreathePastTheChokePoint": {
+            "Name": "Breathe Past the Choke Point"
+          },
+          "AdrenalineGuardsTheFollowUp": {
+            "Name": "Adrenaline Guards the Follow-Up"
+          },
+          "FivePointsBodyAnswersAgain": {
+            "Name": "Five Points, Body Answers Again"
+          },
+          "KeepTheHandsWorking": {
+            "Name": "Keep the Hands Working"
           }
         },
         "Reflex": {
@@ -2995,6 +3203,30 @@
           },
           "LeaveNoEasyLine": {
             "Name": "Leave No Easy Line"
+          },
+          "FeetBeatTheEcho": {
+            "Name": "Feet Beat the Echo"
+          },
+          "NeverGiveTheFollowUpALine": {
+            "Name": "Never Give the Follow-Up a Line"
+          },
+          "FourPointsIntoTheBlindSpot": {
+            "Name": "Four Points, Into the Blind Spot"
+          },
+          "TurnTheLandingIntoDistance": {
+            "Name": "Turn the Landing into Distance"
+          },
+          "LetTheFloorTakeTheForce": {
+            "Name": "Let the Floor Take the Force"
+          },
+          "BreakTheTargetingLine": {
+            "Name": "Break the Targeting Line"
+          },
+          "FivePointsGoneBeforeTheDust": {
+            "Name": "Five Points, Gone Before the Dust"
+          },
+          "StayUnreadableOnTheMove": {
+            "Name": "Stay Unreadable on the Move"
           }
         },
         "Will": {
@@ -3048,6 +3280,30 @@
           },
           "LeaveThemGuessing": {
             "Name": "Leave Them Guessing"
+          },
+          "OneThoughtAhead": {
+            "Name": "One Thought Ahead"
+          },
+          "TurnPanicIntoDirection": {
+            "Name": "Turn Panic into Direction"
+          },
+          "FourPointsKeepTheThread": {
+            "Name": "Four Points, Keep the Thread"
+          },
+          "TheLieGivesYouALandmark": {
+            "Name": "The Lie Gives You a Landmark"
+          },
+          "ThoughtSlipsTheHook": {
+            "Name": "Thought Slips the Hook"
+          },
+          "HearTheExitNotTheOrder": {
+            "Name": "Hear the Exit, Not the Order"
+          },
+          "FivePointsSelfStillIntact": {
+            "Name": "Five Points, Self Still Intact"
+          },
+          "ResolveBecomesPosition": {
+            "Name": "Resolve Becomes Position"
           }
         }
       }

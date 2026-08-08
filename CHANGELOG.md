@@ -1,3 +1,19 @@
+## 0.1.0-dev.38
+
+### Final Narrow Escapes content pass
+
+- Added **Narrow Escapes cards 21–30** to Attack, Fortitude, Reflex, and Will, completing all four decks at 30/30 and the theme at 120/120 cards.
+- Attack finishes with a 15/15 ordinary/spell critical split; every final deck adds 8 automated and 2 manual results.
+- Added one final danger-score 4 and one final danger-score 5 escalation to each deck, bringing every Narrow Escape deck to three of each threshold across its three passes.
+- Added focused incoming-trait gates for disease, inhaled, fear, mental, and auditory scenarios where the card fiction depends on that evidence.
+- Added eight final manual escape/support routes covering short Strides, cover, Crawl/Step fallback, difficult-terrain breakthroughs, Balance, and ally reposition/support.
+- Final pass adds no new resistance or immunity filler.
+- Canonical order-insensitive automated-effect duplicate audit remains clean against Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes itself.
+- Strict same-gate mechanical-superset audit remains clean across all 120 Narrow Escape cards.
+- Marked Narrow Escapes pack metadata `complete` and updated runtime/pack contracts to 30 cards in every specialized deck.
+- Preserved all 440 previously published card IDs.
+- Against All Odds now contains the planned **480/480 cards: 407 automated Effect Engine results and 73 explicit manual results**.
+
 # Changelog
 
 ## 0.1.0-dev.37.1

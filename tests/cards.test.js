@@ -2140,13 +2140,13 @@ test("Giant-Slayer 120-card review enforces German Remaster condition and size t
 });
 
 
-test("Narrow Escapes Attack second pass contains twenty unique cards with a 10/10 critical split", () => {
-  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.length, 20);
-  assert.equal(new Set(NARROW_ESCAPE_ATTACK_CARDS.map((card) => card.id)).size, 20);
+test("Narrow Escapes Attack final pass contains thirty unique cards with a 15/15 critical split", () => {
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.length, 30);
+  assert.equal(new Set(NARROW_ESCAPE_ATTACK_CARDS.map((card) => card.id)).size, 30);
   assert.equal(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
   assert.equal(NARROW_ESCAPE_ATTACK_CARDS.every((card) => card.deckType === "attack"), true);
-  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 10);
-  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 10);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "criticalHit").length, 15);
+  assert.equal(NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.category === "spellCriticalHit").length, 15);
 });
 
 test("every published Narrow Escape card uses the dynamic Narrow Escape gate", () => {
@@ -2174,9 +2174,21 @@ test("Narrow Escape Attack preserves its reviewed first pass and adds an 8/2 sec
     "nea-015-sprint-through-the-reprieve",
     "nea-020-hide-in-the-spells-wake"
   ]);
+  assert.deepEqual(NARROW_ESCAPE_ATTACK_CARDS.slice(20).map((card) => card.id.split(".").at(-1)), [
+    "nea-021-keep-moving-after-the-hit",
+    "nea-022-cut-the-pursuit-short",
+    "nea-023-four-points-turn-the-corner",
+    "nea-024-take-the-narrow-way",
+    "nea-025-make-them-guard-the-wrong-side",
+    "nea-026-magic-marks-the-safe-line",
+    "nea-027-leave-the-blast-behind",
+    "nea-028-five-points-vanish-before-the-answer",
+    "nea-029-close-the-pursuit-window",
+    "nea-030-run-for-the-cover-the-spell-made"
+  ]);
 });
 
-test("Narrow Escape Attack second pass appends stable IDs 11 through 20 without rewriting the reviewed first ten", () => {
+test("Narrow Escape Attack final pass appends stable IDs 21 through 30 without rewriting the reviewed first twenty", () => {
   assert.deepEqual(NARROW_ESCAPE_ATTACK_CARDS.slice(0, 10).map((card) => card.id.split(".").at(-1)), [
     "nea-001-cut-open-the-exit",
     "nea-002-one-second-bought",
@@ -2189,7 +2201,7 @@ test("Narrow Escape Attack second pass appends stable IDs 11 through 20 without 
     "nea-009-still-here-still-moving",
     "nea-010-collapse-the-line-behind-you"
   ]);
-  assert.deepEqual(NARROW_ESCAPE_ATTACK_CARDS.slice(10).map((card) => card.id.split(".").at(-1)), [
+  assert.deepEqual(NARROW_ESCAPE_ATTACK_CARDS.slice(10, 20).map((card) => card.id.split(".").at(-1)), [
     "nea-011-turn-the-counterstroke-aside",
     "nea-012-keep-the-exit-behind-you",
     "nea-013-leave-them-reaching",
@@ -2230,7 +2242,7 @@ test("Narrow Escape Attack second pass adds one danger-score escalation at four 
   const five = conditionLeaves(bySuffix["nea-018-five-points-run-before-it-closes"].conditions);
   assert.equal(four.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4), true);
   assert.equal(five.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
-  const allLeaves = NARROW_ESCAPE_ATTACK_CARDS.flatMap((card) => conditionLeaves(card.conditions));
+  const allLeaves = NARROW_ESCAPE_ATTACK_CARDS.slice(0, 20).flatMap((card) => conditionLeaves(card.conditions));
   assert.equal(allLeaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
   assert.equal(allLeaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
 });
@@ -2291,7 +2303,7 @@ test("Narrow Escape German Attack text uses reviewed Remaster terminology throug
   assert.match(attack.HideInTheSpellsWake.Description, /Verstecken/u);
 });
 
-test("Narrow Escape Attack second pass uses supported presentation values and intentional effect recipients", () => {
+test("Narrow Escape Attack final deck uses supported presentation values and intentional effect recipients", () => {
   const tones = new Set(["neutral", "serious", "dramatic", "humorous"]);
   const impacts = new Set(["narrative", "light", "moderate", "strong"]);
   for (const card of NARROW_ESCAPE_ATTACK_CARDS) {
@@ -2299,21 +2311,22 @@ test("Narrow Escape Attack second pass uses supported presentation values and in
     assert.equal(impacts.has(card.impact), true, card.id);
   }
   const automated = NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.effect);
-  assert.equal(automated.length, 17);
-  assert.equal(automated.filter((card) => card.effect.target === "source").length, 11);
-  assert.equal(automated.filter((card) => card.effect.target === "target").length, 6);
+  assert.equal(automated.length, 25);
+  assert.equal(automated.filter((card) => card.effect.target === "source").length, 16);
+  assert.equal(automated.filter((card) => card.effect.target === "target").length, 9);
 });
 
 
-test("Narrow Escapes Fortitude second pass contains twenty unique critical-save cards", () => {
-  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.length, 20);
-  assert.equal(new Set(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => card.id)).size, 20);
+test("Narrow Escapes Fortitude final pass contains thirty unique critical-save cards", () => {
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.length, 30);
+  assert.equal(new Set(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => card.id)).size, 30);
   assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
   assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.deckType === "fortitude"), true);
   assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "fortitude"), true);
   assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 31), true);
-  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.slice(10).every((card) => card.metadata.contentBatch === 35), true);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.slice(10, 20).every((card) => card.metadata.contentBatch === 35), true);
+  assert.equal(NARROW_ESCAPE_FORTITUDE_CARDS.slice(20).every((card) => card.metadata.contentBatch === 38), true);
 });
 
 test("Narrow Escape Fortitude preserves the reviewed first pass and adds an 8/2 second-pass split", () => {
@@ -2346,17 +2359,25 @@ test("Narrow Escape Fortitude has two danger-score 4 and two danger-score 5 esca
   for (const leaves of [fiveA, fiveB]) {
     assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
   }
-  const allLeaves = NARROW_ESCAPE_FORTITUDE_CARDS.flatMap((card) => conditionLeaves(card.conditions));
+  const allLeaves = NARROW_ESCAPE_FORTITUDE_CARDS.slice(0, 20).flatMap((card) => conditionLeaves(card.conditions));
   assert.equal(allLeaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
   assert.equal(allLeaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
 });
 
-test("Narrow Escape Fortitude uses incoming poison and death evidence only where those cards need it", () => {
+test("Narrow Escape Fortitude uses incoming hazard evidence only where those cards need it", () => {
   const bySuffix = Object.fromEntries(NARROW_ESCAPE_FORTITUDE_CARDS.map((card) => [card.id.split(".").at(-1), card]));
   assert.deepEqual(bySuffix["nef-006-toxin-loses-the-race"].filters.attackTraits, ["poison"]);
   assert.deepEqual(bySuffix["nef-016-death-flinches-first"].filters.attackTraits, ["death"]);
+  assert.deepEqual(bySuffix["nef-025-the-sickness-misses-its-window"].filters.attackTraits, ["disease"]);
+  assert.deepEqual(bySuffix["nef-026-breathe-past-the-choke-point"].filters.attackTraits, ["inhaled"]);
+  const gated = new Set([
+    "nef-006-toxin-loses-the-race",
+    "nef-016-death-flinches-first",
+    "nef-025-the-sickness-misses-its-window",
+    "nef-026-breathe-past-the-choke-point"
+  ]);
   for (const [id, card] of Object.entries(bySuffix)) {
-    if (["nef-006-toxin-loses-the-race", "nef-016-death-flinches-first"].includes(id)) continue;
+    if (gated.has(id)) continue;
     assert.deepEqual(card.filters.attackTraits, [], id);
   }
 });
@@ -2420,9 +2441,9 @@ test("Narrow Escape German Fortitude text uses reviewed Remaster terminology thr
   assert.match(fortitude.GetSomethingSolidBetweenYou.Description, /In Deckung gehen/u);
 });
 
-test("Narrow Escape Fortitude positive automated effects stay on the saving actor through pass two", () => {
+test("Narrow Escape Fortitude positive automated effects stay on the saving actor through the final pass", () => {
   const automated = NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.effect);
-  assert.equal(automated.length, 17);
+  assert.equal(automated.length, 25);
   assert.equal(automated.every((card) => card.effect.target === "source"), true);
 });
 
@@ -2471,15 +2492,16 @@ test("Narrow Escape Fortitude second-pass presentation values stay within the Cr
 });
 
 
-test("Narrow Escapes Reflex second pass contains twenty unique critical-save cards", () => {
-  assert.equal(NARROW_ESCAPE_REFLEX_CARDS.length, 20);
-  assert.equal(new Set(NARROW_ESCAPE_REFLEX_CARDS.map((card) => card.id)).size, 20);
+test("Narrow Escapes Reflex final pass contains thirty unique critical-save cards", () => {
+  assert.equal(NARROW_ESCAPE_REFLEX_CARDS.length, 30);
+  assert.equal(new Set(NARROW_ESCAPE_REFLEX_CARDS.map((card) => card.id)).size, 30);
   assert.equal(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
   assert.equal(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.deckType === "reflex"), true);
   assert.equal(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(NARROW_ESCAPE_REFLEX_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "reflex"), true);
   assert.equal(NARROW_ESCAPE_REFLEX_CARDS.filter((card) => card.metadata.contentBatch === 32).length, 10);
   assert.equal(NARROW_ESCAPE_REFLEX_CARDS.filter((card) => card.metadata.contentBatch === 36).length, 10);
+  assert.equal(NARROW_ESCAPE_REFLEX_CARDS.filter((card) => card.metadata.contentBatch === 38).length, 10);
 });
 
 test("Narrow Escape Reflex preserves the reviewed first pass and adds an 8/2 second-pass split", () => {
@@ -2506,7 +2528,7 @@ test("Narrow Escape Reflex has two danger-score 4 and two danger-score 5 escalat
     const leaves = conditionLeaves(bySuffix[id].conditions);
     assert.equal(leaves.some((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5), true);
   }
-  const allLeaves = NARROW_ESCAPE_REFLEX_CARDS.flatMap((card) => conditionLeaves(card.conditions));
+  const allLeaves = NARROW_ESCAPE_REFLEX_CARDS.slice(0, 20).flatMap((card) => conditionLeaves(card.conditions));
   assert.equal(allLeaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
   assert.equal(allLeaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
 });
@@ -2618,15 +2640,16 @@ test("Narrow Escape Reflex second pass adds no resistance or immunity filler", (
 });
 
 
-test("Narrow Escapes Will second pass contains twenty unique critical-save cards", () => {
-  assert.equal(NARROW_ESCAPE_WILL_CARDS.length, 20);
-  assert.equal(new Set(NARROW_ESCAPE_WILL_CARDS.map((card) => card.id)).size, 20);
+test("Narrow Escapes Will final pass contains thirty unique critical-save cards", () => {
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.length, 30);
+  assert.equal(new Set(NARROW_ESCAPE_WILL_CARDS.map((card) => card.id)).size, 30);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.packId === AGAINST_ALL_ODDS_PACK_IDS.narrowEscapes), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.deckType === "will"), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.category === "savingThrowCriticalSuccess"), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.every((card) => card.filters.saveTypes.length === 1 && card.filters.saveTypes[0] === "will"), true);
   assert.equal(NARROW_ESCAPE_WILL_CARDS.slice(0, 10).every((card) => card.metadata.contentBatch === 33), true);
-  assert.equal(NARROW_ESCAPE_WILL_CARDS.slice(10).every((card) => card.metadata.contentBatch === 37), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.slice(10, 20).every((card) => card.metadata.contentBatch === 37), true);
+  assert.equal(NARROW_ESCAPE_WILL_CARDS.slice(20).every((card) => card.metadata.contentBatch === 38), true);
 });
 
 test("Narrow Escape Will preserves the first-pass 9/1 split and adds an 8/2 second pass", () => {
@@ -2660,22 +2683,28 @@ test("Narrow Escape Will second pass preserves stable IDs 11 through 20 in conte
 });
 
 test("Narrow Escape Will has two danger-score 4 and two danger-score 5 escalations after pass two", () => {
-  const leaves = NARROW_ESCAPE_WILL_CARDS.flatMap((card) => conditionLeaves(card.conditions));
+  const leaves = NARROW_ESCAPE_WILL_CARDS.slice(0, 20).flatMap((card) => conditionLeaves(card.conditions));
   assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
   assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
 });
 
-test("Narrow Escape Will uses incoming fear and mental evidence only where required through pass two", () => {
+test("Narrow Escape Will uses incoming fear, mental, and auditory evidence only where required", () => {
   const bySuffix = Object.fromEntries(NARROW_ESCAPE_WILL_CARDS.map((card) => [card.id.split(".").at(-1), card]));
   assert.deepEqual(bySuffix["new-002-panic-spends-its-last-breath"].filters.attackTraits, ["fear"]);
   assert.deepEqual(bySuffix["new-006-the-mental-grip-slips"].filters.attackTraits, ["mental"]);
   assert.deepEqual(bySuffix["new-012-fear-loses-the-next-step"].filters.attackTraits, ["fear"]);
   assert.deepEqual(bySuffix["new-016-the-mental-hook-comes-free"].filters.attackTraits, ["mental"]);
+  assert.deepEqual(bySuffix["new-022-turn-panic-into-direction"].filters.attackTraits, ["fear"]);
+  assert.deepEqual(bySuffix["new-026-thought-slips-the-hook"].filters.attackTraits, ["mental"]);
+  assert.deepEqual(bySuffix["new-027-hear-the-exit-not-the-order"].filters.attackTraits, ["auditory"]);
   const gated = new Set([
     "new-002-panic-spends-its-last-breath",
     "new-006-the-mental-grip-slips",
     "new-012-fear-loses-the-next-step",
-    "new-016-the-mental-hook-comes-free"
+    "new-016-the-mental-hook-comes-free",
+    "new-022-turn-panic-into-direction",
+    "new-026-thought-slips-the-hook",
+    "new-027-hear-the-exit-not-the-order"
   ]);
   for (const [id, card] of Object.entries(bySuffix)) {
     if (gated.has(id)) continue;
@@ -2764,7 +2793,7 @@ test("Narrow Escape Will second pass adds no resistance or immunity filler", () 
   assert.equal(componentTypes.includes("immunity"), false);
 });
 
-test("Narrow Escape reviewed first pass remains stable while all four decks advance to twenty cards", () => {
+test("Narrow Escape reviewed earlier passes remain stable while all four decks complete thirty cards", () => {
   const firstPassDecks = [
     NARROW_ESCAPE_ATTACK_CARDS.filter((card) => card.metadata.contentBatch === 30),
     NARROW_ESCAPE_FORTITUDE_CARDS.filter((card) => card.metadata.contentBatch === 31),
@@ -2784,11 +2813,11 @@ test("Narrow Escape reviewed first pass remains stable while all four decks adva
     NARROW_ESCAPE_FORTITUDE_CARDS.length,
     NARROW_ESCAPE_REFLEX_CARDS.length,
     NARROW_ESCAPE_WILL_CARDS.length
-  ], [20, 20, 20, 20]);
-  assert.equal(ALL_NARROW_ESCAPE_CARDS.length, 80);
-  assert.equal(new Set(ALL_NARROW_ESCAPE_CARDS.map((card) => card.id)).size, 80);
-  assert.equal(ALL_NARROW_ESCAPE_CARDS.filter((card) => card.effect).length, 68);
-  assert.equal(ALL_NARROW_ESCAPE_CARDS.filter((card) => !card.effect).length, 12);
+  ], [30, 30, 30, 30]);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.length, 120);
+  assert.equal(new Set(ALL_NARROW_ESCAPE_CARDS.map((card) => card.id)).size, 120);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.filter((card) => card.effect).length, 100);
+  assert.equal(ALL_NARROW_ESCAPE_CARDS.filter((card) => !card.effect).length, 20);
 });
 
 test("Narrow Escape published cards have no strict same-gate mechanical supersets", () => {
@@ -2838,20 +2867,20 @@ test("Narrow Escape German review uses the Remaster term Zustandsbonus consisten
   assert.match(text, /Zustandsbonus/u);
 });
 
-test("Narrow Escape 80-card review confirms balanced deck growth and escalation counts", () => {
+test("Narrow Escape final 120-card deck growth stays balanced with three score escalations per deck", () => {
   const decks = [
     NARROW_ESCAPE_ATTACK_CARDS,
     NARROW_ESCAPE_FORTITUDE_CARDS,
     NARROW_ESCAPE_REFLEX_CARDS,
     NARROW_ESCAPE_WILL_CARDS
   ];
-  assert.deepEqual(decks.map((cards) => cards.length), [20, 20, 20, 20]);
-  assert.deepEqual(decks.map((cards) => cards.filter((card) => card.effect).length), [17, 17, 17, 17]);
-  assert.deepEqual(decks.map((cards) => cards.filter((card) => !card.effect).length), [3, 3, 3, 3]);
+  assert.deepEqual(decks.map((cards) => cards.length), [30, 30, 30, 30]);
+  assert.deepEqual(decks.map((cards) => cards.filter((card) => card.effect).length), [25, 25, 25, 25]);
+  assert.deepEqual(decks.map((cards) => cards.filter((card) => !card.effect).length), [5, 5, 5, 5]);
   for (const cards of decks) {
     const leaves = cards.flatMap((card) => conditionLeaves(card.conditions));
-    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 2);
-    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 2);
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 3);
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 3);
   }
 });
 
@@ -2914,3 +2943,38 @@ test("Narrow Escape 80-card review separates four previously order-hidden effect
     reflex["ner-017-keep-your-balance-through-it"].effect.definition.components
   );
 });
+
+test("Narrow Escape final pass adds exactly ten batch-38 cards to every deck with an 8/2 split", () => {
+  const decks = [NARROW_ESCAPE_ATTACK_CARDS, NARROW_ESCAPE_FORTITUDE_CARDS, NARROW_ESCAPE_REFLEX_CARDS, NARROW_ESCAPE_WILL_CARDS];
+  for (const cards of decks) {
+    const final = cards.filter((card) => card.metadata.contentBatch === 38);
+    assert.equal(final.length, 10);
+    assert.equal(final.filter((card) => card.effect).length, 8);
+    assert.equal(final.filter((card) => !card.effect).length, 2);
+    const leaves = final.flatMap((card) => conditionLeaves(card.conditions));
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 4).length, 1);
+    assert.equal(leaves.filter((leaf) => leaf.field === "extensions.againstAllOdds.narrowEscape.score" && leaf.operator === "gte" && leaf.value === 5).length, 1);
+  }
+});
+
+test("Narrow Escape final-pass manual cards provide eight distinct immediate escape and support routes", () => {
+  const finalManual = ALL_NARROW_ESCAPE_CARDS.filter((card) => card.metadata.contentBatch === 38 && !card.effect);
+  assert.deepEqual(finalManual.map((card) => card.id.split(".").at(-1)), [
+    "nea-024-take-the-narrow-way",
+    "nea-030-run-for-the-cover-the-spell-made",
+    "nef-024-drag-yourself-clear",
+    "nef-030-shoulder-through-the-bottleneck",
+    "ner-024-dive-behind-something-solid",
+    "ner-030-balance-across-the-last-footing",
+    "new-024-call-someone-back",
+    "new-030-pull-them-with-you"
+  ]);
+});
+
+test("Narrow Escape final pass adds no resistance or immunity filler", () => {
+  const finalAutomated = ALL_NARROW_ESCAPE_CARDS.filter((card) => card.metadata.contentBatch === 38 && card.effect);
+  const types = finalAutomated.flatMap((card) => card.effect.definition.components.map((component) => component.type));
+  assert.equal(types.includes("resistance"), false);
+  assert.equal(types.includes("immunity"), false);
+});
+

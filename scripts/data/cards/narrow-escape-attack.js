@@ -344,4 +344,181 @@ export const NARROW_ESCAPE_ATTACK_CARDS = Object.freeze([
     effect: null
   })
 
+,
+  defineNarrowEscapeAttackCard({
+    id: "nea-021-keep-moving-after-the-hit",
+    localizationKey: "KeepMovingAfterTheHit",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Keep Moving After the Hit",
+    fallbackDescription: "The critical hit is not the end of the exchange; it is the instant your body remembers the route out. For 1 round, you gain a +1 status bonus to Athletics checks and a +1 circumstance bonus to Fortitude DC.",
+    tags: ["athletics", "fortitude-dc", "escape", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "athletics", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-022-cut-the-pursuit-short",
+    localizationKey: "CutThePursuitShort",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Cut the Pursuit Short",
+    fallbackDescription: "The pursuer has to choose between answering your hit and keeping control of the chase. For 1 round, the target takes a -1 circumstance penalty to class DC and a -5-foot circumstance penalty to all Speeds.",
+    tags: ["target", "class-dc", "movement", "pursuit", "effect"],
+    contentBatch: 38,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "class-dc", value: -1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-023-four-points-turn-the-corner",
+    localizationKey: "FourPointsTurnTheCorner",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, Turn the Corner",
+    fallbackDescription: "At danger score 4 or higher, the critical hit buys enough distance to make the next heartbeat belong to you. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Perception checks, and a +10-foot circumstance bonus to your land Speed.",
+    tags: ["danger-score", "temporary-hit-points", "perception", "land-speed", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 4 },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "land", value: 10, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-024-take-the-narrow-way",
+    localizationKey: "TakeTheNarrowWay",
+    category: "criticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Take the Narrow Way",
+    fallbackDescription: "The opening is too small to waste. You may immediately Stride up to 10 feet as a free action. The first 5 feet of difficult terrain during this movement cost no extra movement, and the target cannot use reactions triggered by this movement. Apply this result manually.",
+    tags: ["stride", "difficult-terrain", "free-action", "escape", "manual"],
+    contentBatch: 38,
+    effect: null
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-025-make-them-guard-the-wrong-side",
+    localizationKey: "MakeThemGuardTheWrongSide",
+    category: "criticalHit",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "Make Them Guard the Wrong Side",
+    fallbackDescription: "The critical hit makes the pursuer defend the place you are no longer going to be. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and a -5-foot status penalty to all Speeds.",
+    tags: ["target", "reflex-dc", "movement", "misdirection", "effect"],
+    contentBatch: 38,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: -5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-026-magic-marks-the-safe-line",
+    localizationKey: "MagicMarksTheSafeLine",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Magic Marks the Safe Line",
+    fallbackDescription: "For one clear instant, the spell shows where danger is not. For 1 round, you gain a +1 status bonus to Perception DC and a +1 circumstance bonus to spell DC.",
+    tags: ["spell", "perception-dc", "spell-dc", "escape-route", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "spell-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-027-leave-the-blast-behind",
+    localizationKey: "LeaveTheBlastBehind",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Leave the Blast Behind",
+    fallbackDescription: "The spell finishes behind you instead of around you. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and a +5-foot status bonus to all Speeds.",
+    tags: ["spell", "fortitude", "movement", "escape", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-028-five-points-vanish-before-the-answer",
+    localizationKey: "FivePointsVanishBeforeTheAnswer",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, Vanish Before the Answer",
+    fallbackDescription: "At danger score 5 or higher, the spell lands and you are already somewhere harder to finish. For 1 round, you gain 5 temporary Hit Points, a +1 status bonus to Stealth checks, and a +10-foot circumstance bonus to your land Speed.",
+    tags: ["spell", "danger-score", "temporary-hit-points", "stealth", "land-speed", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 5 },
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "land", value: 10, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-029-close-the-pursuit-window",
+    localizationKey: "CloseThePursuitWindow",
+    category: "spellCriticalHit",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "Close the Pursuit Window",
+    fallbackDescription: "The critical spell leaves the pursuer reacting too slowly to keep the route closed. For 1 round, the target is clumsy 1 and takes a -1 circumstance penalty to spell DC.",
+    tags: ["spell", "target", "clumsy", "spell-dc", "pursuit", "effect"],
+    contentBatch: 38,
+    effect: {
+      target: "target",
+      duration: ONE_ROUND,
+      components: [
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "modifier", selector: "spell-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeAttackCard({
+    id: "nea-030-run-for-the-cover-the-spell-made",
+    localizationKey: "RunForTheCoverTheSpellMade",
+    category: "spellCriticalHit",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Run for the Cover the Spell Made",
+    fallbackDescription: "The spell gives you one moving pocket of safety. You may immediately Stride up to 10 feet as a free action. If you end this movement with cover from the target, you may immediately Take Cover as part of the same free action. The target cannot use reactions triggered by this movement. Apply this result manually.",
+    tags: ["spell", "stride", "take-cover", "free-action", "escape", "manual"],
+    contentBatch: 38,
+    effect: null
+  })
+
 ]);

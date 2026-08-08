@@ -326,4 +326,172 @@ export const NARROW_ESCAPE_WILL_CARDS = Object.freeze([
     effect: null
   })
 
+,
+  defineNarrowEscapeWillCard({
+    id: "new-021-one-thought-ahead",
+    localizationKey: "OneThoughtAhead",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "One Thought Ahead",
+    fallbackDescription: "The pressure loses because you are already thinking about the next safe choice. For 1 round, you gain a +1 circumstance bonus to Will saves and a +1 status bonus to Perception DC.",
+    tags: ["will", "perception-dc", "clarity", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "will", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-022-turn-panic-into-direction",
+    localizationKey: "TurnPanicIntoDirection",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Turn Panic into Direction",
+    fallbackDescription: "Fear points at every bad ending at once. You pick a direction anyway. After critically succeeding against a fear effect, for 1 round you gain a +1 status bonus to Intimidation checks and a +5-foot circumstance bonus to all Speeds.",
+    tags: ["fear", "intimidation", "movement", "escape", "effect"],
+    filters: { attackTraits: ["fear"] },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "intimidation", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-023-four-points-keep-the-thread",
+    localizationKey: "FourPointsKeepTheThread",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, Keep the Thread",
+    fallbackDescription: "At danger score 4 or higher, one coherent thought is enough to pull the rest of you through. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Will DC, and a +1 circumstance bonus to Perception checks.",
+    tags: ["danger-score", "temporary-hit-points", "will-dc", "perception", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 4 },
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-024-call-someone-back",
+    localizationKey: "CallSomeoneBack",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Call Someone Back",
+    fallbackDescription: "Your refusal gives someone else a voice to follow. Choose one ally within 30 feet who can see or hear you. That ally gains a +1 circumstance bonus to their next Will save against the same hostile source before the start of your next turn. Apply this result manually.",
+    tags: ["ally", "will", "support", "manual"],
+    contentBatch: 38,
+    effect: null
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-025-the-lie-gives-you-a-landmark",
+    localizationKey: "TheLieGivesYouALandmark",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "The Lie Gives You a Landmark",
+    fallbackDescription: "Once the false path fails, it becomes something you can navigate around. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Will DC.",
+    tags: ["perception", "will-dc", "clarity", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-026-thought-slips-the-hook",
+    localizationKey: "ThoughtSlipsTheHook",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Thought Slips the Hook",
+    fallbackDescription: "The mental effect catches the shape of your thought and nothing underneath it. After critically succeeding against a mental effect, for 1 round you gain a +1 status bonus to spell attack rolls and a +1 circumstance bonus to Will saves.",
+    tags: ["mental", "spell-attack-roll", "will", "effect"],
+    filters: { attackTraits: ["mental"] },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "spell-attack-roll", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "will", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-027-hear-the-exit-not-the-order",
+    localizationKey: "HearTheExitNotTheOrder",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Hear the Exit, Not the Order",
+    fallbackDescription: "The sound reaches you; the authority inside it does not. After critically succeeding against an auditory effect, for 1 round you gain a +1 status bonus to Perception checks and a +1 circumstance bonus to Will saves.",
+    tags: ["auditory", "perception", "will", "effect"],
+    filters: { attackTraits: ["auditory"] },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "will", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-028-five-points-self-still-intact",
+    localizationKey: "FivePointsSelfStillIntact",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, Self Still Intact",
+    fallbackDescription: "At danger score 5 or higher, surviving the thought is enough to rebuild the rest of the moment. For 1 round, you gain 5 temporary Hit Points, a +1 status bonus to saving throws, and a +1 circumstance bonus to Will DC.",
+    tags: ["danger-score", "temporary-hit-points", "saving-throws", "will-dc", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 5 },
+        { type: "modifier", selector: "saving-throw", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-029-resolve-becomes-position",
+    localizationKey: "ResolveBecomesPosition",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Resolve Becomes Position",
+    fallbackDescription: "Refusing the danger is only useful if it changes where the next blow can find you. For 1 round, you gain a +1 status bonus to AC, a +1 circumstance bonus to Will DC, and a +5-foot status bonus to your land Speed.",
+    tags: ["ac", "will-dc", "land-speed", "escape", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "will-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "land", value: 5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeWillCard({
+    id: "new-030-pull-them-with-you",
+    localizationKey: "PullThemWithYou",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Pull Them with You",
+    fallbackDescription: "You escape the mental trap loudly enough for someone else to follow. Choose one ally within 30 feet who can see or hear you. That ally may immediately Step as a free action. If there is an identifiable hostile source, the Step must end farther from it than it began if possible. Apply this result manually.",
+    tags: ["ally", "step", "free-action", "support", "manual"],
+    contentBatch: 38,
+    effect: null
+  })
+
 ]);

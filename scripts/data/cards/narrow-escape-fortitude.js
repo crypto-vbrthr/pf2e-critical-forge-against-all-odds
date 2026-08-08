@@ -322,4 +322,170 @@ export const NARROW_ESCAPE_FORTITUDE_CARDS = Object.freeze([
     contentBatch: 35,
     effect: null
   })
+,
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-021-second-wind-finds-the-exit",
+    localizationKey: "SecondWindFindsTheExit",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Second Wind Finds the Exit",
+    fallbackDescription: "The body recovers just enough to notice that survival still has a direction. For 1 round, you gain fast healing 2 and a +1 status bonus to Perception checks.",
+    tags: ["fast-healing", "perception", "recovery", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "fastHealing", value: 2 },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-022-keep-the-core-steady",
+    localizationKey: "KeepTheCoreSteady",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Keep the Core Steady",
+    fallbackDescription: "Everything around you can lurch as long as the center holds. For 1 round, you gain a +1 circumstance bonus to Fortitude saves and a +1 status bonus to AC.",
+    tags: ["fortitude", "ac", "stability", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-023-four-points-blood-still-moving",
+    localizationKey: "FourPointsBloodStillMoving",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, Blood Still Moving",
+    fallbackDescription: "At danger score 4 or higher, the body refuses to spend its final reserve all at once. For 1 round, you gain 5 temporary Hit Points, a +2 status bonus to healing received, and a +1 circumstance bonus to Fortitude DC.",
+    tags: ["danger-score", "temporary-hit-points", "healing-received", "fortitude-dc", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 5 },
+        { type: "modifier", selector: "healing-received", value: 2, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-024-drag-yourself-clear",
+    localizationKey: "DragYourselfClear",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Drag Yourself Clear",
+    fallbackDescription: "If you are prone, you may immediately Crawl up to 10 feet as a free action; otherwise, you may immediately Step. If there is an identifiable hostile source, this movement must end farther from it than you began if possible and does not trigger reactions from that source. Apply this result manually.",
+    tags: ["crawl", "step", "free-action", "escape", "manual"],
+    contentBatch: 38,
+    effect: null
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-025-the-sickness-misses-its-window",
+    localizationKey: "TheSicknessMissesItsWindow",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "The Sickness Misses Its Window",
+    fallbackDescription: "A disease tries to turn the body into a prison and arrives one heartbeat too late. After critically succeeding against a disease effect, for 1 round you gain a +1 status bonus to Fortitude saves and a +5-foot status bonus to all Speeds.",
+    tags: ["disease", "fortitude", "movement", "escape", "effect"],
+    filters: { attackTraits: ["disease"] },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-026-breathe-past-the-choke-point",
+    localizationKey: "BreathePastTheChokePoint",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Breathe Past the Choke Point",
+    fallbackDescription: "The air itself tried to stop you and failed. After critically succeeding against an inhaled effect, for 1 round you gain a +1 status bonus to Fortitude DC and a +5-foot circumstance bonus to your land Speed.",
+    tags: ["inhaled", "fortitude-dc", "land-speed", "escape", "effect"],
+    filters: { attackTraits: ["inhaled"] },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "land", value: 5, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-027-adrenaline-guards-the-follow-up",
+    localizationKey: "AdrenalineGuardsTheFollowUp",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Adrenaline Guards the Follow-Up",
+    fallbackDescription: "The first danger fails, and your body prepares for the second before you can think about it. For 1 round, you gain a +1 circumstance bonus to AC and a +1 status bonus to Fortitude DC.",
+    tags: ["ac", "fortitude-dc", "follow-up", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-028-five-points-body-answers-again",
+    localizationKey: "FivePointsBodyAnswersAgain",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, Body Answers Again",
+    fallbackDescription: "At danger score 5 or higher, the body finds one last reserve and spends it on distance. For 1 round, you gain fast healing 4, a +1 status bonus to Fortitude saves, and a +10-foot circumstance bonus to your land Speed.",
+    tags: ["danger-score", "fast-healing", "fortitude", "land-speed", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "fastHealing", value: 4 },
+        { type: "modifier", selector: "fortitude", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "land", value: 10, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-029-keep-the-hands-working",
+    localizationKey: "KeepTheHandsWorking",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Keep the Hands Working",
+    fallbackDescription: "Pain and shock do not get to decide whether you still have leverage. For 1 round, you gain a +1 circumstance bonus to Athletics checks and a +1 status bonus to Perception checks.",
+    tags: ["athletics", "perception", "leverage", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "athletics", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "perception", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeFortitudeCard({
+    id: "nef-030-shoulder-through-the-bottleneck",
+    localizationKey: "ShoulderThroughTheBottleneck",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Shoulder Through the Bottleneck",
+    fallbackDescription: "You may immediately Stride up to 10 feet as a free action. The first 5 feet of difficult terrain during this movement cost no extra movement. If there is an identifiable hostile source, end farther from it than you began if possible. Apply this result manually.",
+    tags: ["stride", "difficult-terrain", "free-action", "escape", "manual"],
+    contentBatch: 38,
+    effect: null
+  })
+
 ]);

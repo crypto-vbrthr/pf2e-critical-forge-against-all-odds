@@ -322,4 +322,169 @@ export const NARROW_ESCAPE_REFLEX_CARDS = Object.freeze([
     effect: null
   })
 
+,
+  defineNarrowEscapeReflexCard({
+    id: "ner-021-feet-beat-the-echo",
+    localizationKey: "FeetBeatTheEcho",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Feet Beat the Echo",
+    fallbackDescription: "You are already gone before the danger finishes making noise. For 1 round, you gain a +1 circumstance bonus to Reflex saves and a +1 status bonus to Stealth checks.",
+    tags: ["reflex", "stealth", "escape", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-022-never-give-the-follow-up-a-line",
+    localizationKey: "NeverGiveTheFollowUpALine",
+    tone: "serious",
+    impact: "strong",
+    fallbackTitle: "Never Give the Follow-Up a Line",
+    fallbackDescription: "The first disaster misses cleanly, and you refuse to stand where the second expects you. For 1 round, you gain a +1 circumstance bonus to Perception DC, a +1 status bonus to AC, and a +5-foot status bonus to your land Speed.",
+    tags: ["perception-dc", "ac", "land-speed", "escape", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "land", value: 5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-023-four-points-into-the-blind-spot",
+    localizationKey: "FourPointsIntoTheBlindSpot",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Four Points, Into the Blind Spot",
+    fallbackDescription: "At danger score 4 or higher, there is no safe ground, only ground the danger has not caught up with yet. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Stealth checks, and a +10-foot circumstance bonus to your land Speed.",
+    tags: ["danger-score", "temporary-hit-points", "stealth", "land-speed", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 4 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 4 },
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "land", value: 10, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-024-dive-behind-something-solid",
+    localizationKey: "DiveBehindSomethingSolid",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Dive Behind Something Solid",
+    fallbackDescription: "You may immediately Stride up to 10 feet as a free action toward a space that gives you cover from the identifiable hostile source. If you end with cover, you may immediately Take Cover as part of the same free action. This movement does not trigger reactions from that source. Apply this result manually.",
+    tags: ["stride", "take-cover", "free-action", "cover", "manual"],
+    contentBatch: 38,
+    effect: null
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-025-turn-the-landing-into-distance",
+    localizationKey: "TurnTheLandingIntoDistance",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Turn the Landing into Distance",
+    fallbackDescription: "You land already committed to the next escape. For 1 round, you gain a +1 circumstance bonus to Acrobatics checks and a +5-foot status bonus to all Speeds.",
+    tags: ["acrobatics", "movement", "escape", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "acrobatics", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "movement", movementType: "all", value: 5, modifierType: "status" }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-026-let-the-floor-take-the-force",
+    localizationKey: "LetTheFloorTakeTheForce",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Let the Floor Take the Force",
+    fallbackDescription: "You redirect the impact through motion instead of letting it settle in your body. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and a +1 status bonus to Reflex saves.",
+    tags: ["fortitude-dc", "reflex", "impact", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "fortitude-dc", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-027-break-the-targeting-line",
+    localizationKey: "BreakTheTargetingLine",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Break the Targeting Line",
+    fallbackDescription: "The danger loses the clean geometry it needed to keep you pinned. For 1 round, you gain a +1 status bonus to Perception DC and a +1 circumstance bonus to Reflex saves.",
+    tags: ["perception-dc", "reflex", "targeting", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "status", predicate: [] },
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "circumstance", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-028-five-points-gone-before-the-dust",
+    localizationKey: "FivePointsGoneBeforeTheDust",
+    tone: "dramatic",
+    impact: "strong",
+    fallbackTitle: "Five Points, Gone Before the Dust",
+    fallbackDescription: "At danger score 5 or higher, the disaster finishes where you used to be. For 1 round, you gain 5 temporary Hit Points, a +1 status bonus to Reflex saves, and a +10-foot circumstance bonus to all Speeds.",
+    tags: ["danger-score", "temporary-hit-points", "reflex", "movement", "effect"],
+    extraConditions: { field: "extensions.againstAllOdds.narrowEscape.score", operator: "gte", value: 5 },
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "temporaryHitPoints", value: 5 },
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] },
+        { type: "movement", movementType: "all", value: 10, modifierType: "circumstance" }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-029-stay-unreadable-on-the-move",
+    localizationKey: "StayUnreadableOnTheMove",
+    tone: "serious",
+    impact: "moderate",
+    fallbackTitle: "Stay Unreadable on the Move",
+    fallbackDescription: "The escape works because the danger cannot tell which motion is the real one. For 1 round, you gain a +1 circumstance bonus to Stealth checks and a +1 status bonus to AC.",
+    tags: ["stealth", "ac", "misdirection", "effect"],
+    contentBatch: 38,
+    effect: {
+      duration: ONE_ROUND,
+      components: [
+        { type: "modifier", selector: "stealth", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "ac", value: 1, modifierType: "status", predicate: [] }
+      ]
+    }
+  }),
+  defineNarrowEscapeReflexCard({
+    id: "ner-030-balance-across-the-last-footing",
+    localizationKey: "BalanceAcrossTheLastFooting",
+    tone: "dramatic",
+    impact: "moderate",
+    fallbackTitle: "Balance Across the Last Footing",
+    fallbackDescription: "If Balance is applicable, you may immediately attempt Balance as a free action with a +2 circumstance bonus to the Acrobatics check. If Balance is not applicable, you may instead Step. Apply this result manually; normal Balance restrictions still apply.",
+    tags: ["balance", "step", "free-action", "acrobatics", "manual"],
+    contentBatch: 38,
+    effect: null
+  })
+
 ]);

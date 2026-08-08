@@ -38,7 +38,7 @@
 - [x] Current automated test run: 259/259 passing.
 - [x] Current coverage: 99.53% lines, 95.37% branches, 98.90% functions.
 - [x] Current localization parity: 1304 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 440 published cards and 375 automated card effects.
+- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 480 published cards and 407 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -227,5 +227,24 @@
 - [x] Flash of an Exit, The Spell Buys Cover, Thread the Second Impact, and Keep Your Balance Through It no longer share canonically identical mechanics with previously published cards.
 - [x] Narrow Escape strict same-gate mechanical-superset audit remains clean after the 80-card review.
 - [x] Review documentation now reflects all four completed second-pass decks.
-- [ ] Foundry smoke test for `0.1.0-dev.37.1`: the four revised review effects apply their updated mechanics and German text correctly.
+- [x] Foundry smoke test for `0.1.0-dev.37.1`: the four revised review effects apply their updated mechanics and German text correctly.
+
+### Narrow Escapes final pass (`0.1.0-dev.38`)
+
+- [x] Narrow Escapes final pass adds cards 21–30 to Attack, Fortitude, Reflex, and Will in content batch 38.
+- [x] Every final deck contributes exactly 8 automated and 2 manual results.
+- [x] Attack completes a 15/15 ordinary/spell critical split at 30/30 cards.
+- [x] Fortitude, Reflex, and Will each complete 30 critical-success save cards.
+- [x] Every completed Narrow Escape deck contains exactly three danger-score 4 and three danger-score 5 escalation cards.
+- [x] Final Fortitude gates disease and inhaled results to matching incoming evidence.
+- [x] Final Will gates fear, mental, and auditory results to matching incoming evidence.
+- [x] Final pass adds no new resistance or immunity filler.
+- [x] Canonical exact-effect audit remains clean across all four themes after all 120 Narrow Escape cards are present.
+- [x] Strict same-gate Narrow Escape mechanical-superset audit remains clean at 120 cards.
+- [x] All 440 previously published card IDs remain unchanged.
+- [x] Narrow Escapes package metadata is marked complete.
+- [x] Full add-on reaches 480/480 planned cards with 407 automated and 73 manual results.
+- [ ] Foundry smoke test for `0.1.0-dev.38`: all four Narrow Escape decks expose 30 localized cards.
+- [ ] Foundry smoke test for `0.1.0-dev.38`: final manual movement, cover, Balance, ally-support, and Step routes read and resolve correctly.
+- [ ] Foundry smoke test for `0.1.0-dev.38`: final disease, inhaled, fear, mental, auditory, score-4, and score-5 gates appear only in matching contexts.
 
