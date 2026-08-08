@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-dev.35
+
+### Added
+- Added **Narrow Escapes Fortitude cards 11–20**, bringing Fortitude to 20/30, Narrow Escapes to 60/120, and the full add-on to 420/480 planned cards.
+- Added content batch 35 with **8 automated Effect Engine results and 2 manual escape results**.
+- Added one additional danger-score 4 escalation and one additional danger-score 5 escalation for Fortitude.
+- Added focused incoming `death` evidence for **Death Flinches First** while keeping the other second-pass Fortitude cards broadly usable.
+- Added manual **Muscle Through the Gap**, which turns restraint into an immediate Escape attempt or otherwise a short Stride, and **Get Something Solid Between You**, which can combine a Step with Take Cover when the movement actually creates cover.
+- Added German and English localization for all ten new cards and eight automated effects, using the reviewed Remaster action names `Entkommen`, `Laufen`, and `In Deckung gehen`.
+
+### Review and tests
+- Preserved all 410 previously published card IDs and every reviewed first-pass Narrow Escape mechanic.
+- Extended Narrow Escape exact-signature and same-gate mechanical-superset audits across all 60 published Narrow Escape cards.
+- Confirmed all 17 automated Narrow Escape Fortitude effects target the saving actor.
+- Confirmed the second Fortitude pass adds no resistance or immunity filler.
+- Expanded card, pack, runtime, localization, danger-threshold, filter, manual-fallback, and release-check regression coverage for the 20/20/10/10 Narrow Escape layout.
+- Verified **250/250 tests** with **99.51% line coverage**, **95.16% branch coverage**, and **98.93% function coverage**.
+- Package-local release checks report **1248 localization keys per language**.
+
+### Compatibility
+- Card, pack, effect, diagnostic, API, context-provider, and extension-contract schema versions remain unchanged.
+
 ## 0.1.0-dev.34
 
 ### Added

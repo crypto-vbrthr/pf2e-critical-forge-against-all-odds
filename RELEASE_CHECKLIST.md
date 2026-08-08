@@ -177,7 +177,7 @@
 - [x] Narrow Escape Will automated effects add no exact published signature duplicate.
 - [x] German and English localization exists for all ten Will cards and nine automated effects.
 - [x] Foundry smoke test: ten localized Narrow Escape Will cards are visible and the manual Seek result reads correctly.
-- [ ] Foundry smoke test: fear- and mental-gated Will cards appear only for matching incoming evidence.
+- [x] Foundry smoke test: fear- and mental-gated Will cards appear only for matching incoming evidence.
 - [x] Narrow Escapes first-40 review preserves all 40 published IDs and card mechanics.
 - [x] First-40 review confirms a 10/10/10/10 layout with 36 automated and 4 manual results.
 - [x] Each reviewed Narrow Escape deck contains exactly one danger-score 4 and one danger-score 5 escalation.
@@ -191,6 +191,15 @@
 - [x] Second-pass Attack automated effects remain exact-signature distinct from all earlier published themes and all other Narrow Escape effects.
 - [x] Second-pass Attack cards remain broadly available and do not filter on the acting hero's own attack or spell traits.
 - [x] German and English localization exists for all ten second-pass Attack cards and eight new automated effects.
-- [ ] Foundry smoke test: Narrow Escape Attack cards 11–20 are visible and both new manual escape results read correctly.
-- [ ] Foundry smoke test: score-4 and score-5 second-pass Attack cards appear only at the matching danger thresholds.
+- [x] Foundry smoke test: Narrow Escape Attack cards 11–20 are visible and both new manual escape results read correctly.
+- [x] Foundry smoke test: score-4 and score-5 second-pass Attack cards appear only at the matching danger thresholds.
 
+- [x] Narrow Escapes Fortitude second pass adds cards 11–20 in content batch 35.
+- [x] Narrow Escapes Fortitude second pass uses 8 automated / 2 manual results and preserves all first-pass IDs and mechanics.
+- [x] Second-pass Fortitude adds one additional danger-score 4 and one additional danger-score 5 escalation.
+- [x] Death Flinches First requires incoming death-trait evidence while the other second-pass Fortitude cards remain broadly usable.
+- [x] Every automated Narrow Escape Fortitude effect targets the saving actor, and the second pass adds no resistance or immunity filler.
+- [x] German and English localization exists for all ten second-pass Fortitude cards and eight new automated effects.
+- [x] Package-local tests cover Entkommen, Laufen, and In Deckung gehen terminology for the two new manual results.
+- [ ] Foundry smoke test: Narrow Escape Fortitude cards 11–20 are visible and both new manual escape results read correctly.
+- [ ] Foundry smoke test: death-gated and score-4/score-5 second-pass Fortitude cards appear only for matching incoming evidence and danger thresholds.

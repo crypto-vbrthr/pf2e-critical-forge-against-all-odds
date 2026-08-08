@@ -1674,6 +1674,46 @@
           "TheExitStaysOpen": {
             "Title": "The Exit Stays Open",
             "Description": "The danger had one chance to stop your body. It missed. For 1 round, you gain a +1 circumstance bonus to AC and Fortitude DC and a 5-foot circumstance bonus to all Speeds."
+          },
+          "AdrenalineFindsTheLegs": {
+            "Title": "Adrenaline Finds the Legs",
+            "Description": "The danger fails to shut your body down, and the surviving surge goes straight into motion. For 1 round, you gain a +1 circumstance bonus to Fortitude DC and a +1 status bonus to Acrobatics checks."
+          },
+          "PainBecomesTiming": {
+            "Title": "Pain Becomes Timing",
+            "Description": "The impact tells you exactly when the next opening will exist. For 1 round, you gain a +1 circumstance bonus to Perception DC and a +1 status bonus to Athletics checks."
+          },
+          "SaveTheBreathForLater": {
+            "Title": "Save the Breath for Later",
+            "Description": "You force the body to stop spending everything at once. For 1 round, you gain a +2 status bonus to healing received and a +1 circumstance bonus to Fortitude saves."
+          },
+          "FourPointsBodyWontFold": {
+            "Title": "Four Points, Body Won't Fold",
+            "Description": "At danger score 4 or higher, the body stops negotiating with collapse. For 1 round, you gain 4 temporary Hit Points, a +1 status bonus to Fortitude DC, and a 5-foot circumstance bonus to all Speeds."
+          },
+          "MuscleThroughTheGap": {
+            "Title": "Muscle Through the Gap",
+            "Description": "Your body finds one violent instant in which the trap is not yet closed. If you are grabbed, restrained, or immobilized, you may immediately attempt to Escape as a free action with a +2 circumstance bonus. Otherwise, you may immediately Stride up to 10 feet as a free action; if the incoming danger has an identifiable hostile source, this movement must end farther from it than you began. Apply this result manually."
+          },
+          "DeathFlinchesFirst": {
+            "Title": "Death Flinches First",
+            "Description": "Against an incoming death effect, your body refuses the final instruction. For 1 round, you gain 4 temporary Hit Points and a +1 status bonus to Fortitude and Will saves."
+          },
+          "BraceIntoMotion": {
+            "Title": "Brace Into Motion",
+            "Description": "You absorb just enough force to turn bracing into forward motion. For 1 round, you gain a +1 circumstance bonus to Athletics checks and a 5-foot status bonus to all Speeds."
+          },
+          "FivePointsPulseReturns": {
+            "Title": "Five Points, Pulse Returns",
+            "Description": "At danger score 5 or higher, the heartbeat that should have stopped comes back hard enough to carry you clear. For 1 round, you gain fast healing 4, a +1 circumstance bonus to AC, and a 5-foot status bonus to all Speeds."
+          },
+          "KeepTheLimbsWorking": {
+            "Title": "Keep the Limbs Working",
+            "Description": "Whatever just tried to stop your body failed to stop the parts you still need. For 1 round, you gain a +1 status bonus to Athletics and Acrobatics checks."
+          },
+          "GetSomethingSolidBetweenYou": {
+            "Title": "Get Something Solid Between You",
+            "Description": "You survive the impact and move before the danger can line up another. You may immediately Step as a free action. If that Step gives you cover from the identifiable hostile source of the incoming danger, you may immediately Take Cover as part of the same free action. Apply this result manually."
           }
         },
         "Reflex": {
@@ -2798,6 +2838,30 @@
           },
           "TheExitStaysOpen": {
             "Name": "The Exit Stays Open"
+          },
+          "AdrenalineFindsTheLegs": {
+            "Name": "Adrenaline Finds the Legs"
+          },
+          "PainBecomesTiming": {
+            "Name": "Pain Becomes Timing"
+          },
+          "SaveTheBreathForLater": {
+            "Name": "Save the Breath for Later"
+          },
+          "FourPointsBodyWontFold": {
+            "Name": "Four Points, Body Won't Fold"
+          },
+          "DeathFlinchesFirst": {
+            "Name": "Death Flinches First"
+          },
+          "BraceIntoMotion": {
+            "Name": "Brace Into Motion"
+          },
+          "FivePointsPulseReturns": {
+            "Name": "Five Points, Pulse Returns"
+          },
+          "KeepTheLimbsWorking": {
+            "Name": "Keep the Limbs Working"
           }
         },
         "Reflex": {

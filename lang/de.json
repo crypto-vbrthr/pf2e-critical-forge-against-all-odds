@@ -1674,6 +1674,46 @@
           "TheExitStaysOpen": {
             "Title": "Der Ausweg bleibt offen",
             "Description": "Die Gefahr hatte eine Gelegenheit, deinen Körper zu stoppen. Sie ist vorbei. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK und Zähigkeits-SG sowie einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "AdrenalineFindsTheLegs": {
+            "Title": "Das Adrenalin findet deine Beine",
+            "Description": "Die Gefahr schafft es nicht, deinen Körper abzuschalten, und der verbliebene Schub geht direkt in Bewegung über. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Zähigkeits-SG und einen Zustandsbonus von +1 auf Akrobatikwürfe."
+          },
+          "PainBecomesTiming": {
+            "Title": "Schmerz wird zu Timing",
+            "Description": "Der Einschlag verrät dir genau, wann sich die nächste Öffnung zeigen wird. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deinen Wahrnehmungs-SG und einen Zustandsbonus von +1 auf Athletikwürfe."
+          },
+          "SaveTheBreathForLater": {
+            "Title": "Bewahre den Atem für später",
+            "Description": "Du zwingst deinen Körper, nicht alles auf einmal zu verbrauchen. Für 1 Runde erhältst du einen Zustandsbonus von +2 auf erhaltene Heilung und einen Situationsbonus von +1 auf Zähigkeitswürfe."
+          },
+          "FourPointsBodyWontFold": {
+            "Title": "Vier Punkte, der Körper knickt nicht ein",
+            "Description": "Bei einem Gefahrenwert von 4 oder höher verhandelt dein Körper nicht länger mit dem Zusammenbruch. Für 1 Runde erhältst du 4 temporäre Trefferpunkte, einen Zustandsbonus von +1 auf deinen Zähigkeits-SG und einen Situationsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "MuscleThroughTheGap": {
+            "Title": "Mit Muskelkraft durch die Lücke",
+            "Description": "Dein Körper findet einen einzigen gewaltsamen Augenblick, in dem die Falle noch nicht ganz geschlossen ist. Falls du Gegriffen, Gebunden oder Bewegungsunfähig bist, darfst du sofort als freie Aktion Entkommen versuchen und erhältst einen Situationsbonus von +2 auf den Wurf. Andernfalls darfst du sofort als freie Aktion bis zu 3 m Laufen; besitzt die eingehende Gefahr eine identifizierbare feindliche Quelle, musst du die Bewegung weiter von ihr entfernt beenden, als du begonnen hast. Wende dieses Ergebnis manuell an."
+          },
+          "DeathFlinchesFirst": {
+            "Title": "Der Tod zuckt zuerst zurück",
+            "Description": "Gegen einen eingehenden Effekt der Kategorie Tod verweigert dein Körper den letzten Befehl. Für 1 Runde erhältst du 4 temporäre Trefferpunkte und einen Zustandsbonus von +1 auf Zähigkeits- und Willenswürfe."
+          },
+          "BraceIntoMotion": {
+            "Title": "Aus dem Stemmen in die Bewegung",
+            "Description": "Du fängst gerade genug Kraft ab, um das Stemmen in Vorwärtsbewegung zu verwandeln. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Athletikwürfe und einen Zustandsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "FivePointsPulseReturns": {
+            "Title": "Fünf Punkte, der Puls kehrt zurück",
+            "Description": "Bei einem Gefahrenwert von 5 oder höher kehrt der Herzschlag, der hätte aussetzen sollen, stark genug zurück, um dich aus der Gefahr zu tragen. Für 1 Runde erhältst du Schnelle Heilung 4, einen Situationsbonus von +1 auf RK und einen Zustandsbonus von +1,5 m auf alle Bewegungsraten."
+          },
+          "KeepTheLimbsWorking": {
+            "Title": "Halte die Glieder in Bewegung",
+            "Description": "Was auch immer gerade versucht hat, deinen Körper zu stoppen, hat nicht die Teile erwischt, die du noch brauchst. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Athletik- und Akrobatikwürfe."
+          },
+          "GetSomethingSolidBetweenYou": {
+            "Title": "Bring etwas Solides zwischen euch",
+            "Description": "Du überstehst den Einschlag und bewegst dich, bevor die Gefahr erneut Maß nehmen kann. Du darfst sofort als freie Aktion einen Schritt machen. Falls dir dieser Schritt Deckung vor der identifizierbaren feindlichen Quelle der eingehenden Gefahr verschafft, darfst du als Teil derselben freien Aktion sofort In Deckung gehen. Wende dieses Ergebnis manuell an."
           }
         },
         "Reflex": {
@@ -2798,6 +2838,30 @@
           },
           "TheExitStaysOpen": {
             "Name": "Der Ausweg bleibt offen"
+          },
+          "AdrenalineFindsTheLegs": {
+            "Name": "Das Adrenalin findet deine Beine"
+          },
+          "PainBecomesTiming": {
+            "Name": "Schmerz wird zu Timing"
+          },
+          "SaveTheBreathForLater": {
+            "Name": "Bewahre den Atem für später"
+          },
+          "FourPointsBodyWontFold": {
+            "Name": "Vier Punkte, der Körper knickt nicht ein"
+          },
+          "DeathFlinchesFirst": {
+            "Name": "Der Tod zuckt zuerst zurück"
+          },
+          "BraceIntoMotion": {
+            "Name": "Aus dem Stemmen in die Bewegung"
+          },
+          "FivePointsPulseReturns": {
+            "Name": "Fünf Punkte, der Puls kehrt zurück"
+          },
+          "KeepTheLimbsWorking": {
+            "Name": "Halte die Glieder in Bewegung"
           }
         },
         "Reflex": {
