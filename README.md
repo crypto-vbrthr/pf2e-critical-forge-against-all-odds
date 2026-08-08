@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.38.3` is the **Foundry registration hotfix** for the full 480-card release review. It corrects one malformed Surrounded Effect Engine component discriminator (`temporary-hp` → `temporaryHitPoints`) that caused Critical Forge `1.0.0-rc` to reject the Surrounded pack. All four themes remain complete at 120/120 cards, all 480 published card IDs are preserved, and the reviewed `0.1.0-dev.38.2` mechanics remain otherwise unchanged.
+Version `0.1.0-rc.1` is the **first release candidate** for the complete 480-card Against All Odds expansion. It contains the reviewed and Foundry-validated Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes packs, with all 480 published card IDs preserved. The `0.1.0-dev.38.3` registration hotfix has passed live Foundry validation against Critical Forge `1.0.0-rc`; RC.1 therefore freezes card mechanics unless release-candidate testing uncovers a defect.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 

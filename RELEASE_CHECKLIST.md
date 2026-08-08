@@ -38,7 +38,7 @@
 - [x] Current automated test run: 271/271 passing.
 - [x] Current coverage: 99.57% lines, 95.51% branches, 98.94% functions.
 - [x] Current localization parity: 1416 keys in both German and English.
-- [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 480 published cards and 407 automated card effects.
+- [x] Integrated Critical Forge `1.0.0-rc` validation for the current 480 published cards and 407 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
 - [x] Foundry smoke test: Against-All-Odds evidence visible in Diagnostics 2.0.
@@ -279,6 +279,17 @@
 - [x] `Four Cannot Fold You` uses the schema-valid Effect Engine component type `temporaryHitPoints`.
 - [x] The component-type regression scans all 480 published cards rather than only Bloodied Triumphs.
 - [x] All 480 card IDs, 407 automated / 73 manual split, reviewed mechanics, localization counts, and public extension contracts remain unchanged otherwise.
-- [ ] Foundry smoke test for `0.1.0-dev.38.3`: all four packs register; the revised legacy Bloodied/Surrounded effects display and apply correctly.
-- [ ] Direct Critical Forge `1.0.0-rc` host-validator run for `0.1.0-dev.38.3` before tagging a release candidate.
+- [x] Foundry smoke test for `0.1.0-dev.38.3`: all four packs register; the revised legacy Bloodied/Surrounded effects display and apply correctly.
+- [x] Direct Critical Forge `1.0.0-rc` host-validator path exercised by the successful live Foundry registration of `0.1.0-dev.38.3` before RC packaging.
 
+### Release Candidate 1 (`0.1.0-rc.1`)
+
+- [x] Version synchronized across `module.json`, `package.json`, and runtime constants.
+- [x] Manifest download URL points at the `0.1.0-rc.1` GitHub release tag.
+- [x] All 480 published card IDs remain unchanged from the validated development baseline.
+- [x] All four 120-card packs remain complete with 407 automated and 73 manual results.
+- [x] Standalone automated suite and package quality checks pass.
+- [x] Integrated Foundry/Critical Forge `1.0.0-rc` registration baseline is confirmed from `0.1.0-dev.38.3`.
+- [ ] Install `0.1.0-rc.1` itself in Foundry and perform the final RC smoke test.
+- [ ] Confirm no console errors during world initialization, card selection, effect application, and diagnostics/editor inspection.
+- [ ] If RC smoke testing is clean, tag/publish `0.1.0-rc.1` without further card-content changes.

@@ -55,7 +55,7 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 31. Final review of all 120 **Narrow Escapes** cards. **Complete in `0.1.0-dev.38.1`; all IDs and deck structures are preserved, three same-gate near-duplicate concepts are separated, conceptual-footprint regression coverage is added, and final-pass documentation drift is corrected.**
 32. Perform the complete 480-card cross-pack duplicate-concept, effect, localization, diagnostic, and release-readiness audit. **Complete in `0.1.0-dev.38.2`; all 480 IDs are preserved, all 407 automated effects are canonically unique, strict and conceptual same-gate overlap audits are clean across all four themes, legacy German terminology is normalized globally, and English fallback/localization drift is eliminated.**
 
-Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes are all complete at 120/120 cards. Against All Odds has reached its planned 480/480-card content target, and the full 480-card release review is complete. The next milestone is integrated Critical Forge/Foundry release-candidate validation and release packaging.
+Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes are all complete at 120/120 cards. Against All Odds has reached its planned 480/480-card content target, the full 480-card release review is complete, and the validated development baseline has been promoted to **0.1.0-rc.1**. The remaining milestone is the final Foundry smoke test of the RC artifact before publication.
 
 Every card will:
 

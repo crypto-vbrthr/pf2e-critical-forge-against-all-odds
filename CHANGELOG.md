@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.0-rc.1
+
+### Release Candidate 1
+
+- Promoted the complete **480/480-card** Against All Odds build to its first release candidate after the `0.1.0-dev.38.3` registration hotfix passed live Foundry testing with Critical Forge `1.0.0-rc`.
+- Freezes the reviewed card corpus at **407 automated Effect Engine results and 73 explicit manual results** unless RC testing identifies a defect.
+- Preserves all **480 published card IDs**, all four 120-card pack IDs/layouts, and the public Critical Forge extension/API contracts.
+- Confirms the full release-review guards: zero canonical automated-effect duplicates, zero strict same-gate mechanical supersets, zero same-gate conceptual duplicates, unique localized card titles, synchronized English fallbacks, and global German Remaster terminology checks.
+- Carries forward the all-card Effect Engine component-discriminator regression added in `0.1.0-dev.38.3`; the malformed Surrounded `temporary-hp` discriminator is fixed and all four packs now register successfully in Foundry.
+- Records the successful integrated Foundry/Critical Forge validation of the complete 480-card add-on.
+- RC baseline: **271/271 tests**, **99.57% line coverage**, **95.51% branch coverage**, **98.94% function coverage**, and **1416 localization keys per language**.
+
 ## 0.1.0-dev.38.3
 
 ### Foundry registration hotfix
