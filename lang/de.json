@@ -93,11 +93,11 @@
           },
           "BackAgainstTheWorld": {
             "Title": "Gegen die ganze Welt",
-            "Description": "Dein Gegenstoß reißt die Verteidigung auf, die dich hätte bezwingen sollen. Das Ziel ist für 1 Runde Auf dem falschen Fuß."
+            "Description": "Dein Gegenstoß reißt die Verteidigung auf, die dich hätte bezwingen sollen. Das Ziel ist für 1 Runde Auf dem Falschen Fuß."
           },
           "BloodInTheStride": {
             "Title": "Blut im Griff",
-            "Description": "Der Schmerz beruhigt deine Hände und verleiht deiner Drohung furchtbare Gewissheit. Für 1 Runde erhältst du einen Statusbonus von +1 auf Athletik- und Einschüchternwürfe."
+            "Description": "Der Schmerz beruhigt deine Hände und verleiht deiner Drohung furchtbare Gewissheit. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Athletik- und Einschüchternwürfe."
           },
           "YouFlinchFirst": {
             "Title": "Du zuckst zuerst",
@@ -105,11 +105,11 @@
           },
           "CrimsonAfterimage": {
             "Title": "Blutrotes Nachbeben",
-            "Description": "Der Zauber hinterlässt in jeder geöffneten Wunde einen zweiten, blutroten Einschlag. Für 1 Runde erhältst du einen Statusbonus von +2 auf Zauberschaden."
+            "Description": "Der Zauber hinterlässt in jeder geöffneten Wunde einen zweiten, blutroten Einschlag. Für 1 Runde erhältst du einen Zustandsbonus von +2 auf Zauberschaden."
           },
           "WillThroughTheWound": {
             "Title": "Wille durch die Wunde",
-            "Description": "Der gelungene Zauber beweist, dass dein Wille noch immer stärker ist als deine Verletzungen. Für 1 Runde erhältst du einen Statusbonus von +1 auf Rettungswürfe."
+            "Description": "Der gelungene Zauber beweist, dass dein Wille noch immer stärker ist als deine Verletzungen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Rettungswürfe."
           },
           "WoundHoldsTheWeave": {
             "Title": "Die Wunde hält das Geflecht",
@@ -287,35 +287,35 @@
           },
           "LastQuarter": {
             "Title": "Das letzte Viertel",
-            "Description": "Wenn fast nichts mehr übrig ist, verschwendet dein Körper keine Kraft mehr auf etwas anderes als Überleben. Bei höchstens einem Viertel deiner Trefferpunkte erhältst du nach diesem kritischen Erfolg für 1 Runde einen Statusbonus von +1 auf Rettungswürfe."
+            "Description": "Wenn fast nichts mehr übrig ist, verschwendet dein Körper keine Kraft mehr auf etwas anderes als Überleben. Bei höchstens einem Viertel deiner Trefferpunkte erhältst du nach diesem kritischen Erfolg für 1 Runde einen Zustandsbonus von +1 auf Rettungswürfe."
           },
           "WoundedStandsTaller": {
             "Title": "Verwundet steht aufrechter",
-            "Description": "Die Wunde ist nicht länger nur Schaden; sie wird zum Hebel. Bist du Verwundet, erhältst du für 1 Runde einen Statusbonus von +1 auf Athletik- und Zähigkeitswürfe."
+            "Description": "Die Wunde ist nicht länger nur Schaden; sie wird zum Hebel. Bist du Verwundet, erhältst du für 1 Runde einen Zustandsbonus von +1 auf Athletik- und Zähigkeitswürfe."
           },
           "RingOfEnemiesBecomesArmor": {
             "Title": "Der Ring der Feinde wird zur Rüstung",
-            "Description": "Wenn Feinde von allen Seiten herandrängen, gibt dein Körper keinem von ihnen mehr eine saubere Linie. Bedrohen dich mindestens zwei Gegner, erhältst du für 1 Runde einen Situationsbonus von +1 auf deine RK."
+            "Description": "Wenn Feinde von allen Seiten herandrängen, gibt dein Körper keinem von ihnen mehr eine saubere Linie. Bedrohen dich mindestens zwei Gegner, erhältst du für 1 Runde einen Situationsbonus von +1 auf deine RK und einen Zustandsbonus von +1 auf Zähigkeitswürfe."
           },
           "EveryBreathIsChosen": {
             "Title": "Jeder Atemzug ist gewählt",
-            "Description": "Du verschwendest keine Bewegung mehr an den Schmerz. Für 1 Runde erhält deine Bewegungsrate am Boden einen Statusbonus von 1,5 Metern."
+            "Description": "Du verschwendest keine Bewegung mehr an den Schmerz. Für 1 Runde erhält deine Bewegungsrate am Boden einen Zustandsbonus von 1,5 Metern."
           },
           "HandsStillObey": {
             "Title": "Die Hände gehorchen noch",
-            "Description": "Dein Körper mag Stück für Stück versagen, doch deine Hände wissen noch genau, was als Nächstes kommt. Für 1 Runde erhältst du einen Statusbonus von +1 auf Angriffswürfe."
+            "Description": "Dein Körper mag Stück für Stück versagen, doch deine Hände wissen noch genau, was als Nächstes kommt. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Angriffswürfe."
           },
           "BodySetsItsWeight": {
             "Title": "Der Körper setzt sein Gewicht",
-            "Description": "Dein Stand wird zu einem Argument aus Knochen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Athletikwürfe und deinen Zähigkeits-SG."
+            "Description": "Dein Stand wird zu einem Argument aus Knochen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf RK, Athletikwürfe und deinen Zähigkeits-SG."
           },
           "PainNarrowsTheWorld": {
             "Title": "Schmerz verengt die Welt",
-            "Description": "Alles Unwichtige fällt fort, bis Gefahr die einzige klare Form bleibt. Für 1 Runde erhältst du einen Statusbonus von +1 auf Wahrnehmungswürfe."
+            "Description": "Alles Unwichtige fällt fort, bis Gefahr die einzige klare Form bleibt. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Wahrnehmungswürfe."
           },
           "HoldTheLineInside": {
             "Title": "Halte die Linie in dir",
-            "Description": "Dein Körper gewinnt einen Streit mit sich selbst, und dein Geist borgt sich den Schwung. Für 1 Runde erhältst du einen Statusbonus von +1 auf Willenswürfe."
+            "Description": "Dein Körper gewinnt einen Streit mit sich selbst, und dein Geist borgt sich den Schwung. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zähigkeits- und Willenswürfe."
           },
           "WoundCannotSurpriseYou": {
             "Title": "Die Wunde kann dich nicht überraschen",
@@ -337,7 +337,7 @@
           },
           "RunBeforeFalling": {
             "Title": "Lauf, bevor du fällst",
-            "Description": "Dein Körper verbraucht die Kraft von morgen, um das Jetzt zu überleben. Für 1 Runde erhältst du einen Statusbonus von 3 Metern auf deine Bewegungsrate am Boden."
+            "Description": "Dein Körper verbraucht die Kraft von morgen, um das Jetzt zu überleben. Für 1 Runde erhältst du einen Zustandsbonus von 3 Metern auf deine Bewegungsrate am Boden."
           },
           "TurnTheBlastAside": {
             "Title": "Die Wucht umlenken",
@@ -349,7 +349,7 @@
           },
           "NeverWhereNeeded": {
             "Title": "Nie dort, wo sie dich erwarten",
-            "Description": "Die perfekte Öffnung des Gegners findet immer wieder nur leere Luft. Für 1 Runde bist du gegen den Zustand Auf dem falschen Fuß immun."
+            "Description": "Die perfekte Öffnung des Gegners findet immer wieder nur leere Luft. Für 1 Runde bist du gegen den Zustand Auf dem Falschen Fuß immun."
           },
           "FeetRefuseGround": {
             "Title": "Die Füße verweigern den Boden",
@@ -357,7 +357,7 @@
           },
           "WoundTaughtBalance": {
             "Title": "Von Wunden gelehrtes Gleichgewicht",
-            "Description": "Der Schmerz ist zu einer Karte jeder gefährlichen Gewichtsverlagerung geworden. Für 1 Runde erhältst du einen Statusbonus von +1 auf Akrobatikwürfe."
+            "Description": "Der Schmerz ist zu einer Karte jeder gefährlichen Gewichtsverlagerung geworden. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Akrobatikwürfe."
           },
           "SlipTheSnare": {
             "Title": "Der Schlinge entgleiten",
@@ -385,7 +385,7 @@
           },
           "BloodKnowsTheExit": {
             "Title": "Blut kennt den Ausgang",
-            "Description": "Du hörst auf, nach Sicherheit zu suchen, und bewegst dich direkt auf sie zu. Für 1 Runde erhältst du einen Statusbonus von +1 auf Akrobatik- und Heimlichkeitswürfe."
+            "Description": "Du hörst auf, nach Sicherheit zu suchen, und bewegst dich direkt auf sie zu. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Akrobatik- und Heimlichkeitswürfe."
           },
           "DodgeBecomesCounterstroke": {
             "Title": "Ausweichen wird Gegenstoß",
@@ -393,7 +393,7 @@
           },
           "ReflexWithoutThought": {
             "Title": "Reflex ohne Gedanken",
-            "Description": "Bewusstes Denken ist zum Überleben zu langsam geworden. Für 1 Runde erhältst du einen Statusbonus von +1 auf Würfe, die auf Geschicklichkeit basieren."
+            "Description": "Bewusstes Denken ist zum Überleben zu langsam geworden. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Würfe, die auf Geschicklichkeit basieren."
           },
           "MotionCannotBeStolen": {
             "Title": "Bewegung lässt sich nicht stehlen",
@@ -409,11 +409,11 @@
           },
           "TheirLinesCrossBehindYou": {
             "Title": "Ihre Linien kreuzen sich hinter dir",
-            "Description": "Bedrohen dich mindestens zwei Gegner, lässt dein Ausweichen ihre Angriffswinkel ineinanderlaufen. Die feindliche Quelle ist für 1 Runde Auf dem falschen Fuß."
+            "Description": "Bedrohen dich mindestens zwei Gegner, lässt dein Ausweichen ihre Angriffswinkel ineinanderlaufen. Die feindliche Quelle ist für 1 Runde Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Akrobatikwürfe."
           },
           "FourBladesOneRhythm": {
             "Title": "Vier Klingen, ein Rhythmus",
-            "Description": "Bedrohen dich vier oder mehr Gegner, wird das Chaos zu einem einzigen lesbaren Muster. Für 1 Runde erhältst du einen Statusbonus von +1 auf Angriffswürfe."
+            "Description": "Bedrohen dich vier oder mehr Gegner, wird das Chaos zu einem einzigen lesbaren Muster. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Angriffs- und Reflexwürfe."
           },
           "QuarterBreathDefense": {
             "Title": "Verteidigung im letzten Viertel",
@@ -421,7 +421,7 @@
           },
           "OverreachBecomesOpening": {
             "Title": "Überdehnung wird zur Öffnung",
-            "Description": "Die feindliche Quelle legt zu viel in den Angriff, dem du entkommen bist. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Angriffswürfe."
+            "Description": "Die feindliche Quelle legt zu viel in den Angriff, dem du entkommen bist. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Angriffswürfe und RK."
           },
           "FireShowsTheGap": {
             "Title": "Feuer zeigt die Lücke",
@@ -433,15 +433,15 @@
           },
           "ColdCannotSettle": {
             "Title": "Kälte findet keinen Halt",
-            "Description": "Du gönnst dem Frost nie genug Stillstand, um dich zu packen. Nach einem kritischen Erfolg gegen Kälteschaden erhält deine Bewegungsrate am Boden für 1 Runde einen Statusbonus von 1,5 Metern."
+            "Description": "Du gönnst dem Frost nie genug Stillstand, um dich zu packen. Nach einem kritischen Erfolg gegen Kälteschaden erhältst du für 1 Runde einen Zustandsbonus von 1,5 m auf deine Bewegungsrate am Boden und einen Zustandsbonus von +1 auf Reflexwürfe."
           },
           "LightningTeachesTheLine": {
             "Title": "Blitz lehrt die Linie",
-            "Description": "Der Strom zeigt dir den kürzesten Weg durch die Gefahr. Nach einem kritischen Erfolg gegen Elektrizitätsschaden erhältst du für 1 Runde einen Statusbonus von +1 auf Reflexwürfe."
+            "Description": "Der Strom zeigt dir den kürzesten Weg durch die Gefahr. Nach einem kritischen Erfolg gegen Elektrizitätsschaden erhältst du für 1 Runde einen Zustandsbonus von +1 auf Reflexwürfe und einen Situationsbonus von 1,5 m auf deine Bewegungsrate am Boden."
           },
           "SourceLosesSightOfYou": {
             "Title": "Die Quelle verliert dich aus den Augen",
-            "Description": "Deine Ausweichlinie lässt die feindliche Quelle dorthin schauen, wo du eben noch warst. Für 1 Runde erhält sie einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
+            "Description": "Deine Ausweichlinie lässt die feindliche Quelle dorthin schauen, wo du eben noch warst. Für 1 Runde erhält sie einen Situationsmalus von -2 auf Wahrnehmungswürfe."
           },
           "BehindThemBeforeTheyTurn": {
             "Title": "Hinter ihnen, bevor sie sich drehen",
@@ -467,7 +467,7 @@
           },
           "HeartRemembers": {
             "Title": "Das Herz erinnert sich",
-            "Description": "Ein anderer mag deinen Gefühlen Befehle erteilen, doch er kann nicht umschreiben, weshalb du noch stehst. Die feindliche Quelle erhält für 1 Runde Benommen 1."
+            "Description": "Ein anderer mag deinen Gefühlen Befehle erteilen, doch er kann nicht umschreiben, weshalb du noch stehst. Die feindliche Quelle erhält für 1 Runde Benommen 1 und einen Situationsmalus von -1 auf ihren Wahrnehmungs-SG."
           },
           "ThoughtBehindTheBlood": {
             "Title": "Der Gedanke hinter dem Blut",
@@ -479,7 +479,7 @@
           },
           "EyesBehindTheEyes": {
             "Title": "Augen hinter den Augen",
-            "Description": "Der Angriff öffnet hinter deinen gewöhnlichen Sinnen eine kältere Wachsamkeit. Für 1 Runde erhältst du einen Statusbonus von +1 auf Wahrnehmungswürfe und deinen Wahrnehmungs-SG."
+            "Description": "Der Angriff öffnet hinter deinen gewöhnlichen Sinnen eine kältere Wachsamkeit. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Wahrnehmungswürfe und deinen Wahrnehmungs-SG."
           },
           "DefianceLooksBack": {
             "Title": "Der Trotz blickt zurück",
@@ -495,7 +495,7 @@
           },
           "NameRemains": {
             "Title": "Ein Name bleibt",
-            "Description": "Der Schmerz schält jede fremde Stimme fort, bis nur deine eigene übrig bleibt. Für 1 Runde erhältst du einen Statusbonus von +1 auf weisheits- und charismabasierte Würfe."
+            "Description": "Der Schmerz schält jede fremde Stimme fort, bis nur deine eigene übrig bleibt. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf weisheits- und charismabasierte Würfe."
           },
           "FearForgetsTheWay": {
             "Title": "Die Furcht vergisst den Weg",
@@ -515,7 +515,7 @@
           },
           "PainBecomesAuthority": {
             "Title": "Schmerz wird zu Autorität",
-            "Description": "Du hast den Preis des Zweifels bereits bezahlt. Für 1 Runde erhalten dein Zauber-SG und dein Klassen-SG einen Statusbonus von +1."
+            "Description": "Du hast den Preis des Zweifels bereits bezahlt. Für 1 Runde erhalten dein Zauber-SG und dein Klassen-SG einen Zustandsbonus von +1."
           },
           "NoSecondVoice": {
             "Title": "Keine zweite Stimme",
@@ -523,7 +523,7 @@
           },
           "ClarityAfterTheStorm": {
             "Title": "Klarheit nach dem Sturm",
-            "Description": "Der gescheiterte Angriff lässt den Rest der Welt unnatürlich einfach erscheinen. Für 1 Runde erhältst du einen Statusbonus von +1 auf Fertigkeitswürfe."
+            "Description": "Der gescheiterte Angriff lässt den Rest der Welt unnatürlich einfach erscheinen. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Fertigkeitswürfe."
           },
           "SlamTheDoorShut": {
             "Title": "Schlag die Tür zu",
@@ -535,31 +535,31 @@
           },
           "FearBecomesACompass": {
             "Title": "Furcht wird zum Kompass",
-            "Description": "Furcht zeigt auf das, was zählt, und du entscheidest dich, darauf zuzugehen. Nach einem Furchteffekt erhältst du für 1 Runde einen Statusbonus von +1 auf Angriffswürfe."
+            "Description": "Furcht zeigt auf das, was zählt, und du entscheidest dich, darauf zuzugehen. Nach einem Furchteffekt erhältst du für 1 Runde einen Zustandsbonus von +1 auf Angriffs- und Willenswürfe."
           },
           "IllusionBreaksOnTheWound": {
             "Title": "Illusion bricht an der Wunde",
-            "Description": "Der Schmerz gibt der falschen Welt eine harte Kante, die sie nicht nachahmen kann. Nach einem Illusionseffekt erhältst du für 1 Runde einen Situationsbonus von +1 auf deine RK."
+            "Description": "Der Schmerz gibt der falschen Welt eine harte Kante, die sie nicht nachahmen kann. Nach einem Illusionseffekt erhältst du für 1 Runde einen Situationsbonus von +1 auf deine RK und Willenswürfe."
           },
           "HeartChoosesItsRhythm": {
             "Title": "Das Herz wählt seinen Rhythmus",
-            "Description": "Jemand wollte dir vorschreiben, was du fühlen sollst; die Weigerung wird zur Überzeugung. Nach einem Gefühlseffekt erhältst du für 1 Runde einen Statusbonus von +1 auf Diplomatie- und Einschüchternwürfe."
+            "Description": "Jemand wollte dir vorschreiben, was du fühlen sollst; die Weigerung wird zur Überzeugung. Nach einem Gefühlseffekt erhältst du für 1 Runde einen Zustandsbonus von +1 auf Diplomatie- und Einschüchternwürfe."
           },
           "YourVoiceComesBackWrong": {
             "Title": "Deine Stimme kehrt falsch zurück",
-            "Description": "Der feindliche Klang schlägt durch den Raum zurück, den er besetzen wollte. Nach einem akustischen Effekt ist die feindliche Quelle für 1 Runde Taub."
+            "Description": "Der feindliche Klang schlägt durch den Raum zurück, den er besetzen wollte. Nach einem hörbaren Effekt ist die feindliche Quelle für 1 Runde Taub und erhält einen Situationsmalus von -1 auf ihren Willens-SG."
           },
           "WordsLoseTheirTeeth": {
             "Title": "Worte verlieren ihre Zähne",
-            "Description": "Der Satz erreicht dich noch, seine Autorität jedoch nicht. Nach einem sprachabhängigen Effekt erhältst du für 1 Runde einen Statusbonus von +1 auf Willenswürfe."
+            "Description": "Der Satz erreicht dich noch, seine Autorität jedoch nicht. Nach einem sprachabhängigen Effekt erhältst du für 1 Runde einen Zustandsbonus von +1 auf Willenswürfe."
           },
           "CurseFindsAWitness": {
             "Title": "Der Fluch findet einen Zeugen",
-            "Description": "Du siehst den Fluch klar genug, um seine nächste Lüge zurückzuweisen. Nach einem Flucheffekt erhältst du für 1 Runde einen Statusbonus von +1 auf Rettungswürfe."
+            "Description": "Du siehst den Fluch klar genug, um seine nächste Lüge zurückzuweisen. Nach einem Flucheffekt erhältst du für 1 Runde einen Zustandsbonus von +1 auf Willenswürfe und deinen Wahrnehmungs-SG."
           },
           "TooHurtToBeSmall": {
             "Title": "Zu verletzt, um klein zu sein",
-            "Description": "Bei höchstens einem Viertel deiner Trefferpunkte brennt der Schmerz Scham und Zögern aus dir heraus. Für 1 Runde erhältst du einen Statusbonus von +1 auf Einschüchtern- und Willenswürfe."
+            "Description": "Bei höchstens einem Viertel deiner Trefferpunkte brennt der Schmerz Scham und Zögern aus dir heraus. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Einschüchtern- und Willenswürfe."
           },
           "ImpossibleIsNotEnough": {
             "Title": "Unmöglich reicht nicht",
@@ -595,7 +595,7 @@
           },
           "PressureSharpensTheFormula": {
             "Title": "Druck schärft die Formel",
-            "Description": "Jede näher rückende Klinge schneidet eine weitere Ablenkung aus dem Zauber. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Zauberangriffswürfe."
+            "Description": "Jede näher rückende Klinge schneidet eine weitere Ablenkung aus dem Zauber. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Zauberangriffswürfe."
           },
           "MagicTearsTheFormation": {
             "Title": "Magie zerreißt die Formation",
@@ -603,7 +603,7 @@
           },
           "FourAgainstOne": {
             "Title": "Vier gegen einen",
-            "Description": "Vier oder mehr Gegner schließen den Ring, und trotzdem trifft der Zauber vollkommen. Das Ziel erhält Verängstigt 1."
+            "Description": "Vier oder mehr Gegner schließen den Ring, und trotzdem trifft der Zauber vollkommen. Das Ziel erhält für 1 Runde Verängstigt 1 und einen Situationsmalus von -1 auf seinen Reflex-SG."
           },
           "RingTurnsInward": {
             "Title": "Der Ring schlägt nach innen",
@@ -611,7 +611,7 @@
           },
           "NoFreeAngle": {
             "Title": "Kein freier Winkel",
-            "Description": "Der Zauber erwischt einen dich bedrohenden Gegner dort, wo die Formation weder saubere Bewegung noch einen sauberen Angriff zulässt. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten und -1 auf Angriffswürfe."
+            "Description": "Der Zauber erwischt einen dich bedrohenden Gegner dort, wo die Formation weder saubere Bewegung noch einen sauberen Angriff zulässt. Für 1 Runde erhält das Ziel einen Situationsmalus von 1,5 m auf alle Bewegungsraten und -1 auf Angriffs- und Akrobatikwürfe."
           },
           "TurnTheRingAgainstThem": {
             "Title": "Den Ring gegen sie wenden",
@@ -619,7 +619,7 @@
           },
           "CrowdTheirFootwork": {
             "Title": "Nimm ihnen den Raum",
-            "Description": "Dein Treffer lässt einen dich bedrohenden Gegner über genau den Druck stolpern, mit dem er dich festsetzen wollte. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf Reflex-SG und 1,5 m auf alle Bewegungsraten."
+            "Description": "Dein Treffer lässt einen dich bedrohenden Gegner über genau den Druck stolpern, mit dem er dich festsetzen wollte. Für 1 Runde erhält das Ziel einen Situationsmalus von -1 auf seinen Reflex-SG und 1,5 m auf seine Bewegungsrate am Boden."
           },
           "MoreBladesFewerOpenings": {
             "Title": "Mehr Klingen, weniger Lücken",
@@ -631,7 +631,7 @@
           },
           "ShoulderTheRingOpen": {
             "Title": "Brich den Ring mit der Schulter",
-            "Description": "Dein kritischer Treffer gibt dir einen brutalen Augenblick, um die Einkreisung zu stören. Du darfst sofort als freie Aktion gegen einen dich aktuell bedrohenden Gegner außer dem Ziel einen Stoßen-Versuch ausführen. Wende dieses Ergebnis manuell an."
+            "Description": "Dein kritischer Treffer gibt dir einen brutalen Augenblick, um die Einkreisung zu stören. Du darfst sofort als freie Aktion gegen einen dich aktuell bedrohenden Gegner außer dem Ziel einen Fortstoßen-Versuch ausführen. Wende dieses Ergebnis manuell an."
           },
           "SpellBetweenTheirBlades": {
             "Title": "Zauber zwischen ihren Klingen",
@@ -647,7 +647,7 @@
           },
           "FourShadowsOneFlash": {
             "Title": "Vier Schatten, ein Lichtblitz",
-            "Description": "Mindestens vier Gegner verstellen deine Sichtlinien, und trotzdem findet der Zauber exakt den Bruch im Ring. Ein dich bedrohendes Ziel wird für 1 Runde Auf dem falschen Fuß und Verängstigt 1."
+            "Description": "Mindestens vier Gegner verstellen deine Sichtlinien, und trotzdem findet der Zauber exakt den Bruch im Ring. Ein dich bedrohendes Ziel wird für 1 Runde Auf dem Falschen Fuß und Verängstigt 1."
           },
           "CarveAMagicalCorridor": {
             "Title": "Schlag einen magischen Korridor",
@@ -667,7 +667,7 @@
           },
           "FourBodiesOneDomino": {
             "Title": "Vier Körper, ein Domino",
-            "Description": "Wenn sich mindestens vier Gegner um dich drängen, wird der getroffene Gegner zum ersten Stein einer Kettenreaktion. Du darfst sofort als freie Aktion versuchen, das Ziel zu Stoßen; wird es dabei in den Raum oder die Reichweite eines anderen dich bedrohenden Gegners bewegt, kann der SL diesen zweiten Gegner um 1,5 m versetzen, um Platz zu schaffen. Wende dieses Ergebnis manuell an."
+            "Description": "Wenn sich mindestens vier Gegner um dich drängen, wird der getroffene Gegner zum ersten Stein einer Kettenreaktion. Du darfst sofort als freie Aktion versuchen, das Ziel fortzustoßen; wird es dabei in den Raum oder die Reichweite eines anderen dich bedrohenden Gegners bewegt, kann der SL diesen zweiten Gegner um 1,5 m versetzen, um Platz zu schaffen. Wende dieses Ergebnis manuell an."
           },
           "BreakTheirApproach": {
             "Title": "Brich ihren Anmarsch",
@@ -709,15 +709,15 @@
           },
           "ThreeAgainstStone": {
             "Title": "Drei gegen Stein",
-            "Description": "Wenn drei oder mehr Gegner auf dich eindringen, verriegelt jeder Druckwinkel den nächsten. Für 1 Runde erhältst du einen Situationsbonus von +1 auf deine RK."
+            "Description": "Wenn drei oder mehr Gegner auf dich eindringen, verriegelt jeder Druckwinkel den nächsten. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf RK und deinen Zähigkeits-SG."
           },
           "FourCannotFoldYou": {
             "Title": "Vier können dich nicht knicken",
-            "Description": "Vier oder mehr Bedrohungen schließen den Ring, und dein ganzer Körper wird zu einer einzigen Verweigerung. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Rettungswürfe."
+            "Description": "Vier oder mehr Bedrohungen schließen den Ring, und dein ganzer Körper wird zu einer einzigen Verweigerung. Für 1 Runde erhältst du 3 Temporäre Trefferpunkte und einen Zustandsbonus von +1 auf Rettungswürfe."
           },
           "MakeThemSpendThemselves": {
             "Title": "Lass sie sich verausgaben",
-            "Description": "Ein dich bedrohender Gegner setzt zu viel Kraft ein, um dich zu brechen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe und Athletikwürfe."
+            "Description": "Ein dich bedrohender Gegner setzt zu viel Kraft ein, um dich zu brechen. Für 1 Runde erhält die feindliche Quelle einen Situationsmalus von -1 auf Angriffswürfe und Zähigkeitswürfe."
           },
           "BreathBetweenBlows": {
             "Title": "Atem zwischen Schlägen",
@@ -765,7 +765,7 @@
           },
           "OneBodyTakesTheWeight": {
             "Title": "Ein Körper trägt den Druck",
-            "Description": "Du verlagerst den Druck auf einen dich bedrohenden Gegner und lässt ihn gegen den Rest des Rings arbeiten. Für 1 Runde ist die feindliche Quelle Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Athletikwürfe."
+            "Description": "Du verlagerst den Druck auf einen dich bedrohenden Gegner und lässt ihn gegen den Rest des Rings arbeiten. Für 1 Runde ist die feindliche Quelle Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Athletikwürfe."
           },
           "ForceMeetsFormation": {
             "Title": "Kraft trifft auf Formation",
@@ -831,15 +831,15 @@
           },
           "FourThreatsOpenGround": {
             "Title": "Vier Bedrohungen, freies Feld",
-            "Description": "Schließen vier oder mehr Gegner den Ring, ist das einzige freie Feld dasjenige, das du selbst erschaffst. Für 1 Runde erhältst du einen Situationsbonus von 1,5 m auf alle deine Bewegungsraten."
+            "Description": "Schließen vier oder mehr Gegner den Ring, ist das einzige freie Feld dasjenige, das du selbst erschaffst. Für 1 Runde erhältst du einen Situationsbonus von 1,5 m auf alle deine Bewegungsraten und einen Zustandsbonus von +1 auf Reflexwürfe."
           },
           "OverreachOpensTheSource": {
             "Title": "Überdehnung schafft eine Lücke",
-            "Description": "Eine dich bedrohende Quelle lehnt sich im Gedränge zu weit vor. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf Angriffswürfe."
+            "Description": "Eine dich bedrohende Quelle lehnt sich im Gedränge zu weit vor. Für 1 Runde ist sie Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf Angriffswürfe."
           },
           "BalanceTurnsAgainstThem": {
             "Title": "Das Gleichgewicht kippt gegen sie",
-            "Description": "Dein Ausweichen zwingt die feindliche Quelle, erst wieder festen Stand zu finden, statt ihren Vorteil auszunutzen. Für 1 Runde erhält ihr Reflex-SG einen Situationsmalus von -1."
+            "Description": "Dein Ausweichen zwingt die feindliche Quelle, erst wieder festen Stand zu finden, statt ihren Vorteil auszunutzen. Für 1 Runde erhält sie einen Situationsmalus von -1 auf Akrobatikwürfe und ihren Reflex-SG."
           },
           "NoOneOwnsYourBack": {
             "Title": "Keiner bekommt deinen Rücken",
@@ -851,7 +851,7 @@
           },
           "EyesOnEveryOpening": {
             "Title": "Augen auf jede Öffnung",
-            "Description": "Mehrere Bedrohungen zugleich zu verfolgen schärft deinen Sinn für die Lücken zwischen ihnen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und deinen Wahrnehmungs-SG."
+            "Description": "Mehrere Bedrohungen zugleich zu verfolgen schärft deinen Sinn für die Lücken zwischen ihnen. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Wahrnehmungswürfe und einen Zustandsbonus von +1 auf deinen Wahrnehmungs-SG."
           },
           "GhostThroughTheRing": {
             "Title": "Wie ein Geist durch den Ring",
@@ -891,7 +891,7 @@
           },
           "OneBodyBlocksTheNext": {
             "Title": "Ein Körper blockiert den nächsten",
-            "Description": "Du bringst eine dich bedrohende Quelle genau an die falsche Stelle für den Rest des Rings. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Reflex-SG."
+            "Description": "Du bringst eine dich bedrohende Quelle genau an die falsche Stelle für den Rest des Rings. Für 1 Runde ist sie Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Reflex-SG."
           },
           "NeverStopInTheCenter": {
             "Title": "Bleib nie in der Mitte stehen",
@@ -911,7 +911,7 @@
           },
           "FourThreatsOneTangle": {
             "Title": "Vier Bedrohungen, ein Gewirr",
-            "Description": "Wenn sich mindestens vier Gegner in den Ring drängen, verfängt sich die feindliche Quelle in der eigenen Formation. Für 1 Runde ist sie Auf dem falschen Fuß und erhält Unbeholfen 1."
+            "Description": "Wenn sich mindestens vier Gegner in den Ring drängen, verfängt sich die feindliche Quelle in der eigenen Formation. Für 1 Runde erhält sie Unbeholfen 1 und einen Situationsmalus von 1,5 m auf ihre Bewegungsrate am Boden."
           },
           "CutBetweenTheirReactions": {
             "Title": "Zwischen ihren Reaktionen",
@@ -945,7 +945,7 @@
           },
           "NoiseBecomesRhythm": {
             "Title": "Lärm wird zu Rhythmus",
-            "Description": "Zu viele Bedrohungen kämpfen um deine Aufmerksamkeit und werden dadurch zu einem Muster statt zu einer Ablenkung. Für 1 Runde erhältst du einen Situationsbonus von +1 auf Willenswürfe."
+            "Description": "Zu viele Bedrohungen kämpfen um deine Aufmerksamkeit und werden dadurch zu einem Muster statt zu einer Ablenkung. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf Willens- und Wahrnehmungswürfe."
           },
           "ThreeThreatsOneAnswer": {
             "Title": "Drei Bedrohungen, eine Antwort",
@@ -953,11 +953,11 @@
           },
           "FourThreatsOneDoubt": {
             "Title": "Vier Bedrohungen, ein Zweifel",
-            "Description": "Vier oder mehr Gegner schließen den Ring, und die feindliche Quelle beginnt als Erste zu zweifeln, warum du noch stehst. Sie erhält für 1 Runde Benommen 1."
+            "Description": "Vier oder mehr Gegner schließen den Ring, und die feindliche Quelle beginnt als Erste zu zweifeln, warum du noch stehst. Sie erhält für 1 Runde Benommen 1 und einen Situationsmalus von -1 auf ihren Willens-SG."
           },
           "FearFindsNoLeader": {
             "Title": "Furcht findet keinen Anführer",
-            "Description": "Die Furcht, die den Ring größer erscheinen lassen sollte, schlägt auf die Stimme zurück, die sie geformt hat. Die feindliche Quelle erhält für 1 Runde Verängstigt 1."
+            "Description": "Die Furcht, die den Ring größer erscheinen lassen sollte, schlägt auf die Stimme zurück, die sie geformt hat. Die feindliche Quelle erhält für 1 Runde Verängstigt 1 und einen Situationsmalus von -1 auf Wahrnehmungswürfe."
           },
           "NoCommandOwnsTheCircle": {
             "Title": "Kein Befehl beherrscht den Ring",
@@ -969,7 +969,7 @@
           },
           "NameAboveTheNoise": {
             "Title": "Dein Name über dem Lärm",
-            "Description": "Drohungen, Flüche und gebrüllte Befehle verschwimmen unter der Gewissheit darüber, wer du bist. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf weisheits- und charismabasierte Würfe."
+            "Description": "Drohungen, Flüche und gebrüllte Befehle verschwimmen unter der Gewissheit darüber, wer du bist. Für 1 Runde erhältst du einen Zustandsbonus von +1 auf weisheits- und charismabasierte Würfe sowie auf Wahrnehmungswürfe."
           },
           "PresenceFillsTheRing": {
             "Title": "Präsenz füllt den Ring",
@@ -1013,7 +1013,7 @@
           },
           "AMentalGripLeavesAnOpening": {
             "Title": "Ein geistiger Griff schafft eine Lücke",
-            "Description": "Ein bedrohender Gegner greift nach deinen Gedanken und entblößt dabei seinen eigenen Fokus. Nach einem mentalen Effekt ist die feindliche Quelle für 1 Runde Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Willens-SG."
+            "Description": "Ein bedrohender Gegner greift nach deinen Gedanken und entblößt dabei seinen eigenen Fokus. Nach einem mentalen Effekt ist die feindliche Quelle für 1 Runde Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Willens-SG."
           },
           "MindAboveTheRing": {
             "Title": "Der Geist über dem Ring",
@@ -1053,10 +1053,10 @@
           },
           "TheirFocusPointsInward": {
             "Title": "Ihr Fokus zeigt nach innen",
-            "Description": "Eine dich bedrohende Quelle verwendet so viel Aufmerksamkeit darauf, den Ring zusammenzuhalten, dass sie sich selbst entblößt. Für 1 Runde ist sie Auf dem falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Klassen-SG."
+            "Description": "Eine dich bedrohende Quelle verwendet so viel Aufmerksamkeit darauf, den Ring zusammenzuhalten, dass sie sich selbst entblößt. Für 1 Runde ist sie Auf dem Falschen Fuß und erhält einen Situationsmalus von -1 auf ihren Klassen-SG."
           },
           "CallTheOpening": {
-            "Title": "Ruf die Öffnung",
+            "Title": "Ruf den Weg frei",
             "Description": "Deine Klarheit findet nicht nur für dich einen Weg. Wähle einen Verbündeten innerhalb von 9 m, der dich hören kann; dieser Verbündete darf sofort als freie Aktion einen Schritt auf dich zu oder auf ein Feld angrenzend zu einem der Gegner ausführen, die dich bedrohen. Wende dieses Ergebnis manuell an."
           }
         }

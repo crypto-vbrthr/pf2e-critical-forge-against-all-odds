@@ -292,10 +292,13 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
   defineBloodiedFortitudeCard({
     id: "bf-023-ring-of-enemies-becomes-armor", localizationKey: "RingOfEnemiesBecomesArmor", tone: "dramatic", impact: "moderate",
     fallbackTitle: "The Ring of Enemies Becomes Armor",
-    fallbackDescription: "When enemies close from every side, your body stops giving any one of them a clean line. If at least two enemies threaten you, you gain a +1 circumstance bonus to AC for 1 round.",
-    tags: ["surrounded", "ac", "circumstance-bonus", "effect"],
+    fallbackDescription: "When enemies close from every side, your body stops giving any one of them a clean line. If at least two enemies threaten you, you gain a +1 circumstance bonus to AC and a +1 status bonus to Fortitude saves for 1 round.",
+    tags: ["surrounded", "ac", "fortitude", "circumstance-bonus", "status-bonus", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 2 }, contentBatch: 10,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }] }
+    effect: { duration: ONE_ROUND, components: [
+      { type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] },
+      { type: "modifier", selector: "fortitude", value: 1, modifierType: "status", predicate: [] }
+    ] }
   }),
   defineBloodiedFortitudeCard({
     id: "bf-024-every-breath-is-chosen", localizationKey: "EveryBreathIsChosen", tone: "serious", impact: "light",
@@ -311,9 +314,9 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
   }),
   defineBloodiedFortitudeCard({
     id: "bf-026-body-sets-its-weight", localizationKey: "BodySetsItsWeight", tone: "serious", impact: "moderate",
-    fallbackTitle: "The Body Sets Its Weight", fallbackDescription: "Your stance becomes an argument made of bone. For 1 round, you gain a +1 circumstance bonus to Athletics checks and Fortitude DC.",
-    tags: ["athletics", "fortitude-dc", "circumstance-bonus", "effect"], contentBatch: 10,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["athletics", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }] }
+    fallbackTitle: "The Body Sets Its Weight", fallbackDescription: "Your stance becomes an argument made of bone. For 1 round, you gain a +1 circumstance bonus to AC, Athletics checks, and Fortitude DC.",
+    tags: ["ac", "athletics", "fortitude-dc", "circumstance-bonus", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["ac", "athletics", "fortitude-dc"], value: 1, modifierType: "circumstance", predicate: [] }] }
   }),
   defineBloodiedFortitudeCard({
     id: "bf-027-pain-narrows-the-world", localizationKey: "PainNarrowsTheWorld", tone: "serious", impact: "light",
@@ -323,9 +326,9 @@ export const BLOODIED_FORTITUDE_CARDS = Object.freeze([
   }),
   defineBloodiedFortitudeCard({
     id: "bf-028-hold-the-line-inside", localizationKey: "HoldTheLineInside", tone: "dramatic", impact: "moderate",
-    fallbackTitle: "Hold the Line Inside", fallbackDescription: "The body wins one argument with itself and the mind borrows the momentum. For 1 round, you gain a +1 status bonus to Will saves.",
-    tags: ["will", "status-bonus", "resolve", "effect"], contentBatch: 10,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }] }
+    fallbackTitle: "Hold the Line Inside", fallbackDescription: "The body wins one argument with itself and the mind borrows the momentum. For 1 round, you gain a +1 status bonus to Fortitude and Will saves.",
+    tags: ["fortitude", "will", "status-bonus", "resolve", "effect"], contentBatch: 10,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["fortitude", "will"], value: 1, modifierType: "status", predicate: [] }] }
   }),
   defineBloodiedFortitudeCard({
     id: "bf-029-the-wound-cannot-surprise-you", localizationKey: "WoundCannotSurpriseYou", tone: "serious", impact: "moderate",

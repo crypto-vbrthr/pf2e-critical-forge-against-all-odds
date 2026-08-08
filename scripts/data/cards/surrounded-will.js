@@ -22,11 +22,11 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     tone: "serious",
     impact: "light",
     fallbackTitle: "Noise Becomes Rhythm",
-    fallbackDescription: "Too many threats compete for your attention and become a pattern instead of a distraction. For 1 round, you gain a +1 circumstance bonus to Will saves.",
-    tags: ["will", "circumstance-bonus", "focus", "effect"],
+    fallbackDescription: "Too many threats compete for your attention and become a pattern instead of a distraction. For 1 round, you gain a +1 status bonus to Will saves and Perception checks.",
+    tags: ["will", "status-bonus", "focus", "perception", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: "will", value: 1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["will", "perception"], value: 1, modifierType: "status", predicate: [] }]
     }
   }),
   defineSurroundedWillCard({
@@ -49,14 +49,17 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Threats, One Doubt",
-    fallbackDescription: "Four or more enemies close around you, and the hostile source is the first to wonder why you still stand. It becomes stupefied 1 for 1 round.",
-    tags: ["heavily-surrounded", "target", "stupefied", "counterpressure", "effect"],
+    fallbackDescription: "Four or more enemies close around you, and the hostile source is the first to wonder why you still stand. It becomes stupefied 1 and takes a -1 circumstance penalty to Will DC for 1 round.",
+    tags: ["heavily-surrounded", "target", "stupefied", "will-dc", "counterpressure", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
     filters: { excludedTargetTraits: ["mindless"] },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "condition", slug: "stupefied", value: 1 }]
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "will-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedWillCard({
@@ -65,13 +68,16 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Fear Finds No Leader",
-    fallbackDescription: "The fear meant to make the ring feel larger rebounds toward the voice that shaped it. The hostile source becomes frightened 1 for 1 round.",
-    tags: ["fear", "target", "frightened", "counterpressure", "effect"],
+    fallbackDescription: "The fear meant to make the ring feel larger rebounds toward the voice that shaped it. The hostile source becomes frightened 1 and takes a -1 circumstance penalty to Perception checks for 1 round.",
+    tags: ["fear", "target", "frightened", "perception", "counterpressure", "effect"],
     filters: { attackTraits: ["fear"], excludedTargetTraits: ["mindless"] },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "condition", slug: "frightened", value: 1 }]
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "modifier", selector: "perception", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedWillCard({
@@ -113,11 +119,11 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Your Name Above the Noise",
-    fallbackDescription: "Threats, curses, and shouted orders blur together beneath the certainty of who you are. For 1 round, you gain a +1 status bonus to checks based on Wisdom and Charisma.",
-    tags: ["wisdom", "charisma", "identity", "status-bonus", "effect"],
+    fallbackDescription: "Threats, curses, and shouted orders blur together beneath the certainty of who you are. For 1 round, you gain a +1 status bonus to checks based on Wisdom and Charisma and to Perception checks.",
+    tags: ["wisdom", "charisma", "perception", "identity", "status-bonus", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: ["wis-based", "cha-based"], value: 1, modifierType: "status", predicate: [] }]
+      components: [{ type: "modifier", selector: ["wis-based", "cha-based", "perception"], value: 1, modifierType: "status", predicate: [] }]
     }
   }),
   defineSurroundedWillCard({
@@ -458,7 +464,7 @@ export const SURROUNDED_WILL_CARDS = Object.freeze([
     localizationKey: "CallTheOpening",
     tone: "dramatic",
     impact: "moderate",
-    fallbackTitle: "Call the Opening",
+    fallbackTitle: "Call the Way Through",
     fallbackDescription: "Your clarity finds a path not only for you. Choose one ally within 30 feet who can hear you; that ally may immediately Step as a free action toward you or toward a space adjacent to one of the enemies threatening you. Apply this result manually.",
     tags: ["ally", "step", "support", "auditory", "manual"],
     contentBatch: 20,

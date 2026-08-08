@@ -86,11 +86,11 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Pressure Sharpens the Formula",
-    fallbackDescription: "Every closing blade strips another distraction from the spell. For 1 round, you gain a +1 circumstance bonus to spell attack rolls.",
-    tags: ["spell", "spell-attack-roll", "circumstance-bonus", "effect"],
+    fallbackDescription: "Every closing blade strips another distraction from the spell. For 1 round, you gain a +1 status bonus to spell attack rolls.",
+    tags: ["spell", "spell-attack-roll", "status-bonus", "effect"],
     effect: {
       duration: SOURCE_ONE_ROUND,
-      components: [{ type: "modifier", selector: "spell-attack-roll", value: 1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: "spell-attack-roll", value: 1, modifierType: "status", predicate: [] }]
     }
   }),
   defineSurroundedAttackCard({
@@ -116,14 +116,17 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Against One",
-    fallbackDescription: "Four or more enemies close in and still the spell lands perfectly. The target becomes frightened 1.",
-    tags: ["spell", "heavily-surrounded", "target", "frightened", "effect"],
+    fallbackDescription: "Four or more enemies close in and still the spell lands perfectly. The target becomes frightened 1 and takes a -1 circumstance penalty to Reflex DC for 1 round.",
+    tags: ["spell", "heavily-surrounded", "target", "frightened", "reflex-dc", "effect"],
     filters: { excludedTargetTraits: ["mindless"] },
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
-      components: [{ type: "condition", slug: "frightened", value: 1 }]
+      components: [
+        { type: "condition", slug: "frightened", value: 1 },
+        { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineSurroundedAttackCard({
@@ -149,15 +152,15 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     tone: "serious",
     impact: "strong",
     fallbackTitle: "No Free Angle",
-    fallbackDescription: "The spell catches a threatening enemy where the formation gives it nowhere clean to move or strike. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to attack rolls.",
-    tags: ["spell", "target", "movement", "attack-roll", "formation", "effect"],
+    fallbackDescription: "The spell catches a threatening enemy where the formation gives it nowhere clean to move or strike. For 1 round, the target takes a -5-foot circumstance penalty to all Speeds and a -1 circumstance penalty to attack rolls and Acrobatics checks.",
+    tags: ["spell", "target", "movement", "attack-roll", "acrobatics", "formation", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: TARGET_ONE_ROUND,
       components: [
         { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" },
-        { type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }
+        { type: "modifier", selector: ["attack-roll", "acrobatics"], value: -1, modifierType: "circumstance", predicate: [] }
       ]
     }
   }),
@@ -185,7 +188,7 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Crowd Their Footwork",
-    fallbackDescription: "Your hit makes a threatening enemy trip over the very pressure meant to trap you. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and a -5-foot circumstance penalty to all Speeds.",
+    fallbackDescription: "Your hit makes a threatening enemy trip over the very pressure meant to trap you. For 1 round, the target takes a -1 circumstance penalty to Reflex DC and a -5-foot circumstance penalty to its land Speed.",
     tags: ["target", "reflex-dc", "movement", "formation", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     contentBatch: 17,
@@ -194,7 +197,7 @@ export const SURROUNDED_ATTACK_CARDS = Object.freeze([
       duration: TARGET_ONE_ROUND,
       components: [
         { type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] },
-        { type: "movement", movementType: "all", value: -5, modifierType: "circumstance" }
+        { type: "movement", movementType: "land", value: -5, modifierType: "circumstance" }
       ]
     }
   }),

@@ -7,7 +7,7 @@
 - Giant-Slayer Moments
 - Narrow Escapes
 
-Version `0.1.0-dev.38.1` completes the **final 120-card Narrow Escapes review**. All 120 IDs and the 30/30/30/30 deck structure are preserved. Three same-gate near-duplicates that differed mainly by modifier type have been separated mechanically, and the regression suite now audits same-gate conceptual footprints in addition to exact canonical signatures and strict mechanical supersets. Documentation has also been synchronized with the completed 120-card theme.
+Version `0.1.0-dev.38.3` is the **Foundry registration hotfix** for the full 480-card release review. It corrects one malformed Surrounded Effect Engine component discriminator (`temporary-hp` → `temporaryHitPoints`) that caused Critical Forge `1.0.0-rc` to reject the Surrounded pack. All four themes remain complete at 120/120 cards, all 480 published card IDs are preserved, and the reviewed `0.1.0-dev.38.2` mechanics remain otherwise unchanged.
 
 > **Development-package rename:** Remove any earlier `pf2e-against-all-odds` folder before installing this build. The canonical module ID is now `pf2e-critical-forge-against-all-odds`.
 
@@ -76,7 +76,7 @@ Surrounded, Still Standing is complete at 120 cards:
 - 100 automated Effect Engine cards and 20 explicit manual tactical results;
 - final-pass escalation remains sparse, with exactly one three-threat and one four-threat result added per deck;
 - formation-specific target effects can require the current opponent itself to be a counted melee threat;
-- exact automated effect overlap with Bloodied Triumphs remains limited to the nine reviewed legacy signatures, while internal exact duplicates remain limited to the two intentional reviewed pairs.
+- the 480-card release review removes the remaining legacy exact-effect overlap with Bloodied Triumphs and the former internal duplicate pairs; all automated effects are now canonically unique across the complete add-on.
 
 Giant-Slayer Moments is complete at 120/120 cards:
 
@@ -92,7 +92,7 @@ Giant-Slayer Moments is complete at 120/120 cards:
 - the final Fortitude, Reflex, and Will passes add no resistance or immunity filler;
 - exact automated Giant-Slayer signatures remain distinct from Bloodied Triumphs, Surrounded, Still Standing, and one another, while the same-gate superset regression contract remains clean.
 
-Against All Odds now contains **480/480 planned cards**, with **407 automated Effect Engine results and 73 explicit manual results**. All four 120-card themes are content-complete.
+Against All Odds now contains **480/480 planned cards**, with **407 automated Effect Engine results and 73 explicit manual results**. All four 120-card themes are content-complete. The release-level audit now verifies all 407 automated effects globally for canonical uniqueness, all four themes for strict same-gate supersets and same-gate conceptual duplicates, all 480 localized card titles for uniqueness, and German Remaster terminology across the complete add-on.
 
 Narrow Escapes is complete at 120/120 cards:
 

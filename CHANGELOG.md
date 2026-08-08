@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.1.0-dev.38.3
+
+### Foundry registration hotfix
+
+- Fixed the Surrounded, Still Standing Fortitude card **Four Cannot Fold You**, whose review edit accidentally emitted the unsupported Effect Engine component type `temporary-hp` instead of the schema-valid `temporaryHitPoints`. This caused Critical Forge `1.0.0-rc` to reject the entire Surrounded extension pack during Foundry registration.
+- Preserved the intended reviewed mechanic, all 480 card IDs, all pack IDs, and all public extension/API schemas; only the malformed component discriminator changes.
+- Corrected the existing Effect Engine component-type regression so it now scans **all 480 published cards** instead of only Bloodied Triumphs. This specific schema typo would therefore fail the standalone suite in future builds.
+- The remaining `0.1.0-dev.38.2` release-review changes are retained. A focused Foundry registration/application smoke test is required before RC preparation.
+
+## 0.1.0-dev.38.2
+
+### Full 480-card release review
+
+- Completed a release-level review of all **480 cards** across Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes while preserving every published card ID.
+- Audited all **407 automated effects** with an order-insensitive canonical signature. The legacy Bloodied/Surrounded corpus contained 20 exact duplicate groups (26 redundant extra cards); the reviewed build now contains **zero canonical automated-effect duplicates** globally.
+- Removed all strict same-gate mechanical redundancy found by the full audit: one Bloodied and nine Surrounded superset relationships were diversified without changing IDs or public schemas.
+- Added a release-level same-gate conceptual selector-footprint audit; no automated card now repeats another concept under identical gates merely by swapping bonus types or component ordering.
+- Diversified 31 legacy Bloodied/Surrounded card mechanics uncovered by the global duplicate/superset review, while keeping the themes, target roles, durations, and published IDs stable.
+- Resolved the duplicate English card title **Call the Opening** by renaming the Surrounded Will card to **Call the Way Through** / **Ruf den Weg frei**.
+- Synchronized the existing Bloodied Reflex fallback title **Never Where They Expect You** with its English localization.
+- Normalized German Remaster terminology globally: `Statusbonus` → `Zustandsbonus`, `Auf dem falschen Fuß` → `Auf dem Falschen Fuß`, and legacy `Stoßen` action wording → `Fortstoßen` where the PF2e action is meant.
+- Added release regressions for global canonical effect uniqueness, strict same-gate supersets, conceptual same-gate duplicates, stable/unique 480-card IDs, localized title uniqueness, English fallback synchronization, and German Remaster terminology.
+- Reviewed the add-on architecture and public Critical Forge contracts; card/effect/provider schema versions, extension registration, pack ownership/refresh, rollback, and `core-pf2e` context delegation remain unchanged.
+- Verified **271/271 tests** with **99.57% line coverage**, **95.51% branch coverage**, and **98.94% function coverage**.
+- Package-local release checks pass with **1416 localization keys per language** and 35 JavaScript files.
+- The complete `0.1.0-dev.38` content and `0.1.0-dev.38.1` Narrow Escapes review have already passed Foundry smoke testing; the revised legacy review effects in this build still require a focused Foundry smoke test before release-candidate tagging.
+- Direct validation against the actual Critical Forge `1.0.0-rc` host validator remains a pre-tag integration step because that host source is not present in this standalone workspace.
+
 ## 0.1.0-dev.38.1
 
 ### Final 120-card Narrow Escapes review

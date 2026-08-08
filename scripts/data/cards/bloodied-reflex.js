@@ -73,7 +73,7 @@ export const BLOODIED_REFLEX_CARDS = Object.freeze([
     localizationKey: "NeverWhereNeeded",
     tone: "dramatic",
     impact: "strong",
-    fallbackTitle: "Never Where They Need You",
+    fallbackTitle: "Never Where They Expect You",
     fallbackDescription: "The enemy's perfect opening keeps finding empty air. For 1 round, you are immune to the off-guard condition.",
     tags: ["off-guard", "immunity", "effect"],
     effect: {
@@ -100,11 +100,11 @@ export const BLOODIED_REFLEX_CARDS = Object.freeze([
     tone: "serious",
     impact: "light",
     fallbackTitle: "Wound-Taught Balance",
-    fallbackDescription: "Pain has become a map of every dangerous shift in your weight. For 1 round, you gain a +1 status bonus to Acrobatics checks.",
-    tags: ["acrobatics", "status-bonus", "effect"],
+    fallbackDescription: "Pain has become a map of every dangerous shift in your weight. For 1 round, you gain a +1 circumstance bonus to Acrobatics checks.",
+    tags: ["acrobatics", "circumstance-bonus", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: "acrobatics", value: 1, modifierType: "status", predicate: [] }]
+      components: [{ type: "modifier", selector: "acrobatics", value: 1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineBloodiedReflexCard({
@@ -272,15 +272,15 @@ export const BLOODIED_REFLEX_CARDS = Object.freeze([
   }),
   defineBloodiedReflexCard({
     id: "br-021-their-lines-cross-behind-you", localizationKey: "TheirLinesCrossBehindYou", tone: "dramatic", impact: "moderate",
-    fallbackTitle: "Their Lines Cross Behind You", fallbackDescription: "When at least two enemies threaten you, your escape makes their angles interfere with one another. The hostile source becomes off-guard for 1 round.",
-    tags: ["surrounded", "target", "off-guard", "effect"], extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 2 }, contentBatch: 11,
-    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "condition", slug: "off-guard" }] }
+    fallbackTitle: "Their Lines Cross Behind You", fallbackDescription: "When at least two enemies threaten you, your escape makes their angles interfere with one another. The hostile source becomes off-guard and takes a -1 circumstance penalty to Acrobatics checks for 1 round.",
+    tags: ["surrounded", "target", "off-guard", "acrobatics", "effect"], extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 2 }, contentBatch: 11,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "condition", slug: "off-guard" }, { type: "modifier", selector: "acrobatics", value: -1, modifierType: "circumstance", predicate: [] }] }
   }),
   defineBloodiedReflexCard({
     id: "br-022-four-blades-one-rhythm", localizationKey: "FourBladesOneRhythm", tone: "dramatic", impact: "moderate",
-    fallbackTitle: "Four Blades, One Rhythm", fallbackDescription: "With four or more enemies threatening you, the chaos becomes a single readable pattern. For 1 round, you gain a +1 status bonus to attack rolls.",
-    tags: ["heavily-surrounded", "attack-roll", "status-bonus", "effect"], extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 }, contentBatch: 11,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: 1, modifierType: "status", predicate: [] }] }
+    fallbackTitle: "Four Blades, One Rhythm", fallbackDescription: "With four or more enemies threatening you, the chaos becomes a single readable pattern. For 1 round, you gain a +1 status bonus to attack rolls and Reflex saves.",
+    tags: ["heavily-surrounded", "attack-roll", "reflex", "status-bonus", "effect"], extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["attack-roll", "reflex"], value: 1, modifierType: "status", predicate: [] }] }
   }),
   defineBloodiedReflexCard({
     id: "br-023-quarter-breath-defense", localizationKey: "QuarterBreathDefense", tone: "dramatic", impact: "strong",
@@ -290,9 +290,9 @@ export const BLOODIED_REFLEX_CARDS = Object.freeze([
   }),
   defineBloodiedReflexCard({
     id: "br-024-overreach-becomes-opening", localizationKey: "OverreachBecomesOpening", tone: "serious", impact: "moderate",
-    fallbackTitle: "Overreach Becomes Opening", fallbackDescription: "The hostile source commits too much to the attack you escaped. For 1 round, it takes a -1 circumstance penalty to attack rolls.",
-    tags: ["target", "attack-roll", "countermove", "circumstance-penalty", "effect"], contentBatch: 11,
-    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: -1, modifierType: "circumstance", predicate: [] }] }
+    fallbackTitle: "Overreach Becomes Opening", fallbackDescription: "The hostile source commits too much to the attack you escaped. For 1 round, it takes a -1 circumstance penalty to attack rolls and AC.",
+    tags: ["target", "attack-roll", "ac", "countermove", "circumstance-penalty", "effect"], contentBatch: 11,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: ["attack-roll", "ac"], value: -1, modifierType: "circumstance", predicate: [] }] }
   }),
   defineBloodiedReflexCard({
     id: "br-025-fire-shows-the-gap", localizationKey: "FireShowsTheGap", tone: "dramatic", impact: "moderate",
@@ -308,21 +308,21 @@ export const BLOODIED_REFLEX_CARDS = Object.freeze([
   }),
   defineBloodiedReflexCard({
     id: "br-027-cold-cannot-settle", localizationKey: "ColdCannotSettle", tone: "serious", impact: "light",
-    fallbackTitle: "Cold Cannot Settle", fallbackDescription: "You never give the frost enough stillness to take hold. After critically succeeding against cold damage, your land Speed gains a +5-foot status bonus for 1 round.",
-    tags: ["cold", "movement", "status-bonus", "effect"], filters: { damageTypes: ["cold"] }, contentBatch: 11,
-    effect: { duration: ONE_ROUND, components: [{ type: "movement", movementType: "land", value: 5, modifierType: "status" }] }
+    fallbackTitle: "Cold Cannot Settle", fallbackDescription: "You never give the frost enough stillness to take hold. After critically succeeding against cold damage, your land Speed gains a +5-foot status bonus and you gain a +1 status bonus to Reflex saves for 1 round.",
+    tags: ["cold", "movement", "reflex", "status-bonus", "effect"], filters: { damageTypes: ["cold"] }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "movement", movementType: "land", value: 5, modifierType: "status" }, { type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }] }
   }),
   defineBloodiedReflexCard({
     id: "br-028-lightning-teaches-the-line", localizationKey: "LightningTeachesTheLine", tone: "dramatic", impact: "moderate",
-    fallbackTitle: "Lightning Teaches the Line", fallbackDescription: "The current shows you the shortest path through danger. After critically succeeding against electricity damage, you gain a +1 status bonus to Reflex saves for 1 round.",
-    tags: ["electricity", "reflex", "status-bonus", "effect"], filters: { damageTypes: ["electricity"] }, contentBatch: 11,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }] }
+    fallbackTitle: "Lightning Teaches the Line", fallbackDescription: "The current shows you the shortest path through danger. After critically succeeding against electricity damage, you gain a +1 status bonus to Reflex saves and a +5-foot circumstance bonus to your land Speed for 1 round.",
+    tags: ["electricity", "reflex", "movement", "status-bonus", "circumstance-bonus", "effect"], filters: { damageTypes: ["electricity"] }, contentBatch: 11,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }, { type: "movement", movementType: "land", value: 5, modifierType: "circumstance" }] }
   }),
   defineBloodiedReflexCard({
     id: "br-029-source-loses-sight-of-you", localizationKey: "SourceLosesSightOfYou", tone: "serious", impact: "moderate",
-    fallbackTitle: "The Source Loses Sight of You", fallbackDescription: "Your evasive line leaves the hostile source looking where you were. For 1 round, it takes a -1 circumstance penalty to Perception DC.",
-    tags: ["target", "perception-dc", "circumstance-penalty", "effect"], contentBatch: 11,
-    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }] }
+    fallbackTitle: "The Source Loses Sight of You", fallbackDescription: "Your evasive line leaves the hostile source looking where you were. For 1 round, it takes a -2 circumstance penalty to Perception checks.",
+    tags: ["target", "perception", "circumstance-penalty", "effect"], contentBatch: 11,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "modifier", selector: "perception", value: -2, modifierType: "circumstance", predicate: [] }] }
   }),
   defineBloodiedReflexCard({
     id: "br-030-behind-them-before-they-turn", localizationKey: "BehindThemBeforeTheyTurn", tone: "dramatic", impact: "strong",

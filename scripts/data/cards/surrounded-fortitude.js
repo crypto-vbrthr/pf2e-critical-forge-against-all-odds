@@ -51,12 +51,12 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Three Against Stone",
-    fallbackDescription: "With three or more enemies bearing down on you, every angle of pressure locks the next one in place. For 1 round, you gain a +1 circumstance bonus to AC.",
-    tags: ["heavily-surrounded", "ac", "circumstance-bonus", "effect"],
+    fallbackDescription: "With three or more enemies bearing down on you, every angle of pressure locks the next one in place. For 1 round, you gain a +1 status bonus to AC and Fortitude DC.",
+    tags: ["heavily-surrounded", "ac", "fortitude-dc", "status-bonus", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 3 },
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["ac", "fortitude-dc"], value: 1, modifierType: "status", predicate: [] }]
     }
   }),
   defineSurroundedFortitudeCard({
@@ -65,12 +65,15 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Cannot Fold You",
-    fallbackDescription: "Four or more threats close in and your whole body becomes one refusal. For 1 round, you gain a +1 status bonus to saving throws.",
-    tags: ["heavily-surrounded", "saving-throws", "status-bonus", "effect"],
+    fallbackDescription: "Four or more threats close in and your whole body becomes one refusal. For 1 round, you gain 3 temporary Hit Points and a +1 status bonus to saving throws.",
+    tags: ["heavily-surrounded", "temporary-hp", "saving-throws", "status-bonus", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: "saving-throw", value: 1, modifierType: "status", predicate: [] }]
+      components: [
+        { type: "temporaryHitPoints", value: 3 },
+        { type: "modifier", selector: "saving-throw", value: 1, modifierType: "status", predicate: [] }
+      ]
     }
   }),
   defineSurroundedFortitudeCard({
@@ -79,13 +82,13 @@ export const SURROUNDED_FORTITUDE_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "moderate",
     fallbackTitle: "Make Them Spend Themselves",
-    fallbackDescription: "A threatening enemy commits too much force trying to break you. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and Athletics checks.",
-    tags: ["hostile-source", "attack-roll", "athletics", "counterpressure", "effect"],
+    fallbackDescription: "A threatening enemy commits too much force trying to break you. For 1 round, the hostile source takes a -1 circumstance penalty to attack rolls and Fortitude saves.",
+    tags: ["hostile-source", "attack-roll", "fortitude", "counterpressure", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: ["attack-roll", "athletics"], value: -1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["attack-roll", "fortitude"], value: -1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedFortitudeCard({

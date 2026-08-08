@@ -31,6 +31,7 @@ const ALL_CARDS = [...BLOODIED_ATTACK_CARDS, ...BLOODIED_FORTITUDE_CARDS, ...BLO
 const ALL_SURROUNDED_CARDS = [...SURROUNDED_ATTACK_CARDS, ...SURROUNDED_FORTITUDE_CARDS, ...SURROUNDED_REFLEX_CARDS, ...SURROUNDED_WILL_CARDS];
 const ALL_GIANT_SLAYER_CARDS = [...GIANT_SLAYER_ATTACK_CARDS, ...GIANT_SLAYER_FORTITUDE_CARDS, ...GIANT_SLAYER_REFLEX_CARDS, ...GIANT_SLAYER_WILL_CARDS];
 const ALL_NARROW_ESCAPE_CARDS = [...NARROW_ESCAPE_ATTACK_CARDS, ...NARROW_ESCAPE_FORTITUDE_CARDS, ...NARROW_ESCAPE_REFLEX_CARDS, ...NARROW_ESCAPE_WILL_CARDS];
+const ALL_PUBLISHED_CARDS = [...ALL_CARDS, ...ALL_SURROUNDED_CARDS, ...ALL_GIANT_SLAYER_CARDS, ...ALL_NARROW_ESCAPE_CARDS];
 
 function getPath(rootValue, dottedPath) {
   return dottedPath.split(".").reduce((value, key) => value?.[key], rootValue);
@@ -195,8 +196,8 @@ test("beneficial and hostile Attack effects remain intentionally separated", () 
   assert.equal(BLOODIED_ATTACK_CARDS.filter((card) => card.effect?.target === "source").length, 7);
 });
 
-test("published batches use only Effect Engine component types supported by the Forge RC", () => {
-  const types = new Set(ALL_CARDS.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []));
+test("all published cards use only Effect Engine component types supported by the Forge RC", () => {
+  const types = new Set(ALL_PUBLISHED_CARDS.flatMap((card) => card.effect?.definition.components.map((component) => component.type) ?? []));
   assert.deepEqual([...types].sort(), [
     "condition",
     "fastHealing",
@@ -283,7 +284,10 @@ test("the review patch reduces broad Will immunities and adds an emotion counter
   assert.deepEqual(immunities.map((component) => component.immunityType).sort(), ["confused", "controlled", "frightened"]);
   const heart = BLOODIED_WILL_CARDS.find((card) => card.id.endsWith("bw-005-heart-remembers"));
   assert.equal(heart.effect.target, "target");
-  assert.deepEqual(heart.effect.definition.components, [{ type: "condition", slug: "stupefied", value: 1 }]);
+  assert.deepEqual(heart.effect.definition.components, [
+    { type: "condition", slug: "stupefied", value: 1 },
+    { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+  ]);
   assert.equal(heart.filters.excludedTargetTraits.includes("mindless"), true);
 });
 
@@ -733,7 +737,7 @@ test("Surrounded Fortitude first pass covers anchoring, bracing, recovery, and c
   assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("fortitude-dc") && component.selector.includes("ac")), true);
   assert.equal(components.some((component) => component.type === "resistance" && component.resistanceType === "physical"), true);
   assert.equal(components.some((component) => component.type === "fastHealing" && component.value === 3), true);
-  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("attack-roll") && component.selector.includes("athletics") && component.value === -1), true);
+  assert.equal(components.some((component) => component.type === "modifier" && Array.isArray(component.selector) && component.selector.includes("attack-roll") && component.selector.includes("fortitude") && component.value === -1), true);
   assert.equal(components.some((component) => component.type === "immunity"), false);
 });
 
@@ -1149,13 +1153,11 @@ test("Surrounded final pass target gates match the cards that explicitly manipul
   }
 });
 
-test("Surrounded exact automated effect duplication against Bloodied stays at or below 25 percent", () => {
+test("Surrounded release review removes exact automated overlap with Bloodied", () => {
   const signature = (card) => card.effect == null ? null : JSON.stringify({ target: card.effect.target, definition: card.effect.definition });
   const bloodiedSignatures = new Set(ALL_CARDS.filter((card) => card.effect).map(signature));
   const automated = ALL_SURROUNDED_CARDS.filter((card) => card.effect);
-  const duplicateCount = automated.filter((card) => bloodiedSignatures.has(signature(card))).length;
-  assert.equal(duplicateCount, 9);
-  assert.ok(duplicateCount / automated.length <= 0.25);
+  assert.equal(automated.filter((card) => bloodiedSignatures.has(signature(card))).length, 0);
 });
 
 test("Three Blades, One Focus is a moderate mixed awareness-and-attack result after review", () => {
@@ -1180,23 +1182,10 @@ test("Four Steps, One Misstep has its own formation-break mechanic after review"
   ]);
 });
 
-test("Surrounded internal exact automated duplicates remain limited to the two intentional pairs", () => {
+test("Surrounded release review removes its previously intentional exact automated duplicates", () => {
   const signature = (card) => card.effect == null ? null : JSON.stringify({ target: card.effect.target, definition: card.effect.definition });
-  const groups = new Map();
-  for (const card of ALL_SURROUNDED_CARDS.filter((entry) => entry.effect)) {
-    const key = signature(card);
-    const list = groups.get(key) ?? [];
-    list.push(card.id.split(".").at(-1));
-    groups.set(key, list);
-  }
-  const duplicateGroups = [...groups.values()]
-    .filter((entries) => entries.length > 1)
-    .map((entries) => entries.sort())
-    .sort((left, right) => left[0].localeCompare(right[0]));
-  assert.deepEqual(duplicateGroups, [
-    ["ssa-002-break-their-rhythm", "ssf-006-make-them-spend-themselves"],
-    ["ssa-008-four-against-one", "ssw-005-fear-finds-no-leader"]
-  ]);
+  const signatures = ALL_SURROUNDED_CARDS.filter((card) => card.effect).map(signature);
+  assert.equal(new Set(signatures).size, signatures.length);
 });
 
 
@@ -3026,4 +3015,150 @@ test("Narrow Escape final review separates the three same-gate near-duplicate co
     { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] },
     { type: "modifier", selector: "will", value: 1, modifierType: "status", predicate: [] }
   ]);
+});
+
+
+function releaseStableObject(value) {
+  if (Array.isArray(value)) return value.map(releaseStableObject);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(Object.keys(value).sort().map((key) => [key, releaseStableObject(value[key])]));
+}
+
+function releaseCanonicalComponent(component) {
+  const normalized = structuredClone(component);
+  if (normalized.type === "modifier" && Array.isArray(normalized.selector)) normalized.selector.sort();
+  for (const key of ["predicate", "deactivatedBy"]) {
+    if (Array.isArray(normalized[key])) {
+      normalized[key] = normalized[key]
+        .map(releaseStableObject)
+        .sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right)));
+    }
+  }
+  return releaseStableObject(normalized);
+}
+
+function releaseEffectSignature(card) {
+  if (!card.effect) return null;
+  return JSON.stringify(releaseStableObject({
+    target: card.effect.target,
+    duration: card.effect.definition.duration,
+    components: card.effect.definition.components
+      .map(releaseCanonicalComponent)
+      .sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right)))
+  }));
+}
+
+function releaseGateSignature(card) {
+  return JSON.stringify(releaseStableObject({
+    packId: card.packId,
+    category: card.category,
+    deckType: card.deckType,
+    filters: card.filters,
+    conditions: card.conditions,
+    target: card.effect?.target,
+    duration: card.effect?.definition.duration
+  }));
+}
+
+function releaseAtomicComponents(card) {
+  return card.effect.definition.components.flatMap((component) => {
+    if (component.type !== "modifier" || !Array.isArray(component.selector)) {
+      return [JSON.stringify(releaseStableObject(component))];
+    }
+    return component.selector.map((selector) => JSON.stringify(releaseStableObject({ ...component, selector })));
+  }).sort();
+}
+
+test("release review keeps all 480 published IDs unique and all four themes complete", () => {
+  assert.equal(ALL_PUBLISHED_CARDS.length, 480);
+  assert.equal(new Set(ALL_PUBLISHED_CARDS.map((card) => card.id)).size, 480);
+  for (const cards of [ALL_CARDS, ALL_SURROUNDED_CARDS, ALL_GIANT_SLAYER_CARDS, ALL_NARROW_ESCAPE_CARDS]) {
+    assert.equal(cards.length, 120);
+    for (const deckType of ["attack", "fortitude", "reflex", "will"]) {
+      assert.equal(cards.filter((card) => card.deckType === deckType).length, 30);
+    }
+  }
+});
+
+test("release review makes every automated effect canonically unique across all 480 cards", () => {
+  const automated = ALL_PUBLISHED_CARDS.filter((card) => card.effect);
+  assert.equal(automated.length, 407);
+  const seen = new Map();
+  for (const card of automated) {
+    const signature = releaseEffectSignature(card);
+    assert.equal(seen.has(signature), false, `${card.id} canonically duplicates ${seen.get(signature)}`);
+    seen.set(signature, card.id);
+  }
+});
+
+test("release review rejects strict same-gate mechanical supersets in every theme", () => {
+  for (const cards of [ALL_CARDS, ALL_SURROUNDED_CARDS, ALL_GIANT_SLAYER_CARDS, ALL_NARROW_ESCAPE_CARDS]) {
+    const automated = cards.filter((card) => card.effect);
+    for (let leftIndex = 0; leftIndex < automated.length; leftIndex += 1) {
+      for (let rightIndex = 0; rightIndex < automated.length; rightIndex += 1) {
+        if (leftIndex === rightIndex) continue;
+        const left = automated[leftIndex];
+        const right = automated[rightIndex];
+        if (releaseGateSignature(left) !== releaseGateSignature(right)) continue;
+        const leftAtoms = new Set(releaseAtomicComponents(left));
+        const rightAtoms = new Set(releaseAtomicComponents(right));
+        const strictSubset = leftAtoms.size < rightAtoms.size && [...leftAtoms].every((atom) => rightAtoms.has(atom));
+        assert.equal(strictSubset, false, `${left.id} is strictly subsumed by ${right.id}`);
+      }
+    }
+  }
+});
+
+function releaseConceptFootprint(card) {
+  return card.effect.definition.components.flatMap((component) => {
+    if (component.type === "modifier") {
+      const selectors = Array.isArray(component.selector) ? component.selector : [component.selector];
+      return selectors.map((selector) => `modifier:${selector}:${Math.sign(component.value)}`);
+    }
+    if (component.type === "movement") return [`movement:${component.movementType}:${Math.sign(component.value)}`];
+    if (component.type === "condition") return [`condition:${component.slug}`];
+    if (component.type === "resistance") return [`resistance:${component.resistanceType}:${Math.sign(component.value ?? 1)}`];
+    if (component.type === "immunity") return [`immunity:${component.immunityType}`];
+    return [`${component.type}:${component.slug ?? component.damageType ?? component.movementType ?? ""}:${Math.sign(component.value ?? 1)}`];
+  }).sort().join("|");
+}
+
+test("release review rejects same-gate conceptual selector duplicates across all four themes", () => {
+  const seen = new Map();
+  for (const card of ALL_PUBLISHED_CARDS.filter((entry) => entry.effect)) {
+    const key = `${releaseGateSignature(card)}::${releaseConceptFootprint(card)}`;
+    assert.equal(seen.has(key), false, `${card.id} conceptually duplicates ${seen.get(key)}`);
+    seen.set(key, card.id);
+  }
+});
+
+test("release review keeps English localization synchronized with card and effect fallbacks", () => {
+  const en = JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"));
+  for (const card of ALL_PUBLISHED_CARDS) {
+    assert.equal(getPath(en, card.titleKey), card.fallbackTitle, card.id);
+    assert.equal(getPath(en, card.descriptionKey), card.fallbackDescription, card.id);
+    if (card.effect) assert.equal(getPath(en, card.effect.nameKey), card.effect.fallbackName, card.id);
+  }
+});
+
+test("release review keeps localized card titles unique in both supported languages", () => {
+  const languages = [
+    JSON.parse(fs.readFileSync(path.join(root, "lang", "de.json"), "utf8")),
+    JSON.parse(fs.readFileSync(path.join(root, "lang", "en.json"), "utf8"))
+  ];
+  for (const language of languages) {
+    const titles = ALL_PUBLISHED_CARDS.map((card) => getPath(language, card.titleKey));
+    assert.equal(titles.every((title) => typeof title === "string" && title.length > 0), true);
+    assert.equal(new Set(titles).size, titles.length);
+  }
+});
+
+test("release review enforces German Remaster bonus, condition, and Fortstoßen terminology globally", () => {
+  const deText = fs.readFileSync(path.join(root, "lang", "de.json"), "utf8");
+  assert.doesNotMatch(deText, /Statusbonus/u);
+  assert.doesNotMatch(deText, /Auf dem falschen Fuß/u);
+  assert.doesNotMatch(deText, /Stoßen-Versuch|zu Stoßen/u);
+  assert.match(deText, /Zustandsbonus/u);
+  assert.match(deText, /Auf dem Falschen Fuß/u);
+  assert.match(deText, /Fortstoßen/u);
 });

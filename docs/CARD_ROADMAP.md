@@ -20,14 +20,14 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 5. Bloodied Triumphs Will, first pass: 10 cards. **Complete in 0.1.0-dev.6.**
 6. Review the first 40 Bloodied Triumphs cards for balance, overlap, targeting, terminology, and automation. **Complete in 0.1.0-dev.6.1.**
 
-## Next content milestones
+## Content and review milestones
 
-1. Review the first 40 **Surrounded, Still Standing** cards for balance, overlap, targeting, threat scaling, and automation. **Complete in `0.1.0-dev.15.1`, including current-opponent threat membership and the 25% cross-theme duplicate ceiling.**
+1. Review the first 40 **Surrounded, Still Standing** cards for balance, overlap, targeting, threat scaling, and automation. **Complete in `0.1.0-dev.15.1`, including current-opponent threat membership and the then-current 25% cross-theme duplicate ceiling; the final `0.1.0-dev.38.2` release review supersedes that historical ceiling with global canonical uniqueness.**
 2. Surrounded Attack, second pass: 10 cards. **Complete in `0.1.0-dev.16`.**
 3. Surrounded Fortitude, second pass: 10 cards. **Complete in `0.1.0-dev.17`.**
 4. Surrounded Reflex, second pass: 10 cards. **Complete in `0.1.0-dev.18`.**
 5. Surrounded Will, second pass: 10 cards. **Complete in `0.1.0-dev.19`.**
-6. Review the first 80 **Surrounded, Still Standing** cards before the final passes. **Complete in `0.1.0-dev.19.1`; internal exact-effect duplication is now monitored and the two review adjustments preserve all card IDs.**
+6. Review the first 80 **Surrounded, Still Standing** cards before the final passes. **Complete in `0.1.0-dev.19.1`; internal exact-effect duplication was monitored and the two review adjustments preserved all card IDs. The final `0.1.0-dev.38.2` audit removes the remaining reviewed duplicate signatures globally.**
 7. Surrounded final pass: 10 Attack, 10 Fortitude, 10 Reflex, and 10 Will cards. **Complete in `0.1.0-dev.20`; Surrounded is now 120/120.**
 8. Giant-Slayer Moments Attack, first pass: 10 cards. **Complete in `0.1.0-dev.21`, with a 5/5 ordinary/spell split and +4/+5 level-gap escalation.**
 9. Giant-Slayer Moments Fortitude, first pass: 10 cards. **Complete in `0.1.0-dev.22`, with 9 automated / 1 manual, +4/+5 escalation, and no resistance/immunity filler.**
@@ -53,9 +53,9 @@ The full target is 480 cards. Cards are introduced in controlled batches rather 
 29. Review the first 80 **Narrow Escapes** cards for balance, overlap, danger-score scaling, targeting, terminology, and automation. **Complete in `0.1.0-dev.37.1`; all 440 published IDs are preserved, four order-hidden exact effect duplicates are separated, a canonical order-insensitive effect-signature audit is added, the 68/12 automated/manual split and danger-score scaling remain intact, and documentation drift from pass two is corrected.**
 30. Complete the final 40 **Narrow Escapes** cards, ten per deck. **Complete in `0.1.0-dev.38`; all four decks reach 30/30, the final pass uses an 8/2 automated/manual split per deck, each deck gains one additional score-4 and score-5 escalation, and the add-on reaches 480/480 planned cards.**
 31. Final review of all 120 **Narrow Escapes** cards. **Complete in `0.1.0-dev.38.1`; all IDs and deck structures are preserved, three same-gate near-duplicate concepts are separated, conceptual-footprint regression coverage is added, and final-pass documentation drift is corrected.**
-32. Perform the complete 480-card cross-pack duplicate-concept, effect, localization, diagnostic, and release-readiness audit.
+32. Perform the complete 480-card cross-pack duplicate-concept, effect, localization, diagnostic, and release-readiness audit. **Complete in `0.1.0-dev.38.2`; all 480 IDs are preserved, all 407 automated effects are canonically unique, strict and conceptual same-gate overlap audits are clean across all four themes, legacy German terminology is normalized globally, and English fallback/localization drift is eliminated.**
 
-Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes are now all complete at 120/120 cards. Against All Odds has reached its planned 480/480-card content target. The final 120-card Narrow Escapes review is complete. The next milestone is the complete 480-card release review.
+Bloodied Triumphs, Surrounded, Still Standing, Giant-Slayer Moments, and Narrow Escapes are all complete at 120/120 cards. Against All Odds has reached its planned 480/480-card content target, and the full 480-card release review is complete. The next milestone is integrated Critical Forge/Foundry release-candidate validation and release packaging.
 
 Every card will:
 

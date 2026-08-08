@@ -62,15 +62,18 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
     id: "bw-005-heart-remembers",
     localizationKey: "HeartRemembers",
     tone: "dramatic",
-    impact: "moderate",
+    impact: "strong",
     fallbackTitle: "The Heart Remembers",
-    fallbackDescription: "Someone else may command your feelings, but they cannot rewrite why you are still standing. The hostile source becomes stupefied 1 for 1 round.",
-    tags: ["emotion", "target", "stupefied", "countershock", "effect"],
+    fallbackDescription: "Someone else may command your feelings, but they cannot rewrite why you are still standing. The hostile source becomes stupefied 1 and takes a -1 circumstance penalty to Perception DC for 1 round.",
+    tags: ["emotion", "target", "stupefied", "perception-dc", "countershock", "effect"],
     filters: { attackTraits: ["emotion"], excludedTargetTraits: ["mindless"] },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "condition", slug: "stupefied", value: 1 }]
+      components: [
+        { type: "condition", slug: "stupefied", value: 1 },
+        { type: "modifier", selector: "perception-dc", value: -1, modifierType: "circumstance", predicate: [] }
+      ]
     }
   }),
   defineBloodiedWillCard({
@@ -292,15 +295,15 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
   }),
   defineBloodiedWillCard({
     id: "bw-022-fear-becomes-a-compass", localizationKey: "FearBecomesACompass", tone: "dramatic", impact: "moderate",
-    fallbackTitle: "Fear Becomes a Compass", fallbackDescription: "Fear points at what matters and you choose to move toward it. After a fear effect, you gain a +1 status bonus to attack rolls for 1 round.",
-    tags: ["fear", "attack-roll", "status-bonus", "effect"], filters: { attackTraits: ["fear"] }, contentBatch: 12,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "attack-roll", value: 1, modifierType: "status", predicate: [] }] }
+    fallbackTitle: "Fear Becomes a Compass", fallbackDescription: "Fear points at what matters and you choose to move toward it. After a fear effect, you gain a +1 status bonus to attack rolls and Will saves for 1 round.",
+    tags: ["fear", "attack-roll", "will", "status-bonus", "effect"], filters: { attackTraits: ["fear"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["attack-roll", "will"], value: 1, modifierType: "status", predicate: [] }] }
   }),
   defineBloodiedWillCard({
     id: "bw-023-illusion-breaks-on-the-wound", localizationKey: "IllusionBreaksOnTheWound", tone: "serious", impact: "moderate",
-    fallbackTitle: "Illusion Breaks on the Wound", fallbackDescription: "Pain gives the false world a hard edge it cannot imitate. After an illusion effect, you gain a +1 circumstance bonus to AC for 1 round.",
-    tags: ["illusion", "ac", "circumstance-bonus", "effect"], filters: { attackTraits: ["illusion"] }, contentBatch: 12,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "ac", value: 1, modifierType: "circumstance", predicate: [] }] }
+    fallbackTitle: "Illusion Breaks on the Wound", fallbackDescription: "Pain gives the false world a hard edge it cannot imitate. After an illusion effect, you gain a +1 circumstance bonus to AC and Will saves for 1 round.",
+    tags: ["illusion", "ac", "will", "circumstance-bonus", "effect"], filters: { attackTraits: ["illusion"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["ac", "will"], value: 1, modifierType: "circumstance", predicate: [] }] }
   }),
   defineBloodiedWillCard({
     id: "bw-024-heart-chooses-its-rhythm", localizationKey: "HeartChoosesItsRhythm", tone: "dramatic", impact: "moderate",
@@ -310,9 +313,9 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
   }),
   defineBloodiedWillCard({
     id: "bw-025-your-voice-comes-back-wrong", localizationKey: "YourVoiceComesBackWrong", tone: "dramatic", impact: "moderate",
-    fallbackTitle: "Your Voice Comes Back Wrong", fallbackDescription: "The hostile sound rebounds through the space it tried to occupy. After an auditory effect, the hostile source is deafened for 1 round.",
-    tags: ["auditory", "target", "deafened", "countershock", "effect"], filters: { attackTraits: ["auditory"] }, contentBatch: 12,
-    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "condition", slug: "deafened" }] }
+    fallbackTitle: "Your Voice Comes Back Wrong", fallbackDescription: "The hostile sound rebounds through the space it tried to occupy. After an auditory effect, the hostile source is deafened and takes a -1 circumstance penalty to Will DC for 1 round.",
+    tags: ["auditory", "target", "deafened", "will-dc", "countershock", "effect"], filters: { attackTraits: ["auditory"] }, contentBatch: 12,
+    effect: { target: "target", duration: ONE_ROUND, components: [{ type: "condition", slug: "deafened" }, { type: "modifier", selector: "will-dc", value: -1, modifierType: "circumstance", predicate: [] }] }
   }),
   defineBloodiedWillCard({
     id: "bw-026-words-lose-their-teeth", localizationKey: "WordsLoseTheirTeeth", tone: "serious", impact: "light",
@@ -322,9 +325,9 @@ export const BLOODIED_WILL_CARDS = Object.freeze([
   }),
   defineBloodiedWillCard({
     id: "bw-027-curse-finds-a-witness", localizationKey: "CurseFindsAWitness", tone: "serious", impact: "moderate",
-    fallbackTitle: "The Curse Finds a Witness", fallbackDescription: "You see the curse clearly enough to refuse its next lie. After a curse effect, you gain a +1 status bonus to saving throws for 1 round.",
-    tags: ["curse", "saving-throws", "status-bonus", "effect"], filters: { attackTraits: ["curse"] }, contentBatch: 12,
-    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: "saving-throw", value: 1, modifierType: "status", predicate: [] }] }
+    fallbackTitle: "The Curse Finds a Witness", fallbackDescription: "You see the curse clearly enough to refuse its next lie. After a curse effect, you gain a +1 status bonus to Will saves and Perception DC for 1 round.",
+    tags: ["curse", "will", "perception-dc", "status-bonus", "effect"], filters: { attackTraits: ["curse"] }, contentBatch: 12,
+    effect: { duration: ONE_ROUND, components: [{ type: "modifier", selector: ["will", "perception-dc"], value: 1, modifierType: "status", predicate: [] }] }
   }),
   defineBloodiedWillCard({
     id: "bw-028-too-hurt-to-be-small", localizationKey: "TooHurtToBeSmall", tone: "dramatic", impact: "moderate",

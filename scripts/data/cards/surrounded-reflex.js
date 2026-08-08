@@ -52,12 +52,15 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Threats, Open Ground",
-    fallbackDescription: "With four or more enemies closing in, the only open ground is the ground you create. For 1 round, you gain a +5-foot circumstance bonus to all your Speeds.",
-    tags: ["heavily-surrounded", "movement", "all-speeds", "circumstance-bonus", "effect"],
+    fallbackDescription: "With four or more enemies closing in, the only open ground is the ground you create. For 1 round, you gain a +5-foot circumstance bonus to all your Speeds and a +1 status bonus to Reflex saves.",
+    tags: ["heavily-surrounded", "movement", "all-speeds", "reflex", "circumstance-bonus", "status-bonus", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "movement", movementType: "all", value: 5, modifierType: "circumstance" }]
+      components: [
+        { type: "movement", movementType: "all", value: 5, modifierType: "circumstance" },
+        { type: "modifier", selector: "reflex", value: 1, modifierType: "status", predicate: [] }
+      ]
     }
   }),
   defineSurroundedReflexCard({
@@ -84,13 +87,13 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     tone: "serious",
     impact: "moderate",
     fallbackTitle: "Balance Turns Against Them",
-    fallbackDescription: "Your escape forces the hostile source to recover its footing instead of pressing the advantage. For 1 round, its Reflex DC takes a -1 circumstance penalty.",
-    tags: ["target", "reflex-dc", "circumstance-penalty", "effect"],
+    fallbackDescription: "Your escape forces the hostile source to recover its footing instead of pressing the advantage. For 1 round, it takes a -1 circumstance penalty to Acrobatics checks and Reflex DC.",
+    tags: ["target", "acrobatics", "reflex-dc", "circumstance-penalty", "effect"],
     extraConditions: { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true },
     effect: {
       target: "target",
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: "reflex-dc", value: -1, modifierType: "circumstance", predicate: [] }]
+      components: [{ type: "modifier", selector: ["acrobatics", "reflex-dc"], value: -1, modifierType: "circumstance", predicate: [] }]
     }
   }),
   defineSurroundedReflexCard({
@@ -125,11 +128,14 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     tone: "serious",
     impact: "light",
     fallbackTitle: "Eyes on Every Opening",
-    fallbackDescription: "Tracking several threats at once sharpens your sense for the gap between them. For 1 round, you gain a +1 circumstance bonus to Perception checks and Perception DC.",
-    tags: ["perception", "perception-dc", "circumstance-bonus", "effect"],
+    fallbackDescription: "Tracking several threats at once sharpens your sense for the gap between them. For 1 round, you gain a +1 circumstance bonus to Perception checks and a +1 status bonus to Perception DC.",
+    tags: ["perception", "perception-dc", "circumstance-bonus", "status-bonus", "effect"],
     effect: {
       duration: ONE_ROUND,
-      components: [{ type: "modifier", selector: ["perception", "perception-dc"], value: 1, modifierType: "circumstance", predicate: [] }]
+      components: [
+        { type: "modifier", selector: "perception", value: 1, modifierType: "circumstance", predicate: [] },
+        { type: "modifier", selector: "perception-dc", value: 1, modifierType: "status", predicate: [] }
+      ]
     }
   }),
   defineSurroundedReflexCard({
@@ -364,8 +370,8 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
     tone: "dramatic",
     impact: "strong",
     fallbackTitle: "Four Threats, One Tangle",
-    fallbackDescription: "With four or more enemies packed into the ring, the hostile source tangles itself in the formation. For 1 round, it is off-guard and clumsy 1.",
-    tags: ["heavily-surrounded", "hostile-source", "off-guard", "clumsy", "effect"],
+    fallbackDescription: "With four or more enemies packed into the ring, the hostile source tangles itself in the formation. For 1 round, it is clumsy 1 and takes a -5-foot circumstance penalty to its land Speed.",
+    tags: ["heavily-surrounded", "hostile-source", "clumsy", "movement", "land-speed", "effect"],
     extraConditions: [
       { field: "extensions.againstAllOdds.surrounded.count", operator: "gte", value: 4 },
       { field: "extensions.againstAllOdds.surrounded.opponentIsThreatening", operator: "eq", value: true }
@@ -375,8 +381,8 @@ export const SURROUNDED_REFLEX_CARDS = Object.freeze([
       target: "target",
       duration: ONE_ROUND,
       components: [
-        { type: "condition", slug: "off-guard" },
-        { type: "condition", slug: "clumsy", value: 1 }
+        { type: "condition", slug: "clumsy", value: 1 },
+        { type: "movement", movementType: "land", value: -5, modifierType: "circumstance" }
       ]
     }
   }),

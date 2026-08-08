@@ -19,7 +19,7 @@
 - [x] All published Surrounded save cards use the matching save deck/filter and preserve saver/source target roles.
 - [x] Current-opponent threat membership is exposed to the Card Editor and Diagnostics 2.0.
 - [x] Target-centric Surrounded cards require the current opponent to be a counted melee threat.
-- [x] Exact automated Surrounded/Bloodied effect duplication is no greater than 25%.
+- [x] Release-level canonical audit finds zero exact automated-effect duplicates across all four themes.
 - [x] The first forty-card review preserves every previously published card ID.
 - [x] New content passes add IDs without changing earlier published IDs.
 - [x] Contextual poison, disease, mental, illusion, and emotion filters are covered by tests.
@@ -35,9 +35,9 @@
 - [x] All tests pass.
 - [x] JavaScript syntax check passes.
 - [x] Archive uses the established Critical Forge add-on root layout.
-- [x] Current automated test run: 259/259 passing.
-- [x] Current coverage: 99.53% lines, 95.37% branches, 98.90% functions.
-- [x] Current localization parity: 1304 keys in both German and English.
+- [x] Current automated test run: 271/271 passing.
+- [x] Current coverage: 99.57% lines, 95.51% branches, 98.94% functions.
+- [x] Current localization parity: 1416 keys in both German and English.
 - [ ] Integrated Critical Forge `1.0.0-rc` validation for the current 480 published cards and 407 automated card effects.
 - [x] Foundry smoke test: all four protected packs visible.
 - [x] Foundry smoke test: context fields visible in the Card Editor.
@@ -245,8 +245,8 @@
 - [x] Narrow Escapes package metadata is marked complete.
 - [x] Full add-on reaches 480/480 planned cards with 407 automated and 73 manual results.
 - [x] Foundry smoke test for `0.1.0-dev.38`: all four Narrow Escape decks expose 30 localized cards.
-- [ ] Foundry smoke test for `0.1.0-dev.38`: final manual movement, cover, Balance, ally-support, and Step routes read and resolve correctly.
-- [ ] Foundry smoke test for `0.1.0-dev.38`: final disease, inhaled, fear, mental, auditory, score-4, and score-5 gates appear only in matching contexts.
+- [x] Foundry smoke test for `0.1.0-dev.38`: final manual movement, cover, Balance, ally-support, and Step routes read and resolve correctly.
+- [x] Foundry smoke test for `0.1.0-dev.38`: final disease, inhaled, fear, mental, auditory, score-4, and score-5 gates appear only in matching contexts.
 
 
 ### Narrow Escapes final review (`0.1.0-dev.38.1`)
@@ -257,4 +257,28 @@
 - [x] Same-gate conceptual-footprint regression audit is clean across all automated Narrow Escape cards.
 - [x] Canonical exact-effect and strict same-gate superset audits remain clean after the review changes.
 - [x] Architecture, Testing, Roadmap, README, and release-check documentation describe the complete 120-card theme.
-- [ ] Foundry smoke test for `0.1.0-dev.38.1`: the three revised card effects display and apply with their updated mechanics.
+- [x] Foundry smoke test for `0.1.0-dev.38.1`: the three revised card effects display and apply with their updated mechanics.
+
+### Full 480-card release review (`0.1.0-dev.38.2`)
+
+- [x] All 480 published card IDs remain present, unique, and unchanged.
+- [x] All four 120-card theme packs remain complete, for 480 cards total with 407 automated effects and 73 manual results.
+- [x] Canonical order-insensitive audit finds zero exact automated-effect duplicates across all 407 automated effects.
+- [x] Strict same-gate mechanical-superset audit finds zero weaker/redundant cards in every theme.
+- [x] Same-gate conceptual selector-footprint audit finds zero duplicate concepts hidden behind swapped bonus types or component ordering.
+- [x] Localized card titles are unique in both German and English.
+- [x] English localized titles/descriptions/effect names match their source fallbacks.
+- [x] German text globally uses Remaster terminology for Zustandsbonus, Auf dem Falschen Fuß, and Fortstoßen.
+- [x] Public Critical Forge extension/API contracts, schema versions, pack ownership, rollback, and provider architecture remain unchanged and pass the standalone architecture review.
+- [x] Package-local `release-check --allow-dev` passes with 1416 localization keys per language and 35 JavaScript files.
+- [x] Foundry baseline smoke tests for the complete `0.1.0-dev.38` content and `0.1.0-dev.38.1` Narrow Escapes review are confirmed.
+- [x] Foundry registration attempt for `0.1.0-dev.38.2` identified an invalid Surrounded pack caused by the unsupported component discriminator `temporary-hp`.
+
+### Foundry registration hotfix (`0.1.0-dev.38.3`)
+
+- [x] `Four Cannot Fold You` uses the schema-valid Effect Engine component type `temporaryHitPoints`.
+- [x] The component-type regression scans all 480 published cards rather than only Bloodied Triumphs.
+- [x] All 480 card IDs, 407 automated / 73 manual split, reviewed mechanics, localization counts, and public extension contracts remain unchanged otherwise.
+- [ ] Foundry smoke test for `0.1.0-dev.38.3`: all four packs register; the revised legacy Bloodied/Surrounded effects display and apply correctly.
+- [ ] Direct Critical Forge `1.0.0-rc` host-validator run for `0.1.0-dev.38.3` before tagging a release candidate.
+
